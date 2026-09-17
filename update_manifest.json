@@ -20,7 +20,9 @@
     "Aplicável conforme escopo e cronograma normativo",
     "Verificação inicial"
   ],
-  "last_weekly_check": "2026-09-17T20:15:45.160904Z",
-  "last_weekly_changes_detected": 0,
-  "last_weekly_access_errors": 9
+  "last_weekly_check": "2026-09-17T20:25:07.581086Z",
+  "last_weekly_changes_detected": 3,
+  "last_weekly_access_errors": 3,
+  "sources_registered": 24,
+  "sources_verified": 21
 }

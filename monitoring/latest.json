@@ -2,208 +2,217 @@
   "https://fale-conosco.mec.gov.br/portal/servicos/solicitacao?servico=45852": {
     "source": "MEC / Fale Conosco",
     "url": "https://fale-conosco.mec.gov.br/portal/servicos/solicitacao?servico=45852",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "313a686bd95303be3d65cd81e53ad799ebc3fa6308214640dbd13cac53c1e0d5",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "313a686bd95303be3d65cd81e53ad799ebc3fa6308214640dbd13cac53c1e0d5"
   },
   "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52": {
     "source": "Imprensa Nacional / DOU",
     "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "4d28a44c99764041866003cc3e1a873337d161151bafcdb25c6759e4c6e12171",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "4d28a44c99764041866003cc3e1a873337d161151bafcdb25c6759e4c6e12171"
   },
   "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm": {
     "source": "Planalto",
     "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "[Errno 104] Connection reset by peer",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "a522b60a90d25c1363b58c1465d5016c54438e5079e963dc968c21cf1ca90e69"
   },
   "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm": {
     "source": "Planalto",
     "url": "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "[Errno 104] Connection reset by peer",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "4fb491cdc2ffda1ba7639aaeda2f8cd90f6a5d1595a521b134fdfb5d5e0322bc"
   },
   "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu": {
     "source": "MEC / FAQ SESu",
     "url": "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": null,
     "ok": false,
-    "error": "<urlopen error [Errno -5] No address associated with hostname>",
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "error": "URL Error: [Errno -5] No address associated with hostname"
   },
   "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo": {
     "source": "MEC",
     "url": "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": null,
     "ok": false,
-    "error": "<urlopen error [Errno -5] No address associated with hostname>",
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "error": "URL Error: [Errno -5] No address associated with hostname"
   },
   "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade": {
     "source": "Inep",
     "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "478c5f3ca7a05bf48d8bdec27ff28c5aa0b18904cdad7a1691fac6ca341de683",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "478c5f3ca7a05bf48d8bdec27ff28c5aa0b18904cdad7a1691fac6ca341de683"
   },
   "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma": {
     "source": "Inep",
     "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "d11264bd5a3a9d02ce2d34ca26cb8f560cd9a6df5efa161600794c09d1e7e6b8",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "d11264bd5a3a9d02ce2d34ca26cb8f560cd9a6df5efa161600794c09d1e7e6b8"
   },
   "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2026": {
     "source": "Inep",
     "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2026",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "e3b8c0b98a8211c4ab4826b988a49eef427b1b53fcdbbed94e1431be52356b78",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "e3b8c0b98a8211c4ab4826b988a49eef427b1b53fcdbbed94e1431be52356b78"
   },
   "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-de-educacao-superior/diploma-digital": {
     "source": "MEC / Diploma Digital",
     "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-de-educacao-superior/diploma-digital",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "HTTP Error 404: Not Found",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "4b50d04eeab29d08bef528e9d7effea1569d0135b3b1b9bed38402a274e5dcf9"
   },
   "https://www.gov.br/mec/pt-br/cne/2025/marco/pces220_25.pdf": {
     "source": "MEC / CNE",
     "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pces220_25.pdf",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "feb3367f9b9639a8d6e61d8aa822facaafc2bc64e83416969bf321d2f142316f",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "feb3367f9b9639a8d6e61d8aa822facaafc2bc64e83416969bf321d2f142316f"
   },
   "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf": {
     "source": "MEC / CNE",
     "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "191519f1482894f1af03741a638cd14c98aa13bd47278d1dd610d53be1cab512",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "191519f1482894f1af03741a638cd14c98aa13bd47278d1dd610d53be1cab512"
   },
   "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica": {
     "source": "MEC / CNE",
     "url": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "bf022e7a7a1d31574e4cf973a7db26458635e34e4f87be1c20a70a045bf72f23",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "bf022e7a7a1d31574e4cf973a7db26458635e34e4f87be1c20a70a045bf72f23"
   },
   "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas": {
     "source": "MEC / CNE",
     "url": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "fc69b2fa2405bbae63277d89eaf52c32cec9e5e472854e9229f6a108c7d00d1a",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "fc69b2fa2405bbae63277d89eaf52c32cec9e5e472854e9229f6a108c7d00d1a"
   },
   "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view": {
     "source": "CNE/MEC",
     "url": "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "c2b12c6be7e021b94230c93863a3395c6b630e05f55c08eb274c945749a5145a",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": true,
+    "sha256": "e87f17455175c6a29a1e240812bc4e08fe5291d541f7e0af958fb1afacec536f"
   },
   "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024": {
     "source": "MEC / CNE",
     "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "http_status": 200,
-    "sha256": "ad627da19b22e2d6ef2bfff6d84f933bdbd68e63bbc2f784aadefbe364e41633",
-    "ok": true,
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": null,
+    "ok": false,
+    "changed_since_last_check": false,
+    "error": "[Errno 104] Connection reset by peer"
   },
   "https://www.gov.br/mec/pt-br/diploma-digital": {
     "source": "MEC / Diploma Digital",
     "url": "https://www.gov.br/mec/pt-br/diploma-digital",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "91301b09103bafafdd494d6ddecae3b7f816e954edd2133adbac6ba26d2942b7",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": true,
+    "sha256": "18f1fd0b6bfa352ac06449e400fd671dacd892f211cf56c25ba4da7bf8a8c758"
   },
   "https://www.gov.br/mec/pt-br/diploma-digital/dados": {
     "source": "MEC / Diploma Digital",
     "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "63741a74d77f95af2a5f6342ff9e8bdcbd3120995e616dd075e734557e7d36f6",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "63741a74d77f95af2a5f6342ff9e8bdcbd3120995e616dd075e734557e7d36f6"
   },
   "https://www.gov.br/participamaisbrasil/ufsc-plano-de-desenvolvimento-institucional-2025-2029": {
     "source": "Governo Federal / PDI UFSC",
     "url": "https://www.gov.br/participamaisbrasil/ufsc-plano-de-desenvolvimento-institucional-2025-2029",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "998319c365b62d9ea6ede6b34ca36583c5ac7d627970745566f2ef950d36df20",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": true,
+    "sha256": "c829194aa36437612d30e7f9d08ea8b1f390b55ce50637290c56b6ea188f2031"
   },
   "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital": {
     "source": "Governo Federal",
     "url": "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
+    "checked_at": "2026-09-17T20:25:07.581086Z",
     "http_status": 200,
-    "sha256": "3d94572bbe870ed2d4f21e7c0259b808dfdf184b9031c8604404e3b98aefceb3",
     "ok": true,
-    "changed_since_last_check": false
+    "changed_since_last_check": false,
+    "sha256": "3d94572bbe870ed2d4f21e7c0259b808dfdf184b9031c8604404e3b98aefceb3"
   },
   "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm": {
     "source": "Planalto",
     "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "[Errno 104] Connection reset by peer",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "2db0a3bce8bc14b45349fb9ad0730ac9dfc6929a30f83146aa7e6f7067da1229"
   },
   "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm": {
     "source": "Planalto",
     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "[Errno 104] Connection reset by peer",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "50a2de4947571127c4cf95f9f43dd7ba9f8482bdd03373b09c05e5434e31ce1e"
   },
   "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm": {
     "source": "Planalto",
     "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "[Errno 104] Connection reset by peer",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "b025030e600eedc4dcf28acdfd529a55230b83d8ad35ffa1612d88c96c64078b"
   },
   "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm": {
     "source": "Planalto",
     "url": "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm",
-    "checked_at": "2026-09-17T20:15:45.160904Z",
-    "ok": false,
-    "error": "[Errno 104] Connection reset by peer",
-    "changed_since_last_check": false
+    "checked_at": "2026-09-17T20:25:07.581086Z",
+    "http_status": 200,
+    "ok": true,
+    "changed_since_last_check": false,
+    "sha256": "b4d6866508670cb77e6679bd4d2c968102f75cee41e3467f52925f486fc7c3b9"
   }
 }
