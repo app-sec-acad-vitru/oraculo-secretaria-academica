@@ -19,7 +19,15 @@
     "impact": "Fundamenta processos de conclusão, documentação acadêmica, diplomas, aproveitamento de estudos e organização da vida acadêmica.",
     "procedure": "Verificar sempre a LDB e a regulamentação específica do processo antes de definir uma rotina acadêmica.",
     "source": "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm",
-    "sourceName": "Planalto"
+    "sourceName": "Planalto",
+    "synonyms": [
+      "LDB",
+      "vida acadêmica",
+      "histórico",
+      "diploma",
+      "frequência",
+      "aproveitamento"
+    ]
   },
   {
     "id": "dec-9235",
@@ -40,7 +48,14 @@
     "impact": "Afeta governança acadêmica, atos autorizativos, avaliação, supervisão e controles documentais.",
     "procedure": "Relacionar cada processo acadêmico relevante ao ato autorizativo, ao curso e às regras regulatórias aplicáveis.",
     "source": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm",
-    "sourceName": "Planalto"
+    "sourceName": "Planalto",
+    "synonyms": [
+      "regulação",
+      "supervisão",
+      "avaliação",
+      "IES",
+      "SINAES"
+    ]
   },
   {
     "id": "port-1095",
@@ -61,7 +76,14 @@
     "impact": "Define controles de prazo, documentação, expedição e registro de diplomas.",
     "procedure": "Controlar a data da colação, a expedição e o registro, mantendo evidências do cumprimento dos prazos.",
     "source": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-de-educacao-superior/diploma-digital",
-    "sourceName": "MEC / Diploma Digital"
+    "sourceName": "MEC / Diploma Digital",
+    "synonyms": [
+      "diploma",
+      "registro",
+      "expedição",
+      "colação",
+      "histórico"
+    ]
   },
   {
     "id": "port-554",
@@ -82,7 +104,14 @@
     "impact": "Exige integração entre Secretaria, registro acadêmico, sistemas e infraestrutura tecnológica.",
     "procedure": "Consultar sempre a regulamentação mais recente do Diploma Digital antes de alterar leiautes ou fluxos.",
     "source": "https://www.gov.br/mec/pt-br/diploma-digital",
-    "sourceName": "MEC / Diploma Digital"
+    "sourceName": "MEC / Diploma Digital",
+    "synonyms": [
+      "diploma digital",
+      "XML",
+      "assinatura",
+      "registro",
+      "nato-digital"
+    ]
   },
   {
     "id": "diploma-2025",
@@ -102,7 +131,13 @@
     "impact": "Afeta emissão, registro, armazenamento, validação e atendimento de diplomas de graduação.",
     "procedure": "Manter o fluxo de diploma alinhado à versão normativa e técnica mais recente publicada pelo MEC.",
     "source": "https://www.gov.br/mec/pt-br/diploma-digital",
-    "sourceName": "MEC / Diploma Digital"
+    "sourceName": "MEC / Diploma Digital",
+    "synonyms": [
+      "diploma digital",
+      "graduação",
+      "obrigatoriedade",
+      "2025"
+    ]
   },
   {
     "id": "port-315",
@@ -123,7 +158,14 @@
     "impact": "Orienta governança documental, custódia, preservação, acesso e continuidade do acervo.",
     "procedure": "Mapear documentos do acervo, responsáveis, temporalidade, segurança, acesso e mecanismos de recuperação.",
     "source": "https://www.gov.br/participamaisbrasil/ufsc-plano-de-desenvolvimento-institucional-2025-2029",
-    "sourceName": "Governo Federal / PDI UFSC"
+    "sourceName": "Governo Federal / PDI UFSC",
+    "synonyms": [
+      "acervo",
+      "guarda",
+      "documentos",
+      "supervisão",
+      "histórico acadêmico"
+    ]
   },
   {
     "id": "port-360",
@@ -143,7 +185,13 @@
     "impact": "Exige revisão dos fluxos de produção, digitalização, armazenamento e preservação dos documentos acadêmicos.",
     "procedure": "Garantir que novos documentos do acervo sigam o formato e os controles digitais exigidos.",
     "source": "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital",
-    "sourceName": "Governo Federal"
+    "sourceName": "Governo Federal",
+    "synonyms": [
+      "acervo digital",
+      "digitalização",
+      "documento nato-digital",
+      "arquivo"
+    ]
   },
   {
     "id": "port-613",
@@ -164,7 +212,14 @@
     "impact": "Afeta repositório arquivístico, segurança, metadados, cópia de segurança e descarte controlado.",
     "procedure": "Validar repositório, integridade, metadados, backup, acesso e regras de temporalidade antes do descarte do físico.",
     "source": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52",
-    "sourceName": "Imprensa Nacional / DOU"
+    "sourceName": "Imprensa Nacional / DOU",
+    "synonyms": [
+      "RDC-Arq",
+      "digitalização",
+      "preservação",
+      "backup",
+      "acervo"
+    ]
   },
   {
     "id": "lgpd-13709",
@@ -185,7 +240,14 @@
     "impact": "Afeta acesso, compartilhamento, retenção, segurança, atendimento e uso de dados acadêmicos.",
     "procedure": "Aplicar princípio de necessidade, controle de acesso, segurança e finalidade ao tratar dados acadêmicos.",
     "source": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
-    "sourceName": "Planalto"
+    "sourceName": "Planalto",
+    "synonyms": [
+      "LGPD",
+      "dados pessoais",
+      "CPF",
+      "privacidade",
+      "acesso"
+    ]
   },
   {
     "id": "sinaes-10861",
@@ -206,7 +268,14 @@
     "impact": "Afeta inscrição de estudantes habilitados, regularidade, registros acadêmicos e informações prestadas ao INEP.",
     "procedure": "Controlar habilitação, inscrição, participação/dispensa e reflexos na regularidade acadêmica conforme regulamentação anual.",
     "source": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm",
-    "sourceName": "Planalto"
+    "sourceName": "Planalto",
+    "synonyms": [
+      "SINAES",
+      "ENADE",
+      "INEP",
+      "regularidade",
+      "histórico"
+    ]
   },
   {
     "id": "estagio-11788",
@@ -227,7 +296,14 @@
     "impact": "Afeta matrícula, termo de compromisso, acompanhamento, seguro, jornada e integração curricular.",
     "procedure": "Validar matrícula/frequência, termo de compromisso, compatibilidade das atividades e acompanhamento conforme PPC e legislação.",
     "source": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
-    "sourceName": "Planalto"
+    "sourceName": "Planalto",
+    "synonyms": [
+      "estágio",
+      "TCE",
+      "concedente",
+      "agente de integração",
+      "supervisão"
+    ]
   },
   {
     "id": "ext-7-2018",
@@ -247,7 +323,13 @@
     "impact": "Afeta matriz curricular, registros acadêmicos, integralização e documentação da trajetória do estudante.",
     "procedure": "Conferir no PPC e na matriz como a extensão é registrada e contabilizada para integralização.",
     "source": "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view",
-    "sourceName": "CNE/MEC"
+    "sourceName": "CNE/MEC",
+    "synonyms": [
+      "extensão",
+      "curricularização",
+      "PPC",
+      "carga horária"
+    ]
   },
   {
     "id": "pos-1-2018",
@@ -267,6 +349,399 @@
     "impact": "Afeta requisitos de oferta, conclusão, certificação, registros e documentação acadêmica da pós-graduação.",
     "procedure": "Relacionar a emissão do certificado/histórico aos requisitos do curso, PPC/projeto e regulamentação vigente.",
     "source": "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
-    "sourceName": "MEC"
+    "sourceName": "MEC",
+    "synonyms": [
+      "pós-graduação",
+      "especialização",
+      "certificado",
+      "histórico"
+    ]
+  },
+  {
+    "id": "port-230-2007",
+    "norm": "Portaria MEC nº 230/2007",
+    "category": "Emissão de documentos e transferência",
+    "status": "Vigente",
+    "date": "09/03/2007",
+    "tags": [
+      "transferência",
+      "documentos",
+      "taxa",
+      "matrícula",
+      "histórico"
+    ],
+    "article": "Art. 2º",
+    "excerpt": "É vedada a cobrança de taxa de matrícula como condição para apreciação de pedidos de emissão de documentos de transferência para outras instituições.",
+    "summary": "Referência para pedidos de transferência e emissão de documentação relacionada ao processo.",
+    "impact": "Ajuda a orientar o fluxo de documentos de transferência e a separação entre atendimento acadêmico e cobrança.",
+    "procedure": "Receber e processar o pedido documental conforme a regulamentação, sem criar condicionante incompatível com a norma.",
+    "source": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "documento de transferência",
+      "transferência externa",
+      "mudança de instituição",
+      "taxa de transferência",
+      "transferência",
+      "documentos",
+      "taxa",
+      "matrícula",
+      "histórico"
+    ]
+  },
+  {
+    "id": "pn-23-2017",
+    "norm": "Portaria Normativa MEC nº 23/2017",
+    "category": "Emissão de documentos e regulação",
+    "status": "Vigente — conferir texto compilado",
+    "date": "21/12/2017",
+    "tags": [
+      "histórico final",
+      "diploma",
+      "gratuidade",
+      "serviços educacionais",
+      "regulação"
+    ],
+    "article": "Art. 99, § 4º",
+    "excerpt": "A expedição e o registro do diploma e do histórico escolar final consideram-se incluídos nos serviços educacionais prestados pela instituição.",
+    "summary": "Contém regra relevante sobre expedição e registro de diploma e histórico escolar final.",
+    "impact": "Apoia a definição de quais atos documentais integram os serviços educacionais ordinários.",
+    "procedure": "Consultar junto à Portaria 1.095/2018 e às regras contratuais aplicáveis.",
+    "source": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "taxa de diploma",
+      "taxa de histórico",
+      "cobrança de documento",
+      "serviço educacional",
+      "histórico final",
+      "diploma",
+      "gratuidade",
+      "serviços educacionais",
+      "regulação"
+    ]
+  },
+  {
+    "id": "parecer-379-2004",
+    "norm": "Parecer CNE/CES nº 379/2004",
+    "category": "Histórico escolar e documentos",
+    "status": "Referência técnica — conferir normas posteriores",
+    "date": "2004",
+    "tags": [
+      "histórico escolar",
+      "dados do histórico",
+      "documentação acadêmica",
+      "colação",
+      "reconhecimento"
+    ],
+    "article": "Orientações sobre informações do histórico escolar",
+    "excerpt": "Consolida orientações sobre informações acadêmicas a serem registradas no histórico escolar.",
+    "summary": "É referência tradicional para composição de informações do histórico e aparece nas orientações oficiais do MEC.",
+    "impact": "Ajuda na modelagem e conferência de campos do histórico escolar.",
+    "procedure": "Usar como referência complementar e conferir normas posteriores e especificações digitais.",
+    "source": "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu",
+    "sourceName": "MEC / FAQ SESu",
+    "synonyms": [
+      "campos do histórico",
+      "dados obrigatórios do histórico",
+      "conteúdo do histórico",
+      "histórico completo",
+      "histórico escolar",
+      "dados do histórico",
+      "documentação acadêmica",
+      "colação",
+      "reconhecimento"
+    ]
+  },
+  {
+    "id": "mec-xsd-105",
+    "norm": "Pacote XSD do Diploma Digital — versão 1.05",
+    "category": "Diploma Digital e histórico digital",
+    "status": "Especificação técnica publicada pelo MEC",
+    "date": "2025/2026",
+    "tags": [
+      "XSD",
+      "XML",
+      "histórico escolar digital",
+      "documentação acadêmica",
+      "fiscalização",
+      "currículo escolar"
+    ],
+    "article": "XSDs de Diploma, Documentação Acadêmica e Histórico Escolar",
+    "excerpt": "A especificação define a estrutura sintática do XML do Diploma Digital e de documentos acadêmicos relacionados.",
+    "summary": "É referência técnica para estrutura de dados, validação e integração dos documentos digitais.",
+    "impact": "Afeta geração de XML, validação, integrações sistêmicas e consistência de dados acadêmicos.",
+    "procedure": "Versionar os XSDs utilizados, validar os XMLs e registrar mudanças de leiaute.",
+    "source": "https://www.gov.br/mec/pt-br/diploma-digital/dados",
+    "sourceName": "MEC / Diploma Digital",
+    "synonyms": [
+      "XSD histórico",
+      "XML histórico",
+      "leiaute diploma",
+      "documentação acadêmica XML",
+      "schema diploma",
+      "XSD",
+      "XML",
+      "histórico escolar digital",
+      "documentação acadêmica",
+      "fiscalização",
+      "currículo escolar"
+    ]
+  },
+  {
+    "id": "formacao-rcp4-2024",
+    "norm": "Resolução CNE/CP nº 4/2024",
+    "category": "Formação pedagógica e segunda licenciatura",
+    "status": "Vigente — leitura conjunta com orientações de 2025",
+    "date": "29/05/2024",
+    "tags": [
+      "formação pedagógica",
+      "segunda licenciatura",
+      "licenciatura",
+      "formação de professores",
+      "PPC",
+      "estágio",
+      "extensão"
+    ],
+    "article": "Arts. 15 e 17 e demais dispositivos",
+    "excerpt": "Dispõe sobre as Diretrizes Curriculares Nacionais para a Formação Inicial em nível superior de profissionais do magistério.",
+    "summary": "É a norma central atual para licenciaturas, formação pedagógica para graduados não licenciados e segunda licenciatura.",
+    "impact": "Afeta elegibilidade, desenho curricular, carga horária, estágio, extensão, PPC, registros e documentação de conclusão.",
+    "procedure": "Classificar o tipo de formação, verificar compatibilidade e habilitação pretendida antes de matrícula, conclusão e emissão documental.",
+    "source": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "complementação pedagógica",
+      "formação pedagógica",
+      "segunda licenciatura",
+      "R2",
+      "licenciatura adicional",
+      "formação docente",
+      "licenciatura",
+      "formação de professores",
+      "PPC",
+      "estágio",
+      "extensão"
+    ]
+  },
+  {
+    "id": "formacao-parecer-5-2025",
+    "norm": "Parecer CNE/CP nº 5/2025",
+    "category": "Formação pedagógica e segunda licenciatura",
+    "status": "Homologado — orientações de implantação",
+    "date": "11/03/2025",
+    "tags": [
+      "formação pedagógica",
+      "segunda licenciatura",
+      "implantação",
+      "transição",
+      "CNE",
+      "MEC"
+    ],
+    "article": "Orientações de implantação",
+    "excerpt": "Orienta a implantação das Diretrizes Curriculares Nacionais estabelecidas pela Resolução CNE/CP nº 4, de 29 de maio de 2024.",
+    "summary": "Organiza orientações de implantação e responde dúvidas sobre licenciaturas, formação pedagógica e segunda licenciatura.",
+    "impact": "É especialmente útil para transição curricular, parametrização de oferta e tratamento de dúvidas operacionais.",
+    "procedure": "Consultar junto à Resolução 4/2024 antes de parametrizar ingresso, currículo, transição e conclusão.",
+    "source": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "parecer 5 2025",
+      "implantação resolução 4 2024",
+      "transição formação professores",
+      "formação pedagógica",
+      "segunda licenciatura",
+      "implantação",
+      "transição",
+      "CNE",
+      "MEC"
+    ]
+  },
+  {
+    "id": "formacao-faq-mec-2025",
+    "norm": "FAQ MEC — Formação Pedagógica e Segunda Licenciatura",
+    "category": "Formação pedagógica e segunda licenciatura",
+    "status": "Orientação oficial publicada",
+    "date": "13/11/2025",
+    "tags": [
+      "formação pedagógica",
+      "segunda licenciatura",
+      "1600 horas",
+      "1200 horas",
+      "1800 horas",
+      "carga horária"
+    ],
+    "article": "Pergunta sobre duração mínima",
+    "excerpt": "O MEC informa duração mínima de 2 anos e 1.600 horas para formação pedagógica e remete à Nota Técnica nº 74/2024 para segunda licenciatura.",
+    "summary": "É uma orientação oficial de consulta rápida e aponta a Nota Técnica nº 74/2024 como referência técnica.",
+    "impact": "Ajuda em dúvidas sobre duração e carga horária, sem substituir a resolução e o PPC do curso.",
+    "procedure": "Usar como orientação complementar e confirmar o caso concreto na Resolução 4/2024 e documentos correlatos.",
+    "source": "https://fale-conosco.mec.gov.br/portal/servicos/solicitacao?servico=45852",
+    "sourceName": "MEC / Fale Conosco",
+    "synonyms": [
+      "1600 horas",
+      "carga horária formação pedagógica",
+      "duração formação pedagógica",
+      "segunda licenciatura carga horária",
+      "formação pedagógica",
+      "segunda licenciatura",
+      "1200 horas",
+      "1800 horas",
+      "carga horária"
+    ]
+  },
+  {
+    "id": "formacao-parecer-220-2025",
+    "norm": "Parecer CNE/CES nº 220/2025",
+    "category": "Formação pedagógica e segunda licenciatura",
+    "status": "Documento de consulta — caso concreto",
+    "date": "2025",
+    "tags": [
+      "formação pedagógica",
+      "Pedagogia",
+      "graduados não licenciados",
+      "compatibilidade",
+      "habilitação"
+    ],
+    "article": "Análise sobre formação pedagógica em Pedagogia",
+    "excerpt": "Os programas de formação pedagógica para graduados não licenciados não se destinam à formação de pedagogos.",
+    "summary": "Documento relevante para dúvidas envolvendo formação pedagógica com destino à área de Pedagogia e compatibilidade da formação de origem.",
+    "impact": "Exige atenção especial na análise de elegibilidade e no enquadramento da habilitação pretendida.",
+    "procedure": "Não generalizar a partir de caso concreto; confrontar a situação com a Resolução 4/2024 e orientações do CNE/MEC.",
+    "source": "https://www.gov.br/mec/pt-br/cne/2025/marco/pces220_25.pdf",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "formação pedagógica em pedagogia",
+      "pedagogia formação pedagógica",
+      "compatibilidade curso de origem",
+      "formação pedagógica",
+      "Pedagogia",
+      "graduados não licenciados",
+      "compatibilidade",
+      "habilitação"
+    ]
+  },
+  {
+    "id": "nota-74-2024",
+    "norm": "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES",
+    "category": "Formação pedagógica e segunda licenciatura",
+    "status": "Referência técnica citada pelo MEC",
+    "date": "2024",
+    "tags": [
+      "segunda licenciatura",
+      "Nota Técnica 74",
+      "equivalência",
+      "carga horária",
+      "habilitação"
+    ],
+    "article": "Orientações técnicas sobre segunda licenciatura",
+    "excerpt": "É indicada pelo MEC como referência para informações adicionais sobre segunda licenciatura.",
+    "summary": "Documento técnico para consulta conjunta com a Resolução CNE/CP nº 4/2024 e os materiais orientativos do CNE/MEC.",
+    "impact": "Pode apoiar parametrizações e análise de equivalência, especialmente em casos de segunda licenciatura.",
+    "procedure": "Manter cópia controlada da versão utilizada e registrar a data da conferência.",
+    "source": "https://fale-conosco.mec.gov.br/portal/servicos/solicitacao?servico=45852",
+    "sourceName": "MEC / Fale Conosco",
+    "synonyms": [
+      "NT 74 2024",
+      "equivalência segunda licenciatura",
+      "carga horária segunda licenciatura",
+      "segunda licenciatura",
+      "Nota Técnica 74",
+      "equivalência",
+      "carga horária",
+      "habilitação"
+    ]
+  },
+  {
+    "id": "cne-formacao-docencia",
+    "norm": "CNE — Formação Superior para a Docência na Educação Básica",
+    "category": "Formação pedagógica e segunda licenciatura",
+    "status": "Página oficial de referência",
+    "date": "Atualização 2025",
+    "tags": [
+      "CNE",
+      "licenciatura",
+      "formação pedagógica",
+      "segunda licenciatura",
+      "diretrizes"
+    ],
+    "article": "Índice de pareceres e resoluções",
+    "excerpt": "Reúne pareceres e resoluções relacionados à formação superior para a docência na Educação Básica.",
+    "summary": "Página oficial para localizar rapidamente a cadeia normativa da formação de professores.",
+    "impact": "Facilita a pesquisa de atos correlatos e documentos orientativos.",
+    "procedure": "Usar como ponto de partida e abrir o ato específico antes de aplicar a regra.",
+    "source": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "formação docente",
+      "base normativa licenciaturas",
+      "atos do CNE",
+      "CNE",
+      "licenciatura",
+      "formação pedagógica",
+      "segunda licenciatura",
+      "diretrizes"
+    ]
+  },
+  {
+    "id": "cne-rcp2-2019",
+    "norm": "Resolução CNE/CP nº 2/2019 — BNC-Formação",
+    "category": "Formação de professores — histórico normativo",
+    "status": "Revogada pela Resolução CNE/CP nº 4/2024",
+    "date": "20/12/2019",
+    "tags": [
+      "BNC-Formação",
+      "formação inicial",
+      "licenciatura",
+      "histórico",
+      "transição"
+    ],
+    "article": "Conjunto normativo histórico",
+    "excerpt": "Define Diretrizes Curriculares Nacionais para a Formação Inicial de Professores para a Educação Básica.",
+    "summary": "Norma histórica importante para entender a transição para as DCNs de 2024.",
+    "impact": "Pode ser necessária em auditorias e situações acadêmicas submetidas ao regime anterior.",
+    "procedure": "Não usar como regra atual sem verificar data de ingresso e disposições de transição.",
+    "source": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica",
+    "sourceName": "MEC / CNE",
+    "synonyms": [
+      "BNC Formação",
+      "resolução 2 2019",
+      "norma anterior licenciaturas",
+      "BNC-Formação",
+      "formação inicial",
+      "licenciatura",
+      "histórico",
+      "transição"
+    ]
+  },
+  {
+    "id": "lei-9870",
+    "norm": "Lei nº 9.870/1999 — mensalidades escolares",
+    "category": "Vida acadêmica e direitos do estudante",
+    "status": "Vigente",
+    "date": "23/11/1999",
+    "tags": [
+      "inadimplência",
+      "matrícula",
+      "documentos",
+      "direitos acadêmicos"
+    ],
+    "article": "Regras sobre inadimplência e direitos acadêmicos",
+    "excerpt": "A inadimplência não pode ser utilizada para impedir o estudante de exercer seus direitos acadêmicos durante o período letivo.",
+    "summary": "Importante para orientar a Secretaria sobre acesso a direitos acadêmicos em situações de inadimplência.",
+    "impact": "Afeta atendimento, matrícula, documentos e restrições acadêmicas.",
+    "procedure": "Separar cobrança financeira de direitos acadêmicos, observando as regras legais aplicáveis.",
+    "source": "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm",
+    "sourceName": "Planalto",
+    "synonyms": [
+      "aluno inadimplente",
+      "documento com dívida",
+      "restrição acadêmica",
+      "mensalidade",
+      "inadimplência",
+      "matrícula",
+      "documentos",
+      "direitos acadêmicos"
+    ]
   }
 ]
