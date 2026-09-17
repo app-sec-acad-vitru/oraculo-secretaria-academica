@@ -1,14 +1,15 @@
 import hashlib
 import json
 import re
-import urllib.request
-import urllib.error
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
+
 
 # ============================================================
-# ORÁCULO DA SECRETARIA ACADÊMICA
-# Monitoramento semanal de fontes regulatórias
+# CONFIGURAÇÕES
 # ============================================================
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,616 +17,734 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data.json"
 MANIFEST = ROOT / "update_manifest.json"
 
-MONITOR = ROOT / "monitoring"
-SNAPSHOTS = MONITOR / "snapshots"
-REPORTS = MONITOR / "reports"
+MONITORING = ROOT / "monitoring"
+SNAPSHOTS = MONITORING / "snapshots"
+REPORTS = MONITORING / "reports"
+LATEST = MONITORING / "latest.json"
 
-MONITOR.mkdir(exist_ok=True)
+MONITORING.mkdir(exist_ok=True)
 SNAPSHOTS.mkdir(exist_ok=True)
 REPORTS.mkdir(exist_ok=True)
 
+
+# ============================================================
+# CONFIGURAÇÃO DE ACESSO
+# ============================================================
+
+HEADERS_LIST = [
+    {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/140.0 Safari/537.36"
+        ),
+        "Accept": (
+            "text/html,application/xhtml+xml,application/xml;"
+            "q=0.9,image/avif,image/webp,*/*;q=0.8"
+        ),
+        "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
+        "Connection": "close",
+    },
+    {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "*/*",
+        "Connection": "close",
+    },
+]
+
+
+MAX_RETRIES = 3
+RETRY_DELAY = 4
 TIMEOUT = 30
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 "
-        "(compatible; Oraculo-Secretaria-Academica/1.0; "
-        "+https://github.com/app-sec-acad-vitru/oraculo-secretaria-academica)"
-    ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
-}
-
 
 # ============================================================
-# CONSULTA À FONTE
+# FUNÇÕES AUXILIARES
 # ============================================================
 
-def fetch(url):
+def now_iso():
+    return datetime.now(timezone.utc).isoformat()
 
-    request = urllib.request.Request(
-        url,
-        headers=HEADERS
+
+def safe_filename(text):
+    text = re.sub(r"[^a-zA-Z0-9_-]+", "_", text)
+    return text.strip("_")[:100]
+
+
+def normalize_content(content):
+    """
+    Remove elementos que normalmente provocam falso positivo:
+    scripts, estilos, comentários e espaços excessivos.
+    """
+
+    content = re.sub(
+        r"<script\b[^>]*>.*?</script>",
+        "",
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
     )
 
-    try:
+    content = re.sub(
+        r"<style\b[^>]*>.*?</style>",
+        "",
+        content,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
 
-        with urllib.request.urlopen(
-            request,
-            timeout=TIMEOUT
-        ) as response:
+    content = re.sub(
+        r"<!--.*?-->",
+        "",
+        content,
+        flags=re.DOTALL,
+    )
 
-            raw = response.read()
+    # Remove espaços repetidos
+    content = re.sub(r"\s+", " ", content)
 
-            content_type = response.headers.get(
-                "Content-Type",
-                ""
-            )
+    return content.strip()
 
-            charset = "utf-8"
 
-            match = re.search(
-                r"charset=([\w-]+)",
-                content_type,
-                re.I
-            )
+def fetch_url(url):
+    """
+    Tenta acessar a fonte várias vezes usando headers diferentes.
+    Retorna estrutura padronizada.
+    """
 
-            if match:
-                charset = match.group(1)
+    last_error = None
 
-            try:
+    for attempt in range(1, MAX_RETRIES + 1):
 
-                text = raw.decode(
+        headers = HEADERS_LIST[(attempt - 1) % len(HEADERS_LIST)]
+
+        try:
+
+            request = Request(url, headers=headers)
+
+            with urlopen(request, timeout=TIMEOUT) as response:
+
+                raw = response.read()
+
+                charset = response.headers.get_content_charset() or "utf-8"
+
+                content = raw.decode(
                     charset,
                     errors="replace"
                 )
 
-            except LookupError:
+                return {
+                    "success": True,
+                    "status": response.status,
+                    "content": content,
+                    "attempt": attempt,
+                    "error": None,
+                }
 
-                text = raw.decode(
-                    "utf-8",
-                    errors="replace"
-                )
+        except HTTPError as error:
 
-            return {
-                "success": True,
-                "status": response.status,
-                "text": text,
-                "error": None
-            }
+            last_error = (
+                f"HTTP {error.code} - {error.reason}"
+            )
 
-    except urllib.error.HTTPError as error:
+        except URLError as error:
 
-        return {
-            "success": False,
-            "status": error.code,
-            "text": "",
-            "error": f"HTTP {error.code}: {error.reason}"
-        }
+            last_error = (
+                f"URL Error: {error.reason}"
+            )
 
-    except urllib.error.URLError as error:
+        except TimeoutError:
 
-        return {
-            "success": False,
-            "status": None,
-            "text": "",
-            "error": f"URL Error: {error.reason}"
-        }
+            last_error = "Timeout"
 
-    except Exception as error:
+        except Exception as error:
 
-        return {
-            "success": False,
-            "status": None,
-            "text": "",
-            "error": str(error)
-        }
+            last_error = (
+                f"{type(error).__name__}: {error}"
+            )
+
+        if attempt < MAX_RETRIES:
+            time.sleep(RETRY_DELAY)
+
+    return {
+        "success": False,
+        "status": None,
+        "content": None,
+        "attempt": MAX_RETRIES,
+        "error": last_error,
+    }
 
 
 # ============================================================
-# NORMALIZAÇÃO
+# CARREGAR FONTES
 # ============================================================
 
-def normalize(text):
+if not DATA.exists():
 
-    text = re.sub(
-        r"\s+",
-        " ",
-        text
+    raise FileNotFoundError(
+        f"Arquivo não encontrado: {DATA}"
     )
 
-    return text.strip()
+
+with DATA.open(
+    "r",
+    encoding="utf-8"
+) as file:
+
+    data = json.load(file)
 
 
 # ============================================================
-# PROCESSAMENTO
+# IDENTIFICAR FONTES ÚNICAS
 # ============================================================
 
-def main():
+sources = {}
 
-    now = datetime.now(timezone.utc)
+for item in data:
 
-    checked_at = now.isoformat().replace(
-        "+00:00",
-        "Z"
+    if not isinstance(item, dict):
+        continue
+
+    url = item.get("source")
+
+    if not url:
+        continue
+
+    name = (
+        item.get("sourceName")
+        or item.get("title")
+        or url
     )
 
-    # ========================================================
-    # CARREGA DATA.JSON
-    # ========================================================
+    sources[url] = name
 
-    if not DATA.exists():
 
-        raise FileNotFoundError(
-            "Arquivo data.json não encontrado."
-        )
+print("")
+print("=" * 70)
+print("MONITORAMENTO REGULATÓRIO")
+print("=" * 70)
+print(f"Fontes registradas: {len(sources)}")
+print("")
 
-    data = json.loads(
-        DATA.read_text(
+
+# ============================================================
+# CARREGAR ÚLTIMO RESULTADO
+# ============================================================
+
+previous = {}
+
+if LATEST.exists():
+
+    try:
+
+        with LATEST.open(
+            "r",
             encoding="utf-8"
-        )
-    )
+        ) as file:
 
-    # ========================================================
-    # IDENTIFICA FONTES
-    # ========================================================
+            previous_data = json.load(file)
 
-    urls = {}
-
-    for item in data:
-
-        url = item.get("source")
-
-        if url:
-
-            source_name = item.get(
-                "sourceName",
-                "Fonte oficial"
-            )
-
-            urls[url] = source_name
-
-    total_sources = len(urls)
-
-    print("")
-    print("========================================")
-    print("ORÁCULO DA SECRETARIA ACADÊMICA")
-    print("MONITORAMENTO REGULATÓRIO")
-    print("========================================")
-    print("")
-    print(
-        f"Fontes cadastradas no data.json: {total_sources}"
-    )
-    print("")
-
-    # ========================================================
-    # CARREGA ÚLTIMA VERIFICAÇÃO
-    # ========================================================
-
-    previous_file = MONITOR / "latest.json"
-
-    previous = {}
-
-    if previous_file.exists():
-
-        try:
-
-            previous = json.loads(
-                previous_file.read_text(
-                    encoding="utf-8"
-                )
-            )
-
-        except Exception:
-
-            previous = {}
-
-    # ========================================================
-    # RESULTADOS
-    # ========================================================
-
-    results = []
-
-    successful = []
-
-    changes = []
-
-    errors = []
-
-    # ========================================================
-    # VERIFICAÇÃO DAS FONTES
-    # ========================================================
-
-    for url, source_name in sorted(
-        urls.items()
-    ):
-
-        print(
-            f"Verificando: {source_name}"
-        )
-
-        response = fetch(url)
-
-        result = {
-
-            "source": source_name,
-
-            "url": url,
-
-            "checked_at": checked_at,
-
-            "http_status": response["status"],
-
-            "ok": response["success"],
-
-            "changed_since_last_check": False
-
-        }
-
-        # ----------------------------------------------------
-        # FONTE ACESSÍVEL
-        # ----------------------------------------------------
-
-        if response["success"]:
-
-            normalized = normalize(
-                response["text"]
-            )
-
-            digest = hashlib.sha256(
-                normalized.encode(
-                    "utf-8"
-                )
-            ).hexdigest()
-
-            result["sha256"] = digest
-
-            old = previous.get(
-                url,
+            previous = previous_data.get(
+                "sources",
                 {}
             )
 
-            if (
-                old.get("sha256")
-                and old["sha256"] != digest
-            ):
+    except Exception:
 
-                result[
-                    "changed_since_last_check"
-                ] = True
+        previous = {}
 
-                changes.append(
-                    result
-                )
 
-            successful.append(
-                result
-            )
+# ============================================================
+# ESTRUTURAS DE RESULTADO
+# ============================================================
 
-            # ------------------------------------------------
-            # SNAPSHOT
-            # ------------------------------------------------
+verified = []
+changes = []
+errors = []
+recovered = []
 
-            snapshot_name = (
-                hashlib.sha256(
-                    url.encode("utf-8")
-                ).hexdigest()[:16]
-                + ".txt"
-            )
+current_sources = {}
 
-            snapshot_file = (
-                SNAPSHOTS
-                / snapshot_name
-            )
 
-            snapshot_file.write_text(
-                normalized[:500000],
-                encoding="utf-8"
-            )
+# ============================================================
+# MONITORAR FONTES
+# ============================================================
 
-        # ----------------------------------------------------
-        # ERRO
-        # ----------------------------------------------------
+for index, (url, name) in enumerate(
+    sources.items(),
+    start=1
+):
 
-        else:
-
-            result["error"] = response["error"]
-
-            errors.append(
-                result
-            )
-
-        results.append(
-            result
-        )
-
-    # ========================================================
-    # SALVA ÚLTIMO RESULTADO
-    # ========================================================
-
-    latest = {}
-
-    for result in results:
-
-        latest[
-            result["url"]
-        ] = result
-
-    previous_file.write_text(
-
-        json.dumps(
-            latest,
-            ensure_ascii=False,
-            indent=2
-        ),
-
-        encoding="utf-8"
+    print(
+        f"[{index}/{len(sources)}] {name}"
     )
 
-    # ========================================================
-    # RELATÓRIO
-    # ========================================================
+    result = fetch_url(url)
 
-    report_name = (
-        now.strftime(
-            "%Y-%m-%d"
+    # --------------------------------------------------------
+    # ERRO DE ACESSO
+    # --------------------------------------------------------
+
+    if not result["success"]:
+
+        print(
+            f"   ⚠️ ERRO: {result['error']}"
         )
-        + ".md"
+
+        previous_source = previous.get(url)
+
+        errors.append({
+            "name": name,
+            "url": url,
+            "error": result["error"],
+            "attempts": result["attempt"],
+        })
+
+        # Mantém o último snapshot válido.
+        if previous_source:
+
+            current_sources[url] = previous_source
+
+        continue
+
+
+    # --------------------------------------------------------
+    # PROCESSAMENTO
+    # --------------------------------------------------------
+
+    normalized = normalize_content(
+        result["content"]
     )
 
-    report = [
+    content_hash = hashlib.sha256(
+        normalized.encode("utf-8")
+    ).hexdigest()
 
-        f"# Verificação regulatória — "
-        f"{now.strftime('%d/%m/%Y')}",
 
-        "",
+    previous_source = previous.get(url)
 
-        f"Executada em: `{checked_at}`",
+    previous_hash = None
 
-        "",
+    if previous_source:
 
-        "## Resumo",
-
-        "",
-
-        f"- Fontes cadastradas: **{total_sources}**",
-
-        f"- Fontes verificadas com sucesso: **{len(successful)}**",
-
-        f"- Alterações detectadas: **{len(changes)}**",
-
-        f"- Erros de acesso: **{len(errors)}**",
-
-        "",
-
-        "> Uma alteração detectada em uma página não significa, "
-        "por si só, alteração normativa. Toda mudança deve ser "
-        "analisada no conteúdo oficial antes da atualização "
-        "da base do Oráculo.",
-
-        "",
-
-        "## Fontes verificadas",
-
-        ""
-    ]
-
-    # ========================================================
-    # FONTES COM SUCESSO
-    # ========================================================
-
-    for result in successful:
-
-        if result.get(
-            "changed_since_last_check"
-        ):
-
-            flag = "⚠️ ALTERAÇÃO"
-
-        else:
-
-            flag = "🟢 OK"
-
-        report.append(
-
-            f"- {flag} — "
-            f"{result['source']} — "
-            f"{result['url']}"
-
+        previous_hash = previous_source.get(
+            "hash"
         )
 
-    # ========================================================
-    # FONTES COM ERRO
-    # ========================================================
 
-    if errors:
+    # --------------------------------------------------------
+    # IDENTIFICAR MUDANÇA
+    # --------------------------------------------------------
 
-        report.extend(
-            [
-                "",
-                "## ⚠️ Fontes com erro de acesso",
-                ""
-            ]
-        )
-
-        for result in errors:
-
-            report.append(
-
-                f"- 🔴 **{result['source']}**"
-            )
-
-            report.append(
-
-                f"  - URL: {result['url']}"
-            )
-
-            report.append(
-
-                f"  - Erro: {result['error']}"
-            )
-
-            report.append("")
-
-    # ========================================================
-    # SALVA RELATÓRIO
-    # ========================================================
-
-    report_file = (
-        REPORTS
-        / report_name
+    changed = (
+        previous_hash is not None
+        and previous_hash != content_hash
     )
 
-    report_file.write_text(
 
-        "\n".join(report)
-        + "\n",
+    # --------------------------------------------------------
+    # IDENTIFICAR RECUPERAÇÃO
+    # --------------------------------------------------------
 
-        encoding="utf-8"
-    )
+    was_error = False
 
-    # ========================================================
-    # ATUALIZA MANIFEST
-    # ========================================================
+    for old_error in previous_data.get(
+        "errors",
+        []
+    ) if LATEST.exists() else []:
 
-    if MANIFEST.exists():
+        if old_error.get("url") == url:
 
-        manifest = json.loads(
+            was_error = True
+            break
 
-            MANIFEST.read_text(
-                encoding="utf-8"
-            )
 
-        )
+    if was_error:
+
+        recovered.append({
+            "name": name,
+            "url": url,
+        })
+
+
+    # --------------------------------------------------------
+    # REGISTRAR MUDANÇA
+    # --------------------------------------------------------
+
+    if changed:
+
+        changes.append({
+            "name": name,
+            "url": url,
+            "previous_hash": previous_hash,
+            "current_hash": content_hash,
+        })
+
+        print("   🔎 ALTERAÇÃO DETECTADA")
 
     else:
+
+        print("   ✅ OK")
+
+
+    # --------------------------------------------------------
+    # SNAPSHOT
+    # --------------------------------------------------------
+
+    source_id = safe_filename(
+        name
+    )
+
+    snapshot = {
+        "name": name,
+        "url": url,
+        "checked_at": now_iso(),
+        "hash": content_hash,
+        "status": result["status"],
+    }
+
+    snapshot_file = (
+        SNAPSHOTS /
+        f"{source_id}.json"
+    )
+
+    with snapshot_file.open(
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        json.dump(
+            snapshot,
+            file,
+            ensure_ascii=False,
+            indent=2
+        )
+
+
+    current_sources[url] = snapshot
+
+    verified.append({
+        "name": name,
+        "url": url,
+        "status": result["status"],
+        "hash": content_hash,
+    })
+
+
+# ============================================================
+# RESULTADO FINAL
+# ============================================================
+
+checked_at = now_iso()
+
+
+result_data = {
+    "checked_at": checked_at,
+
+    "summary": {
+        "sources_registered": len(sources),
+        "sources_verified": len(verified),
+        "changes_detected": len(changes),
+        "access_errors": len(errors),
+        "recovered": len(recovered),
+    },
+
+    "sources": current_sources,
+
+    "changes": changes,
+
+    "errors": errors,
+
+    "recovered": recovered,
+}
+
+
+# ============================================================
+# SALVAR LATEST.JSON
+# ============================================================
+
+with LATEST.open(
+    "w",
+    encoding="utf-8"
+) as file:
+
+    json.dump(
+        result_data,
+        file,
+        ensure_ascii=False,
+        indent=2
+    )
+
+
+# ============================================================
+# RELATÓRIO MARKDOWN
+# ============================================================
+
+today = datetime.now(
+    timezone.utc
+).strftime("%Y-%m-%d")
+
+
+report_file = (
+    REPORTS /
+    f"{today}.md"
+)
+
+
+report = []
+
+report.append(
+    f"# Monitoramento Regulatório — {today}"
+)
+
+report.append("")
+
+report.append(
+    "## Resumo"
+)
+
+report.append("")
+
+report.append(
+    f"- Fontes registradas: **{len(sources)}**"
+)
+
+report.append(
+    f"- Fontes verificadas: **{len(verified)}**"
+)
+
+report.append(
+    f"- Alterações detectadas: **{len(changes)}**"
+)
+
+report.append(
+    f"- Erros de acesso: **{len(errors)}**"
+)
+
+report.append(
+    f"- Fontes recuperadas: **{len(recovered)}**"
+)
+
+report.append("")
+
+
+# ------------------------------------------------------------
+# ALTERAÇÕES
+# ------------------------------------------------------------
+
+if changes:
+
+    report.append(
+        "## 🔎 Alterações detectadas"
+    )
+
+    report.append("")
+
+    for item in changes:
+
+        report.append(
+            f"- **{item['name']}**"
+        )
+
+        report.append(
+            f"  - {item['url']}"
+        )
+
+    report.append("")
+
+
+# ------------------------------------------------------------
+# ERROS
+# ------------------------------------------------------------
+
+if errors:
+
+    report.append(
+        "## ⚠️ Erros de acesso"
+    )
+
+    report.append("")
+
+    for item in errors:
+
+        report.append(
+            f"- **{item['name']}**"
+        )
+
+        report.append(
+            f"  - URL: {item['url']}"
+        )
+
+        report.append(
+            f"  - Erro: {item['error']}"
+        )
+
+    report.append("")
+
+
+# ------------------------------------------------------------
+# RECUPERADAS
+# ------------------------------------------------------------
+
+if recovered:
+
+    report.append(
+        "## 🔄 Fontes recuperadas"
+    )
+
+    report.append("")
+
+    for item in recovered:
+
+        report.append(
+            f"- **{item['name']}** — {item['url']}"
+        )
+
+    report.append("")
+
+
+# ------------------------------------------------------------
+# STATUS
+# ------------------------------------------------------------
+
+if not changes and not errors:
+
+    report.append(
+        "## ✅ Status"
+    )
+
+    report.append("")
+
+    report.append(
+        "Todas as fontes foram verificadas sem "
+        "alterações ou erros de acesso."
+    )
+
+
+with report_file.open(
+    "w",
+    encoding="utf-8"
+) as file:
+
+    file.write(
+        "\n".join(report)
+    )
+
+
+# ============================================================
+# ATUALIZAR MANIFEST
+# ============================================================
+
+manifest = {}
+
+if MANIFEST.exists():
+
+    try:
+
+        with MANIFEST.open(
+            "r",
+            encoding="utf-8"
+        ) as file:
+
+            manifest = json.load(file)
+
+    except Exception:
 
         manifest = {}
 
-    manifest[
-        "verified_at"
-    ] = now.strftime(
-        "%Y-%m-%d"
+
+manifest.update({
+
+    "verified_at": checked_at,
+
+    "last_weekly_check": checked_at,
+
+    "sources_registered": len(sources),
+
+    "sources_verified": len(verified),
+
+    "last_weekly_changes_detected": len(changes),
+
+    "last_weekly_access_errors": len(errors),
+
+})
+
+
+with MANIFEST.open(
+    "w",
+    encoding="utf-8"
+) as file:
+
+    json.dump(
+        manifest,
+        file,
+        ensure_ascii=False,
+        indent=2
     )
 
-    manifest[
-        "last_weekly_check"
-    ] = checked_at
 
-    manifest[
-        "sources_registered"
-    ] = total_sources
+# ============================================================
+# RESUMO NO GITHUB ACTIONS
+# ============================================================
 
-    manifest[
-        "sources_verified"
-    ] = len(successful)
+print("")
+print("=" * 70)
+print("RESULTADO")
+print("=" * 70)
 
-    manifest[
-        "last_weekly_changes_detected"
-    ] = len(changes)
+print(
+    f"📚 Fontes registradas: {len(sources)}"
+)
 
-    manifest[
-        "last_weekly_access_errors"
-    ] = len(errors)
+print(
+    f"✅ Fontes verificadas: {len(verified)}"
+)
 
-    MANIFEST.write_text(
+print(
+    f"🔎 Alterações detectadas: {len(changes)}"
+)
 
-        json.dumps(
-            manifest,
-            ensure_ascii=False,
-            indent=2
-        )
-        + "\n",
+print(
+    f"⚠️ Erros de acesso: {len(errors)}"
+)
 
-        encoding="utf-8"
-    )
+print(
+    f"🔄 Fontes recuperadas: {len(recovered)}"
+)
 
-    # ========================================================
-    # RESULTADO FINAL
-    # ========================================================
+print("")
 
-    print("")
-    print("========================================")
-    print("VERIFICAÇÃO CONCLUÍDA")
-    print("========================================")
 
-    print(
-        f"Fontes cadastradas: {total_sources}"
-    )
+if changes:
 
-    print(
-        f"Fontes verificadas com sucesso: {len(successful)}"
-    )
+    print("ALTERAÇÕES:")
 
-    print(
-        f"Alterações detectadas: {len(changes)}"
-    )
+    for item in changes:
 
-    print(
-        f"Erros de acesso: {len(errors)}"
-    )
-
-    print("========================================")
-
-    # ========================================================
-    # LISTA DE ERROS
-    # ========================================================
-
-    if errors:
-
-        print("")
-        print("FONTES COM ERRO:")
-        print("")
-
-        for result in errors:
-
-            print(
-                f"🔴 {result['source']}"
-            )
-
-            print(
-                f"   URL: {result['url']}"
-            )
-
-            print(
-                f"   Erro: {result['error']}"
-            )
-
-            print("")
-
-    # ========================================================
-    # ALTERAÇÕES
-    # ========================================================
-
-    if changes:
-
-        print("")
-        print("ALTERAÇÕES DETECTADAS:")
-        print("")
-
-        for result in changes:
-
-            print(
-                f"⚠️ {result['source']}"
-            )
-
-            print(
-                f"   {result['url']}"
-            )
-
-    else:
-
-        print("")
         print(
-            "Nenhuma alteração detectada nas fontes acessíveis."
+            f" - {item['name']}"
+        )
+
+        print(
+            f"   {item['url']}"
         )
 
     print("")
 
 
-# ============================================================
-# EXECUÇÃO
-# ============================================================
+if errors:
 
-if __name__ == "__main__":
+    print("ERROS:")
 
-    main()
+    for item in errors:
+
+        print(
+            f" - {item['name']}"
+        )
+
+        print(
+            f"   {item['error']}"
+        )
+
+    print("")
+
+
+print("=" * 70)
