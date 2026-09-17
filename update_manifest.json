@@ -1,0 +1,23 @@
+{
+  "app": "Oráculo da Secretaria Acadêmica",
+  "visual_identity": "Vitru Education / UNIASSELVI / UniCesumar",
+  "repository": "OneDrive/SharePoint",
+  "update_day": "Monday",
+  "sources": [
+    "Planalto",
+    "MEC",
+    "CNE",
+    "INEP",
+    "DOU",
+    "CONARQ"
+  ],
+  "brand_source": "https://www.vitru.com.br/pt_BR",
+  "workflow": [
+    "scan",
+    "validate",
+    "compare",
+    "update_data",
+    "regenerate_index",
+    "create_changelog"
+  ]
+}

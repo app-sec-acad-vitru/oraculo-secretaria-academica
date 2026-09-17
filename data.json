@@ -1,0 +1,423 @@
+{
+  "app": "Oráculo da Secretaria Acadêmica",
+  "version": "0.1.0",
+  "last_verified": "2026-09-16",
+  "disclaimer": "Base de apoio operacional. Em caso de conflito, prevalecem o texto oficial vigente, atos posteriores, atos regulatórios da IES/curso e orientação jurídica/regulatória competente.",
+  "laws": [
+    {
+      "id": "ldb-9394",
+      "categoria": "Marco Geral",
+      "icone": "🏛️",
+      "titulo": "Lei nº 9.394/1996 — LDB",
+      "tema": "Diretrizes e bases da educação nacional",
+      "tags": [
+        "LDB",
+        "diploma",
+        "educação superior",
+        "transferência",
+        "avaliação",
+        "frequência"
+      ],
+      "artigos": "Arts. 43–57; destaque para art. 48.",
+      "trecho": "Art. 48 — Os diplomas de cursos superiores reconhecidos, quando registrados, terão validade nacional como prova da formação recebida por seu titular.",
+      "pontos": [
+        "Define a base legal da educação superior brasileira.",
+        "O art. 48 é central para diploma e registro.",
+        "A Secretaria deve relacionar a vida acadêmica ao curso, currículo e ato regulatório aplicável.",
+        "Regras institucionais devem ser compatíveis com a LDB e com a regulamentação do MEC/CNE."
+      ],
+      "impacto": "Matrícula, transferência, conclusão, documentos acadêmicos e diploma.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l9394.htm"
+    },
+    {
+      "id": "dec-9235",
+      "categoria": "Regulação e e-MEC",
+      "icone": "🏢",
+      "titulo": "Decreto nº 9.235/2017",
+      "tema": "Regulação, supervisão e avaliação da educação superior",
+      "tags": [
+        "credenciamento",
+        "reconhecimento",
+        "e-MEC",
+        "acervo",
+        "Censo",
+        "diploma"
+      ],
+      "artigos": "Arts. 21, 27, 99, 100 e dispositivos sobre acervo e informações acadêmicas.",
+      "trecho": "A instituição deve manter seu acervo acadêmico e prestar as informações exigidas pelos sistemas oficiais de regulação e avaliação.",
+      "pontos": [
+        "Estrutura a regulação, supervisão e avaliação das IES e cursos do sistema federal.",
+        "A regularidade do curso e da IES é elemento de contexto para os atos acadêmicos.",
+        "A mantenedora responde pela guarda e gestão do acervo acadêmico.",
+        "A IES deve manter informações atualizadas e prestar dados aos órgãos oficiais."
+      ],
+      "impacto": "Atos regulatórios, acervo, Censo, e-MEC, conclusão e diploma.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm"
+    },
+    {
+      "id": "port-1095",
+      "categoria": "Diploma e Registro",
+      "icone": "🎓",
+      "titulo": "Portaria MEC nº 1.095/2018",
+      "tema": "Expedição e registro de diplomas de graduação",
+      "tags": [
+        "diploma",
+        "registro",
+        "expedição",
+        "segunda via",
+        "registro de diploma"
+      ],
+      "artigos": "Arts. 1º–23; destaque para regras de expedição, registro e publicidade do registro.",
+      "trecho": "Dispõe sobre a expedição e o registro de diplomas de cursos superiores de graduação no âmbito do sistema federal de ensino.",
+      "pontos": [
+        "Define procedimentos para expedição e registro.",
+        "Estabelece responsabilidades da IES expedidora e da registradora.",
+        "Traz requisitos e controles do registro.",
+        "É referência operacional para o setor de Registro de Diplomas."
+      ],
+      "impacto": "Conclusão, expedição, registro, segunda via e controle de diplomas.",
+      "fonte": "https://www.in.gov.br/web/dou/-/portaria-n-1.095-de-25-de-outubro-de-2018-47330016"
+    },
+    {
+      "id": "port-554",
+      "categoria": "Diploma Digital",
+      "icone": "💻",
+      "titulo": "Portaria MEC nº 554/2019",
+      "tema": "Diploma digital de graduação",
+      "tags": [
+        "diploma digital",
+        "XML",
+        "assinatura digital",
+        "QR Code",
+        "ICP-Brasil"
+      ],
+      "artigos": "Normas de emissão, registro e armazenamento digital; complementada por atos técnicos posteriores.",
+      "trecho": "Regulamenta a emissão e o registro do diploma digital das instituições de educação superior integrantes do sistema federal de ensino.",
+      "pontos": [
+        "Estabelece parâmetros para emissão e registro em meio digital.",
+        "Exige observância dos padrões técnicos definidos pelo MEC.",
+        "Relaciona documento digital, assinatura, integridade e validação.",
+        "Deve ser lida em conjunto com a IN SESu nº 1/2020 e atualizações."
+      ],
+      "impacto": "Diploma Digital, XML, validação, integração com sistemas e registro.",
+      "fonte": "https://www.gov.br/mec/pt-br/diploma-digital"
+    },
+    {
+      "id": "port-70-2025",
+      "categoria": "Diploma Digital",
+      "icone": "🆕",
+      "titulo": "Portaria MEC nº 70/2025",
+      "tema": "Atualização do escopo do Diploma Digital",
+      "tags": [
+        "2025",
+        "diploma digital",
+        "pós-graduação stricto sensu",
+        "residência em saúde"
+      ],
+      "artigos": "Portaria de 24/01/2025 e alterações no regime do diploma/documentos digitais.",
+      "trecho": "Atualiza a regulamentação do diploma digital para alcançar novas modalidades de documentos acadêmicos.",
+      "pontos": [
+        "É referência recente para a expansão do escopo do diploma digital.",
+        "A página oficial do MEC informa obrigatoriedade para graduação a partir de 01/07/2025.",
+        "Para pós-graduação stricto sensu e certificados de residência em saúde, o MEC informa obrigatoriedade a partir de 02/01/2026.",
+        "Exige atenção permanente às versões técnicas publicadas pelo MEC."
+      ],
+      "impacto": "Diplomas e certificados digitais; sistemas acadêmicos e registro.",
+      "fonte": "https://www.gov.br/mec/pt-br/diploma-digital"
+    },
+    {
+      "id": "port-315",
+      "categoria": "Acervo Acadêmico",
+      "icone": "🗄️",
+      "titulo": "Portaria MEC nº 315/2018",
+      "tema": "Acervo acadêmico e guarda documental",
+      "tags": [
+        "acervo",
+        "guarda",
+        "documentos",
+        "descredenciamento",
+        "preservação"
+      ],
+      "artigos": "Dispositivos sobre constituição, gestão, guarda e responsabilidade pelo acervo acadêmico.",
+      "trecho": "Estabelece regras para a guarda e gestão do acervo acadêmico das instituições de educação superior.",
+      "pontos": [
+        "Define responsabilidades sobre o acervo acadêmico.",
+        "Conecta documentos acadêmicos à comprovação da trajetória do estudante.",
+        "É referência para governança documental e continuidade do acervo.",
+        "Deve ser lida junto das regras posteriores de conversão para meio digital."
+      ],
+      "impacto": "Arquivo, histórico, documentos, auditoria e continuidade institucional.",
+      "fonte": "https://www.gov.br/mec/pt-br"
+    },
+    {
+      "id": "port-360",
+      "categoria": "Acervo Acadêmico Digital",
+      "icone": "📂",
+      "titulo": "Portaria MEC nº 360/2022",
+      "tema": "Produção e manutenção do acervo acadêmico em meio digital",
+      "tags": [
+        "2022",
+        "acervo digital",
+        "nato-digital",
+        "digitalização",
+        "documento"
+      ],
+      "artigos": "Art. 1º e seguintes; regras para produção e conversão do acervo.",
+      "trecho": "Dispõe sobre a conversão do acervo acadêmico para o meio digital e sobre a produção de documentos acadêmicos em meio digital.",
+      "pontos": [
+        "É marco para a transformação da Secretaria em Secretaria Digital.",
+        "Documentos integrantes do acervo devem seguir o regime digital definido pela norma.",
+        "Exige integração entre processo acadêmico, documento e preservação.",
+        "Deve ser aplicada junto da Portaria MEC nº 613/2022."
+      ],
+      "impacto": "Secretaria Digital, documentos, processos, GED e acervo.",
+      "fonte": "https://www.in.gov.br/"
+    },
+    {
+      "id": "port-613",
+      "categoria": "Acervo Acadêmico Digital",
+      "icone": "🔐",
+      "titulo": "Portaria MEC nº 613/2022",
+      "tema": "Conversão e preservação de documentos do acervo acadêmico digital",
+      "tags": [
+        "RDC-Arq",
+        "ICP-Brasil",
+        "metadados",
+        "preservação",
+        "digitalização"
+      ],
+      "artigos": "Arts. 1º–10.",
+      "trecho": "Art. 4º — O documento digitalizado deverá ser assinado digitalmente, com certificação digital no padrão ICP-Brasil, para garantir autoria e integridade.",
+      "pontos": [
+        "Regulamenta o art. 4º da Portaria MEC nº 360/2022.",
+        "Define procedimentos gerais de conversão e preservação.",
+        "Exige metadados mínimos e assinatura digital nos casos previstos.",
+        "Prevê RDC-Arq para IES do sistema federal e cópia externa de segurança.",
+        "Relaciona preservação à temporalidade e às regras arquivísticas."
+      ],
+      "impacto": "Digitalização, GED, preservação, auditoria e segurança documental.",
+      "fonte": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19/08/2022&jornal=515&pagina=52"
+    },
+    {
+      "id": "dec-10278",
+      "categoria": "Digitalização",
+      "icone": "🖨️",
+      "titulo": "Decreto nº 10.278/2020",
+      "tema": "Requisitos técnicos para digitalização",
+      "tags": [
+        "digitalização",
+        "metadados",
+        "PDF/A",
+        "integridade",
+        "rastreabilidade"
+      ],
+      "artigos": "Arts. 1º–13; Anexos I e II.",
+      "trecho": "Art. 1º — Estabelece técnica e requisitos para digitalização de documentos públicos ou privados, para que produzam os mesmos efeitos legais dos originais.",
+      "pontos": [
+        "Define requisitos técnicos de digitalização.",
+        "Exige integridade, confiabilidade, rastreabilidade e auditabilidade.",
+        "Define metadados mínimos.",
+        "Traz padrões técnicos de resolução e formatos no Anexo I.",
+        "É referência complementar à Portaria MEC nº 613/2022."
+      ],
+      "impacto": "Digitalização de documentos apresentados pelos estudantes e acervo.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10278.htm"
+    },
+    {
+      "id": "lgpd-13709",
+      "categoria": "LGPD e Privacidade",
+      "icone": "🛡️",
+      "titulo": "Lei nº 13.709/2018 — LGPD",
+      "tema": "Proteção de dados pessoais",
+      "tags": [
+        "LGPD",
+        "CPF",
+        "dados pessoais",
+        "dados sensíveis",
+        "acesso",
+        "sigilo"
+      ],
+      "artigos": "Arts. 1º–7º, 11, 18, 37–46, entre outros.",
+      "trecho": "Art. 1º — Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, para proteger direitos fundamentais de liberdade e privacidade.",
+      "pontos": [
+        "Aplica-se ao tratamento de dados pessoais físicos e digitais.",
+        "A Secretaria deve aplicar finalidade, necessidade, segurança e governança.",
+        "Dados de saúde, biométricos e outros definidos em lei possuem tratamento especial.",
+        "Controle de acesso e compartilhamento deve ser baseado em finalidade e autorização adequada.",
+        "Logs e trilhas de auditoria são relevantes para governança."
+      ],
+      "impacto": "Matrícula, documentos, histórico, atendimento, sistemas e compartilhamento.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+    },
+    {
+      "id": "sinaes-10861",
+      "categoria": "Avaliação, ENADE e INEP",
+      "icone": "📊",
+      "titulo": "Lei nº 10.861/2004 — SINAES",
+      "tema": "Avaliação da educação superior e ENADE",
+      "tags": [
+        "SINAES",
+        "ENADE",
+        "INEP",
+        "regularidade",
+        "avaliação"
+      ],
+      "artigos": "Arts. 1º–5º; destaque para art. 5º.",
+      "trecho": "Art. 5º — A avaliação do desempenho dos estudantes dos cursos de graduação será realizada mediante aplicação do ENADE.",
+      "pontos": [
+        "Institui o SINAES.",
+        "Integra avaliação institucional, avaliação de cursos e desempenho discente.",
+        "O ENADE é parte do sistema de avaliação.",
+        "A Secretaria precisa garantir consistência dos dados acadêmicos usados na identificação e regularidade dos estudantes."
+      ],
+      "impacto": "ENADE, conclusão, histórico, Censo e qualidade cadastral.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm"
+    },
+    {
+      "id": "estagio-11788",
+      "categoria": "Estágio",
+      "icone": "🧑‍💼",
+      "titulo": "Lei nº 11.788/2008 — Lei do Estágio",
+      "tema": "Estágio obrigatório e não obrigatório",
+      "tags": [
+        "estágio",
+        "TCE",
+        "concedente",
+        "agente de integração",
+        "matrícula",
+        "frequência"
+      ],
+      "artigos": "Arts. 1º–3º e 7º–14.",
+      "trecho": "Art. 2º — O estágio poderá ser obrigatório ou não-obrigatório, conforme as diretrizes curriculares e o projeto pedagógico do curso.",
+      "pontos": [
+        "Estágio integra o projeto pedagógico do curso.",
+        "O obrigatório pode ser requisito para aprovação e obtenção do diploma.",
+        "Exige matrícula e frequência regular.",
+        "Exige termo de compromisso entre estudante, concedente e IES.",
+        "A Secretaria deve tratar estágio como parte da trajetória acadêmica quando previsto no currículo."
+      ],
+      "impacto": "Integralização, conclusão, documentos e controle de estágio.",
+      "fonte": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+    },
+    {
+      "id": "extensao-7-2018",
+      "categoria": "Extensão",
+      "icone": "🌐",
+      "titulo": "Resolução CNE/CES nº 7/2018",
+      "tema": "Diretrizes para a extensão na educação superior",
+      "tags": [
+        "extensão",
+        "currículo",
+        "carga horária",
+        "PPC",
+        "integralização"
+      ],
+      "artigos": "Arts. 1º–20; destaque para arts. 2º e 4º.",
+      "trecho": "Art. 2º — As Diretrizes regulamentam as atividades acadêmicas de extensão dos cursos de graduação, na forma de componentes curriculares.",
+      "pontos": [
+        "Integra extensão à matriz curricular da graduação.",
+        "Relaciona extensão ao PDI, PPI e PPC.",
+        "A Secretaria precisa registrar corretamente os componentes e sua carga horária.",
+        "A extensão passa a impactar a integralização curricular quando prevista no curso."
+      ],
+      "impacto": "Matriz curricular, carga horária, histórico e conclusão.",
+      "fonte": "https://portal.mec.gov.br/index.php?option=com_docman&view=download&alias=105102-rces007-18&Itemid=30192"
+    },
+    {
+      "id": "pos-1-2018",
+      "categoria": "Pós-graduação",
+      "icone": "🎓",
+      "titulo": "Resolução CNE/CES nº 1/2018",
+      "tema": "Pós-graduação lato sensu — especialização",
+      "tags": [
+        "pós-graduação",
+        "especialização",
+        "certificado",
+        "histórico",
+        "carga horária"
+      ],
+      "artigos": "Arts. 1º–12, com alterações posteriores.",
+      "trecho": "Estabelece diretrizes e normas para a oferta dos cursos de pós-graduação lato sensu denominados cursos de especialização.",
+      "pontos": [
+        "É referência central para especializações no sistema federal.",
+        "Define requisitos acadêmicos e institucionais da oferta.",
+        "Impacta documentação de conclusão e certificação.",
+        "Deve ser lida com as alterações posteriores e com as regras específicas da instituição."
+      ],
+      "impacto": "Pós-graduação, histórico, certificado e conclusão.",
+      "fonte": "https://www.gov.br/mec/pt-br"
+    },
+    {
+      "id": "arquivos-8159",
+      "categoria": "Arquivologia e Preservação",
+      "icone": "🗃️",
+      "titulo": "Lei nº 8.159/1991 — Política Nacional de Arquivos",
+      "tema": "Gestão documental e preservação",
+      "tags": [
+        "arquivo",
+        "gestão documental",
+        "preservação",
+        "temporalidade",
+        "destinação"
+      ],
+      "artigos": "Arts. 1º–25.",
+      "trecho": "Art. 1º — É dever do Poder Público a gestão documental e a proteção especial a documentos de arquivo.",
+      "pontos": [
+        "Estabelece princípios de gestão documental.",
+        "Documentos são elementos de prova e informação.",
+        "Ajuda a fundamentar políticas de temporalidade e preservação.",
+        "É referência complementar para o acervo acadêmico digital."
+      ],
+      "impacto": "Acervo, guarda, temporalidade e preservação.",
+      "fonte": "https://www.planalto.gov.br/ccivil_03/leis/l8159.htm"
+    },
+    {
+      "id": "e-mec-21-2017",
+      "categoria": "Regulação e e-MEC",
+      "icone": "🔎",
+      "titulo": "Portaria Normativa MEC nº 21/2017",
+      "tema": "e-MEC e processos regulatórios",
+      "tags": [
+        "e-MEC",
+        "regulação",
+        "curso",
+        "credenciamento",
+        "reconhecimento"
+      ],
+      "artigos": "Normas sobre funcionamento e informações do sistema e-MEC.",
+      "trecho": "Regulamenta o sistema e-MEC, sistema eletrônico de fluxo de trabalho e gerenciamento de informações relativas aos processos de regulação, avaliação e supervisão.",
+      "pontos": [
+        "Conecta dados institucionais e de cursos ao sistema oficial de regulação.",
+        "A Secretaria deve trabalhar com dados coerentes com a situação regulatória.",
+        "É importante para conferência de curso, modalidade, endereço e atos."
+      ],
+      "impacto": "Cadastro de cursos, polos/unidades, modalidade e atos regulatórios.",
+      "fonte": "https://www.gov.br/mec/"
+    },
+    {
+      "id": "cnc-dcn",
+      "categoria": "Currículo e Integralização",
+      "icone": "📚",
+      "titulo": "Diretrizes Curriculares Nacionais — DCNs específicas",
+      "tema": "Currículo, competências e integralização por curso",
+      "tags": [
+        "DCN",
+        "PPC",
+        "matriz",
+        "carga horária",
+        "integralização",
+        "estágio"
+      ],
+      "artigos": "Variam conforme o curso; devem ser consultadas na resolução específica.",
+      "trecho": "As DCNs estabelecem princípios, fundamentos, condições e procedimentos para organização curricular e formação de cada área.",
+      "pontos": [
+        "Não existe uma única DCN para todos os cursos.",
+        "A Secretaria deve manter vínculo entre aluno, currículo vigente, PPC e DCN aplicável.",
+        "Impactam carga horária, estágio, extensão, competências e prazo de integralização.",
+        "São indispensáveis para validar conclusão e diploma."
+      ],
+      "impacto": "Matriz curricular, integralização, conclusão e diploma.",
+      "fonte": "https://www.gov.br/mec/pt-br/acesso-a-informacao/participacao-social/conselhos-e-orgaos-colegiados/cne/resolucoes-do-cne"
+    }
+  ]
+}
