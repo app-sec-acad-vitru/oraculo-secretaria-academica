@@ -1,23 +1,23 @@
 {
-  "app": "Oráculo da Secretaria Acadêmica",
-  "visual_identity": "Vitru Education / UNIASSELVI / UniCesumar",
-  "repository": "OneDrive/SharePoint",
-  "update_day": "Monday",
-  "sources": [
+  "version": "2.0.0",
+  "generated_at": "2026-09-17",
+  "verified_at": "2026-09-17",
+  "purpose": "Base regulatória inicial do Oráculo da Secretaria Acadêmica",
+  "update_strategy": "A base deve ser revisada semanalmente contra fontes oficiais. Trechos são curtos e destinados a consulta; decisões operacionais devem considerar o texto integral e atos posteriores.",
+  "sources_monitored": [
     "Planalto",
     "MEC",
     "CNE",
     "INEP",
-    "DOU",
+    "Imprensa Nacional/DOU",
     "CONARQ"
   ],
-  "brand_source": "https://www.vitru.com.br/pt_BR",
-  "workflow": [
-    "scan",
-    "validate",
-    "compare",
-    "update_data",
-    "regenerate_index",
-    "create_changelog"
+  "records": 13,
+  "status_model": [
+    "Vigente",
+    "Vigente — com alterações posteriores",
+    "Vigência deve ser lida em conjunto com regulamentação posterior",
+    "Aplicável conforme escopo e cronograma normativo",
+    "Verificação inicial"
   ]
 }
