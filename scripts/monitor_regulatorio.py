@@ -2,6 +2,7 @@ import hashlib
 import json
 import re
 import urllib.request
+import urllib.error
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -27,9 +28,11 @@ TIMEOUT = 30
 
 HEADERS = {
     "User-Agent": (
-        "Oraculo-Secretaria-Academica-Regulatory-Monitor/1.0 "
-        "(GitHub Actions)"
-    )
+        "Mozilla/5.0 "
+        "(compatible; Oraculo-Secretaria-Academica/1.0; "
+        "+https://github.com/app-sec-acad-vitru/oraculo-secretaria-academica)"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
 }
 
 
@@ -38,53 +41,84 @@ HEADERS = {
 # ============================================================
 
 def fetch(url):
-    """
-    Consulta uma fonte oficial e retorna:
-    - código HTTP
-    - conteúdo da página
-    """
 
     request = urllib.request.Request(
         url,
         headers=HEADERS
     )
 
-    with urllib.request.urlopen(
-        request,
-        timeout=TIMEOUT
-    ) as response:
+    try:
 
-        raw = response.read()
+        with urllib.request.urlopen(
+            request,
+            timeout=TIMEOUT
+        ) as response:
 
-        content_type = response.headers.get(
-            "Content-Type",
-            ""
-        )
+            raw = response.read()
 
-        charset = "utf-8"
-
-        match = re.search(
-            r"charset=([\w-]+)",
-            content_type,
-            re.I
-        )
-
-        if match:
-            charset = match.group(1)
-
-        try:
-            text = raw.decode(
-                charset,
-                errors="replace"
+            content_type = response.headers.get(
+                "Content-Type",
+                ""
             )
 
-        except LookupError:
-            text = raw.decode(
-                "utf-8",
-                errors="replace"
+            charset = "utf-8"
+
+            match = re.search(
+                r"charset=([\w-]+)",
+                content_type,
+                re.I
             )
 
-        return response.status, text
+            if match:
+                charset = match.group(1)
+
+            try:
+
+                text = raw.decode(
+                    charset,
+                    errors="replace"
+                )
+
+            except LookupError:
+
+                text = raw.decode(
+                    "utf-8",
+                    errors="replace"
+                )
+
+            return {
+                "success": True,
+                "status": response.status,
+                "text": text,
+                "error": None
+            }
+
+    except urllib.error.HTTPError as error:
+
+        return {
+            "success": False,
+            "status": error.code,
+            "text": "",
+            "error": f"HTTP {error.code}: {error.reason}"
+        }
+
+    except urllib.error.URLError as error:
+
+        return {
+            "success": False,
+            "status": None,
+            "text": "",
+            "error": f"URL Error: {error.reason}"
+        }
+
+    except Exception as error:
+
+        return {
+            "success": False,
+            "status": None,
+            "text": "",
+            "error": str(error)
+        }
 
 
 # ============================================================
@@ -92,10 +126,6 @@ def fetch(url):
 # ============================================================
 
 def normalize(text):
-    """
-    Remove variações de espaços para permitir
-    comparação mais consistente entre verificações.
-    """
 
     text = re.sub(
         r"\s+",
@@ -119,11 +149,12 @@ def main():
         "Z"
     )
 
-    # --------------------------------------------------------
-    # CARREGA BASE DO ORÁCULO
-    # --------------------------------------------------------
+    # ========================================================
+    # CARREGA DATA.JSON
+    # ========================================================
 
     if not DATA.exists():
+
         raise FileNotFoundError(
             "Arquivo data.json não encontrado."
         )
@@ -134,9 +165,9 @@ def main():
         )
     )
 
-    # --------------------------------------------------------
+    # ========================================================
     # IDENTIFICA FONTES
-    # --------------------------------------------------------
+    # ========================================================
 
     urls = {}
 
@@ -153,13 +184,22 @@ def main():
 
             urls[url] = source_name
 
-    print(
-        f"Fontes encontradas no data.json: {len(urls)}"
-    )
+    total_sources = len(urls)
 
-    # --------------------------------------------------------
-    # CARREGA RESULTADO DA ÚLTIMA VERIFICAÇÃO
-    # --------------------------------------------------------
+    print("")
+    print("========================================")
+    print("ORÁCULO DA SECRETARIA ACADÊMICA")
+    print("MONITORAMENTO REGULATÓRIO")
+    print("========================================")
+    print("")
+    print(
+        f"Fontes cadastradas no data.json: {total_sources}"
+    )
+    print("")
+
+    # ========================================================
+    # CARREGA ÚLTIMA VERIFICAÇÃO
+    # ========================================================
 
     previous_file = MONITOR / "latest.json"
 
@@ -167,25 +207,33 @@ def main():
 
     if previous_file.exists():
 
-        previous = json.loads(
-            previous_file.read_text(
-                encoding="utf-8"
-            )
-        )
+        try:
 
-    # --------------------------------------------------------
-    # LISTAS DE RESULTADOS
-    # --------------------------------------------------------
+            previous = json.loads(
+                previous_file.read_text(
+                    encoding="utf-8"
+                )
+            )
+
+        except Exception:
+
+            previous = {}
+
+    # ========================================================
+    # RESULTADOS
+    # ========================================================
 
     results = []
+
+    successful = []
 
     changes = []
 
     errors = []
 
-    # --------------------------------------------------------
-    # VERIFICA CADA FONTE
-    # --------------------------------------------------------
+    # ========================================================
+    # VERIFICAÇÃO DAS FONTES
+    # ========================================================
 
     for url, source_name in sorted(
         urls.items()
@@ -195,22 +243,32 @@ def main():
             f"Verificando: {source_name}"
         )
 
+        response = fetch(url)
+
         result = {
 
             "source": source_name,
 
             "url": url,
 
-            "checked_at": checked_at
+            "checked_at": checked_at,
+
+            "http_status": response["status"],
+
+            "ok": response["success"],
+
+            "changed_since_last_check": False
 
         }
 
-        try:
+        # ----------------------------------------------------
+        # FONTE ACESSÍVEL
+        # ----------------------------------------------------
 
-            status, body = fetch(url)
+        if response["success"]:
 
             normalized = normalize(
-                body
+                response["text"]
             )
 
             digest = hashlib.sha256(
@@ -219,17 +277,7 @@ def main():
                 )
             ).hexdigest()
 
-            result["http_status"] = status
-
             result["sha256"] = digest
-
-            result["ok"] = (
-                200 <= status < 400
-            )
-
-            # ------------------------------------------------
-            # COMPARA COM A VERIFICAÇÃO ANTERIOR
-            # ------------------------------------------------
 
             old = previous.get(
                 url,
@@ -249,14 +297,12 @@ def main():
                     result
                 )
 
-            else:
-
-                result[
-                    "changed_since_last_check"
-                ] = False
+            successful.append(
+                result
+            )
 
             # ------------------------------------------------
-            # SALVA SNAPSHOT
+            # SNAPSHOT
             # ------------------------------------------------
 
             snapshot_name = (
@@ -276,17 +322,13 @@ def main():
                 encoding="utf-8"
             )
 
-        except Exception as error:
+        # ----------------------------------------------------
+        # ERRO
+        # ----------------------------------------------------
 
-            result["ok"] = False
+        else:
 
-            result["error"] = str(
-                error
-            )
-
-            result[
-                "changed_since_last_check"
-            ] = False
+            result["error"] = response["error"]
 
             errors.append(
                 result
@@ -320,7 +362,7 @@ def main():
     )
 
     # ========================================================
-    # GERA RELATÓRIO
+    # RELATÓRIO
     # ========================================================
 
     report_name = (
@@ -341,25 +383,24 @@ def main():
 
         "",
 
-        "## Resultado",
+        "## Resumo",
 
         "",
 
-        f"- Fontes verificadas: "
-        f"**{len(results)}**",
+        f"- Fontes cadastradas: **{total_sources}**",
 
-        f"- Fontes com alteração detectada: "
-        f"**{len(changes)}**",
+        f"- Fontes verificadas com sucesso: **{len(successful)}**",
 
-        f"- Fontes com erro de acesso: "
-        f"**{len(errors)}**",
+        f"- Alterações detectadas: **{len(changes)}**",
+
+        f"- Erros de acesso: **{len(errors)}**",
 
         "",
 
-        "> A detecção de alteração em uma página "
-        "não significa, por si só, alteração normativa. "
-        "Toda mudança deve ser analisada no conteúdo "
-        "oficial antes de atualizar a base do Oráculo.",
+        "> Uma alteração detectada em uma página não significa, "
+        "por si só, alteração normativa. Toda mudança deve ser "
+        "analisada no conteúdo oficial antes da atualização "
+        "da base do Oráculo.",
 
         "",
 
@@ -368,7 +409,11 @@ def main():
         ""
     ]
 
-    for result in results:
+    # ========================================================
+    # FONTES COM SUCESSO
+    # ========================================================
+
+    for result in successful:
 
         if result.get(
             "changed_since_last_check"
@@ -376,21 +421,54 @@ def main():
 
             flag = "⚠️ ALTERAÇÃO"
 
-        elif result.get("ok"):
-
-            flag = "🟢 OK"
-
         else:
 
-            flag = "🔴 ERRO"
+            flag = "🟢 OK"
 
         report.append(
 
             f"- {flag} — "
-            f"{result['source']}: "
+            f"{result['source']} — "
             f"{result['url']}"
 
         )
+
+    # ========================================================
+    # FONTES COM ERRO
+    # ========================================================
+
+    if errors:
+
+        report.extend(
+            [
+                "",
+                "## ⚠️ Fontes com erro de acesso",
+                ""
+            ]
+        )
+
+        for result in errors:
+
+            report.append(
+
+                f"- 🔴 **{result['source']}**"
+            )
+
+            report.append(
+
+                f"  - URL: {result['url']}"
+            )
+
+            report.append(
+
+                f"  - Erro: {result['error']}"
+            )
+
+            report.append("")
+
+    # ========================================================
+    # SALVA RELATÓRIO
+    # ========================================================
 
     report_file = (
         REPORTS
@@ -434,6 +512,14 @@ def main():
     ] = checked_at
 
     manifest[
+        "sources_registered"
+    ] = total_sources
+
+    manifest[
+        "sources_verified"
+    ] = len(successful)
+
+    manifest[
         "last_weekly_changes_detected"
     ] = len(changes)
 
@@ -454,24 +540,20 @@ def main():
     )
 
     # ========================================================
-    # RESULTADO NO GITHUB ACTIONS
+    # RESULTADO FINAL
     # ========================================================
 
     print("")
+    print("========================================")
+    print("VERIFICAÇÃO CONCLUÍDA")
+    print("========================================")
+
     print(
-        "========================================"
+        f"Fontes cadastradas: {total_sources}"
     )
 
     print(
-        "VERIFICAÇÃO CONCLUÍDA"
-    )
-
-    print(
-        "========================================"
-    )
-
-    print(
-        f"Fontes verificadas: {len(results)}"
+        f"Fontes verificadas com sucesso: {len(successful)}"
     )
 
     print(
@@ -479,36 +561,65 @@ def main():
     )
 
     print(
-        f"Erros: {len(errors)}"
+        f"Erros de acesso: {len(errors)}"
     )
 
-    print(
-        "========================================"
-    )
+    print("========================================")
+
+    # ========================================================
+    # LISTA DE ERROS
+    # ========================================================
+
+    if errors:
+
+        print("")
+        print("FONTES COM ERRO:")
+        print("")
+
+        for result in errors:
+
+            print(
+                f"🔴 {result['source']}"
+            )
+
+            print(
+                f"   URL: {result['url']}"
+            )
+
+            print(
+                f"   Erro: {result['error']}"
+            )
+
+            print("")
+
+    # ========================================================
+    # ALTERAÇÕES
+    # ========================================================
 
     if changes:
 
         print("")
-        print(
-            "ALTERAÇÕES DETECTADAS:"
-        )
+        print("ALTERAÇÕES DETECTADAS:")
+        print("")
 
-        for item in changes:
+        for result in changes:
 
             print(
-                f"- {item['source']}"
+                f"⚠️ {result['source']}"
             )
 
             print(
-                f"  {item['url']}"
+                f"   {result['url']}"
             )
 
     else:
 
         print("")
         print(
-            "Nenhuma alteração detectada."
+            "Nenhuma alteração detectada nas fontes acessíveis."
         )
+
+    print("")
 
 
 # ============================================================
