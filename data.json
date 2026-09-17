@@ -27,6 +27,18 @@
       "diploma",
       "frequência",
       "aproveitamento"
+    ],
+    "process": "Vida acadêmica",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Verificar sempre a LDB e a regulamentação específica do processo antes de definir uma rotina acadêmica.",
+    "risk": "Baixo",
+    "related": [
+      "LDB",
+      "vida acadêmica",
+      "histórico",
+      "diploma",
+      "frequência"
     ]
   },
   {
@@ -50,6 +62,18 @@
     "source": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm",
     "sourceName": "Planalto",
     "synonyms": [
+      "regulação",
+      "supervisão",
+      "avaliação",
+      "IES",
+      "SINAES"
+    ],
+    "process": "Regulação",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Relacionar cada processo acadêmico relevante ao ato autorizativo, ao curso e às regras regulatórias aplicáveis.",
+    "risk": "Médio",
+    "related": [
       "regulação",
       "supervisão",
       "avaliação",
@@ -83,6 +107,18 @@
       "expedição",
       "colação",
       "histórico"
+    ],
+    "process": "Documentos",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Controlar a data da colação, a expedição e o registro, mantendo evidências do cumprimento dos prazos.",
+    "risk": "Alto",
+    "related": [
+      "diploma",
+      "registro",
+      "expedição",
+      "colação",
+      "histórico"
     ]
   },
   {
@@ -111,6 +147,18 @@
       "assinatura",
       "registro",
       "nato-digital"
+    ],
+    "process": "Diploma Digital",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Consultar sempre a regulamentação mais recente do Diploma Digital antes de alterar leiautes ou fluxos.",
+    "risk": "Alto",
+    "related": [
+      "diploma digital",
+      "XML",
+      "assinatura",
+      "registro",
+      "nato-digital"
     ]
   },
   {
@@ -133,6 +181,17 @@
     "source": "https://www.gov.br/mec/pt-br/diploma-digital",
     "sourceName": "MEC / Diploma Digital",
     "synonyms": [
+      "diploma digital",
+      "graduação",
+      "obrigatoriedade",
+      "2025"
+    ],
+    "process": "Diploma Digital",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Manter o fluxo de diploma alinhado à versão normativa e técnica mais recente publicada pelo MEC.",
+    "risk": "Alto",
+    "related": [
       "diploma digital",
       "graduação",
       "obrigatoriedade",
@@ -165,6 +224,18 @@
       "documentos",
       "supervisão",
       "histórico acadêmico"
+    ],
+    "process": "Acervo",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Mapear documentos do acervo, responsáveis, temporalidade, segurança, acesso e mecanismos de recuperação.",
+    "risk": "Baixo",
+    "related": [
+      "acervo",
+      "guarda",
+      "documentos",
+      "supervisão",
+      "histórico acadêmico"
     ]
   },
   {
@@ -187,6 +258,17 @@
     "source": "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital",
     "sourceName": "Governo Federal",
     "synonyms": [
+      "acervo digital",
+      "digitalização",
+      "documento nato-digital",
+      "arquivo"
+    ],
+    "process": "Acervo",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Garantir que novos documentos do acervo sigam o formato e os controles digitais exigidos.",
+    "risk": "Médio",
+    "related": [
       "acervo digital",
       "digitalização",
       "documento nato-digital",
@@ -214,6 +296,18 @@
     "source": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52",
     "sourceName": "Imprensa Nacional / DOU",
     "synonyms": [
+      "RDC-Arq",
+      "digitalização",
+      "preservação",
+      "backup",
+      "acervo"
+    ],
+    "process": "Acervo",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Validar repositório, integridade, metadados, backup, acesso e regras de temporalidade antes do descarte do físico.",
+    "risk": "Médio",
+    "related": [
       "RDC-Arq",
       "digitalização",
       "preservação",
@@ -247,6 +341,18 @@
       "CPF",
       "privacidade",
       "acesso"
+    ],
+    "process": "Governança",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Aplicar princípio de necessidade, controle de acesso, segurança e finalidade ao tratar dados acadêmicos.",
+    "risk": "Baixo",
+    "related": [
+      "LGPD",
+      "dados pessoais",
+      "CPF",
+      "privacidade",
+      "acesso"
     ]
   },
   {
@@ -270,6 +376,18 @@
     "source": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm",
     "sourceName": "Planalto",
     "synonyms": [
+      "SINAES",
+      "ENADE",
+      "INEP",
+      "regularidade",
+      "histórico"
+    ],
+    "process": "ENADE",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Controlar habilitação, inscrição, participação/dispensa e reflexos na regularidade acadêmica conforme regulamentação anual.",
+    "risk": "Médio",
+    "related": [
       "SINAES",
       "ENADE",
       "INEP",
@@ -303,6 +421,18 @@
       "concedente",
       "agente de integração",
       "supervisão"
+    ],
+    "process": "Estágio",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Validar matrícula/frequência, termo de compromisso, compatibilidade das atividades e acompanhamento conforme PPC e legislação.",
+    "risk": "Baixo",
+    "related": [
+      "estágio",
+      "TCE",
+      "concedente",
+      "agente de integração",
+      "supervisão"
     ]
   },
   {
@@ -329,6 +459,17 @@
       "curricularização",
       "PPC",
       "carga horária"
+    ],
+    "process": "Extensão",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Conferir no PPC e na matriz como a extensão é registrada e contabilizada para integralização.",
+    "risk": "Baixo",
+    "related": [
+      "extensão",
+      "curricularização",
+      "PPC",
+      "carga horária"
     ]
   },
   {
@@ -351,6 +492,17 @@
     "source": "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
     "sourceName": "MEC",
     "synonyms": [
+      "pós-graduação",
+      "especialização",
+      "certificado",
+      "histórico"
+    ],
+    "process": "Pós-graduação",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Relacionar a emissão do certificado/histórico aos requisitos do curso, PPC/projeto e regulamentação vigente.",
+    "risk": "Baixo",
+    "related": [
       "pós-graduação",
       "especialização",
       "certificado",
@@ -382,6 +534,18 @@
       "transferência externa",
       "mudança de instituição",
       "taxa de transferência",
+      "transferência",
+      "documentos",
+      "taxa",
+      "matrícula",
+      "histórico"
+    ],
+    "process": "Documentos",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Receber e processar o pedido documental conforme a regulamentação, sem criar condicionante incompatível com a norma.",
+    "risk": "Baixo",
+    "related": [
       "transferência",
       "documentos",
       "taxa",
@@ -419,6 +583,18 @@
       "gratuidade",
       "serviços educacionais",
       "regulação"
+    ],
+    "process": "Documentos",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Consultar junto à Portaria 1.095/2018 e às regras contratuais aplicáveis.",
+    "risk": "Baixo",
+    "related": [
+      "histórico final",
+      "diploma",
+      "gratuidade",
+      "serviços educacionais",
+      "regulação"
     ]
   },
   {
@@ -446,6 +622,18 @@
       "dados obrigatórios do histórico",
       "conteúdo do histórico",
       "histórico completo",
+      "histórico escolar",
+      "dados do histórico",
+      "documentação acadêmica",
+      "colação",
+      "reconhecimento"
+    ],
+    "process": "Documentos",
+    "sourceType": "Parecer / referência técnica",
+    "quoteExact": false,
+    "action": "Usar como referência complementar e conferir normas posteriores e especificações digitais.",
+    "risk": "Baixo",
+    "related": [
       "histórico escolar",
       "dados do histórico",
       "documentação acadêmica",
@@ -486,6 +674,18 @@
       "documentação acadêmica",
       "fiscalização",
       "currículo escolar"
+    ],
+    "process": "Diploma Digital",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Versionar os XSDs utilizados, validar os XMLs e registrar mudanças de leiaute.",
+    "risk": "Baixo",
+    "related": [
+      "XSD",
+      "XML",
+      "histórico escolar digital",
+      "documentação acadêmica",
+      "fiscalização"
     ]
   },
   {
@@ -522,6 +722,18 @@
       "PPC",
       "estágio",
       "extensão"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Classificar o tipo de formação, verificar compatibilidade e habilitação pretendida antes de matrícula, conclusão e emissão documental.",
+    "risk": "Alto",
+    "related": [
+      "formação pedagógica",
+      "segunda licenciatura",
+      "licenciatura",
+      "formação de professores",
+      "PPC"
     ]
   },
   {
@@ -555,6 +767,18 @@
       "transição",
       "CNE",
       "MEC"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Parecer / referência técnica",
+    "quoteExact": false,
+    "action": "Consultar junto à Resolução 4/2024 antes de parametrizar ingresso, currículo, transição e conclusão.",
+    "risk": "Alto",
+    "related": [
+      "formação pedagógica",
+      "segunda licenciatura",
+      "implantação",
+      "transição",
+      "CNE"
     ]
   },
   {
@@ -588,6 +812,18 @@
       "1200 horas",
       "1800 horas",
       "carga horária"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Usar como orientação complementar e confirmar o caso concreto na Resolução 4/2024 e documentos correlatos.",
+    "risk": "Alto",
+    "related": [
+      "formação pedagógica",
+      "segunda licenciatura",
+      "1600 horas",
+      "1200 horas",
+      "1800 horas"
     ]
   },
   {
@@ -614,6 +850,18 @@
       "formação pedagógica em pedagogia",
       "pedagogia formação pedagógica",
       "compatibilidade curso de origem",
+      "formação pedagógica",
+      "Pedagogia",
+      "graduados não licenciados",
+      "compatibilidade",
+      "habilitação"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Parecer / referência técnica",
+    "quoteExact": false,
+    "action": "Não generalizar a partir de caso concreto; confrontar a situação com a Resolução 4/2024 e orientações do CNE/MEC.",
+    "risk": "Alto",
+    "related": [
       "formação pedagógica",
       "Pedagogia",
       "graduados não licenciados",
@@ -650,6 +898,18 @@
       "equivalência",
       "carga horária",
       "habilitação"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Parecer / referência técnica",
+    "quoteExact": false,
+    "action": "Manter cópia controlada da versão utilizada e registrar a data da conferência.",
+    "risk": "Alto",
+    "related": [
+      "segunda licenciatura",
+      "Nota Técnica 74",
+      "equivalência",
+      "carga horária",
+      "habilitação"
     ]
   },
   {
@@ -676,6 +936,18 @@
       "formação docente",
       "base normativa licenciaturas",
       "atos do CNE",
+      "CNE",
+      "licenciatura",
+      "formação pedagógica",
+      "segunda licenciatura",
+      "diretrizes"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Usar como ponto de partida e abrir o ato específico antes de aplicar a regra.",
+    "risk": "Alto",
+    "related": [
       "CNE",
       "licenciatura",
       "formação pedagógica",
@@ -712,6 +984,18 @@
       "licenciatura",
       "histórico",
       "transição"
+    ],
+    "process": "Formação docente",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Não usar como regra atual sem verificar data de ingresso e disposições de transição.",
+    "risk": "Baixo",
+    "related": [
+      "BNC-Formação",
+      "formação inicial",
+      "licenciatura",
+      "histórico",
+      "transição"
     ]
   },
   {
@@ -742,6 +1026,127 @@
       "matrícula",
       "documentos",
       "direitos acadêmicos"
+    ],
+    "process": "Vida acadêmica",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Separar cobrança financeira de direitos acadêmicos, observando as regras legais aplicáveis.",
+    "risk": "Baixo",
+    "related": [
+      "inadimplência",
+      "matrícula",
+      "documentos",
+      "direitos acadêmicos"
+    ]
+  },
+  {
+    "id": "censo-2026-cronograma",
+    "norm": "Censo da Educação Superior 2026 — Cronograma",
+    "category": "Censo e Regulação",
+    "status": "Calendário 2026",
+    "date": "2026",
+    "tags": [
+      "Censo",
+      "Censup",
+      "e-MEC",
+      "cadastro",
+      "2026"
+    ],
+    "article": "Cronograma 2026",
+    "excerpt": "Página oficial do Inep com as etapas e prazos do Censo da Educação Superior 2026, incluindo coleta, conferências, fechamento e divulgação.",
+    "summary": "Fonte operacional para acompanhamento do ciclo do Censo 2026. O Inep informa que o Censo utiliza dados do cadastro e-MEC e coleta informações sobre instituições, cursos, alunos e docentes.",
+    "impact": "A Secretaria deve manter dados acadêmicos e cadastrais consistentes com as bases institucionais utilizadas no Censo e apoiar as áreas responsáveis nas conferências e correções.",
+    "procedure": "Acompanhar o cronograma oficial do Inep, os períodos de conferência e as orientações do Censup.",
+    "source": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma",
+    "sourceName": "Inep",
+    "synonyms": [
+      "Censo 2026",
+      "Censup",
+      "cronograma Censo",
+      "dados censitários"
+    ],
+    "process": "Censo",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Conferir prazos oficiais, responsáveis internos, consistências e fechamento do ciclo.",
+    "risk": "Alto",
+    "related": [
+      "Censo",
+      "Censup",
+      "e-MEC",
+      "cadastro"
+    ]
+  },
+  {
+    "id": "enade-2026-cronograma",
+    "norm": "Enade 2026 — cronogramas oficiais",
+    "category": "ENADE e Avaliação",
+    "status": "Calendário 2026",
+    "date": "2026",
+    "tags": [
+      "ENADE",
+      "PND",
+      "licenciaturas",
+      "bacharelado",
+      "2026"
+    ],
+    "article": "Cronograma 2026",
+    "excerpt": "O Inep disponibiliza cronogramas específicos para Enade das Licenciaturas/PND e para bacharelados e cursos superiores de tecnologia em 2026.",
+    "summary": "Fonte operacional para inscrições, questionários, atendimentos, provas, registros e etapas posteriores do Enade 2026.",
+    "impact": "Dados acadêmicos corretos são essenciais para identificação de estudantes habilitados, acompanhamento de inscrições e registros acadêmicos relacionados ao exame.",
+    "procedure": "Acompanhar o cronograma da modalidade aplicável e validar os dados acadêmicos utilizados nas etapas do exame.",
+    "source": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade",
+    "sourceName": "Inep",
+    "synonyms": [
+      "Enade 2026",
+      "PND 2026",
+      "cronograma Enade",
+      "licenciaturas"
+    ],
+    "process": "ENADE",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Mapear cada etapa do cronograma aos responsáveis e aos dados acadêmicos necessários.",
+    "risk": "Alto",
+    "related": [
+      "ENADE",
+      "PND",
+      "concluintes",
+      "inscrição"
+    ]
+  },
+  {
+    "id": "enade-qualidade-2026-portaria90",
+    "norm": "Portaria nº 90/2026 — Conceito Enade das Licenciaturas",
+    "category": "ENADE e Avaliação",
+    "status": "Publicada em 2026",
+    "date": "03/03/2026",
+    "tags": [
+      "Conceito Enade",
+      "Licenciaturas",
+      "2025",
+      "2026"
+    ],
+    "article": "Portaria nº 90/2026",
+    "excerpt": "Dispõe sobre o Conceito Enade para os cursos de Licenciatura referente ao ano de 2025 e estabelece aspectos gerais de cálculo, manifestação das IES e divulgação dos resultados.",
+    "summary": "Norma do ciclo de indicadores de qualidade relacionada às licenciaturas avaliadas.",
+    "impact": "Ajuda a identificar obrigações e janelas de manifestação institucional relacionadas aos resultados do Enade.",
+    "procedure": "Consultar o texto oficial e os procedimentos do Inep antes de qualquer manifestação ou ajuste.",
+    "source": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2026",
+    "sourceName": "Inep",
+    "synonyms": [
+      "Portaria 90 2026",
+      "Conceito Enade licenciaturas"
+    ],
+    "process": "ENADE",
+    "sourceType": "Norma",
+    "quoteExact": false,
+    "action": "Acompanhar publicação de resultados, prazos de manifestação e orientações do Inep.",
+    "risk": "Médio",
+    "related": [
+      "ENADE",
+      "Licenciaturas",
+      "indicadores"
     ]
   }
 ]
