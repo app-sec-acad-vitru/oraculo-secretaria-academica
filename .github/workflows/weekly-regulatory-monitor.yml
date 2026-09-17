@@ -1,0 +1,37 @@
+name: Monitoramento regulatório semanal
+
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Verificar fontes oficiais
+        run: python scripts/monitor_regulatorio.py
+
+      - name: Publicar relatório e manifest
+        run: |
+          git config user.name "oraculo-bot"
+          git config user.email "oraculo-bot@users.noreply.github.com"
+          git add monitoring update_manifest.json
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração de monitoramento."
+          else
+            git commit -m "chore: verificação regulatória semanal"
+            git push
+          fi
