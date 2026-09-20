@@ -1,0 +1,743 @@
+{
+  "schema_version": "oraculo-banco-respostas-validadas-v2.0",
+  "status": "validado_com_pesquisa_normativa",
+  "data_verificacao": "2026-09-20",
+  "base_referencias": 28,
+  "quantidade_respostas": 21,
+  "observacao": "As 21 respostas de alto impacto foram preenchidas com conteúdo normativo/operacional e pesquisa de fontes públicas. Não são citações literais; quando houver caso concreto, o Oráculo deve recuperar e verificar a fonte oficial vigente.",
+  "respostas": [
+    {
+      "id": "VR-002",
+      "pergunta_id": "QA-002",
+      "processo": "Documentos",
+      "pergunta": "Quais regras devo observar para expedição e registro de diploma?",
+      "resposta_objetiva": "Para graduação no sistema federal, a expedição e o registro devem observar a Portaria MEC nº 1.095/2018 e, quando o diploma for digital, a regulamentação específica do Diploma Digital. A IES deve expedir o diploma em até 60 dias da colação de grau; o registro deve ocorrer em até 60 dias da expedição. Se a IES não tiver prerrogativa de registro, deve encaminhar o diploma à registradora em até 15 dias, e a registradora tem até 60 dias para registrar. Os prazos podem ter prorrogação nos termos da própria Portaria.",
+      "fundamento": [
+        "Portaria MEC nº 1.095/2018, arts. 18 a 20",
+        "Portaria MEC nº 554/2019, com alterações da Portaria MEC nº 70/2025"
+      ],
+      "impacto_operacional": "Controlar separadamente colação de grau, expedição, encaminhamento à registradora quando aplicável, registro e disponibilização ao egresso. Para diploma digital, controlar também XML, assinaturas, carimbo de tempo, validação e preservação.",
+      "procedimento": [
+        "Identificar a data da colação.",
+        "Classificar a IES como expedidora/registradora ou apenas expedidora.",
+        "Controlar o prazo de 60 dias para expedição.",
+        "Se necessário, controlar os 15 dias para envio à registradora.",
+        "Controlar o prazo de 60 dias para registro.",
+        "Aplicar o fluxo técnico do Diploma Digital quando o documento for digital."
+      ],
+      "limites": "Não aplicar prazos de diploma digital ou regras de registro sem verificar o tipo de documento, sistema de ensino e prerrogativa de registro.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 1.095/2018",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-de-educacao-superior"
+        },
+        {
+          "norma": "Portaria MEC nº 70/2025",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-003",
+      "pergunta_id": "QA-003",
+      "processo": "Documentos",
+      "pergunta": "Quais informações devem constar no histórico escolar?",
+      "resposta_objetiva": "O histórico escolar deve reunir os elementos acadêmicos necessários para identificar o estudante, o curso e sua trajetória acadêmica, incluindo os dados e resultados exigidos pela regulamentação aplicável. No ambiente digital, a estrutura deve ainda obedecer ao esquema técnico/XSD vigente disponibilizado pelo MEC. A resposta operacional deve separar conteúdo acadêmico obrigatório de campos técnicos do documento digital.",
+      "fundamento": [
+        "Parecer CNE/CES nº 379/2004",
+        "Portaria Normativa MEC nº 23/2017",
+        "Especificações técnicas/XSD do Diploma Digital"
+      ],
+      "impacto_operacional": "O cadastro mestre da Secretaria deve ser capaz de produzir histórico coerente com a trajetória acadêmica, matriz/PPC, resultados, carga horária e situação de conclusão, evitando divergências entre histórico, diploma e sistemas.",
+      "procedimento": [
+        "Validar identificação do estudante.",
+        "Validar curso, habilitação quando aplicável e período.",
+        "Validar componentes cursados, resultados, cargas horárias e situação acadêmica.",
+        "Validar dados de conclusão/colação quando aplicáveis.",
+        "No documento digital, validar contra o XSD vigente."
+      ],
+      "limites": "A lista de campos deve ser mantida vinculada à versão normativa e técnica vigente; não transformar uma referência técnica antiga em requisito atual sem conferência.",
+      "fontes": [
+        {
+          "norma": "Parecer CNE/CES nº 379/2004",
+          "url": "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu"
+        },
+        {
+          "norma": "Diploma Digital – dados e XSD",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-008",
+      "pergunta_id": "QA-008",
+      "processo": "Diploma Digital",
+      "pergunta": "Quais elementos técnicos preciso observar no Diploma Digital?",
+      "resposta_objetiva": "O Diploma Digital deve ser tratado como artefato nativamente digital: existência, emissão e armazenamento em meio digital; emissão em XML; assinatura digital segundo os padrões definidos pelo MEC; carimbo de tempo e certificação no ecossistema ICP-Brasil; conformidade com os schemas/XSD e requisitos de validação; e preservação que permita verificar sua validade ao longo do tempo. A Portaria MEC nº 70/2025 alterou a Portaria nº 554/2019 e ampliou seu escopo para diploma de graduação, pós-graduação stricto sensu e certificado de Residência em Saúde.",
+      "fundamento": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 70/2025",
+        "Instrução Normativa SESu nº 1/2020 e especificações técnicas do MEC"
+      ],
+      "impacto_operacional": "A emissão não é apenas geração de PDF: o objeto principal deve seguir a estrutura digital oficial, com assinatura, carimbo, validação, armazenamento e preservação.",
+      "procedimento": [
+        "Usar a versão vigente dos schemas/XSD do MEC.",
+        "Gerar o XML conforme a especificação.",
+        "Aplicar as assinaturas exigidas.",
+        "Aplicar carimbo de tempo conforme a regulamentação.",
+        "Executar validação técnica antes da disponibilização.",
+        "Preservar o documento e os elementos necessários à sua validação futura."
+      ],
+      "limites": "Os nomes de campos, schemas e requisitos técnicos devem ser obtidos da versão vigente publicada pelo MEC; não congelar uma versão técnica antiga no código.",
+      "fontes": [
+        {
+          "norma": "Diploma Digital – MEC",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        },
+        {
+          "norma": "Portaria MEC nº 70/2025",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-009",
+      "pergunta_id": "QA-009",
+      "processo": "Diploma Digital",
+      "pergunta": "Quais regras se aplicam ao XML do Diploma Digital?",
+      "resposta_objetiva": "O XML é o formato estrutural do Diploma Digital. A IES deve gerar o documento conforme os schemas/XSD disponibilizados pelo MEC, respeitando a estrutura, os campos, relacionamentos e regras de validação da versão vigente. O XML deve ser assinado segundo o padrão técnico previsto e permanecer preservado de modo que possa ser validado posteriormente.",
+      "fundamento": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 70/2025",
+        "Schemas/XSD e notas técnicas do Diploma Digital"
+      ],
+      "impacto_operacional": "Mudanças de XSD podem exigir atualização do gerador, validador e integrações. A Secretaria e TI precisam controlar a versão do schema usada em cada emissão.",
+      "procedimento": [
+        "Registrar a versão do XSD utilizada.",
+        "Validar o XML contra o schema vigente.",
+        "Validar os códigos/identificadores e dados que compõem os mecanismos de validação.",
+        "Aplicar assinatura e carimbo conforme o padrão.",
+        "Guardar o XML original assinado."
+      ],
+      "limites": "Não inventar campos ou regras de validação. A especificação técnica vigente do MEC é a referência para a estrutura XML.",
+      "fontes": [
+        {
+          "norma": "Diploma Digital – MEC",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados"
+        },
+        {
+          "norma": "Portaria MEC nº 554/2019",
+          "url": "https://portal.mec.gov.br/index.php?Itemid=86&catid=212&id=74041&option=com_content&view=article"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-010",
+      "pergunta_id": "QA-010",
+      "processo": "Diploma Digital",
+      "pergunta": "Quais requisitos de assinatura e integridade devo considerar no Diploma Digital?",
+      "resposta_objetiva": "A validade jurídica do Diploma Digital está vinculada ao conjunto de mecanismos definidos pela regulamentação, incluindo assinatura digital com certificado no padrão ICP-Brasil e carimbo de tempo. A Portaria nº 554/2019 estabelece requisitos para os signatários e para a assinatura do XML; o documento deve ser preservado de modo a permitir a verificação de autenticidade, integridade e validade ao longo do tempo.",
+      "fundamento": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 70/2025",
+        "IN SESu nº 1/2020"
+      ],
+      "impacto_operacional": "A cadeia de assinatura deve ser controlada como parte do documento acadêmico, e não como metadado dispensável. Falha de assinatura, certificado, carimbo ou preservação pode impedir validação.",
+      "procedimento": [
+        "Verificar certificados e cadeia ICP-Brasil.",
+        "Aplicar assinatura conforme o padrão técnico vigente.",
+        "Aplicar carimbo de tempo quando exigido.",
+        "Validar assinatura e integridade do XML.",
+        "Preservar XML e evidências necessárias à validação."
+      ],
+      "limites": "Não assumir algoritmo, política ou versão técnica sem consultar a especificação vigente do MEC.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 554/2019",
+          "url": "https://portal.mec.gov.br/index.php?Itemid=86&catid=212&id=74041&option=com_content&view=article"
+        },
+        {
+          "norma": "Diploma Digital – MEC",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-013",
+      "pergunta_id": "QA-013",
+      "processo": "Acervo",
+      "pergunta": "Quem possui responsabilidades relacionadas à guarda e custódia do acervo acadêmico?",
+      "resposta_objetiva": "A responsabilidade institucional pela guarda e manutenção do acervo acadêmico recai sobre o dirigente da IES e o representante legal da mantenedora, que respondem pessoalmente nos termos da regulamentação. O representante legal da mantenedora também responde pela guarda do acervo das instituições mantidas, inclusive em situações de negligência ou utilização fraudulenta.",
+      "fundamento": [
+        "Portaria MEC nº 315/2018, art. 39",
+        "Decreto nº 9.235/2017, art. 58"
+      ],
+      "impacto_operacional": "A Secretaria deve operar com cadeia clara de custódia, localização, acesso, preservação e emissão de documentos, sem tratar o acervo como simples repositório de arquivos.",
+      "procedimento": [
+        "Manter o acervo organizado e localizável.",
+        "Definir responsáveis e permissões de acesso.",
+        "Garantir conservação e pronta consulta.",
+        "Registrar movimentações e transferências de custódia.",
+        "Em encerramento/descredenciamento, aplicar o fluxo específico de transferência e emissão documental."
+      ],
+      "limites": "A responsabilidade jurídica é institucional; procedimentos internos podem distribuir tarefas, mas não afastam a responsabilidade legal dos responsáveis indicados pela norma.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 315/2018",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes"
+        },
+        {
+          "norma": "Decreto nº 9.235/2017",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-014",
+      "pergunta_id": "QA-014",
+      "processo": "Acervo",
+      "pergunta": "Quais regras orientam a conversão do acervo acadêmico para meio digital?",
+      "resposta_objetiva": "A conversão do acervo acadêmico deve observar a Portaria MEC nº 360/2022 e sua regulamentação pela Portaria nº 613/2022, além do Decreto nº 10.278/2020. A digitalização deve seguir padrões técnicos mínimos, produzir documento digital com metadados, possuir assinatura digital quando exigida e assegurar autenticidade, integridade e rastreabilidade. A Portaria nº 360/2022 também vedou, a partir de 1º de agosto de 2022, a produção de novos documentos integrantes do acervo acadêmico em meio físico, ressalvadas as hipóteses normativas aplicáveis.",
+      "fundamento": [
+        "Portaria MEC nº 360/2022",
+        "Portaria MEC nº 613/2022",
+        "Decreto nº 10.278/2020"
+      ],
+      "impacto_operacional": "O projeto de digitalização precisa combinar captura, metadados, assinatura, indexação, preservação, segurança e descarte controlado quando juridicamente permitido.",
+      "procedimento": [
+        "Classificar os documentos e sua temporalidade.",
+        "Digitalizar segundo os padrões técnicos do Decreto nº 10.278/2020.",
+        "Aplicar os metadados mínimos.",
+        "Assinar digitalmente o documento digitalizado conforme a regulamentação.",
+        "Armazenar em ambiente de preservação adequado.",
+        "Só descartar o físico quando a norma e a temporalidade permitirem."
+      ],
+      "limites": "Não considerar todo documento físico automaticamente descartável; documentos de valor permanente ou histórico possuem tratamento específico.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 360/2022",
+          "url": "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital"
+        },
+        {
+          "norma": "Portaria MEC nº 613/2022",
+          "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=19%2F08%2F2022&jornal=515&pagina=52"
+        },
+        {
+          "norma": "Decreto nº 10.278/2020",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10278.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-015",
+      "pergunta_id": "QA-015",
+      "processo": "Acervo",
+      "pergunta": "Quais cuidados de armazenamento e preservação aparecem na base?",
+      "resposta_objetiva": "A preservação deve garantir proteção contra alteração, destruição e acesso não autorizado, além de permitir localização e gerenciamento por metadados. Para as IES do sistema federal, a Portaria nº 613/2022 exige RDC-Arq conforme as normas vigentes do Conarq e determina cópia de segurança externa para recuperação de desastres. A preservação deve observar também temporalidade e destinação documental.",
+      "fundamento": [
+        "Portaria MEC nº 613/2022",
+        "Lei nº 8.159/1991",
+        "Normas do Conarq"
+      ],
+      "impacto_operacional": "Backup comum não substitui uma estratégia arquivística de preservação. O desenho deve considerar repositório confiável, redundância, metadados, segurança, recuperação de desastre e temporalidade.",
+      "procedimento": [
+        "Manter RDC-Arq quando aplicável.",
+        "Manter cópia externa para desastre.",
+        "Controlar acesso e alterações.",
+        "Manter metadados de localização e gerenciamento.",
+        "Aplicar tabela de temporalidade e destinação.",
+        "Testar recuperação e integridade."
+      ],
+      "limites": "Requisitos específicos de preservação podem variar conforme o tipo documental e normas arquivísticas posteriores.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 613/2022",
+          "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=19%2F08%2F2022&jornal=515&pagina=52"
+        },
+        {
+          "norma": "Lei nº 8.159/1991",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8159.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-018",
+      "pergunta_id": "QA-018",
+      "processo": "Governança",
+      "pergunta": "Quais cuidados gerais a Secretaria deve observar no tratamento de dados pessoais?",
+      "resposta_objetiva": "O tratamento deve observar os princípios da LGPD, especialmente finalidade, adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não discriminação e responsabilização/prestação de contas. A Secretaria deve ter finalidade legítima para acessar e usar dados acadêmicos, limitar o acesso ao necessário e aplicar medidas de segurança.",
+      "fundamento": [
+        "Lei nº 13.709/2018 — LGPD, arts. 6º, 7º, 11 e 46 e seguintes"
+      ],
+      "impacto_operacional": "Consultas, extrações, relatórios, compartilhamentos e integrações precisam ter finalidade definida, controle de acesso e rastreabilidade.",
+      "procedimento": [
+        "Definir a finalidade do tratamento.",
+        "Usar apenas os dados necessários.",
+        "Restringir acesso por função.",
+        "Evitar cópias e compartilhamentos desnecessários.",
+        "Proteger arquivos e sistemas.",
+        "Registrar e tratar incidentes conforme o fluxo institucional."
+      ],
+      "limites": "A LGPD não significa proibição de tratamento de dados acadêmicos; a base legal e a finalidade devem ser avaliadas conforme o caso.",
+      "fontes": [
+        {
+          "norma": "Lei nº 13.709/2018",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-021",
+      "pergunta_id": "QA-021",
+      "processo": "ENADE",
+      "pergunta": "O que a base informa sobre regularidade do estudante no ENADE?",
+      "resposta_objetiva": "A regularidade no ENADE é vinculada ao cumprimento das obrigações do estudante habilitado no exame e aos procedimentos oficiais do Inep. Para a Secretaria, a situação do estudante deve ser tratada como informação acadêmico-regulatória que precisa ser conciliada com os resultados/declarações oficiais antes de concluir processos em que a regularidade seja necessária.",
+      "fundamento": [
+        "Lei nº 10.861/2004 — SINAES",
+        "Regulamentação e cronogramas do Enade/Inep"
+      ],
+      "impacto_operacional": "É necessário controlar habilitação, inscrição, participação, dispensas e situação regular, mantendo evidência da fonte oficial utilizada.",
+      "procedimento": [
+        "Identificar se o estudante é habilitado.",
+        "Conferir sua situação no sistema oficial do Inep.",
+        "Tratar ausência, dispensa e demais ocorrências conforme o ato do ciclo.",
+        "Registrar a evidência utilizada para o processo acadêmico.",
+        "Não substituir a situação oficial por inferência interna."
+      ],
+      "limites": "A regra concreta depende da edição do exame, modalidade e condição do estudante; consultar sempre o ato/edital do ciclo.",
+      "fontes": [
+        {
+          "norma": "Enade – Inep",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade"
+        },
+        {
+          "norma": "Lei nº 10.861/2004",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-022",
+      "pergunta_id": "QA-022",
+      "processo": "ENADE",
+      "pergunta": "Quais são as etapas do cronograma do ENADE 2026 que impactam a Secretaria?",
+      "resposta_objetiva": "Em 2026, o calendário oficial inclui fluxos distintos para Licenciaturas/PND e para Bacharelados/CST. Para Licenciaturas, o cadastro/questionário ocorre em períodos definidos pelo Inep, a prova está prevista para 20/09/2026 e a regularidade, dispensas e resultados seguem etapas posteriores. Para Bacharelados e CST, a prova está prevista para 29/11/2026, com etapas de cadastro, questionário, atendimento especializado, presença, regularidade, dispensas e resultados. A Secretaria deve trabalhar com o cronograma oficial vigente, não com calendário interno desatualizado.",
+      "fundamento": [
+        "Cronograma oficial Enade 2026 — Inep"
+      ],
+      "impacto_operacional": "Criar calendário de alertas por modalidade, com responsáveis, prazos de cadastro, questionário, presença, dispensas e atualização da situação acadêmica.",
+      "procedimento": [
+        "Classificar o curso na modalidade correta.",
+        "Controlar as datas oficiais por etapa.",
+        "Conferir inscrições e habilitados.",
+        "Acompanhar presença e declarações da IES.",
+        "Atualizar a situação acadêmica quando o Inep divulgar os resultados oficiais."
+      ],
+      "limites": "Cronogramas podem ser retificados por edital/republicação; verificar a página do Inep na data da execução.",
+      "fontes": [
+        {
+          "norma": "Enade — Perguntas frequentes e cronogramas 2026",
+          "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-030",
+      "pergunta_id": "QA-030",
+      "processo": "Estágio",
+      "pergunta": "Qual é a diferença entre estágio obrigatório e não obrigatório?",
+      "resposta_objetiva": "Estágio obrigatório é aquele definido no projeto do curso cuja carga horária é requisito para aprovação e obtenção do diploma. Estágio não obrigatório é atividade opcional acrescida à carga horária regular e obrigatória. Ambos são atos educativos escolares supervisionados e dependem de matrícula/frequência regular, termo de compromisso e compatibilidade entre atividades e formação.",
+      "fundamento": [
+        "Lei nº 11.788/2008, arts. 1º a 3º"
+      ],
+      "impacto_operacional": "O sistema acadêmico deve distinguir o tipo de estágio porque as consequências curriculares, documentais e financeiras são diferentes.",
+      "procedimento": [
+        "Verificar o PPC/matriz para identificar obrigatoriedade.",
+        "Confirmar matrícula e frequência.",
+        "Formalizar termo de compromisso.",
+        "Verificar compatibilidade das atividades.",
+        "Garantir acompanhamento e registros exigidos.",
+        "No estágio não obrigatório, controlar bolsa e auxílio-transporte quando devidos."
+      ],
+      "limites": "A classificação não deve ser feita apenas pelo local ou pela existência de bolsa; o PPC e a legislação são determinantes.",
+      "fontes": [
+        {
+          "norma": "Lei nº 11.788/2008",
+          "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-033",
+      "pergunta_id": "QA-033",
+      "processo": "Extensão",
+      "pergunta": "O que a base estabelece sobre integração da extensão à formação acadêmica?",
+      "resposta_objetiva": "A extensão integra a formação acadêmica e deve compor a matriz curricular dos cursos de graduação. A Resolução CNE/CES nº 7/2018 estabelece que as atividades de extensão devem corresponder, no mínimo, a 10% da carga horária curricular estudantil dos cursos de graduação. A extensão é concebida como processo interdisciplinar que promove interação transformadora entre IES e sociedade.",
+      "fundamento": [
+        "Resolução CNE/CES nº 7/2018, arts. 3º e 4º"
+      ],
+      "impacto_operacional": "A curricularização precisa aparecer no PPC, matriz, registros acadêmicos, oferta das atividades, integralização e histórico quando aplicável.",
+      "procedimento": [
+        "Verificar o percentual de 10% no PPC/matriz.",
+        "Mapear quais componentes/atividades cumprem extensão.",
+        "Registrar a participação e carga horária.",
+        "Controlar a integralização curricular.",
+        "Manter evidências para avaliação."
+      ],
+      "limites": "O modo de operacionalização depende do PPC e das regras institucionais, sem afastar os requisitos da Resolução.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CES nº 7/2018",
+          "url": "https://ufal.br/ufal/extensao/documentos/documentos-diversos/diretrizes_nacionais_extensao_rces007_18.pdf/view"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-035",
+      "pergunta_id": "QA-035",
+      "processo": "Pós-graduação",
+      "pergunta": "Quais são as normas gerais cadastradas para cursos de especialização lato sensu?",
+      "resposta_objetiva": "A Resolução CNE/CES nº 1/2018 disciplina a oferta de cursos de pós-graduação lato sensu, denominados especialização, no âmbito do sistema federal. O curso deve possuir PPC, matriz curricular com carga mínima de 360 horas, corpo docente qualificado, avaliação da aprendizagem e registro no Censo/e-MEC conforme as regras aplicáveis. O certificado deve ser acompanhado de histórico escolar com as informações exigidas pela resolução.",
+      "fundamento": [
+        "Resolução CNE/CES nº 1/2018, arts. 6º a 8º"
+      ],
+      "impacto_operacional": "A Secretaria deve controlar credenciamento, PPC, carga horária, corpo docente, avaliação, registro da oferta e emissão do certificado/histórico.",
+      "procedimento": [
+        "Confirmar a regularidade/credenciamento da instituição.",
+        "Validar PPC e matriz com mínimo de 360 horas.",
+        "Controlar corpo docente e avaliação.",
+        "Registrar a oferta nos sistemas aplicáveis.",
+        "Emitir certificado acompanhado do histórico com os elementos exigidos."
+      ],
+      "limites": "Não aplicar automaticamente regras de lato sensu a stricto sensu ou residência.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CES nº 1/2018",
+          "url": "https://www.gov.br/mec/pt-br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-040",
+      "pergunta_id": "QA-040",
+      "processo": "Formação docente",
+      "pergunta": "Quais regras atuais devo consultar para segunda licenciatura?",
+      "resposta_objetiva": "A referência central atual é a Resolução CNE/CP nº 4/2024, complementada pelas orientações do Parecer CNE/CP nº 5/2025. A segunda licenciatura é destinada a quem já possui licenciatura e tem carga horária mínima variável de 1.200 a 1.800 horas conforme a equivalência entre a formação original e a nova licenciatura. A oferta exige que a IES tenha licenciatura reconhecida na habilitação pretendida e atenda às condições regulatórias previstas. A compatibilidade da formação de origem deve ser analisada conforme a própria resolução e seus anexos.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, art. 16",
+        "Parecer CNE/CP nº 5/2025",
+        "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES"
+      ],
+      "impacto_operacional": "A matrícula não deve ser automática: exige identificação da licenciatura de origem, análise de compatibilidade, enquadramento da carga horária e verificação da oferta regular da IES.",
+      "procedimento": [
+        "Confirmar que o candidato possui licenciatura.",
+        "Identificar área de origem e habilitação pretendida.",
+        "Aplicar a tabela/critério de compatibilidade.",
+        "Determinar a carga horária e duração correspondentes.",
+        "Registrar a análise de compatibilidade no processo acadêmico.",
+        "Verificar a regularidade da oferta no e-MEC."
+      ],
+      "limites": "Casos envolvendo Pedagogia, matrículas anteriores e transição normativa exigem análise específica.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CP nº 5/2025",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-041",
+      "pergunta_id": "QA-041",
+      "processo": "Formação docente",
+      "pergunta": "Quais regras atuais devo consultar para formação pedagógica de graduados não licenciados?",
+      "resposta_objetiva": "A formação pedagógica atual é destinada a bacharéis e tecnólogos não licenciados com formação relacionada e sólida base de conhecimentos na área pretendida. Pela Resolução CNE/CP nº 4/2024, o curso tem 1.600 horas e duração mínima de 2 anos; não se destina à formação de pedagogos. A IES deve verificar previamente a compatibilidade da formação do candidato com a habilitação pretendida e documentar os critérios utilizados.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, art. 15",
+        "Parecer CNE/CP nº 5/2025",
+        "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES"
+      ],
+      "impacto_operacional": "A admissão exige análise documental e curricular antes da matrícula, com evidência da compatibilidade. A nomenclatura e a habilitação do curso não podem ser tratadas como equivalentes a Pedagogia.",
+      "procedimento": [
+        "Confirmar graduação de origem e ausência de licenciatura.",
+        "Avaliar relação da formação de origem com a habilitação pretendida.",
+        "Registrar os critérios de compatibilidade.",
+        "Aplicar a matriz de 1.600 horas e demais componentes da norma vigente.",
+        "Controlar a modalidade e as atividades presenciais exigidas."
+      ],
+      "limites": "Não usar formação pedagógica como atalho para formação de pedagogo; casos de transição devem ser enquadrados pela data de matrícula e atos aplicáveis.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CP nº 5/2025",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-042",
+      "pergunta_id": "QA-042",
+      "processo": "Formação docente",
+      "pergunta": "Qual carga horária aparece na base para formação pedagógica e segunda licenciatura?",
+      "resposta_objetiva": "Pela Resolução CNE/CP nº 4/2024, a formação pedagógica tem 1.600 horas e duração mínima de 2 anos. A segunda licenciatura varia de 1.200 a 1.800 horas conforme a equivalência entre a formação original e a nova licenciatura; o Parecer CNE/CP nº 5/2025 orienta que, para a segunda licenciatura, a duração mínima é de 1,5 ano quando na mesma área e 2,5 anos quando em área diferente, conforme o enquadramento normativo.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, arts. 15 e 16",
+        "Parecer CNE/CP nº 5/2025"
+      ],
+      "impacto_operacional": "Carga horária e duração precisam ser calculadas no ingresso, a partir da formação de origem e do enquadramento da habilitação pretendida.",
+      "procedimento": [
+        "Identificar a modalidade: formação pedagógica ou segunda licenciatura.",
+        "Para formação pedagógica, aplicar 1.600 horas e mínimo de 2 anos na regra vigente.",
+        "Para segunda licenciatura, determinar equivalência e aplicar 1.200–1.800 horas.",
+        "Registrar a fundamentação do enquadramento."
+      ],
+      "limites": "Não aplicar a mesma carga horária a todos os candidatos; a segunda licenciatura depende da equivalência entre formações.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CP nº 5/2025",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-043",
+      "pergunta_id": "QA-043",
+      "processo": "Formação docente",
+      "pergunta": "É possível formação pedagógica com destino à área de Pedagogia segundo a base?",
+      "resposta_objetiva": "Pela regra vigente da Resolução CNE/CP nº 4/2024, a formação pedagógica para graduados não licenciados não se destina à formação de pedagogos. A norma direciona essa formação para docentes de componentes curriculares dos anos finais do Ensino Fundamental, Ensino Médio e Educação Profissional Técnica de Nível Médio. Pareceres do CNE de 2024/2025 reforçam essa distinção.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, art. 15, § 1º",
+        "Parecer CNE/CES nº 451/2024",
+        "Parecer CNE/CES nº 220/2025",
+        "Parecer CNE/CP nº 5/2025"
+      ],
+      "impacto_operacional": "A Secretaria não deve cadastrar ou certificar uma formação pedagógica como se fosse formação de Pedagogia. A nomenclatura, habilitação e documentação final precisam refletir a modalidade efetivamente cursada.",
+      "procedimento": [
+        "Identificar se o pedido é formação pedagógica ou licenciatura em Pedagogia.",
+        "Se for formação pedagógica, verificar a habilitação específica e a compatibilidade da formação de origem.",
+        "Bloquear enquadramento automático como Pedagogia.",
+        "Em caso de matrícula anterior/transição, analisar a data e a norma aplicável."
+      ],
+      "limites": "Situações históricas anteriores à Resolução de 2024 podem exigir análise própria; não aplicar a regra atual retroativamente sem verificar o regime de transição.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CES nº 451/2024",
+          "url": "https://portal.mec.gov.br/index.php?Itemid=30192&alias=259971-pces451-24&category_slug=julho-2024&option=com_docman&view=download"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-044",
+      "pergunta_id": "QA-044",
+      "processo": "Formação docente",
+      "pergunta": "Como verificar a compatibilidade entre formação de origem e a habilitação pretendida?",
+      "resposta_objetiva": "A compatibilidade deve ser verificada pela IES antes do aceite da matrícula. A Resolução CNE/CP nº 4/2024 determina que a instituição utilize os critérios e tabelas aplicáveis à formação de origem e à habilitação pretendida e registre os critérios curriculares utilizados. Para formação pedagógica, o candidato deve ser bacharel ou tecnólogo com formação relacionada e sólida base de conhecimentos na área; para segunda licenciatura, deve possuir licenciatura e a equivalência deve ser analisada conforme a norma.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, arts. 15 e 16 e Anexo",
+        "Parecer CNE/CP nº 5/2025",
+        "Nota Técnica nº 74/2024"
+      ],
+      "impacto_operacional": "É recomendável transformar a análise em checklist/régua sistêmica, com evidência documental e decisão rastreável antes da matrícula.",
+      "procedimento": [
+        "Capturar diploma e histórico da formação de origem.",
+        "Identificar grau, área e componentes relevantes.",
+        "Consultar a tabela/anexo da Resolução.",
+        "Registrar o critério de compatibilidade.",
+        "Aprovar ou reprovar a habilitação pretendida.",
+        "Guardar a evidência no processo acadêmico."
+      ],
+      "limites": "Não usar apenas o nome do curso de origem como critério; a compatibilidade é uma análise curricular/regulatória.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CP nº 5/2025",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-045",
+      "pergunta_id": "QA-045",
+      "processo": "Formação docente",
+      "pergunta": "Como a base orienta a implantação/transição para as regras de 2024/2025?",
+      "resposta_objetiva": "A Resolução CNE/CP nº 4/2024 entrou em vigor em 1º de julho de 2024 e estabeleceu prazo de 2 anos para adaptação dos cursos em funcionamento. O Parecer CNE/CP nº 5/2025 esclareceu a transição para formação pedagógica e segunda licenciatura: durante a janela de transição, cursos iniciados sob a norma anterior poderiam ser concluídos sob a Resolução CNE/CP nº 2/2019 quando finalizados dentro do prazo indicado; após 1º de julho de 2026, a oferta deve observar integralmente a Resolução nº 4/2024.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, arts. 17, 22 e 24",
+        "Parecer CNE/CP nº 5/2025",
+        "Nota Técnica nº 74/2024"
+      ],
+      "impacto_operacional": "A data de ingresso, a modalidade do curso, o PPC adotado e a data de conclusão passam a ser campos críticos para o enquadramento regulatório.",
+      "procedimento": [
+        "Identificar data de ingresso/matrícula.",
+        "Identificar a norma sob a qual o curso foi iniciado.",
+        "Verificar se a conclusão ocorreu dentro da janela de transição.",
+        "Para novas ofertas após o fim da transição, aplicar a Resolução nº 4/2024.",
+        "Manter evidência do enquadramento."
+      ],
+      "limites": "Não generalizar o regime de transição para todas as licenciaturas, formação pedagógica e segunda licenciatura sem verificar a orientação específica do CNE/MEC.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CP nº 5/2025",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-046",
+      "pergunta_id": "QA-046",
+      "processo": "Formação docente",
+      "pergunta": "Qual é o papel histórico da Resolução CNE/CP nº 2/2019 na base?",
+      "resposta_objetiva": "A Resolução CNE/CP nº 2/2019 foi a referência das Diretrizes Curriculares Nacionais para Formação Inicial de Professores antes da Resolução CNE/CP nº 4/2024. Ela tem valor histórico para enquadrar cursos e estudantes que ingressaram sob seu regime, especialmente durante a transição. A Resolução nº 4/2024 revogou a nº 2/2019 e entrou em vigor em 1º de julho de 2024; portanto, a norma de 2019 não deve ser usada como regra geral atual.",
+      "fundamento": [
+        "Resolução CNE/CP nº 2/2019",
+        "Resolução CNE/CP nº 4/2024, arts. 23 e 24",
+        "Parecer CNE/CP nº 5/2025"
+      ],
+      "impacto_operacional": "O banco deve manter a Resolução de 2019 como referência histórica/transitória, com controle de data, e não como regra padrão para novas matrículas.",
+      "procedimento": [
+        "Identificar a data de ingresso.",
+        "Verificar se o caso está dentro de regime de transição.",
+        "Aplicar a norma correspondente ao caso.",
+        "Registrar a justificativa de enquadramento.",
+        "Para novas ofertas, consultar a norma vigente."
+      ],
+      "limites": "Norma revogada não desaparece do histórico: pode continuar relevante para situações constituídas sob sua vigência, mas não deve ser tratada como regra atual.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Formação Superior para a Docência – CNE",
+          "url": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    }
+  ]
+}
