@@ -1,0 +1,1489 @@
+{
+  "schema_version": "oraculo-motor-resposta-v1.0",
+  "status": "draft_validacao",
+  "base": {
+    "referencias": 28,
+    "intencoes": 52,
+    "layout": "V5 congelada"
+  },
+  "contrato_resposta": {
+    "ordem": [
+      "resposta_objetiva",
+      "fundamento",
+      "o_que_a_fonte_diz",
+      "impacto_operacional",
+      "procedimento",
+      "fontes",
+      "limites_da_resposta"
+    ],
+    "regra_principal": "Nenhuma afirmação normativa deve ser apresentada sem referência recuperada da base.",
+    "parafrase": "Conteúdo não marcado como citação literal nunca deve ser colocado entre aspas como se fosse texto da norma.",
+    "lacuna": "Quando a evidência não for suficiente, declarar a lacuna e não completar com inferência.",
+    "conflito": "Se houver referências potencialmente conflitantes, sinalizar para análise de vigência/hierarquia/ato posterior; não escolher automaticamente.",
+    "caso_concreto": "Se a resposta depender de dados do aluno/curso/modalidade/período, pedir os dados faltantes."
+  },
+  "regras": [
+    {
+      "id": "QA-001",
+      "processo": "Vida acadêmica",
+      "intencao": "validade de diploma",
+      "gatilhos": [
+        "Qual é a regra geral sobre validade nacional de diploma de curso superior?",
+        "validade de diploma",
+        "Vida acadêmica"
+      ],
+      "referencias_prioritarias": [
+        "ldb-9394",
+        "port-1095"
+      ],
+      "referencias_nomes": [
+        "Lei nº 9.394/1996 — LDB",
+        "Portaria MEC nº 1.095/2018"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não tratar a LDB isoladamente quando houver regulamentação específica."
+    },
+    {
+      "id": "QA-002",
+      "processo": "Documentos",
+      "intencao": "emissão de diploma",
+      "gatilhos": [
+        "Quais regras devo observar para expedição e registro de diploma?",
+        "emissão de diploma",
+        "Documentos"
+      ],
+      "referencias_prioritarias": [
+        "port-1095",
+        "pn-23-2017",
+        "diploma-2025"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 1.095/2018",
+        "Portaria Normativa MEC nº 23/2017",
+        "Portaria MEC nº 70/2025 — Diploma Digital"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Verificar vigência e eventuais atos supervenientes."
+    },
+    {
+      "id": "QA-003",
+      "processo": "Documentos",
+      "intencao": "histórico escolar",
+      "gatilhos": [
+        "Quais informações devem constar no histórico escolar?",
+        "histórico escolar",
+        "Documentos"
+      ],
+      "referencias_prioritarias": [
+        "parecer-379-2004",
+        "pn-23-2017",
+        "mec-xsd-105"
+      ],
+      "referencias_nomes": [
+        "Parecer CNE/CES nº 379/2004",
+        "Portaria Normativa MEC nº 23/2017",
+        "Pacote XSD do Diploma Digital — versão 1.05"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não converter referência técnica em obrigação jurídica sem fundamento."
+    },
+    {
+      "id": "QA-004",
+      "processo": "Documentos",
+      "intencao": "transferência",
+      "gatilhos": [
+        "Quais regras estão relacionadas à transferência e à documentação de transferência?",
+        "transferência",
+        "Documentos"
+      ],
+      "referencias_prioritarias": [
+        "port-230-2007",
+        "pn-23-2017"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 230/2007",
+        "Portaria Normativa MEC nº 23/2017"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Verificar se o caso é transferência externa, interna ou outro fluxo."
+    },
+    {
+      "id": "QA-005",
+      "processo": "Vida acadêmica",
+      "intencao": "inadimplência",
+      "gatilhos": [
+        "Quais direitos acadêmicos precisam ser observados quando o aluno está inadimplente?",
+        "inadimplência",
+        "Vida acadêmica"
+      ],
+      "referencias_prioritarias": [
+        "lei-9870"
+      ],
+      "referencias_nomes": [
+        "Lei nº 9.870/1999 — mensalidades escolares"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não extrapolar a regra para situações não cobertas pela fonte."
+    },
+    {
+      "id": "QA-006",
+      "processo": "Documentos",
+      "intencao": "cobrança de documentos",
+      "gatilhos": [
+        "Pode haver cobrança pela emissão de diploma ou histórico?",
+        "cobrança de documentos",
+        "Documentos"
+      ],
+      "referencias_prioritarias": [
+        "pn-23-2017",
+        "port-230-2007",
+        "lei-9870"
+      ],
+      "referencias_nomes": [
+        "Portaria Normativa MEC nº 23/2017",
+        "Portaria MEC nº 230/2007",
+        "Lei nº 9.870/1999 — mensalidades escolares"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Responder conforme o tipo de documento e situação concreta."
+    },
+    {
+      "id": "QA-007",
+      "processo": "Documentos",
+      "intencao": "histórico digital",
+      "gatilhos": [
+        "Como deve ser estruturado o histórico escolar digital?",
+        "histórico digital",
+        "Documentos"
+      ],
+      "referencias_prioritarias": [
+        "mec-xsd-105",
+        "parecer-379-2004"
+      ],
+      "referencias_nomes": [
+        "Pacote XSD do Diploma Digital — versão 1.05",
+        "Parecer CNE/CES nº 379/2004"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Separar estrutura técnica de obrigação normativa."
+    },
+    {
+      "id": "QA-008",
+      "processo": "Diploma Digital",
+      "intencao": "estrutura técnica",
+      "gatilhos": [
+        "Quais elementos técnicos preciso observar no Diploma Digital?",
+        "estrutura técnica",
+        "Diploma Digital"
+      ],
+      "referencias_prioritarias": [
+        "port-554",
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 70/2025 — Diploma Digital",
+        "Pacote XSD do Diploma Digital — versão 1.05"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "A versão técnica deve ser validada contra a versão oficial disponível."
+    },
+    {
+      "id": "QA-009",
+      "processo": "Diploma Digital",
+      "intencao": "XML",
+      "gatilhos": [
+        "Quais regras se aplicam ao XML do Diploma Digital?",
+        "XML",
+        "Diploma Digital"
+      ],
+      "referencias_prioritarias": [
+        "port-554",
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 70/2025 — Diploma Digital",
+        "Pacote XSD do Diploma Digital — versão 1.05"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não inferir campos não presentes na especificação consultada."
+    },
+    {
+      "id": "QA-010",
+      "processo": "Diploma Digital",
+      "intencao": "assinatura",
+      "gatilhos": [
+        "Quais requisitos de assinatura e integridade devo considerar no Diploma Digital?",
+        "assinatura",
+        "Diploma Digital"
+      ],
+      "referencias_prioritarias": [
+        "port-554",
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 70/2025 — Diploma Digital",
+        "Pacote XSD do Diploma Digital — versão 1.05"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Exigir conferência da versão vigente."
+    },
+    {
+      "id": "QA-011",
+      "processo": "Diploma Digital",
+      "intencao": "histórico digital",
+      "gatilhos": [
+        "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+        "histórico digital",
+        "Diploma Digital"
+      ],
+      "referencias_prioritarias": [
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 70/2025 — Diploma Digital",
+        "Pacote XSD do Diploma Digital — versão 1.05"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não tratar os dois documentos como se fossem necessariamente o mesmo artefato."
+    },
+    {
+      "id": "QA-012",
+      "processo": "Diploma Digital",
+      "intencao": "nato-digital",
+      "gatilhos": [
+        "O que a base atual informa sobre documento nato-digital no contexto acadêmico?",
+        "nato-digital",
+        "Diploma Digital"
+      ],
+      "referencias_prioritarias": [
+        "port-554",
+        "port-360",
+        "diploma-2025"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 360/2022",
+        "Portaria MEC nº 70/2025 — Diploma Digital"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Distinguir diploma digital de documentos do acervo."
+    },
+    {
+      "id": "QA-013",
+      "processo": "Acervo",
+      "intencao": "responsabilidade",
+      "gatilhos": [
+        "Quem possui responsabilidades relacionadas à guarda e custódia do acervo acadêmico?",
+        "responsabilidade",
+        "Acervo"
+      ],
+      "referencias_prioritarias": [
+        "port-315"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 315/2018"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não atribuir responsabilidade além do texto da fonte."
+    },
+    {
+      "id": "QA-014",
+      "processo": "Acervo",
+      "intencao": "digitalização",
+      "gatilhos": [
+        "Quais regras orientam a conversão do acervo acadêmico para meio digital?",
+        "digitalização",
+        "Acervo"
+      ],
+      "referencias_prioritarias": [
+        "port-360",
+        "port-613"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 360/2022",
+        "Portaria MEC nº 613/2022"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Separar conversão, digitalização e preservação."
+    },
+    {
+      "id": "QA-015",
+      "processo": "Acervo",
+      "intencao": "preservação",
+      "gatilhos": [
+        "Quais cuidados de armazenamento e preservação aparecem na base?",
+        "preservação",
+        "Acervo"
+      ],
+      "referencias_prioritarias": [
+        "port-613"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 613/2022"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Validar requisitos técnicos na fonte oficial."
+    },
+    {
+      "id": "QA-016",
+      "processo": "Acervo",
+      "intencao": "documento físico",
+      "gatilhos": [
+        "A produção de novos documentos físicos do acervo é permitida?",
+        "documento físico",
+        "Acervo"
+      ],
+      "referencias_prioritarias": [
+        "port-360"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 360/2022"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Responder somente conforme o escopo da norma."
+    },
+    {
+      "id": "QA-017",
+      "processo": "Acervo",
+      "intencao": "RDC-Arq",
+      "gatilhos": [
+        "Onde aparece a referência a RDC-Arq no acervo acadêmico?",
+        "RDC-Arq",
+        "Acervo"
+      ],
+      "referencias_prioritarias": [
+        "port-613"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 613/2022"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não presumir implementação sem requisitos adicionais."
+    },
+    {
+      "id": "QA-018",
+      "processo": "Governança",
+      "intencao": "dados pessoais",
+      "gatilhos": [
+        "Quais cuidados gerais a Secretaria deve observar no tratamento de dados pessoais?",
+        "dados pessoais",
+        "Governança"
+      ],
+      "referencias_prioritarias": [
+        "lgpd-13709"
+      ],
+      "referencias_nomes": [
+        "Lei nº 13.709/2018 — LGPD"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não criar base legal específica sem análise do caso."
+    },
+    {
+      "id": "QA-019",
+      "processo": "Governança",
+      "intencao": "CPF",
+      "gatilhos": [
+        "Como tratar o CPF do aluno dentro dos processos acadêmicos?",
+        "CPF",
+        "Governança"
+      ],
+      "referencias_prioritarias": [
+        "lgpd-13709"
+      ],
+      "referencias_nomes": [
+        "Lei nº 13.709/2018 — LGPD"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "A resposta deve depender da finalidade e do contexto do tratamento."
+    },
+    {
+      "id": "QA-020",
+      "processo": "Governança",
+      "intencao": "acesso",
+      "gatilhos": [
+        "Quais cuidados devo considerar ao conceder acesso a dados acadêmicos?",
+        "acesso",
+        "Governança"
+      ],
+      "referencias_prioritarias": [
+        "lgpd-13709"
+      ],
+      "referencias_nomes": [
+        "Lei nº 13.709/2018 — LGPD"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não confundir acesso operacional com autorização jurídica automática."
+    },
+    {
+      "id": "QA-021",
+      "processo": "ENADE",
+      "intencao": "regularidade",
+      "gatilhos": [
+        "O que a base informa sobre regularidade do estudante no ENADE?",
+        "regularidade",
+        "ENADE"
+      ],
+      "referencias_prioritarias": [
+        "sinaes-10861",
+        "enade-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Lei nº 10.861/2004 — SINAES/ENADE",
+        "Enade 2026 — cronogramas oficiais"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Separar regra legal de calendário operacional."
+    },
+    {
+      "id": "QA-022",
+      "processo": "ENADE",
+      "intencao": "cronograma",
+      "gatilhos": [
+        "Quais são as etapas do cronograma do ENADE 2026 que impactam a Secretaria?",
+        "cronograma",
+        "ENADE"
+      ],
+      "referencias_prioritarias": [
+        "enade-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Enade 2026 — cronogramas oficiais"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Calendário é temporal e deve ser atualizado."
+    },
+    {
+      "id": "QA-023",
+      "processo": "ENADE",
+      "intencao": "licenciaturas",
+      "gatilhos": [
+        "Como o ENADE 2026 se relaciona às licenciaturas?",
+        "licenciaturas",
+        "ENADE"
+      ],
+      "referencias_prioritarias": [
+        "enade-2026-cronograma",
+        "enade-qualidade-2026-portaria90"
+      ],
+      "referencias_nomes": [
+        "Enade 2026 — cronogramas oficiais",
+        "Portaria nº 90/2026 — Conceito Enade das Licenciaturas"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não confundir ENADE/PND sem verificar o ato específico."
+    },
+    {
+      "id": "QA-024",
+      "processo": "ENADE",
+      "intencao": "conceito",
+      "gatilhos": [
+        "O que a Portaria nº 90/2026 disciplina sobre o Conceito Enade das Licenciaturas?",
+        "conceito",
+        "ENADE"
+      ],
+      "referencias_prioritarias": [
+        "enade-qualidade-2026-portaria90"
+      ],
+      "referencias_nomes": [
+        "Portaria nº 90/2026 — Conceito Enade das Licenciaturas"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não transformar o conceito em avaliação não prevista na fonte."
+    },
+    {
+      "id": "QA-025",
+      "processo": "ENADE",
+      "intencao": "histórico",
+      "gatilhos": [
+        "Qual relação entre ENADE e registros acadêmicos/regularidade?",
+        "histórico",
+        "ENADE"
+      ],
+      "referencias_prioritarias": [
+        "sinaes-10861",
+        "enade-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Lei nº 10.861/2004 — SINAES/ENADE",
+        "Enade 2026 — cronogramas oficiais"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "A resposta deve indicar exatamente o que é obrigatório registrar."
+    },
+    {
+      "id": "QA-026",
+      "processo": "Censo",
+      "intencao": "cadastro",
+      "gatilhos": [
+        "Quais dados institucionais e acadêmicos são relacionados ao Censo da Educação Superior?",
+        "cadastro",
+        "Censo"
+      ],
+      "referencias_prioritarias": [
+        "censo-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Censo da Educação Superior 2026 — Cronograma"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não presumir campos específicos sem a fonte de coleta."
+    },
+    {
+      "id": "QA-027",
+      "processo": "Censo",
+      "intencao": "e-MEC",
+      "gatilhos": [
+        "Qual é a relação entre cadastro e-MEC e Censo na base atual?",
+        "e-MEC",
+        "Censo"
+      ],
+      "referencias_prioritarias": [
+        "censo-2026-cronograma",
+        "dec-9235"
+      ],
+      "referencias_nomes": [
+        "Censo da Educação Superior 2026 — Cronograma",
+        "Decreto nº 9.235/2017"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Distinguir cadastro regulatório de coleta censitária."
+    },
+    {
+      "id": "QA-028",
+      "processo": "Censo",
+      "intencao": "cronograma",
+      "gatilhos": [
+        "Quais prazos do Censo 2026 exigem atenção da Secretaria?",
+        "cronograma",
+        "Censo"
+      ],
+      "referencias_prioritarias": [
+        "censo-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Censo da Educação Superior 2026 — Cronograma"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Prazos devem ser atualizados periodicamente."
+    },
+    {
+      "id": "QA-029",
+      "processo": "Censo",
+      "intencao": "qualidade de dados",
+      "gatilhos": [
+        "Que conferências devo fazer antes de uma etapa do Censo?",
+        "qualidade de dados",
+        "Censo"
+      ],
+      "referencias_prioritarias": [
+        "censo-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Censo da Educação Superior 2026 — Cronograma"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "O checklist deve ser refinado quando houver fonte de coleta detalhada."
+    },
+    {
+      "id": "QA-030",
+      "processo": "Estágio",
+      "intencao": "conceito",
+      "gatilhos": [
+        "Qual é a diferença entre estágio obrigatório e não obrigatório?",
+        "conceito",
+        "Estágio"
+      ],
+      "referencias_prioritarias": [
+        "estagio-11788"
+      ],
+      "referencias_nomes": [
+        "Lei nº 11.788/2008 — Estágio"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não acrescentar requisitos não presentes na fonte."
+    },
+    {
+      "id": "QA-031",
+      "processo": "Estágio",
+      "intencao": "documentação",
+      "gatilhos": [
+        "Quais documentos e agentes aparecem na estrutura do estágio?",
+        "documentação",
+        "Estágio"
+      ],
+      "referencias_prioritarias": [
+        "estagio-11788"
+      ],
+      "referencias_nomes": [
+        "Lei nº 11.788/2008 — Estágio"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Fluxos internos podem exigir fontes adicionais."
+    },
+    {
+      "id": "QA-032",
+      "processo": "Estágio",
+      "intencao": "supervisão",
+      "gatilhos": [
+        "Quais papéis de supervisão aparecem na legislação de estágio?",
+        "supervisão",
+        "Estágio"
+      ],
+      "referencias_prioritarias": [
+        "estagio-11788"
+      ],
+      "referencias_nomes": [
+        "Lei nº 11.788/2008 — Estágio"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Separar responsabilidade legal de procedimento interno."
+    },
+    {
+      "id": "QA-033",
+      "processo": "Extensão",
+      "intencao": "curricularização",
+      "gatilhos": [
+        "O que a base estabelece sobre integração da extensão à formação acadêmica?",
+        "curricularização",
+        "Extensão"
+      ],
+      "referencias_prioritarias": [
+        "ext-7-2018"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CES nº 7/2018 — Extensão"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não inferir percentual ou carga horária não cadastrados."
+    },
+    {
+      "id": "QA-034",
+      "processo": "Extensão",
+      "intencao": "PPC",
+      "gatilhos": [
+        "Como a extensão se relaciona ao PPC?",
+        "PPC",
+        "Extensão"
+      ],
+      "referencias_prioritarias": [
+        "ext-7-2018"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CES nº 7/2018 — Extensão"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Exigir a regra específica para responder percentuais/carga horária."
+    },
+    {
+      "id": "QA-035",
+      "processo": "Pós-graduação",
+      "intencao": "especialização",
+      "gatilhos": [
+        "Quais são as normas gerais cadastradas para cursos de especialização lato sensu?",
+        "especialização",
+        "Pós-graduação"
+      ],
+      "referencias_prioritarias": [
+        "pos-1-2018"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CES nº 1/2018 — Pós-Graduação Lato Sensu"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não extrapolar para stricto sensu."
+    },
+    {
+      "id": "QA-036",
+      "processo": "Pós-graduação",
+      "intencao": "certificado",
+      "gatilhos": [
+        "Quais aspectos de documentação da especialização aparecem na base?",
+        "certificado",
+        "Pós-graduação"
+      ],
+      "referencias_prioritarias": [
+        "pos-1-2018"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CES nº 1/2018 — Pós-Graduação Lato Sensu"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Detalhamento documental pode exigir fonte complementar."
+    },
+    {
+      "id": "QA-037",
+      "processo": "Regulação",
+      "intencao": "supervisão",
+      "gatilhos": [
+        "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
+        "supervisão",
+        "Regulação"
+      ],
+      "referencias_prioritarias": [
+        "dec-9235",
+        "sinaes-10861"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 9.235/2017",
+        "Lei nº 10.861/2004 — SINAES/ENADE"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Separar funções de regulação/supervisão das de avaliação."
+    },
+    {
+      "id": "QA-038",
+      "processo": "Regulação",
+      "intencao": "avaliação",
+      "gatilhos": [
+        "Como SINAES e regulação se relacionam na base?",
+        "avaliação",
+        "Regulação"
+      ],
+      "referencias_prioritarias": [
+        "sinaes-10861",
+        "dec-9235"
+      ],
+      "referencias_nomes": [
+        "Lei nº 10.861/2004 — SINAES/ENADE",
+        "Decreto nº 9.235/2017"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não atribuir efeitos regulatórios específicos sem fonte."
+    },
+    {
+      "id": "QA-039",
+      "processo": "Regulação",
+      "intencao": "curso/IES",
+      "gatilhos": [
+        "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
+        "curso/IES",
+        "Regulação"
+      ],
+      "referencias_prioritarias": [
+        "dec-9235"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 9.235/2017"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "O Oráculo deve buscar atos específicos quando necessário."
+    },
+    {
+      "id": "QA-040",
+      "processo": "Formação docente",
+      "intencao": "segunda licenciatura",
+      "gatilhos": [
+        "Quais regras atuais devo consultar para segunda licenciatura?",
+        "segunda licenciatura",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "formacao-rcp4-2024",
+        "formacao-parecer-5-2025",
+        "nota-74-2024",
+        "formacao-faq-mec-2025"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CP nº 4/2024",
+        "Parecer CNE/CP nº 5/2025",
+        "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES",
+        "FAQ MEC — Formação Pedagógica e Segunda Licenciatura"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não responder com uma única fonte quando o caso exige conjunto normativo."
+    },
+    {
+      "id": "QA-041",
+      "processo": "Formação docente",
+      "intencao": "formação pedagógica",
+      "gatilhos": [
+        "Quais regras atuais devo consultar para formação pedagógica de graduados não licenciados?",
+        "formação pedagógica",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "formacao-rcp4-2024",
+        "formacao-parecer-5-2025",
+        "formacao-faq-mec-2025",
+        "nota-74-2024"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CP nº 4/2024",
+        "Parecer CNE/CP nº 5/2025",
+        "FAQ MEC — Formação Pedagógica e Segunda Licenciatura",
+        "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Verificar formação de origem e compatibilidade antes de concluir."
+    },
+    {
+      "id": "QA-042",
+      "processo": "Formação docente",
+      "intencao": "carga horária",
+      "gatilhos": [
+        "Qual carga horária aparece na base para formação pedagógica e segunda licenciatura?",
+        "carga horária",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "formacao-faq-mec-2025",
+        "nota-74-2024",
+        "formacao-rcp4-2024"
+      ],
+      "referencias_nomes": [
+        "FAQ MEC — Formação Pedagógica e Segunda Licenciatura",
+        "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES",
+        "Resolução CNE/CP nº 4/2024"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não tratar número isolado sem contexto da modalidade/formação."
+    },
+    {
+      "id": "QA-043",
+      "processo": "Formação docente",
+      "intencao": "Pedagogia",
+      "gatilhos": [
+        "É possível formação pedagógica com destino à área de Pedagogia segundo a base?",
+        "Pedagogia",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-220-2025",
+        "formacao-rcp4-2024"
+      ],
+      "referencias_nomes": [
+        "Parecer CNE/CES nº 220/2025",
+        "Resolução CNE/CP nº 4/2024"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "A resposta deve reproduzir a ressalva/escopo do parecer; não generalizar."
+    },
+    {
+      "id": "QA-044",
+      "processo": "Formação docente",
+      "intencao": "compatibilidade",
+      "gatilhos": [
+        "Como verificar a compatibilidade entre formação de origem e a habilitação pretendida?",
+        "compatibilidade",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "formacao-rcp4-2024",
+        "nota-74-2024",
+        "formacao-parecer-220-2025"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CP nº 4/2024",
+        "Nota Técnica nº 74/2024/CGLNRS/GAB/SERES/SERES",
+        "Parecer CNE/CES nº 220/2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Se faltarem dados da formação de origem, solicitar informação."
+    },
+    {
+      "id": "QA-045",
+      "processo": "Formação docente",
+      "intencao": "transição",
+      "gatilhos": [
+        "Como a base orienta a implantação/transição para as regras de 2024/2025?",
+        "transição",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-rcp4-2024",
+        "cne-rcp2-2019"
+      ],
+      "referencias_nomes": [
+        "Parecer CNE/CP nº 5/2025",
+        "Resolução CNE/CP nº 4/2024",
+        "Resolução CNE/CP nº 2/2019 — BNC-Formação"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não assumir regime de transição sem verificar a situação concreta."
+    },
+    {
+      "id": "QA-046",
+      "processo": "Formação docente",
+      "intencao": "norma anterior",
+      "gatilhos": [
+        "Qual é o papel histórico da Resolução CNE/CP nº 2/2019 na base?",
+        "norma anterior",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "cne-rcp2-2019",
+        "formacao-rcp4-2024"
+      ],
+      "referencias_nomes": [
+        "Resolução CNE/CP nº 2/2019 — BNC-Formação",
+        "Resolução CNE/CP nº 4/2024"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não usar norma histórica como regra atual sem confirmação."
+    },
+    {
+      "id": "QA-047",
+      "processo": "Formação docente",
+      "intencao": "fonte oficial",
+      "gatilhos": [
+        "Onde localizar a cadeia normativa sobre formação superior para a docência?",
+        "fonte oficial",
+        "Formação docente"
+      ],
+      "referencias_prioritarias": [
+        "cne-formacao-docencia"
+      ],
+      "referencias_nomes": [
+        "CNE — Formação Superior para a Docência na Educação Básica"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "A página é índice de consulta, não substituto da norma."
+    },
+    {
+      "id": "QA-048",
+      "processo": "Oráculo",
+      "intencao": "fundamento",
+      "gatilhos": [
+        "Qual norma fundamenta esta resposta?",
+        "fundamento",
+        "Oráculo"
+      ],
+      "referencias_prioritarias": [],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Nunca responder sem apontar a fonte quando a pergunta for normativa."
+    },
+    {
+      "id": "QA-049",
+      "processo": "Oráculo",
+      "intencao": "conflito normativo",
+      "gatilhos": [
+        "Encontrei duas referências aparentemente diferentes. Qual delas devo considerar?",
+        "conflito normativo",
+        "Oráculo"
+      ],
+      "referencias_prioritarias": [],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não decidir conflito sem evidência normativa suficiente."
+    },
+    {
+      "id": "QA-050",
+      "processo": "Oráculo",
+      "intencao": "lacuna",
+      "gatilhos": [
+        "A base do Oráculo possui fundamento suficiente para responder esta pergunta?",
+        "lacuna",
+        "Oráculo"
+      ],
+      "referencias_prioritarias": [],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Se não houver evidência suficiente, declarar lacuna."
+    },
+    {
+      "id": "QA-051",
+      "processo": "Oráculo",
+      "intencao": "atualização",
+      "gatilhos": [
+        "Existe atualização recente que possa alterar esta resposta?",
+        "atualização",
+        "Oráculo"
+      ],
+      "referencias_prioritarias": [],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "A resposta deve indicar data da verificação."
+    },
+    {
+      "id": "QA-052",
+      "processo": "Oráculo",
+      "intencao": "fonte oficial",
+      "gatilhos": [
+        "Qual é a fonte oficial desta informação?",
+        "fonte oficial",
+        "Oráculo"
+      ],
+      "referencias_prioritarias": [],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não substituir a fonte oficial por fonte secundária quando a oficial estiver disponível."
+    }
+  ]
+}
