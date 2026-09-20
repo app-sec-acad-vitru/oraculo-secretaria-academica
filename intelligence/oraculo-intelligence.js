@@ -113,28 +113,33 @@ function phraseScore(query, candidate) {
 
   if (q.includes(c)) return 25;
 
-  const strongPhrases = [
-    ["expedicao e registro", ["emissao diploma", "registro diploma"]],
-    ["expedicao registro diploma", ["emissao diploma"]],
-    ["elementos tecnicos", ["estrutura tecnica"]],
-    ["estrutura tecnica", ["estrutura tecnica"]],
-    ["componentes tecnicos", ["estrutura tecnica"]],
-    ["estrutura do diploma digital", ["estrutura tecnica"]],
+const strongPhrases = [
+  ["principios da lgpd", ["dados pessoais"]],
+  ["tratamento de dados pessoais", ["dados pessoais"]],
+  ["dados pessoais", ["dados pessoais"]],
+  ["lei geral de protecao de dados", ["dados pessoais"]],
 
-    ["xml", ["xml"]],
-    ["arquivo xml", ["xml"]],
-    ["estrutura xml", ["xml"]],
+  ["expedicao e registro", ["emissao diploma", "registro diploma"]],
+  ["expedicao registro diploma", ["emissao diploma"]],
+  ["elementos tecnicos", ["estrutura tecnica"]],
+  ["estrutura tecnica", ["estrutura tecnica"]],
+  ["componentes tecnicos", ["estrutura tecnica"]],
+  ["estrutura do diploma digital", ["estrutura tecnica"]],
 
-    ["assinatura", ["assinatura"]],
-    ["assinatura digital", ["assinatura"]],
-    ["carimbo de tempo", ["assinatura"]],
-    
-    ["historico escolar digital", ["historico digital"]],
-    ["segunda licenciatura", ["segunda licenciatura"]],
-    ["formacao pedagogica", ["formacao pedagogica"]],
-    ["estagio obrigatorio", ["estagio"]],
-    ["estagio nao obrigatorio", ["estagio"]]  ];
+  ["xml", ["xml"]],
+  ["arquivo xml", ["xml"]],
+  ["estrutura xml", ["xml"]],
 
+  ["assinatura", ["assinatura"]],
+  ["assinatura digital", ["assinatura"]],
+  ["carimbo de tempo", ["assinatura"]],
+
+  ["historico escolar digital", ["historico digital"]],
+  ["segunda licenciatura", ["segunda licenciatura"]],
+  ["formacao pedagogica", ["formacao pedagogica"]],
+  ["estagio obrigatorio", ["estagio"]],
+  ["estagio nao obrigatorio", ["estagio"]]
+];
   for (const [phrase, targets] of strongPhrases) {
     if (q.includes(phrase) && targets.some(t => c.includes(t))) {
       return 40;
