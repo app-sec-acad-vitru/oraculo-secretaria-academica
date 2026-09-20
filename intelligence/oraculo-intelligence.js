@@ -64,47 +64,159 @@
     }
   }
 
-  function tokenScore(query, candidate) {
-    const q = normText(query);
-    const c = normText(candidate);
-    if (!q || !c) return 0;
-    if (q === c) return 100;
-    const qt = [...new Set(q.split(/\s+/).filter(t => t.length > 2))];
-    const ct = c.split(/\s+/);
-    let hits = 0;
-    qt.forEach(t => {
-      if (ct.includes(t)) hits += 4;
-      else if (c.includes(t)) hits += 2;
-    });
-    return hits;
-  }
+function classifyNorm(value) {
+  const text = normText(value);
 
-  function classify(query) {
-    if (!state.ready) return null;
-    const rules = state.motor.regras || [];
-    const questions = state.matriz.perguntas || [];
-    const qMap = new Map(questions.map(q => [q.id, q]));
-    const scored = rules.map(rule => {
-      const triggers = rule.gatilhos || [];
-      let score = 0;
-      triggers.forEach(g => { score = Math.max(score, tokenScore(query, g)); });
-      const matrix = qMap.get(rule.id);
-      if (matrix) score = Math.max(score, tokenScore(query, matrix.pergunta));
-      return { rule, matrix, score };
-    }).filter(x => x.score > 0)
-      .sort((a,b) => b.score - a.score);
+  const synonyms = {
+    "expedicao": "emissao",
+    "expedir": "emitir",
+    "expedido": "emitido",
+    "expedidos": "emitidos",
+    "diplomas": "diploma",
+    "registros": "registro",
+    "licenciaturas": "licenciatura",
+    "cursos": "curso",
+    "alunos": "aluno",
+    "documentos": "documento",
+    "assinaturas": "assinatura",
+    "historicos": "historico"
+  };
 
-    if (!scored.length) return null;
-    const best = scored[0];
-    const second = scored[1];
-    // Conservador: respostas livres precisam de evidência mínima e margem.
-    if (best.score < 4) return null;
-    if (second && best.score === second.score) {
-      return { ambiguous: true, candidates: scored.slice(0,3) };
+  const stopwords = new Set([
+    "a","o","as","os",
+    "de","da","do","das","dos",
+    "em","no","na","nos","nas",
+    "para","por","com",
+    "e","ou",
+    "um","uma","uns","umas",
+    "que","qual","quais",
+    "como","onde","quando",
+    "posso","pode","podem",
+    "devo","devem",
+    "preciso","precisa",
+    "sobre","me","se"
+  ]);
+
+  return text
+    .split(/\s+/)
+    .map(t => synonyms[t] || t)
+    .filter(t => t.length > 2 && !stopwords.has(t));
+}
+
+function phraseScore(query, candidate) {
+  const q = normText(query);
+  const c = normText(candidate);
+
+  if (!q || !c) return 0;
+
+  if (q === c) return 100;
+
+  if (q.includes(c)) return 25;
+
+  const strongPhrases = [
+    ["expedicao e registro", ["emissao diploma", "registro diploma"]],
+    ["expedicao registro diploma", ["emissao diploma"]],
+    ["diploma digital", ["diploma digital"]],
+    ["historico escolar digital", ["historico digital"]],
+    ["segunda licenciatura", ["segunda licenciatura"]],
+    ["formacao pedagogica", ["formacao pedagogica"]],
+    ["estagio obrigatorio", ["estagio"]],
+    ["estagio nao obrigatorio", ["estagio"]]
+  ];
+
+  for (const [phrase, targets] of strongPhrases) {
+    if (q.includes(phrase) && targets.some(t => c.includes(t))) {
+      return 40;
     }
-    return best;
   }
 
+  return 0;
+}
+
+function tokenScore(query, candidate) {
+  const qt = classifyNorm(query);
+  const ct = classifyNorm(candidate);
+
+  if (!qt.length || !ct.length) return 0;
+
+  const cSet = new Set(ct);
+
+  let score = 0;
+
+  qt.forEach(token => {
+    if (cSet.has(token)) {
+      score += 5;
+    }
+  });
+
+  const qText = qt.join(" ");
+  const cText = ct.join(" ");
+
+  if (qText === cText) {
+    score += 20;
+  }
+
+  if (cText.includes(qText) || qText.includes(cText)) {
+    score += 8;
+  }
+
+  return score;
+}
+
+function classify(query) {
+  if (!state.ready) return null;
+
+  const rules = state.motor.regras || [];
+  const questions = state.matriz.perguntas || [];
+  const qMap = new Map(questions.map(q => [q.id, q]));
+
+  const scored = rules.map(rule => {
+    const matrix = qMap.get(rule.id);
+
+    const candidates = [
+      ...(rule.gatilhos || []),
+      ...(matrix ? [matrix.pergunta] : [])
+    ];
+
+    let score = 0;
+
+    candidates.forEach(candidate => {
+      score = Math.max(
+        score,
+        phraseScore(query, candidate),
+        tokenScore(query, candidate)
+      );
+    });
+
+    return {
+      rule,
+      matrix,
+      score
+    };
+  })
+  .filter(x => x.score > 0)
+  .sort((a, b) => b.score - a.score);
+
+  if (!scored.length) return null;
+
+  const best = scored[0];
+  const second = scored[1];
+
+  if (best.score < 5) return null;
+
+  if (
+    second &&
+    second.score >= 5 &&
+    best.score === second.score
+  ) {
+    return {
+      ambiguous: true,
+      candidates: scored.slice(0, 3)
+    };
+  }
+
+  return best;
+}
   function responseFor(query) {
     const hit = classify(query);
     if (!hit) return {type:"not_found"};
