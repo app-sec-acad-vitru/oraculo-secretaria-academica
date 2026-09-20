@@ -1,10 +1,10 @@
 {
-  "schema_version": "oraculo-banco-respostas-validadas-v4.0",
+  "schema_version": "oraculo-banco-respostas-validadas-v4.1",
   "status": "validado_com_pesquisa_normativa",
   "data_verificacao": "2026-09-20",
   "base_referencias": 28,
   "quantidade_respostas": 47,
-  "observacao": "Banco ampliado a partir da matriz de 52 intenções. Inclui respostas de conteúdo para QA-001 a QA-047, preservando as respostas anteriores e adicionando QA-031/032 e as lacunas de conteúdo identificadas. QA-048 a QA-052 permanecem funções dinâmicas do motor e não recebem resposta estática.",
+  "observacao": "Banco de 47 respostas de conteúdo. Perguntas exibidas nas respostas foram alinhadas à matriz; conteúdo normativo preservado. QA-048 a QA-052 permanecem intenções dinâmicas do motor.",
   "fontes_pesquisadas": "Fontes oficiais do Planalto, MEC/CNE, Inep e Conarq consultadas em 20/09/2026. As respostas são paráfrases operacionais, não citações literais.",
   "respostas": [
     {
@@ -355,7 +355,7 @@
       "id": "VR-011",
       "pergunta_id": "QA-011",
       "processo": "Diploma Digital",
-      "pergunta": "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+      "pergunta": "Qual é a diferença e a relação entre o Diploma Digital e o Histórico Escolar Digital?",
       "resposta_objetiva": "O Histórico Escolar Digital é um documento acadêmico próprio, com estrutura técnica específica. O Diploma Digital possui seu próprio XML e mecanismos de emissão e validação. Eles se relacionam pela documentação da trajetória acadêmica e da conclusão, mas não devem ser tratados como o mesmo artefato documental.",
       "fundamento": [
         "Especificações técnicas do Diploma Digital — XSD v1.05",
@@ -825,7 +825,7 @@
       "id": "VR-025",
       "pergunta_id": "QA-025",
       "processo": "ENADE",
-      "pergunta": "Qual relação entre ENADE e registros acadêmicos/regularidade?",
+      "pergunta": "Como a situação de regularidade no ENADE deve ser registrada no histórico acadêmico do aluno?",
       "resposta_objetiva": "O Enade é componente curricular obrigatório dos cursos avaliados, e a situação de regularidade do estudante é utilizada nos registros acadêmicos conforme as regras da edição. Para bacharelados e cursos superiores de tecnologia, o Inep informa que a situação de regularidade é registrada no histórico escolar; para licenciaturas, a regularidade também é condição para conclusão conforme as orientações da Avaliação da Prática.",
       "fundamento": [
         "Lei nº 10.861/2004 — SINAES",
@@ -1022,7 +1022,7 @@
       "id": "VR-031",
       "pergunta_id": "QA-031",
       "processo": "Estágio",
-      "pergunta": "Quais documentos e agentes aparecem na estrutura do estágio?",
+      "pergunta": "Quais documentos são exigidos no estágio e quem participa da formalização?",
       "resposta_objetiva": "Na estrutura legal do estágio, o Termo de Compromisso de Estágio é o documento central, celebrado entre estudante, parte concedente e instituição de ensino. O plano de atividades integra o termo e pode ser alterado por aditivos. O estágio deve ser acompanhado por professor orientador e supervisor da parte concedente, com relatórios periódicos e documentação de encerramento. O agente de integração pode auxiliar na aproximação e operacionalização, sem substituir as responsabilidades legais das partes.",
       "fundamento": [
         "Lei nº 11.788/2008, art. 3º, II e § 1º",
@@ -1054,7 +1054,7 @@
       "id": "VR-032",
       "pergunta_id": "QA-032",
       "processo": "Estágio",
-      "pergunta": "Quais papéis de supervisão aparecem na legislação de estágio?",
+      "pergunta": "Quem pode atuar como supervisor e orientador de estágio?",
       "resposta_objetiva": "A Lei nº 11.788/2008 prevê acompanhamento pelo professor orientador da instituição de ensino e pelo supervisor da parte concedente. O supervisor deve pertencer ao quadro da concedente e possuir formação ou experiência profissional na área de conhecimento desenvolvida no curso; pode orientar e supervisionar até 10 estagiários simultaneamente. O agente de integração exerce função auxiliar e não substitui esses papéis.",
       "fundamento": [
         "Lei nº 11.788/2008, art. 3º, § 1º",
@@ -1207,7 +1207,7 @@
       "id": "VR-037",
       "pergunta_id": "QA-037",
       "processo": "Regulação",
-      "pergunta": "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
+      "pergunta": "Qual é a diferença entre regulação, supervisão e avaliação no sistema federal?",
       "resposta_objetiva": "No sistema federal, regulação, supervisão e avaliação são funções distintas e relacionadas. A regulação envolve atos autorizativos de IES e cursos; a supervisão utiliza ações preventivas ou corretivas para zelar pela regularidade e qualidade; a avaliação fornece informações e resultados que integram o sistema de avaliação da educação superior.",
       "fundamento": [
         "Decreto nº 9.235/2017, com redação vigente",
@@ -1242,7 +1242,7 @@
       "id": "VR-038",
       "pergunta_id": "QA-038",
       "processo": "Regulação",
-      "pergunta": "Como SINAES e regulação se relacionam na base?",
+      "pergunta": "Como os resultados do SINAES podem subsidiar processos de regulação e supervisão?",
       "resposta_objetiva": "O SINAES organiza processos de avaliação da educação superior, enquanto a regulação e a supervisão utilizam atos e procedimentos próprios para credenciamento, autorização, reconhecimento, renovação e acompanhamento das IES e cursos. Os resultados de avaliação podem subsidiar decisões regulatórias, mas avaliação e regulação não são sinônimos.",
       "fundamento": [
         "Lei nº 10.861/2004 — SINAES",
@@ -1277,7 +1277,7 @@
       "id": "VR-039",
       "pergunta_id": "QA-039",
       "processo": "Regulação",
-      "pergunta": "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
+      "pergunta": "Quais fontes oficiais devo consultar para verificar a situação regulatória de uma IES ou curso?",
       "resposta_objetiva": "A fonte de partida, para o sistema federal, é o Decreto nº 9.235/2017 em sua redação vigente, complementado pelos atos do MEC/SERES, pelo e-MEC e pelos instrumentos de avaliação do Inep quando a questão envolver avaliação. A resposta deve identificar primeiro o tipo de processo.",
       "fundamento": [
         "Decreto nº 9.235/2017, com redação vigente",
@@ -1567,7 +1567,7 @@
       "id": "VR-047",
       "pergunta_id": "QA-047",
       "processo": "Formação docente",
-      "pergunta": "Onde localizar a cadeia normativa sobre formação superior para a docência na Educação Básica?",
+      "pergunta": "Onde consultar a página oficial do CNE sobre formação superior para a docência?",
       "resposta_objetiva": "A cadeia oficial deve ser consultada no Conselho Nacional de Educação/MEC, na página temática de Formação Superior para a Docência na Educação Básica. A página reúne atos como a Resolução CNE/CP nº 4/2024 e o Parecer CNE/CP nº 5/2025, além de normas anteriores relevantes para transição e histórico.",
       "fundamento": [
         "Resolução CNE/CP nº 4/2024",

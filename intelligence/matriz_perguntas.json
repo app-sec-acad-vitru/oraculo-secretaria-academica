@@ -1,5 +1,5 @@
 {
-  "schema_version": "oraculo-inteligencia-matriz-v1.0",
+  "schema_version": "oraculo-matriz-perguntas-v1.1",
   "status": "draft_validacao",
   "base": {
     "referencias_base": 28,
@@ -155,7 +155,7 @@
       "id": "QA-011",
       "processo": "Diploma Digital",
       "intencao": "histórico digital",
-      "pergunta": "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+      "pergunta": "Qual é a diferença e a relação entre o Diploma Digital e o Histórico Escolar Digital?",
       "referencias_prioritarias": [
         "diploma-2025",
         "mec-xsd-105"
@@ -329,7 +329,7 @@
       "id": "QA-025",
       "processo": "ENADE",
       "intencao": "histórico",
-      "pergunta": "Qual relação entre ENADE e registros acadêmicos/regularidade?",
+      "pergunta": "Como a situação de regularidade no ENADE deve ser registrada no histórico acadêmico do aluno?",
       "referencias_prioritarias": [
         "sinaes-10861",
         "enade-2026-cronograma"
@@ -403,7 +403,7 @@
       "id": "QA-031",
       "processo": "Estágio",
       "intencao": "documentação",
-      "pergunta": "Quais documentos e agentes aparecem na estrutura do estágio?",
+      "pergunta": "Quais documentos são exigidos no estágio e quem participa da formalização?",
       "referencias_prioritarias": [
         "estagio-11788"
       ],
@@ -415,7 +415,7 @@
       "id": "QA-032",
       "processo": "Estágio",
       "intencao": "supervisão",
-      "pergunta": "Quais papéis de supervisão aparecem na legislação de estágio?",
+      "pergunta": "Quem pode atuar como supervisor e orientador de estágio?",
       "referencias_prioritarias": [
         "estagio-11788"
       ],
@@ -475,7 +475,7 @@
       "id": "QA-037",
       "processo": "Regulação",
       "intencao": "supervisão",
-      "pergunta": "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
+      "pergunta": "Qual é a diferença entre regulação, supervisão e avaliação no sistema federal?",
       "referencias_prioritarias": [
         "dec-9235",
         "sinaes-10861"
@@ -488,7 +488,7 @@
       "id": "QA-038",
       "processo": "Regulação",
       "intencao": "avaliação",
-      "pergunta": "Como SINAES e regulação se relacionam na base?",
+      "pergunta": "Como os resultados do SINAES podem subsidiar processos de regulação e supervisão?",
       "referencias_prioritarias": [
         "sinaes-10861",
         "dec-9235"
@@ -501,7 +501,7 @@
       "id": "QA-039",
       "processo": "Regulação",
       "intencao": "curso/IES",
-      "pergunta": "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
+      "pergunta": "Quais fontes oficiais devo consultar para verificar a situação regulatória de uma IES ou curso?",
       "referencias_prioritarias": [
         "dec-9235"
       ],
@@ -611,7 +611,7 @@
       "id": "QA-047",
       "processo": "Formação docente",
       "intencao": "fonte oficial",
-      "pergunta": "Onde localizar a cadeia normativa sobre formação superior para a docência?",
+      "pergunta": "Onde consultar a página oficial do CNE sobre formação superior para a docência?",
       "referencias_prioritarias": [
         "cne-formacao-docencia"
       ],
@@ -623,7 +623,7 @@
       "id": "QA-048",
       "processo": "Oráculo",
       "intencao": "fundamento",
-      "pergunta": "Qual norma fundamenta esta resposta?",
+      "pergunta": "Como o Oráculo deve apresentar o fundamento de uma resposta normativa?",
       "referencias_prioritarias": [],
       "tipo_resposta": "Resposta com rastreabilidade",
       "evidencia_necessaria": "Referência recuperada pelo mecanismo de busca",
@@ -633,7 +633,7 @@
       "id": "QA-049",
       "processo": "Oráculo",
       "intencao": "conflito normativo",
-      "pergunta": "Encontrei duas referências aparentemente diferentes. Qual delas devo considerar?",
+      "pergunta": "Como o Oráculo deve tratar duas normas aparentemente conflitantes?",
       "referencias_prioritarias": [],
       "tipo_resposta": "Comparação + escalonamento",
       "evidencia_necessaria": "Status, hierarquia, vigência e atos posteriores",
@@ -643,7 +643,7 @@
       "id": "QA-050",
       "processo": "Oráculo",
       "intencao": "lacuna",
-      "pergunta": "A base do Oráculo possui fundamento suficiente para responder esta pergunta?",
+      "pergunta": "Como o Oráculo deve agir quando não houver fundamento suficiente para responder?",
       "referencias_prioritarias": [],
       "tipo_resposta": "Status de cobertura",
       "evidencia_necessaria": "Correspondência entre pergunta e referências",
@@ -653,7 +653,7 @@
       "id": "QA-051",
       "processo": "Oráculo",
       "intencao": "atualização",
-      "pergunta": "Existe atualização recente que possa alterar esta resposta?",
+      "pergunta": "Como o Oráculo deve indicar uma atualização normativa?",
       "referencias_prioritarias": [],
       "tipo_resposta": "Radar + rastreabilidade",
       "evidencia_necessaria": "monitoramento e status das fontes",
@@ -663,7 +663,7 @@
       "id": "QA-052",
       "processo": "Oráculo",
       "intencao": "fonte oficial",
-      "pergunta": "Qual é a fonte oficial desta informação?",
+      "pergunta": "Como localizar a fonte oficial que fundamenta uma resposta do Oráculo?",
       "referencias_prioritarias": [],
       "tipo_resposta": "Fonte navegável",
       "evidencia_necessaria": "URL oficial cadastrada",

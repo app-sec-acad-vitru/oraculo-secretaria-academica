@@ -1,5 +1,5 @@
 {
-  "schema_version": "oraculo-motor-resposta-v1.0",
+  "schema_version": "oraculo-motor-resposta-v1.1",
   "status": "draft_validacao",
   "base": {
     "referencias": 28,
@@ -28,9 +28,9 @@
       "processo": "Vida acadêmica",
       "intencao": "validade de diploma",
       "gatilhos": [
-        "Qual é a regra geral sobre validade nacional de diploma de curso superior?",
-        "validade de diploma",
-        "Vida acadêmica"
+        "validade nacional do diploma",
+        "validade diploma curso superior",
+        "diploma validade nacional"
       ],
       "referencias_prioritarias": [
         "ldb-9394",
@@ -57,9 +57,10 @@
       "processo": "Documentos",
       "intencao": "emissão de diploma",
       "gatilhos": [
-        "Quais regras devo observar para expedição e registro de diploma?",
-        "emissão de diploma",
-        "Documentos"
+        "expedicao e registro diploma",
+        "emissao e registro diploma",
+        "prazos expedicao diploma",
+        "registro de diploma"
       ],
       "referencias_prioritarias": [
         "port-1095",
@@ -88,9 +89,9 @@
       "processo": "Documentos",
       "intencao": "histórico escolar",
       "gatilhos": [
-        "Quais informações devem constar no histórico escolar?",
-        "histórico escolar",
-        "Documentos"
+        "informacoes historico escolar",
+        "elementos historico escolar",
+        "dados do historico escolar"
       ],
       "referencias_prioritarias": [
         "parecer-379-2004",
@@ -119,9 +120,10 @@
       "processo": "Documentos",
       "intencao": "transferência",
       "gatilhos": [
-        "Quais regras estão relacionadas à transferência e à documentação de transferência?",
-        "transferência",
-        "Documentos"
+        "transferencia de aluno",
+        "documentacao de transferencia",
+        "documentos de transferencia",
+        "transferencia entre instituicoes"
       ],
       "referencias_prioritarias": [
         "port-230-2007",
@@ -148,9 +150,10 @@
       "processo": "Vida acadêmica",
       "intencao": "inadimplência",
       "gatilhos": [
-        "Quais direitos acadêmicos precisam ser observados quando o aluno está inadimplente?",
-        "inadimplência",
-        "Vida acadêmica"
+        "inadimplencia do aluno",
+        "aluno inadimplente",
+        "penalidades por inadimplencia",
+        "direitos academicos inadimplencia"
       ],
       "referencias_prioritarias": [
         "lei-9870"
@@ -175,9 +178,11 @@
       "processo": "Documentos",
       "intencao": "cobrança de documentos",
       "gatilhos": [
-        "Pode haver cobrança pela emissão de diploma ou histórico?",
-        "cobrança de documentos",
-        "Documentos"
+        "cobranca de diploma",
+        "cobranca de historico escolar",
+        "taxa emissao diploma",
+        "cobranca documentos academicos",
+        "pode cobrar taxa para emitir diploma ou historico"
       ],
       "referencias_prioritarias": [
         "pn-23-2017",
@@ -206,9 +211,10 @@
       "processo": "Documentos",
       "intencao": "histórico digital",
       "gatilhos": [
-        "Como deve ser estruturado o histórico escolar digital?",
-        "histórico digital",
-        "Documentos"
+        "historico escolar digital estrutura",
+        "emitir historico escolar digital",
+        "estrutura do historico digital",
+        "XSD historico escolar digital"
       ],
       "referencias_prioritarias": [
         "mec-xsd-105",
@@ -235,9 +241,9 @@
       "processo": "Diploma Digital",
       "intencao": "estrutura técnica",
       "gatilhos": [
-        "Quais elementos técnicos preciso observar no Diploma Digital?",
-        "estrutura técnica",
-        "Diploma Digital"
+        "elementos tecnicos diploma digital",
+        "estrutura tecnica diploma digital",
+        "componentes diploma digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -266,9 +272,9 @@
       "processo": "Diploma Digital",
       "intencao": "XML",
       "gatilhos": [
-        "Quais regras se aplicam ao XML do Diploma Digital?",
-        "XML",
-        "Diploma Digital"
+        "XML diploma digital",
+        "arquivo XML diploma",
+        "schema XSD diploma digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -297,9 +303,9 @@
       "processo": "Diploma Digital",
       "intencao": "assinatura",
       "gatilhos": [
-        "Quais requisitos de assinatura e integridade devo considerar no Diploma Digital?",
-        "assinatura",
-        "Diploma Digital"
+        "assinatura diploma digital",
+        "integridade diploma digital",
+        "carimbo de tempo diploma"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -328,9 +334,10 @@
       "processo": "Diploma Digital",
       "intencao": "histórico digital",
       "gatilhos": [
-        "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
-        "histórico digital",
-        "Diploma Digital"
+        "relacao diploma historico digital",
+        "diferenca diploma historico digital",
+        "diploma e historico escolar digital",
+        "diploma historico escolar digital juntos"
       ],
       "referencias_prioritarias": [
         "diploma-2025",
@@ -357,9 +364,9 @@
       "processo": "Diploma Digital",
       "intencao": "nato-digital",
       "gatilhos": [
-        "O que a base atual informa sobre documento nato-digital no contexto acadêmico?",
-        "nato-digital",
-        "Diploma Digital"
+        "documento nato digital",
+        "nato digital academico",
+        "documento produzido originalmente em meio digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -388,9 +395,9 @@
       "processo": "Acervo",
       "intencao": "responsabilidade",
       "gatilhos": [
-        "Quem possui responsabilidades relacionadas à guarda e custódia do acervo acadêmico?",
-        "responsabilidade",
-        "Acervo"
+        "guarda acervo academico",
+        "responsabilidade pelo acervo academico",
+        "custodia acervo academico"
       ],
       "referencias_prioritarias": [
         "port-315"
@@ -415,9 +422,9 @@
       "processo": "Acervo",
       "intencao": "digitalização",
       "gatilhos": [
-        "Quais regras orientam a conversão do acervo acadêmico para meio digital?",
-        "digitalização",
-        "Acervo"
+        "digitalizacao acervo academico",
+        "converter acervo para meio digital",
+        "digitalizacao documentos academicos"
       ],
       "referencias_prioritarias": [
         "port-360",
@@ -444,9 +451,10 @@
       "processo": "Acervo",
       "intencao": "preservação",
       "gatilhos": [
-        "Quais cuidados de armazenamento e preservação aparecem na base?",
-        "preservação",
-        "Acervo"
+        "preservacao acervo digital",
+        "armazenamento preservacao acervo",
+        "preservacao documentos academicos digitais",
+        "preservar acervo academico digital"
       ],
       "referencias_prioritarias": [
         "port-613"
@@ -471,9 +479,9 @@
       "processo": "Acervo",
       "intencao": "documento físico",
       "gatilhos": [
-        "A produção de novos documentos físicos do acervo é permitida?",
-        "documento físico",
-        "Acervo"
+        "novos documentos fisicos acervo",
+        "documentos academicos em meio fisico",
+        "producao de documentos fisicos acervo"
       ],
       "referencias_prioritarias": [
         "port-360"
@@ -498,9 +506,9 @@
       "processo": "Acervo",
       "intencao": "RDC-Arq",
       "gatilhos": [
-        "Onde aparece a referência a RDC-Arq no acervo acadêmico?",
-        "RDC-Arq",
-        "Acervo"
+        "RDC-Arq acervo academico",
+        "repositorio arquivistico digital acervo",
+        "RDC Arq"
       ],
       "referencias_prioritarias": [
         "port-613"
@@ -525,9 +533,10 @@
       "processo": "Governança",
       "intencao": "dados pessoais",
       "gatilhos": [
-        "Quais cuidados gerais a Secretaria deve observar no tratamento de dados pessoais?",
-        "dados pessoais",
-        "Governança"
+        "principios da LGPD",
+        "tratamento de dados pessoais",
+        "LGPD dados alunos",
+        "dados pessoais alunos"
       ],
       "referencias_prioritarias": [
         "lgpd-13709"
@@ -552,9 +561,10 @@
       "processo": "Governança",
       "intencao": "CPF",
       "gatilhos": [
-        "Como tratar o CPF do aluno dentro dos processos acadêmicos?",
-        "CPF",
-        "Governança"
+        "CPF do aluno",
+        "tratamento do CPF",
+        "CPF processos academicos",
+        "CPF LGPD aluno"
       ],
       "referencias_prioritarias": [
         "lgpd-13709"
@@ -579,9 +589,10 @@
       "processo": "Governança",
       "intencao": "acesso",
       "gatilhos": [
-        "Quais cuidados devo considerar ao conceder acesso a dados acadêmicos?",
-        "acesso",
-        "Governança"
+        "acesso a dados academicos",
+        "controle de acesso dados alunos",
+        "permissoes dados academicos",
+        "quem pode acessar dados academicos"
       ],
       "referencias_prioritarias": [
         "lgpd-13709"
@@ -606,9 +617,9 @@
       "processo": "ENADE",
       "intencao": "regularidade",
       "gatilhos": [
-        "O que a base informa sobre regularidade do estudante no ENADE?",
-        "regularidade",
-        "ENADE"
+        "regularidade do estudante no ENADE",
+        "regularidade ENADE aluno",
+        "situacao regular ENADE"
       ],
       "referencias_prioritarias": [
         "sinaes-10861",
@@ -635,9 +646,9 @@
       "processo": "ENADE",
       "intencao": "cronograma",
       "gatilhos": [
-        "Quais são as etapas do cronograma do ENADE 2026 que impactam a Secretaria?",
-        "cronograma",
-        "ENADE"
+        "cronograma ENADE 2026",
+        "datas ENADE 2026",
+        "etapas ENADE 2026"
       ],
       "referencias_prioritarias": [
         "enade-2026-cronograma"
@@ -662,9 +673,9 @@
       "processo": "ENADE",
       "intencao": "licenciaturas",
       "gatilhos": [
-        "Como o ENADE 2026 se relaciona às licenciaturas?",
-        "licenciaturas",
-        "ENADE"
+        "ENADE das licenciaturas",
+        "ENADE licenciaturas 2026",
+        "licenciaturas no ENADE"
       ],
       "referencias_prioritarias": [
         "enade-2026-cronograma",
@@ -691,9 +702,9 @@
       "processo": "ENADE",
       "intencao": "conceito",
       "gatilhos": [
-        "O que a Portaria nº 90/2026 disciplina sobre o Conceito Enade das Licenciaturas?",
-        "conceito",
-        "ENADE"
+        "Conceito Enade das Licenciaturas",
+        "Portaria 90 2026 conceito Enade",
+        "calculo conceito Enade licenciaturas"
       ],
       "referencias_prioritarias": [
         "enade-qualidade-2026-portaria90"
@@ -718,9 +729,10 @@
       "processo": "ENADE",
       "intencao": "histórico",
       "gatilhos": [
-        "Qual relação entre ENADE e registros acadêmicos/regularidade?",
-        "histórico",
-        "ENADE"
+        "regularidade ENADE no historico",
+        "registro academico do ENADE",
+        "situacao ENADE no historico academico",
+        "registro da regularidade no ENADE"
       ],
       "referencias_prioritarias": [
         "sinaes-10861",
@@ -747,9 +759,9 @@
       "processo": "Censo",
       "intencao": "cadastro",
       "gatilhos": [
-        "Quais dados institucionais e acadêmicos são relacionados ao Censo da Educação Superior?",
-        "cadastro",
-        "Censo"
+        "dados institucionais Censo Educacao Superior",
+        "dados academicos Censo Educacao Superior",
+        "cadastro Censo Educacao Superior"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma"
@@ -774,9 +786,9 @@
       "processo": "Censo",
       "intencao": "e-MEC",
       "gatilhos": [
-        "Qual é a relação entre cadastro e-MEC e Censo na base atual?",
-        "e-MEC",
-        "Censo"
+        "relacao e-MEC e Censo",
+        "dados e-MEC no Censo",
+        "cadastro e-MEC Censo"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma",
@@ -803,9 +815,9 @@
       "processo": "Censo",
       "intencao": "cronograma",
       "gatilhos": [
-        "Quais prazos do Censo 2026 exigem atenção da Secretaria?",
-        "cronograma",
-        "Censo"
+        "prazos Censo 2026",
+        "cronograma Censo 2026",
+        "datas Censo Educacao Superior 2026"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma"
@@ -830,9 +842,10 @@
       "processo": "Censo",
       "intencao": "qualidade de dados",
       "gatilhos": [
-        "Que conferências devo fazer antes de uma etapa do Censo?",
-        "qualidade de dados",
-        "Censo"
+        "qualidade dos dados do Censo",
+        "conferencia dados Censo",
+        "validacao dados Censo",
+        "consistencia dados Censo"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma"
@@ -857,9 +870,9 @@
       "processo": "Estágio",
       "intencao": "conceito",
       "gatilhos": [
-        "Qual é a diferença entre estágio obrigatório e não obrigatório?",
-        "conceito",
-        "Estágio"
+        "estagio obrigatorio e nao obrigatorio",
+        "diferenca estagio obrigatorio nao obrigatorio",
+        "estagio obrigatorio versus nao obrigatorio"
       ],
       "referencias_prioritarias": [
         "estagio-11788"
@@ -884,9 +897,9 @@
       "processo": "Estágio",
       "intencao": "documentação",
       "gatilhos": [
-        "Quais documentos e agentes aparecem na estrutura do estágio?",
-        "documentação",
-        "Estágio"
+        "documentos exigidos estagio",
+        "documentacao estagio termo compromisso",
+        "documentos e formalizacao estagio"
       ],
       "referencias_prioritarias": [
         "estagio-11788"
@@ -911,9 +924,10 @@
       "processo": "Estágio",
       "intencao": "supervisão",
       "gatilhos": [
-        "Quais papéis de supervisão aparecem na legislação de estágio?",
-        "supervisão",
-        "Estágio"
+        "quem pode supervisionar estagio",
+        "supervisor e orientador de estagio",
+        "supervisao do estagio",
+        "papel do supervisor de estagio"
       ],
       "referencias_prioritarias": [
         "estagio-11788"
@@ -938,9 +952,9 @@
       "processo": "Extensão",
       "intencao": "curricularização",
       "gatilhos": [
-        "O que a base estabelece sobre integração da extensão à formação acadêmica?",
-        "curricularização",
-        "Extensão"
+        "curricularizacao da extensao",
+        "extensao na formacao academica",
+        "percentual extensao graduacao"
       ],
       "referencias_prioritarias": [
         "ext-7-2018"
@@ -965,9 +979,9 @@
       "processo": "Extensão",
       "intencao": "PPC",
       "gatilhos": [
-        "Como a extensão se relaciona ao PPC?",
-        "PPC",
-        "Extensão"
+        "extensao no PPC",
+        "extensao na matriz curricular",
+        "PPC curricularizacao extensao"
       ],
       "referencias_prioritarias": [
         "ext-7-2018"
@@ -992,9 +1006,9 @@
       "processo": "Pós-graduação",
       "intencao": "especialização",
       "gatilhos": [
-        "Quais são as normas gerais cadastradas para cursos de especialização lato sensu?",
-        "especialização",
-        "Pós-graduação"
+        "especializacao lato sensu",
+        "requisitos pos graduacao lato sensu",
+        "normas especializacao lato sensu"
       ],
       "referencias_prioritarias": [
         "pos-1-2018"
@@ -1019,9 +1033,9 @@
       "processo": "Pós-graduação",
       "intencao": "certificado",
       "gatilhos": [
-        "Quais aspectos de documentação da especialização aparecem na base?",
-        "certificado",
-        "Pós-graduação"
+        "certificado especializacao lato sensu",
+        "documentacao certificado especializacao",
+        "historico certificado pos graduacao"
       ],
       "referencias_prioritarias": [
         "pos-1-2018"
@@ -1046,9 +1060,9 @@
       "processo": "Regulação",
       "intencao": "supervisão",
       "gatilhos": [
-        "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
-        "supervisão",
-        "Regulação"
+        "diferenca regulacao supervisao avaliacao",
+        "regulacao supervisao avaliacao sistema federal",
+        "papel da regulacao e supervisao"
       ],
       "referencias_prioritarias": [
         "dec-9235",
@@ -1075,9 +1089,9 @@
       "processo": "Regulação",
       "intencao": "avaliação",
       "gatilhos": [
-        "Como SINAES e regulação se relacionam na base?",
-        "avaliação",
-        "Regulação"
+        "SINAES e regulacao",
+        "resultados SINAES regulacao",
+        "avaliacao SINAES subsidia regulacao"
       ],
       "referencias_prioritarias": [
         "sinaes-10861",
@@ -1104,9 +1118,9 @@
       "processo": "Regulação",
       "intencao": "curso/IES",
       "gatilhos": [
-        "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
-        "curso/IES",
-        "Regulação"
+        "fontes oficiais regulacao IES curso",
+        "situacao regulatoria IES curso",
+        "consulta regulatoria curso IES"
       ],
       "referencias_prioritarias": [
         "dec-9235"
@@ -1131,9 +1145,9 @@
       "processo": "Formação docente",
       "intencao": "segunda licenciatura",
       "gatilhos": [
-        "Quais regras atuais devo consultar para segunda licenciatura?",
-        "segunda licenciatura",
-        "Formação docente"
+        "segunda licenciatura regras",
+        "regras segunda licenciatura",
+        "segunda licenciatura resolucao 4 2024"
       ],
       "referencias_prioritarias": [
         "formacao-rcp4-2024",
@@ -1164,9 +1178,9 @@
       "processo": "Formação docente",
       "intencao": "formação pedagógica",
       "gatilhos": [
-        "Quais regras atuais devo consultar para formação pedagógica de graduados não licenciados?",
-        "formação pedagógica",
-        "Formação docente"
+        "formacao pedagogica graduados nao licenciados",
+        "regras formacao pedagogica",
+        "formacao pedagogica resolucao 4 2024"
       ],
       "referencias_prioritarias": [
         "formacao-rcp4-2024",
@@ -1197,9 +1211,10 @@
       "processo": "Formação docente",
       "intencao": "carga horária",
       "gatilhos": [
-        "Qual carga horária aparece na base para formação pedagógica e segunda licenciatura?",
-        "carga horária",
-        "Formação docente"
+        "carga horaria formacao pedagogica",
+        "carga horaria segunda licenciatura",
+        "1600 horas formacao pedagogica",
+        "1200 1800 horas segunda licenciatura"
       ],
       "referencias_prioritarias": [
         "formacao-faq-mec-2025",
@@ -1228,9 +1243,9 @@
       "processo": "Formação docente",
       "intencao": "Pedagogia",
       "gatilhos": [
-        "É possível formação pedagógica com destino à área de Pedagogia segundo a base?",
-        "Pedagogia",
-        "Formação docente"
+        "formacao pedagogica para Pedagogia",
+        "Pedagogia como formacao pedagogica",
+        "formacao pedagogica destino Pedagogia"
       ],
       "referencias_prioritarias": [
         "formacao-parecer-220-2025",
@@ -1257,9 +1272,9 @@
       "processo": "Formação docente",
       "intencao": "compatibilidade",
       "gatilhos": [
-        "Como verificar a compatibilidade entre formação de origem e a habilitação pretendida?",
-        "compatibilidade",
-        "Formação docente"
+        "compatibilidade formacao de origem",
+        "compatibilidade habilitacao pretendida",
+        "formacao anterior e habilitacao"
       ],
       "referencias_prioritarias": [
         "formacao-rcp4-2024",
@@ -1288,9 +1303,10 @@
       "processo": "Formação docente",
       "intencao": "transição",
       "gatilhos": [
-        "Como a base orienta a implantação/transição para as regras de 2024/2025?",
-        "transição",
-        "Formação docente"
+        "transicao regras 2024 2025 formacao docente",
+        "implantacao transicao formacao docente",
+        "alunos iniciados antes da nova norma",
+        "quem comecou antes da mudanca da norma"
       ],
       "referencias_prioritarias": [
         "formacao-parecer-5-2025",
@@ -1319,9 +1335,9 @@
       "processo": "Formação docente",
       "intencao": "norma anterior",
       "gatilhos": [
-        "Qual é o papel histórico da Resolução CNE/CP nº 2/2019 na base?",
-        "norma anterior",
-        "Formação docente"
+        "Resolução CNE CP 2 2019 historico",
+        "norma anterior 2 2019",
+        "papel historico resolucao 2 2019"
       ],
       "referencias_prioritarias": [
         "cne-rcp2-2019",
@@ -1348,9 +1364,9 @@
       "processo": "Formação docente",
       "intencao": "fonte oficial",
       "gatilhos": [
-        "Onde localizar a cadeia normativa sobre formação superior para a docência?",
-        "fonte oficial",
-        "Formação docente"
+        "pagina oficial CNE formacao docente",
+        "fonte oficial formacao superior docencia",
+        "CNE formacao superior docencia"
       ],
       "referencias_prioritarias": [
         "cne-formacao-docencia"
@@ -1375,9 +1391,9 @@
       "processo": "Oráculo",
       "intencao": "fundamento",
       "gatilhos": [
-        "Qual norma fundamenta esta resposta?",
-        "fundamento",
-        "Oráculo"
+        "fundamento resposta normativa",
+        "norma que fundamenta resposta",
+        "fundamento da resposta Oraculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1398,9 +1414,9 @@
       "processo": "Oráculo",
       "intencao": "conflito normativo",
       "gatilhos": [
-        "Encontrei duas referências aparentemente diferentes. Qual delas devo considerar?",
-        "conflito normativo",
-        "Oráculo"
+        "conflito entre normas",
+        "normas aparentemente conflitantes",
+        "conflito normativo Oraculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1421,9 +1437,9 @@
       "processo": "Oráculo",
       "intencao": "lacuna",
       "gatilhos": [
-        "A base do Oráculo possui fundamento suficiente para responder esta pergunta?",
-        "lacuna",
-        "Oráculo"
+        "fundamento insuficiente resposta",
+        "lacuna normativa Oraculo",
+        "Oraculo sem evidencia suficiente"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1444,9 +1460,9 @@
       "processo": "Oráculo",
       "intencao": "atualização",
       "gatilhos": [
-        "Existe atualização recente que possa alterar esta resposta?",
-        "atualização",
-        "Oráculo"
+        "atualizacao normativa resposta",
+        "mudanca recente norma",
+        "radar atualizacao normativa"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1467,9 +1483,9 @@
       "processo": "Oráculo",
       "intencao": "fonte oficial",
       "gatilhos": [
-        "Qual é a fonte oficial desta informação?",
-        "fonte oficial",
-        "Oráculo"
+        "fonte oficial resposta Oraculo",
+        "localizar fonte oficial da informacao",
+        "fonte oficial da regra Oraculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
