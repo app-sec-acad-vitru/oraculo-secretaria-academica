@@ -119,6 +119,10 @@ const strongPhrases = [
   ["dados pessoais", ["dados pessoais"]],
   ["lei geral de protecao de dados", ["dados pessoais"]],
 
+  ["estagio obrigatorio e estagio nao obrigatorio", ["estagio"]],
+  ["estagio obrigatorio", ["estagio"]],
+  ["estagio nao obrigatorio", ["estagio"]],
+
   ["expedicao e registro", ["emissao diploma", "registro diploma"]],
   ["expedicao registro diploma", ["emissao diploma"]],
   ["elementos tecnicos", ["estrutura tecnica"]],
@@ -140,6 +144,7 @@ const strongPhrases = [
   ["estagio obrigatorio", ["estagio"]],
   ["estagio nao obrigatorio", ["estagio"]]
 ];
+  
   for (const [phrase, targets] of strongPhrases) {
     if (q.includes(phrase) && targets.some(t => c.includes(t))) {
       return 40;
