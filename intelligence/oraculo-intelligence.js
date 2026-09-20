@@ -126,6 +126,10 @@ const strongPhrases = [
   ["quem pode supervisionar o estagio", ["supervisao"]],
   ["supervisionar o estagio", ["supervisao"]],
   
+  ["quais documentos sao necessarios no estagio", ["documentacao"]],
+  ["documentos necessarios no estagio", ["documentacao"]],
+  ["documentacao do estagio", ["documentacao"]],
+  
   ["expedicao e registro", ["emissao diploma", "registro diploma"]],
   ["expedicao registro diploma", ["emissao diploma"]],
   ["elementos tecnicos", ["estrutura tecnica"]],
