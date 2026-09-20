@@ -116,13 +116,24 @@ function phraseScore(query, candidate) {
   const strongPhrases = [
     ["expedicao e registro", ["emissao diploma", "registro diploma"]],
     ["expedicao registro diploma", ["emissao diploma"]],
-    ["diploma digital", ["diploma digital"]],
+    ["elementos tecnicos", ["estrutura tecnica"]],
+    ["estrutura tecnica", ["estrutura tecnica"]],
+    ["componentes tecnicos", ["estrutura tecnica"]],
+    ["estrutura do diploma digital", ["estrutura tecnica"]],
+
+    ["xml", ["xml"]],
+    ["arquivo xml", ["xml"]],
+    ["estrutura xml", ["xml"]],
+
+    ["assinatura", ["assinatura"]],
+    ["assinatura digital", ["assinatura"]],
+    ["carimbo de tempo", ["assinatura"]],
+    
     ["historico escolar digital", ["historico digital"]],
     ["segunda licenciatura", ["segunda licenciatura"]],
     ["formacao pedagogica", ["formacao pedagogica"]],
     ["estagio obrigatorio", ["estagio"]],
-    ["estagio nao obrigatorio", ["estagio"]]
-  ];
+    ["estagio nao obrigatorio", ["estagio"]]  ];
 
   for (const [phrase, targets] of strongPhrases) {
     if (q.includes(phrase) && targets.some(t => c.includes(t))) {
