@@ -1,0 +1,15 @@
+{
+  "purpose": "Schema conceitual do Radar de Atualizações do Oráculo V5",
+  "fields": [
+    "type",
+    "norm",
+    "focus",
+    "where",
+    "impactLabel",
+    "action",
+    "risk",
+    "source",
+    "process"
+  ],
+  "note": "A interface exibe automaticamente alterações detectadas em monitoring/latest.json. A confirmação jurídica deve ser feita na fonte oficial."
+}
