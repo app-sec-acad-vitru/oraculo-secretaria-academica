@@ -122,7 +122,10 @@ const strongPhrases = [
   ["estagio obrigatorio e estagio nao obrigatorio", ["conceito"]],
   ["estagio obrigatorio", ["estagio"]],
   ["estagio nao obrigatorio", ["estagio"]],
-
+  
+  ["quem pode supervisionar o estagio", ["supervisao"]],
+  ["supervisionar o estagio", ["supervisao"]],
+  
   ["expedicao e registro", ["emissao diploma", "registro diploma"]],
   ["expedicao registro diploma", ["emissao diploma"]],
   ["elementos tecnicos", ["estrutura tecnica"]],
