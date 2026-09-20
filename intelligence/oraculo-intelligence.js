@@ -194,6 +194,59 @@ function tokenScore(query, candidate) {
 function classify(query) {
   if (!state.ready) return null;
 
+  const q = normText(query);
+
+  // Prioridades específicas de Estágio
+  if (
+    q.includes("estagio obrigatorio") &&
+    q.includes("estagio nao obrigatorio")
+  ) {
+    const rule = (state.motor.regras || []).find(r => r.id === "QA-030");
+    const matrix = (state.matriz.perguntas || []).find(q => q.id === "QA-030");
+
+    if (rule) {
+      return {
+        rule,
+        matrix,
+        score: 100
+      };
+    }
+  }
+
+  if (
+    q.includes("supervisionar o estagio") ||
+    q.includes("quem pode supervisionar")
+  ) {
+    const rule = (state.motor.regras || []).find(r => r.id === "QA-032");
+    const matrix = (state.matriz.perguntas || []).find(q => q.id === "QA-032");
+
+    if (rule) {
+      return {
+        rule,
+        matrix,
+        score: 100
+      };
+    }
+  }
+
+  if (
+    q.includes("documentos") &&
+    q.includes("estagio")
+  ) {
+    const rule = (state.motor.regras || []).find(r => r.id === "QA-031");
+    const matrix = (state.matriz.perguntas || []).find(q => q.id === "QA-031");
+
+    if (rule) {
+      return {
+        rule,
+        matrix,
+        score: 100
+      };
+    }
+  }
+
+  const rules = state.motor.regras || [];
+  
   const rules = state.motor.regras || [];
   const questions = state.matriz.perguntas || [];
   const qMap = new Map(questions.map(q => [q.id, q]));
