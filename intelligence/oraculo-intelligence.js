@@ -119,7 +119,7 @@ const strongPhrases = [
   ["dados pessoais", ["dados pessoais"]],
   ["lei geral de protecao de dados", ["dados pessoais"]],
 
-  ["estagio obrigatorio e estagio nao obrigatorio", ["estagio"]],
+  ["estagio obrigatorio e estagio nao obrigatorio", ["conceito"]],
   ["estagio obrigatorio", ["estagio"]],
   ["estagio nao obrigatorio", ["estagio"]],
 
