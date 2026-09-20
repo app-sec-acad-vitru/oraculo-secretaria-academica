@@ -194,89 +194,80 @@ function tokenScore(query, candidate) {
 function classify(query) {
   if (!state.ready) return null;
 
-  const q = normText(query);
+  const normalizedQuery = normText(query);
 
-  // Prioridades específicas de Estágio
-  if (
-    q.includes("estagio obrigatorio") &&
-    q.includes("estagio nao obrigatorio")
-  ) {
-    const rule = (state.motor.regras || []).find(r => r.id === "QA-030");
-    const matrix = (state.matriz.perguntas || []).find(q => q.id === "QA-030");
-
-    if (rule) {
-      return {
-        rule,
-        matrix,
-        score: 100
-      };
-    }
-  }
-
-  if (
-    q.includes("supervisionar o estagio") ||
-    q.includes("quem pode supervisionar")
-  ) {
-    const rule = (state.motor.regras || []).find(r => r.id === "QA-032");
-    const matrix = (state.matriz.perguntas || []).find(q => q.id === "QA-032");
-
-    if (rule) {
-      return {
-        rule,
-        matrix,
-        score: 100
-      };
-    }
-  }
-
-  if (
-    q.includes("documentos") &&
-    q.includes("estagio")
-  ) {
-    const rule = (state.motor.regras || []).find(r => r.id === "QA-031");
-    const matrix = (state.matriz.perguntas || []).find(q => q.id === "QA-031");
-
-    if (rule) {
-      return {
-        rule,
-        matrix,
-        score: 100
-      };
-    }
-  }
-
-  const rules = state.motor.regras || [];
-  
   const rules = state.motor.regras || [];
   const questions = state.matriz.perguntas || [];
   const qMap = new Map(questions.map(q => [q.id, q]));
 
-  const scored = rules.map(rule => {
-    const matrix = qMap.get(rule.id);
+  // Prioridades específicas de Estágio
+  const priorityIntent = [
+    {
+      id: "QA-030",
+      test:
+        normalizedQuery.includes("estagio obrigatorio") &&
+        normalizedQuery.includes("estagio nao obrigatorio")
+    },
+    {
+      id: "QA-031",
+      test:
+        normalizedQuery.includes("documento") &&
+        normalizedQuery.includes("estagio")
+    },
+    {
+      id: "QA-032",
+      test:
+        (
+          normalizedQuery.includes("supervisionar") &&
+          normalizedQuery.includes("estagio")
+        ) ||
+        normalizedQuery.includes("quem pode supervisionar")
+    }
+  ];
 
-    const candidates = [
-      ...(rule.gatilhos || []),
-      ...(matrix ? [matrix.pergunta] : [])
-    ];
+  for (const item of priorityIntent) {
+    if (!item.test) continue;
 
-    let score = 0;
+    const rule = rules.find(r => r.id === item.id);
+    const matrix = qMap.get(item.id);
 
-    candidates.forEach(candidate => {
-      score = Math.max(
-        score,
-        phraseScore(query, candidate),
-        tokenScore(query, candidate)
-      );
-    });
+    if (rule) {
+      return {
+        rule,
+        matrix,
+        score: 100
+      };
+    }
+  }
 
-    return {
-      rule,
-      matrix,
-      score
-    };
-  })
-  .filter(x => x.score > 0)
-  .sort((a, b) => b.score - a.score);
+  // Classificação normal
+  const scored = rules
+    .map(rule => {
+      const matrix = qMap.get(rule.id);
+
+      const candidates = [
+        ...(rule.gatilhos || []),
+        ...(matrix ? [matrix.pergunta] : [])
+      ];
+
+      let score = 0;
+
+      candidates.forEach(candidate => {
+        score = Math.max(
+          score,
+          phraseScore(query, candidate),
+          tokenScore(query, candidate)
+        );
+      });
+
+      return {
+        rule,
+        matrix,
+        score
+      };
+    })
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score);
 
   if (!scored.length) return null;
 
