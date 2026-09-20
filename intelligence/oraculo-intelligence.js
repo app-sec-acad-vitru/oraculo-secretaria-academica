@@ -119,16 +119,16 @@ const strongPhrases = [
   ["dados pessoais", ["dados pessoais"]],
   ["lei geral de protecao de dados", ["dados pessoais"]],
 
-  ["estagio obrigatorio e estagio nao obrigatorio", ["conceito"]],
+  ["estagio obrigatorio e estagio nao obrigatorio", ["diferenca entre estagio obrigatorio e nao obrigatorio"]],
   ["estagio obrigatorio", ["estagio"]],
   ["estagio nao obrigatorio", ["estagio"]],
   
-  ["quem pode supervisionar o estagio", ["supervisao"]],
-  ["supervisionar o estagio", ["supervisao"]],
+  ["quem pode supervisionar o estagio", ["papeis de supervisao"]],
+  ["supervisionar o estagio", ["papeis de supervisao"]],
   
-  ["quais documentos sao necessarios no estagio", ["documentacao"]],
-  ["documentos necessarios no estagio", ["documentacao"]],
-  ["documentacao do estagio", ["documentacao"]],
+  ["quais documentos sao necessarios no estagio", ["documentos e agentes"]],
+  ["documentos necessarios no estagio", ["documentos e agentes"]],
+  ["documentacao do estagio", ["documentos e agentes"]],
   
   ["expedicao e registro", ["emissao diploma", "registro diploma"]],
   ["expedicao registro diploma", ["emissao diploma"]],
