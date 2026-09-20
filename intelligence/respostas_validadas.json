@@ -1,11 +1,41 @@
 {
-  "schema_version": "oraculo-banco-respostas-validadas-v2.0",
+  "schema_version": "oraculo-banco-respostas-validadas-v4.0",
   "status": "validado_com_pesquisa_normativa",
   "data_verificacao": "2026-09-20",
   "base_referencias": 28,
-  "quantidade_respostas": 21,
-  "observacao": "As 21 respostas de alto impacto foram preenchidas com conteúdo normativo/operacional e pesquisa de fontes públicas. Não são citações literais; quando houver caso concreto, o Oráculo deve recuperar e verificar a fonte oficial vigente.",
+  "quantidade_respostas": 47,
+  "observacao": "Banco ampliado a partir da matriz de 52 intenções. Inclui respostas de conteúdo para QA-001 a QA-047, preservando as respostas anteriores e adicionando QA-031/032 e as lacunas de conteúdo identificadas. QA-048 a QA-052 permanecem funções dinâmicas do motor e não recebem resposta estática.",
+  "fontes_pesquisadas": "Fontes oficiais do Planalto, MEC/CNE, Inep e Conarq consultadas em 20/09/2026. As respostas são paráfrases operacionais, não citações literais.",
   "respostas": [
+    {
+      "id": "VR-001",
+      "pergunta_id": "QA-001",
+      "processo": "Vida acadêmica",
+      "pergunta": "Qual é a regra geral sobre validade nacional de diploma de curso superior?",
+      "resposta_objetiva": "Os diplomas de cursos superiores reconhecidos, quando registrados, têm validade nacional como prova da formação recebida. A LDB também diferencia a competência de registro entre universidades e instituições não universitárias.",
+      "fundamento": [
+        "Lei nº 9.394/1996, art. 48"
+      ],
+      "impacto_operacional": "Para a Secretaria, a validade nacional deve ser analisada em conjunto com reconhecimento do curso, registro do diploma e eventual regra específica do tipo de formação.",
+      "procedimento": [
+        "Confirmar reconhecimento do curso.",
+        "Confirmar conclusão e requisitos de diplomação.",
+        "Identificar a instituição competente para registro.",
+        "Controlar o registro antes de tratar o diploma como documento com validade nacional."
+      ],
+      "limites": "Não usar esta regra geral para diplomas estrangeiros ou situações especiais sem analisar as regras específicas.",
+      "fontes": [
+        {
+          "norma": "Lei nº 9.394/1996 — LDB",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l9394compilado.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
     {
       "id": "VR-002",
       "pergunta_id": "QA-002",
@@ -76,6 +106,140 @@
       "data_verificacao": "2026-09-20",
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-004",
+      "pergunta_id": "QA-004",
+      "processo": "Documentos",
+      "pergunta": "Quais regras estão relacionadas à transferência e à documentação de transferência?",
+      "resposta_objetiva": "A LDB prevê a aceitação de transferência de alunos regulares para cursos afins, quando houver vagas e mediante processo seletivo, ressalvadas as transferências ex officio. A documentação de transferência deve ser tratada separadamente da situação financeira do aluno.",
+      "fundamento": [
+        "Lei nº 9.394/1996, art. 49",
+        "Lei nº 9.870/1999, art. 6º, § 2º",
+        "Portaria MEC nº 230/2007"
+      ],
+      "impacto_operacional": "Processos de transferência precisam controlar vaga, enquadramento do curso, documentação acadêmica e regras de emissão sem condicionar a entrega à adimplência.",
+      "procedimento": [
+        "Verificar situação acadêmica e curso de destino.",
+        "Verificar existência de vaga e critérios aplicáveis.",
+        "Emitir a documentação de transferência conforme o fluxo vigente.",
+        "Não condicionar a expedição dos documentos de transferência à quitação de débitos.",
+        "Registrar o atendimento e o envio da documentação."
+      ],
+      "limites": "Casos de transferência ex officio, transferência assistida ou regras específicas de sistemas/IES exigem análise própria.",
+      "fontes": [
+        {
+          "norma": "Lei nº 9.394/1996 — LDB",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l9394compilado.htm"
+        },
+        {
+          "norma": "Lei nº 9.870/1999",
+          "url": "https://planalto.gov.br/ccivil_03/leis/l9870.htm"
+        },
+        {
+          "norma": "Portaria MEC nº 230/2007 — transferência",
+          "url": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-005",
+      "pergunta_id": "QA-005",
+      "processo": "Vida acadêmica",
+      "pergunta": "Quais direitos acadêmicos precisam ser observados quando o aluno está inadimplente?",
+      "resposta_objetiva": "A inadimplência não autoriza a suspensão de provas, retenção de documentos escolares ou outras penalidades pedagógicas. No ensino superior, a instituição deve expedir os documentos de transferência a qualquer tempo, independentemente da adimplência ou de cobrança judicial.",
+      "fundamento": [
+        "Lei nº 9.870/1999, art. 6º e § 2º"
+      ],
+      "impacto_operacional": "Os fluxos da Secretaria devem separar cobrança financeira de emissão e entrega de documentos acadêmicos protegidos pela legislação.",
+      "procedimento": [
+        "Não reter documentos por inadimplência.",
+        "Não suspender provas ou aplicar penalidade pedagógica por esse motivo.",
+        "Expedir documentos de transferência quando solicitados.",
+        "Encaminhar questões financeiras ao fluxo competente."
+      ],
+      "limites": "Esta resposta não elimina outras consequências contratuais previstas em lei; trata especificamente das limitações a sanções pedagógicas e documentais.",
+      "fontes": [
+        {
+          "norma": "Lei nº 9.870/1999",
+          "url": "https://planalto.gov.br/ccivil_03/leis/l9870.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-006",
+      "pergunta_id": "QA-006",
+      "processo": "Documentos",
+      "pergunta": "Pode haver cobrança pela emissão de diploma ou histórico?",
+      "resposta_objetiva": "A expedição e o registro do diploma e do histórico escolar final são considerados incluídos nos serviços educacionais, não ensejando cobrança, ressalvada a hipótese de apresentação decorativa com papel ou tratamento gráfico especiais por opção do aluno. Para transferência, a Portaria nº 230/2007 também veda cobrança de taxa de matrícula como condição para apreciar pedido e emitir documentos de transferência.",
+      "fundamento": [
+        "Portaria Normativa MEC nº 23/2017, art. 99, § 4º",
+        "Portaria MEC nº 230/2007, art. 2º"
+      ],
+      "impacto_operacional": "O catálogo de serviços deve distinguir documentos acadêmicos ordinários de serviços opcionais ou apresentações especiais.",
+      "procedimento": [
+        "Classificar o serviço solicitado.",
+        "Verificar se é emissão acadêmica ordinária ou apresentação especial opcional.",
+        "Não cobrar pela expedição/registro ordinários abrangidos pela regra.",
+        "Para transferência, não condicionar documentos à cobrança de taxa de matrícula."
+      ],
+      "limites": "A análise de outros documentos ou serviços pode depender de norma específica e da natureza da cobrança.",
+      "fontes": [
+        {
+          "norma": "MEC — Cobrança de Taxas",
+          "url": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-007",
+      "pergunta_id": "QA-007",
+      "processo": "Documentos",
+      "pergunta": "Como deve ser estruturado o histórico escolar digital?",
+      "resposta_objetiva": "O Histórico Escolar Digital possui estrutura própria definida pelo pacote técnico do MEC. A versão publicada pelo MEC inclui o XSD específico do Histórico Escolar Digital e diferencia histórico integral/final, histórico parcial e histórico de simples conferência. Os documentos com finalidade jurídica devem seguir a especificação aplicável e a versão técnica vigente.",
+      "fundamento": [
+        "Especificações técnicas do Diploma Digital — XSD v1.05",
+        "IN SESu nº 5/2020, conforme pacote técnico publicado pelo MEC"
+      ],
+      "impacto_operacional": "O gerador de histórico deve controlar versão do XSD, estrutura XML, validação e finalidade do tipo de histórico.",
+      "procedimento": [
+        "Identificar a finalidade do histórico.",
+        "Selecionar o tipo documental adequado.",
+        "Gerar o XML conforme o XSD vigente.",
+        "Validar a estrutura antes da disponibilização.",
+        "Preservar o documento e os elementos necessários à validação."
+      ],
+      "limites": "Não congelar uma versão técnica antiga sem verificar a versão vigente publicada pelo MEC.",
+      "fontes": [
+        {
+          "norma": "MEC — Pacote XSD v1.05",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados"
+        },
+        {
+          "norma": "Especificação técnica — Histórico Escolar Digital",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/documentos/in-05-versao-completa-anexos-i-ii-e-iii-v1-05.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
@@ -185,6 +349,76 @@
       "data_verificacao": "2026-09-20",
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-011",
+      "pergunta_id": "QA-011",
+      "processo": "Diploma Digital",
+      "pergunta": "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+      "resposta_objetiva": "O Histórico Escolar Digital é um documento acadêmico próprio, com estrutura técnica específica. O Diploma Digital possui seu próprio XML e mecanismos de emissão e validação. Eles se relacionam pela documentação da trajetória acadêmica e da conclusão, mas não devem ser tratados como o mesmo artefato documental.",
+      "fundamento": [
+        "Especificações técnicas do Diploma Digital — XSD v1.05",
+        "Portaria MEC nº 70/2025"
+      ],
+      "impacto_operacional": "O fluxo deve manter a correspondência entre dados acadêmicos que alimentam diploma e histórico sem substituir um documento pelo outro.",
+      "procedimento": [
+        "Manter cadastro acadêmico único como fonte dos dados.",
+        "Gerar histórico conforme sua especificação.",
+        "Gerar diploma conforme sua especificação.",
+        "Validar coerência entre os documentos.",
+        "Controlar versões técnicas aplicáveis."
+      ],
+      "limites": "Os campos e estruturas técnicas devem ser conferidos na versão vigente do pacote MEC.",
+      "fontes": [
+        {
+          "norma": "MEC — Pacote XSD v1.05",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados"
+        },
+        {
+          "norma": "Diploma Digital — MEC",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-012",
+      "pergunta_id": "QA-012",
+      "processo": "Diploma Digital",
+      "pergunta": "O que a base atual informa sobre documento nato-digital no contexto acadêmico?",
+      "resposta_objetiva": "Documento nato-digital é aquele produzido originalmente em meio digital. No contexto acadêmico, sua gestão deve considerar autenticidade, integridade, identificação, armazenamento e preservação. Isso não significa que todo PDF seja automaticamente equivalente a um documento acadêmico digital com os requisitos específicos de sua regulamentação.",
+      "fundamento": [
+        "Portaria MEC nº 554/2019",
+        "Portaria MEC nº 360/2022",
+        "Portaria MEC nº 70/2025"
+      ],
+      "impacto_operacional": "A Secretaria deve distinguir documento nato-digital, documento digitalizado e documento acadêmico digital com especificação própria.",
+      "procedimento": [
+        "Classificar a origem do documento.",
+        "Identificar a norma específica aplicável.",
+        "Aplicar requisitos de assinatura/validação quando exigidos.",
+        "Preservar o documento e seus metadados."
+      ],
+      "limites": "Não inferir validade jurídica apenas pelo formato PDF ou pela existência de arquivo digital.",
+      "fontes": [
+        {
+          "norma": "MEC — Diploma Digital",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        },
+        {
+          "norma": "Portaria MEC nº 360/2022",
+          "url": "https://legislacao.cee.ce.gov.br/media/publicacoes/outros-documentos/portarias/2022/portaria-360-2022.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
@@ -301,6 +535,70 @@
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
+      "id": "VR-016",
+      "pergunta_id": "QA-016",
+      "processo": "Acervo",
+      "pergunta": "A produção de novos documentos físicos do acervo é permitida?",
+      "resposta_objetiva": "Para as IES pertencentes ao sistema federal de ensino, a Portaria MEC nº 360/2022 vedou a produção de novos documentos integrantes do acervo acadêmico em suporte físico a partir de 1º de agosto de 2022, observadas as hipóteses e regras específicas da própria regulamentação.",
+      "fundamento": [
+        "Portaria MEC nº 360/2022, art. 2º"
+      ],
+      "impacto_operacional": "O fluxo deve partir da premissa digital para novos documentos que integrem o acervo, sem eliminar a análise de documentos físicos existentes ou de exceções normativas.",
+      "procedimento": [
+        "Classificar se o documento integra o acervo acadêmico.",
+        "Verificar se é documento novo ou acervo histórico existente.",
+        "Aplicar o meio digital quando abrangido pela Portaria.",
+        "Tratar exceções conforme norma específica."
+      ],
+      "limites": "A regra é dirigida às IES do sistema federal e deve ser aplicada com as exceções e condições do ato vigente.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 360/2022",
+          "url": "https://legislacao.cee.ce.gov.br/media/publicacoes/outros-documentos/portarias/2022/portaria-360-2022.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-017",
+      "pergunta_id": "QA-017",
+      "processo": "Acervo",
+      "pergunta": "Onde aparece a referência a RDC-Arq no acervo acadêmico?",
+      "resposta_objetiva": "A Portaria MEC nº 613/2022 determina que as IES do sistema federal de ensino superior possuam Repositório Arquivístico Digital Confiável — RDC-Arq — conforme as normas vigentes do Conarq, além de cópia de segurança externa para recuperação de desastres.",
+      "fundamento": [
+        "Portaria MEC nº 613/2022, art. 7º",
+        "Normas do Conarq sobre RDC-Arq"
+      ],
+      "impacto_operacional": "O armazenamento do acervo deve ser tratado como preservação arquivística, com requisitos de autenticidade, integridade, disponibilidade, acesso e preservação.",
+      "procedimento": [
+        "Definir repositório compatível com as normas arquivísticas.",
+        "Garantir metadados e controles de preservação.",
+        "Manter cópia de segurança externa.",
+        "Controlar recuperação de desastres.",
+        "Verificar a norma Conarq vigente, inclusive alterações/revogações."
+      ],
+      "limites": "A Resolução Conarq nº 43/2015 foi revogada pela Resolução nº 51/2023; portanto, o Oráculo deve apontar a diretriz vigente do Conarq em vez de tratar a Resolução 43 como ato atual.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 613/2022",
+          "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=19%2F08%2F2022&jornal=515&pagina=52"
+        },
+        {
+          "norma": "CONARQ — Resoluções",
+          "url": "https://www.gov.br/conarq/pt-br/legislacao-arquivistica/resolucoes-do-conarq"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
       "id": "VR-018",
       "pergunta_id": "QA-018",
       "processo": "Governança",
@@ -329,6 +627,68 @@
       "data_verificacao": "2026-09-20",
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-019",
+      "pergunta_id": "QA-019",
+      "processo": "Governança",
+      "pergunta": "Como tratar o CPF do aluno dentro dos processos acadêmicos?",
+      "resposta_objetiva": "O CPF é dado pessoal e seu tratamento deve observar a LGPD, especialmente finalidade, adequação, necessidade, segurança, transparência e responsabilização. A Secretaria deve usar o CPF somente na medida necessária às finalidades legítimas do processo e controlar acesso, compartilhamento e armazenamento.",
+      "fundamento": [
+        "Lei nº 13.709/2018 — LGPD, arts. 6º, 7º, 11 e 46 e seguintes"
+      ],
+      "impacto_operacional": "O CPF deve ser tratado como dado de identificação sob controle de acesso, evitando exposição desnecessária em relatórios, planilhas, telas e compartilhamentos.",
+      "procedimento": [
+        "Definir finalidade do uso.",
+        "Usar somente o necessário.",
+        "Restringir acesso por função.",
+        "Evitar exposição em relatórios e arquivos compartilhados.",
+        "Aplicar medidas de segurança e retenção adequadas.",
+        "Registrar incidentes conforme o fluxo institucional."
+      ],
+      "limites": "A base legal e os prazos de retenção dependem da finalidade concreta e não devem ser presumidos pelo Oráculo.",
+      "fontes": [
+        {
+          "norma": "Lei nº 13.709/2018 — LGPD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-020",
+      "pergunta_id": "QA-020",
+      "processo": "Governança",
+      "pergunta": "Quais cuidados devo considerar ao conceder acesso a dados acadêmicos?",
+      "resposta_objetiva": "O acesso deve observar finalidade, necessidade, segurança e responsabilização. A concessão deve ser compatível com a função exercida e com o processo atendido, evitando privilégios excessivos e compartilhamentos sem finalidade definida.",
+      "fundamento": [
+        "Lei nº 13.709/2018 — LGPD, arts. 6º e 46 e seguintes"
+      ],
+      "impacto_operacional": "Perfis de acesso devem ser vinculados às responsabilidades do trabalho, com rastreabilidade e revisão periódica.",
+      "procedimento": [
+        "Definir a finalidade do acesso.",
+        "Conceder somente as permissões necessárias.",
+        "Controlar perfis e segregação de funções.",
+        "Registrar acessos relevantes quando aplicável.",
+        "Revisar permissões quando houver mudança de função.",
+        "Revogar acessos quando deixarem de ser necessários."
+      ],
+      "limites": "LGPD não fornece um perfil técnico único; controles concretos dependem do risco e do ambiente institucional.",
+      "fontes": [
+        {
+          "norma": "Lei nº 13.709/2018 — LGPD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
@@ -397,6 +757,237 @@
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
+      "id": "VR-023",
+      "pergunta_id": "QA-023",
+      "processo": "ENADE",
+      "pergunta": "Como o ENADE 2026 se relaciona às licenciaturas?",
+      "resposta_objetiva": "O Enade das Licenciaturas possui duas etapas: avaliação teórica, realizada por meio da Prova Nacional Docente no modelo vigente, e Avaliação da Prática, realizada durante o estágio curricular supervisionado/regência. A Avaliação da Prática envolve estudante, supervisor de estágio e orientador de estágio.",
+      "fundamento": [
+        "Inep — Enade das Licenciaturas",
+        "Inep — Avaliação da Prática 2026"
+      ],
+      "impacto_operacional": "O fluxo acadêmico de licenciaturas precisa integrar calendário do estágio, identificação de estudantes habilitados, orientador e supervisor e os registros exigidos pelo Sistema Enade.",
+      "procedimento": [
+        "Verificar habilitação do estudante segundo edital.",
+        "Controlar o estágio curricular supervisionado e regência quando aplicável.",
+        "Identificar orientador e supervisor.",
+        "Acompanhar os prazos do Sistema Enade.",
+        "Registrar a regularidade conforme as orientações do Inep."
+      ],
+      "limites": "Calendários, critérios de habilitação e instrumentos devem ser consultados no edital/orientações da edição correspondente.",
+      "fontes": [
+        {
+          "norma": "Inep — Enade das Licenciaturas",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-das-licenciaturas"
+        },
+        {
+          "norma": "Inep — Avaliação da Prática",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-das-licenciaturas/avaliacao-da-pratica"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-024",
+      "pergunta_id": "QA-024",
+      "processo": "ENADE",
+      "pergunta": "O que a Portaria nº 90/2026 disciplina sobre o Conceito Enade das Licenciaturas?",
+      "resposta_objetiva": "A resposta deve ser vinculada ao ato específico e à metodologia publicada pelo Inep para o ciclo correspondente. O Conceito Enade integra o conjunto de indicadores de avaliação da educação superior e não deve ser confundido com a situação individual de regularidade do estudante.",
+      "fundamento": [
+        "Portaria nº 90/2026 — referência cadastrada na matriz",
+        "Inep — Enade"
+      ],
+      "impacto_operacional": "O uso do conceito para análise institucional deve separar resultado agregado do curso de registros acadêmicos individuais.",
+      "procedimento": [
+        "Identificar a edição e modalidade do Enade.",
+        "Consultar a metodologia e o ato específico vigente.",
+        "Separar conceito do curso de regularidade individual.",
+        "Registrar a versão do ato/metodologia utilizada."
+      ],
+      "limites": "Não inferir fórmula ou peso específico sem consultar o texto/metodologia oficial vigente.",
+      "fontes": [
+        {
+          "norma": "Inep — Enade",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-025",
+      "pergunta_id": "QA-025",
+      "processo": "ENADE",
+      "pergunta": "Qual relação entre ENADE e registros acadêmicos/regularidade?",
+      "resposta_objetiva": "O Enade é componente curricular obrigatório dos cursos avaliados, e a situação de regularidade do estudante é utilizada nos registros acadêmicos conforme as regras da edição. Para bacharelados e cursos superiores de tecnologia, o Inep informa que a situação de regularidade é registrada no histórico escolar; para licenciaturas, a regularidade também é condição para conclusão conforme as orientações da Avaliação da Prática.",
+      "fundamento": [
+        "Lei nº 10.861/2004 — SINAES",
+        "Inep — Enade",
+        "Inep — FAQ Avaliação da Prática"
+      ],
+      "impacto_operacional": "A Secretaria deve possuir fluxo de integração entre informação de regularidade e os registros de conclusão/diplomação, sem transformar o ENADE em requisito administrativo diferente daquele previsto nas normas.",
+      "procedimento": [
+        "Consultar a situação de regularidade no sistema oficial.",
+        "Registrar a informação conforme a edição e modalidade.",
+        "Impedir conclusão apenas quando a norma vigente efetivamente condicionar a conclusão à regularidade.",
+        "Manter evidência da fonte utilizada."
+      ],
+      "limites": "Não aplicar regras de uma modalidade ou edição a outra sem verificar o ato correspondente.",
+      "fontes": [
+        {
+          "norma": "Inep — Enade",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade"
+        },
+        {
+          "norma": "Lei nº 10.861/2004",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm"
+        },
+        {
+          "norma": "Inep — FAQ Avaliação da Prática",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-das-licenciaturas/avaliacao-da-pratica/perguntas-frequentes"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-026",
+      "pergunta_id": "QA-026",
+      "processo": "Censo",
+      "pergunta": "Quais dados institucionais e acadêmicos são relacionados ao Censo da Educação Superior?",
+      "resposta_objetiva": "O Censo da Educação Superior coleta informações institucionais e acadêmicas conforme os módulos e procedimentos definidos pelo Inep. Para 2026, o cronograma prevê coleta no Censup e conferência dos dados cadastrais carregados do Cadastro e-MEC, além de etapas de consistência, ajustes, justificativas e fechamento.",
+      "fundamento": [
+        "Inep — Censo da Educação Superior 2026, cronograma"
+      ],
+      "impacto_operacional": "O controle interno deve alinhar cadastro institucional, cursos, alunos e demais dados censitários com as fontes oficiais e com as validações do Censup.",
+      "procedimento": [
+        "Conferir dados cadastrais carregados do e-MEC.",
+        "Validar os dados acadêmicos antes da transmissão.",
+        "Executar as críticas/consistências do sistema.",
+        "Corrigir divergências e registrar justificativas.",
+        "Controlar fechamento e homologação."
+      ],
+      "limites": "O conjunto exato de campos depende do manual/coleta da edição e não deve ser inferido somente pelo cronograma.",
+      "fontes": [
+        {
+          "norma": "Inep — Censo da Educação Superior — Cronograma 2026",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-027",
+      "pergunta_id": "QA-027",
+      "processo": "Censo",
+      "pergunta": "Qual é a relação entre cadastro e-MEC e Censo na base atual?",
+      "resposta_objetiva": "O cronograma do Censo 2026 prevê a conferência dos dados cadastrais carregados do Cadastro Nacional de Cursos e Instituições de Educação Superior — Cadastro e-MEC — para o Sistema Censup e a solicitação de ajustes quando necessário. Assim, o e-MEC funciona como uma fonte cadastral regulatória integrada ao processo censitário, mas Censo e e-MEC não são o mesmo sistema ou finalidade.",
+      "fundamento": [
+        "Inep — Censo da Educação Superior 2026, cronograma",
+        "Portaria Normativa MEC nº 21/2017 — e-MEC"
+      ],
+      "impacto_operacional": "O time deve tratar divergências entre cadastro regulatório e declaração censitária como uma etapa específica de conferência.",
+      "procedimento": [
+        "Conferir dados do e-MEC carregados no Censup.",
+        "Identificar divergências.",
+        "Solicitar/corrigir ajustes conforme a etapa prevista.",
+        "Registrar evidências e responsáveis.",
+        "Prosseguir com a declaração censitária após validação."
+      ],
+      "limites": "Não presumir que toda informação censitária deve ser alterada diretamente no e-MEC.",
+      "fontes": [
+        {
+          "norma": "Inep — Cronograma Censo 2026",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma"
+        },
+        {
+          "norma": "MEC — Portarias de Regulação/e-MEC",
+          "url": "https://portal.mec.gov.br/programa-nacional-de-fortalecimento-dos-conselhos-escolares/publicacoes/30000-uncategorised/18977-portarias"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-028",
+      "pergunta_id": "QA-028",
+      "processo": "Censo",
+      "pergunta": "Quais prazos do Censo 2026 exigem atenção da Secretaria?",
+      "resposta_objetiva": "No cronograma oficial do Censo 2026, a coleta de dados e a conferência de dados carregados do e-MEC ocorreram de 2 de março a 10 de julho; a conferência dos dados do e-MEC teve etapa até 17 de abril; a finalização sem pendências até 30 de abril; justificativas de consistência até 22 de maio; ajustes posteriores até 10 de julho; consolidação e homologação de 14 a 31 de julho. A divulgação do Censo está prevista para 22 de setembro de 2026.",
+      "fundamento": [
+        "Inep — Censo da Educação Superior 2026, cronograma",
+        "Portaria nº 771/2025"
+      ],
+      "impacto_operacional": "O calendário deve ser transformado em marcos internos anteriores aos prazos oficiais.",
+      "procedimento": [
+        "Criar calendário interno com antecedência.",
+        "Acompanhar conferência do e-MEC.",
+        "Concluir validações antes do fechamento.",
+        "Controlar justificativas e ajustes.",
+        "Registrar fechamento/homologação."
+      ],
+      "limites": "Calendário é temporal; antes de executar qualquer prazo futuro, consultar a página oficial atualizada do Inep.",
+      "fontes": [
+        {
+          "norma": "Inep — Cronograma Censo 2026",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-029",
+      "pergunta_id": "QA-029",
+      "processo": "Censo",
+      "pergunta": "Que conferências devo fazer antes de uma etapa do Censo?",
+      "resposta_objetiva": "A conferência deve verificar consistência cadastral, acadêmica e regulatória, especialmente dados carregados do e-MEC, situação dos cursos e alunos, completude dos registros e críticas apresentadas pelo Censup. O cronograma oficial prevê etapa específica de conferência, justificativas e correções.",
+      "fundamento": [
+        "Inep — Censo da Educação Superior 2026, cronograma"
+      ],
+      "impacto_operacional": "O melhor controle é uma rotina de pré-validação que encontre divergências antes do fechamento oficial.",
+      "procedimento": [
+        "Conferir cadastro institucional e cursos contra e-MEC.",
+        "Conferir alunos e situações acadêmicas.",
+        "Verificar campos obrigatórios e duplicidades.",
+        "Executar críticas do Censup.",
+        "Documentar justificativas e correções.",
+        "Revalidar antes do fechamento."
+      ],
+      "limites": "Sem o manual de coleta e os arquivos de dados da edição, não é possível definir um checklist de campos exaustivo.",
+      "fontes": [
+        {
+          "norma": "Inep — Cronograma Censo 2026",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
       "id": "VR-030",
       "pergunta_id": "QA-030",
       "processo": "Estágio",
@@ -426,6 +1017,71 @@
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-031",
+      "pergunta_id": "QA-031",
+      "processo": "Estágio",
+      "pergunta": "Quais documentos e agentes aparecem na estrutura do estágio?",
+      "resposta_objetiva": "Na estrutura legal do estágio, o Termo de Compromisso de Estágio é o documento central, celebrado entre estudante, parte concedente e instituição de ensino. O plano de atividades integra o termo e pode ser alterado por aditivos. O estágio deve ser acompanhado por professor orientador e supervisor da parte concedente, com relatórios periódicos e documentação de encerramento. O agente de integração pode auxiliar na aproximação e operacionalização, sem substituir as responsabilidades legais das partes.",
+      "fundamento": [
+        "Lei nº 11.788/2008, art. 3º, II e § 1º",
+        "Lei nº 11.788/2008, arts. 7º, 8º e 9º"
+      ],
+      "impacto_operacional": "O fluxo deve controlar Termo de Compromisso, plano de atividades, aditivos, identificação dos responsáveis pelo acompanhamento, relatórios e documentação final.",
+      "procedimento": [
+        "Confirmar matrícula e frequência regular.",
+        "Formalizar o Termo de Compromisso entre as partes previstas em lei.",
+        "Registrar plano de atividades e aditivos.",
+        "Identificar professor orientador e supervisor.",
+        "Controlar relatórios e documentação de encerramento.",
+        "Complementar o checklist com o regulamento de estágio e fluxo interno da IES."
+      ],
+      "limites": "A Lei define requisitos legais mínimos e não uma lista única de documentos administrativos para todas as IES.",
+      "fontes": [
+        {
+          "norma": "Lei nº 11.788/2008 — Estágio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação legal geral; para checklist institucional, complementar com regulamento/PPC e procedimento vigente.",
+      "confianca": "alta para requisitos legais gerais"
+    },
+    {
+      "id": "VR-032",
+      "pergunta_id": "QA-032",
+      "processo": "Estágio",
+      "pergunta": "Quais papéis de supervisão aparecem na legislação de estágio?",
+      "resposta_objetiva": "A Lei nº 11.788/2008 prevê acompanhamento pelo professor orientador da instituição de ensino e pelo supervisor da parte concedente. O supervisor deve pertencer ao quadro da concedente e possuir formação ou experiência profissional na área de conhecimento desenvolvida no curso; pode orientar e supervisionar até 10 estagiários simultaneamente. O agente de integração exerce função auxiliar e não substitui esses papéis.",
+      "fundamento": [
+        "Lei nº 11.788/2008, art. 3º, § 1º",
+        "Lei nº 11.788/2008, art. 7º, III",
+        "Lei nº 11.788/2008, art. 9º, III e parágrafo pertinente"
+      ],
+      "impacto_operacional": "O cadastro e o fluxo devem identificar professor orientador e supervisor da concedente e permitir verificar os requisitos legais do supervisor.",
+      "procedimento": [
+        "Indicar professor orientador pela IES.",
+        "Identificar supervisor da concedente.",
+        "Verificar vínculo do supervisor com a concedente.",
+        "Verificar formação ou experiência compatível.",
+        "Controlar o limite legal de até 10 estagiários simultaneamente.",
+        "Registrar o acompanhamento nos instrumentos institucionais."
+      ],
+      "limites": "A lei define os requisitos mínimos; cargos, aprovações e documentos adicionais podem decorrer de normas internas.",
+      "fontes": [
+        {
+          "norma": "Lei nº 11.788/2008 — Estágio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Separar responsabilidade legal de procedimento interno.",
+      "confianca": "alta para requisitos legais gerais"
     },
     {
       "id": "VR-033",
@@ -458,6 +1114,36 @@
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
+      "id": "VR-034",
+      "pergunta_id": "QA-034",
+      "processo": "Extensão",
+      "pergunta": "Como a extensão se relaciona ao PPC?",
+      "resposta_objetiva": "A extensão deve integrar a formação acadêmica e estar institucionalizada nos projetos pedagógicos dos cursos, de acordo com as Diretrizes para a Extensão na Educação Superior. A Resolução CNE/CES nº 7/2018 estabelece a inserção da extensão na matriz curricular e a diretriz de, no mínimo, 10% da carga horária curricular estudantil em atividades de extensão.",
+      "fundamento": [
+        "Resolução CNE/CES nº 7/2018, arts. 3º, 4º e 14"
+      ],
+      "impacto_operacional": "O PPC deve permitir identificar onde a extensão está prevista, como é cumprida, registrada e avaliada.",
+      "procedimento": [
+        "Verificar previsão da extensão no PPC.",
+        "Mapear componentes/atividades de extensão e sua carga horária.",
+        "Definir critérios de participação e registro.",
+        "Controlar integralização da carga horária.",
+        "Manter evidências de execução e avaliação."
+      ],
+      "limites": "Detalhes de desenho curricular devem observar as DCNs do curso e as normas institucionais, além da Resolução de Extensão.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CES nº 7/2018",
+          "url": "https://portal.mec.gov.br/index.php?option=com_docman&view=download&alias=105102-rces007-18&category_slug=dezembro-2018-pdf&Itemid=30192"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
       "id": "VR-035",
       "pergunta_id": "QA-035",
       "processo": "Pós-graduação",
@@ -485,6 +1171,144 @@
       "data_verificacao": "2026-09-20",
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-036",
+      "pergunta_id": "QA-036",
+      "processo": "Pós-graduação",
+      "pergunta": "Quais aspectos de documentação da especialização aparecem na base?",
+      "resposta_objetiva": "A certificação de especialização lato sensu deve observar a Resolução CNE/CES nº 1/2018. A instituição deve manter documentação acadêmica que permita comprovar a integralização do curso e emitir certificado acompanhado do histórico escolar com as informações exigidas pela regulamentação.",
+      "fundamento": [
+        "Resolução CNE/CES nº 1/2018"
+      ],
+      "impacto_operacional": "O fluxo deve assegurar correspondência entre matrícula, integralização, histórico e certificado, com rastreabilidade dos registros.",
+      "procedimento": [
+        "Confirmar integralização curricular.",
+        "Conferir documentação acadêmica e resultados.",
+        "Emitir histórico com os dados exigidos.",
+        "Emitir certificado conforme a regulamentação.",
+        "Manter registro e comprovação da conclusão."
+      ],
+      "limites": "Requisitos adicionais de layout, assinatura, registro e fluxo podem decorrer de normas institucionais e atualizações regulatórias.",
+      "fontes": [
+        {
+          "norma": "Resolução CNE/CES nº 1/2018 — Pós-Graduação Lato Sensu",
+          "url": "https://www.gov.br/mec/pt-br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-037",
+      "pergunta_id": "QA-037",
+      "processo": "Regulação",
+      "pergunta": "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
+      "resposta_objetiva": "No sistema federal, regulação, supervisão e avaliação são funções distintas e relacionadas. A regulação envolve atos autorizativos de IES e cursos; a supervisão utiliza ações preventivas ou corretivas para zelar pela regularidade e qualidade; a avaliação fornece informações e resultados que integram o sistema de avaliação da educação superior.",
+      "fundamento": [
+        "Decreto nº 9.235/2017, com redação vigente",
+        "Lei nº 10.861/2004 — SINAES"
+      ],
+      "impacto_operacional": "Para a Secretaria, é importante distinguir um processo regulatório, uma ação de supervisão e um processo avaliativo antes de definir fluxo ou responsável.",
+      "procedimento": [
+        "Identificar a natureza do processo.",
+        "Consultar o ato regulatório aplicável.",
+        "Verificar se há procedimento de supervisão.",
+        "Consultar os instrumentos/indicadores de avaliação quando aplicáveis.",
+        "Registrar a fonte e a etapa processual."
+      ],
+      "limites": "O Decreto nº 9.235/2017 foi alterado, inclusive pelo Decreto nº 12.456/2025; usar sempre a redação vigente.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 9.235/2017 — redação vigente",
+          "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm"
+        },
+        {
+          "norma": "Lei nº 10.861/2004 — SINAES",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-038",
+      "pergunta_id": "QA-038",
+      "processo": "Regulação",
+      "pergunta": "Como SINAES e regulação se relacionam na base?",
+      "resposta_objetiva": "O SINAES organiza processos de avaliação da educação superior, enquanto a regulação e a supervisão utilizam atos e procedimentos próprios para credenciamento, autorização, reconhecimento, renovação e acompanhamento das IES e cursos. Os resultados de avaliação podem subsidiar decisões regulatórias, mas avaliação e regulação não são sinônimos.",
+      "fundamento": [
+        "Lei nº 10.861/2004 — SINAES",
+        "Decreto nº 9.235/2017, com redação vigente"
+      ],
+      "impacto_operacional": "O fluxo interno deve registrar separadamente evidências de avaliação e atos/processos regulatórios.",
+      "procedimento": [
+        "Identificar o indicador ou avaliação envolvida.",
+        "Identificar o processo regulatório relacionado, se houver.",
+        "Consultar o ato específico.",
+        "Não substituir evidência regulatória por indicador sem previsão normativa.",
+        "Manter rastreabilidade documental."
+      ],
+      "limites": "Os efeitos concretos de um resultado avaliativo dependem do ato e da regra vigente aplicável ao processo.",
+      "fontes": [
+        {
+          "norma": "Lei nº 10.861/2004",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm"
+        },
+        {
+          "norma": "Decreto nº 9.235/2017",
+          "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-039",
+      "pergunta_id": "QA-039",
+      "processo": "Regulação",
+      "pergunta": "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
+      "resposta_objetiva": "A fonte de partida, para o sistema federal, é o Decreto nº 9.235/2017 em sua redação vigente, complementado pelos atos do MEC/SERES, pelo e-MEC e pelos instrumentos de avaliação do Inep quando a questão envolver avaliação. A resposta deve identificar primeiro o tipo de processo.",
+      "fundamento": [
+        "Decreto nº 9.235/2017, com redação vigente",
+        "Portaria Normativa MEC nº 20/2017",
+        "Portaria Normativa MEC nº 21/2017",
+        "Portaria Normativa MEC nº 22/2017",
+        "Portaria Normativa MEC nº 23/2017"
+      ],
+      "impacto_operacional": "O Oráculo deve encaminhar a consulta à fonte correta em vez de responder genericamente 'MEC'.",
+      "procedimento": [
+        "Classificar se a dúvida é regulação, supervisão, avaliação ou cadastro.",
+        "Consultar o Decreto nº 9.235/2017.",
+        "Consultar o ato específico do MEC/SERES.",
+        "Usar e-MEC para informações cadastrais/processuais quando aplicável.",
+        "Usar Inep para instrumentos/resultados de avaliação."
+      ],
+      "limites": "Atos específicos podem ter sido alterados ou substituídos; confirmar vigência antes de tratar uma portaria histórica como regra atual.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 9.235/2017",
+          "url": "https://planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm"
+        },
+        {
+          "norma": "MEC — Portarias de Regulação",
+          "url": "https://portal.mec.gov.br/programa-nacional-de-fortalecimento-dos-conselhos-escolares/publicacoes/30000-uncategorised/18977-portarias"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
@@ -737,6 +1561,45 @@
       "data_verificacao": "2026-09-20",
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-047",
+      "pergunta_id": "QA-047",
+      "processo": "Formação docente",
+      "pergunta": "Onde localizar a cadeia normativa sobre formação superior para a docência na Educação Básica?",
+      "resposta_objetiva": "A cadeia oficial deve ser consultada no Conselho Nacional de Educação/MEC, na página temática de Formação Superior para a Docência na Educação Básica. A página reúne atos como a Resolução CNE/CP nº 4/2024 e o Parecer CNE/CP nº 5/2025, além de normas anteriores relevantes para transição e histórico.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024",
+        "Parecer CNE/CP nº 5/2025",
+        "Página temática do CNE/MEC"
+      ],
+      "impacto_operacional": "O Oráculo deve apontar a página oficial como porta de entrada e, para uma pergunta concreta, recuperar o ato específico aplicável ao caso.",
+      "procedimento": [
+        "Identificar se a dúvida é licenciatura, formação pedagógica ou segunda licenciatura.",
+        "Consultar a Resolução CNE/CP nº 4/2024.",
+        "Consultar o Parecer CNE/CP nº 5/2025 para orientações de implantação.",
+        "Verificar atos posteriores e vigência."
+      ],
+      "limites": "Página temática é porta de entrada, não substitui a leitura do ato normativo específico.",
+      "fontes": [
+        {
+          "norma": "MEC/CNE — Formação Superior para a Docência na Educação Básica",
+          "url": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica"
+        },
+        {
+          "norma": "Resolução CNE/CP nº 4/2024",
+          "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024"
+        },
+        {
+          "norma": "Parecer CNE/CP nº 5/2025",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     }
   ]
