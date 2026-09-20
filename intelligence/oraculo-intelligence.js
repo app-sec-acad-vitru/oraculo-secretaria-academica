@@ -323,6 +323,7 @@
     const search=oldSearch.cloneNode(true), input=oldInput.cloneNode(true); oldSearch.replaceWith(search); oldInput.replaceWith(input);
     search.onclick=()=>{const query=input.value.trim(); if(!query)return; run(query); const resultsbar=document.querySelector(".resultsbar"); if(resultsbar) window.scrollTo({top:Math.max(0,resultsbar.getBoundingClientRect().top+window.scrollY-20),behavior:"smooth"});};
     input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();search.click();}});
+    input.addEventListener("input",()=>{if(!input.value.trim()){const panel=$i("oraculoAnswerPanel");if(panel)panel.classList.add("hidden");}});
     document.querySelectorAll(".quick button").forEach(btn=>{const clone=btn.cloneNode(true);btn.replaceWith(clone);clone.onclick=()=>{input.value=clone.dataset.q||"";search.click();};});
     window.OraculoIntelligenceRun=run;
   }
