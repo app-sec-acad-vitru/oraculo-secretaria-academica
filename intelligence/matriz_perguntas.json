@@ -1,0 +1,673 @@
+{
+  "schema_version": "oraculo-inteligencia-matriz-v1.0",
+  "status": "draft_validacao",
+  "base": {
+    "referencias_base": 28,
+    "origem": "Oraculo_Inteligencia_V1.json",
+    "layout": "V5 congelada",
+    "observacao": "Esta matriz cria intenções/perguntas de consulta e não acrescenta respostas normativas às referências."
+  },
+  "principios": [
+    "Perguntas são roteadores de consulta; não constituem, por si, afirmações normativas.",
+    "Resposta normativa deve apontar uma ou mais referências da base.",
+    "Quando a base não tiver evidência suficiente, o Oráculo deve declarar a lacuna.",
+    "Trechos cadastrados como paráfrase não devem ser apresentados como citação literal.",
+    "Normas históricas devem ser tratadas como histórico até confirmação de vigência.",
+    "Calendários e atos operacionais devem carregar data de verificação."
+  ],
+  "perguntas": [
+    {
+      "id": "QA-001",
+      "processo": "Vida acadêmica",
+      "intencao": "validade de diploma",
+      "pergunta": "Qual é a regra geral sobre validade nacional de diploma de curso superior?",
+      "referencias_prioritarias": [
+        "ldb-9394",
+        "port-1095"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma e dispositivo aplicável",
+      "cautela": "Não tratar a LDB isoladamente quando houver regulamentação específica."
+    },
+    {
+      "id": "QA-002",
+      "processo": "Documentos",
+      "intencao": "emissão de diploma",
+      "pergunta": "Quais regras devo observar para expedição e registro de diploma?",
+      "referencias_prioritarias": [
+        "port-1095",
+        "pn-23-2017",
+        "diploma-2025"
+      ],
+      "tipo_resposta": "Procedimento + fundamento",
+      "evidencia_necessaria": "Norma específica e atos posteriores",
+      "cautela": "Verificar vigência e eventuais atos supervenientes."
+    },
+    {
+      "id": "QA-003",
+      "processo": "Documentos",
+      "intencao": "histórico escolar",
+      "pergunta": "Quais informações devem constar no histórico escolar?",
+      "referencias_prioritarias": [
+        "parecer-379-2004",
+        "pn-23-2017",
+        "mec-xsd-105"
+      ],
+      "tipo_resposta": "Regra + checklist",
+      "evidencia_necessaria": "Orientação sobre histórico + especificação técnica",
+      "cautela": "Não converter referência técnica em obrigação jurídica sem fundamento."
+    },
+    {
+      "id": "QA-004",
+      "processo": "Documentos",
+      "intencao": "transferência",
+      "pergunta": "Quais regras estão relacionadas à transferência e à documentação de transferência?",
+      "referencias_prioritarias": [
+        "port-230-2007",
+        "pn-23-2017"
+      ],
+      "tipo_resposta": "Regra + procedimento",
+      "evidencia_necessaria": "Normas/documentos aplicáveis",
+      "cautela": "Verificar se o caso é transferência externa, interna ou outro fluxo."
+    },
+    {
+      "id": "QA-005",
+      "processo": "Vida acadêmica",
+      "intencao": "inadimplência",
+      "pergunta": "Quais direitos acadêmicos precisam ser observados quando o aluno está inadimplente?",
+      "referencias_prioritarias": [
+        "lei-9870"
+      ],
+      "tipo_resposta": "Regra + impacto",
+      "evidencia_necessaria": "Lei e dispositivo aplicável",
+      "cautela": "Não extrapolar a regra para situações não cobertas pela fonte."
+    },
+    {
+      "id": "QA-006",
+      "processo": "Documentos",
+      "intencao": "cobrança de documentos",
+      "pergunta": "Pode haver cobrança pela emissão de diploma ou histórico?",
+      "referencias_prioritarias": [
+        "pn-23-2017",
+        "port-230-2007",
+        "lei-9870"
+      ],
+      "tipo_resposta": "Regra + ressalvas",
+      "evidencia_necessaria": "Texto normativo aplicável",
+      "cautela": "Responder conforme o tipo de documento e situação concreta."
+    },
+    {
+      "id": "QA-007",
+      "processo": "Documentos",
+      "intencao": "histórico digital",
+      "pergunta": "Como deve ser estruturado o histórico escolar digital?",
+      "referencias_prioritarias": [
+        "mec-xsd-105",
+        "parecer-379-2004"
+      ],
+      "tipo_resposta": "Técnico + fundamento",
+      "evidencia_necessaria": "XSD e orientação de conteúdo",
+      "cautela": "Separar estrutura técnica de obrigação normativa."
+    },
+    {
+      "id": "QA-008",
+      "processo": "Diploma Digital",
+      "intencao": "estrutura técnica",
+      "pergunta": "Quais elementos técnicos preciso observar no Diploma Digital?",
+      "referencias_prioritarias": [
+        "port-554",
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "tipo_resposta": "Técnico + checklist",
+      "evidencia_necessaria": "Portarias e XSD vigente",
+      "cautela": "A versão técnica deve ser validada contra a versão oficial disponível."
+    },
+    {
+      "id": "QA-009",
+      "processo": "Diploma Digital",
+      "intencao": "XML",
+      "pergunta": "Quais regras se aplicam ao XML do Diploma Digital?",
+      "referencias_prioritarias": [
+        "port-554",
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "tipo_resposta": "Técnico + fonte",
+      "evidencia_necessaria": "Regulamentação + XSD",
+      "cautela": "Não inferir campos não presentes na especificação consultada."
+    },
+    {
+      "id": "QA-010",
+      "processo": "Diploma Digital",
+      "intencao": "assinatura",
+      "pergunta": "Quais requisitos de assinatura e integridade devo considerar no Diploma Digital?",
+      "referencias_prioritarias": [
+        "port-554",
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "tipo_resposta": "Técnico + fundamento",
+      "evidencia_necessaria": "Norma e especificação técnica",
+      "cautela": "Exigir conferência da versão vigente."
+    },
+    {
+      "id": "QA-011",
+      "processo": "Diploma Digital",
+      "intencao": "histórico digital",
+      "pergunta": "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+      "referencias_prioritarias": [
+        "diploma-2025",
+        "mec-xsd-105"
+      ],
+      "tipo_resposta": "Explicação + referência",
+      "evidencia_necessaria": "Norma + XSD",
+      "cautela": "Não tratar os dois documentos como se fossem necessariamente o mesmo artefato."
+    },
+    {
+      "id": "QA-012",
+      "processo": "Diploma Digital",
+      "intencao": "nato-digital",
+      "pergunta": "O que a base atual informa sobre documento nato-digital no contexto acadêmico?",
+      "referencias_prioritarias": [
+        "port-554",
+        "port-360",
+        "diploma-2025"
+      ],
+      "tipo_resposta": "Explicação + fundamento",
+      "evidencia_necessaria": "Fontes cadastradas",
+      "cautela": "Distinguir diploma digital de documentos do acervo."
+    },
+    {
+      "id": "QA-013",
+      "processo": "Acervo",
+      "intencao": "responsabilidade",
+      "pergunta": "Quem possui responsabilidades relacionadas à guarda e custódia do acervo acadêmico?",
+      "referencias_prioritarias": [
+        "port-315"
+      ],
+      "tipo_resposta": "Regra + responsabilidade",
+      "evidencia_necessaria": "Arts. cadastrados",
+      "cautela": "Não atribuir responsabilidade além do texto da fonte."
+    },
+    {
+      "id": "QA-014",
+      "processo": "Acervo",
+      "intencao": "digitalização",
+      "pergunta": "Quais regras orientam a conversão do acervo acadêmico para meio digital?",
+      "referencias_prioritarias": [
+        "port-360",
+        "port-613"
+      ],
+      "tipo_resposta": "Procedimento + fundamento",
+      "evidencia_necessaria": "Regras de conversão e preservação",
+      "cautela": "Separar conversão, digitalização e preservação."
+    },
+    {
+      "id": "QA-015",
+      "processo": "Acervo",
+      "intencao": "preservação",
+      "pergunta": "Quais cuidados de armazenamento e preservação aparecem na base?",
+      "referencias_prioritarias": [
+        "port-613"
+      ],
+      "tipo_resposta": "Checklist técnico",
+      "evidencia_necessaria": "Arts. 6 a 9 cadastrados",
+      "cautela": "Validar requisitos técnicos na fonte oficial."
+    },
+    {
+      "id": "QA-016",
+      "processo": "Acervo",
+      "intencao": "documento físico",
+      "pergunta": "A produção de novos documentos físicos do acervo é permitida?",
+      "referencias_prioritarias": [
+        "port-360"
+      ],
+      "tipo_resposta": "Regra + ressalva",
+      "evidencia_necessaria": "Objeto e regras cadastrados",
+      "cautela": "Responder somente conforme o escopo da norma."
+    },
+    {
+      "id": "QA-017",
+      "processo": "Acervo",
+      "intencao": "RDC-Arq",
+      "pergunta": "Onde aparece a referência a RDC-Arq no acervo acadêmico?",
+      "referencias_prioritarias": [
+        "port-613"
+      ],
+      "tipo_resposta": "Referência técnica",
+      "evidencia_necessaria": "Fonte cadastrada",
+      "cautela": "Não presumir implementação sem requisitos adicionais."
+    },
+    {
+      "id": "QA-018",
+      "processo": "Governança",
+      "intencao": "dados pessoais",
+      "pergunta": "Quais cuidados gerais a Secretaria deve observar no tratamento de dados pessoais?",
+      "referencias_prioritarias": [
+        "lgpd-13709"
+      ],
+      "tipo_resposta": "Princípios + impacto",
+      "evidencia_necessaria": "Lei e dispositivos consultados",
+      "cautela": "Não criar base legal específica sem análise do caso."
+    },
+    {
+      "id": "QA-019",
+      "processo": "Governança",
+      "intencao": "CPF",
+      "pergunta": "Como tratar o CPF do aluno dentro dos processos acadêmicos?",
+      "referencias_prioritarias": [
+        "lgpd-13709"
+      ],
+      "tipo_resposta": "Orientação + cautelas",
+      "evidencia_necessaria": "LGPD",
+      "cautela": "A resposta deve depender da finalidade e do contexto do tratamento."
+    },
+    {
+      "id": "QA-020",
+      "processo": "Governança",
+      "intencao": "acesso",
+      "pergunta": "Quais cuidados devo considerar ao conceder acesso a dados acadêmicos?",
+      "referencias_prioritarias": [
+        "lgpd-13709"
+      ],
+      "tipo_resposta": "Controle + cautelas",
+      "evidencia_necessaria": "LGPD",
+      "cautela": "Não confundir acesso operacional com autorização jurídica automática."
+    },
+    {
+      "id": "QA-021",
+      "processo": "ENADE",
+      "intencao": "regularidade",
+      "pergunta": "O que a base informa sobre regularidade do estudante no ENADE?",
+      "referencias_prioritarias": [
+        "sinaes-10861",
+        "enade-2026-cronograma"
+      ],
+      "tipo_resposta": "Regra + processo",
+      "evidencia_necessaria": "Lei + cronograma",
+      "cautela": "Separar regra legal de calendário operacional."
+    },
+    {
+      "id": "QA-022",
+      "processo": "ENADE",
+      "intencao": "cronograma",
+      "pergunta": "Quais são as etapas do cronograma do ENADE 2026 que impactam a Secretaria?",
+      "referencias_prioritarias": [
+        "enade-2026-cronograma"
+      ],
+      "tipo_resposta": "Cronograma + checklist",
+      "evidencia_necessaria": "Fonte operacional 2026",
+      "cautela": "Calendário é temporal e deve ser atualizado."
+    },
+    {
+      "id": "QA-023",
+      "processo": "ENADE",
+      "intencao": "licenciaturas",
+      "pergunta": "Como o ENADE 2026 se relaciona às licenciaturas?",
+      "referencias_prioritarias": [
+        "enade-2026-cronograma",
+        "enade-qualidade-2026-portaria90"
+      ],
+      "tipo_resposta": "Explicação + fonte",
+      "evidencia_necessaria": "Cronograma + Portaria 90/2026",
+      "cautela": "Não confundir ENADE/PND sem verificar o ato específico."
+    },
+    {
+      "id": "QA-024",
+      "processo": "ENADE",
+      "intencao": "conceito",
+      "pergunta": "O que a Portaria nº 90/2026 disciplina sobre o Conceito Enade das Licenciaturas?",
+      "referencias_prioritarias": [
+        "enade-qualidade-2026-portaria90"
+      ],
+      "tipo_resposta": "Regra + impacto",
+      "evidencia_necessaria": "Portaria 90/2026",
+      "cautela": "Não transformar o conceito em avaliação não prevista na fonte."
+    },
+    {
+      "id": "QA-025",
+      "processo": "ENADE",
+      "intencao": "histórico",
+      "pergunta": "Qual relação entre ENADE e registros acadêmicos/regularidade?",
+      "referencias_prioritarias": [
+        "sinaes-10861",
+        "enade-2026-cronograma"
+      ],
+      "tipo_resposta": "Regra + procedimento",
+      "evidencia_necessaria": "Lei + cronograma",
+      "cautela": "A resposta deve indicar exatamente o que é obrigatório registrar."
+    },
+    {
+      "id": "QA-026",
+      "processo": "Censo",
+      "intencao": "cadastro",
+      "pergunta": "Quais dados institucionais e acadêmicos são relacionados ao Censo da Educação Superior?",
+      "referencias_prioritarias": [
+        "censo-2026-cronograma"
+      ],
+      "tipo_resposta": "Escopo + checklist",
+      "evidencia_necessaria": "Fonte operacional",
+      "cautela": "Não presumir campos específicos sem a fonte de coleta."
+    },
+    {
+      "id": "QA-027",
+      "processo": "Censo",
+      "intencao": "e-MEC",
+      "pergunta": "Qual é a relação entre cadastro e-MEC e Censo na base atual?",
+      "referencias_prioritarias": [
+        "censo-2026-cronograma",
+        "dec-9235"
+      ],
+      "tipo_resposta": "Explicação + fonte",
+      "evidencia_necessaria": "Fonte Censo + regulação",
+      "cautela": "Distinguir cadastro regulatório de coleta censitária."
+    },
+    {
+      "id": "QA-028",
+      "processo": "Censo",
+      "intencao": "cronograma",
+      "pergunta": "Quais prazos do Censo 2026 exigem atenção da Secretaria?",
+      "referencias_prioritarias": [
+        "censo-2026-cronograma"
+      ],
+      "tipo_resposta": "Cronograma + alertas",
+      "evidencia_necessaria": "Cronograma 2026",
+      "cautela": "Prazos devem ser atualizados periodicamente."
+    },
+    {
+      "id": "QA-029",
+      "processo": "Censo",
+      "intencao": "qualidade de dados",
+      "pergunta": "Que conferências devo fazer antes de uma etapa do Censo?",
+      "referencias_prioritarias": [
+        "censo-2026-cronograma"
+      ],
+      "tipo_resposta": "Checklist operacional",
+      "evidencia_necessaria": "Fonte operacional",
+      "cautela": "O checklist deve ser refinado quando houver fonte de coleta detalhada."
+    },
+    {
+      "id": "QA-030",
+      "processo": "Estágio",
+      "intencao": "conceito",
+      "pergunta": "Qual é a diferença entre estágio obrigatório e não obrigatório?",
+      "referencias_prioritarias": [
+        "estagio-11788"
+      ],
+      "tipo_resposta": "Regra + definição",
+      "evidencia_necessaria": "Arts. 1º a 3º",
+      "cautela": "Não acrescentar requisitos não presentes na fonte."
+    },
+    {
+      "id": "QA-031",
+      "processo": "Estágio",
+      "intencao": "documentação",
+      "pergunta": "Quais documentos e agentes aparecem na estrutura do estágio?",
+      "referencias_prioritarias": [
+        "estagio-11788"
+      ],
+      "tipo_resposta": "Checklist + processo",
+      "evidencia_necessaria": "Lei de estágio",
+      "cautela": "Fluxos internos podem exigir fontes adicionais."
+    },
+    {
+      "id": "QA-032",
+      "processo": "Estágio",
+      "intencao": "supervisão",
+      "pergunta": "Quais papéis de supervisão aparecem na legislação de estágio?",
+      "referencias_prioritarias": [
+        "estagio-11788"
+      ],
+      "tipo_resposta": "Responsabilidades + fundamento",
+      "evidencia_necessaria": "Lei de estágio",
+      "cautela": "Separar responsabilidade legal de procedimento interno."
+    },
+    {
+      "id": "QA-033",
+      "processo": "Extensão",
+      "intencao": "curricularização",
+      "pergunta": "O que a base estabelece sobre integração da extensão à formação acadêmica?",
+      "referencias_prioritarias": [
+        "ext-7-2018"
+      ],
+      "tipo_resposta": "Regra + impacto",
+      "evidencia_necessaria": "Diretrizes da extensão",
+      "cautela": "Não inferir percentual ou carga horária não cadastrados."
+    },
+    {
+      "id": "QA-034",
+      "processo": "Extensão",
+      "intencao": "PPC",
+      "pergunta": "Como a extensão se relaciona ao PPC?",
+      "referencias_prioritarias": [
+        "ext-7-2018"
+      ],
+      "tipo_resposta": "Relação normativa + operacional",
+      "evidencia_necessaria": "Diretrizes da extensão",
+      "cautela": "Exigir a regra específica para responder percentuais/carga horária."
+    },
+    {
+      "id": "QA-035",
+      "processo": "Pós-graduação",
+      "intencao": "especialização",
+      "pergunta": "Quais são as normas gerais cadastradas para cursos de especialização lato sensu?",
+      "referencias_prioritarias": [
+        "pos-1-2018"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Resolução CNE/CES 1/2018",
+      "cautela": "Não extrapolar para stricto sensu."
+    },
+    {
+      "id": "QA-036",
+      "processo": "Pós-graduação",
+      "intencao": "certificado",
+      "pergunta": "Quais aspectos de documentação da especialização aparecem na base?",
+      "referencias_prioritarias": [
+        "pos-1-2018"
+      ],
+      "tipo_resposta": "Checklist + fundamento",
+      "evidencia_necessaria": "Resolução cadastrada",
+      "cautela": "Detalhamento documental pode exigir fonte complementar."
+    },
+    {
+      "id": "QA-037",
+      "processo": "Regulação",
+      "intencao": "supervisão",
+      "pergunta": "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
+      "referencias_prioritarias": [
+        "dec-9235",
+        "sinaes-10861"
+      ],
+      "tipo_resposta": "Explicação + fundamento",
+      "evidencia_necessaria": "Decreto + SINAES",
+      "cautela": "Separar funções de regulação/supervisão das de avaliação."
+    },
+    {
+      "id": "QA-038",
+      "processo": "Regulação",
+      "intencao": "avaliação",
+      "pergunta": "Como SINAES e regulação se relacionam na base?",
+      "referencias_prioritarias": [
+        "sinaes-10861",
+        "dec-9235"
+      ],
+      "tipo_resposta": "Relação normativa",
+      "evidencia_necessaria": "Lei + Decreto",
+      "cautela": "Não atribuir efeitos regulatórios específicos sem fonte."
+    },
+    {
+      "id": "QA-039",
+      "processo": "Regulação",
+      "intencao": "curso/IES",
+      "pergunta": "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
+      "referencias_prioritarias": [
+        "dec-9235"
+      ],
+      "tipo_resposta": "Roteamento de fonte",
+      "evidencia_necessaria": "Decreto 9.235/2017",
+      "cautela": "O Oráculo deve buscar atos específicos quando necessário."
+    },
+    {
+      "id": "QA-040",
+      "processo": "Formação docente",
+      "intencao": "segunda licenciatura",
+      "pergunta": "Quais regras atuais devo consultar para segunda licenciatura?",
+      "referencias_prioritarias": [
+        "formacao-rcp4-2024",
+        "formacao-parecer-5-2025",
+        "nota-74-2024",
+        "formacao-faq-mec-2025"
+      ],
+      "tipo_resposta": "Regra composta + fontes",
+      "evidencia_necessaria": "Norma central + orientações",
+      "cautela": "Não responder com uma única fonte quando o caso exige conjunto normativo."
+    },
+    {
+      "id": "QA-041",
+      "processo": "Formação docente",
+      "intencao": "formação pedagógica",
+      "pergunta": "Quais regras atuais devo consultar para formação pedagógica de graduados não licenciados?",
+      "referencias_prioritarias": [
+        "formacao-rcp4-2024",
+        "formacao-parecer-5-2025",
+        "formacao-faq-mec-2025",
+        "nota-74-2024"
+      ],
+      "tipo_resposta": "Regra composta + fontes",
+      "evidencia_necessaria": "Conjunto normativo/orientativo",
+      "cautela": "Verificar formação de origem e compatibilidade antes de concluir."
+    },
+    {
+      "id": "QA-042",
+      "processo": "Formação docente",
+      "intencao": "carga horária",
+      "pergunta": "Qual carga horária aparece na base para formação pedagógica e segunda licenciatura?",
+      "referencias_prioritarias": [
+        "formacao-faq-mec-2025",
+        "nota-74-2024",
+        "formacao-rcp4-2024"
+      ],
+      "tipo_resposta": "Dado normativo/orientativo + fonte",
+      "evidencia_necessaria": "FAQ/NT/Resolução",
+      "cautela": "Não tratar número isolado sem contexto da modalidade/formação."
+    },
+    {
+      "id": "QA-043",
+      "processo": "Formação docente",
+      "intencao": "Pedagogia",
+      "pergunta": "É possível formação pedagógica com destino à área de Pedagogia segundo a base?",
+      "referencias_prioritarias": [
+        "formacao-parecer-220-2025",
+        "formacao-rcp4-2024"
+      ],
+      "tipo_resposta": "Análise fundamentada",
+      "evidencia_necessaria": "Parecer + norma central",
+      "cautela": "A resposta deve reproduzir a ressalva/escopo do parecer; não generalizar."
+    },
+    {
+      "id": "QA-044",
+      "processo": "Formação docente",
+      "intencao": "compatibilidade",
+      "pergunta": "Como verificar a compatibilidade entre formação de origem e a habilitação pretendida?",
+      "referencias_prioritarias": [
+        "formacao-rcp4-2024",
+        "nota-74-2024",
+        "formacao-parecer-220-2025"
+      ],
+      "tipo_resposta": "Critérios + análise",
+      "evidencia_necessaria": "Norma/NT/Parecer",
+      "cautela": "Se faltarem dados da formação de origem, solicitar informação."
+    },
+    {
+      "id": "QA-045",
+      "processo": "Formação docente",
+      "intencao": "transição",
+      "pergunta": "Como a base orienta a implantação/transição para as regras de 2024/2025?",
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-rcp4-2024",
+        "cne-rcp2-2019"
+      ],
+      "tipo_resposta": "Linha do tempo + fonte",
+      "evidencia_necessaria": "Parecer 5/2025 + normas",
+      "cautela": "Não assumir regime de transição sem verificar a situação concreta."
+    },
+    {
+      "id": "QA-046",
+      "processo": "Formação docente",
+      "intencao": "norma anterior",
+      "pergunta": "Qual é o papel histórico da Resolução CNE/CP nº 2/2019 na base?",
+      "referencias_prioritarias": [
+        "cne-rcp2-2019",
+        "formacao-rcp4-2024"
+      ],
+      "tipo_resposta": "Histórico normativo",
+      "evidencia_necessaria": "Norma histórica + norma atual",
+      "cautela": "Não usar norma histórica como regra atual sem confirmação."
+    },
+    {
+      "id": "QA-047",
+      "processo": "Formação docente",
+      "intencao": "fonte oficial",
+      "pergunta": "Onde localizar a cadeia normativa sobre formação superior para a docência?",
+      "referencias_prioritarias": [
+        "cne-formacao-docencia"
+      ],
+      "tipo_resposta": "Navegação de fonte",
+      "evidencia_necessaria": "Página oficial CNE",
+      "cautela": "A página é índice de consulta, não substituto da norma."
+    },
+    {
+      "id": "QA-048",
+      "processo": "Oráculo",
+      "intencao": "fundamento",
+      "pergunta": "Qual norma fundamenta esta resposta?",
+      "referencias_prioritarias": [],
+      "tipo_resposta": "Resposta com rastreabilidade",
+      "evidencia_necessaria": "Referência recuperada pelo mecanismo de busca",
+      "cautela": "Nunca responder sem apontar a fonte quando a pergunta for normativa."
+    },
+    {
+      "id": "QA-049",
+      "processo": "Oráculo",
+      "intencao": "conflito normativo",
+      "pergunta": "Encontrei duas referências aparentemente diferentes. Qual delas devo considerar?",
+      "referencias_prioritarias": [],
+      "tipo_resposta": "Comparação + escalonamento",
+      "evidencia_necessaria": "Status, hierarquia, vigência e atos posteriores",
+      "cautela": "Não decidir conflito sem evidência normativa suficiente."
+    },
+    {
+      "id": "QA-050",
+      "processo": "Oráculo",
+      "intencao": "lacuna",
+      "pergunta": "A base do Oráculo possui fundamento suficiente para responder esta pergunta?",
+      "referencias_prioritarias": [],
+      "tipo_resposta": "Status de cobertura",
+      "evidencia_necessaria": "Correspondência entre pergunta e referências",
+      "cautela": "Se não houver evidência suficiente, declarar lacuna."
+    },
+    {
+      "id": "QA-051",
+      "processo": "Oráculo",
+      "intencao": "atualização",
+      "pergunta": "Existe atualização recente que possa alterar esta resposta?",
+      "referencias_prioritarias": [],
+      "tipo_resposta": "Radar + rastreabilidade",
+      "evidencia_necessaria": "monitoramento e status das fontes",
+      "cautela": "A resposta deve indicar data da verificação."
+    },
+    {
+      "id": "QA-052",
+      "processo": "Oráculo",
+      "intencao": "fonte oficial",
+      "pergunta": "Qual é a fonte oficial desta informação?",
+      "referencias_prioritarias": [],
+      "tipo_resposta": "Fonte navegável",
+      "evidencia_necessaria": "URL oficial cadastrada",
+      "cautela": "Não substituir a fonte oficial por fonte secundária quando a oficial estiver disponível."
+    }
+  ]
+}
