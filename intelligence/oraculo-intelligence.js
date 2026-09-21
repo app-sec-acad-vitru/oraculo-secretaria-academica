@@ -365,7 +365,7 @@
     const oldSearch=document.getElementById("searchBtn"), oldInput=document.getElementById("q");
     if(!oldSearch||!oldInput) return;
     const search=oldSearch.cloneNode(true), input=oldInput.cloneNode(true); oldSearch.replaceWith(search); oldInput.replaceWith(input);
-    search.onclick=()=>{const query=input.value.trim(); if(!query)return; run(query); const resultsbar=document.querySelector(".resultsbar"); if(resultsbar) window.scrollTo({top:Math.max(0,resultsbar.getBoundingClientRect().top+window.scrollY-20),behavior:"smooth"});};
+    search.onclick=()=>{const query=input.value.trim(); if(!query){ const reset=document.getElementById("reset"); if(reset) reset.click(); return; } if(typeof window.doSearch === "function") window.doSearch(); run(query);};
     input.addEventListener("input",()=>{
       if(input.value.trim()!=="") return;
       const panel=document.getElementById("oraculoAnswerPanel");
