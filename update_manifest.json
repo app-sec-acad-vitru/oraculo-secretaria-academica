@@ -1,31 +1,28 @@
 {
-  "version": "3.1.0",
-  "generated_at": "2026-09-21",
-  "verified_at": "2026-09-21T09:07:20.347149+00:00",
-  "purpose": "V8.1 — correção do vínculo Radar↔base e estratégia de carregamento sem cache manual",
-  "update_strategy": "Base e monitoramento com URL única por carregamento + cache:no-store; camada de inteligência carregada dinamicamente com Date.now().",
-  "sources_monitored": [
-    "MEC Normas",
-    "INEP",
-    "Planalto",
-    "CNE",
-    "Imprensa Nacional/DOU",
-    "CONARQ"
+  "version": "V8.2",
+  "date": "2026-09-21",
+  "status": "preparacao",
+  "base_referencias": 58,
+  "perguntas": 103,
+  "regras": 103,
+  "respostas_validadas": 98,
+  "escopo": [
+    "Enfermagem e Saúde",
+    "Transição e Extinção EaD",
+    "Formação de Professores",
+    "Segunda Licenciatura",
+    "Formação Pedagógica",
+    "Histórico Escolar",
+    "Diploma Digital"
   ],
-  "records": 52,
-  "questions": 78,
-  "rules": 78,
-  "validated_responses": 73,
-  "last_weekly_check": "2026-09-21T09:07:20.347149+00:00",
-  "last_weekly_changes_detected": 0,
-  "last_weekly_access_errors": 8,
-  "sources_verified": 37,
-  "cache_strategy": {
-    "data_json": "fetch com URL única (Date.now) + cache:no-store",
-    "monitoring": "fetch com URL única (Date.now) + cache:no-store",
-    "intelligence": "script carregado dinamicamente com query string Date.now; JSONs internos também usam Date.now + cache:no-store",
-    "html": "O shell pode ser armazenado pelo GitHub Pages/navegador; os dados e a camada de inteligência não dependem de versão manual do HTML para atualização."
-  },
-  "radar_strategy": "Vincular primeiro por id da referência e usar source/url apenas como fallback.",
-  "sources_registered": 45
+  "layout": "preservado a partir do index.html V8.1 definitivo; nenhuma alteração visual nesta atualização",
+  "cache": "mantido no-store/Date.now() da V8.1",
+  "observacao": "Atualização de dados e inteligência; index preservado.",
+  "last_update": "2026-09-21",
+  "scope_additions": [
+    "Atos regulatórios: autorização, reconhecimento e renovação de reconhecimento",
+    "Portarias SERES/MEC e Cadastro e-MEC",
+    "Resultados Enade e portarias de divulgação",
+    "Indicadores: Conceito Enade, IDD, CPC e IGC"
+  ]
 }
