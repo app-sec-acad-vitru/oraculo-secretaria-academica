@@ -1,28 +1,23 @@
 {
-  "version": "2.0.0",
-  "generated_at": "2026-09-17",
-  "verified_at": "2026-09-17T21:01:12.027856+00:00",
-  "purpose": "Base regulatória inicial do Oráculo da Secretaria Acadêmica",
-  "update_strategy": "A base deve ser revisada semanalmente contra fontes oficiais. Trechos são curtos e destinados a consulta; decisões operacionais devem considerar o texto integral e atos posteriores.",
+  "version": "3.0.0",
+  "generated_at": "2026-09-20",
+  "verified_at": "2026-09-20T22:00:00-03:00",
+  "purpose": "Atualização manual extraordinária do Oráculo em 20/09/2026",
+  "update_strategy": "Rodada manual de pesquisa normativa; manter revisão semanal contra fontes oficiais.",
   "sources_monitored": [
-    "Planalto",
-    "MEC",
-    "CNE",
+    "MEC Normas",
     "INEP",
+    "Planalto",
+    "CNE",
     "Imprensa Nacional/DOU",
     "CONARQ"
   ],
-  "records": 13,
-  "status_model": [
-    "Vigente",
-    "Vigente — com alterações posteriores",
-    "Vigência deve ser lida em conjunto com regulamentação posterior",
-    "Aplicável conforme escopo e cronograma normativo",
-    "Verificação inicial"
-  ],
-  "last_weekly_check": "2026-09-17T21:01:12.027856+00:00",
-  "last_weekly_changes_detected": 0,
-  "last_weekly_access_errors": 2,
-  "sources_registered": 24,
-  "sources_verified": 22
+  "records": 51,
+  "questions": 78,
+  "rules": 78,
+  "validated_responses": 73,
+  "last_weekly_check": "2026-09-20T22:00:00-03:00",
+  "last_weekly_changes_detected": 6,
+  "last_weekly_access_errors": 0,
+  "sources_verified": 30
 }
