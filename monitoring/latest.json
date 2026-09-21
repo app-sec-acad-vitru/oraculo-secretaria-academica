@@ -14,7 +14,12 @@
       "status": "nova",
       "subject": "Qualificação e renovação de ICES",
       "operational_impact": "Requisitos documentais e organização dos processos de qualificação/renovação, quando aplicável.",
-      "source": "MEC Normas"
+      "source": "MEC Normas",
+      "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10",
+      "name": "Portaria MEC nº 709/2026 — Qualificação de ICES",
+      "category": "Regulação e Supervisão",
+      "process": "Regulação",
+      "risk": "Médio"
     },
     {
       "id": "ept-portaria-503-2026",
@@ -22,7 +27,12 @@
       "status": "alteração",
       "subject": "Comissão de apoio à implementação do SINAEPT",
       "operational_impact": "Atualiza o acompanhamento da implementação do sistema de avaliação da EPT.",
-      "source": "Portaria INEP 503/2026"
+      "source": "Portaria INEP 503/2026",
+      "url": "https://www.abmes.org.br/legislacoes/detalhe/5654/portaria-inep-n-503-2026",
+      "name": "Portaria INEP nº 503/2026 — SINAEPT",
+      "category": "Educação Profissional",
+      "process": "Educação Profissional",
+      "risk": "Médio"
     },
     {
       "id": "enade-retificacao-edital-49-2026",
@@ -30,7 +40,12 @@
       "status": "retificação",
       "subject": "Enade 2026",
       "operational_impact": "Usar a versão retificada do edital nas rotinas de acompanhamento e prazos.",
-      "source": "MEC Normas / INEP"
+      "source": "MEC Normas / INEP",
+      "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10",
+      "name": "Retificação de 09/09/2026 — Edital INEP nº 49/2026 (Enade)",
+      "category": "ENADE e Avaliação",
+      "process": "ENADE",
+      "risk": "Alto"
     },
     {
       "id": "enamed-edital-146-2026",
@@ -38,7 +53,12 @@
       "status": "nova",
       "subject": "Reaplicação do Enamed 2026",
       "operational_impact": "Fluxo complementar para estudantes abrangidos pela reaplicação.",
-      "source": "MEC Normas / INEP"
+      "source": "MEC Normas / INEP",
+      "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10",
+      "name": "Edital INEP nº 146/2026 — Reaplicação do Enamed",
+      "category": "ENADE e Avaliação",
+      "process": "ENADE",
+      "risk": "Médio"
     },
     {
       "id": "pnd-portaria-147-2026",
@@ -46,7 +66,12 @@
       "status": "nova",
       "subject": "Reaplicação da PND 2026",
       "operational_impact": "Fluxo complementar para estudantes abrangidos pela reaplicação.",
-      "source": "INEP"
+      "source": "INEP",
+      "url": "https://www.abmes.org.br/legislacoes/detalhe/5656/portaria-inep-n-147-2026",
+      "name": "Portaria INEP nº 147/2026 — Reaplicação da PND",
+      "category": "Formação pedagógica e avaliação",
+      "process": "ENADE",
+      "risk": "Médio"
     },
     {
       "id": "censo-comunicado-23-2026",
@@ -54,7 +79,12 @@
       "status": "operacional",
       "subject": "Censo da Educação Superior 2025",
       "operational_impact": "Marco de acompanhamento do fechamento do ciclo e preservação de evidências.",
-      "source": "INEP"
+      "source": "INEP",
+      "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/comunicados",
+      "name": "Comunicado Inep nº 23/2026 — Censo da Educação Superior 2025",
+      "category": "Censo da Educação Superior",
+      "process": "Censo",
+      "risk": "Médio"
     }
   ]
 }
