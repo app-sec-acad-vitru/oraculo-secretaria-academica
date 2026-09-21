@@ -193,6 +193,32 @@
     if (q.includes("atualizacao") && q.includes("norma")) return ruleById("QA-051");
     if (q.includes("fonte oficial") && !q.includes("formacao") && !q.includes("docencia")) return ruleById("QA-052");
 
+
+    // Marco Regulatório — Decreto 12.456/2025 e atos complementares
+    if (q.includes("portaria 794") || (q.includes("alteracao") && q.includes("portaria 506"))) return ruleById("QA-064");
+    if (q.includes("portaria 506") || (q.includes("polos") && q.includes("mediadores")) || (q.includes("tutores") && q.includes("ead"))) return ruleById("QA-063");
+    if ((q.includes("frequencia") || q.includes("presenca")) && (q.includes("sincrona") || q.includes("atividades presenciais")) && (q.includes("ead") || q.includes("curso"))) return ruleById("QA-062");
+    if (q.includes("polo") && (q.includes("responsabilidade") || q.includes("responsabilidades"))) return ruleById("QA-061");
+    if (q.includes("estudante") && (q.includes("matriculado") || q.includes("matricula")) && (q.includes("mudanca") || q.includes("ead") || q.includes("formato"))) return ruleById("QA-059");
+    if ((q.includes("transicao") || q.includes("adaptacao")) && (q.includes("marco") || q.includes("ead") || q.includes("12456"))) return ruleById("QA-058");
+    if ((q.includes("ppc") && q.includes("formato")) || (q.includes("ato autorizativo") && q.includes("formato"))) return ruleById("QA-060");
+    if ((q.includes("curso") && q.includes("nao pode") && q.includes("ead")) || q.includes("cursos vedados a distancia") || q.includes("cursos proibidos ead")) return ruleById("QA-057");
+    if (q.includes("semipresencial") && (q.includes("percentual") || q.includes("carga horaria"))) return ruleById("QA-055");
+    if ((q.includes("curso ead") || q.includes("curso a distancia")) && (q.includes("percentual") || q.includes("carga horaria"))) return ruleById("QA-056");
+    if ((q.includes("curso presencial") || q.includes("presencial")) && (q.includes("percentual") || q.includes("70 por cento"))) return ruleById("QA-054");
+    if (q.includes("formatos de oferta") || (q.includes("presencial") && q.includes("semipresencial") && q.includes("ead") && q.includes("marco"))) return ruleById("QA-053");
+
+    // Educação Profissional e cursos técnicos
+    if (q.includes("sinaept")) return ruleById("QA-072");
+    if ((q.includes("decreto 12603") || q.includes("pnept")) && (q.includes("educacao profissional") || q.includes("ept"))) return ruleById("QA-071");
+    if ((q.includes("profissionalizante") || q.includes("fic") || q.includes("qualificacao profissional")) && !q.includes("curso tecnico")) return ruleById("QA-070");
+    if ((q.includes("documento") || q.includes("diploma") || q.includes("certificado")) && q.includes("curso tecnico")) return ruleById("QA-069");
+    if ((q.includes("integrado") || q.includes("concomitante") || q.includes("subsequente")) && q.includes("curso tecnico")) return ruleById("QA-068");
+    if (q.includes("sistec")) return ruleById("QA-067");
+    if (q.includes("cnct") || q.includes("catalogo nacional de cursos tecnicos")) return ruleById("QA-066");
+    if (q.includes("curso tecnico") && (q.includes("federal") || q.includes("estadual") || q.includes("sistema de ensino") || q.includes("competencia"))) return ruleById("QA-065");
+
+
     return null;
   }
 
@@ -318,42 +344,15 @@
   }
 
   function wireSearch() {
-    const input = document.getElementById("q");
-
-    if (!input) {
-      console.warn("[Oráculo] Campo de pesquisa não encontrado.");
-      return;
-    }
-
-    // A busca principal da V5 continua responsável pelos cards de legislação.
-    // A camada de inteligência apenas expõe a execução da consulta e acompanha
-    // o campo, sem substituir/clonar os controles da interface.
-    window.OraculoIntelligenceRun = run;
-
-    input.addEventListener("input", () => {
-      if (!input.value.trim()) {
-        const panel = document.getElementById("oraculoAnswerPanel");
-        if (panel) panel.classList.add("hidden");
-      }
-    });
+    const oldSearch=document.getElementById("searchBtn"), oldInput=document.getElementById("q");
+    if(!oldSearch||!oldInput) return;
+    const search=oldSearch.cloneNode(true), input=oldInput.cloneNode(true); oldSearch.replaceWith(search); oldInput.replaceWith(input);
+    search.onclick=()=>{const query=input.value.trim(); if(!query)return; run(query); const resultsbar=document.querySelector(".resultsbar"); if(resultsbar) window.scrollTo({top:Math.max(0,resultsbar.getBoundingClientRect().top+window.scrollY-20),behavior:"smooth"});};
+    input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();search.click();}});
+    document.querySelectorAll(".quick button").forEach(btn=>{const clone=btn.cloneNode(true);btn.replaceWith(clone);clone.onclick=()=>{input.value=clone.dataset.q||"";search.click();};});
+    window.OraculoIntelligenceRun=run;
   }
 
-  // Expor imediatamente para a busca principal da V5, mesmo enquanto a base é carregada.
-  window.OraculoIntelligenceRun = run;
-
-  async function boot(){
-    const ok=await loadIntelligence();
-    if(!ok){
-      console.error("[Oráculo] Não foi possível inicializar a inteligência.");
-      return;
-    }
-    wireSearch();
-    addPanel();
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot, {once:true});
-  } else {
-    boot();
-  }
+  async function boot(){const ok=await loadIntelligence();if(!ok)return;wireSearch();addPanel();}
+  window.addEventListener("load",boot);
 })();

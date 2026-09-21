@@ -1500,6 +1500,596 @@
       ],
       "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
       "cautela": "Não substituir a fonte oficial por fonte secundária quando a oficial estiver disponível."
+    },
+    {
+      "id": "QA-053",
+      "processo": "Marco Regulatório",
+      "intencao": "formatos",
+      "gatilhos": [
+        "formatos de oferta da graduação",
+        "novo marco regulatório",
+        "presencial semipresencial ead"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos",
+        "marco-portaria-378-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "MEC — Formatos de oferta da graduação",
+        "Portaria MEC nº 378/2025 — Formatos de oferta"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-054",
+      "processo": "Marco Regulatório",
+      "intencao": "presencial",
+      "gatilhos": [
+        "percentual presencial curso presencial",
+        "70 por cento presencial",
+        "carga horaria presencial curso presencial"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "MEC — Formatos de oferta da graduação"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-055",
+      "processo": "Marco Regulatório",
+      "intencao": "semipresencial",
+      "gatilhos": [
+        "percentuais curso semipresencial",
+        "30 por cento presencial",
+        "20 por cento presencial ou sincrona"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos",
+        "marco-portaria-378-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "MEC — Formatos de oferta da graduação",
+        "Portaria MEC nº 378/2025 — Formatos de oferta"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-056",
+      "processo": "Marco Regulatório",
+      "intencao": "EaD",
+      "gatilhos": [
+        "percentuais curso ead",
+        "10 por cento presencial",
+        "10 por cento presencial ou sincrona"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "MEC — Formatos de oferta da graduação"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-057",
+      "processo": "Marco Regulatório",
+      "intencao": "vedações",
+      "gatilhos": [
+        "cursos vedados a distancia",
+        "quais cursos não podem ser ead",
+        "cursos proibidos ead"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-378-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "Portaria MEC nº 378/2025 — Formatos de oferta"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-058",
+      "processo": "Marco Regulatório",
+      "intencao": "transição",
+      "gatilhos": [
+        "transição novo marco regulatório",
+        "transição decreto 12456",
+        "regras de transição ead"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-381-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "Portaria MEC nº 381/2025 — Regras de transição"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-059",
+      "processo": "Marco Regulatório",
+      "intencao": "estudantes",
+      "gatilhos": [
+        "estudantes matriculados mudança ead",
+        "direito conclusão curso ead",
+        "aluno afetado mudança formato"
+      ],
+      "referencias_prioritarias": [
+        "marco-mec-transicao-estudantes",
+        "marco-portaria-381-2025"
+      ],
+      "referencias_nomes": [
+        "MEC — Aplicação gradual das mudanças de EaD",
+        "Portaria MEC nº 381/2025 — Regras de transição"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-060",
+      "processo": "Marco Regulatório",
+      "intencao": "PPC",
+      "gatilhos": [
+        "PPC formato oferta",
+        "ato autorizativo formato",
+        "formato autorizado curso PPC"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-061",
+      "processo": "Marco Regulatório",
+      "intencao": "polos",
+      "gatilhos": [
+        "responsabilidade polo ead",
+        "responsabilidades polos",
+        "polo ead responsabilidade IES"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-062",
+      "processo": "Marco Regulatório",
+      "intencao": "frequência",
+      "gatilhos": [
+        "controle frequência atividades presenciais e sincronas",
+        "frequencia atividades presenciais ead",
+        "frequência síncronas mediadas"
+      ],
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.456/2025 — Nova Política de EaD",
+        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-063",
+      "processo": "Marco Regulatório",
+      "intencao": "portaria 506",
+      "gatilhos": [
+        "Portaria 506 EAD",
+        "o que regulamenta portaria 506",
+        "portaria 506 corpo docente polos"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-064",
+      "processo": "Marco Regulatório",
+      "intencao": "alterações 506",
+      "gatilhos": [
+        "Portaria 506 alteração",
+        "Portaria 794 2025",
+        "alteração portaria 506"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-794-2025"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-065",
+      "processo": "Curso Técnico",
+      "intencao": "federal estadual",
+      "gatilhos": [
+        "curso técnico federal estadual",
+        "diferença sistema federal estadual curso técnico",
+        "competência curso técnico federal estadual"
+      ],
+      "referencias_prioritarias": [
+        "ept-sistemas-federal-estadual",
+        "ept-resolucao-6-2012"
+      ],
+      "referencias_nomes": [
+        "MEC — Sistemas de ensino e Educação Profissional Técnica",
+        "Resolução CNE/CEB nº 6/2012 — EPTNM"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-066",
+      "processo": "Curso Técnico",
+      "intencao": "CNCT",
+      "gatilhos": [
+        "CNCT abertura curso técnico",
+        "como usar CNCT",
+        "catalogo nacional cursos tecnicos"
+      ],
+      "referencias_prioritarias": [
+        "ept-cnct",
+        "ept-resolucao-6-2012"
+      ],
+      "referencias_nomes": [
+        "Catálogo Nacional de Cursos Técnicos — CNCT",
+        "Resolução CNE/CEB nº 6/2012 — EPTNM"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-067",
+      "processo": "Curso Técnico",
+      "intencao": "SISTEC",
+      "gatilhos": [
+        "papel do SISTEC curso técnico",
+        "SISTEC diploma técnico",
+        "registro curso técnico SISTEC"
+      ],
+      "referencias_prioritarias": [
+        "ept-sistec",
+        "ept-resolucao-6-2012"
+      ],
+      "referencias_nomes": [
+        "SISTEC — Sistema Nacional de Informações da EPT",
+        "Resolução CNE/CEB nº 6/2012 — EPTNM"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-068",
+      "processo": "Curso Técnico",
+      "intencao": "formas",
+      "gatilhos": [
+        "integrado concomitante subsequente",
+        "formas curso técnico",
+        "curso técnico integrado concomitante subsequente"
+      ],
+      "referencias_prioritarias": [
+        "ept-modalidades-tecnico",
+        "ept-resolucao-6-2012"
+      ],
+      "referencias_nomes": [
+        "MEC — Formas de oferta do curso técnico",
+        "Resolução CNE/CEB nº 6/2012 — EPTNM"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-069",
+      "processo": "Curso Técnico",
+      "intencao": "documentação",
+      "gatilhos": [
+        "documento conclusão curso técnico",
+        "diploma ou certificado curso técnico",
+        "certificação curso técnico qualificação"
+      ],
+      "referencias_prioritarias": [
+        "ept-certificacao-diploma",
+        "ept-sistec"
+      ],
+      "referencias_nomes": [
+        "MEC — Certificação e diploma da EPT de nível médio",
+        "SISTEC — Sistema Nacional de Informações da EPT"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-070",
+      "processo": "Cursos Profissionalizantes",
+      "intencao": "FIC",
+      "gatilhos": [
+        "curso profissionalizante FIC",
+        "formação inicial continuada qualificação profissional",
+        "curso de qualificação profissional"
+      ],
+      "referencias_prioritarias": [
+        "ept-fic-qualificacao",
+        "ept-decreto-12603",
+        "ept-sistec"
+      ],
+      "referencias_nomes": [
+        "MEC — Formação Inicial e Continuada / Qualificação Profissional",
+        "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
+        "SISTEC — Sistema Nacional de Informações da EPT"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-071",
+      "processo": "Educação Profissional",
+      "intencao": "PNEPT",
+      "gatilhos": [
+        "Decreto 12603 educação profissional",
+        "mudanças educação profissional 2025",
+        "PNEPT educação profissional"
+      ],
+      "referencias_prioritarias": [
+        "ept-decreto-12603",
+        "ept-resolucao-1-2021"
+      ],
+      "referencias_nomes": [
+        "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
+        "Resolução CNE/CP nº 1/2021 — Diretrizes Gerais da EPT"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-072",
+      "processo": "Educação Profissional",
+      "intencao": "SINAEPT",
+      "gatilhos": [
+        "SINAEPT finalidade",
+        "Sistema Nacional Avaliação EPT",
+        "avaliação educação profissional tecnológica"
+      ],
+      "referencias_prioritarias": [
+        "ept-sinaept",
+        "ept-decreto-12603"
+      ],
+      "referencias_nomes": [
+        "SINAEPT — Sistema Nacional de Avaliação da EPT",
+        "Decreto nº 12.603/2025 — PNEPT e SINAEPT"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar evidência disponível",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento somente quando suportado",
+        "exibir fontes e data de verificação quando aplicável"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
+      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
     }
   ]
 }

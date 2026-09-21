@@ -2,9 +2,9 @@
   "schema_version": "oraculo-banco-respostas-validadas-v4.1",
   "status": "validado_com_pesquisa_normativa",
   "data_verificacao": "2026-09-20",
-  "base_referencias": 28,
-  "quantidade_respostas": 47,
-  "observacao": "Banco de 47 respostas de conteúdo. Perguntas exibidas nas respostas foram alinhadas à matriz; conteúdo normativo preservado. QA-048 a QA-052 permanecem intenções dinâmicas do motor.",
+  "base_referencias": 45,
+  "quantidade_respostas": 67,
+  "observacao": "Banco ampliado com Marco Regulatório e Educação Profissional, incluindo formatos presencial, semipresencial e EaD, transição, polos, Portarias 378/381/506/794, cursos técnicos federais e estaduais, CNCT, SISTEC, FIC/qualificação profissional, PNEPT e SINAEPT.",
   "fontes_pesquisadas": "Fontes oficiais do Planalto, MEC/CNE, Inep e Conarq consultadas em 20/09/2026. As respostas são paráfrases operacionais, não citações literais.",
   "respostas": [
     {
@@ -1600,6 +1600,690 @@
       "data_verificacao": "2026-09-20",
       "citacao_literal": false,
       "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar a vigência e o enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-053",
+      "pergunta_id": "QA-053",
+      "processo": "Marco Regulatório",
+      "pergunta": "Quais são os formatos de oferta da graduação no novo marco regulatório?",
+      "resposta_objetiva": "Os cursos de graduação passam a ser organizados nos formatos presencial, semipresencial e a distância. O ato autorizativo deve especificar o formato e a IES deve estruturar o PPC de acordo com ele.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 4º",
+        "MEC — Formatos de oferta",
+        "Portaria MEC nº 378/2025"
+      ],
+      "impacto_operacional": "Afeta cadastro, PPC, contratos, páginas de curso, matriz curricular e análise regulatória.",
+      "procedimento": [
+        "Identificar o formato autorizado no ato regulatório.",
+        "Conferir o PPC e a matriz.",
+        "Verificar percentuais e vedações específicos do curso."
+      ],
+      "limites": "DCNs e atos do MEC podem estabelecer requisitos superiores ou específicos.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "MEC — Formatos de oferta da graduação",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/quais-os-formatos-de-oferta"
+        },
+        {
+          "norma": "Portaria MEC nº 378/2025 — Formatos de oferta",
+          "url": "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-054",
+      "pergunta_id": "QA-054",
+      "processo": "Marco Regulatório",
+      "pergunta": "Qual é o percentual mínimo de atividades presenciais nos cursos presenciais?",
+      "resposta_objetiva": "Como regra geral, o curso de graduação presencial deve ofertar no mínimo 70% da carga horária total em atividades presenciais. A inclusão de EaD não pode exceder 30%, observadas as regras aplicáveis.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 10",
+        "MEC — Formatos de oferta"
+      ],
+      "impacto_operacional": "Exige revisão da matriz curricular, definição das atividades presenciais e coerência entre oferta, PPC e comunicação ao estudante.",
+      "procedimento": [
+        "Conferir a carga horária total.",
+        "Separar atividades presenciais e EaD.",
+        "Verificar se a DCN ou ato específico exige percentual superior."
+      ],
+      "limites": "Não aplicar automaticamente o percentual a cursos com regras específicas, como Medicina.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "MEC — Formatos de oferta da graduação",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/quais-os-formatos-de-oferta"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-055",
+      "pergunta_id": "QA-055",
+      "processo": "Marco Regulatório",
+      "pergunta": "Quais percentuais mínimos se aplicam ao formato semipresencial?",
+      "resposta_objetiva": "Nos cursos semipresenciais, a regra geral estabelece no mínimo 30% da carga horária em atividades presenciais e 20% em atividades presenciais ou síncronas mediadas, sem prejuízo de percentuais superiores definidos por DCN ou ato do MEC.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 11",
+        "MEC — Formatos de oferta",
+        "Portaria MEC nº 378/2025"
+      ],
+      "impacto_operacional": "Impacta matriz, calendário, polos, atividades presenciais, registros de frequência e desenho do PPC.",
+      "procedimento": [
+        "Calcular os percentuais sobre a carga horária total.",
+        "Conferir DCN e Portaria 378 para a área do curso.",
+        "Validar o local das atividades presenciais."
+      ],
+      "limites": "Os percentuais mínimos não substituem requisitos específicos da área ou curso.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "MEC — Formatos de oferta da graduação",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/quais-os-formatos-de-oferta"
+        },
+        {
+          "norma": "Portaria MEC nº 378/2025 — Formatos de oferta",
+          "url": "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-056",
+      "pergunta_id": "QA-056",
+      "processo": "Marco Regulatório",
+      "pergunta": "Quais percentuais mínimos se aplicam aos cursos de graduação a distância?",
+      "resposta_objetiva": "Nos cursos de graduação a distância, a regra geral estabelece no mínimo 10% da carga horária total em atividades presenciais e 10% em atividades presenciais ou síncronas mediadas. O curso não pode ser integralmente a distância.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 12",
+        "MEC — Formatos de oferta"
+      ],
+      "impacto_operacional": "Afeta matriz, atividades presenciais, polos, frequência, avaliações e planejamento acadêmico.",
+      "procedimento": [
+        "Conferir a carga horária total.",
+        "Identificar atividades presenciais e síncronas mediadas.",
+        "Verificar DCNs e atos específicos do curso."
+      ],
+      "limites": "Regras específicas podem exigir percentuais superiores ou vedar a oferta em EaD.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "MEC — Formatos de oferta da graduação",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/quais-os-formatos-de-oferta"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-057",
+      "pergunta_id": "QA-057",
+      "processo": "Marco Regulatório",
+      "pergunta": "Quais cursos de graduação não podem ser ofertados a distância?",
+      "resposta_objetiva": "O Decreto 12.456/2025 veda a oferta a distância de cursos da área de saúde, licenciaturas e outros que venham a ser definidos por ato do MEC. Além disso, Direito, Medicina, Enfermagem, Odontologia e Psicologia são tratados como exclusivamente presenciais no decreto, com detalhamentos da Portaria 378/2025.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, arts. 8º e 9º",
+        "Portaria MEC nº 378/2025"
+      ],
+      "impacto_operacional": "Exige classificação correta do curso e conferência do formato permitido antes de abertura ou alteração de oferta.",
+      "procedimento": [
+        "Identificar área e grau do curso.",
+        "Consultar Decreto 12.456 e Portaria 378.",
+        "Conferir DCNs e atos posteriores."
+      ],
+      "limites": "Não generalizar apenas pelo nome do curso; a classificação regulatória e as DCNs podem ser determinantes.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "Portaria MEC nº 378/2025 — Formatos de oferta",
+          "url": "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-058",
+      "pergunta_id": "QA-058",
+      "processo": "Marco Regulatório",
+      "pergunta": "Como funciona a transição do novo marco regulatório de EaD?",
+      "resposta_objetiva": "A implementação do novo marco é gradual. O Decreto prevê prazo de até dois anos para adequação integral, e a Portaria 381/2025 disciplina regras de transição e aspectos do calendário regulatório.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, arts. 41 e 42",
+        "Portaria MEC nº 381/2025"
+      ],
+      "impacto_operacional": "Exige controle de cronograma regulatório, formatos, cursos afetados e situação de adaptação institucional.",
+      "procedimento": [
+        "Mapear os cursos e formatos atuais.",
+        "Identificar regras de transição aplicáveis.",
+        "Acompanhar atos regulatórios e calendário oficial."
+      ],
+      "limites": "O regime de transição deve ser analisado conforme a situação institucional e do curso.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "Portaria MEC nº 381/2025 — Regras de transição",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-059",
+      "pergunta_id": "QA-059",
+      "processo": "Marco Regulatório",
+      "pergunta": "Como ficam os estudantes matriculados em cursos afetados pela mudança do formato?",
+      "resposta_objetiva": "O MEC informa que a implementação é gradual e que estudantes matriculados em cursos a distância que não possam mais ser ofertados nesse formato têm assegurado o direito de concluir o curso no formato previsto no ato de matrícula, nos termos da orientação oficial.",
+      "fundamento": [
+        "MEC — Aplicação gradual das mudanças de EaD",
+        "Portaria MEC nº 381/2025"
+      ],
+      "impacto_operacional": "Impede alterações automáticas de formato sem análise da turma, do ato de matrícula e do regime de transição.",
+      "procedimento": [
+        "Identificar data e formato da matrícula.",
+        "Verificar o ato regulatório e a regra de transição.",
+        "Preservar o tratamento aplicável à turma quando a fonte assim determinar."
+      ],
+      "limites": "A aplicação depende do curso, do ato de matrícula e das regras específicas de transição.",
+      "fontes": [
+        {
+          "norma": "MEC — Aplicação gradual das mudanças de EaD",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/as-mudancas-se-aplicam-imediatamente"
+        },
+        {
+          "norma": "Portaria MEC nº 381/2025 — Regras de transição",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-060",
+      "pergunta_id": "QA-060",
+      "processo": "Marco Regulatório",
+      "pergunta": "Como o formato de oferta deve aparecer no PPC e nos atos autorizativos?",
+      "resposta_objetiva": "O formato de oferta deve ser compatível com o ato autorizativo e com o PPC. O Decreto 12.456/2025 determina que os atos autorizativos especifiquem o formato e que o PPC seja estruturado de acordo com ele.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 4º",
+        "Portaria MEC nº 506/2025"
+      ],
+      "impacto_operacional": "Afeta cadastro, PPC, matriz, contratos, comunicação e alterações de oferta.",
+      "procedimento": [
+        "Conferir ato autorizativo.",
+        "Conferir PPC e matriz.",
+        "Registrar eventual necessidade de alteração regulatória antes da mudança de oferta."
+      ],
+      "limites": "Não considerar uma alteração de nomenclatura como suficiente para alterar o formato regulatório.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+          "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab"
+        },
+        {
+          "norma": "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025",
+          "url": "https://www.dgui.cps.sp.gov.br/dgui_atos_normativos/mec-794/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-061",
+      "pergunta_id": "QA-061",
+      "processo": "Marco Regulatório",
+      "pergunta": "Quais responsabilidades a IES mantém sobre os polos EaD?",
+      "resposta_objetiva": "A responsabilidade acadêmica da IES permanece sobre os polos EaD, próprios ou implementados por parceria. A instituição mantém competência pelos atos acadêmicos e pelas responsabilidades da oferta.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, arts. 30 a 32",
+        "Portaria MEC nº 506/2025",
+        "Portaria MEC nº 794/2025"
+      ],
+      "impacto_operacional": "Exige governança de polos, controle de atividades presenciais, documentação e responsabilidades acadêmicas.",
+      "procedimento": [
+        "Identificar polos vinculados a cada oferta.",
+        "Controlar atos acadêmicos e atividades realizadas no polo.",
+        "Verificar regras de criação, funcionamento e alterações do polo."
+      ],
+      "limites": "Requisitos operacionais específicos devem ser conferidos na Portaria 506 com suas alterações.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+          "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab"
+        },
+        {
+          "norma": "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025",
+          "url": "https://www.dgui.cps.sp.gov.br/dgui_atos_normativos/mec-794/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-062",
+      "pergunta_id": "QA-062",
+      "processo": "Marco Regulatório",
+      "pergunta": "Como funciona o controle de frequência nas atividades presenciais e síncronas?",
+      "resposta_objetiva": "O Decreto 12.456/2025 determina controle de frequência nas atividades presenciais e síncronas mediadas para aprovação nas unidades curriculares. A regulamentação complementar detalha atividades e avaliações.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 6º",
+        "Portaria MEC nº 506/2025",
+        "Portaria MEC nº 794/2025"
+      ],
+      "impacto_operacional": "Afeta registros de frequência, critérios de aprovação, calendário e sistemas acadêmicos.",
+      "procedimento": [
+        "Mapear quais atividades exigem controle.",
+        "Definir o registro de frequência no sistema.",
+        "Conferir os critérios da unidade curricular e do PPC."
+      ],
+      "limites": "Não confundir presença física com toda atividade síncrona; o tratamento deve seguir a regra aplicável à atividade.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.456/2025 — Nova Política de EaD",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norma": "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+          "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab"
+        },
+        {
+          "norma": "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025",
+          "url": "https://www.dgui.cps.sp.gov.br/dgui_atos_normativos/mec-794/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-063",
+      "pergunta_id": "QA-063",
+      "processo": "Marco Regulatório",
+      "pergunta": "O que a Portaria MEC nº 506/2025 regulamenta na EaD?",
+      "resposta_objetiva": "A Portaria MEC nº 506/2025 regulamenta o Decreto 12.456/2025 quanto a formação e atribuições do corpo docente, mediadores pedagógicos, tutores e responsáveis pelos polos, além de atividades presenciais, avaliações, materiais, plataformas e funcionamento dos polos.",
+      "fundamento": [
+        "Portaria MEC nº 506/2025",
+        "Decreto nº 12.456/2025"
+      ],
+      "impacto_operacional": "É uma referência operacional central para transformar o marco regulatório em rotinas acadêmicas e de oferta.",
+      "procedimento": [
+        "Consultar a Portaria 506 para o tema específico.",
+        "Verificar alterações posteriores, especialmente a Portaria 794/2025.",
+        "Só então parametrizar o procedimento interno."
+      ],
+      "limites": "Não utilizar uma cópia antiga da Portaria 506 sem verificar alterações posteriores.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 506/2025 — Regulamentação da EaD",
+          "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab"
+        },
+        {
+          "norma": "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025",
+          "url": "https://www.dgui.cps.sp.gov.br/dgui_atos_normativos/mec-794/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-064",
+      "pergunta_id": "QA-064",
+      "processo": "Marco Regulatório",
+      "pergunta": "A Portaria MEC nº 506/2025 teve alteração posterior?",
+      "resposta_objetiva": "Sim. A Portaria MEC nº 794/2025 alterou a Portaria MEC nº 506/2025. Portanto, a Portaria 506 deve ser consultada considerando a redação e alterações posteriores.",
+      "fundamento": [
+        "Portaria MEC nº 794/2025",
+        "Portaria MEC nº 506/2025"
+      ],
+      "impacto_operacional": "Evita aplicar procedimentos baseados em redação desatualizada, especialmente em PPC, avaliações e polos.",
+      "procedimento": [
+        "Verificar a Portaria 506.",
+        "Verificar alterações posteriores.",
+        "Registrar a versão normativa usada no procedimento."
+      ],
+      "limites": "A resposta não substitui a conferência do texto consolidado e dos atos posteriores.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025",
+          "url": "https://www.dgui.cps.sp.gov.br/dgui_atos_normativos/mec-794/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-065",
+      "pergunta_id": "QA-065",
+      "processo": "Curso Técnico",
+      "pergunta": "Qual é a diferença entre curso técnico regulado pelo sistema federal e pelo sistema estadual?",
+      "resposta_objetiva": "A diferença principal está no sistema de ensino competente. Instituições federais integram o sistema federal; instituições vinculadas aos sistemas estaduais são reguladas e supervisionadas pelo respectivo sistema estadual. A análise de um curso técnico deve começar pela identificação da instituição e do sistema responsável.",
+      "fundamento": [
+        "MEC — Sistemas de ensino e competência",
+        "Resolução CNE/CEB nº 6/2012"
+      ],
+      "impacto_operacional": "Define qual órgão deve ser consultado para autorização, supervisão e regras complementares da oferta.",
+      "procedimento": [
+        "Identificar a mantença e dependência administrativa.",
+        "Identificar o sistema de ensino.",
+        "Consultar o órgão regulador competente e o ato autorizativo."
+      ],
+      "limites": "O simples fato de o curso ser técnico não determina, sozinho, que sua regulação seja federal.",
+      "fontes": [
+        {
+          "norma": "MEC — Sistemas de ensino e Educação Profissional Técnica",
+          "url": "https://www.gov.br/mec/pt-br/canais_atendimento/ouvidoria/competencias-da-ouvidoria-mec"
+        },
+        {
+          "norma": "Resolução CNE/CEB nº 6/2012 — EPTNM",
+          "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/rceb006_121.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-066",
+      "pergunta_id": "QA-066",
+      "processo": "Curso Técnico",
+      "pergunta": "Como o CNCT deve ser usado na abertura e organização de um curso técnico?",
+      "resposta_objetiva": "O CNCT orienta a oferta de cursos técnicos de nível médio e traz informações como denominação, eixo tecnológico, carga horária mínima, perfil profissional e infraestrutura. Deve ser consultado antes da abertura ou alteração de uma oferta técnica.",
+      "fundamento": [
+        "MEC — Catálogo Nacional de Cursos Técnicos",
+        "Resolução CNE/CEB nº 6/2012"
+      ],
+      "impacto_operacional": "Afeta nomenclatura do curso, PPC, matriz, carga horária e documentação acadêmica.",
+      "procedimento": [
+        "Consultar a edição vigente do CNCT.",
+        "Conferir denominação e carga horária.",
+        "Confrontar com a norma do sistema de ensino competente."
+      ],
+      "limites": "O catálogo é uma referência nacional e deve ser aplicado junto às regras específicas do sistema de ensino.",
+      "fontes": [
+        {
+          "norma": "Catálogo Nacional de Cursos Técnicos — CNCT",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/estrutura-organizacional/orgaos-especificos-singulares/secretaria-de-educacao-profissional/catalogos-nacionais-de-cursos/apresentacao"
+        },
+        {
+          "norma": "Resolução CNE/CEB nº 6/2012 — EPTNM",
+          "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/rceb006_121.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-067",
+      "pergunta_id": "QA-067",
+      "processo": "Curso Técnico",
+      "pergunta": "Qual é o papel do SISTEC nos cursos técnicos?",
+      "resposta_objetiva": "O SISTEC registra e divulga dados da educação profissional e tecnológica e é utilizado para validação de diplomas de cursos técnicos de nível médio. As instituições ofertantes inserem dados de cursos, matrículas, frequência e concluintes.",
+      "fundamento": [
+        "SISTEC — MEC",
+        "Resolução CNE/CEB nº 6/2012"
+      ],
+      "impacto_operacional": "Exige consistência entre registros acadêmicos e informações lançadas no sistema, com impacto na documentação e validação do diploma.",
+      "procedimento": [
+        "Manter unidade e curso corretamente cadastrados.",
+        "Conferir matrículas, frequência e concluintes.",
+        "Validar a situação do diploma no SISTEC quando aplicável."
+      ],
+      "limites": "Fluxos específicos de cadastro podem variar conforme a autonomia e o sistema de ensino.",
+      "fontes": [
+        {
+          "norma": "SISTEC — Sistema Nacional de Informações da EPT",
+          "url": "https://portal.mec.gov.br/sistec-inicial/"
+        },
+        {
+          "norma": "Resolução CNE/CEB nº 6/2012 — EPTNM",
+          "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/rceb006_121.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-068",
+      "pergunta_id": "QA-068",
+      "processo": "Curso Técnico",
+      "pergunta": "Quais são as formas integrada, concomitante e subsequente do curso técnico?",
+      "resposta_objetiva": "A educação profissional técnica de nível médio pode ser articulada ao ensino médio de forma integrada ou concomitante, ou ofertada de forma subsequente para quem já concluiu o ensino médio.",
+      "fundamento": [
+        "Decreto nº 12.603/2025, art. 9º",
+        "Resolução CNE/CEB nº 6/2012"
+      ],
+      "impacto_operacional": "Afeta matrícula, organização curricular, trajetória acadêmica e documentação.",
+      "procedimento": [
+        "Classificar a forma de oferta.",
+        "Conferir requisitos de ingresso.",
+        "Parametrizar matrícula e integralização conforme a forma adotada."
+      ],
+      "limites": "Não confundir forma de articulação com modalidade de educação a distância.",
+      "fontes": [
+        {
+          "norma": "MEC — Formas de oferta do curso técnico",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm"
+        },
+        {
+          "norma": "Resolução CNE/CEB nº 6/2012 — EPTNM",
+          "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/rceb006_121.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-069",
+      "pergunta_id": "QA-069",
+      "processo": "Curso Técnico",
+      "pergunta": "Qual documento deve ser emitido ao concluir um curso técnico ou uma qualificação profissional?",
+      "resposta_objetiva": "A documentação depende da natureza da oferta e da conclusão. O curso técnico conduz à habilitação profissional técnica e ao diploma correspondente; qualificações e especializações técnicas possuem certificações próprias, conforme a regulamentação aplicável.",
+      "fundamento": [
+        "MEC — Certificação e diploma da EPT de nível médio",
+        "SISTEC — MEC",
+        "Resolução CNE/CEB nº 6/2012"
+      ],
+      "impacto_operacional": "Afeta emissão, registro, nomenclatura e conferência de documentos de conclusão.",
+      "procedimento": [
+        "Identificar o tipo de oferta.",
+        "Verificar a integralização e a habilitação concluída.",
+        "Emitir o documento correspondente e realizar os registros exigidos."
+      ],
+      "limites": "Não tratar certificado de qualificação como equivalente automático ao diploma de habilitação técnica.",
+      "fontes": [
+        {
+          "norma": "MEC — Certificação e diploma da EPT de nível médio",
+          "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_ept_de_nivel_medio.pdf"
+        },
+        {
+          "norma": "SISTEC — Sistema Nacional de Informações da EPT",
+          "url": "https://portal.mec.gov.br/sistec-inicial/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-070",
+      "pergunta_id": "QA-070",
+      "processo": "Cursos Profissionalizantes",
+      "pergunta": "O que são cursos profissionalizantes de formação inicial e continuada ou qualificação profissional?",
+      "resposta_objetiva": "FIC ou qualificação profissional reúne cursos de formação inicial e continuada, capacitação, aperfeiçoamento, especialização e atualização voltados ao desenvolvimento de aptidões para a vida produtiva e social. Não deve ser confundida automaticamente com habilitação técnica de nível médio.",
+      "fundamento": [
+        "MEC — Cursos da EPT",
+        "Decreto nº 12.603/2025, art. 8º"
+      ],
+      "impacto_operacional": "Afeta classificação da oferta, requisitos de ingresso, carga horária, documentação e registros.",
+      "procedimento": [
+        "Classificar a oferta como FIC/qualificação ou curso técnico.",
+        "Verificar a regulamentação específica.",
+        "Definir corretamente o tipo de certificado."
+      ],
+      "limites": "Os requisitos de escolaridade e carga horária podem variar conforme o curso e a regulamentação aplicável.",
+      "fontes": [
+        {
+          "norma": "MEC — Formação Inicial e Continuada / Qualificação Profissional",
+          "url": "https://portal.mec.gov.br/cursos-da-ept"
+        },
+        {
+          "norma": "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm"
+        },
+        {
+          "norma": "SISTEC — Sistema Nacional de Informações da EPT",
+          "url": "https://portal.mec.gov.br/sistec-inicial/"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-071",
+      "pergunta_id": "QA-071",
+      "processo": "Educação Profissional",
+      "pergunta": "O que mudou na educação profissional com o Decreto nº 12.603/2025?",
+      "resposta_objetiva": "O Decreto nº 12.603/2025 instituiu a Política Nacional de Educação Profissional e Tecnológica e organizou diretrizes para a EPT, incluindo qualificação profissional, educação técnica de nível médio e educação profissional tecnológica de graduação e pós-graduação.",
+      "fundamento": [
+        "Decreto nº 12.603/2025",
+        "Resolução CNE/CP nº 1/2021"
+      ],
+      "impacto_operacional": "Amplia a necessidade de enquadramento correto das ofertas profissionais e acompanhamento de catálogos e instrumentos nacionais.",
+      "procedimento": [
+        "Classificar a oferta por nível e tipo.",
+        "Consultar CNCT ou CNST quando aplicável.",
+        "Acompanhar atos complementares da política."
+      ],
+      "limites": "Nem toda consequência operacional da política está definida apenas pelo Decreto; atos complementares devem ser verificados.",
+      "fontes": [
+        {
+          "norma": "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm"
+        },
+        {
+          "norma": "Resolução CNE/CP nº 1/2021 — Diretrizes Gerais da EPT",
+          "url": "https://portal.mec.gov.br/dmdocuments/rcp001_21.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-072",
+      "pergunta_id": "QA-072",
+      "processo": "Educação Profissional",
+      "pergunta": "O que é o SINAEPT e qual é sua finalidade?",
+      "resposta_objetiva": "O SINAEPT é o Sistema Nacional de Avaliação da Educação Profissional e Tecnológica, instituído pelo Decreto nº 12.603/2025 como parte da Política Nacional de Educação Profissional e Tecnológica.",
+      "fundamento": [
+        "Decreto nº 12.603/2025"
+      ],
+      "impacto_operacional": "Pode gerar novos indicadores, processos de avaliação e necessidades de informação para instituições e cursos de EPT.",
+      "procedimento": [
+        "Acompanhar regulamentações e instrumentos do SINAEPT.",
+        "Não criar obrigações internas antes da publicação do ato específico.",
+        "Registrar mudanças no radar regulatório."
+      ],
+      "limites": "A instituição não deve presumir critérios operacionais que ainda dependam de regulamentação complementar.",
+      "fontes": [
+        {
+          "norma": "SINAEPT — Sistema Nacional de Avaliação da EPT",
+          "url": "https://legislacao.presidencia.gov.br/atos/?ano=2025&ato=81cMzaq5UNZpWT9a3&numero=12603&tipo=DEC"
+        },
+        {
+          "norma": "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     }
   ]

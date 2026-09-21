@@ -668,6 +668,271 @@
       "tipo_resposta": "Fonte navegável",
       "evidencia_necessaria": "URL oficial cadastrada",
       "cautela": "Não substituir a fonte oficial por fonte secundária quando a oficial estiver disponível."
+    },
+    {
+      "id": "QA-053",
+      "processo": "Marco Regulatório",
+      "intencao": "formatos",
+      "pergunta": "Quais são os formatos de oferta da graduação no novo marco regulatório?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos",
+        "marco-portaria-378-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-054",
+      "processo": "Marco Regulatório",
+      "intencao": "presencial",
+      "pergunta": "Qual é o percentual mínimo de atividades presenciais nos cursos presenciais?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-055",
+      "processo": "Marco Regulatório",
+      "intencao": "semipresencial",
+      "pergunta": "Quais percentuais mínimos se aplicam ao formato semipresencial?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos",
+        "marco-portaria-378-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-056",
+      "processo": "Marco Regulatório",
+      "intencao": "EaD",
+      "pergunta": "Quais percentuais mínimos se aplicam aos cursos de graduação a distância?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-mec-formatos"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-057",
+      "processo": "Marco Regulatório",
+      "intencao": "vedações",
+      "pergunta": "Quais cursos de graduação não podem ser ofertados a distância?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-378-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-058",
+      "processo": "Marco Regulatório",
+      "intencao": "transição",
+      "pergunta": "Como funciona a transição do novo marco regulatório de EaD?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-381-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-059",
+      "processo": "Marco Regulatório",
+      "intencao": "estudantes",
+      "pergunta": "Como ficam os estudantes matriculados em cursos afetados pela mudança do formato?",
+      "referencias_prioritarias": [
+        "marco-mec-transicao-estudantes",
+        "marco-portaria-381-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-060",
+      "processo": "Marco Regulatório",
+      "intencao": "PPC",
+      "pergunta": "Como o formato de oferta deve aparecer no PPC e nos atos autorizativos?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-061",
+      "processo": "Marco Regulatório",
+      "intencao": "polos",
+      "pergunta": "Quais responsabilidades a IES mantém sobre os polos EaD?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-062",
+      "processo": "Marco Regulatório",
+      "intencao": "frequência",
+      "pergunta": "Como funciona o controle de frequência nas atividades presenciais e síncronas?",
+      "referencias_prioritarias": [
+        "marco-decreto-12456",
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-063",
+      "processo": "Marco Regulatório",
+      "intencao": "portaria 506",
+      "pergunta": "O que a Portaria MEC nº 506/2025 regulamenta na EaD?",
+      "referencias_prioritarias": [
+        "marco-portaria-506-2025",
+        "marco-portaria-794-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-064",
+      "processo": "Marco Regulatório",
+      "intencao": "alterações 506",
+      "pergunta": "A Portaria MEC nº 506/2025 teve alteração posterior?",
+      "referencias_prioritarias": [
+        "marco-portaria-794-2025"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-065",
+      "processo": "Curso Técnico",
+      "intencao": "federal estadual",
+      "pergunta": "Qual é a diferença entre curso técnico regulado pelo sistema federal e pelo sistema estadual?",
+      "referencias_prioritarias": [
+        "ept-sistemas-federal-estadual",
+        "ept-resolucao-6-2012"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-066",
+      "processo": "Curso Técnico",
+      "intencao": "CNCT",
+      "pergunta": "Como o CNCT deve ser usado na abertura e organização de um curso técnico?",
+      "referencias_prioritarias": [
+        "ept-cnct",
+        "ept-resolucao-6-2012"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-067",
+      "processo": "Curso Técnico",
+      "intencao": "SISTEC",
+      "pergunta": "Qual é o papel do SISTEC nos cursos técnicos?",
+      "referencias_prioritarias": [
+        "ept-sistec",
+        "ept-resolucao-6-2012"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-068",
+      "processo": "Curso Técnico",
+      "intencao": "formas",
+      "pergunta": "Quais são as formas integrada, concomitante e subsequente do curso técnico?",
+      "referencias_prioritarias": [
+        "ept-modalidades-tecnico",
+        "ept-resolucao-6-2012"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-069",
+      "processo": "Curso Técnico",
+      "intencao": "documentação",
+      "pergunta": "Qual documento deve ser emitido ao concluir um curso técnico ou uma qualificação profissional?",
+      "referencias_prioritarias": [
+        "ept-certificacao-diploma",
+        "ept-sistec"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-070",
+      "processo": "Cursos Profissionalizantes",
+      "intencao": "FIC",
+      "pergunta": "O que são cursos profissionalizantes de formação inicial e continuada ou qualificação profissional?",
+      "referencias_prioritarias": [
+        "ept-fic-qualificacao",
+        "ept-decreto-12603",
+        "ept-sistec"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-071",
+      "processo": "Educação Profissional",
+      "intencao": "PNEPT",
+      "pergunta": "O que mudou na educação profissional com o Decreto nº 12.603/2025?",
+      "referencias_prioritarias": [
+        "ept-decreto-12603",
+        "ept-resolucao-1-2021"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-072",
+      "processo": "Educação Profissional",
+      "intencao": "SINAEPT",
+      "pergunta": "O que é o SINAEPT e qual é sua finalidade?",
+      "referencias_prioritarias": [
+        "ept-sinaept",
+        "ept-decreto-12603"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Norma ou orientação oficial correspondente",
+      "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
     }
   ]
 }
