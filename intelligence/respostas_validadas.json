@@ -2285,6 +2285,186 @@
       "citacao_literal": false,
       "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, atos complementares e enquadramento específico.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-073",
+      "pergunta_id": "QA-073",
+      "processo": "Regulação",
+      "pergunta": "O que a Portaria MEC nº 709/2026 regulamenta para as Instituições Comunitárias de Educação Superior?",
+      "resposta_objetiva": "A Portaria MEC nº 709/2026 estabelece a organização e os requisitos documentais para pedidos de qualificação e renovação de qualificação como ICES.",
+      "fundamento": [
+        "Portaria MEC nº 709/2026 — Qualificação de ICES"
+      ],
+      "impacto_operacional": "A norma é específica para instituições enquadradas como ICES e não deve ser aplicada indistintamente a qualquer IES.",
+      "procedimento": [
+        "Consultar o ato oficial completo.",
+        "Aplicar somente ao escopo e à etapa abrangida pelo ato.",
+        "Registrar eventual atualização no procedimento interno quando houver impacto comprovado."
+      ],
+      "limites": "Os atos operacionais devem ser lidos em conjunto com a norma principal e com eventual ato posterior.",
+      "fontes": [
+        {
+          "norma": "Portaria MEC nº 709/2026 — Qualificação de ICES",
+          "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10"
+        },
+        {
+          "norma": "Portaria MEC nº 1.095/2018",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-de-educacao-superior/diploma-digital"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
+      "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-074",
+      "pergunta_id": "QA-074",
+      "processo": "Educação Profissional",
+      "pergunta": "O que a Portaria INEP nº 503/2026 alterou no âmbito do SINAEPT?",
+      "resposta_objetiva": "A Portaria INEP nº 503/2026 altera a Portaria INEP nº 731/2025, que instituiu a Comissão de Apoio à Implementação do SINAEPT.",
+      "fundamento": [
+        "Portaria INEP nº 503/2026 — SINAEPT"
+      ],
+      "impacto_operacional": "O ato atualiza a governança da implementação do SINAEPT; ele, por si só, não autoriza inferir novos requisitos acadêmicos não previstos no ato.",
+      "procedimento": [
+        "Consultar o ato oficial completo.",
+        "Aplicar somente ao escopo e à etapa abrangida pelo ato.",
+        "Registrar eventual atualização no procedimento interno quando houver impacto comprovado."
+      ],
+      "limites": "Os atos operacionais devem ser lidos em conjunto com a norma principal e com eventual ato posterior.",
+      "fontes": [
+        {
+          "norma": "Portaria INEP nº 503/2026 — SINAEPT",
+          "url": "https://www.abmes.org.br/legislacoes/detalhe/5654/portaria-inep-n-503-2026"
+        },
+        {
+          "norma": "SINAEPT — Sistema Nacional de Avaliação da EPT",
+          "url": "https://legislacao.presidencia.gov.br/atos/?ano=2025&ato=81cMzaq5UNZpWT9a3&numero=12603&tipo=DEC"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
+      "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-075",
+      "pergunta_id": "QA-075",
+      "processo": "ENADE",
+      "pergunta": "O que mudou com a retificação de 09/09/2026 do Edital INEP nº 49/2026 do Enade?",
+      "resposta_objetiva": "A retificação de 09/09/2026 atualiza o Edital INEP nº 49/2026, que rege diretrizes, procedimentos e prazos do Enade 2026.",
+      "fundamento": [
+        "Retificação de 09/09/2026 — Edital INEP nº 49/2026 (Enade)"
+      ],
+      "impacto_operacional": "Para operação acadêmica, deve ser usada a versão retificada e conferida a etapa específica antes de executar procedimentos.",
+      "procedimento": [
+        "Consultar o ato oficial completo.",
+        "Aplicar somente ao escopo e à etapa abrangida pelo ato.",
+        "Registrar eventual atualização no procedimento interno quando houver impacto comprovado."
+      ],
+      "limites": "Os atos operacionais devem ser lidos em conjunto com a norma principal e com eventual ato posterior.",
+      "fontes": [
+        {
+          "norma": "Retificação de 09/09/2026 — Edital INEP nº 49/2026 (Enade)",
+          "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10"
+        },
+        {
+          "norma": "Enade 2026 — cronogramas oficiais",
+          "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
+      "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-076",
+      "pergunta_id": "QA-076",
+      "processo": "ENADE",
+      "pergunta": "O que o Edital INEP nº 146/2026 trata sobre a reaplicação do Enamed?",
+      "resposta_objetiva": "O Edital INEP nº 146/2026 publica regras e cronograma complementar para a reaplicação do Enamed 2026, em complemento ao Edital nº 71/2026.",
+      "fundamento": [
+        "Edital INEP nº 146/2026 — Reaplicação do Enamed"
+      ],
+      "impacto_operacional": "O fluxo deve considerar somente estudantes abrangidos pela reaplicação e os prazos do ato.",
+      "procedimento": [
+        "Consultar o ato oficial completo.",
+        "Aplicar somente ao escopo e à etapa abrangida pelo ato.",
+        "Registrar eventual atualização no procedimento interno quando houver impacto comprovado."
+      ],
+      "limites": "Os atos operacionais devem ser lidos em conjunto com a norma principal e com eventual ato posterior.",
+      "fontes": [
+        {
+          "norma": "Edital INEP nº 146/2026 — Reaplicação do Enamed",
+          "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
+      "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-077",
+      "pergunta_id": "QA-077",
+      "processo": "ENADE",
+      "pergunta": "O que a Portaria INEP nº 147/2026 trata sobre a reaplicação da PND?",
+      "resposta_objetiva": "A Portaria INEP nº 147/2026 publica regras e cronograma complementar para a reaplicação da Prova Nacional Docente, regida pelo Edital nº 67/2026.",
+      "fundamento": [
+        "Portaria INEP nº 147/2026 — Reaplicação da PND"
+      ],
+      "impacto_operacional": "Para licenciaturas, o ato deve ser considerado na conferência das etapas da reaplicação e no atendimento aos estudantes abrangidos.",
+      "procedimento": [
+        "Consultar o ato oficial completo.",
+        "Aplicar somente ao escopo e à etapa abrangida pelo ato.",
+        "Registrar eventual atualização no procedimento interno quando houver impacto comprovado."
+      ],
+      "limites": "Os atos operacionais devem ser lidos em conjunto com a norma principal e com eventual ato posterior.",
+      "fontes": [
+        {
+          "norma": "Portaria INEP nº 147/2026 — Reaplicação da PND",
+          "url": "https://www.abmes.org.br/legislacoes/detalhe/5656/portaria-inep-n-147-2026"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
+      "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-078",
+      "pergunta_id": "QA-078",
+      "processo": "Censo",
+      "pergunta": "O que o Comunicado Inep nº 23/2026 sinaliza sobre o Censo da Educação Superior 2025?",
+      "resposta_objetiva": "O Comunicado Inep nº 23/2026 registra o cumprimento do prazo de preenchimento do Censo da Educação Superior 2025 e integra o ciclo operacional de fechamento.",
+      "fundamento": [
+        "Comunicado Inep nº 23/2026 — Censo da Educação Superior 2025"
+      ],
+      "impacto_operacional": "Serve como marco de acompanhamento; a Secretaria deve preservar evidências internas do fechamento e acompanhar a divulgação prevista no cronograma oficial.",
+      "procedimento": [
+        "Consultar o ato oficial completo.",
+        "Aplicar somente ao escopo e à etapa abrangida pelo ato.",
+        "Registrar eventual atualização no procedimento interno quando houver impacto comprovado."
+      ],
+      "limites": "Os atos operacionais devem ser lidos em conjunto com a norma principal e com eventual ato posterior.",
+      "fontes": [
+        {
+          "norma": "Comunicado Inep nº 23/2026 — Censo da Educação Superior 2025",
+          "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/comunicados"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
+      "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
     }
   ]
 }

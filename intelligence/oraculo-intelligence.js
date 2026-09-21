@@ -195,26 +195,9 @@
 
 
     // Marco Regulatório — Decreto 12.456/2025 e atos complementares
-    // QA-064 deve prevalecer sempre que a pergunta tratar de mudança/alteração da Portaria 506
-    // ou mencionar diretamente a Portaria 794/2025, evitando empate com QA-063.
-    const hasPortaria506 = /\bportaria(?:\s+mec)?\s+506\b/.test(q);
-    const hasPortaria794 = /\bportaria(?:\s+mec)?\s+794\b/.test(q);
-    if (hasPortaria794) return ruleById("QA-064");
-    if (
-      hasPortaria506 &&
-      (
-        q.includes("alteracao") ||
-        q.includes("alteracoes") ||
-        q.includes("mudou") ||
-        q.includes("mudanca") ||
-        q.includes("mudancas") ||
-        q.includes("modificacao") ||
-        q.includes("modificacoes") ||
-        q.includes("o que mudou") ||
-        q.includes("que mudou")
-      )
-    ) return ruleById("QA-064");
-    if (hasPortaria506 || (q.includes("polos") && q.includes("mediadores")) || (q.includes("tutores") && q.includes("ead"))) return ruleById("QA-063");
+    if (/\bportaria(?: mec)?\s+794\b/.test(q)) return ruleById("QA-064");
+    if (/\bportaria(?: mec)?\s+506\b/.test(q) && (q.includes("alteracao") || q.includes("mudou") || q.includes("posterior"))) return ruleById("QA-064");
+    if (q.includes("portaria 506") || (q.includes("polos") && q.includes("mediadores")) || (q.includes("tutores") && q.includes("ead"))) return ruleById("QA-063");
     if ((q.includes("frequencia") || q.includes("presenca")) && (q.includes("sincrona") || q.includes("atividades presenciais")) && (q.includes("ead") || q.includes("curso"))) return ruleById("QA-062");
     if (q.includes("polo") && (q.includes("responsabilidade") || q.includes("responsabilidades"))) return ruleById("QA-061");
     if (q.includes("estudante") && (q.includes("matriculado") || q.includes("matricula")) && (q.includes("mudanca") || q.includes("ead") || q.includes("formato"))) return ruleById("QA-059");
@@ -365,14 +348,8 @@
     const oldSearch=document.getElementById("searchBtn"), oldInput=document.getElementById("q");
     if(!oldSearch||!oldInput) return;
     const search=oldSearch.cloneNode(true), input=oldInput.cloneNode(true); oldSearch.replaceWith(search); oldInput.replaceWith(input);
-    search.onclick=()=>{const query=input.value.trim(); if(!query){ const reset=document.getElementById("reset"); if(reset) reset.click(); return; } if(typeof window.doSearch === "function") window.doSearch(); run(query);};
-    input.addEventListener("input",()=>{
-      if(input.value.trim()!=="") return;
-      const panel=document.getElementById("oraculoAnswerPanel");
-      if(panel) panel.classList.add("hidden");
-      const reset=document.getElementById("reset");
-      if(reset) reset.click();
-    });
+    search.onclick=()=>{const query=input.value.trim(); if(!query){const reset=document.getElementById("reset"); if(reset) reset.click(); const panel=document.getElementById("oraculoAnswerPanel"); if(panel) panel.classList.add("hidden"); return;} if(typeof window.doSearch==="function") window.doSearch(); run(query); const resultsbar=document.querySelector(".resultsbar"); if(resultsbar) window.scrollTo({top:Math.max(0,resultsbar.getBoundingClientRect().top+window.scrollY-20),behavior:"smooth"});};
+    input.addEventListener("input",()=>{if(input.value.trim()!=="")return; const panel=document.getElementById("oraculoAnswerPanel"); if(panel) panel.classList.add("hidden"); const reset=document.getElementById("reset"); if(reset) reset.click();});
     input.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();search.click();}});
     document.querySelectorAll(".quick button").forEach(btn=>{const clone=btn.cloneNode(true);btn.replaceWith(clone);clone.onclick=()=>{input.value=clone.dataset.q||"";search.click();};});
     window.OraculoIntelligenceRun=run;

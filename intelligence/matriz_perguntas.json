@@ -933,6 +933,81 @@
       "tipo_resposta": "Regra + impacto operacional",
       "evidencia_necessaria": "Norma ou orientação oficial correspondente",
       "cautela": "Aplicar a regra considerando formato, sistema de ensino, curso e situação concreta."
+    },
+    {
+      "id": "QA-073",
+      "processo": "Regulação",
+      "intencao": "ICES",
+      "pergunta": "O que a Portaria MEC nº 709/2026 regulamenta para as Instituições Comunitárias de Educação Superior?",
+      "referencias_prioritarias": [
+        "marco-portaria-709-2026",
+        "port-1095"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Ato oficial correspondente",
+      "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
+    },
+    {
+      "id": "QA-074",
+      "processo": "Educação Profissional",
+      "intencao": "SINAEPT 503",
+      "pergunta": "O que a Portaria INEP nº 503/2026 alterou no âmbito do SINAEPT?",
+      "referencias_prioritarias": [
+        "ept-portaria-503-2026",
+        "ept-sinaept"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Ato oficial correspondente",
+      "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
+    },
+    {
+      "id": "QA-075",
+      "processo": "ENADE",
+      "intencao": "retificação edital 49",
+      "pergunta": "O que mudou com a retificação de 09/09/2026 do Edital INEP nº 49/2026 do Enade?",
+      "referencias_prioritarias": [
+        "enade-retificacao-edital-49-2026",
+        "enade-2026-cronograma"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Ato oficial correspondente",
+      "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
+    },
+    {
+      "id": "QA-076",
+      "processo": "ENADE",
+      "intencao": "Enamed reaplicação",
+      "pergunta": "O que o Edital INEP nº 146/2026 trata sobre a reaplicação do Enamed?",
+      "referencias_prioritarias": [
+        "enamed-edital-146-2026"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Ato oficial correspondente",
+      "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
+    },
+    {
+      "id": "QA-077",
+      "processo": "ENADE",
+      "intencao": "PND reaplicação",
+      "pergunta": "O que a Portaria INEP nº 147/2026 trata sobre a reaplicação da PND?",
+      "referencias_prioritarias": [
+        "pnd-portaria-147-2026"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Ato oficial correspondente",
+      "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
+    },
+    {
+      "id": "QA-078",
+      "processo": "Censo",
+      "intencao": "Comunicado 23 2026",
+      "pergunta": "O que o Comunicado Inep nº 23/2026 sinaliza sobre o Censo da Educação Superior 2025?",
+      "referencias_prioritarias": [
+        "censo-comunicado-23-2026"
+      ],
+      "tipo_resposta": "Regra + impacto operacional",
+      "evidencia_necessaria": "Ato oficial correspondente",
+      "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
     }
   ]
 }

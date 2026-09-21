@@ -2090,6 +2090,176 @@
       ],
       "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
       "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
+    },
+    {
+      "id": "QA-073",
+      "processo": "Regulação",
+      "intencao": "ICES",
+      "gatilhos": [
+        "Portaria 709",
+        "ICES qualificação",
+        "qualificação ICES",
+        "renovação ICES"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-709-2026",
+        "port-1095"
+      ],
+      "referencias_nomes": [
+        "Portaria MEC nº 709/2026 — Qualificação de ICES",
+        "Portaria MEC nº 1.095/2018"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referência prioritária",
+        "verificar evidência oficial",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento apenas quando suportado",
+        "exibir fonte e data de verificação"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
+      "cautela": "Não generalizar além do escopo do ato."
+    },
+    {
+      "id": "QA-074",
+      "processo": "Educação Profissional",
+      "intencao": "SINAEPT 503",
+      "gatilhos": [
+        "Portaria 503 SINAEPT",
+        "Portaria INEP 503",
+        "alteração SINAEPT",
+        "Portaria 731 SINAEPT"
+      ],
+      "referencias_prioritarias": [
+        "ept-portaria-503-2026",
+        "ept-sinaept"
+      ],
+      "referencias_nomes": [
+        "Portaria INEP nº 503/2026 — SINAEPT",
+        "SINAEPT — Sistema Nacional de Avaliação da EPT"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referência prioritária",
+        "verificar evidência oficial",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento apenas quando suportado",
+        "exibir fonte e data de verificação"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
+      "cautela": "Não generalizar além do escopo do ato."
+    },
+    {
+      "id": "QA-075",
+      "processo": "ENADE",
+      "intencao": "retificação edital 49",
+      "gatilhos": [
+        "retificação Edital 49 Enade",
+        "Edital 49 2026 retificação",
+        "Enade retificação 09 setembro 2026"
+      ],
+      "referencias_prioritarias": [
+        "enade-retificacao-edital-49-2026",
+        "enade-2026-cronograma"
+      ],
+      "referencias_nomes": [
+        "Retificação de 09/09/2026 — Edital INEP nº 49/2026 (Enade)",
+        "Enade 2026 — cronogramas oficiais"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referência prioritária",
+        "verificar evidência oficial",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento apenas quando suportado",
+        "exibir fonte e data de verificação"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
+      "cautela": "Não generalizar além do escopo do ato."
+    },
+    {
+      "id": "QA-076",
+      "processo": "ENADE",
+      "intencao": "Enamed reaplicação",
+      "gatilhos": [
+        "Edital 146 Enamed",
+        "reaplicação Enamed",
+        "Enamed reaplicação 2026"
+      ],
+      "referencias_prioritarias": [
+        "enamed-edital-146-2026"
+      ],
+      "referencias_nomes": [
+        "Edital INEP nº 146/2026 — Reaplicação do Enamed"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referência prioritária",
+        "verificar evidência oficial",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento apenas quando suportado",
+        "exibir fonte e data de verificação"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
+      "cautela": "Não generalizar além do escopo do ato."
+    },
+    {
+      "id": "QA-077",
+      "processo": "ENADE",
+      "intencao": "PND reaplicação",
+      "gatilhos": [
+        "Portaria 147 PND",
+        "reaplicação PND",
+        "Prova Nacional Docente reaplicação"
+      ],
+      "referencias_prioritarias": [
+        "pnd-portaria-147-2026"
+      ],
+      "referencias_nomes": [
+        "Portaria INEP nº 147/2026 — Reaplicação da PND"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referência prioritária",
+        "verificar evidência oficial",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento apenas quando suportado",
+        "exibir fonte e data de verificação"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
+      "cautela": "Não generalizar além do escopo do ato."
+    },
+    {
+      "id": "QA-078",
+      "processo": "Censo",
+      "intencao": "Comunicado 23 2026",
+      "gatilhos": [
+        "Comunicado 23 Censo",
+        "Censo 2025 fechamento",
+        "Comunicado Inep 23 2026"
+      ],
+      "referencias_prioritarias": [
+        "censo-comunicado-23-2026"
+      ],
+      "referencias_nomes": [
+        "Comunicado Inep nº 23/2026 — Censo da Educação Superior 2025"
+      ],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referência prioritária",
+        "verificar evidência oficial",
+        "separar fato normativo de interpretação operacional",
+        "montar resposta objetiva",
+        "informar impacto/procedimento apenas quando suportado",
+        "exibir fonte e data de verificação"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
+      "cautela": "Não generalizar além do escopo do ato."
     }
   ]
 }
