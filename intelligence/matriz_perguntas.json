@@ -1,12 +1,7 @@
 {
-  "schema_version": "oraculo-matriz-perguntas-v1.1",
+  "schema_version": "8.2",
   "status": "draft_validacao",
-  "base": {
-    "referencias_base": 28,
-    "origem": "Oraculo_Inteligencia_V1.json",
-    "layout": "V5 congelada",
-    "observacao": "Esta matriz cria intenções/perguntas de consulta e não acrescenta respostas normativas às referências."
-  },
+  "base": "58 referências normativas e orientações oficiais; 103 perguntas estruturadas",
   "principios": [
     "Perguntas são roteadores de consulta; não constituem, por si, afirmações normativas.",
     "Resposta normativa deve apontar uma ou mais referências da base.",
@@ -1008,6 +1003,328 @@
       "tipo_resposta": "Regra + impacto operacional",
       "evidencia_necessaria": "Ato oficial correspondente",
       "cautela": "Aplicar apenas ao escopo e à etapa indicada no ato; conferir vigência e caso concreto."
+    },
+    {
+      "id": "QA-079",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "oferta enfermagem ead",
+      "pergunta": "Enfermagem pode ser ofertada em EaD?",
+      "referencias_prioritarias": [
+        "marco-portaria-378-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-080",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "enfermagem semipresencial",
+      "pergunta": "Enfermagem pode ser ofertada no formato semipresencial?",
+      "referencias_prioritarias": [
+        "marco-portaria-378-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-081",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "percentual presencial enfermagem",
+      "pergunta": "Qual percentual presencial deve ser observado em Enfermagem?",
+      "referencias_prioritarias": [
+        "marco-portaria-378-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-082",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "saúde ead cursos proibidos",
+      "pergunta": "Cursos da área de Saúde podem ser ofertados em EaD?",
+      "referencias_prioritarias": [
+        "dec-marco-regulatorio",
+        "marco-portaria-378-2025"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-083",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "aluno enfermagem ead antigo transição",
+      "pergunta": "Como ficam os alunos de Enfermagem EaD que já estavam matriculados antes do Marco Regulatório?",
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Regra de transição + procedimento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-084",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "curso em extinção novo ingresso",
+      "pergunta": "Um curso EaD que entrou em extinção pode receber novos ingressantes?",
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-085",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "prazo curso ead extinção conclusão",
+      "pergunta": "Por quanto tempo um curso EaD em extinção deve continuar sendo ofertado para os alunos protegidos pela transição?",
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Regra + cálculo condicionado",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-086",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "curso ead extinção semipresencial conversão",
+      "pergunta": "Um curso EaD em extinção pode ser convertido para semipresencial?",
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "marco-portaria-795-2025",
+        "marco-portaria-378-2025"
+      ],
+      "tipo_resposta": "Regra + condição",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-087",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "portaria 795 transição ead",
+      "pergunta": "O que a Portaria MEC nº 795/2025 mudou nas regras de transição do EaD?",
+      "referencias_prioritarias": [
+        "marco-portaria-795-2025",
+        "marco-portaria-381-2025"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-088",
+      "processo": "Formação de Professores",
+      "intencao": "licenciatura ead marco regulatorio",
+      "pergunta": "Licenciaturas podem ser ofertadas em EaD após o Marco Regulatório?",
+      "referencias_prioritarias": [
+        "dec-marco-regulatorio",
+        "marco-portaria-378-2025"
+      ],
+      "tipo_resposta": "Regra + transição",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-089",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "licenciatura ead aluno antigo conclusão",
+      "pergunta": "O que acontece com o aluno de licenciatura EaD que já estava matriculado quando a oferta passou a ser vedada?",
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Regra de transição + procedimento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-090",
+      "processo": "Formação de Professores",
+      "intencao": "formação pedagogica em pedagogia",
+      "pergunta": "Existe Formação Pedagógica para graduados não licenciados em Pedagogia?",
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-091",
+      "processo": "Formação de Professores",
+      "intencao": "segunda licenciatura pedagogia",
+      "pergunta": "Existe Segunda Licenciatura em Pedagogia?",
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "tipo_resposta": "Regra + transição",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-092",
+      "processo": "Formação de Professores",
+      "intencao": "pedagogo segunda licenciatura outra area",
+      "pergunta": "Quem é pedagogo pode fazer Segunda Licenciatura em outra área?",
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-093",
+      "processo": "Formação de Professores",
+      "intencao": "validade diploma segunda licenciatura pedagogia antigo",
+      "pergunta": "Os diplomas de Segunda Licenciatura em Pedagogia iniciados antes da Resolução CNE/CP nº 4/2024 continuam válidos?",
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "tipo_resposta": "Regra de transição",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-094",
+      "processo": "Formação de Professores",
+      "intencao": "compatibilidade formação anterior formação pedagogica",
+      "pergunta": "Como a IES deve verificar a compatibilidade entre a formação anterior e a habilitação pretendida na Formação Pedagógica?",
+      "referencias_prioritarias": [
+        "formacao-resolucao-4-2024",
+        "formacao-parecer-5-2025"
+      ],
+      "tipo_resposta": "Procedimento + registro",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-095",
+      "processo": "Documentação Acadêmica",
+      "intencao": "registro compatibilidade formação historico",
+      "pergunta": "Onde deve ser registrada a análise de compatibilidade da formação anterior para Formação Pedagógica?",
+      "referencias_prioritarias": [
+        "formacao-resolucao-4-2024",
+        "formacao-parecer-5-2025"
+      ],
+      "tipo_resposta": "Procedimento + documentação",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-096",
+      "processo": "Formação de Professores",
+      "intencao": "carga horaria segunda licenciatura",
+      "pergunta": "Qual é a carga horária mínima da Segunda Licenciatura?",
+      "referencias_prioritarias": [
+        "formacao-resolucao-4-2024"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-097",
+      "processo": "Formação de Professores",
+      "intencao": "ies pode ofertar formação pedagogica segunda licenciatura",
+      "pergunta": "Quais condições uma IES deve atender para ofertar Formação Pedagógica ou Segunda Licenciatura?",
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025"
+      ],
+      "tipo_resposta": "Regra + procedimento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-098",
+      "processo": "Documentação Acadêmica",
+      "intencao": "dados historico escolar graduação",
+      "pergunta": "Quais dados devem constar no Histórico Escolar de graduação?",
+      "referencias_prioritarias": [
+        "mec-faq-historico-379-2004"
+      ],
+      "tipo_resposta": "Checklist documental",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-099",
+      "processo": "Diploma Digital",
+      "intencao": "historico escolar digital xsd",
+      "pergunta": "Existe uma especificação técnica para o Histórico Escolar Digital?",
+      "referencias_prioritarias": [
+        "diploma-xsd-105",
+        "diploma-portaria-70-2025"
+      ],
+      "tipo_resposta": "Regra técnica + fonte",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-100",
+      "processo": "Diploma Digital",
+      "intencao": "dados diploma graduação conferência",
+      "pergunta": "O que deve ser considerado na conferência do diploma de graduação?",
+      "referencias_prioritarias": [
+        "port-1095",
+        "diploma-portaria-70-2025"
+      ],
+      "tipo_resposta": "Checklist documental",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-101",
+      "processo": "Diploma Digital",
+      "intencao": "portaria 70 diploma digital mudanças",
+      "pergunta": "O que mudou no Diploma Digital com a Portaria MEC nº 70/2025?",
+      "referencias_prioritarias": [
+        "diploma-portaria-70-2025",
+        "diploma-xsd-105"
+      ],
+      "tipo_resposta": "Regra + fundamento",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-102",
+      "processo": "Documentação Acadêmica",
+      "intencao": "cobrança diploma historico primeira via",
+      "pergunta": "A IES pode cobrar pela expedição e registro do diploma e do histórico escolar final?",
+      "referencias_prioritarias": [
+        "mec-faq-cobranca-documentos",
+        "port-1095"
+      ],
+      "tipo_resposta": "Regra + cautela contratual",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-103",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "aluno curso ead extinção vai concluir",
+      "pergunta": "O que fazer quando um aluno pergunta se conseguirá concluir um curso EaD que entrou em extinção?",
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "tipo_resposta": "Árvore de decisão + dados necessários",
+      "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
+      "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
     }
   ]
 }

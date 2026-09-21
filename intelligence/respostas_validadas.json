@@ -1,11 +1,23 @@
 {
-  "schema_version": "oraculo-banco-respostas-validadas-v4.1",
+  "schema_version": "8.2",
   "status": "validado_com_pesquisa_normativa",
-  "data_verificacao": "2026-09-20",
-  "base_referencias": 45,
-  "quantidade_respostas": 67,
-  "observacao": "Banco ampliado com Marco Regulatório e Educação Profissional, incluindo formatos presencial, semipresencial e EaD, transição, polos, Portarias 378/381/506/794, cursos técnicos federais e estaduais, CNCT, SISTEC, FIC/qualificação profissional, PNEPT e SINAEPT.",
-  "fontes_pesquisadas": "Fontes oficiais do Planalto, MEC/CNE, Inep e Conarq consultadas em 20/09/2026. As respostas são paráfrases operacionais, não citações literais.",
+  "data_verificacao": "2026-09-21",
+  "base_referencias": 58,
+  "quantidade_respostas": 98,
+  "observacao": "V8.2 amplia a base com Marco Regulatório aplicado a Enfermagem e transição EaD, Formação de Professores, Segunda Licenciatura, Formação Pedagógica, Histórico Escolar e Diploma Digital. As respostas são orientação operacional vinculada às fontes oficiais.",
+  "fontes_pesquisadas": [
+    "Fontes oficiais do Planalto, MEC/CNE, Inep e Conarq consultadas em 20/09/2026. As respostas são paráfrases operacionais, não citações literais.",
+    "MEC — Perguntas Frequentes sobre Educação a Distância",
+    "MEC/CNE — Formação Superior para a Docência na Educação Básica",
+    "Parecer CNE/CP nº 5/2025",
+    "Resolução CNE/CP nº 4/2024",
+    "Decreto nº 12.456/2025",
+    "Portaria MEC nº 378/2025",
+    "Portaria MEC nº 381/2025",
+    "Portaria MEC nº 795/2025",
+    "MEC — Diploma Digital / Pacote XSD v1.05",
+    "MEC/CNE — Cobrança de Taxas"
+  ],
   "respostas": [
     {
       "id": "VR-001",
@@ -2465,6 +2477,744 @@
       "citacao_literal": false,
       "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; verificar vigência, alterações e situação concreta.",
       "confianca": "alta para a descrição do ato; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-079",
+      "pergunta_id": "QA-079",
+      "processo": "Enfermagem e Saúde",
+      "pergunta": "Enfermagem pode ser ofertada em EaD?",
+      "resposta_objetiva": "Não. Enfermagem deve ser ofertada exclusivamente no formato presencial.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 8º; Portaria MEC nº 378/2025, art. 5º."
+      ],
+      "impacto_operacional": "A regra do Marco Regulatório não permite nova oferta de graduação em Enfermagem no formato EaD.",
+      "procedimento": [
+        "Confirmar o curso e o ato autorizativo no e-MEC; para abertura ou matrícula, validar que o formato é presencial."
+      ],
+      "limites": "A regra de transição para cursos EaD anteriores deve ser analisada separadamente para estudantes já matriculados.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 378/2025 — Formatos de oferta dos cursos superiores de graduação",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-378-de-19-de-maio-de-2025-630395302"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-080",
+      "pergunta_id": "QA-080",
+      "processo": "Enfermagem e Saúde",
+      "pergunta": "Enfermagem pode ser ofertada no formato semipresencial?",
+      "resposta_objetiva": "Não. Enfermagem está entre os cursos que não podem ser ofertados no formato semipresencial.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 8º; Portaria MEC nº 378/2025, arts. 5º e 6º."
+      ],
+      "impacto_operacional": "A exceção ao semipresencial alcança os cursos do art. 5º da Portaria 378, incluindo Enfermagem.",
+      "procedimento": [
+        "Não enquadrar uma oferta de Enfermagem como semipresencial; verificar o ato regulatório e a matriz presencial."
+      ],
+      "limites": "Não confundir a possibilidade de atividades digitais dentro do curso presencial com a autorização do formato semipresencial.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 378/2025 — Formatos de oferta dos cursos superiores de graduação",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-378-de-19-de-maio-de-2025-630395302"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-081",
+      "pergunta_id": "QA-081",
+      "processo": "Enfermagem e Saúde",
+      "pergunta": "Qual percentual presencial deve ser observado em Enfermagem?",
+      "resposta_objetiva": "Para Enfermagem, a regra exige pelo menos 70% da carga horária total em atividades presenciais; o curso, contudo, permanece classificado como presencial.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 10 e Portaria MEC nº 378/2025, art. 5º, §2º."
+      ],
+      "impacto_operacional": "O percentual mínimo presencial é de 70% para Enfermagem, sem transformar o curso em semipresencial.",
+      "procedimento": [
+        "Conferir PPC, DCN e ato regulatório para identificar a composição restante e as atividades que podem ser realizadas a distância."
+      ],
+      "limites": "Percentuais superiores podem decorrer de DCN ou atos específicos.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 378/2025 — Formatos de oferta dos cursos superiores de graduação",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-378-de-19-de-maio-de-2025-630395302"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-082",
+      "pergunta_id": "QA-082",
+      "processo": "Enfermagem e Saúde",
+      "pergunta": "Cursos da área de Saúde podem ser ofertados em EaD?",
+      "resposta_objetiva": "A oferta de graduação a distância é vedada para a área de Saúde, para licenciaturas e para outros cursos definidos em ato do MEC; Enfermagem, Direito, Medicina, Odontologia e Psicologia são expressamente presenciais.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, arts. 8º e 9º."
+      ],
+      "impacto_operacional": "O enquadramento deve considerar tanto a área quanto as vedações específicas do curso.",
+      "procedimento": [
+        "Identificar o curso e consultar Decreto 12.456, Portaria 378, DCN e ato específico antes de definir o formato."
+      ],
+      "limites": "A análise de um curso antigo em EaD exige aplicação das regras de transição.",
+      "fontes": [
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norm": "Portaria MEC nº 378/2025 — Formatos de oferta dos cursos superiores de graduação",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-378-de-19-de-maio-de-2025-630395302"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-083",
+      "pergunta_id": "QA-083",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "Como ficam os alunos de Enfermagem EaD que já estavam matriculados antes do Marco Regulatório?",
+      "resposta_objetiva": "O estudante que já estava matriculado em curso EaD que passou a ser vedado pode ter assegurada a conclusão no formato previsto no ato de matrícula, observadas as regras de transição.",
+      "fundamento": [
+        "Portaria MEC nº 381/2025, art. 8º, §§3º e 4º; FAQ MEC sobre aplicação gradual das mudanças."
+      ],
+      "impacto_operacional": "A proteção é voltada aos estudantes matriculados antes da alteração do status para “em extinção”.",
+      "procedimento": [
+        "Verificar data da matrícula, data de alteração do status, ato de matrícula, PPC e prazo de integralização; não tratar o caso como novo ingresso."
+      ],
+      "limites": "O caso concreto pode envolver transferência, trancamento ou outras situações que exigem análise adicional.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-084",
+      "pergunta_id": "QA-084",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "Um curso EaD que entrou em extinção pode receber novos ingressantes?",
+      "resposta_objetiva": "Não. Depois que o curso vedado entra em extinção, a IES não pode matricular novos ingressantes nesse curso.",
+      "fundamento": [
+        "Portaria MEC nº 381/2025, art. 8º, §2º."
+      ],
+      "impacto_operacional": "A transição protege estudantes que já estavam matriculados; não mantém a possibilidade de novos ingressos.",
+      "procedimento": [
+        "Conferir no e-MEC o status do curso e bloquear novas matrículas quando o status “em extinção” estiver vigente."
+      ],
+      "limites": "Não confundir estudante já matriculado com novo ingresso.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-085",
+      "pergunta_id": "QA-085",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "Por quanto tempo um curso EaD em extinção deve continuar sendo ofertado para os alunos protegidos pela transição?",
+      "resposta_objetiva": "A IES deve assegurar a continuidade da oferta EaD até dois anos após o prazo de integralização previsto no PPC, para viabilizar a conclusão dos estudantes protegidos pela transição.",
+      "fundamento": [
+        "Portaria MEC nº 381/2025, art. 8º, §4º."
+      ],
+      "impacto_operacional": "O prazo não é uma data única igual para todos os cursos; ele depende do prazo de integralização previsto no PPC e da situação do estudante.",
+      "procedimento": [
+        "Para calcular o marco, identificar o prazo de integralização do PPC aplicável e a turma protegida pela transição."
+      ],
+      "limites": "Não transformar o prazo geral de adequação institucional de dois anos em prazo universal de conclusão do aluno.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-086",
+      "pergunta_id": "QA-086",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "Um curso EaD em extinção pode ser convertido para semipresencial?",
+      "resposta_objetiva": "Pode existir possibilidade de autorização para oferta semipresencial de curso EaD que será extinto, mas somente quando o curso puder ser ofertado nesse formato e mediante o tratamento regulatório aplicável.",
+      "fundamento": [
+        "Portaria MEC nº 381/2025, art. 9º, e alterações posteriores; Portaria MEC nº 378/2025."
+      ],
+      "impacto_operacional": "A transição não converte automaticamente um curso EaD em semipresencial.",
+      "procedimento": [
+        "Verificar se o curso é elegível ao semipresencial, o ato regulatório e a autorização correspondente antes de alterar a oferta."
+      ],
+      "limites": "Para cursos como Enfermagem, que têm vedação ao semipresencial, essa alternativa não se aplica.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        },
+        {
+          "norm": "Portaria MEC nº 795/2025 — Alteração das regras de transição e calendário regulatório",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743"
+        },
+        {
+          "norm": "Portaria MEC nº 378/2025 — Formatos de oferta dos cursos superiores de graduação",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-378-de-19-de-maio-de-2025-630395302"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-087",
+      "pergunta_id": "QA-087",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "O que a Portaria MEC nº 795/2025 mudou nas regras de transição do EaD?",
+      "resposta_objetiva": "A Portaria MEC nº 795/2025 alterou a Portaria 381/2025 e seu calendário regulatório, devendo ser lida como ato modificador da regra de transição.",
+      "fundamento": [
+        "Portaria MEC nº 795/2025."
+      ],
+      "impacto_operacional": "Ela atualiza regras e calendário regulatório; não deve ser interpretada isoladamente nem como autorização automática de mudança de formato.",
+      "procedimento": [
+        "Consultar o texto consolidado da Portaria 381 com as alterações da 795 antes de orientar um processo regulatório."
+      ],
+      "limites": "Questões sobre direito de conclusão de estudantes devem continuar sendo analisadas pela regra específica de transição.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 795/2025 — Alteração das regras de transição e calendário regulatório",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743"
+        },
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-088",
+      "pergunta_id": "QA-088",
+      "processo": "Formação de Professores",
+      "pergunta": "Licenciaturas podem ser ofertadas em EaD após o Marco Regulatório?",
+      "resposta_objetiva": "Não. O Decreto nº 12.456/2025 veda a oferta de licenciaturas a distância.",
+      "fundamento": [
+        "Decreto nº 12.456/2025, art. 9º, II."
+      ],
+      "impacto_operacional": "Licenciaturas estão entre as formações expressamente excluídas da oferta EaD no novo marco.",
+      "procedimento": [
+        "Para cursos antigos, verificar se o curso entrou em extinção e se o estudante está protegido pela transição."
+      ],
+      "limites": "Não aplicar a vedação de novos ingressos retroativamente sem analisar a regra de transição.",
+      "fontes": [
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        },
+        {
+          "norm": "Portaria MEC nº 378/2025 — Formatos de oferta dos cursos superiores de graduação",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-378-de-19-de-maio-de-2025-630395302"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-089",
+      "pergunta_id": "QA-089",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "O que acontece com o aluno de licenciatura EaD que já estava matriculado quando a oferta passou a ser vedada?",
+      "resposta_objetiva": "O estudante que se matriculou antes da alteração do status do curso para “em extinção” tem direito à conclusão no formato previsto no ato de matrícula, conforme a regra de transição.",
+      "fundamento": [
+        "Portaria MEC nº 381/2025, art. 8º, §3º; FAQ MEC."
+      ],
+      "impacto_operacional": "A mudança regulatória não elimina automaticamente o direito de conclusão dos estudantes protegidos pela transição.",
+      "procedimento": [
+        "Verificar matrícula, status do curso, ato de matrícula e prazo de integralização antes de orientar o estudante."
+      ],
+      "limites": "Situações de transferência, mudança de curso ou alteração de vínculo podem exigir análise específica.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-090",
+      "pergunta_id": "QA-090",
+      "processo": "Formação de Professores",
+      "pergunta": "Existe Formação Pedagógica para graduados não licenciados em Pedagogia?",
+      "resposta_objetiva": "Não. O Parecer CNE/CP nº 5/2025 orienta que não existe Formação Pedagógica para graduados não licenciados em Pedagogia; a formação pedagógica não foi criada para formar pedagogos.",
+      "fundamento": [
+        "Parecer CNE/CP nº 5/2025, item sobre Formação Pedagógica; normas de formação docente."
+      ],
+      "impacto_operacional": "A Formação Pedagógica é dirigida à formação para componentes curriculares específicos, e não substitui a licenciatura em Pedagogia.",
+      "procedimento": [
+        "Antes da matrícula, verificar a formação anterior, a habilitação pretendida e o enquadramento na Resolução 4/2024."
+      ],
+      "limites": "Situações históricas ou decisões judiciais específicas devem ser tratadas separadamente.",
+      "fontes": [
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        },
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-091",
+      "pergunta_id": "QA-091",
+      "processo": "Formação de Professores",
+      "pergunta": "Existe Segunda Licenciatura em Pedagogia?",
+      "resposta_objetiva": "Não. A orientação do CNE estabelece que não é possível um licenciado fazer Segunda Licenciatura em Pedagogia.",
+      "fundamento": [
+        "Parecer CNE/CP nº 5/2025, item 6, em conjunto com a Resolução CNE/CP nº 4/2024."
+      ],
+      "impacto_operacional": "A Segunda Licenciatura é destinada a portadores de diploma de licenciatura, mas a Pedagogia não pode ser escolhida como segunda licenciatura nessa estrutura.",
+      "procedimento": [
+        "Na matrícula, identificar a formação anterior e a habilitação pretendida e registrar a análise."
+      ],
+      "limites": "Para cursos iniciados antes da Resolução 4/2024, aplicar as regras de transição.",
+      "fontes": [
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        },
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-092",
+      "pergunta_id": "QA-092",
+      "processo": "Formação de Professores",
+      "pergunta": "Quem é pedagogo pode fazer Segunda Licenciatura em outra área?",
+      "resposta_objetiva": "Não. A orientação do CNE também estabelece que um pedagogo não pode fazer Segunda Licenciatura em outra área pela regra atual.",
+      "fundamento": [
+        "Parecer CNE/CP nº 5/2025, item 6; Resolução CNE/CP nº 4/2024."
+      ],
+      "impacto_operacional": "A formação em Pedagogia possui finalidade e estrutura próprias e não deve ser tratada como uma licenciatura de origem para ingresso em segunda licenciatura na regra atual.",
+      "procedimento": [
+        "Conferir diploma anterior, data de ingresso e curso pretendido antes da matrícula."
+      ],
+      "limites": "Não aplicar a conclusão a situações antigas sem verificar a data de início do curso e as regras de transição.",
+      "fontes": [
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        },
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-093",
+      "pergunta_id": "QA-093",
+      "processo": "Formação de Professores",
+      "pergunta": "Os diplomas de Segunda Licenciatura em Pedagogia iniciados antes da Resolução CNE/CP nº 4/2024 continuam válidos?",
+      "resposta_objetiva": "Sim, o Parecer CNE/CP nº 5/2025 reconhece a validade dos diplomas de Segunda Licenciatura em Pedagogia de cursos iniciados antes da homologação da Resolução CNE/CP nº 4/2024, observada a regra de transição.",
+      "fundamento": [
+        "Parecer CNE/CP nº 5/2025, item 7; Resolução CNE/CP nº 4/2024, regras de transição."
+      ],
+      "impacto_operacional": "O CNE tratou a situação dos estudantes que já haviam iniciado esses cursos antes da nova regra.",
+      "procedimento": [
+        "Verificar a data de início do curso e a documentação acadêmica que comprova a matrícula anterior à Resolução."
+      ],
+      "limites": "Não usar essa regra para validar novos ingressos posteriores ao marco regulatório.",
+      "fontes": [
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        },
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-094",
+      "pergunta_id": "QA-094",
+      "processo": "Formação de Professores",
+      "pergunta": "Como a IES deve verificar a compatibilidade entre a formação anterior e a habilitação pretendida na Formação Pedagógica?",
+      "resposta_objetiva": "A IES deve verificar, antes do aceite da matrícula, a compatibilidade entre a formação do candidato e a habilitação pretendida, utilizando critérios curriculares e documentando essa análise.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, art. 15, §7º; Parecer CNE/CP nº 5/2025."
+      ],
+      "impacto_operacional": "A compatibilidade não deve ser presumida apenas pelo nome do diploma anterior.",
+      "procedimento": [
+        "Analisar diploma, histórico, formação anterior, área pretendida e critérios curriculares; registrar a decisão antes da matrícula."
+      ],
+      "limites": "O enquadramento depende da formação concreta e das exigências curriculares do curso.",
+      "fontes": [
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        },
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-095",
+      "pergunta_id": "QA-095",
+      "processo": "Documentação Acadêmica",
+      "pergunta": "Onde deve ser registrada a análise de compatibilidade da formação anterior para Formação Pedagógica?",
+      "resposta_objetiva": "A análise de compatibilidade deve ser documentada e, segundo a orientação do CNE, encartada no histórico curricular do aluno da Formação Pedagógica.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, art. 15, §7º; Parecer CNE/CP nº 5/2025."
+      ],
+      "impacto_operacional": "A análise de ingresso precisa deixar evidência dos critérios utilizados pela IES.",
+      "procedimento": [
+        "Criar/usar documento próprio e garantir que o registro seja incorporado ao histórico curricular conforme o fluxo institucional."
+      ],
+      "limites": "O leiaute final deve observar também os requisitos documentais e digitais aplicáveis.",
+      "fontes": [
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        },
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-096",
+      "pergunta_id": "QA-096",
+      "processo": "Formação de Professores",
+      "pergunta": "Qual é a carga horária mínima da Segunda Licenciatura?",
+      "resposta_objetiva": "Os cursos de Segunda Licenciatura têm carga horária mínima variável de 1.200 a 1.800 horas, conforme a equivalência entre a formação original e a nova licenciatura.",
+      "fundamento": [
+        "Resolução CNE/CP nº 4/2024, art. 16."
+      ],
+      "impacto_operacional": "A carga horária não é única para todas as segundas licenciaturas; depende da equivalência entre formações.",
+      "procedimento": [
+        "Determinar a equivalência curricular e aplicar a faixa correspondente prevista na resolução."
+      ],
+      "limites": "Não definir a carga apenas pelo nome da segunda licenciatura.",
+      "fontes": [
+        {
+          "norm": "Resolução CNE/CP nº 4/2024 — Formação inicial de profissionais do magistério",
+          "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-097",
+      "pergunta_id": "QA-097",
+      "processo": "Formação de Professores",
+      "pergunta": "Quais condições uma IES deve atender para ofertar Formação Pedagógica ou Segunda Licenciatura?",
+      "resposta_objetiva": "Segundo o Parecer CNE/CP nº 5/2025, Formação Pedagógica e Segunda Licenciatura dependem de IES devidamente credenciada e da existência de curso de licenciatura reconhecido na disciplina pretendida, na mesma modalidade, com CPC 4 ou 5, observados os requisitos do parecer.",
+      "fundamento": [
+        "Parecer CNE/CP nº 5/2025, item 18."
+      ],
+      "impacto_operacional": "O parecer orienta que a capacidade de oferta deve ser verificada no e-MEC e vinculada à licenciatura correspondente.",
+      "procedimento": [
+        "Consultar o e-MEC, verificar reconhecimento, modalidade e CPC do curso de referência antes de ofertar ou matricular."
+      ],
+      "limites": "A situação regulatória pode mudar; consultar o e-MEC na data da análise.",
+      "fontes": [
+        {
+          "norm": "Parecer CNE/CP nº 5/2025 — Orientações para implantação das novas DCNs de formação docente",
+          "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-098",
+      "pergunta_id": "QA-098",
+      "processo": "Documentação Acadêmica",
+      "pergunta": "Quais dados devem constar no Histórico Escolar de graduação?",
+      "resposta_objetiva": "O MEC informa, com base no Parecer CNE/CES nº 379/2004, dados como identificação da instituição e do diplomado, curso, reconhecimento, processo seletivo, disciplinas, notas/conceitos, carga horária, colação e assinaturas, entre outros itens.",
+      "fundamento": [
+        "FAQ do MEC sobre Diploma e Histórico Escolar, com referência ao Parecer CNE/CES nº 379/2004."
+      ],
+      "impacto_operacional": "O checklist do MEC serve como referência de conteúdo do histórico escolar.",
+      "procedimento": [
+        "Conferir os campos do histórico e, para o documento digital, também validar o leiaute/XSD vigente."
+      ],
+      "limites": "Alguns itens históricos, como o ENC, devem ser interpretados de acordo com o período e a legislação aplicável.",
+      "fontes": [
+        {
+          "norm": "MEC — FAQ: dados que devem constar no Histórico Escolar",
+          "url": "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-099",
+      "pergunta_id": "QA-099",
+      "processo": "Diploma Digital",
+      "pergunta": "Existe uma especificação técnica para o Histórico Escolar Digital?",
+      "resposta_objetiva": "Sim. O MEC disponibiliza pacote XSD específico para o Histórico Escolar Digital, incluindo arquivos de leiaute e tipos básicos.",
+      "fundamento": [
+        "MEC — Pacote XSD v1.05 do Diploma Digital e Histórico Escolar Digital."
+      ],
+      "impacto_operacional": "O histórico digital possui estrutura XML própria e deve ser validado contra o pacote técnico vigente.",
+      "procedimento": [
+        "Identificar o XSD vigente e validar o XML antes de publicar ou integrar o documento."
+      ],
+      "limites": "A versão do pacote técnico pode mudar; não congelar o XSD sem verificar a publicação mais recente do MEC.",
+      "fontes": [
+        {
+          "norm": "MEC — Pacote XSD v1.05 do Diploma Digital e Histórico Escolar Digital",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados"
+        },
+        {
+          "norm": "Portaria MEC nº 70/2025 — Atualização do Diploma Digital",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-100",
+      "pergunta_id": "QA-100",
+      "processo": "Diploma Digital",
+      "pergunta": "O que deve ser considerado na conferência do diploma de graduação?",
+      "resposta_objetiva": "A conferência deve considerar os requisitos de conteúdo e registro do diploma, o reconhecimento do curso, a conclusão e, quando digital, os requisitos técnicos e de assinatura aplicáveis.",
+      "fundamento": [
+        "Portaria MEC nº 1.095/2018; Portaria MEC nº 70/2025; documentação técnica do Diploma Digital."
+      ],
+      "impacto_operacional": "A validade do diploma depende do atendimento ao conjunto de requisitos acadêmicos, regulatórios e de registro.",
+      "procedimento": [
+        "Confirmar conclusão, colação, reconhecimento, registro e consistência do documento digital/XML quando aplicável."
+      ],
+      "limites": "A conferência de um caso concreto pode exigir atos específicos do curso e da IES registradora.",
+      "fontes": [
+        {
+          "norm": "port-1095",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/estrutura-organizacional/orgaos-especificos-singulares/secretaria-de-regulacao-e-supervisao-da-educacao-superior/perguntasfrequentes"
+        },
+        {
+          "norm": "Portaria MEC nº 70/2025 — Atualização do Diploma Digital",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-101",
+      "pergunta_id": "QA-101",
+      "processo": "Diploma Digital",
+      "pergunta": "O que mudou no Diploma Digital com a Portaria MEC nº 70/2025?",
+      "resposta_objetiva": "A Portaria MEC nº 70/2025 atualizou a regulamentação do Diploma Digital, incluindo seu escopo e requisitos de preservação, assinatura digital e acesso ao XML.",
+      "fundamento": [
+        "Portaria MEC nº 70/2025, que altera a Portaria MEC nº 554/2019."
+      ],
+      "impacto_operacional": "O diploma digital deve permanecer verificável, íntegro, disponível e interoperável conforme os requisitos normativos e técnicos.",
+      "procedimento": [
+        "Manter sistemas, assinaturas, armazenamento e representação visual alinhados à Portaria 70 e ao XSD vigente."
+      ],
+      "limites": "Não tratar a representação visual como substituta do XML assinado.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 70/2025 — Atualização do Diploma Digital",
+          "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299"
+        },
+        {
+          "norm": "MEC — Pacote XSD v1.05 do Diploma Digital e Histórico Escolar Digital",
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-102",
+      "pergunta_id": "QA-102",
+      "processo": "Documentação Acadêmica",
+      "pergunta": "A IES pode cobrar pela expedição e registro do diploma e do histórico escolar final?",
+      "resposta_objetiva": "A orientação do MEC é que a expedição e o registro do diploma, do histórico escolar final e do certificado de conclusão são serviços educacionais incluídos, sem cobrança, ressalvada a apresentação decorativa especial escolhida pelo aluno.",
+      "fundamento": [
+        "MEC/CNE — Cobrança de Taxas; Portaria Normativa nº 23/2017 e Portaria MEC nº 1.095/2018, conforme referências do MEC."
+      ],
+      "impacto_operacional": "A resposta sobre cobrança deve distinguir os documentos finais incluídos dos serviços extraordinários e de situações contratuais específicas.",
+      "procedimento": [
+        "Identificar o documento, a via, a natureza do pedido e a regra contratual/normativa aplicável antes de cobrar."
+      ],
+      "limites": "Não generalizar a regra para toda segunda via ou serviço extraordinário sem analisar o enquadramento.",
+      "fontes": [
+        {
+          "norm": "MEC — FAQ: cobrança por diploma e histórico escolar",
+          "url": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas"
+        },
+        {
+          "norm": "port-1095",
+          "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/estrutura-organizacional/orgaos-especificos-singulares/secretaria-de-regulacao-e-supervisao-da-educacao-superior/perguntasfrequentes"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-103",
+      "pergunta_id": "QA-103",
+      "processo": "Transição e Extinção EaD",
+      "pergunta": "O que fazer quando um aluno pergunta se conseguirá concluir um curso EaD que entrou em extinção?",
+      "resposta_objetiva": "Em regra, o aluno protegido pela transição tem direito à conclusão no formato previsto no ato de matrícula, mas a Secretaria precisa verificar o enquadramento antes de responder.",
+      "fundamento": [
+        "Portaria MEC nº 381/2025, art. 8º, §§3º e 4º; FAQ MEC sobre aplicação gradual."
+      ],
+      "impacto_operacional": "A resposta depende de data da matrícula, status do curso, formato do ato de matrícula e prazo de integralização do PPC.",
+      "procedimento": [
+        "Solicitar: curso, modalidade, data de ingresso, status no e-MEC, ato de matrícula, PPC/prazo de integralização e eventuais alterações de vínculo."
+      ],
+      "limites": "Não responder apenas “sim” ou “não” sem esses dados quando o caso for individual.",
+      "fontes": [
+        {
+          "norm": "Portaria MEC nº 381/2025 — Regras de transição do Marco Regulatório",
+          "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf"
+        },
+        {
+          "norm": "dec-marco-regulatorio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-21",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar como orientação vinculada às fontes oficiais; em caso concreto, verificar vigência, data de ingresso, ato autorizativo, PPC e enquadramento específico.",
+      "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     }
   ]
 }

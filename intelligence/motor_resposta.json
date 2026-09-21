@@ -1,11 +1,7 @@
 {
-  "schema_version": "oraculo-motor-resposta-v1.1",
+  "schema_version": "8.2",
   "status": "draft_validacao",
-  "base": {
-    "referencias": 28,
-    "intencoes": 52,
-    "layout": "V5 congelada"
-  },
+  "base": "58 referências e 103 regras de resposta",
   "contrato_resposta": {
     "ordem": [
       "resposta_objetiva",
@@ -2260,6 +2256,742 @@
       ],
       "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
       "cautela": "Não generalizar além do escopo do ato."
+    },
+    {
+      "id": "QA-079",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "oferta enfermagem ead",
+      "gatilhos": [
+        "oferta enfermagem ead",
+        "enfermagem pode ser ofertada em ead?",
+        "enfermagem",
+        "ofertada"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-378-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-080",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "enfermagem semipresencial",
+      "gatilhos": [
+        "enfermagem semipresencial",
+        "enfermagem pode ser ofertada no formato semipresencial?",
+        "enfermagem",
+        "ofertada",
+        "formato",
+        "semipresencial"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-378-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-081",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "percentual presencial enfermagem",
+      "gatilhos": [
+        "percentual presencial enfermagem",
+        "qual percentual presencial deve ser observado em enfermagem?",
+        "percentual",
+        "presencial",
+        "observado",
+        "enfermagem"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-378-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-082",
+      "processo": "Enfermagem e Saúde",
+      "intencao": "saúde ead cursos proibidos",
+      "gatilhos": [
+        "saúde ead cursos proibidos",
+        "cursos da área de saúde podem ser ofertados em ead?",
+        "cursos",
+        "saúde",
+        "podem",
+        "ofertados"
+      ],
+      "referencias_prioritarias": [
+        "dec-marco-regulatorio",
+        "marco-portaria-378-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-083",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "aluno enfermagem ead antigo transição",
+      "gatilhos": [
+        "aluno enfermagem ead antigo transição",
+        "como ficam os alunos de enfermagem ead que já estavam matriculados antes do marco regulatório?",
+        "ficam",
+        "alunos",
+        "enfermagem",
+        "estavam",
+        "matriculados"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-084",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "curso em extinção novo ingresso",
+      "gatilhos": [
+        "curso em extinção novo ingresso",
+        "um curso ead que entrou em extinção pode receber novos ingressantes?",
+        "curso",
+        "entrou",
+        "extinção",
+        "receber",
+        "novos"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-085",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "prazo curso ead extinção conclusão",
+      "gatilhos": [
+        "prazo curso ead extinção conclusão",
+        "por quanto tempo um curso ead em extinção deve continuar sendo ofertado para os alunos protegidos pela transição?",
+        "quanto",
+        "tempo",
+        "curso",
+        "extinção",
+        "continuar"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-086",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "curso ead extinção semipresencial conversão",
+      "gatilhos": [
+        "curso ead extinção semipresencial conversão",
+        "um curso ead em extinção pode ser convertido para semipresencial?",
+        "curso",
+        "extinção",
+        "convertido",
+        "semipresencial"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "marco-portaria-795-2025",
+        "marco-portaria-378-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-087",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "portaria 795 transição ead",
+      "gatilhos": [
+        "portaria 795 transição ead",
+        "o que a portaria mec nº 795/2025 mudou nas regras de transição do ead?",
+        "portaria",
+        "mudou",
+        "regras",
+        "transição"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-795-2025",
+        "marco-portaria-381-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-088",
+      "processo": "Formação de Professores",
+      "intencao": "licenciatura ead marco regulatorio",
+      "gatilhos": [
+        "licenciatura ead marco regulatorio",
+        "licenciaturas podem ser ofertadas em ead após o marco regulatório?",
+        "licenciaturas",
+        "podem",
+        "ofertadas",
+        "marco",
+        "regulatório"
+      ],
+      "referencias_prioritarias": [
+        "dec-marco-regulatorio",
+        "marco-portaria-378-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-089",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "licenciatura ead aluno antigo conclusão",
+      "gatilhos": [
+        "licenciatura ead aluno antigo conclusão",
+        "o que acontece com o aluno de licenciatura ead que já estava matriculado quando a oferta passou a ser vedada?",
+        "acontece",
+        "aluno",
+        "licenciatura",
+        "estava",
+        "matriculado"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-090",
+      "processo": "Formação de Professores",
+      "intencao": "formação pedagogica em pedagogia",
+      "gatilhos": [
+        "formação pedagogica em pedagogia",
+        "existe formação pedagógica para graduados não licenciados em pedagogia?",
+        "existe",
+        "formação",
+        "pedagógica",
+        "graduados",
+        "licenciados"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-091",
+      "processo": "Formação de Professores",
+      "intencao": "segunda licenciatura pedagogia",
+      "gatilhos": [
+        "segunda licenciatura pedagogia",
+        "existe segunda licenciatura em pedagogia?",
+        "existe",
+        "segunda",
+        "licenciatura",
+        "pedagogia"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-092",
+      "processo": "Formação de Professores",
+      "intencao": "pedagogo segunda licenciatura outra area",
+      "gatilhos": [
+        "pedagogo segunda licenciatura outra area",
+        "quem é pedagogo pode fazer segunda licenciatura em outra área?",
+        "pedagogo",
+        "fazer",
+        "segunda",
+        "licenciatura",
+        "outra"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-093",
+      "processo": "Formação de Professores",
+      "intencao": "validade diploma segunda licenciatura pedagogia antigo",
+      "gatilhos": [
+        "validade diploma segunda licenciatura pedagogia antigo",
+        "os diplomas de segunda licenciatura em pedagogia iniciados antes da resolução cne/cp nº 4/2024 continuam válidos?",
+        "diplomas",
+        "segunda",
+        "licenciatura",
+        "pedagogia",
+        "iniciados"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025",
+        "formacao-resolucao-4-2024"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-094",
+      "processo": "Formação de Professores",
+      "intencao": "compatibilidade formação anterior formação pedagogica",
+      "gatilhos": [
+        "compatibilidade formação anterior formação pedagogica",
+        "como a ies deve verificar a compatibilidade entre a formação anterior e a habilitação pretendida na formação pedagógica?",
+        "verificar",
+        "compatibilidade",
+        "entre",
+        "formação",
+        "anterior"
+      ],
+      "referencias_prioritarias": [
+        "formacao-resolucao-4-2024",
+        "formacao-parecer-5-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-095",
+      "processo": "Documentação Acadêmica",
+      "intencao": "registro compatibilidade formação historico",
+      "gatilhos": [
+        "registro compatibilidade formação historico",
+        "onde deve ser registrada a análise de compatibilidade da formação anterior para formação pedagógica?",
+        "registrada",
+        "análise",
+        "compatibilidade",
+        "formação",
+        "anterior"
+      ],
+      "referencias_prioritarias": [
+        "formacao-resolucao-4-2024",
+        "formacao-parecer-5-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-096",
+      "processo": "Formação de Professores",
+      "intencao": "carga horaria segunda licenciatura",
+      "gatilhos": [
+        "carga horaria segunda licenciatura",
+        "qual é a carga horária mínima da segunda licenciatura?",
+        "carga",
+        "horária",
+        "mínima",
+        "segunda",
+        "licenciatura"
+      ],
+      "referencias_prioritarias": [
+        "formacao-resolucao-4-2024"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-097",
+      "processo": "Formação de Professores",
+      "intencao": "ies pode ofertar formação pedagogica segunda licenciatura",
+      "gatilhos": [
+        "ies pode ofertar formação pedagogica segunda licenciatura",
+        "quais condições uma ies deve atender para ofertar formação pedagógica ou segunda licenciatura?",
+        "quais",
+        "condições",
+        "atender",
+        "ofertar",
+        "formação"
+      ],
+      "referencias_prioritarias": [
+        "formacao-parecer-5-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-098",
+      "processo": "Documentação Acadêmica",
+      "intencao": "dados historico escolar graduação",
+      "gatilhos": [
+        "dados historico escolar graduação",
+        "quais dados devem constar no histórico escolar de graduação?",
+        "quais",
+        "dados",
+        "devem",
+        "constar",
+        "histórico"
+      ],
+      "referencias_prioritarias": [
+        "mec-faq-historico-379-2004"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-099",
+      "processo": "Diploma Digital",
+      "intencao": "historico escolar digital xsd",
+      "gatilhos": [
+        "historico escolar digital xsd",
+        "existe uma especificação técnica para o histórico escolar digital?",
+        "existe",
+        "especificação",
+        "técnica",
+        "histórico",
+        "escolar"
+      ],
+      "referencias_prioritarias": [
+        "diploma-xsd-105",
+        "diploma-portaria-70-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-100",
+      "processo": "Diploma Digital",
+      "intencao": "dados diploma graduação conferência",
+      "gatilhos": [
+        "dados diploma graduação conferência",
+        "o que deve ser considerado na conferência do diploma de graduação?",
+        "considerado",
+        "conferência",
+        "diploma",
+        "graduação"
+      ],
+      "referencias_prioritarias": [
+        "port-1095",
+        "diploma-portaria-70-2025"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-101",
+      "processo": "Diploma Digital",
+      "intencao": "portaria 70 diploma digital mudanças",
+      "gatilhos": [
+        "portaria 70 diploma digital mudanças",
+        "o que mudou no diploma digital com a portaria mec nº 70/2025?",
+        "mudou",
+        "diploma",
+        "digital",
+        "portaria"
+      ],
+      "referencias_prioritarias": [
+        "diploma-portaria-70-2025",
+        "diploma-xsd-105"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-102",
+      "processo": "Documentação Acadêmica",
+      "intencao": "cobrança diploma historico primeira via",
+      "gatilhos": [
+        "cobrança diploma historico primeira via",
+        "a ies pode cobrar pela expedição e registro do diploma e do histórico escolar final?",
+        "cobrar",
+        "expedição",
+        "registro",
+        "diploma",
+        "histórico"
+      ],
+      "referencias_prioritarias": [
+        "mec-faq-cobranca-documentos",
+        "port-1095"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
+    },
+    {
+      "id": "QA-103",
+      "processo": "Transição e Extinção EaD",
+      "intencao": "aluno curso ead extinção vai concluir",
+      "gatilhos": [
+        "aluno curso ead extinção vai concluir",
+        "o que fazer quando um aluno pergunta se conseguirá concluir um curso ead que entrou em extinção?",
+        "fazer",
+        "quando",
+        "aluno",
+        "pergunta",
+        "conseguirá"
+      ],
+      "referencias_prioritarias": [
+        "marco-portaria-381-2025",
+        "dec-marco-regulatorio"
+      ],
+      "referencias_nomes": [],
+      "pipeline": [
+        "classificar pergunta",
+        "recuperar referências prioritárias",
+        "verificar regra e transição temporal",
+        "separar fato normativo de orientação operacional",
+        "identificar dados faltantes do caso",
+        "montar resposta objetiva",
+        "exibir fontes oficiais e limites"
+      ],
+      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
+      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
     }
   ]
 }
