@@ -1,7 +1,7 @@
 {
   "schema_version": "8.2",
   "status": "draft_validacao",
-  "base": "58 referências normativas e orientações oficiais; 103 perguntas estruturadas",
+  "base": "V8.2 + Atos Regulatórios e Indicadores",
   "principios": [
     "Perguntas são roteadores de consulta; não constituem, por si, afirmações normativas.",
     "Resposta normativa deve apontar uma ou mais referências da base.",
@@ -1325,6 +1325,192 @@
       "tipo_resposta": "Árvore de decisão + dados necessários",
       "evidencia_necessaria": "Norma, orientação oficial ou documento acadêmico aplicável ao caso",
       "cautela": "Separar regra geral de situação de transição e exigir data de ingresso, formato e ato autorizativo quando esses dados forem determinantes."
+    },
+    {
+      "id": "QA-104",
+      "processo": "Atos Regulatórios",
+      "intencao": "ato autorização curso",
+      "pergunta": "O que é o ato de autorização de um curso e o que ele permite?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos"
+      ],
+      "tipo_resposta": "Regra + fonte oficial",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-105",
+      "processo": "Atos Regulatórios",
+      "intencao": "reconhecimento curso",
+      "pergunta": "O que significa o reconhecimento de um curso e por que ele é importante para a validade nacional do diploma?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos",
+        "mec-servico-reconhecimento-presencial"
+      ],
+      "tipo_resposta": "Regra + enquadramento",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-106",
+      "processo": "Atos Regulatórios",
+      "intencao": "renovação reconhecimento",
+      "pergunta": "O que é a renovação de reconhecimento e quando a Secretaria deve conferir esse ato?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos"
+      ],
+      "tipo_resposta": "Regra + procedimento",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-107",
+      "processo": "Atos Regulatórios",
+      "intencao": "portaria autorização reconhecimento",
+      "pergunta": "Como identificar uma Portaria de autorização, reconhecimento ou renovação de reconhecimento publicada para um curso?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos"
+      ],
+      "tipo_resposta": "Procedimento de conferência",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-108",
+      "processo": "Atos Regulatórios",
+      "intencao": "portaria curso e-MEC divergência",
+      "pergunta": "O que fazer quando a Portaria publicada e o cadastro e-MEC apresentam informações diferentes?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos"
+      ],
+      "tipo_resposta": "Procedimento + cautela",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-109",
+      "processo": "Atos Regulatórios",
+      "intencao": "curso reconhecimento primeira turma",
+      "pergunta": "O que a Secretaria deve conferir quando a primeira turma de um curso está próxima da conclusão e o reconhecimento ainda está em andamento?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos",
+        "mec-servico-reconhecimento-presencial"
+      ],
+      "tipo_resposta": "Regra + dados necessários",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-110",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "conceito enade resultado",
+      "pergunta": "O que é o Conceito Enade e como devo interpretar a divulgação de seu resultado?",
+      "referencias_prioritarias": [
+        "inep-indicadores-qualidade",
+        "inep-enade"
+      ],
+      "tipo_resposta": "Explicação + cautela",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-111",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "IDD",
+      "pergunta": "O que é o IDD e qual é sua relação com os indicadores de qualidade?",
+      "referencias_prioritarias": [
+        "inep-indicadores-qualidade"
+      ],
+      "tipo_resposta": "Explicação",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-112",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "CPC",
+      "pergunta": "O que é o CPC e para que ele é utilizado?",
+      "referencias_prioritarias": [
+        "inep-indicadores-qualidade"
+      ],
+      "tipo_resposta": "Explicação + uso regulatório",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-113",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "IGC",
+      "pergunta": "O que é o IGC e qual é sua unidade de análise?",
+      "referencias_prioritarias": [
+        "inep-indicadores-qualidade"
+      ],
+      "tipo_resposta": "Explicação + cautela",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-114",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "enade resultado portaria",
+      "pergunta": "Como acompanhar as Portarias que divulgam resultados do Enade e dos indicadores?",
+      "referencias_prioritarias": [
+        "inep-indicadores-2026",
+        "inep-indicadores-2025"
+      ],
+      "tipo_resposta": "Procedimento de monitoramento",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-115",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "resultado enade histórico",
+      "pergunta": "O resultado ou a regularidade do Enade pode aparecer no histórico escolar?",
+      "referencias_prioritarias": [
+        "inep-enade"
+      ],
+      "tipo_resposta": "Regra + documento",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-116",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "enade indicador curso",
+      "pergunta": "Qual a diferença entre resultado do estudante no Enade, Conceito Enade, CPC e IGC?",
+      "referencias_prioritarias": [
+        "inep-enade",
+        "inep-indicadores-qualidade"
+      ],
+      "tipo_resposta": "Comparação conceitual",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-117",
+      "processo": "Avaliação e Indicadores",
+      "intencao": "CC conceito curso",
+      "pergunta": "O que é o Conceito de Curso (CC) e como ele se relaciona com reconhecimento e renovação?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos",
+        "mec-servico-reconhecimento-presencial"
+      ],
+      "tipo_resposta": "Explicação + processo regulatório",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
+    },
+    {
+      "id": "QA-118",
+      "processo": "Atos Regulatórios",
+      "intencao": "monitorar portarias regulatórias",
+      "pergunta": "Quais Portarias regulatórias de cursos devem entrar no Radar do Oráculo?",
+      "referencias_prioritarias": [
+        "emec-cadastro-atos"
+      ],
+      "tipo_resposta": "Regra de monitoramento",
+      "evidencia_necessaria": "Ato regulatório, publicação oficial, cadastro e-MEC ou divulgação oficial do Inep aplicável ao caso",
+      "cautela": "Distinguir ano de referência, data de publicação, ato regulatório, indicador e situação cadastral; exigir código e-MEC e modalidade quando necessários."
     }
   ]
 }
