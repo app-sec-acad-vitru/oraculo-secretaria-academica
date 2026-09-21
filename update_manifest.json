@@ -1,9 +1,9 @@
 {
-  "version": "3.0.0",
-  "generated_at": "2026-09-20",
+  "version": "3.1.0",
+  "generated_at": "2026-09-21",
   "verified_at": "2026-09-20T22:00:00-03:00",
-  "purpose": "Atualização manual extraordinária do Oráculo em 20/09/2026",
-  "update_strategy": "Rodada manual de pesquisa normativa; manter revisão semanal contra fontes oficiais.",
+  "purpose": "V8.1 — correção do vínculo Radar↔base e estratégia de carregamento sem cache manual",
+  "update_strategy": "Base e monitoramento com URL única por carregamento + cache:no-store; camada de inteligência carregada dinamicamente com Date.now().",
   "sources_monitored": [
     "MEC Normas",
     "INEP",
@@ -12,7 +12,7 @@
     "Imprensa Nacional/DOU",
     "CONARQ"
   ],
-  "records": 51,
+  "records": 52,
   "questions": 78,
   "rules": 78,
   "validated_responses": 73,
@@ -23,7 +23,8 @@
   "cache_strategy": {
     "data_json": "fetch com URL única (Date.now) + cache:no-store",
     "monitoring": "fetch com URL única (Date.now) + cache:no-store",
-    "intelligence": "script carregado com query string Date.now; JSONs internos também usam Date.now + cache:no-store",
-    "html": "GitHub Pages pode manter cache do HTML; não há controle de Cache-Control por arquivo no Pages. O shell passa a buscar a camada de inteligência sem depender de versão manual."
-  }
+    "intelligence": "script carregado dinamicamente com query string Date.now; JSONs internos também usam Date.now + cache:no-store",
+    "html": "O shell pode ser armazenado pelo GitHub Pages/navegador; os dados e a camada de inteligência não dependem de versão manual do HTML para atualização."
+  },
+  "radar_strategy": "Vincular primeiro por id da referência e usar source/url apenas como fallback."
 }
