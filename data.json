@@ -2288,5 +2288,294 @@
       "Histórico Escolar Digital",
       "XML"
     ]
+  },
+  {
+    "id": "emec-cadastro-atos",
+    "norm": "Cadastro e-MEC — Atos autorizativos e processos regulatórios",
+    "category": "Regulação e Atos Autorizativos",
+    "status": "Vigente / base oficial de consulta",
+    "date": "",
+    "tags": [
+      "e-MEC",
+      "autorização",
+      "reconhecimento",
+      "renovação de reconhecimento",
+      "ato regulatório",
+      "curso",
+      "IES"
+    ],
+    "article": "",
+    "excerpt": "O Cadastro e-MEC é a base oficial de informações sobre IES e cursos e permite consultar atos de autorização, reconhecimento e renovação de reconhecimento, avaliações e processos regulatórios.",
+    "summary": "É a referência operacional para conferir a situação regulatória cadastrada de uma IES ou curso no sistema federal.",
+    "impact": "A Secretaria deve conferir o cadastro e-MEC e os atos publicados antes de tratar um curso como regular, autorizado, reconhecido, renovado ou em determinada situação regulatória.",
+    "procedure": "Consultar o curso pelo nome ou código e-MEC, conferir modalidade, situação, atos autorizativos, avaliações e processos em andamento; em caso de divergência, seguir o procedimento oficial de correção/inserção do ato.",
+    "source": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/cadastro-nacional-de-cursos-e-ies",
+    "sourceName": "MEC — Cadastro e-MEC",
+    "synonyms": [
+      "e-MEC",
+      "ato autorizativo",
+      "atos autorizativos",
+      "autorização",
+      "reconhecimento",
+      "renovação"
+    ],
+    "process": "Atos Regulatórios",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Conferir o Cadastro e-MEC e o ato regulatório antes de concluir sobre a regularidade do curso.",
+    "risk": "Alto",
+    "related": [
+      "e-MEC",
+      "autorização",
+      "reconhecimento",
+      "renovação de reconhecimento",
+      "CPC",
+      "CC",
+      "Enade"
+    ]
+  },
+  {
+    "id": "mec-servico-reconhecimento-presencial",
+    "norm": "MEC — Reconhecimento de curso de graduação presencial",
+    "category": "Regulação e Atos Autorizativos",
+    "status": "Serviço oficial vigente",
+    "date": "",
+    "tags": [
+      "reconhecimento",
+      "curso presencial",
+      "CC",
+      "avaliação in loco",
+      "SERES",
+      "INEP",
+      "e-MEC"
+    ],
+    "article": "",
+    "excerpt": "O reconhecimento de curso presencial tem como referencial o resultado da avaliação externa in loco realizada pelo Inep; o serviço oficial informa os documentos e etapas do processo.",
+    "summary": "O reconhecimento depende do processo regulatório e da avaliação externa, com tramitação no e-MEC e decisão da SERES.",
+    "impact": "A Secretaria precisa distinguir autorização, reconhecimento e renovação de reconhecimento e controlar os reflexos cadastrais e acadêmicos do ato publicado.",
+    "procedure": "Consultar o processo no e-MEC, conferir resultado da avaliação, decisão da SERES e portaria publicada, além do reflexo cadastral.",
+    "source": "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-presencial",
+    "sourceName": "Gov.br — MEC",
+    "synonyms": [
+      "reconhecimento presencial",
+      "reconhecimento de curso",
+      "CC",
+      "SERES"
+    ],
+    "process": "Atos Regulatórios",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Conferir o processo e o ato publicado no e-MEC antes de alterar cadastro ou rotina acadêmica.",
+    "risk": "Alto",
+    "related": [
+      "e-MEC",
+      "reconhecimento",
+      "CC",
+      "INEP",
+      "SERES"
+    ]
+  },
+  {
+    "id": "mec-servico-reconhecimento-ead",
+    "norm": "MEC — Reconhecimento de curso de graduação EaD",
+    "category": "Regulação e Atos Autorizativos",
+    "status": "Serviço oficial vigente",
+    "date": "",
+    "tags": [
+      "reconhecimento",
+      "EaD",
+      "CC",
+      "avaliação in loco",
+      "SERES",
+      "INEP",
+      "e-MEC"
+    ],
+    "article": "",
+    "excerpt": "O reconhecimento de curso EaD tem como referencial o resultado da avaliação externa in loco realizada pelo Inep e envolve verificação no e-MEC e publicação do ato correspondente.",
+    "summary": "O processo de reconhecimento EaD deve ser acompanhado no e-MEC e seus resultados refletidos no cadastro do curso.",
+    "impact": "A Secretaria deve verificar o ato e a modalidade do curso antes de emitir documentos ou responder sobre sua regularidade.",
+    "procedure": "Consultar o processo e-MEC, a avaliação e a decisão da SERES; depois conferir a publicação da portaria e o reflexo cadastral.",
+    "source": "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-ead",
+    "sourceName": "Gov.br — MEC",
+    "synonyms": [
+      "reconhecimento EAD",
+      "reconhecimento EaD",
+      "curso EAD",
+      "curso EaD"
+    ],
+    "process": "Atos Regulatórios",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Conferir a situação do curso no e-MEC e a portaria publicada.",
+    "risk": "Alto",
+    "related": [
+      "e-MEC",
+      "reconhecimento",
+      "EaD",
+      "CC",
+      "SERES"
+    ]
+  },
+  {
+    "id": "inep-indicadores-qualidade",
+    "norm": "INEP — Indicadores de Qualidade da Educação Superior",
+    "category": "Avaliação e Indicadores",
+    "status": "Vigente / referência oficial",
+    "date": "",
+    "tags": [
+      "Conceito Enade",
+      "IDD",
+      "CPC",
+      "IGC",
+      "Sinaes",
+      "indicadores",
+      "qualidade"
+    ],
+    "article": "",
+    "excerpt": "Os Indicadores de Qualidade da Educação Superior são expressos em escala contínua e em cinco níveis e estão relacionados ao ciclo avaliativo do Enade.",
+    "summary": "O conjunto oficial inclui Conceito Enade, IDD, CPC e IGC.",
+    "impact": "Os indicadores devem ser tratados como informações distintas, com periodicidade e unidade de análise próprias, e não como sinônimos de ato autorizativo.",
+    "procedure": "Identificar qual indicador está sendo consultado, seu ano de referência, unidade de análise e fonte oficial antes de usar o resultado em comunicação ou processo interno.",
+    "source": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/indicadores-de-qualidade-da-educacao-superior",
+    "sourceName": "INEP",
+    "synonyms": [
+      "indicadores de qualidade",
+      "Enade",
+      "IDD",
+      "CPC",
+      "IGC"
+    ],
+    "process": "Avaliação e Indicadores",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Consultar a página oficial do Inep e a publicação específica do ano/indicador.",
+    "risk": "Médio",
+    "related": [
+      "Enade",
+      "IDD",
+      "CPC",
+      "IGC",
+      "Sinaes"
+    ]
+  },
+  {
+    "id": "inep-indicadores-2026",
+    "norm": "INEP — Legislação e resultados dos Indicadores de Qualidade 2026",
+    "category": "Avaliação e Indicadores",
+    "status": "Publicações de 2026",
+    "date": "2026",
+    "tags": [
+      "2026",
+      "Conceito Enade",
+      "Licenciaturas",
+      "Medicina",
+      "Portaria 90",
+      "Portaria 25"
+    ],
+    "article": "",
+    "excerpt": "A página de legislação de 2026 reúne portarias relacionadas aos indicadores, incluindo a Portaria nº 90/2026 sobre o Conceito Enade das Licenciaturas referente a 2025 e a Portaria nº 25/2026 sobre manifestações relativas ao Conceito Enade de Medicina referente a 2025.",
+    "summary": "É um ponto de monitoramento para novas portarias, resultados e procedimentos de divulgação dos indicadores.",
+    "impact": "Permite acompanhar publicações de resultados e procedimentos que podem exigir conferência de cursos, manifestações institucionais e atualização de bases internas.",
+    "procedure": "Monitorar a página anual do Inep e vincular cada resultado à edição, curso, código e indicador correspondente.",
+    "source": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2026",
+    "sourceName": "INEP",
+    "synonyms": [
+      "Portaria 90 2026",
+      "Portaria 25 2026",
+      "indicadores 2026",
+      "resultado Enade 2025"
+    ],
+    "process": "Avaliação e Indicadores",
+    "sourceType": "Portaria / divulgação oficial",
+    "quoteExact": false,
+    "action": "Conferir a publicação anual e o arquivo de resultados antes de incorporar números ao cadastro interno.",
+    "risk": "Médio",
+    "related": [
+      "Conceito Enade",
+      "CPC",
+      "IGC",
+      "IDD",
+      "Enade"
+    ]
+  },
+  {
+    "id": "inep-indicadores-2025",
+    "norm": "INEP — Resultados dos Indicadores de Qualidade 2025",
+    "category": "Avaliação e Indicadores",
+    "status": "Publicações de 2025",
+    "date": "2025",
+    "tags": [
+      "2025",
+      "Conceito Enade",
+      "IDD",
+      "CPC",
+      "IGC",
+      "resultados"
+    ],
+    "article": "",
+    "excerpt": "A página de 2025 reúne publicações de resultados dos indicadores, incluindo Conceito Enade, IDD, CPC e IGC referentes a edições anteriores conforme os atos publicados.",
+    "summary": "Serve como histórico oficial para localizar portarias e resultados de indicadores por ano.",
+    "impact": "A Secretaria e áreas institucionais podem usar a página como fonte para validar resultados divulgados e evitar confusão entre ano do exame e ano de publicação do indicador.",
+    "procedure": "Verificar sempre o ano de referência do indicador e a portaria específica antes de registrar o resultado.",
+    "source": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2025",
+    "sourceName": "INEP",
+    "synonyms": [
+      "resultados 2025",
+      "CPC 2023",
+      "IGC 2023",
+      "Enade 2023",
+      "IDD 2023"
+    ],
+    "process": "Avaliação e Indicadores",
+    "sourceType": "Resultado / legislação oficial",
+    "quoteExact": false,
+    "action": "Usar a portaria e a base oficial do Inep como fonte primária do resultado.",
+    "risk": "Médio",
+    "related": [
+      "Conceito Enade",
+      "IDD",
+      "CPC",
+      "IGC"
+    ]
+  },
+  {
+    "id": "inep-enade",
+    "norm": "INEP — Enade e ciclo avaliativo",
+    "category": "Avaliação e Indicadores",
+    "status": "Vigente / referência oficial",
+    "date": "",
+    "tags": [
+      "Enade",
+      "ciclo avaliativo",
+      "concluintes",
+      "Questionário do Estudante",
+      "Sinaes",
+      "histórico escolar"
+    ],
+    "article": "",
+    "excerpt": "O Enade integra o Sinaes, avalia o rendimento dos estudantes e seus resultados, juntamente com outros insumos, alimentam os indicadores de qualidade da educação superior.",
+    "summary": "O Enade possui ciclo avaliativo trienal por áreas e a situação de regularidade do estudante é registrada no histórico escolar.",
+    "impact": "A Secretaria deve acompanhar edição, área avaliada, inscrição, regularidade e resultados, sem confundir resultado individual do estudante com indicador do curso ou da IES.",
+    "procedure": "Identificar a edição do Enade, área/ciclo, condição do estudante e indicador ou resultado que está sendo consultado.",
+    "source": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-bacharelado-e-superiores-de-tecnologia",
+    "sourceName": "INEP",
+    "synonyms": [
+      "Enade",
+      "regularidade Enade",
+      "ciclo Enade",
+      "Questionário do Estudante"
+    ],
+    "process": "Avaliação e Indicadores",
+    "sourceType": "Orientação oficial",
+    "quoteExact": false,
+    "action": "Consultar o Inep para a edição específica e conferir a regularidade acadêmica no histórico.",
+    "risk": "Alto",
+    "related": [
+      "Conceito Enade",
+      "IDD",
+      "CPC",
+      "IGC",
+      "histórico escolar"
+    ]
   }
 ]
