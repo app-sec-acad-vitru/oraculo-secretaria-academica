@@ -338,6 +338,22 @@
     });
   }
 
-  async function boot(){const ok=await loadIntelligence();if(!ok)return;wireSearch();addPanel();}
-  window.addEventListener("load",boot);
+  // Expor imediatamente para a busca principal da V5, mesmo enquanto a base é carregada.
+  window.OraculoIntelligenceRun = run;
+
+  async function boot(){
+    const ok=await loadIntelligence();
+    if(!ok){
+      console.error("[Oráculo] Não foi possível inicializar a inteligência.");
+      return;
+    }
+    wireSearch();
+    addPanel();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot, {once:true});
+  } else {
+    boot();
+  }
 })();
