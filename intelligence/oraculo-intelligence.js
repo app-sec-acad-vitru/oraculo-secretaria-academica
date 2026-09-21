@@ -195,7 +195,23 @@
 
 
     // Marco Regulatório — Decreto 12.456/2025 e atos complementares
-    if (q.includes("portaria 794") || (q.includes("alteracao") && q.includes("portaria 506"))) return ruleById("QA-064");
+    // QA-064 deve prevalecer sempre que a pergunta tratar de mudança/alteração da Portaria 506
+    // ou mencionar diretamente a Portaria 794/2025, evitando empate com QA-063.
+    if (q.includes("portaria 794")) return ruleById("QA-064");
+    if (
+      q.includes("portaria 506") &&
+      (
+        q.includes("alteracao") ||
+        q.includes("alteracoes") ||
+        q.includes("mudou") ||
+        q.includes("mudanca") ||
+        q.includes("mudancas") ||
+        q.includes("modificacao") ||
+        q.includes("modificacoes") ||
+        q.includes("o que mudou") ||
+        q.includes("que mudou")
+      )
+    ) return ruleById("QA-064");
     if (q.includes("portaria 506") || (q.includes("polos") && q.includes("mediadores")) || (q.includes("tutores") && q.includes("ead"))) return ruleById("QA-063");
     if ((q.includes("frequencia") || q.includes("presenca")) && (q.includes("sincrona") || q.includes("atividades presenciais")) && (q.includes("ead") || q.includes("curso"))) return ruleById("QA-062");
     if (q.includes("polo") && (q.includes("responsabilidade") || q.includes("responsabilidades"))) return ruleById("QA-061");
