@@ -237,6 +237,20 @@
       return ruleById("QA-010");
     }
 
+    // Relação entre Diploma Digital e Histórico Escolar Digital
+    // Deve vir antes do gatilho genérico de "histórico + digital".
+    if (
+      q.includes("diploma digital") &&
+      (
+        q.includes("historico escolar digital") ||
+        q.includes("historico digital") ||
+        q.includes("se relacionam") ||
+        q.includes("relacao entre")
+      )
+    ) {
+      return ruleById("QA-011");
+    }
+
     // Histórico escolar digital
     if (
       q.includes("historico escolar digital") ||
