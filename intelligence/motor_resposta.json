@@ -1,7 +1,11 @@
 {
-  "schema_version": "8.2",
+  "schema_version": "oraculo-motor-resposta-v1.0",
   "status": "draft_validacao",
-  "base": "V8.2 + Atos Regulatórios e Indicadores",
+  "base": {
+    "referencias": 28,
+    "intencoes": 52,
+    "layout": "V5 congelada"
+  },
   "contrato_resposta": {
     "ordem": [
       "resposta_objetiva",
@@ -24,9 +28,9 @@
       "processo": "Vida acadêmica",
       "intencao": "validade de diploma",
       "gatilhos": [
-        "validade nacional do diploma",
-        "validade diploma curso superior",
-        "diploma validade nacional"
+        "Qual é a regra geral sobre validade nacional de diploma de curso superior?",
+        "validade de diploma",
+        "Vida acadêmica"
       ],
       "referencias_prioritarias": [
         "ldb-9394",
@@ -53,10 +57,9 @@
       "processo": "Documentos",
       "intencao": "emissão de diploma",
       "gatilhos": [
-        "expedicao e registro diploma",
-        "emissao e registro diploma",
-        "prazos expedicao diploma",
-        "registro de diploma"
+        "Quais regras devo observar para expedição e registro de diploma?",
+        "emissão de diploma",
+        "Documentos"
       ],
       "referencias_prioritarias": [
         "port-1095",
@@ -85,9 +88,9 @@
       "processo": "Documentos",
       "intencao": "histórico escolar",
       "gatilhos": [
-        "informacoes historico escolar",
-        "elementos historico escolar",
-        "dados do historico escolar"
+        "Quais informações devem constar no histórico escolar?",
+        "histórico escolar",
+        "Documentos"
       ],
       "referencias_prioritarias": [
         "parecer-379-2004",
@@ -116,10 +119,9 @@
       "processo": "Documentos",
       "intencao": "transferência",
       "gatilhos": [
-        "transferencia de aluno",
-        "documentacao de transferencia",
-        "documentos de transferencia",
-        "transferencia entre instituicoes"
+        "Quais regras estão relacionadas à transferência e à documentação de transferência?",
+        "transferência",
+        "Documentos"
       ],
       "referencias_prioritarias": [
         "port-230-2007",
@@ -146,10 +148,9 @@
       "processo": "Vida acadêmica",
       "intencao": "inadimplência",
       "gatilhos": [
-        "inadimplencia do aluno",
-        "aluno inadimplente",
-        "penalidades por inadimplencia",
-        "direitos academicos inadimplencia"
+        "Quais direitos acadêmicos precisam ser observados quando o aluno está inadimplente?",
+        "inadimplência",
+        "Vida acadêmica"
       ],
       "referencias_prioritarias": [
         "lei-9870"
@@ -174,11 +175,9 @@
       "processo": "Documentos",
       "intencao": "cobrança de documentos",
       "gatilhos": [
-        "cobranca de diploma",
-        "cobranca de historico escolar",
-        "taxa emissao diploma",
-        "cobranca documentos academicos",
-        "pode cobrar taxa para emitir diploma ou historico"
+        "Pode haver cobrança pela emissão de diploma ou histórico?",
+        "cobrança de documentos",
+        "Documentos"
       ],
       "referencias_prioritarias": [
         "pn-23-2017",
@@ -207,10 +206,9 @@
       "processo": "Documentos",
       "intencao": "histórico digital",
       "gatilhos": [
-        "historico escolar digital estrutura",
-        "emitir historico escolar digital",
-        "estrutura do historico digital",
-        "XSD historico escolar digital"
+        "Como deve ser estruturado o histórico escolar digital?",
+        "histórico digital",
+        "Documentos"
       ],
       "referencias_prioritarias": [
         "mec-xsd-105",
@@ -237,9 +235,9 @@
       "processo": "Diploma Digital",
       "intencao": "estrutura técnica",
       "gatilhos": [
-        "elementos tecnicos diploma digital",
-        "estrutura tecnica diploma digital",
-        "componentes diploma digital"
+        "Quais elementos técnicos preciso observar no Diploma Digital?",
+        "estrutura técnica",
+        "Diploma Digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -268,9 +266,9 @@
       "processo": "Diploma Digital",
       "intencao": "XML",
       "gatilhos": [
-        "XML diploma digital",
-        "arquivo XML diploma",
-        "schema XSD diploma digital"
+        "Quais regras se aplicam ao XML do Diploma Digital?",
+        "XML",
+        "Diploma Digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -299,9 +297,9 @@
       "processo": "Diploma Digital",
       "intencao": "assinatura",
       "gatilhos": [
-        "assinatura diploma digital",
-        "integridade diploma digital",
-        "carimbo de tempo diploma"
+        "Quais requisitos de assinatura e integridade devo considerar no Diploma Digital?",
+        "assinatura",
+        "Diploma Digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -330,10 +328,9 @@
       "processo": "Diploma Digital",
       "intencao": "histórico digital",
       "gatilhos": [
-        "relacao diploma historico digital",
-        "diferenca diploma historico digital",
-        "diploma e historico escolar digital",
-        "diploma historico escolar digital juntos"
+        "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+        "histórico digital",
+        "Diploma Digital"
       ],
       "referencias_prioritarias": [
         "diploma-2025",
@@ -360,9 +357,9 @@
       "processo": "Diploma Digital",
       "intencao": "nato-digital",
       "gatilhos": [
-        "documento nato digital",
-        "nato digital academico",
-        "documento produzido originalmente em meio digital"
+        "O que a base atual informa sobre documento nato-digital no contexto acadêmico?",
+        "nato-digital",
+        "Diploma Digital"
       ],
       "referencias_prioritarias": [
         "port-554",
@@ -391,9 +388,9 @@
       "processo": "Acervo",
       "intencao": "responsabilidade",
       "gatilhos": [
-        "guarda acervo academico",
-        "responsabilidade pelo acervo academico",
-        "custodia acervo academico"
+        "Quem possui responsabilidades relacionadas à guarda e custódia do acervo acadêmico?",
+        "responsabilidade",
+        "Acervo"
       ],
       "referencias_prioritarias": [
         "port-315"
@@ -418,9 +415,9 @@
       "processo": "Acervo",
       "intencao": "digitalização",
       "gatilhos": [
-        "digitalizacao acervo academico",
-        "converter acervo para meio digital",
-        "digitalizacao documentos academicos"
+        "Quais regras orientam a conversão do acervo acadêmico para meio digital?",
+        "digitalização",
+        "Acervo"
       ],
       "referencias_prioritarias": [
         "port-360",
@@ -447,10 +444,9 @@
       "processo": "Acervo",
       "intencao": "preservação",
       "gatilhos": [
-        "preservacao acervo digital",
-        "armazenamento preservacao acervo",
-        "preservacao documentos academicos digitais",
-        "preservar acervo academico digital"
+        "Quais cuidados de armazenamento e preservação aparecem na base?",
+        "preservação",
+        "Acervo"
       ],
       "referencias_prioritarias": [
         "port-613"
@@ -475,9 +471,9 @@
       "processo": "Acervo",
       "intencao": "documento físico",
       "gatilhos": [
-        "novos documentos fisicos acervo",
-        "documentos academicos em meio fisico",
-        "producao de documentos fisicos acervo"
+        "A produção de novos documentos físicos do acervo é permitida?",
+        "documento físico",
+        "Acervo"
       ],
       "referencias_prioritarias": [
         "port-360"
@@ -502,9 +498,9 @@
       "processo": "Acervo",
       "intencao": "RDC-Arq",
       "gatilhos": [
-        "RDC-Arq acervo academico",
-        "repositorio arquivistico digital acervo",
-        "RDC Arq"
+        "Onde aparece a referência a RDC-Arq no acervo acadêmico?",
+        "RDC-Arq",
+        "Acervo"
       ],
       "referencias_prioritarias": [
         "port-613"
@@ -529,10 +525,9 @@
       "processo": "Governança",
       "intencao": "dados pessoais",
       "gatilhos": [
-        "principios da LGPD",
-        "tratamento de dados pessoais",
-        "LGPD dados alunos",
-        "dados pessoais alunos"
+        "Quais cuidados gerais a Secretaria deve observar no tratamento de dados pessoais?",
+        "dados pessoais",
+        "Governança"
       ],
       "referencias_prioritarias": [
         "lgpd-13709"
@@ -557,10 +552,9 @@
       "processo": "Governança",
       "intencao": "CPF",
       "gatilhos": [
-        "CPF do aluno",
-        "tratamento do CPF",
-        "CPF processos academicos",
-        "CPF LGPD aluno"
+        "Como tratar o CPF do aluno dentro dos processos acadêmicos?",
+        "CPF",
+        "Governança"
       ],
       "referencias_prioritarias": [
         "lgpd-13709"
@@ -585,10 +579,9 @@
       "processo": "Governança",
       "intencao": "acesso",
       "gatilhos": [
-        "acesso a dados academicos",
-        "controle de acesso dados alunos",
-        "permissoes dados academicos",
-        "quem pode acessar dados academicos"
+        "Quais cuidados devo considerar ao conceder acesso a dados acadêmicos?",
+        "acesso",
+        "Governança"
       ],
       "referencias_prioritarias": [
         "lgpd-13709"
@@ -613,9 +606,9 @@
       "processo": "ENADE",
       "intencao": "regularidade",
       "gatilhos": [
-        "regularidade do estudante no ENADE",
-        "regularidade ENADE aluno",
-        "situacao regular ENADE"
+        "O que a base informa sobre regularidade do estudante no ENADE?",
+        "regularidade",
+        "ENADE"
       ],
       "referencias_prioritarias": [
         "sinaes-10861",
@@ -642,9 +635,9 @@
       "processo": "ENADE",
       "intencao": "cronograma",
       "gatilhos": [
-        "cronograma ENADE 2026",
-        "datas ENADE 2026",
-        "etapas ENADE 2026"
+        "Quais são as etapas do cronograma do ENADE 2026 que impactam a Secretaria?",
+        "cronograma",
+        "ENADE"
       ],
       "referencias_prioritarias": [
         "enade-2026-cronograma"
@@ -669,9 +662,9 @@
       "processo": "ENADE",
       "intencao": "licenciaturas",
       "gatilhos": [
-        "ENADE das licenciaturas",
-        "ENADE licenciaturas 2026",
-        "licenciaturas no ENADE"
+        "Como o ENADE 2026 se relaciona às licenciaturas?",
+        "licenciaturas",
+        "ENADE"
       ],
       "referencias_prioritarias": [
         "enade-2026-cronograma",
@@ -698,9 +691,9 @@
       "processo": "ENADE",
       "intencao": "conceito",
       "gatilhos": [
-        "Conceito Enade das Licenciaturas",
-        "Portaria 90 2026 conceito Enade",
-        "calculo conceito Enade licenciaturas"
+        "O que a Portaria nº 90/2026 disciplina sobre o Conceito Enade das Licenciaturas?",
+        "conceito",
+        "ENADE"
       ],
       "referencias_prioritarias": [
         "enade-qualidade-2026-portaria90"
@@ -725,10 +718,9 @@
       "processo": "ENADE",
       "intencao": "histórico",
       "gatilhos": [
-        "regularidade ENADE no historico",
-        "registro academico do ENADE",
-        "situacao ENADE no historico academico",
-        "registro da regularidade no ENADE"
+        "Qual relação entre ENADE e registros acadêmicos/regularidade?",
+        "histórico",
+        "ENADE"
       ],
       "referencias_prioritarias": [
         "sinaes-10861",
@@ -755,9 +747,9 @@
       "processo": "Censo",
       "intencao": "cadastro",
       "gatilhos": [
-        "dados institucionais Censo Educacao Superior",
-        "dados academicos Censo Educacao Superior",
-        "cadastro Censo Educacao Superior"
+        "Quais dados institucionais e acadêmicos são relacionados ao Censo da Educação Superior?",
+        "cadastro",
+        "Censo"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma"
@@ -782,9 +774,9 @@
       "processo": "Censo",
       "intencao": "e-MEC",
       "gatilhos": [
-        "relacao e-MEC e Censo",
-        "dados e-MEC no Censo",
-        "cadastro e-MEC Censo"
+        "Qual é a relação entre cadastro e-MEC e Censo na base atual?",
+        "e-MEC",
+        "Censo"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma",
@@ -811,9 +803,9 @@
       "processo": "Censo",
       "intencao": "cronograma",
       "gatilhos": [
-        "prazos Censo 2026",
-        "cronograma Censo 2026",
-        "datas Censo Educacao Superior 2026"
+        "Quais prazos do Censo 2026 exigem atenção da Secretaria?",
+        "cronograma",
+        "Censo"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma"
@@ -838,10 +830,9 @@
       "processo": "Censo",
       "intencao": "qualidade de dados",
       "gatilhos": [
-        "qualidade dos dados do Censo",
-        "conferencia dados Censo",
-        "validacao dados Censo",
-        "consistencia dados Censo"
+        "Que conferências devo fazer antes de uma etapa do Censo?",
+        "qualidade de dados",
+        "Censo"
       ],
       "referencias_prioritarias": [
         "censo-2026-cronograma"
@@ -866,9 +857,9 @@
       "processo": "Estágio",
       "intencao": "conceito",
       "gatilhos": [
-        "estagio obrigatorio e nao obrigatorio",
-        "diferenca estagio obrigatorio nao obrigatorio",
-        "estagio obrigatorio versus nao obrigatorio"
+        "Qual é a diferença entre estágio obrigatório e não obrigatório?",
+        "conceito",
+        "Estágio"
       ],
       "referencias_prioritarias": [
         "estagio-11788"
@@ -893,9 +884,9 @@
       "processo": "Estágio",
       "intencao": "documentação",
       "gatilhos": [
-        "documentos exigidos estagio",
-        "documentacao estagio termo compromisso",
-        "documentos e formalizacao estagio"
+        "Quais documentos e agentes aparecem na estrutura do estágio?",
+        "documentação",
+        "Estágio"
       ],
       "referencias_prioritarias": [
         "estagio-11788"
@@ -920,10 +911,9 @@
       "processo": "Estágio",
       "intencao": "supervisão",
       "gatilhos": [
-        "quem pode supervisionar estagio",
-        "supervisor e orientador de estagio",
-        "supervisao do estagio",
-        "papel do supervisor de estagio"
+        "Quais papéis de supervisão aparecem na legislação de estágio?",
+        "supervisão",
+        "Estágio"
       ],
       "referencias_prioritarias": [
         "estagio-11788"
@@ -948,9 +938,9 @@
       "processo": "Extensão",
       "intencao": "curricularização",
       "gatilhos": [
-        "curricularizacao da extensao",
-        "extensao na formacao academica",
-        "percentual extensao graduacao"
+        "O que a base estabelece sobre integração da extensão à formação acadêmica?",
+        "curricularização",
+        "Extensão"
       ],
       "referencias_prioritarias": [
         "ext-7-2018"
@@ -975,9 +965,9 @@
       "processo": "Extensão",
       "intencao": "PPC",
       "gatilhos": [
-        "extensao no PPC",
-        "extensao na matriz curricular",
-        "PPC curricularizacao extensao"
+        "Como a extensão se relaciona ao PPC?",
+        "PPC",
+        "Extensão"
       ],
       "referencias_prioritarias": [
         "ext-7-2018"
@@ -1002,9 +992,9 @@
       "processo": "Pós-graduação",
       "intencao": "especialização",
       "gatilhos": [
-        "especializacao lato sensu",
-        "requisitos pos graduacao lato sensu",
-        "normas especializacao lato sensu"
+        "Quais são as normas gerais cadastradas para cursos de especialização lato sensu?",
+        "especialização",
+        "Pós-graduação"
       ],
       "referencias_prioritarias": [
         "pos-1-2018"
@@ -1029,9 +1019,9 @@
       "processo": "Pós-graduação",
       "intencao": "certificado",
       "gatilhos": [
-        "certificado especializacao lato sensu",
-        "documentacao certificado especializacao",
-        "historico certificado pos graduacao"
+        "Quais aspectos de documentação da especialização aparecem na base?",
+        "certificado",
+        "Pós-graduação"
       ],
       "referencias_prioritarias": [
         "pos-1-2018"
@@ -1056,9 +1046,9 @@
       "processo": "Regulação",
       "intencao": "supervisão",
       "gatilhos": [
-        "diferenca regulacao supervisao avaliacao",
-        "regulacao supervisao avaliacao sistema federal",
-        "papel da regulacao e supervisao"
+        "Qual é o papel da regulação, supervisão e avaliação no sistema federal?",
+        "supervisão",
+        "Regulação"
       ],
       "referencias_prioritarias": [
         "dec-9235",
@@ -1085,9 +1075,9 @@
       "processo": "Regulação",
       "intencao": "avaliação",
       "gatilhos": [
-        "SINAES e regulacao",
-        "resultados SINAES regulacao",
-        "avaliacao SINAES subsidia regulacao"
+        "Como SINAES e regulação se relacionam na base?",
+        "avaliação",
+        "Regulação"
       ],
       "referencias_prioritarias": [
         "sinaes-10861",
@@ -1114,9 +1104,9 @@
       "processo": "Regulação",
       "intencao": "curso/IES",
       "gatilhos": [
-        "fontes oficiais regulacao IES curso",
-        "situacao regulatoria IES curso",
-        "consulta regulatoria curso IES"
+        "Que fonte devo consultar quando a dúvida envolve regulação ou supervisão de IES/curso?",
+        "curso/IES",
+        "Regulação"
       ],
       "referencias_prioritarias": [
         "dec-9235"
@@ -1141,9 +1131,9 @@
       "processo": "Formação docente",
       "intencao": "segunda licenciatura",
       "gatilhos": [
-        "segunda licenciatura regras",
-        "regras segunda licenciatura",
-        "segunda licenciatura resolucao 4 2024"
+        "Quais regras atuais devo consultar para segunda licenciatura?",
+        "segunda licenciatura",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "formacao-rcp4-2024",
@@ -1174,9 +1164,9 @@
       "processo": "Formação docente",
       "intencao": "formação pedagógica",
       "gatilhos": [
-        "formacao pedagogica graduados nao licenciados",
-        "regras formacao pedagogica",
-        "formacao pedagogica resolucao 4 2024"
+        "Quais regras atuais devo consultar para formação pedagógica de graduados não licenciados?",
+        "formação pedagógica",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "formacao-rcp4-2024",
@@ -1207,10 +1197,9 @@
       "processo": "Formação docente",
       "intencao": "carga horária",
       "gatilhos": [
-        "carga horaria formacao pedagogica",
-        "carga horaria segunda licenciatura",
-        "1600 horas formacao pedagogica",
-        "1200 1800 horas segunda licenciatura"
+        "Qual carga horária aparece na base para formação pedagógica e segunda licenciatura?",
+        "carga horária",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "formacao-faq-mec-2025",
@@ -1239,9 +1228,9 @@
       "processo": "Formação docente",
       "intencao": "Pedagogia",
       "gatilhos": [
-        "formacao pedagogica para Pedagogia",
-        "Pedagogia como formacao pedagogica",
-        "formacao pedagogica destino Pedagogia"
+        "É possível formação pedagógica com destino à área de Pedagogia segundo a base?",
+        "Pedagogia",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "formacao-parecer-220-2025",
@@ -1268,9 +1257,9 @@
       "processo": "Formação docente",
       "intencao": "compatibilidade",
       "gatilhos": [
-        "compatibilidade formacao de origem",
-        "compatibilidade habilitacao pretendida",
-        "formacao anterior e habilitacao"
+        "Como verificar a compatibilidade entre formação de origem e a habilitação pretendida?",
+        "compatibilidade",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "formacao-rcp4-2024",
@@ -1299,10 +1288,9 @@
       "processo": "Formação docente",
       "intencao": "transição",
       "gatilhos": [
-        "transicao regras 2024 2025 formacao docente",
-        "implantacao transicao formacao docente",
-        "alunos iniciados antes da nova norma",
-        "quem comecou antes da mudanca da norma"
+        "Como a base orienta a implantação/transição para as regras de 2024/2025?",
+        "transição",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "formacao-parecer-5-2025",
@@ -1331,9 +1319,9 @@
       "processo": "Formação docente",
       "intencao": "norma anterior",
       "gatilhos": [
-        "Resolução CNE CP 2 2019 historico",
-        "norma anterior 2 2019",
-        "papel historico resolucao 2 2019"
+        "Qual é o papel histórico da Resolução CNE/CP nº 2/2019 na base?",
+        "norma anterior",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "cne-rcp2-2019",
@@ -1360,9 +1348,9 @@
       "processo": "Formação docente",
       "intencao": "fonte oficial",
       "gatilhos": [
-        "pagina oficial CNE formacao docente",
-        "fonte oficial formacao superior docencia",
-        "CNE formacao superior docencia"
+        "Onde localizar a cadeia normativa sobre formação superior para a docência?",
+        "fonte oficial",
+        "Formação docente"
       ],
       "referencias_prioritarias": [
         "cne-formacao-docencia"
@@ -1387,9 +1375,9 @@
       "processo": "Oráculo",
       "intencao": "fundamento",
       "gatilhos": [
-        "fundamento resposta normativa",
-        "norma que fundamenta resposta",
-        "fundamento da resposta Oraculo"
+        "Qual norma fundamenta esta resposta?",
+        "fundamento",
+        "Oráculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1410,9 +1398,9 @@
       "processo": "Oráculo",
       "intencao": "conflito normativo",
       "gatilhos": [
-        "conflito entre normas",
-        "normas aparentemente conflitantes",
-        "conflito normativo Oraculo"
+        "Encontrei duas referências aparentemente diferentes. Qual delas devo considerar?",
+        "conflito normativo",
+        "Oráculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1433,9 +1421,9 @@
       "processo": "Oráculo",
       "intencao": "lacuna",
       "gatilhos": [
-        "fundamento insuficiente resposta",
-        "lacuna normativa Oraculo",
-        "Oraculo sem evidencia suficiente"
+        "A base do Oráculo possui fundamento suficiente para responder esta pergunta?",
+        "lacuna",
+        "Oráculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1456,9 +1444,9 @@
       "processo": "Oráculo",
       "intencao": "atualização",
       "gatilhos": [
-        "atualizacao normativa resposta",
-        "mudanca recente norma",
-        "radar atualizacao normativa"
+        "Existe atualização recente que possa alterar esta resposta?",
+        "atualização",
+        "Oráculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1479,9 +1467,9 @@
       "processo": "Oráculo",
       "intencao": "fonte oficial",
       "gatilhos": [
-        "fonte oficial resposta Oraculo",
-        "localizar fonte oficial da informacao",
-        "fonte oficial da regra Oraculo"
+        "Qual é a fonte oficial desta informação?",
+        "fonte oficial",
+        "Oráculo"
       ],
       "referencias_prioritarias": [],
       "referencias_nomes": [],
@@ -1496,1906 +1484,6 @@
       ],
       "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
       "cautela": "Não substituir a fonte oficial por fonte secundária quando a oficial estiver disponível."
-    },
-    {
-      "id": "QA-053",
-      "processo": "Marco Regulatório",
-      "intencao": "formatos",
-      "gatilhos": [
-        "formatos de oferta da graduação",
-        "novo marco regulatório",
-        "presencial semipresencial ead"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-mec-formatos",
-        "marco-portaria-378-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "MEC — Formatos de oferta da graduação",
-        "Portaria MEC nº 378/2025 — Formatos de oferta"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-054",
-      "processo": "Marco Regulatório",
-      "intencao": "presencial",
-      "gatilhos": [
-        "percentual presencial curso presencial",
-        "70 por cento presencial",
-        "carga horaria presencial curso presencial"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-mec-formatos"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "MEC — Formatos de oferta da graduação"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-055",
-      "processo": "Marco Regulatório",
-      "intencao": "semipresencial",
-      "gatilhos": [
-        "percentuais curso semipresencial",
-        "30 por cento presencial",
-        "20 por cento presencial ou sincrona"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-mec-formatos",
-        "marco-portaria-378-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "MEC — Formatos de oferta da graduação",
-        "Portaria MEC nº 378/2025 — Formatos de oferta"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-056",
-      "processo": "Marco Regulatório",
-      "intencao": "EaD",
-      "gatilhos": [
-        "percentuais curso ead",
-        "10 por cento presencial",
-        "10 por cento presencial ou sincrona"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-mec-formatos"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "MEC — Formatos de oferta da graduação"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-057",
-      "processo": "Marco Regulatório",
-      "intencao": "vedações",
-      "gatilhos": [
-        "cursos vedados a distancia",
-        "quais cursos não podem ser ead",
-        "cursos proibidos ead"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-portaria-378-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "Portaria MEC nº 378/2025 — Formatos de oferta"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-058",
-      "processo": "Marco Regulatório",
-      "intencao": "transição",
-      "gatilhos": [
-        "transição novo marco regulatório",
-        "transição decreto 12456",
-        "regras de transição ead"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-portaria-381-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "Portaria MEC nº 381/2025 — Regras de transição"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-059",
-      "processo": "Marco Regulatório",
-      "intencao": "estudantes",
-      "gatilhos": [
-        "estudantes matriculados mudança ead",
-        "direito conclusão curso ead",
-        "aluno afetado mudança formato"
-      ],
-      "referencias_prioritarias": [
-        "marco-mec-transicao-estudantes",
-        "marco-portaria-381-2025"
-      ],
-      "referencias_nomes": [
-        "MEC — Aplicação gradual das mudanças de EaD",
-        "Portaria MEC nº 381/2025 — Regras de transição"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-060",
-      "processo": "Marco Regulatório",
-      "intencao": "PPC",
-      "gatilhos": [
-        "PPC formato oferta",
-        "ato autorizativo formato",
-        "formato autorizado curso PPC"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-portaria-506-2025",
-        "marco-portaria-794-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
-        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-061",
-      "processo": "Marco Regulatório",
-      "intencao": "polos",
-      "gatilhos": [
-        "responsabilidade polo ead",
-        "responsabilidades polos",
-        "polo ead responsabilidade IES"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-portaria-506-2025",
-        "marco-portaria-794-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
-        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-062",
-      "processo": "Marco Regulatório",
-      "intencao": "frequência",
-      "gatilhos": [
-        "controle frequência atividades presenciais e sincronas",
-        "frequencia atividades presenciais ead",
-        "frequência síncronas mediadas"
-      ],
-      "referencias_prioritarias": [
-        "marco-decreto-12456",
-        "marco-portaria-506-2025",
-        "marco-portaria-794-2025"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.456/2025 — Nova Política de EaD",
-        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
-        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-063",
-      "processo": "Marco Regulatório",
-      "intencao": "portaria 506",
-      "gatilhos": [
-        "Portaria 506 EAD",
-        "o que regulamenta portaria 506",
-        "portaria 506 corpo docente polos"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-506-2025",
-        "marco-portaria-794-2025"
-      ],
-      "referencias_nomes": [
-        "Portaria MEC nº 506/2025 — Regulamentação da EaD",
-        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-064",
-      "processo": "Marco Regulatório",
-      "intencao": "alterações 506",
-      "gatilhos": [
-        "Portaria 506 alteração",
-        "Portaria 794 2025",
-        "alteração portaria 506"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-794-2025"
-      ],
-      "referencias_nomes": [
-        "Portaria MEC nº 794/2025 — Alteração da Portaria 506/2025"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-065",
-      "processo": "Curso Técnico",
-      "intencao": "federal estadual",
-      "gatilhos": [
-        "curso técnico federal estadual",
-        "diferença sistema federal estadual curso técnico",
-        "competência curso técnico federal estadual"
-      ],
-      "referencias_prioritarias": [
-        "ept-sistemas-federal-estadual",
-        "ept-resolucao-6-2012"
-      ],
-      "referencias_nomes": [
-        "MEC — Sistemas de ensino e Educação Profissional Técnica",
-        "Resolução CNE/CEB nº 6/2012 — EPTNM"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-066",
-      "processo": "Curso Técnico",
-      "intencao": "CNCT",
-      "gatilhos": [
-        "CNCT abertura curso técnico",
-        "como usar CNCT",
-        "catalogo nacional cursos tecnicos"
-      ],
-      "referencias_prioritarias": [
-        "ept-cnct",
-        "ept-resolucao-6-2012"
-      ],
-      "referencias_nomes": [
-        "Catálogo Nacional de Cursos Técnicos — CNCT",
-        "Resolução CNE/CEB nº 6/2012 — EPTNM"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-067",
-      "processo": "Curso Técnico",
-      "intencao": "SISTEC",
-      "gatilhos": [
-        "papel do SISTEC curso técnico",
-        "SISTEC diploma técnico",
-        "registro curso técnico SISTEC"
-      ],
-      "referencias_prioritarias": [
-        "ept-sistec",
-        "ept-resolucao-6-2012"
-      ],
-      "referencias_nomes": [
-        "SISTEC — Sistema Nacional de Informações da EPT",
-        "Resolução CNE/CEB nº 6/2012 — EPTNM"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-068",
-      "processo": "Curso Técnico",
-      "intencao": "formas",
-      "gatilhos": [
-        "integrado concomitante subsequente",
-        "formas curso técnico",
-        "curso técnico integrado concomitante subsequente"
-      ],
-      "referencias_prioritarias": [
-        "ept-modalidades-tecnico",
-        "ept-resolucao-6-2012"
-      ],
-      "referencias_nomes": [
-        "MEC — Formas de oferta do curso técnico",
-        "Resolução CNE/CEB nº 6/2012 — EPTNM"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-069",
-      "processo": "Curso Técnico",
-      "intencao": "documentação",
-      "gatilhos": [
-        "documento conclusão curso técnico",
-        "diploma ou certificado curso técnico",
-        "certificação curso técnico qualificação"
-      ],
-      "referencias_prioritarias": [
-        "ept-certificacao-diploma",
-        "ept-sistec"
-      ],
-      "referencias_nomes": [
-        "MEC — Certificação e diploma da EPT de nível médio",
-        "SISTEC — Sistema Nacional de Informações da EPT"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-070",
-      "processo": "Cursos Profissionalizantes",
-      "intencao": "FIC",
-      "gatilhos": [
-        "curso profissionalizante FIC",
-        "formação inicial continuada qualificação profissional",
-        "curso de qualificação profissional"
-      ],
-      "referencias_prioritarias": [
-        "ept-fic-qualificacao",
-        "ept-decreto-12603",
-        "ept-sistec"
-      ],
-      "referencias_nomes": [
-        "MEC — Formação Inicial e Continuada / Qualificação Profissional",
-        "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
-        "SISTEC — Sistema Nacional de Informações da EPT"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-071",
-      "processo": "Educação Profissional",
-      "intencao": "PNEPT",
-      "gatilhos": [
-        "Decreto 12603 educação profissional",
-        "mudanças educação profissional 2025",
-        "PNEPT educação profissional"
-      ],
-      "referencias_prioritarias": [
-        "ept-decreto-12603",
-        "ept-resolucao-1-2021"
-      ],
-      "referencias_nomes": [
-        "Decreto nº 12.603/2025 — PNEPT e SINAEPT",
-        "Resolução CNE/CP nº 1/2021 — Diretrizes Gerais da EPT"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-072",
-      "processo": "Educação Profissional",
-      "intencao": "SINAEPT",
-      "gatilhos": [
-        "SINAEPT finalidade",
-        "Sistema Nacional Avaliação EPT",
-        "avaliação educação profissional tecnológica"
-      ],
-      "referencias_prioritarias": [
-        "ept-sinaept",
-        "ept-decreto-12603"
-      ],
-      "referencias_nomes": [
-        "SINAEPT — Sistema Nacional de Avaliação da EPT",
-        "Decreto nº 12.603/2025 — PNEPT e SINAEPT"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar evidência disponível",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento somente quando suportado",
-        "exibir fontes e data de verificação quando aplicável"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Indicar as referências encontradas e os dados que faltam.",
-      "cautela": "Não generalizar a regra sem verificar curso, formato, sistema de ensino, vigência e situação concreta."
-    },
-    {
-      "id": "QA-073",
-      "processo": "Regulação",
-      "intencao": "ICES",
-      "gatilhos": [
-        "Portaria 709",
-        "ICES qualificação",
-        "qualificação ICES",
-        "renovação ICES"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-709-2026",
-        "port-1095"
-      ],
-      "referencias_nomes": [
-        "Portaria MEC nº 709/2026 — Qualificação de ICES",
-        "Portaria MEC nº 1.095/2018"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referência prioritária",
-        "verificar evidência oficial",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento apenas quando suportado",
-        "exibir fonte e data de verificação"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
-      "cautela": "Não generalizar além do escopo do ato."
-    },
-    {
-      "id": "QA-074",
-      "processo": "Educação Profissional",
-      "intencao": "SINAEPT 503",
-      "gatilhos": [
-        "Portaria 503 SINAEPT",
-        "Portaria INEP 503",
-        "alteração SINAEPT",
-        "Portaria 731 SINAEPT"
-      ],
-      "referencias_prioritarias": [
-        "ept-portaria-503-2026",
-        "ept-sinaept"
-      ],
-      "referencias_nomes": [
-        "Portaria INEP nº 503/2026 — SINAEPT",
-        "SINAEPT — Sistema Nacional de Avaliação da EPT"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referência prioritária",
-        "verificar evidência oficial",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento apenas quando suportado",
-        "exibir fonte e data de verificação"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
-      "cautela": "Não generalizar além do escopo do ato."
-    },
-    {
-      "id": "QA-075",
-      "processo": "ENADE",
-      "intencao": "retificação edital 49",
-      "gatilhos": [
-        "retificação Edital 49 Enade",
-        "Edital 49 2026 retificação",
-        "Enade retificação 09 setembro 2026"
-      ],
-      "referencias_prioritarias": [
-        "enade-retificacao-edital-49-2026",
-        "enade-2026-cronograma"
-      ],
-      "referencias_nomes": [
-        "Retificação de 09/09/2026 — Edital INEP nº 49/2026 (Enade)",
-        "Enade 2026 — cronogramas oficiais"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referência prioritária",
-        "verificar evidência oficial",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento apenas quando suportado",
-        "exibir fonte e data de verificação"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
-      "cautela": "Não generalizar além do escopo do ato."
-    },
-    {
-      "id": "QA-076",
-      "processo": "ENADE",
-      "intencao": "Enamed reaplicação",
-      "gatilhos": [
-        "Edital 146 Enamed",
-        "reaplicação Enamed",
-        "Enamed reaplicação 2026"
-      ],
-      "referencias_prioritarias": [
-        "enamed-edital-146-2026"
-      ],
-      "referencias_nomes": [
-        "Edital INEP nº 146/2026 — Reaplicação do Enamed"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referência prioritária",
-        "verificar evidência oficial",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento apenas quando suportado",
-        "exibir fonte e data de verificação"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
-      "cautela": "Não generalizar além do escopo do ato."
-    },
-    {
-      "id": "QA-077",
-      "processo": "ENADE",
-      "intencao": "PND reaplicação",
-      "gatilhos": [
-        "Portaria 147 PND",
-        "reaplicação PND",
-        "Prova Nacional Docente reaplicação"
-      ],
-      "referencias_prioritarias": [
-        "pnd-portaria-147-2026"
-      ],
-      "referencias_nomes": [
-        "Portaria INEP nº 147/2026 — Reaplicação da PND"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referência prioritária",
-        "verificar evidência oficial",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento apenas quando suportado",
-        "exibir fonte e data de verificação"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
-      "cautela": "Não generalizar além do escopo do ato."
-    },
-    {
-      "id": "QA-078",
-      "processo": "Censo",
-      "intencao": "Comunicado 23 2026",
-      "gatilhos": [
-        "Comunicado 23 Censo",
-        "Censo 2025 fechamento",
-        "Comunicado Inep 23 2026"
-      ],
-      "referencias_prioritarias": [
-        "censo-comunicado-23-2026"
-      ],
-      "referencias_nomes": [
-        "Comunicado Inep nº 23/2026 — Censo da Educação Superior 2025"
-      ],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referência prioritária",
-        "verificar evidência oficial",
-        "separar fato normativo de interpretação operacional",
-        "montar resposta objetiva",
-        "informar impacto/procedimento apenas quando suportado",
-        "exibir fonte e data de verificação"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança.",
-      "cautela": "Não generalizar além do escopo do ato."
-    },
-    {
-      "id": "QA-079",
-      "processo": "Enfermagem e Saúde",
-      "intencao": "oferta enfermagem ead",
-      "gatilhos": [
-        "oferta enfermagem ead",
-        "enfermagem pode ser ofertada em ead?",
-        "enfermagem",
-        "ofertada"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-378-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-080",
-      "processo": "Enfermagem e Saúde",
-      "intencao": "enfermagem semipresencial",
-      "gatilhos": [
-        "enfermagem semipresencial",
-        "enfermagem pode ser ofertada no formato semipresencial?",
-        "enfermagem",
-        "ofertada",
-        "formato",
-        "semipresencial"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-378-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-081",
-      "processo": "Enfermagem e Saúde",
-      "intencao": "percentual presencial enfermagem",
-      "gatilhos": [
-        "percentual presencial enfermagem",
-        "qual percentual presencial deve ser observado em enfermagem?",
-        "percentual",
-        "presencial",
-        "observado",
-        "enfermagem"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-378-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-082",
-      "processo": "Enfermagem e Saúde",
-      "intencao": "saúde ead cursos proibidos",
-      "gatilhos": [
-        "saúde ead cursos proibidos",
-        "cursos da área de saúde podem ser ofertados em ead?",
-        "cursos",
-        "saúde",
-        "podem",
-        "ofertados"
-      ],
-      "referencias_prioritarias": [
-        "dec-marco-regulatorio",
-        "marco-portaria-378-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-083",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "aluno enfermagem ead antigo transição",
-      "gatilhos": [
-        "aluno enfermagem ead antigo transição",
-        "como ficam os alunos de enfermagem ead que já estavam matriculados antes do marco regulatório?",
-        "ficam",
-        "alunos",
-        "enfermagem",
-        "estavam",
-        "matriculados"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-381-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-084",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "curso em extinção novo ingresso",
-      "gatilhos": [
-        "curso em extinção novo ingresso",
-        "um curso ead que entrou em extinção pode receber novos ingressantes?",
-        "curso",
-        "entrou",
-        "extinção",
-        "receber",
-        "novos"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-381-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-085",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "prazo curso ead extinção conclusão",
-      "gatilhos": [
-        "prazo curso ead extinção conclusão",
-        "por quanto tempo um curso ead em extinção deve continuar sendo ofertado para os alunos protegidos pela transição?",
-        "quanto",
-        "tempo",
-        "curso",
-        "extinção",
-        "continuar"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-381-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-086",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "curso ead extinção semipresencial conversão",
-      "gatilhos": [
-        "curso ead extinção semipresencial conversão",
-        "um curso ead em extinção pode ser convertido para semipresencial?",
-        "curso",
-        "extinção",
-        "convertido",
-        "semipresencial"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-381-2025",
-        "marco-portaria-795-2025",
-        "marco-portaria-378-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-087",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "portaria 795 transição ead",
-      "gatilhos": [
-        "portaria 795 transição ead",
-        "o que a portaria mec nº 795/2025 mudou nas regras de transição do ead?",
-        "portaria",
-        "mudou",
-        "regras",
-        "transição"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-795-2025",
-        "marco-portaria-381-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-088",
-      "processo": "Formação de Professores",
-      "intencao": "licenciatura ead marco regulatorio",
-      "gatilhos": [
-        "licenciatura ead marco regulatorio",
-        "licenciaturas podem ser ofertadas em ead após o marco regulatório?",
-        "licenciaturas",
-        "podem",
-        "ofertadas",
-        "marco",
-        "regulatório"
-      ],
-      "referencias_prioritarias": [
-        "dec-marco-regulatorio",
-        "marco-portaria-378-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-089",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "licenciatura ead aluno antigo conclusão",
-      "gatilhos": [
-        "licenciatura ead aluno antigo conclusão",
-        "o que acontece com o aluno de licenciatura ead que já estava matriculado quando a oferta passou a ser vedada?",
-        "acontece",
-        "aluno",
-        "licenciatura",
-        "estava",
-        "matriculado"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-381-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-090",
-      "processo": "Formação de Professores",
-      "intencao": "formação pedagogica em pedagogia",
-      "gatilhos": [
-        "formação pedagogica em pedagogia",
-        "existe formação pedagógica para graduados não licenciados em pedagogia?",
-        "existe",
-        "formação",
-        "pedagógica",
-        "graduados",
-        "licenciados"
-      ],
-      "referencias_prioritarias": [
-        "formacao-parecer-5-2025",
-        "formacao-resolucao-4-2024"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-091",
-      "processo": "Formação de Professores",
-      "intencao": "segunda licenciatura pedagogia",
-      "gatilhos": [
-        "segunda licenciatura pedagogia",
-        "existe segunda licenciatura em pedagogia?",
-        "existe",
-        "segunda",
-        "licenciatura",
-        "pedagogia"
-      ],
-      "referencias_prioritarias": [
-        "formacao-parecer-5-2025",
-        "formacao-resolucao-4-2024"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-092",
-      "processo": "Formação de Professores",
-      "intencao": "pedagogo segunda licenciatura outra area",
-      "gatilhos": [
-        "pedagogo segunda licenciatura outra area",
-        "quem é pedagogo pode fazer segunda licenciatura em outra área?",
-        "pedagogo",
-        "fazer",
-        "segunda",
-        "licenciatura",
-        "outra"
-      ],
-      "referencias_prioritarias": [
-        "formacao-parecer-5-2025",
-        "formacao-resolucao-4-2024"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-093",
-      "processo": "Formação de Professores",
-      "intencao": "validade diploma segunda licenciatura pedagogia antigo",
-      "gatilhos": [
-        "validade diploma segunda licenciatura pedagogia antigo",
-        "os diplomas de segunda licenciatura em pedagogia iniciados antes da resolução cne/cp nº 4/2024 continuam válidos?",
-        "diplomas",
-        "segunda",
-        "licenciatura",
-        "pedagogia",
-        "iniciados"
-      ],
-      "referencias_prioritarias": [
-        "formacao-parecer-5-2025",
-        "formacao-resolucao-4-2024"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-094",
-      "processo": "Formação de Professores",
-      "intencao": "compatibilidade formação anterior formação pedagogica",
-      "gatilhos": [
-        "compatibilidade formação anterior formação pedagogica",
-        "como a ies deve verificar a compatibilidade entre a formação anterior e a habilitação pretendida na formação pedagógica?",
-        "verificar",
-        "compatibilidade",
-        "entre",
-        "formação",
-        "anterior"
-      ],
-      "referencias_prioritarias": [
-        "formacao-resolucao-4-2024",
-        "formacao-parecer-5-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-095",
-      "processo": "Documentação Acadêmica",
-      "intencao": "registro compatibilidade formação historico",
-      "gatilhos": [
-        "registro compatibilidade formação historico",
-        "onde deve ser registrada a análise de compatibilidade da formação anterior para formação pedagógica?",
-        "registrada",
-        "análise",
-        "compatibilidade",
-        "formação",
-        "anterior"
-      ],
-      "referencias_prioritarias": [
-        "formacao-resolucao-4-2024",
-        "formacao-parecer-5-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-096",
-      "processo": "Formação de Professores",
-      "intencao": "carga horaria segunda licenciatura",
-      "gatilhos": [
-        "carga horaria segunda licenciatura",
-        "qual é a carga horária mínima da segunda licenciatura?",
-        "carga",
-        "horária",
-        "mínima",
-        "segunda",
-        "licenciatura"
-      ],
-      "referencias_prioritarias": [
-        "formacao-resolucao-4-2024"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-097",
-      "processo": "Formação de Professores",
-      "intencao": "ies pode ofertar formação pedagogica segunda licenciatura",
-      "gatilhos": [
-        "ies pode ofertar formação pedagogica segunda licenciatura",
-        "quais condições uma ies deve atender para ofertar formação pedagógica ou segunda licenciatura?",
-        "quais",
-        "condições",
-        "atender",
-        "ofertar",
-        "formação"
-      ],
-      "referencias_prioritarias": [
-        "formacao-parecer-5-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-098",
-      "processo": "Documentação Acadêmica",
-      "intencao": "dados historico escolar graduação",
-      "gatilhos": [
-        "dados historico escolar graduação",
-        "quais dados devem constar no histórico escolar de graduação?",
-        "quais",
-        "dados",
-        "devem",
-        "constar",
-        "histórico"
-      ],
-      "referencias_prioritarias": [
-        "mec-faq-historico-379-2004"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-099",
-      "processo": "Diploma Digital",
-      "intencao": "historico escolar digital xsd",
-      "gatilhos": [
-        "historico escolar digital xsd",
-        "existe uma especificação técnica para o histórico escolar digital?",
-        "existe",
-        "especificação",
-        "técnica",
-        "histórico",
-        "escolar"
-      ],
-      "referencias_prioritarias": [
-        "diploma-xsd-105",
-        "diploma-portaria-70-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-100",
-      "processo": "Diploma Digital",
-      "intencao": "dados diploma graduação conferência",
-      "gatilhos": [
-        "dados diploma graduação conferência",
-        "o que deve ser considerado na conferência do diploma de graduação?",
-        "considerado",
-        "conferência",
-        "diploma",
-        "graduação"
-      ],
-      "referencias_prioritarias": [
-        "port-1095",
-        "diploma-portaria-70-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-101",
-      "processo": "Diploma Digital",
-      "intencao": "portaria 70 diploma digital mudanças",
-      "gatilhos": [
-        "portaria 70 diploma digital mudanças",
-        "o que mudou no diploma digital com a portaria mec nº 70/2025?",
-        "mudou",
-        "diploma",
-        "digital",
-        "portaria"
-      ],
-      "referencias_prioritarias": [
-        "diploma-portaria-70-2025",
-        "diploma-xsd-105"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-102",
-      "processo": "Documentação Acadêmica",
-      "intencao": "cobrança diploma historico primeira via",
-      "gatilhos": [
-        "cobrança diploma historico primeira via",
-        "a ies pode cobrar pela expedição e registro do diploma e do histórico escolar final?",
-        "cobrar",
-        "expedição",
-        "registro",
-        "diploma",
-        "histórico"
-      ],
-      "referencias_prioritarias": [
-        "mec-faq-cobranca-documentos",
-        "port-1095"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-103",
-      "processo": "Transição e Extinção EaD",
-      "intencao": "aluno curso ead extinção vai concluir",
-      "gatilhos": [
-        "aluno curso ead extinção vai concluir",
-        "o que fazer quando um aluno pergunta se conseguirá concluir um curso ead que entrou em extinção?",
-        "fazer",
-        "quando",
-        "aluno",
-        "pergunta",
-        "conseguirá"
-      ],
-      "referencias_prioritarias": [
-        "marco-portaria-381-2025",
-        "dec-marco-regulatorio"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar referências prioritárias",
-        "verificar regra e transição temporal",
-        "separar fato normativo de orientação operacional",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fontes oficiais e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre direito individual sem conferir data de ingresso, formato, status do curso, ato autorizativo, PPC e demais dados determinantes."
-    },
-    {
-      "id": "QA-104",
-      "processo": "Atos Regulatórios",
-      "intencao": "ato autorização curso",
-      "gatilhos": [
-        "ato autorização curso",
-        "O que é o ato de autorização de um curso e o que ele permite?",
-        "ato",
-        "autorização",
-        "curso"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-105",
-      "processo": "Atos Regulatórios",
-      "intencao": "reconhecimento curso",
-      "gatilhos": [
-        "reconhecimento curso",
-        "O que significa o reconhecimento de um curso e por que ele é importante para a validade nacional do diploma?",
-        "reconhecimento",
-        "curso"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos",
-        "mec-servico-reconhecimento-presencial"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-106",
-      "processo": "Atos Regulatórios",
-      "intencao": "renovação reconhecimento",
-      "gatilhos": [
-        "renovação reconhecimento",
-        "O que é a renovação de reconhecimento e quando a Secretaria deve conferir esse ato?",
-        "renovação",
-        "reconhecimento"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-107",
-      "processo": "Atos Regulatórios",
-      "intencao": "portaria autorização reconhecimento",
-      "gatilhos": [
-        "portaria autorização reconhecimento",
-        "Como identificar uma Portaria de autorização, reconhecimento ou renovação de reconhecimento publicada para um curso?",
-        "portaria",
-        "autorização",
-        "reconhecimento"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-108",
-      "processo": "Atos Regulatórios",
-      "intencao": "portaria curso e-MEC divergência",
-      "gatilhos": [
-        "portaria curso e-MEC divergência",
-        "O que fazer quando a Portaria publicada e o cadastro e-MEC apresentam informações diferentes?",
-        "portaria",
-        "curso",
-        "e-MEC",
-        "divergência"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-109",
-      "processo": "Atos Regulatórios",
-      "intencao": "curso reconhecimento primeira turma",
-      "gatilhos": [
-        "curso reconhecimento primeira turma",
-        "O que a Secretaria deve conferir quando a primeira turma de um curso está próxima da conclusão e o reconhecimento ainda está em andamento?",
-        "curso",
-        "reconhecimento",
-        "primeira",
-        "turma"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos",
-        "mec-servico-reconhecimento-presencial"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-110",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "conceito enade resultado",
-      "gatilhos": [
-        "conceito enade resultado",
-        "O que é o Conceito Enade e como devo interpretar a divulgação de seu resultado?",
-        "conceito",
-        "enade",
-        "resultado"
-      ],
-      "referencias_prioritarias": [
-        "inep-indicadores-qualidade",
-        "inep-enade"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-111",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "IDD",
-      "gatilhos": [
-        "IDD",
-        "O que é o IDD e qual é sua relação com os indicadores de qualidade?",
-        "IDD"
-      ],
-      "referencias_prioritarias": [
-        "inep-indicadores-qualidade"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-112",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "CPC",
-      "gatilhos": [
-        "CPC",
-        "O que é o CPC e para que ele é utilizado?",
-        "CPC"
-      ],
-      "referencias_prioritarias": [
-        "inep-indicadores-qualidade"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-113",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "IGC",
-      "gatilhos": [
-        "IGC",
-        "O que é o IGC e qual é sua unidade de análise?",
-        "IGC"
-      ],
-      "referencias_prioritarias": [
-        "inep-indicadores-qualidade"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-114",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "enade resultado portaria",
-      "gatilhos": [
-        "enade resultado portaria",
-        "Como acompanhar as Portarias que divulgam resultados do Enade e dos indicadores?",
-        "enade",
-        "resultado",
-        "portaria"
-      ],
-      "referencias_prioritarias": [
-        "inep-indicadores-2026",
-        "inep-indicadores-2025"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-115",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "resultado enade histórico",
-      "gatilhos": [
-        "resultado enade histórico",
-        "O resultado ou a regularidade do Enade pode aparecer no histórico escolar?",
-        "resultado",
-        "enade",
-        "histórico"
-      ],
-      "referencias_prioritarias": [
-        "inep-enade"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-116",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "enade indicador curso",
-      "gatilhos": [
-        "enade indicador curso",
-        "Qual a diferença entre resultado do estudante no Enade, Conceito Enade, CPC e IGC?",
-        "enade",
-        "indicador",
-        "curso"
-      ],
-      "referencias_prioritarias": [
-        "inep-enade",
-        "inep-indicadores-qualidade"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-117",
-      "processo": "Avaliação e Indicadores",
-      "intencao": "CC conceito curso",
-      "gatilhos": [
-        "CC conceito curso",
-        "O que é o Conceito de Curso (CC) e como ele se relaciona com reconhecimento e renovação?",
-        "conceito",
-        "curso"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos",
-        "mec-servico-reconhecimento-presencial"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
-    },
-    {
-      "id": "QA-118",
-      "processo": "Atos Regulatórios",
-      "intencao": "monitorar portarias regulatórias",
-      "gatilhos": [
-        "monitorar portarias regulatórias",
-        "Quais Portarias regulatórias de cursos devem entrar no Radar do Oráculo?",
-        "monitorar",
-        "portarias",
-        "regulatórias"
-      ],
-      "referencias_prioritarias": [
-        "emec-cadastro-atos"
-      ],
-      "referencias_nomes": [],
-      "pipeline": [
-        "classificar pergunta",
-        "recuperar ato ou indicador oficial",
-        "verificar ano de referência e vigência",
-        "separar ato regulatório de indicador de qualidade",
-        "identificar dados faltantes do caso",
-        "montar resposta objetiva",
-        "exibir fonte oficial e limites"
-      ],
-      "fallback": "Não foi localizada fundamentação suficiente na base atual para responder com segurança. Solicitar os dados do caso e indicar as referências oficiais encontradas.",
-      "cautela": "Não concluir sobre regularidade de curso ou efeito de indicador sem conferir e-MEC, publicação oficial, modalidade, código do curso e ano de referência."
     }
   ]
 }
