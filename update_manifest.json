@@ -24,5 +24,11 @@
     "Portarias SERES/MEC e Cadastro e-MEC",
     "Resultados Enade e portarias de divulgação",
     "Indicadores: Conceito Enade, IDD, CPC e IGC"
-  ]
+  ],
+  "verified_at": "2026-09-28T09:09:00.897718+00:00",
+  "last_weekly_check": "2026-09-28T09:09:00.897718+00:00",
+  "sources_registered": 54,
+  "sources_verified": 48,
+  "last_weekly_changes_detected": 0,
+  "last_weekly_access_errors": 6
 }
