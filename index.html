@@ -41,7 +41,7 @@
   <section class="panel">
    
 <section class="faq-panel hidden" id="faqPanel">
-<div class="faq-head"><div><span class="eyebrow">BASE VALIDADA</span><h2>❓ FAQ — Perguntas Frequentes</h2><p>Perguntas que já possuem resposta validada na camada de inteligência do Oráculo.</p></div><div class="faq-count" id="faqTotal">0 respostas validadas</div></div>
+<div class="faq-head"><div><span class="eyebrow">BASE VALIDADA</span><h2>❓ FAQ — Perguntas Frequentes</h2><p>Perguntas que já possuem resposta validada na camada de inteligência do Oráculo.</p></div><div style="display:flex;align-items:center;gap:9px"><button class="reset" id="faqHome">⌂ Home</button><div class="faq-count" id="faqTotal">0 respostas validadas</div></div></div>
 <div class="faq-toolbar"><input id="faqSearch" placeholder="Pesquisar pergunta, tema ou palavra-chave..." autocomplete="off"><select id="faqProcess"><option value="">Todos os processos</option></select><button class="reset" id="faqClear">Limpar FAQ</button></div>
 <div class="faq-list" id="faqList"></div>
 </section>
@@ -93,6 +93,7 @@ function faqRender(){const q=norm($('faqSearch').value.trim()),proc=$('faqProces
 async function loadFAQ(){try{const r=await fetch('intelligence/respostas_validadas.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();FAQ_DB=Array.isArray(d.respostas)?d.respostas.filter(x=>x&&x.pergunta_id&&x.pergunta):[];faqReady=true;}catch(e){console.error('[Oráculo] Falha ao carregar FAQ:',e);FAQ_DB=[];faqReady=false;}faqFill();faqRender();}
 $('faqBtn').onclick=()=>{faqShow();if(!faqReady)loadFAQ();else faqRender();$('faqPanel').scrollIntoView({behavior:'smooth',block:'start'});};
 $('faqSearch').addEventListener('input',faqRender);$('faqProcess').addEventListener('change',faqRender);$('faqClear').onclick=()=>{$('faqSearch').value='';$('faqProcess').value='';faqRender();};
+$('faqHome').onclick=()=>{faqHide();window.scrollTo({top:0,behavior:'smooth'});};
 
 loadData();
 </script>
