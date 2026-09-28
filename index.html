@@ -224,26 +224,59 @@ loadData();
   document.currentScript.parentNode.insertBefore(s,document.currentScript);
 })();</script>
 <script>
-/* Busca integrada — ponte final entre a busca documental e a camada de inteligência. */
+/* Busca integrada — instalação FINAL após a camada de inteligência.
+   Importante: intelligence/oraculo-intelligence.js também troca os controles de busca.
+   Por isso esta ponte espera a inteligência terminar o boot antes de assumir os eventos. */
 window.addEventListener('load',function(){
-  setTimeout(function(){
+  let tries=0;
+  function installFinalSearchBridge(){
     const q=document.getElementById('q'), btn=document.getElementById('searchBtn');
-    if(!q||!btn||window.__ORACULO_SEARCH_BRIDGE__)return;
-    window.__ORACULO_SEARCH_BRIDGE__=true;
+    if(!q||!btn)return;
+    if(window.__ORACULO_FINAL_SEARCH_BRIDGE__)return;
+
+    const intelligenceReady=typeof window.OraculoIntelligenceRun==='function';
+    if(!intelligenceReady && tries<100){
+      tries++;
+      setTimeout(installFinalSearchBridge,100);
+      return;
+    }
+
+    window.__ORACULO_FINAL_SEARCH_BRIDGE__=true;
     const normQ=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^\p{L}\p{N}\s./-]/gu,' ').replace(/\s+/g,' ').trim();
     const isNormQuery=v=>/\b(portaria|resolucao|decreto|lei|parecer|instrucao\s+normativa)\b/.test(normQ(v))&&/\d/.test(normQ(v));
     function hideAnswer(){const p=document.getElementById('oraculoAnswerPanel');if(p)p.classList.add('hidden');}
     function apply(){
-      const query=q.value.trim();
-      if(!query){const reset=document.getElementById('reset');if(reset)reset.click();hideAnswer();return;}
+      const input=document.getElementById('q');
+      const query=input?input.value.trim():'';
+      if(!query){
+        const reset=document.getElementById('reset');
+        if(reset)reset.click();
+        hideAnswer();
+        return;
+      }
       if(typeof window.doSearch==='function')window.doSearch();
+      /* Norma identificada = busca documental, não classificação semântica. */
       if(isNormQuery(query)){hideAnswer();return;}
       if(typeof window.OraculoIntelligenceRun==='function')window.OraculoIntelligenceRun(query);
     }
-    const newBtn=btn.cloneNode(true);btn.replaceWith(newBtn);newBtn.onclick=apply;
-    const newQ=q.cloneNode(true);q.replaceWith(newQ);newQ.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();apply();}});newQ.addEventListener('input',()=>{if(!newQ.value.trim())hideAnswer();});
-    document.querySelectorAll('.quick button').forEach(b=>{const c=b.cloneNode(true);b.replaceWith(c);c.onclick=()=>{newQ.value=c.dataset.q||'';apply();};});
-  },0);
+
+    const newBtn=btn.cloneNode(true);
+    btn.replaceWith(newBtn);
+    newBtn.onclick=apply;
+
+    const currentInput=document.getElementById('q');
+    const newQ=currentInput.cloneNode(true);
+    currentInput.replaceWith(newQ);
+    newQ.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();apply();}});
+    newQ.addEventListener('input',()=>{if(!newQ.value.trim())hideAnswer();});
+
+    document.querySelectorAll('.quick button').forEach(b=>{
+      const c=b.cloneNode(true);
+      b.replaceWith(c);
+      c.onclick=()=>{newQ.value=c.dataset.q||'';apply();};
+    });
+  }
+  installFinalSearchBridge();
 });
 </script>
 </body></html>
