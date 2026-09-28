@@ -103,7 +103,7 @@ function normativeSpec(q){
  }
  return {type,number,year};
 }
-function normativeParts(name,type){
+function normativeParts(name){
  const t=norm(name);
  const tail=t.replace(/^.*?\b(?:portaria|resolucao|decreto|lei|parecer|instrucao\s+normativa|in)\b/,'').trim();
  let number='',year='';
@@ -123,12 +123,31 @@ function isNormativeMatch(x,q){
  const name=norm(x.norm||'');
  const typePatterns={'portaria':/\bportaria\b/,'resolucao':/\bresolucao\b/,'decreto':/\bdecreto\b/,'lei':/\blei\b/,'parecer':/\bparecer\b/,'instrucao normativa':/\binstrucao\s+normativa\b/,'in':/(^|\s)in(\s|$)/};
  if(!typePatterns[spec.type].test(name))return false;
- const parts=normativeParts(name,spec.type);
+ const parts=normativeParts(name);
  if(spec.number && parts.number!==spec.number)return false;
  if(spec.year && parts.year!==spec.year)return false;
  return true;
 }
-function isNormativeMatch(x,q){const spec=normativeSpec(q);if(!spec.type)return true;const name=norm(x.norm||'');const typePatterns={'portaria':/\bportaria\b/,'resolucao':/\bresolucao\b/,'decreto':/\bdecreto\b/,'lei':/\blei\b/,'parecer':/\bparecer\b/,'instrucao normativa':/\binstrucao\s+normativa\b/,'in':/(^|\s)in(\s|$)/};if(!typePatterns[spec.type].test(name))return false;if(spec.number&&!new RegExp('(^|\\D)'+spec.number+'(?:\\D|$)').test(name))return false;if(spec.year&&!new RegExp('[/.-]'+spec.year+'\\b').test(name))return false;return true;}
+const SEARCH_ALIASES={
+ emissao:['emissao','expedicao','emitir','expedir','emissao de'],
+ documento:['documento','documentos','documentacao','diploma','historico','certificado','declaracao'],
+ historico:['historico','historico escolar'],
+ escolar:['escolar','academico'],
+ diploma:['diploma','diplomas'],
+ digital:['digital','nato-digital'],
+ segunda:['segunda'],
+ licenciatura:['licenciatura','licenciaturas'],
+ formacao:['formacao'],
+ pedagogica:['pedagogica'],
+ acervo:['acervo'],
+ estagio:['estagio','estagios'],
+ regulacao:['regulacao','regulatorio'],
+ curso:['curso','cursos']
+};
+function searchTermGroups(q){
+ const stop=new Set(['a','as','o','os','e','de','da','das','do','dos','em','no','na','nos','nas','um','uma','uns','umas','por','para','com','sem','que','qual','quais','como','sobre','ao','aos','à','às','do','da']);
+ return norm(q).split(/\s+/).filter(t=>t.length>2&&!stop.has(t)).map(t=>SEARCH_ALIASES[t]||[t]);
+}
 function score(x,q){
  if(!q)return 0;
  const raw=norm(q);
@@ -138,22 +157,22 @@ function score(x,q){
    let s=1000;
    if(spec.number)s+=500;
    if(spec.year)s+=250;
-   if(norm(x.norm)===raw)s+=100;
    return s;
  }
- const stop=new Set(['a','as','o','os','e','de','da','das','do','dos','em','no','na','nos','nas','um','uma','uns','umas','por','para','com','sem','que','qual','quais','como','sobre','ao','aos','à','às']);
- const terms=raw.split(/\s+/).filter(t=>t.length>2&&!stop.has(t));
- if(!terms.length)return 0;
+ const groups=searchTermGroups(raw);
+ if(!groups.length)return 0;
  const title=norm(x.norm||'');
  const tags=norm((x.tags||[]).join(' '));
  const hay=norm([x.norm,x.category,x.status,x.article,x.excerpt,x.summary,x.impact,x.procedure,x.process,...(x.tags||[]),...(x.synonyms||[]),...(x.related||[])].join(' '));
- let s=0;
- terms.forEach(t=>{
-   if(title.includes(t))s+=30;
-   else if(tags.includes(t))s+=15;
-   else if(hay.includes(t))s+=5;
- });
- return s;
+ let total=0;
+ for(const group of groups){
+   const hit=group.some(term=>title.includes(term)||tags.includes(term)||hay.includes(term));
+   if(!hit)return 0;
+   const titleHit=group.some(term=>title.includes(term));
+   const tagHit=group.some(term=>tags.includes(term));
+   total+=titleHit?30:tagHit?15:5;
+ }
+ return total;
 }
 function getFiltered(){
  let a=DB.slice();
@@ -204,4 +223,27 @@ loadData();
   s.async=false;
   document.currentScript.parentNode.insertBefore(s,document.currentScript);
 })();</script>
+<script>
+/* Busca integrada — ponte final entre a busca documental e a camada de inteligência. */
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    const q=document.getElementById('q'), btn=document.getElementById('searchBtn');
+    if(!q||!btn||window.__ORACULO_SEARCH_BRIDGE__)return;
+    window.__ORACULO_SEARCH_BRIDGE__=true;
+    const normQ=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^\p{L}\p{N}\s./-]/gu,' ').replace(/\s+/g,' ').trim();
+    const isNormQuery=v=>/\b(portaria|resolucao|decreto|lei|parecer|instrucao\s+normativa)\b/.test(normQ(v))&&/\d/.test(normQ(v));
+    function hideAnswer(){const p=document.getElementById('oraculoAnswerPanel');if(p)p.classList.add('hidden');}
+    function apply(){
+      const query=q.value.trim();
+      if(!query){const reset=document.getElementById('reset');if(reset)reset.click();hideAnswer();return;}
+      if(typeof window.doSearch==='function')window.doSearch();
+      if(isNormQuery(query)){hideAnswer();return;}
+      if(typeof window.OraculoIntelligenceRun==='function')window.OraculoIntelligenceRun(query);
+    }
+    const newBtn=btn.cloneNode(true);btn.replaceWith(newBtn);newBtn.onclick=apply;
+    const newQ=q.cloneNode(true);q.replaceWith(newQ);newQ.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();apply();}});newQ.addEventListener('input',()=>{if(!newQ.value.trim())hideAnswer();});
+    document.querySelectorAll('.quick button').forEach(b=>{const c=b.cloneNode(true);b.replaceWith(c);c.onclick=()=>{newQ.value=c.dataset.q||'';apply();};});
+  },0);
+});
+</script>
 </body></html>
