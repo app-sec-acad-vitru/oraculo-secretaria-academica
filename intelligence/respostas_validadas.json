@@ -1,10 +1,10 @@
 {
-  "schema_version": "oraculo-banco-respostas-validadas-v3.1",
+  "schema_version": "oraculo-banco-respostas-validadas-v3.2",
   "status": "validado_com_pesquisa_normativa",
   "data_verificacao": "2026-09-28",
   "base_referencias": 28,
-  "quantidade_respostas": 23,
-  "observacao": "Consolidação das respostas efetivamente disponíveis e validadas na base do projeto (21 respostas V2 + QA-031 e QA-032). Não foram inventadas as demais respostas mencionadas na auditoria V6, pois seus conteúdos não estão disponíveis nos arquivos recuperados.",
+  "quantidade_respostas": 24,
+  "observacao": "Consolidação das respostas disponíveis na base do projeto, acrescida da QA-011 validada com pesquisa normativa em fontes oficiais do MEC/DOU em 28/09/2026.",
   "respostas": [
     {
       "id": "VR-002",
@@ -186,6 +186,54 @@
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
+    },
+    {
+      "id": "VR-011",
+      "pergunta_id": "QA-011",
+      "processo": "Diploma Digital",
+      "pergunta": "Como Diploma Digital e Histórico Escolar Digital se relacionam?",
+      "resposta_objetiva": "Diploma Digital e Histórico Escolar Digital são documentos acadêmicos digitais relacionados, mas não são o mesmo artefato. O MEC mantém estruturas XML/XSD próprias para o Diploma Digital e para o Histórico Escolar Digital. A especificação técnica do MEC trata o Histórico Escolar Digital como documento próprio e o coloca, junto ao Diploma Digital e a outros arquivos, no ecossistema de documentação acadêmica digital. Assim, o histórico contém as informações acadêmicas do percurso escolar segundo sua própria estrutura, enquanto o diploma é o documento que formaliza a conclusão e o grau obtido, seguindo a estrutura e os requisitos próprios do diploma digital.",
+      "fundamento": [
+        "Portaria MEC nº 70/2025, que altera a Portaria MEC nº 554/2019 e disciplina a emissão e o registro digital de diplomas",
+        "Instrução Normativa SESU nº 5/2022, que aprovou a versão 1.05 das especificações técnicas do Diploma Digital",
+        "Pacote XSD v1.05 do MEC — Diploma Digital e Histórico Escolar Digital"
+      ],
+      "impacto_operacional": "A Secretaria deve tratar o Diploma Digital e o Histórico Escolar Digital como documentos distintos, com estruturas e validações próprias. Na implantação e manutenção dos sistemas, deve-se controlar separadamente os XML/XSD e os fluxos de emissão, validação, armazenamento e disponibilização de cada documento, observando a versão técnica vigente publicada pelo MEC.",
+      "procedimento": [
+        "Identificar se a solicitação se refere ao diploma, ao histórico escolar ou a ambos.",
+        "Aplicar ao Diploma Digital a estrutura e os requisitos do XML/XSD do diploma.",
+        "Aplicar ao Histórico Escolar Digital a estrutura e os requisitos do XML/XSD do histórico.",
+        "Não tratar o histórico como parte integrante do mesmo XML do diploma sem verificar a especificação técnica aplicável.",
+        "Conferir a versão vigente dos arquivos XSD e das instruções técnicas publicadas pelo MEC antes de implementar ou alterar o sistema."
+      ],
+      "limites": "A relação entre os documentos não significa que sejam o mesmo documento ou que devam compartilhar um único XML. Requisitos técnicos específicos devem ser conferidos na versão vigente publicada pelo MEC.",
+      "fontes": [
+        {
+          "id": "diploma-2025",
+          "norma": "Portaria MEC nº 70/2025",
+          "categoria": "Diploma Digital",
+          "status": "Vigente — conferir atos complementares",
+          "referencia": "Portaria MEC nº 70, de 24 de janeiro de 2025",
+          "excerpt": "A Portaria altera a Portaria MEC nº 554/2019 e estabelece requisitos para emissão, registro e preservação do diploma digital.",
+          "quoteExact": false,
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital"
+        },
+        {
+          "id": "mec-xsd-105",
+          "norma": "Pacote XSD v1.05 — MEC",
+          "categoria": "Especificação técnica do Diploma Digital",
+          "status": "Publicado pelo MEC",
+          "referencia": "DiplomaDigital_v1.05.xsd e HistoricoEscolarDigital_v1.05.xsd",
+          "excerpt": "O pacote possui XSD próprio para o Diploma Digital e XSD próprio para o Histórico Escolar Digital como documento próprio.",
+          "quoteExact": false,
+          "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-28",
+      "citacao_literal": false,
+      "regra_oraculo": "Não tratar Diploma Digital e Histórico Escolar Digital como o mesmo artefato; verificar a estrutura técnica vigente do MEC.",
+      "confianca": "alta"
     },
     {
       "id": "VR-013",
