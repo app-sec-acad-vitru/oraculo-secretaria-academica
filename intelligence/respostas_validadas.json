@@ -1,10 +1,10 @@
 {
   "schema_version": "oraculo-banco-respostas-validadas-v3.1",
   "status": "validado_com_pesquisa_normativa",
-  "data_verificacao": "2026-09-20",
+  "data_verificacao": "2026-09-28",
   "base_referencias": 28,
   "quantidade_respostas": 23,
-  "observacao": "Pacote de atualização montado a partir do banco V2 e das adições QA-031/QA-032. Respostas são paráfrases operacionais, não citações literais.",
+  "observacao": "Consolidação das respostas efetivamente disponíveis e validadas na base do projeto (21 respostas V2 + QA-031 e QA-032). Não foram inventadas as demais respostas mencionadas na auditoria V6, pois seus conteúdos não estão disponíveis nos arquivos recuperados.",
   "respostas": [
     {
       "id": "VR-002",
@@ -428,6 +428,76 @@
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
     },
     {
+      "id": "VR-031",
+      "pergunta_id": "QA-031",
+      "processo": "Estágio",
+      "pergunta": "Quais documentos e agentes aparecem na estrutura do estágio?",
+      "resposta_objetiva": "Na estrutura legal do estágio, o documento central é o Termo de Compromisso de Estágio, celebrado entre estudante, parte concedente e instituição de ensino. O plano de atividades integra o termo e pode ser ajustado por aditivos. A legislação também exige acompanhamento por professor orientador e supervisor, relatórios periódicos de atividades e, no desligamento, termo de realização do estágio. A parte concedente deve manter disponíveis os documentos que comprovem a relação de estágio. A Lei também admite a atuação de agente de integração como auxiliar, sem substituir a celebração do Termo de Compromisso.",
+      "fundamento": [
+        "Lei nº 11.788/2008, art. 3º, II e § 1º — Termo de Compromisso e acompanhamento",
+        "Lei nº 11.788/2008, art. 7º, I, III, IV e parágrafo único — obrigações da instituição de ensino e plano de atividades",
+        "Lei nº 11.788/2008, art. 8º — convênio de concessão, quando utilizado",
+        "Lei nº 11.788/2008, art. 9º, I, IV, V, VI e VII — obrigações da parte concedente",
+        "Lei nº 11.788/2008, art. 5º — agente de integração"
+      ],
+      "impacto_operacional": "O fluxo acadêmico precisa controlar, no mínimo, a formalização do Termo de Compromisso, o plano de atividades, o acompanhamento/relatórios e a documentação comprobatória do estágio. A instituição pode exigir documentos complementares por suas normas internas, PPC e procedimentos próprios.",
+      "procedimento": [
+        "Confirmar matrícula e frequência regular do estudante.",
+        "Formalizar o Termo de Compromisso entre estudante, instituição de ensino e parte concedente.",
+        "Registrar o plano de atividades e eventuais aditivos.",
+        "Identificar professor orientador e supervisor da parte concedente.",
+        "Controlar os relatórios periódicos de atividades.",
+        "Controlar a documentação de seguro contra acidentes pessoais, quando aplicável ao fluxo.",
+        "No desligamento, verificar o termo de realização do estágio e a documentação final exigida pela instituição."
+      ],
+      "limites": "A Lei nº 11.788/2008 estabelece os documentos e responsabilidades mínimos do regime legal, mas não cria uma lista única de documentos administrativos para todas as IES. O checklist institucional deve ser complementado pelo PPC, normas internas e pelo tipo de estágio.",
+      "fontes": [
+        {
+          "norma": "Lei nº 11.788/2008 — Estágio",
+          "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada à fonte oficial; para checklist institucional, complementar com PPC, normas internas e fluxo vigente da IES.",
+      "confianca": "alta para os requisitos legais gerais; checklist interno exige enquadramento institucional"
+    },
+    {
+      "id": "VR-032",
+      "pergunta_id": "QA-032",
+      "processo": "Estágio",
+      "pergunta": "Quais papéis de supervisão aparecem na legislação de estágio?",
+      "resposta_objetiva": "A Lei nº 11.788/2008 prevê dois papéis centrais de acompanhamento: o professor orientador da instituição de ensino, responsável pelo acompanhamento e avaliação das atividades do estagiário, e o supervisor da parte concedente, responsável por orientar e supervisionar o estudante no local de estágio. O supervisor da parte concedente deve ser funcionário de seu quadro, com formação ou experiência profissional na área de conhecimento do curso, e pode orientar e supervisionar até 10 estagiários simultaneamente. O agente de integração pode auxiliar administrativamente, mas não substitui os papéis de orientação e supervisão previstos na lei.",
+      "fundamento": [
+        "Lei nº 11.788/2008, art. 3º, § 1º — acompanhamento pelo professor orientador e pelo supervisor da parte concedente",
+        "Lei nº 11.788/2008, art. 7º, III — indicação do professor orientador pela instituição de ensino",
+        "Lei nº 11.788/2008, art. 9º, III — supervisor da parte concedente e limite de até 10 estagiários simultaneamente",
+        "Lei nº 11.788/2008, art. 5º — papel auxiliar do agente de integração"
+      ],
+      "impacto_operacional": "O fluxo de estágio deve identificar formalmente o professor orientador da IES e o supervisor da parte concedente, mantendo evidência de acompanhamento. A validação do supervisor deve considerar vínculo com a parte concedente e formação ou experiência profissional compatível com a área do curso.",
+      "procedimento": [
+        "Identificar o professor orientador indicado pela instituição de ensino.",
+        "Identificar o supervisor designado pela parte concedente.",
+        "Verificar se o supervisor pertence ao quadro da parte concedente.",
+        "Verificar formação ou experiência profissional na área de conhecimento desenvolvida no curso.",
+        "Controlar o limite legal de até 10 estagiários supervisionados simultaneamente pelo supervisor.",
+        "Registrar o acompanhamento nos relatórios e demais instrumentos previstos no fluxo institucional."
+      ],
+      "limites": "A lei define os papéis e requisitos mínimos. A denominação de cargos, critérios documentais adicionais e fluxos de aprovação podem ser detalhados por normas internas, PPC, regulamento de estágio ou instrumentos institucionais.",
+      "fontes": [
+        {
+          "norma": "Lei nº 11.788/2008 — Estágio",
+          "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
+        }
+      ],
+      "status_validacao": "validada_com_pesquisa_normativa",
+      "data_verificacao": "2026-09-20",
+      "citacao_literal": false,
+      "regra_oraculo": "Usar a resposta como orientação operacional vinculada à fonte oficial; separar responsabilidade legal de procedimento interno.",
+      "confianca": "alta para os papéis e requisitos gerais; detalhes institucionais exigem enquadramento"
+    },
+    {
       "id": "VR-033",
       "pergunta_id": "QA-033",
       "processo": "Extensão",
@@ -738,76 +808,6 @@
       "citacao_literal": false,
       "regra_oraculo": "Usar a resposta como orientação operacional vinculada às fontes; para casos concretos, recuperar a fonte oficial e verificar vigência.",
       "confianca": "alta para a regra geral; caso concreto exige enquadramento"
-    },
-    {
-      "id": "VR-031",
-      "pergunta_id": "QA-031",
-      "processo": "Estágio",
-      "pergunta": "Quais documentos e agentes aparecem na estrutura do estágio?",
-      "resposta_objetiva": "Na estrutura legal do estágio, o documento central é o Termo de Compromisso de Estágio, celebrado entre estudante, parte concedente e instituição de ensino. O plano de atividades integra o termo e pode ser ajustado por aditivos. A legislação também exige acompanhamento por professor orientador e supervisor, relatórios periódicos de atividades e, no desligamento, termo de realização do estágio. A parte concedente deve manter disponíveis os documentos que comprovem a relação de estágio. A Lei também admite a atuação de agente de integração como auxiliar, sem substituir a celebração do Termo de Compromisso.",
-      "fundamento": [
-        "Lei nº 11.788/2008, art. 3º, II e § 1º — Termo de Compromisso e acompanhamento",
-        "Lei nº 11.788/2008, art. 7º, I, III, IV e parágrafo único — obrigações da instituição de ensino e plano de atividades",
-        "Lei nº 11.788/2008, art. 8º — convênio de concessão, quando utilizado",
-        "Lei nº 11.788/2008, art. 9º, I, IV, V, VI e VII — obrigações da parte concedente",
-        "Lei nº 11.788/2008, art. 5º — agente de integração"
-      ],
-      "impacto_operacional": "O fluxo acadêmico precisa controlar, no mínimo, a formalização do Termo de Compromisso, o plano de atividades, o acompanhamento/relatórios e a documentação comprobatória do estágio. A instituição pode exigir documentos complementares por suas normas internas, PPC e procedimentos próprios.",
-      "procedimento": [
-        "Confirmar matrícula e frequência regular do estudante.",
-        "Formalizar o Termo de Compromisso entre estudante, instituição de ensino e parte concedente.",
-        "Registrar o plano de atividades e eventuais aditivos.",
-        "Identificar professor orientador e supervisor da parte concedente.",
-        "Controlar os relatórios periódicos de atividades.",
-        "Controlar a documentação de seguro contra acidentes pessoais, quando aplicável ao fluxo.",
-        "No desligamento, verificar o termo de realização do estágio e a documentação final exigida pela instituição."
-      ],
-      "limites": "A Lei nº 11.788/2008 estabelece os documentos e responsabilidades mínimos do regime legal, mas não cria uma lista única de documentos administrativos para todas as IES. O checklist institucional deve ser complementado pelo PPC, normas internas e pelo tipo de estágio.",
-      "fontes": [
-        {
-          "norma": "Lei nº 11.788/2008 — Estágio",
-          "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
-        }
-      ],
-      "status_validacao": "validada_com_pesquisa_normativa",
-      "data_verificacao": "2026-09-20",
-      "citacao_literal": false,
-      "regra_oraculo": "Usar a resposta como orientação operacional vinculada à fonte oficial; para checklist institucional, complementar com PPC, normas internas e fluxo vigente da IES.",
-      "confianca": "alta para os requisitos legais gerais; checklist interno exige enquadramento institucional"
-    },
-    {
-      "id": "VR-032",
-      "pergunta_id": "QA-032",
-      "processo": "Estágio",
-      "pergunta": "Quais papéis de supervisão aparecem na legislação de estágio?",
-      "resposta_objetiva": "A Lei nº 11.788/2008 prevê dois papéis centrais de acompanhamento: o professor orientador da instituição de ensino, responsável pelo acompanhamento e avaliação das atividades do estagiário, e o supervisor da parte concedente, responsável por orientar e supervisionar o estudante no local de estágio. O supervisor da parte concedente deve ser funcionário de seu quadro, com formação ou experiência profissional na área de conhecimento do curso, e pode orientar e supervisionar até 10 estagiários simultaneamente. O agente de integração pode auxiliar administrativamente, mas não substitui os papéis de orientação e supervisão previstos na lei.",
-      "fundamento": [
-        "Lei nº 11.788/2008, art. 3º, § 1º — acompanhamento pelo professor orientador e pelo supervisor da parte concedente",
-        "Lei nº 11.788/2008, art. 7º, III — indicação do professor orientador pela instituição de ensino",
-        "Lei nº 11.788/2008, art. 9º, III — supervisor da parte concedente e limite de até 10 estagiários simultaneamente",
-        "Lei nº 11.788/2008, art. 5º — papel auxiliar do agente de integração"
-      ],
-      "impacto_operacional": "O fluxo de estágio deve identificar formalmente o professor orientador da IES e o supervisor da parte concedente, mantendo evidência de acompanhamento. A validação do supervisor deve considerar vínculo com a parte concedente e formação ou experiência profissional compatível com a área do curso.",
-      "procedimento": [
-        "Identificar o professor orientador indicado pela instituição de ensino.",
-        "Identificar o supervisor designado pela parte concedente.",
-        "Verificar se o supervisor pertence ao quadro da parte concedente.",
-        "Verificar formação ou experiência profissional na área de conhecimento desenvolvida no curso.",
-        "Controlar o limite legal de até 10 estagiários supervisionados simultaneamente pelo supervisor.",
-        "Registrar o acompanhamento nos relatórios e demais instrumentos previstos no fluxo institucional."
-      ],
-      "limites": "A lei define os papéis e requisitos mínimos. A denominação de cargos, critérios documentais adicionais e fluxos de aprovação podem ser detalhados por normas internas, PPC, regulamento de estágio ou instrumentos institucionais.",
-      "fontes": [
-        {
-          "norma": "Lei nº 11.788/2008 — Estágio",
-          "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm"
-        }
-      ],
-      "status_validacao": "validada_com_pesquisa_normativa",
-      "data_verificacao": "2026-09-20",
-      "citacao_literal": false,
-      "regra_oraculo": "Usar a resposta como orientação operacional vinculada à fonte oficial; separar responsabilidade legal de procedimento interno.",
-      "confianca": "alta para os papéis e requisitos gerais; detalhes institucionais exigem enquadramento"
     }
   ]
 }
