@@ -52,10 +52,10 @@ HEADERS_LIST = [
     },
 ]
 
-
-MAX_RETRIES = 3
-RETRY_DELAY = 4
-TIMEOUT = 30
+# Limites curtos para impedir que uma fonte lenta trave o monitor inteiro.
+MAX_RETRIES = 2
+RETRY_DELAY = 1
+TIMEOUT = 8
 
 
 # ============================================================
@@ -106,8 +106,8 @@ def normalize_content(content):
 
 def fetch_url(url):
     """
-    Tenta acessar a fonte várias vezes usando headers diferentes.
-    Retorna estrutura padronizada.
+    Tenta acessar a fonte com timeout curto e poucas tentativas.
+    Falha de uma fonte é isolada e não interrompe as demais.
     """
 
     last_error = None
@@ -230,6 +230,7 @@ print("")
 # ============================================================
 
 previous = {}
+previous_data = {}
 
 if LATEST.exists():
 
@@ -249,6 +250,7 @@ if LATEST.exists():
 
     except Exception:
 
+        previous_data = {}
         previous = {}
 
 
@@ -349,7 +351,7 @@ for index, (url, name) in enumerate(
     for old_error in previous_data.get(
         "errors",
         []
-    ) if LATEST.exists() else []:
+    ):
 
         if old_error.get("url") == url:
 
