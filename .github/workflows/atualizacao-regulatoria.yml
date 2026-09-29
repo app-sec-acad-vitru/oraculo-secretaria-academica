@@ -2,7 +2,6 @@ name: Atualização Regulatória Diária do Oráculo
 
 on:
   schedule:
-    # Todos os dias às 09:00 no horário de Brasília (12:00 UTC)
     - cron: "0 12 * * *"
   workflow_dispatch:
 
@@ -25,7 +24,7 @@ jobs:
       - name: Executar monitoramento regulatório
         run: python scripts/monitor_regulatorio.py
 
-      - name: Publicar relatório e dados do monitoramento
+      - name: Publicar alterações do monitoramento
         run: |
           git config user.name "oraculo-bot"
           git config user.email "oraculo-bot@users.noreply.github.com"
