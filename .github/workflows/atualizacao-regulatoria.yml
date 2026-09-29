@@ -2,6 +2,7 @@ name: Atualização Regulatória Diária do Oráculo
 
 on:
   schedule:
+    # Todos os dias às 09:00 no horário de Brasília (12:00 UTC)
     - cron: "0 12 * * *"
   workflow_dispatch:
 
@@ -16,48 +17,24 @@ jobs:
       - name: Baixar repositório
         uses: actions/checkout@v4
 
-      - name: Registrar início da verificação
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Executar monitoramento regulatório
+        run: python scripts/monitor_regulatorio.py
+
+      - name: Publicar relatório e dados do monitoramento
         run: |
-          echo "Verificação regulatória iniciada em $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-          echo "Rotina: execução diária."
+          git config user.name "oraculo-bot"
+          git config user.email "oraculo-bot@users.noreply.github.com"
 
-      - name: Verificar estrutura da base
-        run: |
-          test -f data.json
-          test -f update_manifest.json
-          echo "Estrutura da base validada."
-
-      - name: Atualizar registro da última verificação
-        run: |
-          python - <<'PY'
-          import json
-          from datetime import datetime, timezone
-
-          path = "update_manifest.json"
-
-          with open(path, "r", encoding="utf-8") as f:
-              data = json.load(f)
-
-          data["last_check"] = datetime.now(timezone.utc).isoformat()
-          data["update_frequency"] = "diária"
-          data["schedule_cron"] = "0 12 * * *"
-          data["incremental_check"] = True
-
-          with open(path, "w", encoding="utf-8") as f:
-              json.dump(data, f, ensure_ascii=False, indent=2)
-              f.write("\n")
-          PY
-
-      - name: Publicar alterações
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add update_manifest.json
+          git add monitoring update_manifest.json
 
           if git diff --cached --quiet; then
-            echo "Nenhuma alteração para publicar."
+            echo "Nenhuma alteração de monitoramento para publicar."
           else
-            git commit -m "chore: verificação regulatória diária"
+            git commit -m "chore: atualização regulatória diária"
             git push
           fi
