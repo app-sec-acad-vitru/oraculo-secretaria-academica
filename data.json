@@ -489,7 +489,7 @@
     "summary": "Disciplina a oferta de especializações no âmbito do sistema federal de educação superior.",
     "impact": "Afeta requisitos de oferta, conclusão, certificação, registros e documentação acadêmica da pós-graduação.",
     "procedure": "Relacionar a emissão do certificado/histórico aos requisitos do curso, PPC/projeto e regulamentação vigente.",
-    "source": "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
+    "source": "https://portal.mec.gov.br/escola-de-gestores-da-educacao-basica/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
     "sourceName": "MEC",
     "synonyms": [
       "pós-graduação",
@@ -615,7 +615,7 @@
     "summary": "É referência tradicional para composição de informações do histórico e aparece nas orientações oficiais do MEC.",
     "impact": "Ajuda na modelagem e conferência de campos do histórico escolar.",
     "procedure": "Usar como referência complementar e conferir normas posteriores e especificações digitais.",
-    "source": "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu",
+    "source": "https://portal.mec.gov.br/secretaria-de-educacao-continuada-alfabetizacao-diversidade-e-inclusao/400-secretarias-112877938/seres-regulacao-e-supervisao-da-educacao-superio-1288707557/18540-perguntas-frequentes-seres",
     "sourceName": "MEC / FAQ SESu",
     "synonyms": [
       "campos do histórico",
@@ -1365,7 +1365,7 @@
     "summary": "É referência estrutural para organização, planejamento e desenvolvimento da educação profissional e tecnológica.",
     "impact": "Apoia desenho curricular, organização de itinerários e enquadramento acadêmico dos cursos profissionais.",
     "procedure": "Conferir a norma junto às regras do sistema de ensino, ao CNCT e às normas específicas do curso.",
-    "source": "https://portal.mec.gov.br/dmdocuments/rcp001_21.pdf",
+    "source": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/avaliacao-da-educacao-profissional-e-tecnologica/legislacao",
     "sourceName": "CNE/MEC",
     "synonyms": [
       "Resolução 1 2021",
@@ -1442,7 +1442,7 @@
     "summary": "O SISTEC registra dados de cursos, matrículas, frequência e concluintes e é utilizado para validação de diplomas técnicos.",
     "impact": "Cria obrigações de cadastro e consistência de dados para instituições ofertantes de EPT, independentemente da dependência administrativa.",
     "procedure": "Manter unidade, curso, matrículas e concluintes corretamente registrados e conferir a situação do diploma no SISTEC.",
-    "source": "https://portal.mec.gov.br/sistec-inicial/",
+    "source": "https://sistec.mec.gov.br/login/login",
     "sourceName": "MEC / SISTEC",
     "synonyms": [
       "SISTEC",
@@ -1518,7 +1518,7 @@
     "summary": "A análise de curso técnico deve começar pela identificação do sistema de ensino competente, evitando tratar automaticamente toda oferta como regulada pelo MEC.",
     "impact": "Define o órgão regulador, o ato autorizativo aplicável e o fluxo de supervisão e registro.",
     "procedure": "Identificar mantença, dependência administrativa, unidade federativa e sistema de ensino antes de concluir sobre autorização ou supervisão.",
-    "source": "https://www.gov.br/mec/pt-br/canais_atendimento/ouvidoria/competencias-da-ouvidoria-mec",
+    "source": "https://acervoportal.mec.gov.br/cursos-da-ept/cursos-da-educacao-profissional-tecnica-de-nivel-medio",
     "sourceName": "MEC",
     "synonyms": [
       "curso técnico federal",
@@ -1557,7 +1557,7 @@
     "summary": "A FIC/qualificação profissional abrange capacitação, aperfeiçoamento, especialização e atualização e não deve ser confundida automaticamente com curso técnico de nível médio.",
     "impact": "Afeta nomenclatura, documentação, requisitos de ingresso e natureza do certificado.",
     "procedure": "Classificar a oferta como FIC/qualificação ou curso técnico antes de definir registro, certificado e requisitos acadêmicos.",
-    "source": "https://portal.mec.gov.br/cursos-da-ept",
+    "source": "https://acervoportal.mec.gov.br/cursos-da-ept/formacao-inicial-e-continuada-ou-qualificacao-profissional",
     "sourceName": "MEC",
     "synonyms": [
       "curso profissionalizante",
@@ -1786,7 +1786,7 @@
     "summary": "Deve ser considerada ao consultar a redação vigente da Portaria 506/2025.",
     "impact": "Evita aplicação de texto desatualizado em procedimentos de EaD, polos e atividades acadêmicas.",
     "procedure": "Ao consultar a Portaria 506, verificar sempre as alterações posteriores e consolidar a redação aplicável.",
-    "source": "https://www.dgui.cps.sp.gov.br/dgui_atos_normativos/mec-794/",
+    "source": "https://mecnormas.mec.gov.br/pesquisa/detalhar/7460",
     "sourceName": "MEC / referência normativa",
     "synonyms": [
       "Portaria 794",
