@@ -489,8 +489,8 @@
     "summary": "Disciplina a oferta de especializações no âmbito do sistema federal de educação superior.",
     "impact": "Afeta requisitos de oferta, conclusão, certificação, registros e documentação acadêmica da pós-graduação.",
     "procedure": "Relacionar a emissão do certificado/histórico aos requisitos do curso, PPC/projeto e regulamentação vigente.",
-    "source": "https://acervoportal.mec.gov.br/todas-as-noticias-consulta-teste/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
-    "sourceName": "MEC",
+    "source": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=09%2F04%2F2018&jornal=515&pagina=43",
+    "sourceName": "Imprensa Nacional / DOU — Resolução CNE/CES nº 1/2018",
     "synonyms": [
       "pós-graduação",
       "especialização",
@@ -615,8 +615,8 @@
     "summary": "É referência tradicional para composição de informações do histórico e aparece nas orientações oficiais do MEC.",
     "impact": "Ajuda na modelagem e conferência de campos do histórico escolar.",
     "procedure": "Usar como referência complementar e conferir normas posteriores e especificações digitais.",
-    "source": "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/apresentacao/323-secretarias-112877938/orgaos-vinculados-82187207/12695-ces-2004",
-    "sourceName": "MEC / FAQ SESu",
+    "source": "https://www.ufabc.edu.br/images/servicos/parecer-cne-379-2004.pdf",
+    "sourceName": "UFABC — cópia do Parecer CNE/CES nº 379/2004",
     "synonyms": [
       "campos do histórico",
       "dados obrigatórios do histórico",
@@ -1442,7 +1442,7 @@
     "summary": "O SISTEC registra dados de cursos, matrículas, frequência e concluintes e é utilizado para validação de diplomas técnicos.",
     "impact": "Cria obrigações de cadastro e consistência de dados para instituições ofertantes de EPT, independentemente da dependência administrativa.",
     "procedure": "Manter unidade, curso, matrículas e concluintes corretamente registrados e conferir a situação do diploma no SISTEC.",
-    "source": "https://sistec.mec.gov.br/consultapublica/consultacursos",
+    "source": "https://sistec.mec.gov.br/",
     "sourceName": "MEC / SISTEC",
     "synonyms": [
       "SISTEC",
@@ -2197,8 +2197,8 @@
     "summary": "É uma fonte prática para conferência de conteúdo mínimo do histórico, complementando o exame das normas específicas do documento e do curso.",
     "impact": "Ajuda a estruturar conferência de campos, identificação, disciplinas, carga horária, reconhecimento, colação e assinaturas.",
     "procedure": "Usar a lista do MEC como checklist e verificar se há exigências específicas posteriores ou do formato digital.",
-    "source": "https://acervoportal.mec.gov.br/sesu-secretaria-de-educacao-superior/127-perguntas-frequentes-911936531/educacao-superior-399764090/14384-perguntas-frequentes-sobre-educacao-superior",
-    "sourceName": "MEC — FAQ",
+    "source": "https://ufgd.edu.br/secao/srd/legislacoes",
+    "sourceName": "UFGD — legislação de Registro de Diplomas",
     "synonyms": [
       "histórico escolar",
       "dados do histórico",
