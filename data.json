@@ -1403,8 +1403,8 @@
     "summary": "O CNCT deve ser consultado para denominação, perfil profissional, carga horária mínima e demais parâmetros da habilitação técnica.",
     "impact": "Afeta abertura de curso, PPC, matriz, nomenclatura, carga horária e documentação de conclusão.",
     "procedure": "Conferir a denominação e os parâmetros do curso no CNCT antes de cadastrar ou alterar uma oferta.",
-    "source": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/estrutura-organizacional/orgaos-especificos-singulares/secretaria-de-educacao-profissional/catalogos-nacionais-de-cursos/apresentacao",
-    "sourceName": "MEC",
+    "source": "https://cnct.mec.gov.br/",
+    "sourceName": "MEC — Catálogo Nacional de Cursos Técnicos (CNCT)",
     "synonyms": [
       "Catálogo Nacional de Cursos Técnicos",
       "CNCT",
@@ -1442,8 +1442,8 @@
     "summary": "O SISTEC registra dados de cursos, matrículas, frequência e concluintes e é utilizado para validação de diplomas técnicos.",
     "impact": "Cria obrigações de cadastro e consistência de dados para instituições ofertantes de EPT, independentemente da dependência administrativa.",
     "procedure": "Manter unidade, curso, matrículas e concluintes corretamente registrados e conferir a situação do diploma no SISTEC.",
-    "source": "https://sistec.mec.gov.br/",
-    "sourceName": "MEC / SISTEC",
+    "source": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/MANUAL_SISTEC.pdf",
+    "sourceName": "MEC — Manual do SISTEC",
     "synonyms": [
       "SISTEC",
       "registro curso técnico",
@@ -1481,8 +1481,8 @@
     "summary": "É referência para organização dos cursos técnicos de nível médio, incluindo articulação com o ensino médio, carga horária e registro no SISTEC.",
     "impact": "Afeta matriz curricular, conclusão, certificação e registros acadêmicos.",
     "procedure": "Conferir a forma de oferta, carga horária e requisitos de conclusão junto ao CNCT e às normas do sistema de ensino.",
-    "source": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/rceb006_121.pdf",
-    "sourceName": "CNE/MEC",
+    "source": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/leis/resolucoes_cne/ceb006_12.pdf",
+    "sourceName": "MEC/CNE — Resolução CNE/CEB nº 6/2012",
     "synonyms": [
       "Resolução 6 2012",
       "EPTNM",
@@ -2309,8 +2309,8 @@
     "summary": "É a referência operacional para conferir a situação regulatória cadastrada de uma IES ou curso no sistema federal.",
     "impact": "A Secretaria deve conferir o cadastro e-MEC e os atos publicados antes de tratar um curso como regular, autorizado, reconhecido, renovado ou em determinada situação regulatória.",
     "procedure": "Consultar o curso pelo nome ou código e-MEC, conferir modalidade, situação, atos autorizativos, avaliações e processos em andamento; em caso de divergência, seguir o procedimento oficial de correção/inserção do ato.",
-    "source": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/cadastro-nacional-de-cursos-e-ies",
-    "sourceName": "MEC — Cadastro e-MEC",
+    "source": "https://www.gov.br/pt-br/servicos/solicitar-a-insercao-ou-a-correcao-de-dados-de-ato-regulatorio-de-ies-ou-curso",
+    "sourceName": "Gov.br — MEC / e-MEC",
     "synonyms": [
       "e-MEC",
       "ato autorizativo",
