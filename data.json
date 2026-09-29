@@ -99,7 +99,7 @@
     "summary": "Estabelece regras para expedição e registro de diplomas de cursos superiores de graduação no sistema federal.",
     "impact": "Define controles de prazo, documentação, expedição e registro de diplomas.",
     "procedure": "Controlar a data da colação, a expedição e o registro, mantendo evidências do cumprimento dos prazos.",
-    "source": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/secretarias/secretaria-de-educacao-superior/diploma-digital",
+    "source": "https://www.gov.br/mec/pt-br/diploma-digital",
     "sourceName": "MEC / Diploma Digital",
     "synonyms": [
       "diploma",
@@ -489,7 +489,7 @@
     "summary": "Disciplina a oferta de especializações no âmbito do sistema federal de educação superior.",
     "impact": "Afeta requisitos de oferta, conclusão, certificação, registros e documentação acadêmica da pós-graduação.",
     "procedure": "Relacionar a emissão do certificado/histórico aos requisitos do curso, PPC/projeto e regulamentação vigente.",
-    "source": "https://portal.mec.gov.br/escola-de-gestores-da-educacao-basica/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
+    "source": "https://acervoportal.mec.gov.br/todas-as-noticias-consulta-teste/323-secretarias-112877938/orgaos-vinculados-82187207/45641-pos-graduacao-lato-sensu-escolas-de-governo",
     "sourceName": "MEC",
     "synonyms": [
       "pós-graduação",
@@ -615,7 +615,7 @@
     "summary": "É referência tradicional para composição de informações do histórico e aparece nas orientações oficiais do MEC.",
     "impact": "Ajuda na modelagem e conferência de campos do histórico escolar.",
     "procedure": "Usar como referência complementar e conferir normas posteriores e especificações digitais.",
-    "source": "https://portal.mec.gov.br/secretaria-de-educacao-continuada-alfabetizacao-diversidade-e-inclusao/400-secretarias-112877938/seres-regulacao-e-supervisao-da-educacao-superio-1288707557/18540-perguntas-frequentes-seres",
+    "source": "https://portal.mec.gov.br/secretaria-de-regulacao-e-supervisao-da-educacao-superior-seres/apresentacao/323-secretarias-112877938/orgaos-vinculados-82187207/12695-ces-2004",
     "sourceName": "MEC / FAQ SESu",
     "synonyms": [
       "campos do histórico",
@@ -1442,7 +1442,7 @@
     "summary": "O SISTEC registra dados de cursos, matrículas, frequência e concluintes e é utilizado para validação de diplomas técnicos.",
     "impact": "Cria obrigações de cadastro e consistência de dados para instituições ofertantes de EPT, independentemente da dependência administrativa.",
     "procedure": "Manter unidade, curso, matrículas e concluintes corretamente registrados e conferir a situação do diploma no SISTEC.",
-    "source": "https://sistec.mec.gov.br/login/login",
+    "source": "https://sistec.mec.gov.br/consultapublica/consultacursos",
     "sourceName": "MEC / SISTEC",
     "synonyms": [
       "SISTEC",
@@ -1518,7 +1518,7 @@
     "summary": "A análise de curso técnico deve começar pela identificação do sistema de ensino competente, evitando tratar automaticamente toda oferta como regulada pelo MEC.",
     "impact": "Define o órgão regulador, o ato autorizativo aplicável e o fluxo de supervisão e registro.",
     "procedure": "Identificar mantença, dependência administrativa, unidade federativa e sistema de ensino antes de concluir sobre autorização ou supervisão.",
-    "source": "https://acervoportal.mec.gov.br/cursos-da-ept/cursos-da-educacao-profissional-tecnica-de-nivel-medio",
+    "source": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_ept_de_nivel_medio.pdf",
     "sourceName": "MEC",
     "synonyms": [
       "curso técnico federal",
@@ -1557,7 +1557,7 @@
     "summary": "A FIC/qualificação profissional abrange capacitação, aperfeiçoamento, especialização e atualização e não deve ser confundida automaticamente com curso técnico de nível médio.",
     "impact": "Afeta nomenclatura, documentação, requisitos de ingresso e natureza do certificado.",
     "procedure": "Classificar a oferta como FIC/qualificação ou curso técnico antes de definir registro, certificado e requisitos acadêmicos.",
-    "source": "https://acervoportal.mec.gov.br/cursos-da-ept/formacao-inicial-e-continuada-ou-qualificacao-profissional",
+    "source": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_formacao_inicial_e_continuada.pdf",
     "sourceName": "MEC",
     "synonyms": [
       "curso profissionalizante",
@@ -2197,7 +2197,7 @@
     "summary": "É uma fonte prática para conferência de conteúdo mínimo do histórico, complementando o exame das normas específicas do documento e do curso.",
     "impact": "Ajuda a estruturar conferência de campos, identificação, disciplinas, carga horária, reconhecimento, colação e assinaturas.",
     "procedure": "Usar a lista do MEC como checklist e verificar se há exigências específicas posteriores ou do formato digital.",
-    "source": "https://portal.mec.gov.br/component/content/article/191-secretarias-112877938/sesu-478593899/14063-perguntas-frequentes-sesu",
+    "source": "https://acervoportal.mec.gov.br/sesu-secretaria-de-educacao-superior/127-perguntas-frequentes-911936531/educacao-superior-399764090/14384-perguntas-frequentes-sobre-educacao-superior",
     "sourceName": "MEC — FAQ",
     "synonyms": [
       "histórico escolar",
