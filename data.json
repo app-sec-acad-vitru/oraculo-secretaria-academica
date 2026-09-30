@@ -1288,8 +1288,8 @@
     "summary": "Orienta a aplicação gradual das novas regras e preserva, nos termos indicados pelo MEC, o direito de conclusão dos estudantes matriculados em cursos afetados pela mudança.",
     "impact": "Exige controle da data de ingresso, formato constante do ato de matrícula e regras de transição antes de alterar o tratamento acadêmico de uma turma.",
     "procedure": "Identificar turma e data de ingresso, verificar o formato do ato de matrícula e aplicar a regra de transição correspondente.",
-    "source": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/as-mudancas-se-aplicam-imediatamente",
-    "sourceName": "MEC",
+    "source": "https://mecnormas.mec.gov.br/pesquisa/detalhar/5186",
+    "sourceName": "MEC Normas — Portaria MEC nº 506/2025 / Nova Política de EaD",
     "synonyms": [
       "mudança EAD",
       "transição aluno",
@@ -1403,8 +1403,8 @@
     "summary": "O CNCT deve ser consultado para denominação, perfil profissional, carga horária mínima e demais parâmetros da habilitação técnica.",
     "impact": "Afeta abertura de curso, PPC, matriz, nomenclatura, carga horária e documentação de conclusão.",
     "procedure": "Conferir a denominação e os parâmetros do curso no CNCT antes de cadastrar ou alterar uma oferta.",
-    "source": "https://cnct.mec.gov.br/",
-    "sourceName": "MEC — Catálogo Nacional de Cursos Técnicos (CNCT)",
+    "source": "https://dadosabertos.mec.gov.br/cnct",
+    "sourceName": "MEC — Dados Abertos / Catálogo Nacional de Cursos Técnicos (CNCT)",
     "synonyms": [
       "Catálogo Nacional de Cursos Técnicos",
       "CNCT",
@@ -1481,8 +1481,8 @@
     "summary": "É referência para organização dos cursos técnicos de nível médio, incluindo articulação com o ensino médio, carga horária e registro no SISTEC.",
     "impact": "Afeta matriz curricular, conclusão, certificação e registros acadêmicos.",
     "procedure": "Conferir a forma de oferta, carga horária e requisitos de conclusão junto ao CNCT e às normas do sistema de ensino.",
-    "source": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/leis/resolucoes_cne/ceb006_12.pdf",
-    "sourceName": "MEC/CNE — Resolução CNE/CEB nº 6/2012",
+    "source": "https://ensino.ifc.edu.br/wp-content/uploads/sites/37/2022/10/Resolucao-CNE_CEB-06_2012.pdf",
+    "sourceName": "Instituto Federal Catarinense — Resolução CNE/CEB nº 6/2012",
     "synonyms": [
       "Resolução 6 2012",
       "EPTNM",
