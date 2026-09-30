@@ -25,12 +25,16 @@ jobs:
       - name: Validar alterações
         run: |
           git diff --check
+
           echo "===== MONITOR REGULATÓRIO ====="
           git diff -- scripts/monitor_regulatorio.py
+
           echo "===== WORKFLOW DIÁRIO ====="
           git diff -- .github/workflows/atualizacao-regulatoria.yml
+
           echo "===== WORKFLOW SEMANAL ====="
           git diff -- .github/workflows/weekly-regulatory-monitor.yml
+
           echo "===== INDEX ====="
           git diff -- index.html
 
@@ -41,8 +45,6 @@ jobs:
 
           git add \
             scripts/monitor_regulatorio.py \
-            .github/workflows/atualizacao-regulatoria.yml \
-            .github/workflows/weekly-regulatory-monitor.yml \
             index.html
 
           if git diff --cached --quiet; then
