@@ -5,6 +5,12 @@ on:
     - cron: "0 12 * * *"
   workflow_dispatch:
 
+# Serializa o monitor diário e o semanal para evitar
+# duas execuções tentando publicar ao mesmo tempo.
+concurrency:
+  group: oraculo-monitor-regulatorio
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
