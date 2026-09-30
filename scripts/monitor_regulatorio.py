@@ -267,6 +267,49 @@ current_sources = {}
 
 
 # ============================================================
+# CLASSIFICAÇÃO CONSERVADORA DE ALTERAÇÕES
+# ============================================================
+
+def classify_change(name, url):
+    """Classifica a alteração técnica sem afirmar que houve mudança normativa."""
+    text = f"{name} {url}".lower()
+    normative = re.search(
+        r"\b(portaria|resolu[cç][aã]o|decreto|lei|parecer|"
+        r"instru[cç][aã]o\s+normativa|delibera[cç][aã]o)\b",
+        text,
+    )
+    guidance = re.search(
+        r"(faq|perguntas|orienta[cç][aã]o|not[ií]cia|news|"
+        r"forma[cç][aã]o|cobran[cç]a|d[uú]vidas|como-funciona|"
+        r"educa[cç][aã]o.*dist[aâ]ncia)",
+        text,
+    )
+
+    if normative:
+        return {
+            "change_type": "ato_normativo_candidato",
+            "verification_status": "validacao_pendente",
+            "confirmed_normative_change": False,
+            "label": "ATO NORMATIVO — VALIDAÇÃO PENDENTE",
+        }
+
+    if guidance:
+        return {
+            "change_type": "orientacao_pagina",
+            "verification_status": "sem_confirmacao_normativa",
+            "confirmed_normative_change": False,
+            "label": "ORIENTAÇÃO/PÁGINA OFICIAL ATUALIZADA",
+        }
+
+    return {
+        "change_type": "pagina_oficial",
+        "verification_status": "sem_confirmacao_normativa",
+        "confirmed_normative_change": False,
+        "label": "PÁGINA OFICIAL ATUALIZADA",
+    }
+
+
+# ============================================================
 # MONITORAR FONTES
 # ============================================================
 
@@ -373,11 +416,14 @@ for index, (url, name) in enumerate(
 
     if changed:
 
+        classification = classify_change(name, url)
+
         changes.append({
             "name": name,
             "url": url,
             "previous_hash": previous_hash,
             "current_hash": content_hash,
+            **classification,
         })
 
         print("   🔎 ALTERAÇÃO DETECTADA")
@@ -438,6 +484,25 @@ for index, (url, name) in enumerate(
 checked_at = now_iso()
 
 
+classification_counts = {
+    "ato_normativo_candidato": sum(
+        1 for x in changes
+        if x.get("change_type") == "ato_normativo_candidato"
+    ),
+    "orientacao_pagina": sum(
+        1 for x in changes
+        if x.get("change_type") == "orientacao_pagina"
+    ),
+    "pagina_oficial": sum(
+        1 for x in changes
+        if x.get("change_type") == "pagina_oficial"
+    ),
+    "alteracao_normativa_confirmada": sum(
+        1 for x in changes
+        if x.get("confirmed_normative_change") is True
+    ),
+}
+
 result_data = {
     "checked_at": checked_at,
 
@@ -450,6 +515,8 @@ result_data = {
     },
 
     "sources": current_sources,
+
+    "classification_counts": classification_counts,
 
     "changes": changes,
 
@@ -514,7 +581,7 @@ report.append(
 )
 
 report.append(
-    f"- Alterações detectadas: **{len(changes)}**"
+    f"- Alterações de conteúdo detectadas: **{len(changes)}**"
 )
 
 report.append(
@@ -535,7 +602,7 @@ report.append("")
 if changes:
 
     report.append(
-        "## 🔎 Alterações detectadas"
+        "## 🔎 Alterações de conteúdo detectadas"
     )
 
     report.append("")
@@ -664,6 +731,8 @@ manifest.update({
     "sources_verified": len(verified),
 
     "last_weekly_changes_detected": len(changes),
+    "last_weekly_normative_candidates": classification_counts["ato_normativo_candidato"],
+    "last_weekly_normative_confirmed": classification_counts["alteracao_normativa_confirmada"],
 
     "last_weekly_access_errors": len(errors),
 
@@ -701,7 +770,7 @@ print(
 )
 
 print(
-    f"🔎 Alterações detectadas: {len(changes)}"
+    f"🔎 Alterações de conteúdo detectadas: {len(changes)}"
 )
 
 print(
