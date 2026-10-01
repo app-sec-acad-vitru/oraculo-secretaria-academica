@@ -1,0 +1,56 @@
+name: Parser e Triagem DOU — V10.6
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oraculo-monitor-regulatorio
+  cancel-in-progress: false
+
+jobs:
+  parser:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Executar parser e triagem
+        env:
+          INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+          INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
+        run: python scripts/monitor_atos_regulatorios.py
+
+      - name: Exibir resultado
+        run: |
+          echo "===== V10.6 — PARSER E TRIAGEM ====="
+          python - <<'PY'
+          import json
+          p="monitoring/dou_candidates_v10_6.json"
+          d=json.load(open(p,encoding="utf-8"))
+          print("XMLs processados:", d["summary"]["xmls_processados"])
+          print("Candidatos:", d["summary"]["candidatos"])
+          print("Erros de parse:", d["summary"]["erros_parse"])
+          print()
+          for i,c in enumerate(d["candidates"],1):
+              print(f"{i}. [{c.get('score')}] {c.get('artType')} | {c.get('identifica')}")
+              print("   Categoria:", c.get("artCategory"))
+              print("   Tipos:", ", ".join(c.get("act_types",[])))
+              print("   Fonte:", c.get("pdfPage"))
+          PY
+
+      - name: Commit dos candidatos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitoring/dou_candidates_v10_6.json
+          git commit -m "chore: parser e triagem DOU V10.6" || echo "Sem alterações"
+          git push || true
