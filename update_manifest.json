@@ -25,16 +25,16 @@
     "Resultados Enade e portarias de divulgação",
     "Indicadores: Conceito Enade, IDD, CPC e IGC"
   ],
-  "verified_at": "2026-10-01T12:14:50.255285+00:00",
-  "last_weekly_check": "2026-10-01T12:14:50.255285+00:00",
+  "verified_at": "2026-10-01T18:19:49.977027+00:00",
+  "last_weekly_check": "2026-10-01T18:19:49.977027+00:00",
   "sources_registered": 52,
-  "sources_verified": 51,
-  "last_weekly_changes_detected": 15,
-  "last_weekly_access_errors": 1,
+  "sources_verified": 50,
+  "last_weekly_changes_detected": 14,
+  "last_weekly_access_errors": 2,
   "last_check": "2026-09-29T19:50:44.420088+00:00",
   "update_frequency": "diária",
   "schedule_cron": "0 12 * * *",
   "incremental_check": true,
-  "last_weekly_normative_candidates": 5,
+  "last_weekly_normative_candidates": 3,
   "last_weekly_normative_confirmed": 0
 }
