@@ -1,25 +1,81 @@
 {
-  "version": "V10.2",
-  "executed_at": "2026-10-01T00:58:51.937824+00:00",
-  "source_status": {
+  "version": "V10.2.1-DIAGNOSTICO",
+  "executed_at": "2026-10-01T01:02:11.461346+00:00",
+  "login": {
     "status": "ok",
-    "message": "Login INLABS realizado.",
-    "errors": [
-      "2026-09-30/DO1: HTTP 200 ou conteúdo não ZIP",
-      "2026-09-30/DO1E: HTTP 200 ou conteúdo não ZIP",
-      "2026-09-29/DO1: HTTP 200 ou conteúdo não ZIP",
-      "2026-09-29/DO1E: HTTP 200 ou conteúdo não ZIP"
-    ]
+    "message": "Login INLABS realizado."
   },
-  "candidates_received": 0,
-  "new_records": [],
-  "confirmed": 0,
-  "pending_validation": 0,
-  "source_policy": {
-    "primary": "DOU/Imprensa Nacional",
-    "ingestion": "INLABS XML",
-    "secondary": "e-MEC",
-    "scope": "Todos os cursos de graduação, sem restrição por IES, mantenedora, modalidade ou localidade.",
-    "confirmation_rule": "Publicação individual do DOU + evidência suficiente de ato, número, data, IES, curso e grau."
-  }
+  "diagnostico_download": [
+    {
+      "date": "2026-09-30",
+      "section": "DO1",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-30&dl=2026-09-30-DO1.zip",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_header": "6065",
+      "body_size": 6065,
+      "first_bytes_hex": "3c21444f43545950452068746d6c3e0d0a3c68746d6c3e0d0a3c686561643e0d",
+      "first_bytes_ascii": "<!DOCTYPE html>..<html>..<head>.",
+      "is_zip_signature": false,
+      "looks_like_html": true,
+      "looks_like_json": false,
+      "redirect": null,
+      "error": null
+    },
+    {
+      "date": "2026-09-30",
+      "section": "DO1E",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-30&dl=2026-09-30-DO1E.zip",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_header": "6065",
+      "body_size": 6065,
+      "first_bytes_hex": "3c21444f43545950452068746d6c3e0d0a3c68746d6c3e0d0a3c686561643e0d",
+      "first_bytes_ascii": "<!DOCTYPE html>..<html>..<head>.",
+      "is_zip_signature": false,
+      "looks_like_html": true,
+      "looks_like_json": false,
+      "redirect": null,
+      "error": null
+    },
+    {
+      "date": "2026-09-29",
+      "section": "DO1",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-29&dl=2026-09-29-DO1.zip",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_header": "6065",
+      "body_size": 6065,
+      "first_bytes_hex": "3c21444f43545950452068746d6c3e0d0a3c68746d6c3e0d0a3c686561643e0d",
+      "first_bytes_ascii": "<!DOCTYPE html>..<html>..<head>.",
+      "is_zip_signature": false,
+      "looks_like_html": true,
+      "looks_like_json": false,
+      "redirect": null,
+      "error": null
+    },
+    {
+      "date": "2026-09-29",
+      "section": "DO1E",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-29&dl=2026-09-29-DO1E.zip",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length_header": "6065",
+      "body_size": 6065,
+      "first_bytes_hex": "3c21444f43545950452068746d6c3e0d0a3c68746d6c3e0d0a3c686561643e0d",
+      "first_bytes_ascii": "<!DOCTYPE html>..<html>..<head>.",
+      "is_zip_signature": false,
+      "looks_like_html": true,
+      "looks_like_json": false,
+      "redirect": null,
+      "error": null
+    }
+  ],
+  "interpretacao": {
+    "PK": "ZIP válido/esperado",
+    "HTML": "Resposta de página/erro/sessão em vez do ZIP",
+    "JSON": "Resposta JSON/API em vez do ZIP",
+    "outro": "Resposta diferente do esperado"
+  },
+  "proxima_etapa": "Ajustar o endpoint de download somente após identificar o retorno real."
 }
