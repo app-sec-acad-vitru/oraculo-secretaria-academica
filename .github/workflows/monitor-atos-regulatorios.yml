@@ -1,10 +1,7 @@
-name: Monitoramento de Atos Regulatórios — V10.3
+name: Diagnóstico INLABS — V10.4 Login
 
 on:
   workflow_dispatch:
-  schedule:
-    # 12:30 BRT / 15:30 UTC
-    - cron: "30 15 * * *"
 
 permissions:
   contents: write
@@ -14,7 +11,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  monitorar:
+  diagnostico:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,31 +22,21 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Executar monitor V10.3
+      - name: Executar V10.4
         env:
           INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
         run: python scripts/monitor_atos_regulatorios.py
 
-      - name: Exibir resultado
+      - name: Exibir diagnóstico
         run: |
-          echo "===== V10.3 ====="
+          echo "===== V10.4 LOGIN INLABS ====="
           cat monitoring/atos_regulatorios_log.json
 
-      - name: Verificar alterações
-        id: diff
-        run: |
-          if git diff --quiet -- monitoring/atos_regulatorios.json monitoring/atos_regulatorios_log.json; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Commit e push
-        if: steps.diff.outputs.changed == 'true'
+      - name: Commit do diagnóstico
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add monitoring/atos_regulatorios.json monitoring/atos_regulatorios_log.json
-          git commit -m "chore: monitoramento de atos regulatórios V10.3"
-          git push
+          git add monitoring/atos_regulatorios_log.json
+          git commit -m "chore: diagnóstico login INLABS V10.4" || echo "Sem alterações"
+          git push || true
