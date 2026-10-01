@@ -1,48 +1,49 @@
 #!/usr/bin/env python3
 """
-Oráculo da Secretaria Acadêmica — V10.4
-INLABS: reprodução fiel do POST de logar.php + diagnóstico da resposta.
+Oráculo da Secretaria Acadêmica — V10.5
+Captura controlada de arquivos INLABS.
 
-A V10.3 confirmou:
-- formulário de login: POST logar.php
-- campos: email/password
-- não há sessão autenticada após o POST
+Objetivo desta versão:
+- reutilizar a autenticação que já foi validada na V10.4;
+- baixar somente os arquivos de 30/09/2026 e 29/09/2026;
+- testar DO1 e DO1E;
+- confirmar assinatura ZIP;
+- abrir o ZIP em memória;
+- contar XMLs e registrar amostras de nomes;
+- inspecionar alguns XMLs para descobrir a estrutura real;
+- NÃO criar/confirmar atos regulatórios.
 
-A V10.4 mantém o CookieJar e envia:
-- todos os campos do formulário de login;
-- valor do botão submit, quando existir;
-- header Origem usado pelo fluxo conhecido do INLABS;
-- Referer/Origin;
-- Accept/Accept-Language;
-- sem expor credenciais.
-
-Além disso, registra somente sinais sanitizados da resposta de logar.php,
-incluindo título, mensagens e redirecionamento.
-
-Se a sessão continuar inválida, o log permitirá identificar a mensagem exata
-do portal sem gravar senha/cookie/token.
-
-Nenhum ato regulatório é confirmado nesta versão.
+A versão seguinte usará a estrutura real encontrada para construir o parser.
 """
 
 from __future__ import annotations
-import json, os, re
-from datetime import datetime, timezone
+
+import io
+import json
+import os
+import re
+import zipfile
+from datetime import datetime, timedelta, timezone
 from html import unescape
 from pathlib import Path
-from urllib.parse import urlencode, urljoin, urlparse
+from urllib.parse import urlencode, urljoin
 from urllib.request import Request, build_opener
 from http.cookiejar import CookieJar
 from html.parser import HTMLParser
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 MONITORING = ROOT / "monitoring"
 LOG_FILE = MONITORING / "atos_regulatorios_log.json"
+CAPTURE_FILE = MONITORING / "inlabs_capture_diagnostic.json"
 
 BASE = "https://inlabs.in.gov.br"
 ACCESS = f"{BASE}/acessar.php"
-LOGIN = f"{BASE}/logar.php"
+DOWNLOAD = f"{BASE}/index.php?p={{date}}&dl={{date}}-{{section}}.zip"
 ORIGEM = "736372697074"
+
+TARGET_DATES = ["2026-09-30", "2026-09-29"]
+SECTIONS = ["DO1", "DO1E"]
 
 class FormParser(HTMLParser):
     def __init__(self):
@@ -69,19 +70,27 @@ class FormParser(HTMLParser):
 def make_opener():
     jar = CookieJar()
     op = build_opener()
-    op.add_handler(__import__("urllib.request", fromlist=["HTTPCookieProcessor"]).HTTPCookieProcessor(jar))
+    op.add_handler(__import__(
+        "urllib.request",
+        fromlist=["HTTPCookieProcessor"]
+    ).HTTPCookieProcessor(jar))
     return op, jar
 
-def request(op, url, data=None, headers=None, timeout=60):
+def request(op, url, data=None, headers=None, timeout=120):
     h = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept": "*/*",
         "Accept-Language": "pt-BR,pt;q=0.9",
         "Connection": "keep-alive",
     }
     if headers:
         h.update(headers)
-    req = Request(url, data=data, headers=h, method="POST" if data is not None else "GET")
+    req = Request(
+        url,
+        data=data,
+        headers=h,
+        method="POST" if data is not None else "GET"
+    )
     with op.open(req, timeout=timeout) as r:
         return r.status, dict(r.headers.items()), r.geturl(), r.read()
 
@@ -91,185 +100,255 @@ def visible(body):
     s = re.sub(r"<style\b[^>]*>.*?</style>"," ",s,flags=re.I|re.S)
     s = re.sub(r"<[^>]+>"," ",s)
     s = unescape(s)
-    s = re.sub(r"\s+"," ",s).strip()
-    # Defesa adicional contra vazamento acidental.
-    s = re.sub(r"(?i)(password|senha)\s*[:=]\s*\S+", r"\1=[REDACTED]", s)
-    s = re.sub(r"(?i)(token|cookie|session|sess[aã]o)\s*[:=]\s*\S+", r"\1=[REDACTED]", s)
-    return s
+    return re.sub(r"\s+"," ",s).strip()
 
-def title(body):
-    s = body.decode("utf-8","ignore")
-    m = re.search(r"<title[^>]*>(.*?)</title>",s,flags=re.I|re.S)
-    if not m:
-        return ""
-    return re.sub(r"\s+"," ",unescape(re.sub(r"<[^>]+>"," ",m.group(1)))).strip()
-
-def sanitize_form(form):
-    return {
-        "action": form.get("action",""),
-        "method": form.get("method",""),
-        "inputs": [
-            {
-                "name": x.get("name",""),
-                "id": x.get("id",""),
-                "type": x.get("type",""),
-                "value_present": bool(x.get("value",""))
-            }
-            for x in form.get("inputs",[])
-        ]
-    }
-
-def find_login_form(forms):
-    candidates = []
-    for f in forms:
-        blob = json.dumps(f,ensure_ascii=False).lower()
-        score = 0
-        if f.get("action","").lower().endswith("logar.php"):
-            score += 10
-        if "password" in blob:
-            score += 5
-        if "email" in blob:
-            score += 5
-        if f.get("method") == "post":
-            score += 2
-        candidates.append((score,f))
-    return max(candidates,key=lambda x:x[0])[1] if candidates else None
-
-def login(op, diag):
+def login(op):
     email = os.getenv("INLABS_EMAIL","").strip()
     password = os.getenv("INLABS_PASSWORD","").strip()
+
     if not email or not password:
         return False, "Secrets INLABS não configurados."
 
     status, headers, final_url, body = request(op, ACCESS, timeout=30)
-    forms = FormParser()
-    forms.feed(body.decode("utf-8","ignore"))
-    form = find_login_form(forms.forms)
 
-    diag["access_page"] = {
-        "http_status": status,
-        "final_url": final_url,
-        "form_count": len(forms.forms),
-        "selected_form": sanitize_form(form) if form else None
-    }
+    parser = FormParser()
+    parser.feed(body.decode("utf-8","ignore"))
+
+    form = None
+    for candidate in parser.forms:
+        if candidate.get("action","").lower().endswith("logar.php"):
+            form = candidate
+            break
 
     if not form:
-        return False, "Formulário de login não encontrado."
+        return False, "Formulário logar.php não encontrado."
 
     payload = {}
-    submit = None
+
     for item in form["inputs"]:
         name = item.get("name","")
         typ = item.get("type","text").lower()
-        if typ == "submit":
-            # O botão do INLABS pode ser sem name. Se tiver name, preservar.
-            if name:
-                submit = (name,item.get("value",""))
+
+        if not name:
             continue
-        if name:
-            payload[name] = item.get("value","")
 
-    # Campos reais confirmados na V10.3.
-    login_field = next((x.get("name") for x in form["inputs"]
-                        if x.get("name") == "email"), "email")
-    pass_field = next((x.get("name") for x in form["inputs"]
-                       if x.get("name") == "password"), "password")
-    payload[login_field] = email
-    payload[pass_field] = password
+        if typ in ("submit","button","file"):
+            continue
 
-    if submit:
-        payload[submit[0]] = submit[1]
+        payload[name] = item.get("value","")
+
+    payload["email"] = email
+    payload["password"] = password
 
     action = urljoin(ACCESS, form.get("action") or "logar.php")
-    if urlparse(action).netloc.lower() != urlparse(BASE).netloc.lower():
-        return False, "Action do formulário aponta para host externo; abortado."
-
-    # Reprodução do cabeçalho Origem utilizado no fluxo legado conhecido.
-    request_headers = {
-        "Content-Type":"application/x-www-form-urlencoded",
-        "Referer": ACCESS,
-        "Origin": BASE,
-        "Origem": ORIGEM,
-        "Cache-Control":"no-cache",
-    }
 
     status2, headers2, final2, body2 = request(
-        op, action,
+        op,
+        action,
         data=urlencode(payload).encode(),
-        headers=request_headers,
+        headers={
+            "Content-Type":"application/x-www-form-urlencoded",
+            "Referer":ACCESS,
+            "Origin":BASE,
+            "Origem":ORIGEM,
+        },
         timeout=30
     )
 
-    text2 = visible(body2)
-    diag["login_post"] = {
-        "action": action,
-        "http_status": status2,
-        "final_url": final2,
-        "content_type": headers2.get("Content-Type"),
-        "body_size": len(body2),
-        "title": title(body2),
-        "visible_text_sample": text2[:2500],
-        "redirected_to_access": "acessar.php" in final2.lower(),
-        "response_hints": {
-            "invalid_credentials": bool(re.search(
-                r"senha.*(incorreta|inv[aá]lida)|login.*(incorreto|inv[aá]lido)|usu[aá]rio.*(incorreto|inv[aá]lido)|n[aã]o.*autentic",
-                text2,re.I)),
-            "login_success": bool(re.search(
-                r"minha conta|sair|logout|bem vindo|bem-vindo",
-                text2,re.I)),
-            "blocked": bool(re.search(
-                r"bloquead|tente novamente|muitas tentativas|acesso negado|forbidden",
-                text2,re.I))
-        }
-    }
+    text = visible(body2).lower()
 
-    # Teste protegido: acessar a raiz/listagem após login.
-    status3, headers3, final3, body3 = request(op, BASE + "/", timeout=30)
-    text3 = visible(body3)
     authenticated = (
-        "acessar.php" not in final3.lower()
-        and bool(re.search(r"minha conta|sair|logout|download|dados abertos",text3,re.I))
+        "acessar.php" not in final2.lower()
+        and bool(re.search(r"minha conta|sair|logout", text))
     )
 
-    diag["protected_check"] = {
-        "http_status": status3,
-        "final_url": final3,
-        "content_type": headers3.get("Content-Type"),
-        "authenticated": authenticated,
-        "title": title(body3),
-        "visible_text_sample": text3[:1200]
+    if not authenticated:
+        return False, "Sessão INLABS não foi validada."
+
+    return True, "Sessão INLABS autenticada."
+
+def inspect_xml(xml_bytes, filename):
+    result = {
+        "filename": filename,
+        "size_bytes": len(xml_bytes),
+        "root": "",
+        "root_attributes": {},
+        "article_count": 0,
+        "sample_elements": [],
+        "sample_text": "",
+        "sample_attributes": {},
+        "contains_course_terms": False,
+        "contains_regulatory_terms": False,
     }
 
-    return authenticated, (
-        "Sessão autenticada."
-        if authenticated
-        else "POST executado, mas a sessão protegida ainda não foi validada."
-    )
+    try:
+        root = ET.fromstring(xml_bytes)
+        result["root"] = root.tag
+        result["root_attributes"] = {
+            str(k): str(v)[:300]
+            for k,v in root.attrib.items()
+        }
+
+        articles = []
+        for el in root.iter():
+            local = el.tag.split("}")[-1].lower()
+            if local == "article":
+                articles.append(el)
+
+        result["article_count"] = len(articles)
+
+        elements = []
+        for el in root.iter():
+            local = el.tag.split("}")[-1]
+            if local not in elements:
+                elements.append(local)
+            if len(elements) >= 40:
+                break
+        result["sample_elements"] = elements
+
+        if articles:
+            article = articles[0]
+            result["sample_attributes"] = {
+                str(k): str(v)[:500]
+                for k,v in article.attrib.items()
+            }
+
+            text = " ".join(
+                t.strip()
+                for t in article.itertext()
+                if t and t.strip()
+            )
+            text = re.sub(r"\s+"," ",text).strip()
+            result["sample_text"] = text[:2500]
+
+            lower = text.lower()
+            result["contains_course_terms"] = bool(
+                re.search(
+                    r"curso|graduação|graduacao|bacharelado|licenciatura|tecnologia|tecnólogo|tecnologo",
+                    lower
+                )
+            )
+            result["contains_regulatory_terms"] = bool(
+                re.search(
+                    r"reconhecimento|autorização|autorizacao|aditamento|renovação|renovacao",
+                    lower
+                )
+            )
+
+    except Exception as exc:
+        result["parse_error"] = str(exc)
+
+    return result
+
+def download_and_inspect(op, date_iso, section):
+    url = DOWNLOAD.format(date=date_iso, section=section)
+
+    result = {
+        "date": date_iso,
+        "section": section,
+        "url": url,
+        "http_status": None,
+        "final_url": None,
+        "content_type": None,
+        "body_size": 0,
+        "is_zip": False,
+        "zip_entries": 0,
+        "xml_entries": 0,
+        "xml_total_bytes": 0,
+        "sample_filenames": [],
+        "xml_samples": [],
+        "error": None,
+    }
+
+    try:
+        status, headers, final_url, body = request(
+            op,
+            url,
+            headers={"Referer":ACCESS},
+            timeout=180
+        )
+
+        result["http_status"] = status
+        result["final_url"] = final_url
+        result["content_type"] = headers.get("Content-Type")
+        result["body_size"] = len(body)
+        result["is_zip"] = body.startswith(b"PK")
+
+        if not result["is_zip"]:
+            result["error"] = "Resposta não é ZIP."
+            return result
+
+        with zipfile.ZipFile(io.BytesIO(body)) as z:
+            names = z.namelist()
+            xml_names = [
+                n for n in names
+                if n.lower().endswith(".xml")
+            ]
+
+            result["zip_entries"] = len(names)
+            result["xml_entries"] = len(xml_names)
+            result["xml_total_bytes"] = sum(
+                z.getinfo(n).file_size for n in xml_names
+            )
+            result["sample_filenames"] = xml_names[:20]
+
+            # Inspeciona somente até 3 XMLs pequenos para não inflar o log.
+            for name in xml_names[:3]:
+                try:
+                    data = z.read(name)
+                    result["xml_samples"].append(
+                        inspect_xml(data, name)
+                    )
+                except Exception as exc:
+                    result["xml_samples"].append({
+                        "filename": name,
+                        "error": str(exc)
+                    })
+
+    except zipfile.BadZipFile:
+        result["error"] = "ZIP inválido."
+    except Exception as exc:
+        result["error"] = str(exc)
+
+    return result
 
 def main():
-    MONITORING.mkdir(parents=True,exist_ok=True)
+    MONITORING.mkdir(parents=True, exist_ok=True)
+
     op, jar = make_opener()
 
-    diag = {
-        "version":"V10.4",
+    ok, login_message = login(op)
+
+    output = {
+        "version":"V10.5",
         "executed_at":datetime.now(timezone.utc).isoformat(),
-        "security":"Nenhuma senha, cookie ou token é gravado."
+        "login":{
+            "status":"ok" if ok else "erro",
+            "message":login_message
+        },
+        "capture":[],
+        "important":"Nenhum ato é confirmado ou inserido nesta versão."
     }
 
-    ok,msg = login(op,diag)
-    diag["login"] = {"status":"ok" if ok else "erro","message":msg}
+    if ok:
+        for date_iso in TARGET_DATES:
+            for section in SECTIONS:
+                output["capture"].append(
+                    download_and_inspect(op,date_iso,section)
+                )
 
-    # Nesta versão não processamos atos. O objetivo é fechar autenticação.
-    diag["candidates_received"] = 0
-    diag["source_policy"] = {
-        "primary":"DOU/Imprensa Nacional",
-        "ingestion":"INLABS XML",
-        "secondary":"e-MEC",
-        "confirmation_rule":"Publicação individual do DOU + evidência suficiente."
-    }
+    CAPTURE_FILE.write_text(
+        json.dumps(output,ensure_ascii=False,indent=2),
+        encoding="utf-8"
+    )
 
-    LOG_FILE.write_text(json.dumps(diag,ensure_ascii=False,indent=2),encoding="utf-8")
-    print(json.dumps(diag,ensure_ascii=False,indent=2))
+    # Mantém o log principal simples.
+    LOG_FILE.write_text(
+        json.dumps(output,ensure_ascii=False,indent=2),
+        encoding="utf-8"
+    )
+
+    print(json.dumps(output,ensure_ascii=False,indent=2))
 
 if __name__ == "__main__":
     main()
