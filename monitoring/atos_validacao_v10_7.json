@@ -1,0 +1,91 @@
+{
+  "version": "V10.7",
+  "executed_at": "2026-10-01T01:39:25.851642+00:00",
+  "objetivo": "Classificar tipo x objeto e separar atos de curso de atos institucionais/campus.",
+  "escopo_ato_de_curso": [
+    "AUTORIZAÇÃO DE CURSO",
+    "RECONHECIMENTO DE CURSO",
+    "RENOVAÇÃO DE RECONHECIMENTO DE CURSO",
+    "ADITAMENTO DE CURSO"
+  ],
+  "downloads": [
+    {
+      "date": "2026-10-01",
+      "section": "DO1",
+      "requested_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-10-01-DO1.zip",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-10-01-DO1.zip",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 39059,
+      "is_zip": false
+    },
+    {
+      "date": "2026-10-01",
+      "section": "DO1E",
+      "requested_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-10-01-DO1E.zip",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-10-01-DO1E.zip",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 39059,
+      "is_zip": false
+    },
+    {
+      "date": "2026-09-30",
+      "section": "DO1",
+      "requested_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-09-30-DO1.zip",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-09-30-DO1.zip",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 39059,
+      "is_zip": false
+    },
+    {
+      "date": "2026-09-30",
+      "section": "DO1E",
+      "requested_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-09-30-DO1E.zip",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-09-30-DO1E.zip",
+      "http_status": 404,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 39059,
+      "is_zip": false
+    }
+  ],
+  "resumo": {
+    "xmls_processados": 0,
+    "candidatos_ato_de_curso": 0,
+    "fora_do_escopo": 0,
+    "erros": 4
+  },
+  "candidatos": [],
+  "fora_do_escopo_amostragem": [],
+  "erros": [
+    {
+      "date": "2026-10-01",
+      "section": "DO1",
+      "error": "Resposta não é ZIP.",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-10-01-DO1.zip",
+      "http_status": 404
+    },
+    {
+      "date": "2026-10-01",
+      "section": "DO1E",
+      "error": "Resposta não é ZIP.",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-10-01-DO1E.zip",
+      "http_status": 404
+    },
+    {
+      "date": "2026-09-30",
+      "section": "DO1",
+      "error": "Resposta não é ZIP.",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-09-30-DO1.zip",
+      "http_status": 404
+    },
+    {
+      "date": "2026-09-30",
+      "section": "DO1E",
+      "error": "Resposta não é ZIP.",
+      "final_url": "https://inlabs.in.gov.br/index.php?p=&dl=2026-09-30-DO1E.zip",
+      "http_status": 404
+    }
+  ]
+}
