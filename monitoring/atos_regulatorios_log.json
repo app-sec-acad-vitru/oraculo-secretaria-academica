@@ -1,14 +1,25 @@
 {
-  "version": "V10.1",
-  "executed_at": "2026-10-01T00:49:59.038045+00:00",
-  "candidates_received": 1,
+  "version": "V10.2",
+  "executed_at": "2026-10-01T00:58:51.937824+00:00",
+  "source_status": {
+    "status": "ok",
+    "message": "Login INLABS realizado.",
+    "errors": [
+      "2026-09-30/DO1: HTTP 200 ou conteúdo não ZIP",
+      "2026-09-30/DO1E: HTTP 200 ou conteúdo não ZIP",
+      "2026-09-29/DO1: HTTP 200 ou conteúdo não ZIP",
+      "2026-09-29/DO1E: HTTP 200 ou conteúdo não ZIP"
+    ]
+  },
+  "candidates_received": 0,
   "new_records": [],
   "confirmed": 0,
   "pending_validation": 0,
   "source_policy": {
     "primary": "DOU/Imprensa Nacional",
+    "ingestion": "INLABS XML",
     "secondary": "e-MEC",
     "scope": "Todos os cursos de graduação, sem restrição por IES, mantenedora, modalidade ou localidade.",
-    "confirmation_rule": "Somente publicação individual do DOU com evidência suficiente."
+    "confirmation_rule": "Publicação individual do DOU + evidência suficiente de ato, número, data, IES, curso e grau."
   }
 }
