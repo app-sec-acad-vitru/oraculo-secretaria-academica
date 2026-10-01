@@ -1,0 +1,60 @@
+name: Classificação de Atos de Curso — V10.7
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oraculo-monitor-regulatorio
+  cancel-in-progress: false
+
+jobs:
+  classificar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Executar V10.7
+        env:
+          INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
+          INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
+        run: |
+          python scripts/monitor_atos_regulatorios.py
+
+      - name: Mostrar resultado da classificação
+        run: |
+          echo "===== RESUMO V10.7 ====="
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("monitoring/atos_validacao_v10_7.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          print(json.dumps(data.get("resumo", {}), ensure_ascii=False, indent=2))
+          print("\n===== CANDIDATOS =====")
+          for i, item in enumerate(data.get("candidatos", []), 1):
+              print(f"{i}. [{item.get('tipo_ato_classificado')}] {item.get('titulo')}")
+              print(f"   Objeto: {item.get('objeto_classificado')}")
+              print(f"   Número/ano: {item.get('numero_ato')}/{item.get('ano')}")
+              print(f"   Fonte: {item.get('fonte', {}).get('pagina_edicao')}")
+          PY
+
+      - name: Commitar resultados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitoring/atos_validacao_v10_7.json monitoring/atos_validacao_v10_7.md
+          if git diff --cached --quiet; then
+            echo "Nenhuma alteração para commit."
+          else
+            git commit -m "monitor: V10.7 classificação de atos de curso"
+            git push
+          fi
