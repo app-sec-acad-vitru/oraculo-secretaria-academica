@@ -1,156 +1,68 @@
 {
-  "version": "V10.3",
-  "executed_at": "2026-10-01T01:08:45.641889+00:00",
+  "version": "V10.4",
+  "executed_at": "2026-10-01T01:11:59.096469+00:00",
+  "security": "Nenhuma senha, cookie ou token é gravado.",
   "access_page": {
     "http_status": 200,
     "final_url": "https://inlabs.in.gov.br/acessar.php",
     "form_count": 3,
-    "forms": [
-      {
-        "action": "registrar.php",
-        "method": "post",
-        "inputs": [
-          {
-            "name": "email",
-            "id": "email",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "password",
-            "id": "password",
-            "type": "password",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "password2",
-            "id": "password2",
-            "type": "password",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "nome_completo",
-            "id": "nome_completo",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "telefone",
-            "id": "telefone",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "uf_cidade",
-            "id": "uf_cidade",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "nome_empresa",
-            "id": "nome_empresa",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "",
-            "id": "",
-            "type": "submit",
-            "has_value": true,
-            "placeholder": ""
-          }
-        ],
-        "selects": []
-      },
-      {
-        "action": "logar.php",
-        "method": "post",
-        "inputs": [
-          {
-            "name": "email",
-            "id": "email",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "password",
-            "id": "password",
-            "type": "password",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "",
-            "id": "",
-            "type": "submit",
-            "has_value": true,
-            "placeholder": ""
-          }
-        ],
-        "selects": []
-      },
-      {
-        "action": "esqueci.php",
-        "method": "post",
-        "inputs": [
-          {
-            "name": "email",
-            "id": "email",
-            "type": "text",
-            "has_value": false,
-            "placeholder": ""
-          },
-          {
-            "name": "",
-            "id": "",
-            "type": "submit",
-            "has_value": true,
-            "placeholder": ""
-          }
-        ],
-        "selects": []
-      }
-    ]
+    "selected_form": {
+      "action": "logar.php",
+      "method": "post",
+      "inputs": [
+        {
+          "name": "email",
+          "id": "email",
+          "type": "text",
+          "value_present": false
+        },
+        {
+          "name": "password",
+          "id": "password",
+          "type": "password",
+          "value_present": false
+        },
+        {
+          "name": "",
+          "id": "",
+          "type": "submit",
+          "value_present": true
+        }
+      ]
+    }
   },
-  "selected_form": {
-    "score": 12,
-    "login_field_found": true,
-    "password_field_found": true
-  },
-  "login_response": {
+  "login_post": {
+    "action": "https://inlabs.in.gov.br/logar.php",
     "http_status": 200,
     "final_url": "https://inlabs.in.gov.br/acessar.php",
     "content_type": "text/html; charset=UTF-8",
-    "body_size": 6341,
-    "suspicious_login_page": true
+    "body_size": 6173,
+    "title": "Imprensa Nacional - INLABS",
+    "visible_text_sample": "Imprensa Nacional - INLABS Imprensa Nacional - INLABS Seja bem vindo ao Portal INLABS. Registrar E-mail (login) *: Senha *: Repita a senha *: Nome Completo *: Telefone (com DDD) : UF/Cidade *: Nome Empresa: Acessar Este endereço de email não existe. E-mail (login) *: Senha *: Esqueci a Senha E-mail (login) *: Disclaimer: Este portal tem a finalidade de disponibilizar as informações publicadas no Diário Oficial da União em um formato próprio de dados abertos (XML), facilitando e fomentando o processamento dos dados publicados. É incentivado o envio de sugestões e críticas por parte dos interessados. Ressalta-se que o conteúdo disponibilizado em tal formato não substitui o publicado na versão certificada. Além disso, todo conteúdo disponibilizado neste portal em formato XML também estará disponível no Portal de Dados Abertos (www.dados.gov.br). Neste portal também são disponibilizados para download as publicações em formato PDF. As publicações são disponibilizadas diariamente, neste portal, momentos após a sua poblicação no portal da Imprensa Nacional (www.in.gov.br), exceto para as informações disponibilizadas em formato XML, que somente são disponibilizadas neste portal, nas condições informadas acima. Dê sua opinião",
+    "redirected_to_access": true,
+    "response_hints": {
+      "invalid_credentials": false,
+      "login_success": true,
+      "blocked": false
+    }
   },
-  "session_check": {
+  "protected_check": {
     "http_status": 200,
     "final_url": "https://inlabs.in.gov.br/acessar.php",
+    "content_type": "text/html; charset=UTF-8",
     "authenticated": false,
-    "evidence": {
-      "positive": 2,
-      "negative": 4
-    }
+    "title": "Imprensa Nacional - INLABS",
+    "visible_text_sample": "Imprensa Nacional - INLABS Imprensa Nacional - INLABS Seja bem vindo ao Portal INLABS. Registrar E-mail (login) *: Senha *: Repita a senha *: Nome Completo *: Telefone (com DDD) : UF/Cidade *: Nome Empresa: Acessar E-mail (login) *: Senha *: Esqueci a Senha E-mail (login) *: Disclaimer: Este portal tem a finalidade de disponibilizar as informações publicadas no Diário Oficial da União em um formato próprio de dados abertos (XML), facilitando e fomentando o processamento dos dados publicados. É incentivado o envio de sugestões e críticas por parte dos interessados. Ressalta-se que o conteúdo disponibilizado em tal formato não substitui o publicado na versão certificada. Além disso, todo conteúdo disponibilizado neste portal em formato XML também estará disponível no Portal de Dados Abertos (www.dados.gov.br). Neste portal também são disponibilizados para download as publicações em formato PDF. As publicações são disponibilizadas diariamente, neste portal, momentos após a sua poblicação no portal da Imprensa Nacional (www.in.gov.br), exceto para as informações disponibilizadas em formato XML, que somente são disponibilizadas neste portal, nas condições informadas acima. Dê sua opiniã"
   },
   "login": {
     "status": "erro",
-    "message": "Login enviado, mas a sessão não foi validada em acessar.php."
+    "message": "POST executado, mas a sessão protegida ainda não foi validada."
   },
   "candidates_received": 0,
   "source_policy": {
     "primary": "DOU/Imprensa Nacional",
     "ingestion": "INLABS XML",
     "secondary": "e-MEC",
-    "scope": "Todos os cursos de graduação, sem restrição por IES, mantenedora, modalidade ou localidade.",
-    "confirmation_rule": "Somente publicação individual do DOU com evidência suficiente."
+    "confirmation_rule": "Publicação individual do DOU + evidência suficiente."
   }
 }
