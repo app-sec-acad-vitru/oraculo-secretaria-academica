@@ -1,0 +1,158 @@
+{
+  "version": "V10.6",
+  "executed_at": "2026-10-01T01:30:25.409219+00:00",
+  "scope": {
+    "dates": [
+      "2026-09-30",
+      "2026-09-29"
+    ],
+    "sections": [
+      "DO1",
+      "DO1E"
+    ],
+    "rule": "triagem de possíveis atos de autorização, reconhecimento, renovação de reconhecimento e aditamento relacionados a graduação",
+    "confirmation": false
+  },
+  "summary": {
+    "xmls_processados": 851,
+    "candidatos": 3,
+    "erros_parse": 0
+  },
+  "downloads": [
+    {
+      "date": "2026-09-30",
+      "section": "DO1",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-30&dl=2026-09-30-DO1.zip",
+      "http_status": 200,
+      "final_url": "https://inlabs.in.gov.br/index.php?p=2026-09-30&dl=2026-09-30-DO1.zip",
+      "content_type": "application/octet-stream",
+      "body_size": 33342279,
+      "is_zip": true,
+      "zip_entries": 601,
+      "xml_entries": 474
+    },
+    {
+      "date": "2026-09-30",
+      "section": "DO1E",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-30&dl=2026-09-30-DO1E.zip",
+      "http_status": 200,
+      "final_url": "https://inlabs.in.gov.br/index.php?p=2026-09-30&dl=2026-09-30-DO1E.zip",
+      "content_type": "application/octet-stream",
+      "body_size": 236663,
+      "is_zip": true,
+      "zip_entries": 12,
+      "xml_entries": 10
+    },
+    {
+      "date": "2026-09-29",
+      "section": "DO1",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-29&dl=2026-09-29-DO1.zip",
+      "http_status": 200,
+      "final_url": "https://inlabs.in.gov.br/index.php?p=2026-09-29&dl=2026-09-29-DO1.zip",
+      "content_type": "application/octet-stream",
+      "body_size": 2560654,
+      "is_zip": true,
+      "zip_entries": 357,
+      "xml_entries": 350
+    },
+    {
+      "date": "2026-09-29",
+      "section": "DO1E",
+      "url": "https://inlabs.in.gov.br/index.php?p=2026-09-29&dl=2026-09-29-DO1E.zip",
+      "http_status": 200,
+      "final_url": "https://inlabs.in.gov.br/index.php?p=2026-09-29&dl=2026-09-29-DO1E.zip",
+      "content_type": "application/octet-stream",
+      "body_size": 70404,
+      "is_zip": true,
+      "zip_entries": 17,
+      "xml_entries": 17
+    }
+  ],
+  "candidates": [
+    {
+      "filename": "515_20260930_24433144.xml",
+      "id": "51541265",
+      "idMateria": "24433144",
+      "idOficio": "12118049",
+      "name": "Sumula - Parecer CNE_CES 429_202",
+      "pubName": "DO1",
+      "artType": "Súmula",
+      "pubDate": "30/09/2026",
+      "artCategory": "Ministério da Educação/Conselho Nacional de Educação/Secretaria Executiva",
+      "numberPage": "54",
+      "editionNumber": "185",
+      "identifica": "SÚMULA DO PARECER CNE/CES Nº 429/2026",
+      "titulo": "",
+      "ementa": "",
+      "pdfPage": "http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=30/09/2026&jornal=515&pagina=54",
+      "source_date": "2026-09-30",
+      "source_section": "DO1",
+      "score": 17,
+      "act_types": [
+        "autorizacao"
+      ],
+      "reasons": [
+        "ato:autorizacao",
+        "curso_hits:1",
+        "contexto_hits:3"
+      ]
+    },
+    {
+      "filename": "515_20260930_24433207.xml",
+      "id": "51541637",
+      "idMateria": "24433207",
+      "idOficio": "12118089",
+      "name": "undefined_508_2026_09_29_418419",
+      "pubName": "DO1",
+      "artType": "Portaria",
+      "pubDate": "30/09/2026",
+      "artCategory": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "numberPage": "55",
+      "editionNumber": "185",
+      "identifica": "PORTARIA SERES/MEC Nº 508, DE 29 DE Setembro DE 2026",
+      "titulo": "",
+      "ementa": "",
+      "pdfPage": "http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=30/09/2026&jornal=515&pagina=55",
+      "source_date": "2026-09-30",
+      "source_section": "DO1",
+      "score": 19,
+      "act_types": [
+        "autorizacao"
+      ],
+      "reasons": [
+        "ato:autorizacao",
+        "curso_hits:3",
+        "contexto_hits:2"
+      ]
+    },
+    {
+      "filename": "515_20260929_24426804.xml",
+      "id": "51517840",
+      "idMateria": "24426804",
+      "idOficio": "12112844",
+      "name": "1 Port. nA 733 - autorizacao de ",
+      "pubName": "DO1",
+      "artType": "Portaria",
+      "pubDate": "29/09/2026",
+      "artCategory": "Ministério da Educação/Gabinete do Ministro",
+      "numberPage": "40",
+      "editionNumber": "184",
+      "identifica": "PORTARIA MEC Nº 733, DE 26 DE SETEMBRO DE 2026",
+      "titulo": "",
+      "ementa": "Dispõe sobre a autorização de funcionamento de novas unidades de ensino de Institutos Federais de Educação, Ciência e Tecnologia.",
+      "pdfPage": "http://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp?data=29/09/2026&jornal=515&pagina=40",
+      "source_date": "2026-09-29",
+      "source_section": "DO1",
+      "score": 9,
+      "act_types": [
+        "autorizacao"
+      ],
+      "reasons": [
+        "ato:autorizacao",
+        "curso_hits:1",
+        "contexto_hits:1"
+      ]
+    }
+  ],
+  "next_step": "Validar semanticamente os candidatos e extrair IES/curso/grau/modalidade antes de confirmar qualquer ato."
+}
