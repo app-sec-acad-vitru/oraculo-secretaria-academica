@@ -44,6 +44,9 @@ jobs:
           p = Path("monitoring/atos_validacao_v10_7.json")
           data = json.loads(p.read_text(encoding="utf-8"))
           print(json.dumps(data.get("resumo", {}), ensure_ascii=False, indent=2))
+          print("\n===== DOWNLOADS =====")
+          for d in data.get("downloads", []):
+              print(f"{d.get('date')} / {d.get('section')}: HTTP {d.get('http_status')} | ZIP={d.get('is_zip')} | {d.get('bytes')} bytes")
           print("\n===== CANDIDATOS =====")
           for i, item in enumerate(data.get("candidatos", []), 1):
               print(f"{i}. [{item.get('tipo_ato_classificado')}] {item.get('titulo')}")
@@ -60,6 +63,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Nenhuma alteração para commit."
           else
-            git commit -m "monitor: V10.7 classificação de atos de curso"
+            git commit -m "monitor: V10.7.1 correção URL INLABS"
             git push
           fi
