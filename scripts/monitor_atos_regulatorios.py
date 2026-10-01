@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-Oráculo da Secretaria Acadêmica — V10.6
-Parser + triagem controlada de atos regulatórios no INLABS.
+Oráculo da Secretaria Acadêmica — V10.7
+Classificação hierárquica de atos regulatórios encontrados no DOU via INLABS.
 
-Esta versão:
-- autentica no INLABS;
-- baixa 30/09/2026 e 29/09/2026 (DO1/DO1E);
-- lê todos os XMLs;
-- extrai metadados do <article>;
-- aplica triagem semântica por camadas;
-- gera candidatos, sem confirmar atos;
-- não altera atos_regulatorios.json.
+Objetivo:
+1) Autenticar no INLABS.
+2) Baixar DO1/DO1E das duas últimas datas configuradas.
+3) Ler XMLs.
+4) Fazer triagem semântica em duas dimensões:
+   - tipo do ato
+   - objeto regulatório
+5) Considerar como candidato de curso somente quando:
+   tipo = ato regulatório de curso
+   E
+   objeto = CURSO
+6) Não alterar atos_regulatorios.json nesta etapa.
+7) Gerar:
+   monitoring/atos_validacao_v10_7.json
+   monitoring/atos_validacao_v10_7.md
 
-A saída principal é monitoring/dou_candidates_v10_6.json.
+A etapa de confirmação definitiva permanece separada.
 """
 
 from __future__ import annotations
@@ -21,360 +29,643 @@ import io
 import json
 import os
 import re
+import sys
 import zipfile
-from datetime import datetime, timezone
-from html import unescape
-from html.parser import HTMLParser
-from urllib.parse import urlencode, urljoin
-from urllib.request import Request, build_opener
-from http.cookiejar import CookieJar
-import xml.etree.ElementTree as ET
+import unicodedata
+import html as html_lib
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from xml.etree import ElementTree as ET
+
+import requests
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MONITORING = ROOT / "monitoring"
-OUT = MONITORING / "dou_candidates_v10_6.json"
 
-BASE = "https://inlabs.in.gov.br"
-ACCESS = f"{BASE}/acessar.php"
-DOWNLOAD = f"{BASE}/index.php?p={{date}}&dl={{date}}-{{section}}.zip"
-ORIGEM = "736372697074"
+EMAIL = os.getenv("INLABS_EMAIL", "").strip()
+PASSWORD = os.getenv("INLABS_PASSWORD", "").strip()
 
-DATES = ["2026-09-30", "2026-09-29"]
-SECTIONS = ["DO1", "DO1E"]
+SECTIONS = ("DO1", "DO1E")
+DAYS_BACK = 1
 
-# Termos que indicam ato regulatório de graduação.
-ACT_PATTERNS = [
-    ("renovacao_reconhecimento", r"\brenova(?:ção|cao)\b.{0,100}\breconhecimento\b|\brenovação de reconhecimento\b|\brenovacao de reconhecimento\b"),
-    ("reconhecimento", r"\breconhec(?:er|imento)\b.{0,120}\bcurso\b|\breconhecimento\b.{0,120}\bcurso\b"),
-    ("autorizacao", r"\bautoriza(?:r|ção|cao)\b.{0,120}\b(?:curso|oferta|funcionamento)\b|\bautorização\b.{0,120}\bcurso\b|\bautorizacao\b.{0,120}\bcurso\b"),
-    ("aditamento", r"\baditamento\b.{0,160}\b(?:curso|graduação|graduacao|ies|faculdade|universidade|centro universitário)\b"),
+LOGIN_URL = "https://inlabs.in.gov.br/logar.php"
+ACCESS_URL = "https://inlabs.in.gov.br/acessar.php"
+DOWNLOAD_BASE = "https://inlabs.in.gov.br/index.php?p="
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/154.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+}
+
+# Termos fortes para caracterização de atos de curso.
+COURSE_STRONG = [
+    "curso superior de graduação",
+    "curso de graduação",
+    "curso superior",
+    "curso de bacharelado",
+    "curso de licenciatura",
+    "curso superior de tecnologia",
+    "tecnologia em",
+    "bacharelado em",
+    "licenciatura em",
+    "vagas totais anuais",
+    "carga horária total",
+    "e-mec",
+    "emec",
+    "mantida",
+    "mantenedora",
+    "grau",
 ]
 
-COURSE_PATTERNS = [
-    r"\bcurso de graduação\b",
-    r"\bcurso superior\b",
-    r"\bcurso\b.{0,100}\b(?:bacharelado|licenciatura|tecnologia|tecnólogo|tecnologo)\b",
-    r"\b(?:bacharelado|licenciatura|tecnologia|tecnólogo|tecnologo)\b",
+COURSE_DEGREE = [
+    "bacharelado", "licenciatura", "tecnologia", "tecnólogo",
 ]
 
-HIGHER_ED_CONTEXT = [
-    r"\bIES\b",
-    r"\bInstituição de Ensino Superior\b",
-    r"\binstituição de ensino superior\b",
-    r"\bmantida\b",
-    r"\bmantenedora\b",
-    r"\bsecretaria de regulação e supervisão da educação superior\b",
-    r"\bSERES\b",
-    r"\bMinistério da Educação\b",
-    r"\bMEC\b",
-    r"\bSistema Federal de Ensino\b",
+COURSE_CONTEXT = [
+    "ofertado pela", "ofertada pela", "a ser ofertado",
+    "a ser ofertada", "mantida por", "mantida pela",
+    "mantenedora", "vagas", "turno", "carga horária",
+    "endereço", "município", "campus", "polo",
 ]
 
-EXCLUDE_PATTERNS = [
-    r"concurso público",
-    r"conselho regional",
-    r"conselho federal",
-    r"processo seletivo",
-    r"tomada de contas",
-    r"pauta de julgamento",
+# Objetos que NÃO devem entrar como atos de curso.
+OBJECT_EXCLUSIONS = [
+    "funcionamento de novas unidades de ensino",
+    "nova unidade de ensino",
+    "funcionamento de campus",
+    "novo campus",
+    "campus avançado",
+    "credenciamento da instituição",
+    "recredenciamento da instituição",
+    "credenciamento institucional",
+    "recredenciamento institucional",
+    "instituição comunitária de educação superior",
+    "instituição de educação superior",
+    "processo seletivo",
+    "concurso público",
+    "tomada de contas",
+    "pauta de julgamento",
 ]
 
-class FormParser(HTMLParser):
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.forms = []
-        self.current = None
-    def handle_starttag(self, tag, attrs):
-        a = {k.lower(): (v or "") for k, v in attrs}
-        if tag.lower() == "form":
-            self.current = {"action": a.get("action",""), "method": a.get("method","get").lower(), "inputs":[]}
-            self.forms.append(self.current)
-        elif self.current is not None and tag.lower() == "input":
-            self.current["inputs"].append(a)
-    def handle_endtag(self, tag):
-        if tag.lower() == "form":
-            self.current = None
+NON_COURSE_CONTEXT = [
+    "concurso público", "processo seletivo", "conselho regional",
+    "conselho federal", "tomada de contas", "licitação",
+    "campus", "unidade de ensino",
+]
 
-def opener():
-    jar = CookieJar()
-    op = build_opener()
-    from urllib.request import HTTPCookieProcessor
-    op.add_handler(HTTPCookieProcessor(jar))
-    return op
+TYPE_PATTERNS = [
+    ("RENOVAÇÃO DE RECONHECIMENTO DE CURSO", [
+        r"renova(?:ção|cao)\s+do\s+reconhecimento",
+        r"renova(?:ção|cao)\s+de\s+reconhecimento",
+    ]),
+    ("RECONHECIMENTO DE CURSO", [
+        r"reconhece\s+o\s+curso",
+        r"reconhecimento\s+do\s+curso",
+        r"reconhecimento\s+de\s+curso",
+    ]),
+    ("AUTORIZAÇÃO DE CURSO", [
+        r"autoriza\s+(?:o|a)\s+(?:funcionamento|oferta|curso)",
+        r"autoriza(?:ção|cao)\s+(?:de|do|da)\s+curso",
+        r"autoriza(?:ção|cao)\s+.*curso",
+    ]),
+    ("ADITAMENTO DE CURSO", [
+        r"aditamento.*curso",
+        r"altera(?:ção|cao).*curso",
+        r"alter(?:a|ação|acao).*curso",
+    ]),
+]
 
-def request(op, url, data=None, headers=None, timeout=180):
-    h = {
-        "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36",
-        "Accept":"*/*",
-        "Accept-Language":"pt-BR,pt;q=0.9",
+EFFECT_PATTERNS = [
+    ("renova", [r"renova(?:ção|cao)"]),
+    ("reconhece", [r"reconhecimento", r"\breconhece\b"]),
+    ("autoriza", [r"autoriza(?:ção|cao)", r"\bautoriza\b"]),
+    ("adita", [r"\baditamento\b", r"\badita\b"]),
+    ("indefere", [r"\bindefere\b", r"indeferimento"]),
+    ("anula", [r"\banula\b", r"anulação", r"anulacao"]),
+    ("torna sem efeito", [r"torna\s+sem\s+efeito"]),
+    ("restabelece", [r"restabelece", r"restabelecimento"]),
+]
+
+
+def norm(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s or "")
+    s = "".join(ch for ch in s if not unicodedata.combining(ch))
+    s = s.lower()
+    s = html_lib.unescape(s)
+    s = re.sub(r"\s+", " ", s)
+    return s.strip()
+
+
+def clean_text(s: str) -> str:
+    s = html_lib.unescape(s or "")
+    s = re.sub(r"\s+", " ", s)
+    return s.strip()
+
+
+def parse_date_list():
+    now = datetime.now(timezone.utc).date()
+    return [now - timedelta(days=i) for i in range(DAYS_BACK + 1)]
+
+
+def login(session: requests.Session):
+    if not EMAIL or not PASSWORD:
+        raise RuntimeError("INLABS_EMAIL/INLABS_PASSWORD não configurados.")
+
+    session.headers.update(HEADERS)
+    session.get(ACCESS_URL, timeout=60)
+
+    payload = {
+        "email": EMAIL,
+        "password": PASSWORD,
+        "Origem": "736372697074",
     }
-    if headers: h.update(headers)
-    req = Request(url, data=data, headers=h, method="POST" if data is not None else "GET")
-    with op.open(req, timeout=timeout) as r:
-        return r.status, dict(r.headers.items()), r.geturl(), r.read()
-
-def visible(html):
-    s = html.decode("utf-8","ignore") if isinstance(html,(bytes,bytearray)) else html
-    s = re.sub(r"<script\b[^>]*>.*?</script>"," ",s,flags=re.I|re.S)
-    s = re.sub(r"<style\b[^>]*>.*?</style>"," ",s,flags=re.I|re.S)
-    s = re.sub(r"<[^>]+>"," ",s)
-    return re.sub(r"\s+"," ",unescape(s)).strip()
-
-def login(op):
-    email = os.getenv("INLABS_EMAIL","").strip()
-    password = os.getenv("INLABS_PASSWORD","").strip()
-    if not email or not password:
-        raise RuntimeError("Secrets INLABS_EMAIL/INLABS_PASSWORD não configurados.")
-
-    _, _, _, body = request(op, ACCESS, timeout=30)
-    parser = FormParser()
-    parser.feed(body.decode("utf-8","ignore"))
-    form = next((f for f in parser.forms if f.get("action","").lower().endswith("logar.php")), None)
-    if not form:
-        raise RuntimeError("Formulário logar.php não encontrado.")
-
-    payload = {}
-    for item in form["inputs"]:
-        name = item.get("name","")
-        typ = item.get("type","text").lower()
-        if name and typ not in ("submit","button","file"):
-            payload[name] = item.get("value","")
-    payload["email"] = email
-    payload["password"] = password
-
-    action = urljoin(ACCESS, form.get("action") or "logar.php")
-    _, _, final_url, body2 = request(
-        op, action, data=urlencode(payload).encode(),
-        headers={"Content-Type":"application/x-www-form-urlencoded","Referer":ACCESS,"Origin":BASE,"Origem":ORIGEM},
-        timeout=30
+    r = session.post(
+        LOGIN_URL,
+        data=payload,
+        headers={
+            "Referer": ACCESS_URL,
+            "Origin": "https://inlabs.in.gov.br",
+        },
+        allow_redirects=True,
+        timeout=60,
     )
-    txt = visible(body2).lower()
-    if "acessar.php" in final_url.lower() or not re.search(r"minha conta|sair|logout", txt):
-        raise RuntimeError("Falha na autenticação INLABS.")
+    text = r.text or ""
+    n = norm(text)
 
-def strip_html_text(root):
-    chunks = []
+    if "este endereço de email não existe" in n or "senha incorreta" in n:
+        raise RuntimeError("Credenciais INLABS rejeitadas.")
+    if "sair" not in n or "minha conta" not in n:
+        raise RuntimeError(
+            f"Login INLABS não confirmado. final_url={r.url} status={r.status_code}"
+        )
+
+    return r
+
+
+def download_zip(session: requests.Session, date_obj, section: str):
+    # Mecânica compatível com o fluxo INLABS: YYYY-MM-DD/DO1.zip
+    date_str = date_obj.strftime("%Y-%m-%d")
+    url = f"{DOWNLOAD_BASE}&dl={date_str}-{section}.zip"
+    r = session.get(
+        url,
+        headers={"Referer": "https://inlabs.in.gov.br/index.php?p="},
+        allow_redirects=True,
+        timeout=180,
+    )
+    content = r.content or b""
+    is_zip = zipfile.is_zipfile(io.BytesIO(content))
+    return {
+        "date": date_str,
+        "section": section,
+        "requested_url": url,
+        "final_url": r.url,
+        "http_status": r.status_code,
+        "content_type": r.headers.get("Content-Type", ""),
+        "bytes": len(content),
+        "is_zip": is_zip,
+        "content": content if is_zip else None,
+    }
+
+
+def xml_to_text(root):
+    return clean_text(" ".join(root.itertext()))
+
+
+def find_text(root, tags):
+    wanted = {t.lower() for t in tags}
     for el in root.iter():
-        if el.text:
-            chunks.append(el.text)
-        if el.tail:
-            chunks.append(el.tail)
-    return re.sub(r"\s+"," ",unescape(" ".join(chunks))).strip()
+        tag = el.tag.split("}")[-1].lower()
+        if tag in wanted:
+            txt = clean_text(" ".join(el.itertext()))
+            if txt:
+                return txt
+    return ""
 
-def local(tag):
-    return tag.split("}")[-1].lower()
 
-def article_data(xml_bytes, filename):
+def extract_article(xml_bytes: bytes):
     root = ET.fromstring(xml_bytes)
-    article = next((e for e in root.iter() if local(e.tag) == "article"), None)
-    if article is None:
-        return None
+    attrs = dict(root.attrib)
 
-    attrs = {str(k): str(v) for k,v in article.attrib.items()}
-    text = strip_html_text(article)
+    # Em alguns lotes o article está em nível abaixo de <xml>.
+    article = None
+    for el in root.iter():
+        if el.tag.split("}")[-1].lower() == "article":
+            article = el
+            break
+    article = article or root
 
-    title = ""
-    ementa = ""
-    identifica = ""
-    for e in article.iter():
-        l = local(e.tag)
-        t = re.sub(r"\s+"," ", "".join(e.itertext())).strip()
-        if l == "titulo" and t: title = t
-        elif l == "ementa" and t: ementa = t
-        elif l == "identifica" and t: identifica = t
-
-    # Alguns XMLs dividem a mesma matéria em páginas/anexos.
-    # idOficio identifica o agrupamento editorial quando disponível.
-    return {
-        "filename": filename,
-        "id": attrs.get("id"),
-        "idMateria": attrs.get("idMateria"),
-        "idOficio": attrs.get("idOficio"),
-        "name": attrs.get("name"),
-        "pubName": attrs.get("pubName"),
-        "artType": attrs.get("artType"),
-        "pubDate": attrs.get("pubDate"),
-        "artCategory": attrs.get("artCategory"),
-        "numberPage": attrs.get("numberPage"),
-        "editionNumber": attrs.get("editionNumber"),
-        "pdfPage": attrs.get("pdfPage"),
-        "artNotes": attrs.get("artNotes"),
-        "identifica": identifica[:1200],
-        "titulo": title[:1500],
-        "ementa": ementa[:2500],
-        "text": text,
+    a = dict(article.attrib)
+    meta = {
+        "id": a.get("id") or attrs.get("id"),
+        "name": clean_text(a.get("name") or ""),
+        "artType": clean_text(a.get("artType") or ""),
+        "pubName": clean_text(a.get("pubName") or ""),
+        "pubDate": clean_text(a.get("pubDate") or ""),
+        "editionNumber": clean_text(a.get("editionNumber") or ""),
+        "numberPage": clean_text(a.get("numberPage") or ""),
+        "idMateria": clean_text(a.get("idMateria") or ""),
+        "idOficio": clean_text(a.get("idOficio") or ""),
+        "urltitle": clean_text(a.get("urltitle") or ""),
+        "url": clean_text(a.get("url") or ""),
     }
 
-def classify(item):
-    text = item["text"].lower()
-    title = (item["identifica"] + " " + item["titulo"] + " " + item["ementa"]).lower()
-    reasons = []
-    acts = []
+    parts = {}
+    for el in article.iter():
+        tag = el.tag.split("}")[-1]
+        if tag in {"Identifica", "Data", "Ementa", "Titulo", "SubTitulo", "Texto", "Midias"}:
+            parts[tag] = clean_text(" ".join(el.itertext()))
 
-    for label, pattern in ACT_PATTERNS:
-        if re.search(pattern, title + " " + text, flags=re.I|re.S):
-            acts.append(label)
-            reasons.append(f"ato:{label}")
+    # Texto completo limitado para diagnóstico/revisão.
+    full_text = xml_to_text(article)
 
-    course_hits = sum(bool(re.search(p, title + " " + text, flags=re.I|re.S)) for p in COURSE_PATTERNS)
-    context_hits = sum(bool(re.search(p, title + " " + text, flags=re.I|re.S)) for p in HIGHER_ED_CONTEXT)
-    exclude_hits = [p for p in EXCLUDE_PATTERNS if re.search(p, title + " " + text, flags=re.I|re.S)]
+    return meta, parts, full_text
 
-    # Pontuação deliberadamente conservadora.
-    score = 0
-    score += min(len(acts) * 3, 8)
-    score += min(course_hits * 2, 6)
-    score += min(context_hits * 2, 6)
-    if re.search(r"\bSERES\b|secretaria de regulação e supervisão da educação superior", title + " " + text, re.I):
-        score += 4
-    if re.search(r"\bMEC\b|Ministério da Educação", title + " " + text, re.I):
-        score += 2
-    if exclude_hits:
-        score -= min(4, len(exclude_hits))
 
-    # Critério de candidato:
-    # - precisa de ato regulatório + contexto de curso superior;
-    # - ou ato regulatório + SERES/MEC + vocabulário acadêmico.
-    candidate = bool(acts) and (
-        course_hits >= 1 or context_hits >= 1
-    ) and score >= 6
+def parse_act_number_year(meta, parts):
+    source = " ".join([
+        meta.get("name", ""),
+        parts.get("Identifica", ""),
+        parts.get("Titulo", ""),
+        parts.get("SubTitulo", ""),
+    ])
+    m = re.search(
+        r"(?:N[º°o]\s*)?([0-9]{1,5}(?:[-/][A-Z0-9]+)?)\s*,?\s*DE\s+"
+        r"\d{1,2}\s+DE\s+[A-ZÇÃÕÉÊÍÓÚ]+\s+DE\s+(\d{4})",
+        source,
+        re.I,
+    )
+    if not m:
+        m = re.search(r"N[º°o]\s*([0-9]{1,6}).{0,120}?(\d{4})", source, re.I)
+    return (m.group(1), int(m.group(2))) if m else ("", None)
 
-    # Rejeição explícita de falsos positivos óbvios.
-    if exclude_hits and not re.search(r"\bSERES\b|secretaria de regulação e supervisão da educação superior|curso de graduação|curso superior", title + " " + text, re.I):
-        candidate = False
 
-    if candidate:
-        reasons.extend([f"curso_hits:{course_hits}", f"contexto_hits:{context_hits}"])
-    else:
-        reasons.append(f"nao_candidato(score={score})")
+def classify_type(text_norm):
+    hits = []
+    for label, patterns in TYPE_PATTERNS:
+        if any(re.search(p, text_norm, re.I) for p in patterns):
+            hits.append(label)
 
-    return {
-        "candidate": candidate,
-        "score": score,
-        "act_types": sorted(set(acts)),
-        "reasons": reasons,
-        "course_hits": course_hits,
-        "context_hits": context_hits,
-        "exclude_hits": exclude_hits,
+    # Prefer the most specific type.
+    order = [
+        "RENOVAÇÃO DE RECONHECIMENTO DE CURSO",
+        "RECONHECIMENTO DE CURSO",
+        "AUTORIZAÇÃO DE CURSO",
+        "ADITAMENTO DE CURSO",
+    ]
+    for x in order:
+        if x in hits:
+            return x, hits
+    return "OUTRO", hits
+
+
+def classify_object(text_norm, act_type):
+    exclusion_hits = [x for x in OBJECT_EXCLUSIONS if x in text_norm]
+    campus_hits = [
+        x for x in ["campus", "unidade de ensino", "funcionamento de novas unidades"]
+        if x in text_norm
+    ]
+
+    strong_course = [x for x in COURSE_STRONG if x in text_norm]
+    context_course = [x for x in COURSE_CONTEXT if x in text_norm]
+    degree_hits = [x for x in COURSE_DEGREE if x in text_norm]
+
+    # Se o próprio ato fala explicitamente em campus/unidade e não há
+    # evidência suficiente de curso, classificar como objeto institucional.
+    if any(x in text_norm for x in [
+        "funcionamento de novas unidades de ensino",
+        "nova unidade de ensino",
+        "funcionamento de campus",
+    ]) and len(strong_course) < 3:
+        return "CAMPUS/UNIDADE", strong_course, context_course, campus_hits
+
+    if act_type != "OUTRO" and (len(strong_course) >= 2 or len(degree_hits) >= 1) and (
+        len(context_course) >= 2 or "e-mec" in text_norm or "emec" in text_norm
+    ):
+        return "CURSO", strong_course, context_course, campus_hits
+
+    if "mantenedora" in text_norm and len(strong_course) < 2:
+        return "MANTENEDORA/IES", strong_course, context_course, campus_hits
+
+    if campus_hits:
+        return "CAMPUS/UNIDADE", strong_course, context_course, campus_hits
+
+    return "OUTRO", strong_course, context_course, campus_hits
+
+
+def detect_effect(text_norm):
+    for label, patterns in EFFECT_PATTERNS:
+        if any(re.search(p, text_norm) for p in patterns):
+            return label
+    return ""
+
+
+def extract_fields(text):
+    # Heurísticas conservadoras. Campos não encontrados permanecem vazios.
+    out = {
+        "ies": "",
+        "mantenedora": "",
+        "curso": "",
+        "grau": "",
+        "modalidade": "",
+        "local": "",
+        "vagas": "",
+        "codigo_emec": "",
     }
 
-def build_official_reference(item):
-    # A URL existente no XML aponta para a página oficial da edição/PDF.
-    # Não inventamos URL individual do DOU nesta fase.
-    return item.get("pdfPage") or ""
+    degree_patterns = [
+        ("Bacharelado", r"\bbacharelado\b"),
+        ("Licenciatura", r"\blicenciatura\b"),
+        ("Tecnológico", r"\btecnolog(?:ia|ico)\b"),
+    ]
+    for label, pat in degree_patterns:
+        if re.search(pat, norm(text), re.I):
+            out["grau"] = label
+            break
+
+    if re.search(r"\bEAD\b|educação a distância|educacao a distancia", text, re.I):
+        out["modalidade"] = "EaD"
+    elif re.search(r"\bpresencial\b", text, re.I):
+        out["modalidade"] = "Presencial"
+
+    m = re.search(r"\be-?mec\s*(?:n[º°]\s*)?([0-9]{4,12})", text, re.I)
+    if m:
+        out["codigo_emec"] = m.group(1)
+
+    m = re.search(r"vagas(?: totais anuais)?\s*[:\-]?\s*([0-9]{1,5})", text, re.I)
+    if m:
+        out["vagas"] = m.group(1)
+
+    # Curso: tenta padrões comuns de tabelas/ementas.
+    patterns = [
+        r"curso(?: superior)?(?: de graduação)?\s*[:\-]\s*([^;|]{5,140})",
+        r"curso\s+de\s+([^;|]{5,140})",
+        r"(?:bacharelado|licenciatura|tecnologia)\s+em\s+([^;|]{4,120})",
+    ]
+    for pat in patterns:
+        m = re.search(pat, text, re.I)
+        if m:
+            val = clean_text(m.group(1))
+            if 4 <= len(val) <= 140:
+                out["curso"] = val
+                break
+
+    return out
+
+
+def individual_dou_url(meta):
+    # Só usa URL individual se o XML fornecer um identificador explícito.
+    for key in ("url", "urltitle"):
+        val = meta.get(key, "")
+        if val:
+            if val.startswith("http"):
+                return val
+            if key == "urltitle":
+                return "https://www.in.gov.br/web/dou/-/" + val.lstrip("/")
+    return ""
+
+
+def build_record(meta, parts, full_text, date_obj, section, xml_name):
+    title = meta.get("name") or parts.get("Titulo") or ""
+    body = " ".join([
+        parts.get("Identifica", ""),
+        parts.get("Ementa", ""),
+        parts.get("Titulo", ""),
+        parts.get("SubTitulo", ""),
+        parts.get("Texto", ""),
+    ])
+    text_n = norm(body)
+
+    act_type, type_hits = classify_type(text_n)
+    obj, strong, context, campus_hits = classify_object(text_n, act_type)
+    effect = detect_effect(text_n)
+    number, year = parse_act_number_year(meta, parts)
+    fields = extract_fields(body)
+
+    page_url = ""
+    if meta.get("idMateria"):
+        page_url = (
+            "https://pesquisa.in.gov.br/imprensa/jsp/visualiza/index.jsp"
+            f"?data={date_obj.strftime('%d/%m/%Y')}&jornal=515"
+            f"&pagina={meta.get('numberPage','')}"
+        )
+
+    individual = individual_dou_url(meta)
+
+    eligible = (
+        act_type in {
+            "AUTORIZAÇÃO DE CURSO",
+            "RECONHECIMENTO DE CURSO",
+            "RENOVAÇÃO DE RECONHECIMENTO DE CURSO",
+            "ADITAMENTO DE CURSO",
+        }
+        and obj == "CURSO"
+    )
+
+    # Mantém um trecho para validação humana, sem gravar o XML inteiro.
+    snippet = clean_text(body)[:5000]
+
+    return {
+        "id": meta.get("idMateria") or meta.get("id") or xml_name,
+        "data_coleta": datetime.now(timezone.utc).isoformat(),
+        "edicao": {
+            "data": date_obj.isoformat(),
+            "secao": section,
+            "numero": meta.get("editionNumber", ""),
+            "pagina": meta.get("numberPage", ""),
+        },
+        "identificacao_dou": {
+            "idMateria": meta.get("idMateria", ""),
+            "idOficio": meta.get("idOficio", ""),
+            "article_id": meta.get("id", ""),
+            "artType": meta.get("artType", ""),
+            "pubName": meta.get("pubName", ""),
+        },
+        "titulo": title,
+        "numero_ato": number,
+        "ano": year,
+        "tipo_ato_classificado": act_type,
+        "efeito_detectado": effect,
+        "objeto_classificado": obj,
+        "evidencias": {
+            "tipos_detectados": type_hits,
+            "termos_curso": strong,
+            "contexto_curso": context,
+            "termos_campus_unidade": campus_hits,
+        },
+        "campos_extraidos": fields,
+        "fonte": {
+            "pagina_edicao": page_url,
+            "publicacao_individual": individual,
+            "individual_confirmada": bool(individual),
+        },
+        "status_v10_7": (
+            "CANDIDATO_ATO_DE_CURSO"
+            if eligible
+            else "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
+        ),
+        "confirmado": False,
+        "validacao_pendente": bool(eligible),
+        "trecho_para_validacao": snippet,
+    }
+
 
 def main():
-    MONITORING.mkdir(parents=True, exist_ok=True)
-    op = opener()
-    login(op)
+    MONITORING.mkdir(exist_ok=True)
+    session = requests.Session()
 
-    all_items = []
-    download_stats = []
+    dates = parse_date_list()
+    downloads = []
+    records = []
+    errors = []
 
-    for date_iso in DATES:
+    try:
+        login(session)
+    except Exception as exc:
+        payload = {
+            "version": "V10.7",
+            "executed_at": datetime.now(timezone.utc).isoformat(),
+            "status": "erro_login",
+            "erro": str(exc),
+        }
+        (MONITORING / "atos_validacao_v10_7.json").write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+        sys.exit(1)
+
+    seen = set()
+
+    for date_obj in dates:
         for section in SECTIONS:
-            url = DOWNLOAD.format(date=date_iso, section=section)
-            status, headers, final_url, blob = request(op, url, headers={"Referer":ACCESS}, timeout=240)
+            try:
+                result = download_zip(session, date_obj, section)
+                downloads.append({k: v for k, v in result.items() if k != "content"})
+                if not result["is_zip"]:
+                    errors.append({
+                        "date": result["date"],
+                        "section": section,
+                        "error": "Resposta não é ZIP.",
+                        "final_url": result["final_url"],
+                        "http_status": result["http_status"],
+                    })
+                    continue
 
-            stat = {
-                "date": date_iso,
-                "section": section,
-                "url": url,
-                "http_status": status,
-                "final_url": final_url,
-                "content_type": headers.get("Content-Type"),
-                "body_size": len(blob),
-                "is_zip": blob.startswith(b"PK"),
-                "zip_entries": 0,
-                "xml_entries": 0,
-            }
+                with zipfile.ZipFile(io.BytesIO(result["content"])) as zf:
+                    for member in zf.namelist():
+                        if not member.lower().endswith(".xml"):
+                            continue
+                        try:
+                            meta, parts, full_text = extract_article(zf.read(member))
+                            rec = build_record(
+                                meta, parts, full_text, date_obj, section, member
+                            )
+                            key = (
+                                rec["identificacao_dou"]["idMateria"]
+                                or rec["identificacao_dou"]["article_id"]
+                                or member
+                            )
+                            if key in seen:
+                                continue
+                            seen.add(key)
+                            records.append(rec)
+                        except Exception as exc:
+                            errors.append({
+                                "date": result["date"],
+                                "section": section,
+                                "xml": member,
+                                "error": f"parse: {exc}",
+                            })
+            except Exception as exc:
+                errors.append({
+                    "date": date_obj.isoformat(),
+                    "section": section,
+                    "error": str(exc),
+                })
 
-            if not blob.startswith(b"PK"):
-                stat["error"] = "Resposta não é ZIP."
-                download_stats.append(stat)
-                continue
+    course_candidates = [
+        r for r in records if r["status_v10_7"] == "CANDIDATO_ATO_DE_CURSO"
+    ]
 
-            with zipfile.ZipFile(io.BytesIO(blob)) as z:
-                names = [n for n in z.namelist() if n.lower().endswith(".xml")]
-                stat["zip_entries"] = len(z.namelist())
-                stat["xml_entries"] = len(names)
-
-                for name in names:
-                    try:
-                        item = article_data(z.read(name), name)
-                        if item:
-                            item["source_date"] = date_iso
-                            item["source_section"] = section
-                            item["source_reference"] = build_official_reference(item)
-                            item["classification"] = classify(item)
-                            all_items.append(item)
-                    except Exception as exc:
-                        # Mantém a execução robusta e registra apenas o arquivo problemático.
-                        all_items.append({
-                            "filename": name,
-                            "source_date": date_iso,
-                            "source_section": section,
-                            "parse_error": str(exc)
-                        })
-
-            download_stats.append(stat)
-
-    candidates = []
-    for item in all_items:
-        c = item.get("classification", {})
-        if c.get("candidate"):
-            # Não envia o corpo integral ao JSON para manter o artefato pequeno.
-            candidates.append({
-                "filename": item["filename"],
-                "id": item.get("id"),
-                "idMateria": item.get("idMateria"),
-                "idOficio": item.get("idOficio"),
-                "name": item.get("name"),
-                "pubName": item.get("pubName"),
-                "artType": item.get("artType"),
-                "pubDate": item.get("pubDate"),
-                "artCategory": item.get("artCategory"),
-                "numberPage": item.get("numberPage"),
-                "editionNumber": item.get("editionNumber"),
-                "identifica": item.get("identifica"),
-                "titulo": item.get("titulo"),
-                "ementa": item.get("ementa"),
-                "pdfPage": item.get("pdfPage"),
-                "source_date": item.get("source_date"),
-                "source_section": item.get("source_section"),
-                "score": c.get("score"),
-                "act_types": c.get("act_types"),
-                "reasons": c.get("reasons"),
-            })
-
-    result = {
-        "version":"V10.6",
-        "executed_at":datetime.now(timezone.utc).isoformat(),
-        "scope":{
-            "dates":DATES,
-            "sections":SECTIONS,
-            "rule":"triagem de possíveis atos de autorização, reconhecimento, renovação de reconhecimento e aditamento relacionados a graduação",
-            "confirmation":False
+    # Não toca no atos_regulatorios.json.
+    payload = {
+        "version": "V10.7",
+        "executed_at": datetime.now(timezone.utc).isoformat(),
+        "objetivo": "Classificar tipo x objeto e separar atos de curso de atos institucionais/campus.",
+        "escopo_ato_de_curso": [
+            "AUTORIZAÇÃO DE CURSO",
+            "RECONHECIMENTO DE CURSO",
+            "RENOVAÇÃO DE RECONHECIMENTO DE CURSO",
+            "ADITAMENTO DE CURSO",
+        ],
+        "downloads": downloads,
+        "resumo": {
+            "xmls_processados": len(records),
+            "candidatos_ato_de_curso": len(course_candidates),
+            "fora_do_escopo": len(records) - len(course_candidates),
+            "erros": len(errors),
         },
-        "summary":{
-            "xmls_processados":len(all_items),
-            "candidatos":len(candidates),
-            "erros_parse":sum(1 for x in all_items if "parse_error" in x),
-        },
-        "downloads":download_stats,
-        "candidates":candidates,
-        "next_step":"Validar semanticamente os candidatos e extrair IES/curso/grau/modalidade antes de confirmar qualquer ato."
+        "candidatos": course_candidates,
+        "fora_do_escopo_amostragem": [
+            r for r in records if r["status_v10_7"] != "CANDIDATO_ATO_DE_CURSO"
+        ],
+        "erros": errors,
     }
 
-    OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
-    print(json.dumps({
-        "version":"V10.6",
-        "xmls_processados":result["summary"]["xmls_processados"],
-        "candidatos":result["summary"]["candidatos"],
-        "erros_parse":result["summary"]["erros_parse"],
-        "output":str(OUT)
-    },ensure_ascii=False,indent=2))
+    (MONITORING / "atos_validacao_v10_7.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    md = [
+        "# Oráculo — V10.7 | Validação de Atos de Curso",
+        "",
+        f"- Execução: `{payload['executed_at']}`",
+        f"- XMLs processados: **{len(records)}**",
+        f"- Candidatos de ato de curso: **{len(course_candidates)}**",
+        f"- Fora do escopo: **{len(records) - len(course_candidates)}**",
+        f"- Erros: **{len(errors)}**",
+        "",
+        "## Candidatos de ato de curso",
+        "",
+    ]
+
+    if not course_candidates:
+        md.append("Nenhum candidato de ato de curso foi classificado nesta execução.")
+    else:
+        for i, r in enumerate(course_candidates, 1):
+            f = r["campos_extraidos"]
+            md.extend([
+                f"### {i}. {r['titulo']}",
+                f"- Tipo: **{r['tipo_ato_classificado']}**",
+                f"- Objeto: **{r['objeto_classificado']}**",
+                f"- Efeito: `{r['efeito_detectado']}`",
+                f"- Número/ano: `{r['numero_ato']}/{r['ano']}`",
+                f"- IES: `{f['ies']}`",
+                f"- Curso: `{f['curso']}`",
+                f"- Grau: `{f['grau']}`",
+                f"- Modalidade: `{f['modalidade']}`",
+                f"- e-MEC: `{f['codigo_emec']}`",
+                f"- Fonte individual: `{r['fonte']['publicacao_individual']}`",
+                "",
+            ])
+
+    (MONITORING / "atos_validacao_v10_7.md").write_text(
+        "\n".join(md), encoding="utf-8"
+    )
+
+    print(f"XMLs processados: {len(records)}")
+    print(f"Candidatos de ato de curso: {len(course_candidates)}")
+    print(f"Fora do escopo: {len(records) - len(course_candidates)}")
+    print(f"Erros: {len(errors)}")
+    for i, r in enumerate(course_candidates, 1):
+        print(f"{i}. [{r['tipo_ato_classificado']}] {r['titulo']}")
+        print(f"   Objeto: {r['objeto_classificado']}")
+        print(f"   Número/ano: {r['numero_ato']}/{r['ano']}")
+        print(f"   Fonte: {r['fonte']['pagina_edicao']}")
+
 
 if __name__ == "__main__":
     main()
