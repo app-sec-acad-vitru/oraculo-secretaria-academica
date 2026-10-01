@@ -1,0 +1,13 @@
+{
+  "version": "V10",
+  "executed_at": null,
+  "candidates_received": 0,
+  "new_records": [],
+  "confirmed": 0,
+  "pending_validation": 0,
+  "source_policy": {
+    "primary": "DOU/Imprensa Nacional",
+    "secondary": "e-MEC",
+    "scope": "Todos os cursos de graduação, sem restrição por IES, mantenedora, modalidade ou localidade."
+  }
+}
