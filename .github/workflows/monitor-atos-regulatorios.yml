@@ -1,4 +1,4 @@
-name: Diagnóstico INLABS — V10.4 Login
+name: Captura Controlada INLABS — V10.5
 
 on:
   workflow_dispatch:
@@ -11,8 +11,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  diagnostico:
+  captura:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Executar V10.4
+      - name: Executar captura controlada
         env:
           INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
@@ -30,13 +31,13 @@ jobs:
 
       - name: Exibir diagnóstico
         run: |
-          echo "===== V10.4 LOGIN INLABS ====="
-          cat monitoring/atos_regulatorios_log.json
+          echo "===== V10.5 — CAPTURA CONTROLADA ====="
+          cat monitoring/inlabs_capture_diagnostic.json
 
       - name: Commit do diagnóstico
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add monitoring/atos_regulatorios_log.json
-          git commit -m "chore: diagnóstico login INLABS V10.4" || echo "Sem alterações"
+          git add monitoring/inlabs_capture_diagnostic.json monitoring/atos_regulatorios_log.json
+          git commit -m "chore: diagnóstico captura INLABS V10.5" || echo "Sem alterações"
           git push || true
