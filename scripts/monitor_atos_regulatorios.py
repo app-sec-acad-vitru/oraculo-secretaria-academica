@@ -207,7 +207,7 @@ def login(session: requests.Session):
 def download_zip(session: requests.Session, date_obj, section: str):
     # Mecânica compatível com o fluxo INLABS: YYYY-MM-DD/DO1.zip
     date_str = date_obj.strftime("%Y-%m-%d")
-    url = f"{DOWNLOAD_BASE}&dl={date_str}-{section}.zip"
+    url = f"{DOWNLOAD_BASE}{date_str}&dl={date_str}-{section}.zip"
     r = session.get(
         url,
         headers={"Referer": "https://inlabs.in.gov.br/index.php?p="},
