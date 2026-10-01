@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
-Oráculo da Secretaria Acadêmica — V10
+Oráculo da Secretaria Acadêmica — V10.1
 Monitoramento específico de atos regulatórios de cursos de graduação.
+
+Correção principal da V10.1:
+- Não trata páginas institucionais/navegação da Imprensa Nacional como publicação do DOU.
+- Só permite confirmação quando a fonte é uma publicação individual do DOU.
+- Remove registros antigos da V10 que foram criados a partir de URLs genéricas.
+- Mantém candidatos sem confirmação quando a evidência oficial ainda não é suficiente.
 
 Princípios:
 - DOU/Imprensa Nacional é a fonte oficial de confirmação.
@@ -19,7 +25,6 @@ Fontes de entrada suportadas:
 Variáveis opcionais:
 DOU_SEARCH_URL_TEMPLATE
 INLABS_XML_DIR
-DOU_LOOKBACK_DAYS (padrão 2)
 """
 
 from __future__ import annotations
@@ -29,11 +34,10 @@ import html
 import json
 import os
 import re
-import sys
 import time
 import unicodedata
 from dataclasses import asdict, dataclass
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote_plus
 from urllib.request import Request, urlopen
@@ -47,7 +51,6 @@ CANDIDATES_FILE = MONITORING / "dou_candidates.json"
 
 DEFAULT_DOU_TEMPLATE = "https://www.in.gov.br/consulta/-/buscar/dou?q={query}"
 
-# Termos deliberadamente restritivos para reduzir falso positivo.
 ACT_PATTERNS = [
     ("Renovação de Reconhecimento", re.compile(r"\brenova(?:ç|c)[ãa]o\s+de\s+reconhecimento\b", re.I)),
     ("Reconhecimento", re.compile(r"\breconhecimento\b", re.I)),
@@ -130,7 +133,31 @@ def strip_accents(text: str) -> str:
         if unicodedata.category(c) != "Mn"
     )
 
-def official_url(url: str) -> bool:
+def is_dou_publication_url(url: str) -> bool:
+    """
+    Aceita somente URLs que representem uma publicação/matéria individual.
+    Não aceita páginas institucionais, busca, destaques, concursos ou home.
+    """
+    u = (url or "").strip().lower()
+
+    if not u:
+        return False
+
+    # Visualizador oficial de PDF/página do DOU.
+    if "pesquisa.in.gov.br/imprensa/servlet/inpdfviewer" in u:
+        return True
+
+    # Matéria individual publicada no DOU.
+    if "in.gov.br/web/dou/-/" in u:
+        return True
+
+    # Algumas publicações podem usar /web/dou/-/ sem o domínio exato acima.
+    if re.search(r"https?://(?:www\.)?in\.gov\.br/.*/dou/-/", u):
+        return True
+
+    return False
+
+def official_domain(url: str) -> bool:
     u = (url or "").lower()
     return "in.gov.br/" in u or "pesquisa.in.gov.br/" in u
 
@@ -138,7 +165,7 @@ def fetch(url: str, timeout: int = 30) -> str:
     req = Request(
         url,
         headers={
-            "User-Agent": "Oraculo-Secretaria-Academica-V10/1.0 (+monitoramento regulatorio)",
+            "User-Agent": "Oraculo-Secretaria-Academica-V10.1/1.0 (+monitoramento regulatorio)",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         },
     )
@@ -147,17 +174,20 @@ def fetch(url: str, timeout: int = 30) -> str:
 
 def extract_links(page: str) -> list[str]:
     links = []
-    for m in URL_RE.findall(page or ""):
-        u = html.unescape(m).rstrip(".,);]")
-        if official_url(u) and u not in links:
-            links.append(u)
-    # hrefs without protocol
-    for m in re.findall(r'href=["\']([^"\']+)["\']', page or "", flags=re.I):
-        u = html.unescape(m)
+    candidates = []
+
+    candidates.extend(URL_RE.findall(page or ""))
+    candidates.extend(re.findall(r'href=["\']([^"\']+)["\']', page or "", flags=re.I))
+
+    for raw in candidates:
+        u = html.unescape(raw).strip().rstrip(".,);]")
+
         if u.startswith("/web/dou/-/"):
             u = "https://www.in.gov.br" + u
-        if u.startswith("http") and official_url(u) and u not in links:
+
+        if is_dou_publication_url(u) and u not in links:
             links.append(u)
+
     return links
 
 def candidate_queries() -> list[str]:
@@ -171,109 +201,164 @@ def candidate_queries() -> list[str]:
 def load_seed_candidates() -> list[Candidate]:
     if not CANDIDATES_FILE.exists():
         return []
+
     try:
         raw = json.loads(CANDIDATES_FILE.read_text(encoding="utf-8"))
     except Exception as exc:
         print(f"[WARN] Falha lendo {CANDIDATES_FILE}: {exc}")
         return []
+
     out = []
-    for item in raw if isinstance(raw, list) else raw.get("candidates", []):
+    items = raw if isinstance(raw, list) else raw.get("candidates", [])
+
+    for item in items:
         if not isinstance(item, dict):
             continue
-        if item.get("url"):
-            out.append(Candidate(
+
+        url = str(item.get("url", "")).strip()
+
+        # Seed de teste só pode virar candidato real se apontar para publicação individual.
+        if not is_dou_publication_url(url):
+            print(f"[SEED] Ignorado por não ser publicação individual do DOU: {url}")
+            continue
+
+        out.append(
+            Candidate(
                 title=str(item.get("title", "")),
-                url=str(item["url"]),
+                url=url,
                 published_text=str(item.get("published_text", "")),
                 body=str(item.get("body", "")),
                 source="seed",
-            ))
+            )
+        )
+
     return out
 
 def load_inlabs() -> list[Candidate]:
     folder = os.getenv("INLABS_XML_DIR")
+
     if not folder:
         return []
+
     p = Path(folder)
+
     if not p.exists():
         print(f"[WARN] INLABS_XML_DIR não existe: {p}")
         return []
+
     out = []
+
     for xml_file in sorted(p.rglob("*.xml")):
         try:
             root = ET.parse(xml_file).getroot()
             text = " ".join(t.strip() for t in root.itertext() if t and t.strip())
-            urls = [u for u in URL_RE.findall(text) if official_url(u)]
+            urls = [u for u in URL_RE.findall(text) if is_dou_publication_url(u)]
             url = urls[0] if urls else ""
-            title = text[:300]
-            out.append(Candidate(title=title, url=url, body=text, source="inlabs"))
+
+            # XML sem URL individual ainda pode ser analisado,
+            # mas não poderá ser confirmado sem publicação oficial.
+            out.append(
+                Candidate(
+                    title=text[:300],
+                    url=url,
+                    body=text,
+                    source="inlabs",
+                )
+            )
         except Exception as exc:
             print(f"[WARN] XML inválido {xml_file}: {exc}")
+
     return out
 
 def collect_from_dou() -> list[Candidate]:
     template = os.getenv("DOU_SEARCH_URL_TEMPLATE", DEFAULT_DOU_TEMPLATE)
-    out, seen = [], set()
+    out = []
+    seen = set()
+
     for query in candidate_queries():
         url = template.format(query=quote_plus(query))
+
         try:
             page = fetch(url)
-            clean = normalize(page)
             links = extract_links(page)
-            # Se a busca devolver uma página única/JS, ainda guardamos a própria página
-            # como evidência candidata; confirmação dependerá do conteúdo oficial.
+
             for link in links:
                 if link not in seen:
                     seen.add(link)
-                    out.append(Candidate(title="", url=link, body="", source="dou_search"))
+                    out.append(
+                        Candidate(
+                            title="",
+                            url=link,
+                            body="",
+                            source="dou_search",
+                        )
+                    )
+
             if links:
-                print(f"[DOU] {query}: {len(links)} links oficiais encontrados")
+                print(f"[DOU] {query}: {len(links)} publicações individuais encontradas")
             else:
-                print(f"[DOU] {query}: nenhum link oficial extraído")
+                print(f"[DOU] {query}: nenhuma publicação individual extraída")
+
             time.sleep(0.5)
+
         except Exception as exc:
             print(f"[WARN] Falha na consulta DOU '{query}': {exc}")
+
     return out
 
 def parse_date(text: str) -> str | None:
     m = ISO_DATE_RE.search(text or "")
+
     if m:
         return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
+
     m = DATE_RE.search(text or "")
+
     if m:
-        day, month, year = int(m.group(1)), strip_accents(m.group(2)).lower(), int(m.group(3))
+        day = int(m.group(1))
+        month = strip_accents(m.group(2)).lower()
+        year = int(m.group(3))
+
         if month in MONTHS:
             return f"{year:04d}-{MONTHS[month]:02d}-{day:02d}"
+
     return None
 
 def find_act_number(text: str) -> tuple[str, int | None]:
     m = ACT_NUMBER_RE.search(text or "")
+
     if not m:
         return "", None
+
     return m.group(1), int(m.group(2))
 
 def find_tipo(text: str) -> str | None:
-    # Ordem importa: renovação antes de reconhecimento.
     if ACT_PATTERNS[0][1].search(text):
         return ACT_PATTERNS[0][0]
+
     if ACT_PATTERNS[1][1].search(text):
         return ACT_PATTERNS[1][0]
+
     if ACT_PATTERNS[2][1].search(text):
         return ACT_PATTERNS[2][0]
+
     if ADITAMENTO_TERMS.search(text):
         return "Aditamento"
+
     return None
 
 def find_modality(text: str) -> str | None:
     for label, pat in MODALITY_TERMS.items():
         if pat.search(text):
             return label
+
     return None
 
 def find_degree(text: str) -> str | None:
     for label, pat in DEGREE_TERMS.items():
         if pat.search(text):
             return label
+
     return None
 
 def extract_ies(text: str) -> str | None:
@@ -282,18 +367,22 @@ def extract_ies(text: str) -> str | None:
         r"\bMANTIDA\s*:\s*([^.;]+)",
         r"\bINSTITUI(?:Ç|C)[ÃA]O(?:\s+DE\s+EDUCA(?:Ç|C)[ÃA]O\s+SUPERIOR)?\s*[:\-]\s*([^.;]+)",
     ]
+
     for pat in patterns:
         m = re.search(pat, text, re.I)
+
         if m:
             value = m.group(1).strip()
+
             if 3 <= len(value) <= 180:
                 return value
-    # Heurística conservadora: nomes com UNIVERSIDADE/CENTRO/FACULDADE/INSTITUTO.
+
     m = re.search(
         r"\b((?:UNIVERSIDADE|CENTRO UNIVERSIT[ÁA]RIO|FACULDADE|INSTITUTO)[A-ZÁÉÍÓÚÃÕÇ0-9 .,&'’\-]{5,160})",
         text,
         re.I,
     )
+
     return re.sub(r"\s+", " ", m.group(1)).strip(" .,-") if m else None
 
 def extract_course(text: str) -> str | None:
@@ -302,17 +391,23 @@ def extract_course(text: str) -> str | None:
         r"\bcurso\s+de\s+gradua(?:ç|c)[ãa]o\s+em\s+([^.;:]{2,120})",
         r"\b(?:bacharelado|licenciatura|tecn[oó]logo)\s+em\s+([^.;:]{2,120})",
     ]
+
     for pat in pats:
         m = re.search(pat, text, re.I)
+
         if m:
             value = re.sub(r"\s+", " ", m.group(1)).strip(" .,-")
+
             if 3 <= len(value) <= 150:
                 return value
+
     return None
 
 def build_record(c: Candidate, detail: str) -> ActRecord | None:
     text = normalize(" ".join([c.title, c.published_text, c.body, detail]))
+
     tipo = find_tipo(text)
+
     if not tipo:
         return None
 
@@ -320,7 +415,6 @@ def build_record(c: Candidate, detail: str) -> ActRecord | None:
     has_degree = bool(find_degree(text))
     has_course_signal = bool(re.search(r"\bcurso\b", text, re.I))
 
-    # Regra crítica: palavras soltas não bastam.
     if tipo in {"Autorização", "Reconhecimento", "Renovação de Reconhecimento"}:
         if not (has_grad and has_course_signal and has_degree):
             return None
@@ -332,9 +426,10 @@ def build_record(c: Candidate, detail: str) -> ActRecord | None:
     ies = extract_ies(text)
     curso = extract_course(text)
 
-    # Confirmação só ocorre quando temos URL oficial + número + curso + IES + sinal de graduação.
+    # Confirmação MUITO restritiva:
+    # publicação individual do DOU + número/ano + curso + IES + graduação.
     confirmed = bool(
-        official_url(c.url)
+        is_dou_publication_url(c.url)
         and numero
         and ano
         and curso
@@ -354,29 +449,36 @@ def build_record(c: Candidate, detail: str) -> ActRecord | None:
             "Aditamento": "Aditamento",
         }.get(tipo, "Ato confirmado")
 
-    # Não inferir mantenedora/local sem evidência explícita.
     mantenedora = None
     local = None
+
     for label, target in [
         ("MANTENEDORA", "mantenedora"),
         ("LOCAL DE OFERTA", "local"),
         ("ENDEREÇO", "local"),
     ]:
         m = re.search(rf"\b{label}\s*[:\-]\s*([^.;]+)", text, re.I)
+
         if m:
             value = re.sub(r"\s+", " ", m.group(1)).strip()
+
             if target == "mantenedora":
                 mantenedora = value[:180]
             else:
                 local = value[:180]
 
     fingerprint = hashlib.sha256(
-        "|".join([
-            str(numero), str(ano), str(ies or ""), str(curso or ""), c.url
-        ]).encode("utf-8")
+        "|".join(
+            [
+                str(numero),
+                str(ano),
+                str(ies or ""),
+                str(curso or ""),
+                c.url,
+            ]
+        ).encode("utf-8")
     ).hexdigest()[:20]
 
-    evidence = text[:1200]
     return ActRecord(
         id=f"DOU-{fingerprint}",
         tipo_ato=tipo,
@@ -395,80 +497,149 @@ def build_record(c: Candidate, detail: str) -> ActRecord | None:
         fonte_conferencia="https://emec.mec.gov.br/",
         confirmado=confirmed,
         classificacao=classificacao,
-        evidencia=evidence,
+        evidencia=text[:1200],
         coletado_em=datetime.now(timezone.utc).isoformat(),
     )
+
+def valid_existing_record(record: dict) -> bool:
+    """
+    Remove registros da V10.0 que tenham sido criados a partir de
+    páginas genéricas da Imprensa Nacional.
+    """
+    if not isinstance(record, dict):
+        return False
+
+    url = str(record.get("fonte_oficial", ""))
+
+    # Nenhum registro pode permanecer confirmado se sua fonte não for
+    # uma publicação individual.
+    if record.get("confirmado") and not is_dou_publication_url(url):
+        return False
+
+    # Candidatos também não devem permanecer se forem apenas páginas
+    # institucionais/navegação sem publicação individual.
+    if not record.get("confirmado") and url and not is_dou_publication_url(url):
+        return False
+
+    return True
 
 def load_existing() -> list[dict]:
     if not OUT_FILE.exists():
         return []
+
     try:
         raw = json.loads(OUT_FILE.read_text(encoding="utf-8"))
-        return raw.get("atos", []) if isinstance(raw, dict) else []
-    except Exception:
+        records = raw.get("atos", []) if isinstance(raw, dict) else []
+        cleaned = [x for x in records if valid_existing_record(x)]
+
+        removed = len(records) - len(cleaned)
+
+        if removed:
+            print(f"[CLEANUP] {removed} registro(s) antigo(s) removido(s) por fonte não oficial/individual.")
+
+        return cleaned
+
+    except Exception as exc:
+        print(f"[WARN] Falha lendo registros existentes: {exc}")
         return []
 
 def main() -> int:
     MONITORING.mkdir(parents=True, exist_ok=True)
+
     existing = load_existing()
-    existing_by_id = {x.get("id"): x for x in existing if isinstance(x, dict) and x.get("id")}
+    existing_by_id = {
+        x.get("id"): x
+        for x in existing
+        if isinstance(x, dict) and x.get("id")
+    }
 
     candidates = []
     candidates.extend(load_seed_candidates())
     candidates.extend(load_inlabs())
     candidates.extend(collect_from_dou())
 
-    # dedup por URL
+    # Deduplicação por URL.
     dedup = {}
+
     for c in candidates:
         if c.url and c.url not in dedup:
             dedup[c.url] = c
+
     candidates = list(dedup.values())
 
     new_records = []
+
     for c in candidates:
         detail = ""
-        if c.url and official_url(c.url) and not c.body:
+
+        if c.url and official_domain(c.url) and not c.body:
             try:
                 detail = fetch(c.url)
             except Exception as exc:
-                print(f"[WARN] Não foi possível abrir ato {c.url}: {exc}")
+                print(f"[WARN] Não foi possível abrir publicação {c.url}: {exc}")
+
         record = build_record(c, detail)
+
         if record:
-            existing_by_id[record.id] = asdict(record)
-            if record.id not in {r.get("id") for r in existing}:
-                new_records.append(asdict(record))
+            data = asdict(record)
+            old = existing_by_id.get(record.id)
+
+            existing_by_id[record.id] = data
+
+            if not old:
+                new_records.append(data)
 
     all_records = list(existing_by_id.values())
-    all_records.sort(key=lambda x: (x.get("data_publicacao") or "", x.get("numero_ato") or ""), reverse=True)
+
+    all_records.sort(
+        key=lambda x: (
+            x.get("data_publicacao") or "",
+            x.get("numero_ato") or "",
+        ),
+        reverse=True,
+    )
 
     payload = {
-        "version": "V10",
+        "version": "V10.1",
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "total_atos": len(all_records),
         "confirmados": sum(1 for x in all_records if x.get("confirmado")),
         "pendentes": sum(1 for x in all_records if not x.get("confirmado")),
         "atos": all_records,
     }
-    OUT_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    OUT_FILE.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
     log = {
-        "version": "V10",
+        "version": "V10.1",
         "executed_at": datetime.now(timezone.utc).isoformat(),
         "candidates_received": len(candidates),
-        "new_records": len(new_records),
+        "new_records": new_records,
         "confirmed": sum(1 for x in new_records if x.get("confirmado")),
         "pending_validation": sum(1 for x in new_records if not x.get("confirmado")),
         "source_policy": {
             "primary": "DOU/Imprensa Nacional",
             "secondary": "e-MEC",
             "scope": "Todos os cursos de graduação, sem restrição por IES, mantenedora, modalidade ou localidade.",
+            "confirmation_rule": "Somente publicação individual do DOU com evidência suficiente.",
         },
-        "new_records": new_records,
     }
-    LOG_FILE.write_text(json.dumps(log, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print(f"[OK] Candidatos: {len(candidates)} | Novos registros: {len(new_records)} | Confirmados: {log['confirmed']}")
+    LOG_FILE.write_text(
+        json.dumps(log, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    print(
+        f"[OK] Candidatos: {len(candidates)} | "
+        f"Registros totais: {len(all_records)} | "
+        f"Novos: {len(new_records)} | "
+        f"Confirmados: {log['confirmed']}"
+    )
+
     return 0
 
 if __name__ == "__main__":
