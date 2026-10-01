@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 """
-Oráculo da Secretaria Acadêmica — V10.2.1
-Diagnóstico da camada de download INLABS.
+Oráculo da Secretaria Acadêmica — V10.2.2
+Diagnóstico avançado do retorno HTML do INLABS.
 
-Objetivo:
-- manter o login INLABS;
-- diagnosticar exatamente o retorno do endpoint de download;
-- registrar HTTP, Content-Type, tamanho, primeiros bytes e URL;
-- não gravar conteúdo sensível;
-- não confirmar nenhum ato nesta versão;
-- preservar a política de confirmação pelo DOU individual.
+Não tenta confirmar atos nesta versão.
+Objetivo: identificar, de forma segura, a mensagem/estrutura devolvida pelo
+endpoint de download quando o INLABS responde HTTP 200 + HTML em vez de ZIP.
 
-Esta versão é diagnóstica: primeiro identifica o formato real retornado pelo
-INLABS antes de alterar a rotina de ingestão XML.
+Nunca grava:
+- senha;
+- cookie;
+- token;
+- conteúdo integral da página.
+
+Grava apenas metadados e trechos sanitizados de texto da página.
 """
 
 from __future__ import annotations
@@ -21,79 +22,112 @@ import json
 import os
 import re
 from datetime import datetime, timedelta, timezone
+from html import unescape
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from urllib.request import Request, build_opener
 from http.cookiejar import CookieJar
 
 ROOT = Path(__file__).resolve().parents[1]
 MONITORING = ROOT / "monitoring"
 LOG_FILE = MONITORING / "atos_regulatorios_log.json"
-OUT_FILE = MONITORING / "atos_regulatorios.json"
 
-INLABS_LOGIN = "https://inlabs.in.gov.br/logar.php"
-INLABS_ACCESS = "https://inlabs.in.gov.br/acessar.php"
-INLABS_DOWNLOAD = "https://inlabs.in.gov.br/index.php?p={date}&dl={date}-{section}.zip"
-INLABS_ORIGEM = "736372697074"
+LOGIN = "https://inlabs.in.gov.br/logar.php"
+ACCESS = "https://inlabs.in.gov.br/acessar.php"
+DOWNLOAD = "https://inlabs.in.gov.br/index.php?p={date}&dl={date}-{section}.zip"
+ORIGEM = "736372697074"
 
-def http_session():
+def opener():
     jar = CookieJar()
-    opener = build_opener()
-    opener.add_handler(__import__("urllib.request", fromlist=["HTTPCookieProcessor"]).HTTPCookieProcessor(jar))
-    return opener, jar
+    op = build_opener()
+    op.add_handler(__import__("urllib.request", fromlist=["HTTPCookieProcessor"]).HTTPCookieProcessor(jar))
+    return op, jar
 
-def request(opener, url, data=None, headers=None, timeout=60):
+def request(op, url, data=None, headers=None, timeout=60):
     h = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36",
-        "Accept": "*/*",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "pt-BR,pt;q=0.9",
         "Referer": "https://inlabs.in.gov.br/",
+        "Connection": "keep-alive",
     }
     if headers:
         h.update(headers)
-    req = Request(
-        url,
-        data=data,
-        headers=h,
-        method="POST" if data is not None else "GET",
-    )
-    with opener.open(req, timeout=timeout) as r:
-        body = r.read()
-        return r.status, dict(r.headers.items()), body
+    req = Request(url, data=data, headers=h, method="POST" if data is not None else "GET")
+    with op.open(req, timeout=timeout) as r:
+        return r.status, dict(r.headers.items()), r.geturl(), r.read()
 
-def login(opener):
+def sanitize_html(body):
+    text = body.decode("utf-8", "ignore")
+    # Remove scripts/styles antes de extrair texto.
+    text = re.sub(r"<script\b[^>]*>.*?</script>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
+    text = re.sub(r"<noscript\b[^>]*>.*?</noscript>", " ", text, flags=re.I | re.S)
+
+    title = ""
+    m = re.search(r"<title[^>]*>(.*?)</title>", text, flags=re.I | re.S)
+    if m:
+        title = re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", m.group(1)))).strip()
+
+    visible = re.sub(r"<[^>]+>", " ", text)
+    visible = unescape(visible)
+    visible = re.sub(r"\s+", " ", visible).strip()
+
+    # Não expõe possíveis credenciais/token/cookies.
+    visible = re.sub(r"(?i)(password|senha)\s*[:=]\s*\S+", r"\1=[REDACTED]", visible)
+    visible = re.sub(r"(?i)(token|cookie|session|sess[aã]o)\s*[:=]\s*\S+", r"\1=[REDACTED]", visible)
+
+    return title, visible[:2000]
+
+def find_clues(body):
+    text = body.decode("utf-8", "ignore")
+    lower = text.lower()
+
+    patterns = {
+        "login": r"login|entrar|autentica",
+        "senha": r"senha|password",
+        "download": r"download|baixar|arquivo",
+        "acesso_negado": r"acesso negado|acesso não autorizado|acesso nao autorizado|forbidden|unauthorized",
+        "erro": r"erro|error|falha|failure",
+        "sessao": r"session|sess[aã]o|cookie",
+        "cloudflare": r"cloudflare|cf-ray|challenge",
+        "captcha": r"captcha|recaptcha",
+        "csrf": r"csrf|xsrf",
+        "javascript": r"javascript|required",
+    }
+    return {k: bool(re.search(v, lower, re.I)) for k, v in patterns.items()}
+
+def login(op):
     email = os.getenv("INLABS_EMAIL", "").strip()
     password = os.getenv("INLABS_PASSWORD", "").strip()
 
     if not email or not password:
-        return False, "Credenciais INLABS não configuradas."
+        return False, "Credenciais não configuradas."
 
     try:
+        # Acesso inicial para obter cookies/estado.
         try:
-            request(opener, INLABS_ACCESS, timeout=30)
+            request(op, ACCESS, timeout=30)
         except Exception:
             pass
 
-        payload = urlencode({
-            "email": email,
-            "password": password,
-        }).encode()
-
-        status, headers, body = request(
-            opener,
-            INLABS_LOGIN,
+        payload = urlencode({"email": email, "password": password}).encode()
+        status, headers, final_url, body = request(
+            op,
+            LOGIN,
             data=payload,
             headers={
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Origem": INLABS_ORIGEM,
+                "Origem": ORIGEM,
+                "Referer": ACCESS,
             },
             timeout=30,
         )
 
-        text = body.decode("utf-8", "ignore")
         if status != 200:
             return False, f"Login HTTP {status}"
 
+        text = body.decode("utf-8", "ignore")
         if re.search(r"tente mais tarde|#\s*01", text, re.I):
             return False, "INLABS informou bloqueio temporário."
 
@@ -102,47 +136,65 @@ def login(opener):
     except Exception as exc:
         return False, f"Falha no login: {exc}"
 
-def diagnose_download(opener, date_iso, section):
-    url = INLABS_DOWNLOAD.format(date=date_iso, section=section)
+def diagnose(op, date_iso, section):
+    url = DOWNLOAD.format(date=date_iso, section=section)
 
     result = {
         "date": date_iso,
         "section": section,
-        "url": url,
+        "requested_url": url,
         "http_status": None,
+        "final_url": None,
+        "same_final_host": None,
         "content_type": None,
         "content_length_header": None,
         "body_size": 0,
-        "first_bytes_hex": "",
-        "first_bytes_ascii": "",
-        "is_zip_signature": False,
-        "looks_like_html": False,
-        "looks_like_json": False,
-        "redirect": None,
+        "zip_signature": False,
+        "html_signature": False,
+        "title": "",
+        "visible_text_sample": "",
+        "clues": {},
+        "interesting_links": [],
+        "interesting_forms": [],
         "error": None,
     }
 
     try:
-        status, headers, body = request(opener, url, timeout=120)
+        status, headers, final_url, body = request(op, url, timeout=120)
         result["http_status"] = status
+        result["final_url"] = final_url
+        result["same_final_host"] = (
+            urlparse(final_url).netloc.lower() == urlparse(url).netloc.lower()
+        )
         result["content_type"] = headers.get("Content-Type")
         result["content_length_header"] = headers.get("Content-Length")
         result["body_size"] = len(body)
-
-        first = body[:32]
-        result["first_bytes_hex"] = first.hex()
-        result["first_bytes_ascii"] = "".join(
-            chr(b) if 32 <= b <= 126 else "." for b in first
+        result["zip_signature"] = body.startswith(b"PK")
+        result["html_signature"] = (
+            body.lstrip().lower().startswith(b"<!doctype html")
+            or body.lstrip().lower().startswith(b"<html")
         )
 
-        result["is_zip_signature"] = body.startswith(b"PK")
-        stripped = body.lstrip().lower()
-        result["looks_like_html"] = (
-            stripped.startswith(b"<!doctype html")
-            or stripped.startswith(b"<html")
-            or b"<html" in stripped[:500]
-        )
-        result["looks_like_json"] = stripped.startswith(b"{") or stripped.startswith(b"[")
+        title, sample = sanitize_html(body)
+        result["title"] = title
+        result["visible_text_sample"] = sample
+        result["clues"] = find_clues(body)
+
+        raw = body.decode("utf-8", "ignore")
+
+        # Somente URLs/ações potencialmente úteis para diagnosticar fluxo.
+        links = re.findall(r'<a[^>]+href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', raw, re.I | re.S)
+        for href, label in links[:50]:
+            clean_label = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", unescape(label))).strip()
+            if re.search(r"login|acess|download|baix|arquivo|entrar|sair", clean_label, re.I) or \
+               re.search(r"login|acess|download|baix|arquivo", href, re.I):
+                result["interesting_links"].append({
+                    "label": clean_label[:200],
+                    "href": href[:500],
+                })
+
+        forms = re.findall(r"<form\b[^>]*?(?:action=[\"']([^\"']*)[\"'])?[^>]*>", raw, re.I)
+        result["interesting_forms"] = [x[:500] for x in forms[:20]]
 
         return result
 
@@ -153,61 +205,36 @@ def diagnose_download(opener, date_iso, section):
 def main():
     MONITORING.mkdir(parents=True, exist_ok=True)
 
-    opener, jar = http_session()
-    ok, login_message = login(opener)
+    op, jar = opener()
+    ok, message = login(op)
 
     diagnostics = []
     if ok:
-        br_tz = timezone(timedelta(hours=-3))
-        today = datetime.now(br_tz).date()
+        br = timezone(timedelta(hours=-3))
+        today = datetime.now(br).date()
 
-        # Testa hoje e ontem, DO1 e DO1E.
         for offset in range(2):
             d = today - timedelta(days=offset)
-            date_iso = d.isoformat()
-
             for section in ("DO1", "DO1E"):
-                diagnostics.append(
-                    diagnose_download(opener, date_iso, section)
-                )
-
-    now = datetime.now(timezone.utc).isoformat()
+                diagnostics.append(diagnose(op, d.isoformat(), section))
 
     summary = {
-        "version": "V10.2.1-DIAGNOSTICO",
-        "executed_at": now,
+        "version": "V10.2.2-DIAGNOSTICO-AVANCADO",
+        "executed_at": datetime.now(timezone.utc).isoformat(),
         "login": {
             "status": "ok" if ok else "erro",
-            "message": login_message,
+            "message": message,
         },
         "diagnostico_download": diagnostics,
-        "interpretacao": {
-            "PK": "ZIP válido/esperado",
-            "HTML": "Resposta de página/erro/sessão em vez do ZIP",
-            "JSON": "Resposta JSON/API em vez do ZIP",
-            "outro": "Resposta diferente do esperado",
-        },
-        "proxima_etapa": "Ajustar o endpoint de download somente após identificar o retorno real.",
+        "seguranca": "Nenhuma senha, cookie ou token foi gravado.",
+        "objetivo": "Identificar a página HTML devolvida pelo endpoint INLABS quando não entrega ZIP.",
+        "proxima_etapa": "Ajustar a autenticação/endpoint de download com base nas pistas coletadas.",
     }
 
     LOG_FILE.write_text(
         json.dumps(summary, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-
-    # Não altera a base de atos nesta etapa.
-    if not OUT_FILE.exists():
-        OUT_FILE.write_text(
-            json.dumps({
-                "version": "V10.2.1-DIAGNOSTICO",
-                "total_atos": 0,
-                "confirmados": 0,
-                "pendentes": 0,
-                "atos": []
-            }, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-
     print(json.dumps(summary, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
