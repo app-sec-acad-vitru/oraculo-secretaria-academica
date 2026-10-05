@@ -1,4 +1,4 @@
-name: Classificação de Atos de Curso — V10.7
+name: Classificação de Atos de Curso — V10.8
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: oraculo-monitor-regulatorio
+  group: oraculo-monitor-regulatorio-v10-8
   cancel-in-progress: false
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install requests
 
-      - name: Executar V10.7
+      - name: Executar V10.8
         env:
           INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
@@ -37,32 +37,110 @@ jobs:
 
       - name: Mostrar resultado da classificação
         run: |
-          echo "===== RESUMO V10.7 ====="
+          echo "===== RESUMO V10.8 ====="
+
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path("monitoring/atos_validacao_v10_7.json")
+
+          p = Path("monitoring/atos_validacao_v10_8.json")
+
+          if not p.exists():
+              print("ERRO: arquivo atos_validacao_v10_8.json não foi gerado.")
+              raise SystemExit(1)
+
           data = json.loads(p.read_text(encoding="utf-8"))
-          print(json.dumps(data.get("resumo", {}), ensure_ascii=False, indent=2))
+
+          print(json.dumps(
+              data.get("resumo", {}),
+              ensure_ascii=False,
+              indent=2
+          ))
+
           print("\n===== DOWNLOADS =====")
+
           for d in data.get("downloads", []):
-              print(f"{d.get('date')} / {d.get('section')}: HTTP {d.get('http_status')} | ZIP={d.get('is_zip')} | {d.get('bytes')} bytes")
-          print("\n===== CANDIDATOS =====")
+              print(
+                  f"{d.get('date')} / {d.get('section')}: "
+                  f"HTTP {d.get('http_status')} | "
+                  f"ZIP={d.get('is_zip')} | "
+                  f"{d.get('bytes')} bytes"
+              )
+
+          print("\n===== CANDIDATOS DE ATO DE CURSO =====")
+
           for i, item in enumerate(data.get("candidatos", []), 1):
-              print(f"{i}. [{item.get('tipo_ato_classificado')}] {item.get('titulo')}")
-              print(f"   Objeto: {item.get('objeto_classificado')}")
-              print(f"   Número/ano: {item.get('numero_ato')}/{item.get('ano')}")
-              print(f"   Fonte: {item.get('fonte', {}).get('pagina_edicao')}")
+              print(
+                  f"{i}. [{item.get('tipo_ato_classificado')}] "
+                  f"{item.get('titulo')}"
+              )
+              print(
+                  f"   Objeto: {item.get('objeto_classificado')}"
+              )
+              print(
+                  f"   Confiança: "
+                  f"{item.get('confianca', {}).get('score')}/100"
+              )
+              print(
+                  f"   Número/ano: "
+                  f"{item.get('numero_ato')}/{item.get('ano')}"
+              )
+
+              campos = item.get("campos_extraidos", {})
+
+              print(
+                  f"   Curso: {campos.get('curso')}"
+              )
+              print(
+                  f"   Grau: {campos.get('grau')}"
+              )
+              print(
+                  f"   Modalidade: {campos.get('modalidade')}"
+              )
+              print(
+                  f"   e-MEC: {campos.get('codigo_emec')}"
+              )
+
+          print("\n===== FILA DE VALIDAÇÃO =====")
+
+          for i, item in enumerate(data.get("fila_validacao", []), 1):
+              print(
+                  f"{i}. [{item.get('tipo_ato_classificado')}] "
+                  f"{item.get('titulo')}"
+              )
+              print(
+                  f"   Objeto: {item.get('objeto_classificado')}"
+              )
+              print(
+                  f"   Confiança: "
+                  f"{item.get('confianca', {}).get('score')}/100"
+              )
+              print(
+                  f"   Número/ano: "
+                  f"{item.get('numero_ato')}/{item.get('ano')}"
+              )
+
+          print("\n===== ERROS =====")
+
+          for erro in data.get("erros", []):
+              print(json.dumps(
+                  erro,
+                  ensure_ascii=False
+              ))
           PY
 
-      - name: Commitar resultados
+      - name: Commitar resultados V10.8
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add monitoring/atos_validacao_v10_7.json monitoring/atos_validacao_v10_7.md
+
+          git add \
+            monitoring/atos_validacao_v10_8.json \
+            monitoring/atos_validacao_v10_8.md
+
           if git diff --cached --quiet; then
             echo "Nenhuma alteração para commit."
           else
-            git commit -m "monitor: V10.7.1 correção URL INLABS"
+            git commit -m "monitor: V10.8 triagem universal de atos de curso"
             git push
           fi
