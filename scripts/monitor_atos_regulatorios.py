@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Oráculo da Secretaria Acadêmica — V10.8
+Oráculo da Secretaria Acadêmica — V10.8.1
 Captura e triagem universal de atos regulatórios de cursos.
 
 V10.8 mantém a lógica operacional da V10.7 (INLABS -> ZIP -> XML),
@@ -10,8 +10,8 @@ uma fila de validação para casos ambíguos.
 
 Não altera monitoring/atos_regulatorios.json.
 Saídas:
-  monitoring/atos_validacao_v10_8.json
-  monitoring/atos_validacao_v10_8.md
+  monitoring/atos_validacao_v10_8_1.json
+  monitoring/atos_validacao_v10_8_1.md
 """
 
 from __future__ import annotations
@@ -59,8 +59,11 @@ REGULATORY_TYPES = {
 
 COURSE_STRONG = [
     "curso superior de graduação",
+    "cursos superiores de graduação",
     "curso de graduação",
+    "cursos de graduação",
     "curso superior",
+    "cursos superiores",
     "curso de bacharelado",
     "curso de licenciatura",
     "curso superior de tecnologia",
@@ -71,12 +74,17 @@ COURSE_STRONG = [
 ]
 
 COURSE_CONTEXT = [
-    "e-mec", "emec", "vagas totais anuais", "vagas",
+    "e-mec", "emec", "registro e-mec", "registro e mec",
+    "vagas totais anuais", "vagas",
     "carga horária total", "carga horária", "turno",
     "mantida pela", "mantida por", "mantenedora",
     "ofertado pela", "ofertada pela",
+    "instituições de educação superior",
+    "instituicoes de educacao superior",
     "modalidade", "presencial", "educação a distância",
     "educacao a distancia",
+    "anexo", "tabela do anexo", "planilha anexa",
+    "endereço de funcionamento do curso",
 ]
 
 COURSE_DEGREE = ["bacharelado", "licenciatura", "tecnologia", "tecnólogo"]
@@ -102,23 +110,27 @@ PROCEDURAL_TERMS = [
 
 TYPE_PATTERNS = [
     ("RENOVAÇÃO DE RECONHECIMENTO DE CURSO", [
-        r"\brenova(?:ção|cao)\s+(?:do|de)\s+reconhecimento(?:\s+do|\s+de)?\s+curso\b",
-        r"\brenova(?:ção|cao)\s+de\s+reconhecimento\s+de\s+curso\b",
+        r"\bfica\s+renovad[oa]\s+(?:o\s+)?reconhecimento",
+        r"\bficam\s+renovados\s+os\s+reconhecimentos",
+        r"\brenova(?:ção|cao)\s+(?:do|de)\s+reconhecimento",
     ]),
     ("RECONHECIMENTO DE CURSO", [
-        r"\breconhece\s+o\s+curso\b",
-        r"\breconhecimento\s+do\s+curso\b",
-        r"\breconhecimento\s+de\s+curso\b",
+        r"\bfica\s+reconhecid[oa]\s+o\s+curso",
+        r"\bficam\s+reconhecidos\s+os\s+cursos",
+        r"\breconhece\s+o\s+curso",
+        r"\breconhecimento\s+(?:do|de)\s+curso",
     ]),
     ("AUTORIZAÇÃO DE CURSO", [
-        r"\bautoriza\s+(?:o|a)\s+(?:funcionamento|oferta)\s+do\s+curso\b",
-        r"\bautoriza\s+(?:o|a)\s+funcionamento\s+de\s+curso\b",
-        r"\bautoriza(?:ção|cao)\s+(?:de|do|da)\s+curso\b",
+        r"\bfica(?:m)?\s+autorizad[oa]s?\s+(?:os\s+)?cursos",
+        r"\bfica(?:m)?\s+autorizad[oa]s?\s+os\s+cursos\s+superiores",
+        r"\bautoriza\s+(?:o|a)\s+(?:funcionamento|oferta)\s+do\s+curso",
+        r"\bautoriza(?:ção|cao)\s+(?:de|do|da)\s+curso",
+        r"\bautorizac[aã]o\s+para\s+os\s+cursos",
     ]),
     ("ADITAMENTO DE CURSO", [
-        r"\baditamento\s+(?:do|de)\s+curso\b",
+        r"\baditamento\s+(?:do|de)\s+curso",
         r"\baditamento.*\bcurso\b",
-        r"\baltera(?:ção|cao).{0,100}\bcurso\b",
+        r"\baltera(?:ção|cao).{0,120}\bcurso\b",
     ]),
 ]
 
@@ -327,40 +339,57 @@ def classify_object(text_norm: str, title_norm: str, act_type: str):
     context_hits = [x for x in COURSE_CONTEXT if x in text_norm]
     degree_hits = [x for x in COURSE_DEGREE if x in text_norm]
 
-    # Um ato explicitamente institucional não deve virar ato de curso
-    # apenas porque menciona algum curso no corpo do documento.
-    if institutional_hits and act_type == "OUTRO":
-        return "INSTITUCIONAL/IES", reasons
-
-    # Campus/unidade só vira curso quando existe evidência regulatória
-    # operacional ligada a curso.
-    course_regulatory_evidence = (
-        len(strong_hits) >= 1
+    # Estrutura típica de portarias SERES:
+    # ato no corpo + cursos e dados individuais no Anexo/Tabela.
+    collective_course_act = (
+        act_type in REGULATORY_TYPES
         and (
-            "e-mec" in text_norm
-            or "emec" in text_norm
-            or "vagas totais anuais" in text_norm
-            or ("carga horária total" in text_norm and degree_hits)
-            or ("mantida pela" in text_norm and degree_hits)
-            or ("mantida por" in text_norm and degree_hits)
+            "tabela do anexo" in text_norm
+            or "tabela constante do anexo" in text_norm
+            or "planilha anexa" in text_norm
+            or "anexo (autorizacao de cursos)" in text_norm
+            or "anexo (autorização de cursos)" in text_norm
+        )
+        and (
+            "registro e-mec" in text_norm
+            or "registro e mec" in text_norm
+            or "endereço de funcionamento do curso" in text_norm
+            or "endereco de funcionamento do curso" in text_norm
         )
     )
 
+    # Evidência suficiente para reconhecer o curso mesmo quando
+    # os dados estão somente na tabela/anexo.
+    course_regulatory_evidence = (
+        "e-mec" in text_norm
+        or "emec" in text_norm
+        or "registro e-mec" in text_norm
+        or "registro e mec" in text_norm
+        or "vagas totais anuais" in text_norm
+        or "endereço de funcionamento do curso" in text_norm
+        or "endereco de funcionamento do curso" in text_norm
+    )
+
+    # Um ato explicitamente institucional não deve virar ato de curso
+    # só porque menciona cursos no corpo.
+    if institutional_hits and act_type == "OUTRO":
+        return "INSTITUCIONAL/IES", reasons
+
+    # Campus/unidade só prevalece quando não há evidência regulatória
+    # de curso. A mera presença da palavra "campus" não elimina curso.
+    if act_type in REGULATORY_TYPES:
+        if collective_course_act:
+            reasons.append("ato coletivo com cursos identificados no anexo/tabela")
+            return "CURSO", reasons
+
+        if strong_hits and course_regulatory_evidence:
+            return "CURSO", reasons
+
+        if degree_hits and course_regulatory_evidence:
+            return "CURSO", reasons
+
     if campus_hits and not course_regulatory_evidence:
         return "CAMPUS/UNIDADE", reasons
-
-    # Curso: exigimos ato regulatório + linguagem explícita de curso
-    # + pelo menos uma evidência regulatória/operacional.
-    if act_type in REGULATORY_TYPES:
-        if strong_hits and (
-            "e-mec" in text_norm
-            or "emec" in text_norm
-            or "vagas totais anuais" in text_norm
-            or ("carga horária total" in text_norm and degree_hits)
-            or ("mantida pela" in text_norm and degree_hits)
-            or ("mantida por" in text_norm and degree_hits)
-        ):
-            return "CURSO", reasons
 
     if institutional_hits:
         return "INSTITUCIONAL/IES", reasons
@@ -461,6 +490,16 @@ def confidence_score(act_type, obj, title_norm, text_norm, fields):
         score += 10
         reasons.append("código e-MEC identificado")
 
+    if any(x in text_norm for x in [
+        "registro e-mec", "registro e mec",
+        "tabela do anexo", "tabela constante do anexo",
+        "planilha anexa",
+        "endereço de funcionamento do curso",
+        "endereco de funcionamento do curso",
+    ]):
+        score += 10
+        reasons.append("estrutura de tabela/anexo regulatório identificada")
+
     if fields["curso"] and fields["grau"]:
         score += 10
         reasons.append("curso e grau identificados")
@@ -507,12 +546,15 @@ def validation_status(act_type, obj, score, title_norm, text_norm):
 def build_record(meta, parts, full_text, date_obj, section, xml_name):
     title = meta.get("name") or parts.get("Titulo") or ""
 
+    # V10.8.1: o full_text é obrigatório na análise porque tabelas/anexos
+    # do DOU podem conter os dados decisivos do curso.
     body = " ".join([
         parts.get("Identifica", ""),
         parts.get("Ementa", ""),
         parts.get("Titulo", ""),
         parts.get("SubTitulo", ""),
         parts.get("Texto", ""),
+        full_text,
     ])
 
     text_n = norm(body)
@@ -545,7 +587,7 @@ def build_record(meta, parts, full_text, date_obj, section, xml_name):
     return {
         "id": meta.get("idMateria") or meta.get("id") or xml_name,
         "data_coleta": datetime.now(timezone.utc).isoformat(),
-        "versao_classificacao": "V10.8",
+        "versao_classificacao": "V10.8.1",
         "edicao": {
             "data": date_obj.isoformat(),
             "secao": section,
@@ -582,7 +624,7 @@ def build_record(meta, parts, full_text, date_obj, section, xml_name):
             "publicacao_individual": individual,
             "individual_confirmada": bool(individual),
         },
-        "status_v10_8": status,
+        "status_v10_8_1_1": status,
         "confirmado": False,
         "validacao_pendente": status in {
             "CANDIDATO_ATO_DE_CURSO",
@@ -605,12 +647,12 @@ def main():
         login(session)
     except Exception as exc:
         payload = {
-            "version": "V10.8",
+            "version": "V10.8.1",
             "executed_at": datetime.now(timezone.utc).isoformat(),
             "status": "erro_login",
             "erro": str(exc),
         }
-        (MONITORING / "atos_validacao_v10_8.json").write_text(
+        (MONITORING / "atos_validacao_v10_8_1.json").write_text(
             json.dumps(payload, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
@@ -680,21 +722,21 @@ def main():
 
     confirmed_candidates = [
         r for r in records
-        if r["status_v10_8"] == "CANDIDATO_ATO_DE_CURSO"
+        if r["status_v10_8_1_1"] == "CANDIDATO_ATO_DE_CURSO"
     ]
 
     validation_queue = [
         r for r in records
-        if r["status_v10_8"] == "FILA_VALIDACAO"
+        if r["status_v10_8_1_1"] == "FILA_VALIDACAO"
     ]
 
     out_scope = [
         r for r in records
-        if r["status_v10_8"] == "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
+        if r["status_v10_8_1_1"] == "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
     ]
 
     payload = {
-        "version": "V10.8",
+        "version": "V10.8.1",
         "executed_at": datetime.now(timezone.utc).isoformat(),
         "objetivo": (
             "Captura universal e classificação conservadora de atos regulatórios "
@@ -715,13 +757,13 @@ def main():
         "erros": errors,
     }
 
-    (MONITORING / "atos_validacao_v10_8.json").write_text(
+    (MONITORING / "atos_validacao_v10_8_1.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
     md = [
-        "# Oráculo — V10.8 | Validação de Atos de Curso",
+        "# Oráculo — V10.8.1 | Validação de Atos de Curso",
         "",
         f"- Execução: `{payload['executed_at']}`",
         f"- XMLs processados: **{len(records)}**",
@@ -788,12 +830,12 @@ def main():
                 "",
             ])
 
-    (MONITORING / "atos_validacao_v10_8.md").write_text(
+    (MONITORING / "atos_validacao_v10_8_1.md").write_text(
         "\n".join(md),
         encoding="utf-8",
     )
 
-    print("===== RESUMO V10.8 =====")
+    print("===== RESUMO V10.8.1 =====")
     print(f"XMLs processados: {len(records)}")
     print(f"Candidatos de ato de curso: {len(confirmed_candidates)}")
     print(f"Fila de validação: {len(validation_queue)}")
