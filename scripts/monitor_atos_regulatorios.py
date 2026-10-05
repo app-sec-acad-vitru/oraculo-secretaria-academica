@@ -624,7 +624,7 @@ def build_record(meta, parts, full_text, date_obj, section, xml_name):
             "publicacao_individual": individual,
             "individual_confirmada": bool(individual),
         },
-        "status_v10_8_1_1": status,
+        "status_v10_8_1": status,
         "confirmado": False,
         "validacao_pendente": status in {
             "CANDIDATO_ATO_DE_CURSO",
@@ -722,17 +722,17 @@ def main():
 
     confirmed_candidates = [
         r for r in records
-        if r["status_v10_8_1_1"] == "CANDIDATO_ATO_DE_CURSO"
+        if r["status_v10_8_1"] == "CANDIDATO_ATO_DE_CURSO"
     ]
 
     validation_queue = [
         r for r in records
-        if r["status_v10_8_1_1"] == "FILA_VALIDACAO"
+        if r["status_v10_8_1"] == "FILA_VALIDACAO"
     ]
 
     out_scope = [
         r for r in records
-        if r["status_v10_8_1_1"] == "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
+        if r["status_v10_8_1"] == "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
     ]
 
     payload = {
