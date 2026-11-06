@@ -1,7 +1,7 @@
 {
-  "version": "V8.2",
+  "version": "V10.9",
   "date": "2026-09-21",
-  "status": "preparacao",
+  "status": "monitoramento_diario_com_diagnostico",
   "base_referencias": 58,
   "perguntas": 103,
   "regras": 103,
@@ -36,5 +36,6 @@
   "schedule_cron": "0 12 * * *",
   "incremental_check": true,
   "last_weekly_normative_candidates": 11,
-  "last_weekly_normative_confirmed": 0
+  "last_weekly_normative_confirmed": 0,
+  "observacao_estabilizacao": "Manifesto preserva os indicadores de fontes oficiais e recebe diagnóstico detalhado de cada execução pelo workflow."
 }
