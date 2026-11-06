@@ -1,91 +1,80 @@
-# Oráculo da Secretaria Acadêmica — V10
-## Monitoramento específico de autorização, reconhecimento e renovação de reconhecimento
+# Oráculo da Secretaria Acadêmica — V10.9
+
+## Monitoramento de atos regulatórios de cursos
 
 ### Objetivo
-Separar o monitoramento de atos regulatórios de cursos de graduação do monitoramento genérico de páginas.
+Monitorar atos regulatórios publicados oficialmente que alterem a situação de cursos de graduação de qualquer Instituição de Ensino Superior (IES).
 
-### Regra central
-O Oráculo deve considerar **qualquer IES**, e não apenas UNIASSELVI, UniCesumar ou Vitru.
-
-São candidatos:
-- autorização de curso de graduação;
-- reconhecimento de curso de graduação;
-- renovação de reconhecimento;
-- aditamentos/alterações relacionados ao ato;
-- outros atos que alterem formalmente a situação regulatória do curso.
+### Atos monitorados
+- Autorização de cursos.
+- Reconhecimento de cursos.
+- Renovação de reconhecimento.
+- Aditamentos e alterações relacionados aos atos.
+- Outros atos que modifiquem formalmente a situação regulatória do curso.
 
 ### Hierarquia de fontes
-1. **DOU / Imprensa Nacional** — confirmação oficial.
-2. **e-MEC** — conferência cadastral/regulatória.
-3. Outras fontes podem auxiliar a descoberta, mas não substituem a publicação oficial.
+1. Diário Oficial da União (DOU) / Imprensa Nacional.
+2. e-MEC para conferência cadastral e regulatória.
+3. Outras fontes oficiais como apoio à identificação.
 
-A Imprensa Nacional informa que o INLABS disponibiliza as publicações do DOU em XML para processamento e que esse conteúdo não substitui a versão certificada.
+### Melhorias da versão V10.9
 
-### O que a V10 NÃO faz
-- não transforma hash de página em "norma atualizada";
-- não considera uma simples ocorrência das palavras "autorização" ou "reconhecimento" como ato de curso;
-- não limita a busca a uma IES;
-- não grava credenciais de INLABS/e-MEC no repositório;
-- não confirma um ato sem evidência suficiente.
+- Janela padrão de captura de sete datas corridas, incluindo hoje.
+- Referência ao fuso horário America/Sao_Paulo.
+- Integração dos atos identificados ao Radar do Oráculo.
+- Leitura estruturada de tabelas XML do DOU.
+- Extração de IES, curso, grau, modalidade, código e-MEC e vagas.
+- Preservação dos atos já confirmados.
+- Novos registros permanecem como Validação pendente.
+- Interface consulta os arquivos latest.json e atos_regulatorios.json.
+- Workflow único para execução diária e manual.
+- Testes automatizados para validação do parser.
 
-### Arquivos
-- `scripts/monitor_atos_regulatorios.py`
-- `monitoring/atos_regulatorios.json`
-- `monitoring/atos_regulatorios_log.json`
-- `monitoring/dou_candidates.json`
+### Arquivos principais
 
-### Execução local
-```bash
-python scripts/monitor_atos_regulatorios.py
-```
+- scripts/monitor_atos_regulatorios.py
+- scripts/test_monitor_atos_regulatorios.py
+- monitoring/atos_regulatorios.json
+- monitoring/atos_regulatorios_log.json
+- monitoring/dou_candidates.json
 
-### INLABS
-O portal INLABS requer cadastro/login. Se a organização optar por baixar os XMLs por um processo autorizado, a pasta pode ser informada:
+### Configuração do INLABS
 
-```bash
-set INLABS_XML_DIR=C:\caminho\dos\xml
-python scripts/monitor_atos_regulatorios.py
-```
+No GitHub, acesse:
 
-Em GitHub Actions, **não coloque usuário ou senha no código**. Use Secrets/Variables apenas se houver autorização institucional para automatizar o acesso.
+Settings → Secrets and variables → Actions
 
-### Consulta DOU
-Por padrão, a V10 tenta a consulta pública do DOU usando:
+Os seguintes Secrets devem estar cadastrados:
 
-`https://www.in.gov.br/consulta/-/buscar/dou?q={query}`
+- INLABS_EMAIL
+- INLABS_PASSWORD
 
-A interface do DOU pode mudar ou exigir comportamento de navegador. Por isso, a rotina registra falha de acesso em vez de inventar resultado. O parser foi desenhado para aceitar também XML do INLABS e candidatos controlados.
+Não coloque credenciais diretamente no código.
 
-### Critério de confirmação
-Um registro só é marcado como:
-`alteracao_normativa_confirmada`
+### Execução
 
-quando houver, no mínimo:
-- URL oficial do DOU;
-- número/ano do ato;
-- evidência de curso de graduação;
-- evidência de grau;
-- IES identificável;
-- curso identificável.
+O workflow principal é:
 
-Caso contrário:
-`ato_normativo_candidato` + `Validação pendente`.
+.github/workflows/atualizacao-regulatoria.yml
 
-### Próxima integração
-A interface do Radar deve ler `monitoring/atos_regulatorios.json` e apresentar:
-- Confirmados;
-- Pendentes de validação;
-- Tipo do ato;
-- Número/ano;
-- Data;
-- IES;
-- Curso;
-- Grau;
-- Modalidade;
-- Local, quando explicitamente publicado;
-- Link oficial do DOU;
-- Link de conferência no e-MEC;
-- impacto operacional para a Secretaria.
+A execução está programada diariamente às 09h, horário de Brasília, e também pode ser iniciada manualmente em:
 
-### Observação
-O banco não deve ser usado como fonte primária da norma. O link oficial deve permanecer associado a cada registro.
+Actions → Atualização Regulatória Diária do Oráculo → Run workflow.
+
+### Critério de validação
+
+Todo novo ato identificado deve permanecer como:
+
+confirmado: false
+
+status: Validação pendente
+
+A confirmação depende de análise da publicação oficial e de evidências suficientes para identificar o ato e o curso relacionado.
+
+### Governança
+
+O Oráculo não deve apresentar candidatos como atos confirmados.
+
+Registros anteriormente confirmados devem ser preservados durante as atualizações.
+
+O DOU permanece como referência oficial para validação dos atos.
