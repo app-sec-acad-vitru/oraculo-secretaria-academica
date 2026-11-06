@@ -6,9 +6,8 @@ Captura e triagem universal de atos regulatórios de cursos.
 
 V10.9 mantém a lógica operacional da V10.7 (INLABS -> ZIP -> XML),
 mas endurece a classificação para reduzir falsos positivos e cria
-uma fila de validação para casos ambíguos.
-
-Não altera monitoring/atos_regulatorios.json.
+uma fila de validação para casos ambíguos. Integra candidatos e pendências
+ao Radar sem confirmar automaticamente os atos; preserva os confirmados.
 Saídas:
   monitoring/atos_validacao_v10_9.json
   monitoring/atos_validacao_v10_9.md
