@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Oráculo da Secretaria Acadêmica — V10.8.1
+Oráculo da Secretaria Acadêmica — V10.9
 Captura e triagem universal de atos regulatórios de cursos.
 
-V10.8 mantém a lógica operacional da V10.7 (INLABS -> ZIP -> XML),
+V10.9 mantém a lógica operacional da V10.7 (INLABS -> ZIP -> XML),
 mas endurece a classificação para reduzir falsos positivos e cria
 uma fila de validação para casos ambíguos.
 
 Não altera monitoring/atos_regulatorios.json.
 Saídas:
-  monitoring/atos_validacao_v10_8_1.json
-  monitoring/atos_validacao_v10_8_1.md
+  monitoring/atos_validacao_v10_9.json
+  monitoring/atos_validacao_v10_9.md
 """
 
 from __future__ import annotations
@@ -25,6 +25,7 @@ import zipfile
 import unicodedata
 import html as html_lib
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
@@ -38,7 +39,7 @@ EMAIL = os.getenv("INLABS_EMAIL", "").strip()
 PASSWORD = os.getenv("INLABS_PASSWORD", "").strip()
 
 SECTIONS = ("DO1", "DO1E")
-DAYS_BACK = 1
+DAYS_BACK = max(0, int(os.getenv("DAYS_BACK", "6")))  # 7 datas, incluindo hoje
 
 LOGIN_URL = "https://inlabs.in.gov.br/logar.php"
 ACCESS_URL = "https://inlabs.in.gov.br/acessar.php"
@@ -161,7 +162,8 @@ def clean_text(s: str) -> str:
 
 
 def parse_date_list():
-    now = datetime.now(timezone.utc).date()
+    # Usa a data civil brasileira para não consultar o dia errado durante a madrugada UTC.
+    now = datetime.now(ZoneInfo("America/Sao_Paulo")).date()
     return [now - timedelta(days=i) for i in range(DAYS_BACK + 1)]
 
 
@@ -229,7 +231,23 @@ def download_zip(session: requests.Session, date_obj, section: str):
 
 
 def xml_to_text(root):
-    return clean_text(" ".join(root.itertext()))
+    # Mantém também a estrutura de linhas/tabelas do DOU: a ordem das células
+    # costuma ser decisiva para associar código e-MEC, IES, curso e modalidade.
+    plain = clean_text(" ".join(root.itertext()))
+    table_rows = []
+    for row in root.iter():
+        if row.tag.split("}")[-1].lower() != "tr":
+            continue
+        cells = [
+            clean_text(" ".join(cell.itertext()))
+            for cell in list(row)
+            if cell.tag.split("}")[-1].lower() in {"td", "th"}
+        ]
+        if cells:
+            table_rows.append(" | ".join(cells))
+    if table_rows:
+        return plain + " TABLE_ROWS " + " || ".join(table_rows)
+    return plain
 
 
 def extract_article(xml_bytes: bytes):
@@ -411,15 +429,12 @@ def detect_effect(text_norm):
 
 
 def extract_fields(text):
+    """Extrai campos explícitos sem inferir dados ausentes do ato."""
+    raw = clean_text(text)
+    normalized = norm(raw)
     out = {
-        "ies": "",
-        "mantenedora": "",
-        "curso": "",
-        "grau": "",
-        "modalidade": "",
-        "local": "",
-        "vagas": "",
-        "codigo_emec": "",
+        "ies": "", "mantenedora": "", "curso": "", "grau": "",
+        "modalidade": "", "local": "", "vagas": "", "codigo_emec": "",
     }
 
     degree_patterns = [
@@ -427,38 +442,78 @@ def extract_fields(text):
         ("Licenciatura", r"\blicenciatura\b"),
         ("Tecnológico", r"\btecnolog(?:ia|ico)\b"),
     ]
-
     for label, pat in degree_patterns:
-        if re.search(pat, norm(text), re.I):
+        if re.search(pat, normalized, re.I):
             out["grau"] = label
             break
 
-    if re.search(r"\bEAD\b|educação a distância|educacao a distancia", text, re.I):
+    if re.search(r"\b(ead|educacao a distancia|a distancia)\b", normalized):
         out["modalidade"] = "EaD"
-    elif re.search(r"\bpresencial\b", text, re.I):
+    elif "semipresencial" in normalized:
+        out["modalidade"] = "Semipresencial"
+    elif re.search(r"\bpresencial\b", normalized):
         out["modalidade"] = "Presencial"
 
-    m = re.search(r"\be-?mec\s*(?:n[º°]\s*)?([0-9]{4,12})", text, re.I)
-    if m:
-        out["codigo_emec"] = m.group(1)
+    patterns = {
+        "codigo_emec": [
+            r"(?:codigo|registro)\s*(?:do\s*)?e-?mec\s*(?:n[º°o]\s*)?[:\-]?\s*([0-9]{4,12})",
+            r"\be-?mec\s*(?:n[º°o]\s*)?[:\-]?\s*([0-9]{4,12})",
+        ],
+        "vagas": [
+            r"vagas\s+totais\s+anuais\s*[:\-]?\s*([0-9]{1,5})",
+            r"\bvagas\s*[:\-]?\s*([0-9]{1,5})",
+        ],
+        "ies": [
+            r"(?:nome\s+da\s+ies|ies|instituicao\s+de\s+educacao\s+superior)\s*[:\-]\s*([^;|]{5,180})",
+        ],
+        "mantenedora": [
+            r"(?:mantida|mantido)\s+por\s+([^.;|]{5,180})",
+            r"mantenedora\s*[:\-]\s*([^.;|]{5,180})",
+        ],
+        "curso": [
+            r"(?:nome\s+do\s+curso|curso)\s*[:\-]\s*([^.;|]{4,160})",
+            r"(?:bacharelado|licenciatura|tecnologia)\s+em\s+([^.;|]{4,120})",
+        ],
+        "local": [
+            r"(?:endereco\s+de\s+funcionamento\s+do\s+curso|endereco)\s*[:\-]\s*([^;|]{5,180})",
+        ],
+    }
+    for field, pats in patterns.items():
+        for pat in pats:
+            m = re.search(pat, normalized, re.I)
+            if m:
+                value = clean_text(m.group(1)).strip(" .,:;-")
+                if value:
+                    out[field] = value[:180]
+                    break
 
-    m = re.search(r"vagas(?: totais anuais)?\s*[:\-]?\s*([0-9]{1,5})", text, re.I)
-    if m:
-        out["vagas"] = m.group(1)
-
-    patterns = [
-        r"curso(?: superior)?(?: de graduação)?\s*[:\-]\s*([^;|]{5,140})",
-        r"curso\s+de\s+([^;|]{5,140})",
-        r"(?:bacharelado|licenciatura|tecnologia)\s+em\s+([^;|]{4,120})",
-    ]
-
-    for pat in patterns:
-        m = re.search(pat, text, re.I)
-        if m:
-            val = clean_text(m.group(1))
-            if 4 <= len(val) <= 140:
-                out["curso"] = val
-                break
+    # Segunda tentativa: associa valores às colunas de tabelas do DOU.
+    labels = {
+        "ies": {"ies", "nome da ies", "instituicao", "instituicao de ensino superior"},
+        "curso": {"curso", "nome do curso"},
+        "grau": {"grau", "grau academico"},
+        "modalidade": {"modalidade"},
+        "codigo_emec": {"codigo e-mec", "codigo emec", "registro e-mec", "codigo do curso e-mec"},
+        "vagas": {"vagas", "vagas totais anuais"},
+        "local": {"endereco", "local de oferta", "endereco de funcionamento"},
+    }
+    table_match = re.search(r"TABLE_ROWS\s+(.+)$", raw, re.I)
+    if table_match:
+        rows = [r.strip() for r in table_match.group(1).split("||") if r.strip()]
+        header_map = {}
+        for row_index, row in enumerate(rows):
+            cells = [clean_text(c).strip(" .,:;-") for c in row.split("|")]
+            normalized_cells = [norm(c) for c in cells]
+            for field, names in labels.items():
+                for col_index, cell in enumerate(normalized_cells):
+                    if cell in names:
+                        header_map[field] = (row_index, col_index)
+            if header_map and row_index > max(v[0] for v in header_map.values()):
+                for field, (header_row, col_index) in list(header_map.items()):
+                    if header_row < row_index and col_index < len(cells):
+                        value = cells[col_index]
+                        if value and norm(value) not in labels.get(field, set()):
+                            out[field] = value[:180]
 
     return out
 
@@ -546,7 +601,7 @@ def validation_status(act_type, obj, score, title_norm, text_norm):
 def build_record(meta, parts, full_text, date_obj, section, xml_name):
     title = meta.get("name") or parts.get("Titulo") or ""
 
-    # V10.8.1: o full_text é obrigatório na análise porque tabelas/anexos
+    # V10.9: o full_text é obrigatório na análise porque tabelas/anexos
     # do DOU podem conter os dados decisivos do curso.
     body = " ".join([
         parts.get("Identifica", ""),
@@ -587,7 +642,7 @@ def build_record(meta, parts, full_text, date_obj, section, xml_name):
     return {
         "id": meta.get("idMateria") or meta.get("id") or xml_name,
         "data_coleta": datetime.now(timezone.utc).isoformat(),
-        "versao_classificacao": "V10.8.1",
+        "versao_classificacao": "V10.9",
         "edicao": {
             "data": date_obj.isoformat(),
             "secao": section,
@@ -624,7 +679,7 @@ def build_record(meta, parts, full_text, date_obj, section, xml_name):
             "publicacao_individual": individual,
             "individual_confirmada": bool(individual),
         },
-        "status_v10_8_1": status,
+        "status_v10_9": status,
         "confirmado": False,
         "validacao_pendente": status in {
             "CANDIDATO_ATO_DE_CURSO",
@@ -632,6 +687,87 @@ def build_record(meta, parts, full_text, date_obj, section, xml_name):
         },
         "trecho_para_validacao": clean_text(body)[:5000],
     }
+
+
+
+def update_radar(payload, candidates, validation_queue):
+    """Publica candidatos no Radar sem marcá-los como confirmados."""
+    radar_path = MONITORING / "atos_regulatorios.json"
+    try:
+        radar = json.loads(radar_path.read_text(encoding="utf-8")) if radar_path.exists() else {}
+        if not isinstance(radar, dict):
+            radar = {}
+    except Exception:
+        radar = {}
+
+    previous = radar.get("atos", [])
+    if not isinstance(previous, list):
+        previous = []
+
+    confirmed = [
+        item for item in previous
+        if isinstance(item, dict) and item.get("confirmado") is True
+    ]
+    pending = {
+        str(item.get("id")): item
+        for item in previous
+        if isinstance(item, dict) and item.get("confirmado") is not True and item.get("id")
+    }
+
+    for item in candidates + validation_queue:
+        fields = item.get("campos_extraidos", {})
+        source = item.get("fonte", {})
+        act_id = str(item.get("id") or "")
+        if not act_id:
+            continue
+
+        pending[act_id] = {
+            "id": act_id,
+            "confirmado": False,
+            "status": "Validação pendente",
+            "tipo_ato": item.get("tipo_ato_classificado", ""),
+            "numero_ato": item.get("numero_ato", ""),
+            "ano": item.get("ano"),
+            "data_publicacao": item.get("edicao", {}).get("data", ""),
+            "ies": fields.get("ies", ""),
+            "mantenedora": fields.get("mantenedora", ""),
+            "curso": fields.get("curso", ""),
+            "grau": fields.get("grau", ""),
+            "modalidade": fields.get("modalidade", ""),
+            "local": fields.get("local", ""),
+            "vagas": fields.get("vagas", ""),
+            "codigo_emec": fields.get("codigo_emec", ""),
+            "situacao": item.get("efeito_detectado", ""),
+            "titulo": item.get("titulo", ""),
+            "confianca": item.get("confianca", {}).get("score", 0),
+            "fonte_oficial": source.get("publicacao_individual") or source.get("pagina_edicao", ""),
+            "fonte_conferencia": "",
+            "trecho_evidencia": item.get("trecho_para_validacao", "")[:1500],
+            "ultima_coleta": payload.get("executed_at", ""),
+            "versao_parser": "V10.9",
+        }
+
+    all_items = confirmed + list(pending.values())
+    result = {
+        "version": "V10.9",
+        "updated_at": payload.get("executed_at", ""),
+        "status_coleta": "concluida_com_pendencias" if not payload.get("erros") else "concluida_com_erros",
+        "total_atos": len(all_items),
+        "confirmados": len(confirmed),
+        "pendentes": len(pending),
+        "atos": all_items,
+        "diagnostico_coleta": {
+            "xmls_processados": payload.get("resumo", {}).get("xmls_processados", 0),
+            "candidatos_ato_de_curso": len(candidates),
+            "fila_validacao": len(validation_queue),
+            "erros": len(payload.get("erros", [])),
+            "dias_consultados": [d.get("date") for d in payload.get("downloads", []) if d.get("section") == "DO1"] ,
+            "secoes": list(SECTIONS),
+        },
+    }
+    radar_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Radar principal atualizado: {len(pending)} pendentes; {len(confirmed)} confirmados preservados.")
+    return result
 
 
 def main():
@@ -647,12 +783,12 @@ def main():
         login(session)
     except Exception as exc:
         payload = {
-            "version": "V10.8.1",
+            "version": "V10.9",
             "executed_at": datetime.now(timezone.utc).isoformat(),
             "status": "erro_login",
             "erro": str(exc),
         }
-        (MONITORING / "atos_validacao_v10_8_1.json").write_text(
+        (MONITORING / "atos_validacao_v10_9.json").write_text(
             json.dumps(payload, ensure_ascii=False, indent=2),
             encoding="utf-8",
         )
@@ -722,21 +858,21 @@ def main():
 
     confirmed_candidates = [
         r for r in records
-        if r["status_v10_8_1"] == "CANDIDATO_ATO_DE_CURSO"
+        if r["status_v10_9"] == "CANDIDATO_ATO_DE_CURSO"
     ]
 
     validation_queue = [
         r for r in records
-        if r["status_v10_8_1"] == "FILA_VALIDACAO"
+        if r["status_v10_9"] == "FILA_VALIDACAO"
     ]
 
     out_scope = [
         r for r in records
-        if r["status_v10_8_1"] == "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
+        if r["status_v10_9"] == "FORA_DO_ESCOPO_DE_ATO_DE_CURSO"
     ]
 
     payload = {
-        "version": "V10.8.1",
+        "version": "V10.9",
         "executed_at": datetime.now(timezone.utc).isoformat(),
         "objetivo": (
             "Captura universal e classificação conservadora de atos regulatórios "
@@ -757,13 +893,15 @@ def main():
         "erros": errors,
     }
 
-    (MONITORING / "atos_validacao_v10_8_1.json").write_text(
+    (MONITORING / "atos_validacao_v10_9.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
+    update_radar(payload, confirmed_candidates, validation_queue)
+
     md = [
-        "# Oráculo — V10.8.1 | Validação de Atos de Curso",
+        "# Oráculo — V10.9 | Validação de Atos de Curso",
         "",
         f"- Execução: `{payload['executed_at']}`",
         f"- XMLs processados: **{len(records)}**",
@@ -830,12 +968,12 @@ def main():
                 "",
             ])
 
-    (MONITORING / "atos_validacao_v10_8_1.md").write_text(
+    (MONITORING / "atos_validacao_v10_9.md").write_text(
         "\n".join(md),
         encoding="utf-8",
     )
 
-    print("===== RESUMO V10.8.1 =====")
+    print("===== RESUMO V10.9 =====")
     print(f"XMLs processados: {len(records)}")
     print(f"Candidatos de ato de curso: {len(confirmed_candidates)}")
     print(f"Fila de validação: {len(validation_queue)}")
