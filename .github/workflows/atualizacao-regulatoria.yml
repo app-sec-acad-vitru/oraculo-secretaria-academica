@@ -33,9 +33,11 @@ jobs:
         run: python -m unittest discover -s scripts -p 'test_monitor_atos_regulatorios.py'
 
       - name: Executar monitoramento regulatório de fontes oficiais
+        id: monitor
         run: python scripts/monitor_regulatorio.py
 
       - name: Capturar e integrar atos de curso do DOU ao Radar
+        id: inlabs
         env:
           INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
@@ -43,12 +45,54 @@ jobs:
         continue-on-error: true
         run: |
           if [ -z "$INLABS_EMAIL" ] || [ -z "$INLABS_PASSWORD" ]; then
-            echo "Credenciais INLABS ausentes; coleta de atos foi ignorada nesta execução."
-            exit 0
+            echo "secrets_configured=false" >> "$GITHUB_OUTPUT"
+            echo "ERRO: Secrets INLABS_EMAIL e/ou INLABS_PASSWORD ausentes."
+            exit 1
           fi
+          echo "secrets_configured=true" >> "$GITHUB_OUTPUT"
           python scripts/monitor_atos_regulatorios.py
 
+      - name: Registrar diagnóstico consolidado da execução
+        if: always()
+        env:
+          INLABS_OUTCOME: ${{ steps.inlabs.outcome }}
+          INLABS_SECRETS_CONFIGURED: ${{ steps.inlabs.outputs.secrets_configured }}
+          MONITOR_OUTCOME: ${{ steps.monitor.outcome }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          path = Path("update_manifest.json")
+          data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+          inlabs = os.getenv("INLABS_OUTCOME", "unknown")
+          monitor = os.getenv("MONITOR_OUTCOME", "unknown")
+          data.update({
+              "version": "V10.9",
+              "last_run_at": datetime.now(timezone.utc).isoformat(),
+              "last_run_status": "sucesso" if inlabs == "success" and monitor == "success" else "falha_parcial",
+              "inlabs_status": inlabs,
+              "monitor_fontes_oficiais_status": monitor,
+              "inlabs_secrets_configurados": os.getenv("INLABS_SECRETS_CONFIGURED", "false") == "true",
+          })
+          radar_path = Path("monitoring/atos_regulatorios.json")
+          if radar_path.exists():
+              try:
+                  radar = json.loads(radar_path.read_text(encoding="utf-8"))
+                  data["radar_atos"] = {
+                      "status_coleta": radar.get("status_coleta", "indisponivel"),
+                      "total_atos": radar.get("total_atos", 0),
+                      "confirmados": radar.get("confirmados", 0),
+                      "pendentes": radar.get("pendentes", 0),
+                  }
+              except Exception:
+                  data["radar_atos"] = {"status_coleta": "json_invalido"}
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+          PY
+
       - name: Publicar alterações do monitoramento
+        if: always()
         run: |
           git config user.name "oraculo-bot"
           git config user.email "oraculo-bot@users.noreply.github.com"
@@ -60,4 +104,15 @@ jobs:
           else
             git commit -m "chore: atualização regulatória diária"
             git push
+          fi
+
+      - name: Sinalizar falha de coleta sem mascarar a publicação
+        if: always()
+        env:
+          INLABS_OUTCOME: ${{ steps.inlabs.outcome }}
+          MONITOR_OUTCOME: ${{ steps.monitor.outcome }}
+        run: |
+          if [ "$INLABS_OUTCOME" != "success" ] || [ "$MONITOR_OUTCOME" != "success" ]; then
+            echo "Falha parcial: monitor=$MONITOR_OUTCOME; inlabs=$INLABS_OUTCOME"
+            exit 1
           fi
