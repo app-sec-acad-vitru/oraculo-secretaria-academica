@@ -25,17 +25,28 @@
     "Resultados Enade e portarias de divulgação",
     "Indicadores: Conceito Enade, IDD, CPC e IGC"
   ],
-  "verified_at": "2026-11-06T22:00:07.996753+00:00",
-  "last_weekly_check": "2026-11-06T22:00:07.996753+00:00",
+  "verified_at": "2026-11-06T22:38:05.036707+00:00",
+  "last_weekly_check": "2026-11-06T22:38:05.036707+00:00",
   "sources_registered": 52,
   "sources_verified": 51,
-  "last_weekly_changes_detected": 28,
+  "last_weekly_changes_detected": 23,
   "last_weekly_access_errors": 1,
   "last_check": "2026-09-29T19:50:44.420088+00:00",
   "update_frequency": "diária",
   "schedule_cron": "0 12 * * *",
   "incremental_check": true,
-  "last_weekly_normative_candidates": 11,
+  "last_weekly_normative_candidates": 9,
   "last_weekly_normative_confirmed": 0,
-  "observacao_estabilizacao": "Manifesto preserva os indicadores de fontes oficiais e recebe diagnóstico detalhado de cada execução pelo workflow."
+  "observacao_estabilizacao": "Manifesto preserva os indicadores de fontes oficiais e recebe diagnóstico detalhado de cada execução pelo workflow.",
+  "last_run_at": "2026-11-06T22:38:07.462629+00:00",
+  "last_run_status": "falha_parcial",
+  "inlabs_status": "failure",
+  "monitor_fontes_oficiais_status": "success",
+  "inlabs_secrets_configurados": true,
+  "radar_atos": {
+    "status_coleta": "indisponivel",
+    "total_atos": 0,
+    "confirmados": 0,
+    "pendentes": 0
+  }
 }
