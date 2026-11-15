@@ -56,10 +56,20 @@ jobs:
             exit 1
           fi
           python scripts/monitor_atos_regulatorios.py || {
-            echo "status=falha_coleta" >> "$GITHUB_OUTPUT"
+            DIAGNOSTIC="monitoring/atos_validacao_v10_9.json"
+            STATUS="falha_coleta"
+            CATEGORY="falha_nao_classificada"
+            if [ -f "$DIAGNOSTIC" ]; then
+              STATUS=$(python -c "import json; print(json.load(open('$DIAGNOSTIC', encoding='utf-8')).get('status', 'falha_coleta'))")
+              CATEGORY=$(python -c "import json; print(json.load(open('$DIAGNOSTIC', encoding='utf-8')).get('categoria_erro', 'falha_nao_classificada'))")
+            fi
+            echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+            echo "categoria=$CATEGORY" >> "$GITHUB_OUTPUT"
+            echo "::warning::Coleta INLABS interrompida: status=$STATUS; categoria=$CATEGORY. O Radar anterior foi preservado."
             exit 1
           }
           echo "status=sucesso" >> "$GITHUB_OUTPUT"
+          echo "categoria=nenhuma" >> "$GITHUB_OUTPUT"
 
       - name: Consultar buscador público oficial do DOU como fallback diagnóstico
         id: dou_public_fallback
@@ -92,13 +102,14 @@ jobs:
         env:
           INLABS_OUTCOME: ${{ steps.inlabs_collect.outcome }}
           INLABS_STATUS: ${{ steps.inlabs_collect.outputs.status }}
+          INLABS_CATEGORY: ${{ steps.inlabs_collect.outputs.categoria }}
           FALLBACK_OUTCOME: ${{ steps.dou_public_fallback.outcome }}
         run: |
           if [ "$INLABS_OUTCOME" != "success" ]; then
             if [ "$FALLBACK_OUTCOME" = "success" ]; then
-              echo "::warning::INLABS indisponível; buscador público oficial consultado como fallback diagnóstico. Resultados registrados, sem integração automática ao Radar."
+              echo "::warning::Coleta primária degradada: status=$INLABS_STATUS; categoria=$INLABS_CATEGORY. Buscador público consultado como diagnóstico; sem integração automática ao Radar."
             else
-              echo "::error::INLABS e fallback público indisponíveis. Monitoramento geral publicado, mas a captura do DOU está degradada."
+              echo "::error::Coleta INLABS degradada: status=$INLABS_STATUS; categoria=$INLABS_CATEGORY. Fallback público também falhou. Monitoramento geral publicado e Radar anterior preservado."
             fi
             exit 1
           fi
