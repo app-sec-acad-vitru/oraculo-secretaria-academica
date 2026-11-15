@@ -51,6 +51,24 @@ def query_catalog(term: str, token: str) -> list:
     return payload
 
 
+def fetch_dataset_detail(dataset_id: str, token: str) -> dict:
+    request = urllib.request.Request(
+        API_BASE + "/" + urllib.parse.quote(dataset_id, safe=""),
+        headers={
+            "User-Agent": "OraculoSecretariaAcademica/1.0",
+            "Accept": "application/json",
+            "chave-api-dados-abertos": token,
+        },
+    )
+    with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
+        if response.status != 200:
+            raise RuntimeError(f"Detalhamento do conjunto respondeu HTTP {response.status}")
+        payload = json.loads(response.read().decode("utf-8"))
+    if not isinstance(payload, dict):
+        raise RuntimeError("Formato inesperado no detalhamento do conjunto.")
+    return payload
+
+
 def summarize_dataset(dataset: dict) -> dict:
     resources = []
     raw_resources = dataset.get("recursos") or dataset.get("resources") or []
@@ -100,13 +118,30 @@ def discover(token: str | None = None) -> dict:
         }
 
     unique = {}
+    detail_errors = []
     for term in TERMS:
         try:
             matches = query_catalog(term, token)
-            results[term] = [summarize_dataset(item) for item in matches if isinstance(item, dict)]
-            for item in results[term]:
-                if item.get("id"):
-                    unique[item["id"]] = item
+            results[term] = []
+            for item in matches:
+                if not isinstance(item, dict):
+                    continue
+                dataset_id = item.get("id")
+                detailed = item
+                if dataset_id:
+                    try:
+                        detailed = fetch_dataset_detail(str(dataset_id), token)
+                        if not detailed.get("id"):
+                            detailed["id"] = dataset_id
+                    except Exception as exc:
+                        detail_errors.append({
+                            "dataset_id": dataset_id,
+                            "error": f"{type(exc).__name__}: {exc}",
+                        })
+                summary = summarize_dataset(detailed)
+                results[term].append(summary)
+                if summary.get("id"):
+                    unique[summary["id"]] = summary
         except urllib.error.HTTPError as exc:
             detail = "A chave foi recusada ou não foi aceita." if exc.code in (401, 403) else str(exc)
             errors.append({"query": term, "http_status": exc.code, "error": detail})
@@ -131,6 +166,7 @@ def discover(token: str | None = None) -> dict:
         "datasets_count": len(unique),
         "xml_or_archive_resources_count": len(resources),
         "errors": errors,
+        "detail_errors": detail_errors,
         "radar_modified": False,
         "downloads_performed": 0,
         "candidate_acts_created": 0,
