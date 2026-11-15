@@ -9,6 +9,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 
 BASE_URL="https://www.in.gov.br/consulta/-/buscar/dou"
@@ -31,6 +33,18 @@ DAYS_BACK=max(0,int(os.getenv("DOU_FALLBACK_DAYS_BACK","6")))
 TIMEOUT=int(os.getenv("DOU_FALLBACK_TIMEOUT","25"))
 DETAIL_LIMIT=max(0,int(os.getenv("DOU_DETAIL_LIMIT","40")))
 UA="Mozilla/5.0 (compatible; OraculoSecretariaAcademica/1.0)"
+RETRY_TOTAL=max(0,int(os.getenv("DOU_HTTP_RETRIES","3")))
+RETRY_BACKOFF=float(os.getenv("DOU_HTTP_BACKOFF","1.5"))
+RETRY_STATUSES=(429,500,502,503,504)
+
+def build_session()->requests.Session:
+ session=requests.Session()
+ retry=Retry(total=RETRY_TOTAL,connect=RETRY_TOTAL,read=RETRY_TOTAL,
+  status=RETRY_TOTAL,backoff_factor=RETRY_BACKOFF,status_forcelist=RETRY_STATUSES,
+  allowed_methods=frozenset({"GET"}),raise_on_status=False)
+ adapter=HTTPAdapter(max_retries=retry)
+ session.mount("https://",adapter);session.mount("http://",adapter)
+ return session
 
 def parse_results(html:bytes)->list[dict]:
  soup=BeautifulSoup(html,"html.parser")
@@ -45,10 +59,10 @@ def parse_results(html:bytes)->list[dict]:
    "url":ARTICLE_BASE+slug if slug else "","hierarchy":str(item.get("hierarchyStr") or "")})
  return results
 
-def search(term:str,start:datetime,end:datetime,section:str="do1")->list[dict]:
+def search(term:str,start:datetime,end:datetime,section:str="do1",session:requests.Session|None=None)->list[dict]:
  params={"q":term,"exactDate":"personalizado","publishFrom":start.strftime("%d-%m-%Y"),
   "publishTo":end.strftime("%d-%m-%Y"),"sortType":"0","s":section}
- r=requests.get(BASE_URL,params=params,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.8","Cache-Control":"no-cache"},timeout=TIMEOUT)
+ client=session or build_session()\n r=client.get(BASE_URL,params=params,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.8","Cache-Control":"no-cache"},timeout=TIMEOUT)
  r.raise_for_status()
  items=parse_results(r.content)
  for x in items:x["query_term"]=term
@@ -111,7 +125,7 @@ def collect()->dict:
   "education_authority_results":len(authority),"full_text_attempts":min(len(authority),DETAIL_LIMIT),
   "full_text_obtained":sum(x.get("full_text_status")=="obtido" for x in authority),
   "errors":errors,"radar_modified":False,"candidate_acts_created":0,
-  "note":"Busca ampliada por assunto e autoridade emissora. Inteiros teores são apoio à análise e exigem conferência da publicação oficial. Nenhum ato foi confirmado e o Radar não foi alterado."}
+  "http_retry":{"total":RETRY_TOTAL,"backoff_factor":RETRY_BACKOFF,"retryable_statuses":list(RETRY_STATUSES)},\n  "note":"Busca ampliada por assunto e autoridade emissora com retry HTTP. Inteiros teores são apoio à análise e exigem conferência da publicação oficial. Nenhum ato foi confirmado e o Radar não foi alterado."}
 
 def main()->int:
  report=collect();OUTPUT.parent.mkdir(parents=True,exist_ok=True)
