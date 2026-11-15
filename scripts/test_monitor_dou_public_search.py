@@ -15,6 +15,15 @@ class PublicSearchFallbackTests(unittest.TestCase):
         self.assertEqual(items[0]["id"], "123")
         self.assertTrue(items[0]["url"].endswith("/portaria-mec-123"))
 
+    def test_authority_search_result_is_recognized_for_full_text_capture(self):
+        item = {"title": "Portaria", "hierarchy": "Ministério da Educação/SERES"}
+        self.assertTrue(fallback.is_education_authority(item))
+
+    def test_extract_article_text_prefers_article_content(self):
+        html = b"<html><body><nav>Menu</nav><article><p>Art. 1 Esta Portaria determina a guarda do acervo acadêmico. Texto normativo completo para teste.</p></article></body></html>"
+        text = fallback.extract_article_text(html)
+        self.assertIn("guarda do acervo acadêmico", text)
+
     def test_collect_does_not_modify_radar(self):
         with patch.object(fallback, "search", return_value=[
             {"id": "1", "title": "Ato", "date": "15/11/2026", "url": "https://www.in.gov.br/web/dou/-/ato"}
