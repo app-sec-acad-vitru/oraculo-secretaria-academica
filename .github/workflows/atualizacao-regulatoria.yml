@@ -1,6 +1,9 @@
 name: Atualização Regulatória Diária do Oráculo
 
 on:
+  push:
+    branches:
+      - feature/pacote3-resiliencia-dou-xml
   schedule:
     - cron: "0 12 * * *"
   workflow_dispatch:

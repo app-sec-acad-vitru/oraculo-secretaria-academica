@@ -30,6 +30,8 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +46,24 @@ DAYS_BACK = max(0, int(os.getenv("DAYS_BACK", "6")))  # 7 datas, incluindo hoje
 LOGIN_URL = "https://inlabs.in.gov.br/logar.php"
 ACCESS_URL = "https://inlabs.in.gov.br/acessar.php"
 DOWNLOAD_BASE = "https://inlabs.in.gov.br/index.php?p="
+
+HTTP_RETRY_TOTAL = max(0, int(os.getenv("INLABS_HTTP_RETRIES", "3")))
+HTTP_RETRY_BACKOFF = float(os.getenv("INLABS_HTTP_BACKOFF", "1.5"))
+HTTP_RETRY_STATUSES = (429, 500, 502, 503, 504)
+
+
+def configure_session(session: requests.Session) -> requests.Session:
+    retry = Retry(
+        total=HTTP_RETRY_TOTAL, connect=HTTP_RETRY_TOTAL, read=HTTP_RETRY_TOTAL,
+        status=HTTP_RETRY_TOTAL, backoff_factor=HTTP_RETRY_BACKOFF,
+        status_forcelist=HTTP_RETRY_STATUSES,
+        allowed_methods=frozenset({"GET"}), raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
+
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
