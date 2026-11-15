@@ -140,7 +140,7 @@ def discover(token: str | None = None) -> dict:
 def main() -> int:
     report = discover()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({
         "status": report["status"],
         "datasets_count": report["datasets_count"],
