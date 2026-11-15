@@ -55,15 +55,3 @@ class PublicSearchTriageTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-
-    def test_http_retry_configuration_is_get_only_and_covers_gateway_errors(self):
-        from scripts.monitor_dou_public_search import build_session
-        from scripts.monitor_atos_regulatorios import configure_session
-        for session in (build_session(), configure_session(__import__("requests").Session())):
-            adapter = session.get_adapter("https://")
-            retry = adapter.max_retries
-            self.assertGreaterEqual(retry.total, 1)
-            self.assertIn(502, retry.status_forcelist)
-            self.assertIn("GET", retry.allowed_methods)
-            self.assertNotIn("POST", retry.allowed_methods)
