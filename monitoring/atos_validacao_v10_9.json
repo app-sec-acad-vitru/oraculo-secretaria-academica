@@ -1,6 +1,10 @@
 {
   "version": "V10.9",
-  "executed_at": "2026-11-15T16:48:18.291595+00:00",
-  "status": "erro_login",
-  "erro": "Login INLABS não confirmado. final_url=https://inlabs.in.gov.br/logar.php status=404"
+  "executed_at": "2026-11-15T17:08:21.186235+00:00",
+  "status": "endpoint_indisponivel",
+  "categoria_erro": "endpoint_nao_encontrado",
+  "http_status": 404,
+  "erro": "404 Client Error: Not Found for url: https://inlabs.in.gov.br/acessar.php",
+  "radar_atualizado": false,
+  "nota": "Coleta INLABS interrompida antes da leitura dos arquivos. O Radar existente foi preservado."
 }
