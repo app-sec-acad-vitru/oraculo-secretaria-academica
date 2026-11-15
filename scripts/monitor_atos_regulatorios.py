@@ -30,6 +30,8 @@ from pathlib import Path
 from xml.etree import ElementTree as ET
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,7 +47,7 @@ LOGIN_URL = "https://inlabs.in.gov.br/logar.php"
 ACCESS_URL = "https://inlabs.in.gov.br/acessar.php"
 DOWNLOAD_BASE = "https://inlabs.in.gov.br/index.php?p="
 
-HEADERS = {
+HTTP_RETRY_TOTAL = max(0, int(os.getenv("INLABS_HTTP_RETRIES", "3")))\nHTTP_RETRY_BACKOFF = float(os.getenv("INLABS_HTTP_BACKOFF", "1.5"))\nHTTP_RETRY_STATUSES = (429, 500, 502, 503, 504)\n\n\ndef configure_session(session: requests.Session) -> requests.Session:\n    retry = Retry(\n        total=HTTP_RETRY_TOTAL, connect=HTTP_RETRY_TOTAL, read=HTTP_RETRY_TOTAL,\n        status=HTTP_RETRY_TOTAL, backoff_factor=HTTP_RETRY_BACKOFF,\n        status_forcelist=HTTP_RETRY_STATUSES,\n        allowed_methods=frozenset({"GET"}), raise_on_status=False,\n    )\n    adapter = HTTPAdapter(max_retries=retry)\n    session.mount("https://", adapter)\n    session.mount("http://", adapter)\n    return session\n\n\nHEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/154.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
