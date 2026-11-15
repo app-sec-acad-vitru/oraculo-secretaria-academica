@@ -46,7 +46,7 @@ EXPLICIT_REGULATORY_TERMS = (
 
 def normalize(value: str) -> str:
     value = re.sub(r"<[^>]+>", " ", str(value or ""))
-    return re.sub(r"\\s+", " ", value).strip().lower()
+    return re.sub(r"\s+", " ", value).strip().lower()
 
 
 def classify(item: dict) -> dict:
@@ -120,7 +120,7 @@ def main() -> int:
     source = json.loads(INPUT.read_text(encoding="utf-8"))
     report = build_report(source)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"status": "triagem_concluida", "counts": report["counts"],
                       "output": str(OUTPUT), "radar_modified": False}, ensure_ascii=False))
     return 0
