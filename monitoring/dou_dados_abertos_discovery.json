@@ -1,28 +1,259 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-15T15:44:21.651434+00:00",
+  "collected_at": "2026-11-15T15:51:16.737503+00:00",
   "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
   "api_base": "https://dados.gov.br/dados/api/publico/conjuntos-dados",
-  "status": "autenticacao_rejeitada",
+  "status": "catalogo_consultado",
   "queries": {
-    "Diário Oficial da União": [],
+    "Diário Oficial da União": [
+      {
+        "id": "2dfd4ba9-887c-42f1-b5f4-1a9d176e08cb",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2002",
+        "title": "Diário Oficial da União - matérias publicadas em 2002",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "3aa76883-bb0f-4826-9be1-ccc02e583612",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2003",
+        "title": "Diário Oficial da União - matérias publicadas em 2003",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "6f4dc304-ed6b-443b-bde0-61ec64fbf447",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2004",
+        "title": "Diário Oficial da União - matérias publicadas em 2004",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "76c88566-8499-4a9b-87b5-be26bab86d6c",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2005",
+        "title": "Diário Oficial da União - matérias publicadas em 2005",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "f2297f6e-fb2e-4dce-a1f2-f286605fb33b",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2006",
+        "title": "Diário Oficial da União - matérias publicadas em 2006",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "8759ae01-e980-48b1-bbe9-04ad2e799efb",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2007",
+        "title": "Diário Oficial da União - matérias publicadas em 2007",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "cc16469a-a812-4d31-a605-f3e952c2ad31",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2008",
+        "title": "Diário Oficial da União - matérias publicadas em 2008",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "d2c79bdd-4329-4016-9d0c-cd4b925f6a42",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2009",
+        "title": "Diário Oficial da União - matérias publicadas em 2009",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "f603a38e-b940-4500-aea0-1f094060e633",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2010",
+        "title": "Diário Oficial da União - matérias publicadas em 2010",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "6b50eaf3-e7d8-4eac-a189-f9d53248a1eb",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2011",
+        "title": "Diário Oficial da União - matérias publicadas em 2011",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "759f22ee-e5e7-48ab-a875-a805a4f0a8a6",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2012",
+        "title": "Diário Oficial da União - matérias publicadas em 2012",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "2137b237-7a4b-43ea-a74d-7e4eb1b72f34",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2013",
+        "title": "Diário Oficial da União - matérias publicadas em 2013",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "1701e6da-9949-433c-af0b-5e0fd2e04bb5",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2014",
+        "title": "Diário Oficial da União - matérias publicadas em 2014",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "59f7521e-94eb-4d9e-be82-433d0f3dca47",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2015",
+        "title": "Diário Oficial da União - matérias publicadas em 2015",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      },
+      {
+        "id": "c4e37c6c-9c97-41f7-a34f-67b16e4e4a5f",
+        "name": "diario-oficial-da-uniao-materias-publicadas-em-2016",
+        "title": "Diário Oficial da União - matérias publicadas em 2016",
+        "organization": null,
+        "resources_count": 0,
+        "xml_or_archive_resources": []
+      }
+    ],
     "Imprensa Nacional": []
   },
-  "datasets": [],
-  "datasets_count": 0,
-  "xml_or_archive_resources_count": 0,
-  "errors": [
+  "datasets": [
     {
-      "query": "Diário Oficial da União",
-      "http_status": 401,
-      "error": "A chave foi recusada ou não foi aceita."
+      "id": "2dfd4ba9-887c-42f1-b5f4-1a9d176e08cb",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2002",
+      "title": "Diário Oficial da União - matérias publicadas em 2002",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
     },
     {
-      "query": "Imprensa Nacional",
-      "http_status": 401,
-      "error": "A chave foi recusada ou não foi aceita."
+      "id": "3aa76883-bb0f-4826-9be1-ccc02e583612",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2003",
+      "title": "Diário Oficial da União - matérias publicadas em 2003",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "6f4dc304-ed6b-443b-bde0-61ec64fbf447",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2004",
+      "title": "Diário Oficial da União - matérias publicadas em 2004",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "76c88566-8499-4a9b-87b5-be26bab86d6c",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2005",
+      "title": "Diário Oficial da União - matérias publicadas em 2005",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "f2297f6e-fb2e-4dce-a1f2-f286605fb33b",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2006",
+      "title": "Diário Oficial da União - matérias publicadas em 2006",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "8759ae01-e980-48b1-bbe9-04ad2e799efb",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2007",
+      "title": "Diário Oficial da União - matérias publicadas em 2007",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "cc16469a-a812-4d31-a605-f3e952c2ad31",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2008",
+      "title": "Diário Oficial da União - matérias publicadas em 2008",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "d2c79bdd-4329-4016-9d0c-cd4b925f6a42",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2009",
+      "title": "Diário Oficial da União - matérias publicadas em 2009",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "f603a38e-b940-4500-aea0-1f094060e633",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2010",
+      "title": "Diário Oficial da União - matérias publicadas em 2010",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "6b50eaf3-e7d8-4eac-a189-f9d53248a1eb",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2011",
+      "title": "Diário Oficial da União - matérias publicadas em 2011",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "759f22ee-e5e7-48ab-a875-a805a4f0a8a6",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2012",
+      "title": "Diário Oficial da União - matérias publicadas em 2012",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "2137b237-7a4b-43ea-a74d-7e4eb1b72f34",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2013",
+      "title": "Diário Oficial da União - matérias publicadas em 2013",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "1701e6da-9949-433c-af0b-5e0fd2e04bb5",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2014",
+      "title": "Diário Oficial da União - matérias publicadas em 2014",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "59f7521e-94eb-4d9e-be82-433d0f3dca47",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2015",
+      "title": "Diário Oficial da União - matérias publicadas em 2015",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
+    },
+    {
+      "id": "c4e37c6c-9c97-41f7-a34f-67b16e4e4a5f",
+      "name": "diario-oficial-da-uniao-materias-publicadas-em-2016",
+      "title": "Diário Oficial da União - matérias publicadas em 2016",
+      "organization": null,
+      "resources_count": 0,
+      "xml_or_archive_resources": []
     }
   ],
+  "datasets_count": 15,
+  "xml_or_archive_resources_count": 0,
+  "errors": [],
   "radar_modified": false,
   "downloads_performed": 0,
   "candidate_acts_created": 0
