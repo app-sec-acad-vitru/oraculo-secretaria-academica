@@ -22,14 +22,35 @@ class PublicSearchTriageTests(unittest.TestCase):
         result = classify(item)
         self.assertEqual(result["triage"]["status"], "revisao_manual")
 
-    def test_report_never_changes_radar_or_confirms_acts(self):
-        report = build_report({"status": "consulta_concluida", "results": [
-            {"title": "Portaria MEC", "abstract": "Reconhecimento de curso superior",
-             "hierarchy": "Ministério da Educação/SERES"}
-        ]})
+    def test_full_text_can_reveal_academic_impact(self):
+        item = {"title": "Portaria SERES", "abstract": "Dispõe sobre providências",
+                "hierarchy": "Ministério da Educação/SERES",
+                "full_text": "Determina a guarda do acervo acadêmico e dos registros acadêmicos.",
+                "full_text_status": "obtido"}
+        result = classify(item)
+        self.assertEqual(result["triage"]["status"], "candidato_relevante")
+        self.assertIn("acervo_e_documentacao", result["triage"]["impact_types"])
+        self.assertTrue(result["triage"]["full_text_available"])
+
+    def test_seres_act_without_specific_keyword_is_sent_to_human_review(self):
+        item = {"title": "Ato administrativo", "abstract": "Providências institucionais",
+                "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior"}
+        result = classify(item)
+        self.assertEqual(result["triage"]["status"], "revisao_manual")
+        self.assertTrue(result["triage"]["requires_human_validation"])
+
+    def test_report_counts_impact_and_never_confirms_or_updates_radar(self):
+        report = build_report({"status": "consulta_concluida",
+            "education_authority_results": 1, "full_text_attempts": 1, "full_text_obtained": 1,
+            "results": [{"title": "Portaria SERES", "abstract": "Providências",
+                "hierarchy": "Ministério da Educação/SERES",
+                "full_text": "Determina a guarda do acervo acadêmico.",
+                "full_text_status": "obtido"}]})
         self.assertFalse(report["radar_modified"])
         self.assertEqual(report["acts_confirmed"], 0)
         self.assertEqual(report["counts"]["candidato_relevante"], 1)
+        self.assertEqual(report["impact_counts"]["acervo_e_documentacao"], 1)
+        self.assertEqual(report["full_text"]["obtained"], 1)
 
 
 if __name__ == "__main__":
