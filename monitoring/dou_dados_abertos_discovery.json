@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-15T15:51:16.737503+00:00",
+  "collected_at": "2026-11-15T15:56:10.389839+00:00",
   "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
   "api_base": "https://dados.gov.br/dados/api/publico/conjuntos-dados",
   "status": "catalogo_consultado",
@@ -10,121 +10,189 @@
         "id": "2dfd4ba9-887c-42f1-b5f4-1a9d176e08cb",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2002",
         "title": "Diário Oficial da União - matérias publicadas em 2002",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 23,
         "xml_or_archive_resources": []
       },
       {
         "id": "3aa76883-bb0f-4826-9be1-ccc02e583612",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2003",
         "title": "Diário Oficial da União - matérias publicadas em 2003",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "6f4dc304-ed6b-443b-bde0-61ec64fbf447",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2004",
         "title": "Diário Oficial da União - matérias publicadas em 2004",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "76c88566-8499-4a9b-87b5-be26bab86d6c",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2005",
         "title": "Diário Oficial da União - matérias publicadas em 2005",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "f2297f6e-fb2e-4dce-a1f2-f286605fb33b",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2006",
         "title": "Diário Oficial da União - matérias publicadas em 2006",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "8759ae01-e980-48b1-bbe9-04ad2e799efb",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2007",
         "title": "Diário Oficial da União - matérias publicadas em 2007",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "cc16469a-a812-4d31-a605-f3e952c2ad31",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2008",
         "title": "Diário Oficial da União - matérias publicadas em 2008",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "d2c79bdd-4329-4016-9d0c-cd4b925f6a42",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2009",
         "title": "Diário Oficial da União - matérias publicadas em 2009",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "f603a38e-b940-4500-aea0-1f094060e633",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2010",
         "title": "Diário Oficial da União - matérias publicadas em 2010",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "6b50eaf3-e7d8-4eac-a189-f9d53248a1eb",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2011",
         "title": "Diário Oficial da União - matérias publicadas em 2011",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "759f22ee-e5e7-48ab-a875-a805a4f0a8a6",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2012",
         "title": "Diário Oficial da União - matérias publicadas em 2012",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "2137b237-7a4b-43ea-a74d-7e4eb1b72f34",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2013",
         "title": "Diário Oficial da União - matérias publicadas em 2013",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
         "xml_or_archive_resources": []
       },
       {
         "id": "1701e6da-9949-433c-af0b-5e0fd2e04bb5",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2014",
         "title": "Diário Oficial da União - matérias publicadas em 2014",
-        "organization": null,
-        "resources_count": 0,
+        "organization": "imprensa-nacional-in",
+        "resources_count": 22,
         "xml_or_archive_resources": []
       },
       {
         "id": "59f7521e-94eb-4d9e-be82-433d0f3dca47",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2015",
         "title": "Diário Oficial da União - matérias publicadas em 2015",
-        "organization": null,
-        "resources_count": 0,
-        "xml_or_archive_resources": []
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
+        "xml_or_archive_resources": [
+          {
+            "id": "95d0b15d-8e7c-4122-aaf7-689636f1dec1",
+            "name": "Publicações da Seção 1 - Janeiro de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301279/S03012015.zip/79727fe2-fdfd-4838-9cdb-016d81881e8a?version=1.0&t=1542207509143&download=true"
+          },
+          {
+            "id": "a2cf02ca-2ae3-40cd-ae42-78d6ecae812e",
+            "name": "Publicações da Seção 1 - Fevereiro de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301283/S01022015.zip/25534794-b62a-4272-b2e0-778f8b814362?version=1.0&t=1542215546583&download=true"
+          },
+          {
+            "id": "3ed776aa-2a80-4748-b0b5-325550e41718",
+            "name": "Publicações da Seção 2 - Março de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301287/S02032015.zip/4b8b52f1-ddd2-43cd-bca2-8e7e6cdd1ea0?version=1.0&t=1542215552970&download=true"
+          },
+          {
+            "id": "fa92a622-102c-481d-8947-3e56e356d8f1",
+            "name": "Publicações da Seção 3 - Março de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301287/S03032015.zip/cd949527-6d78-466d-a702-9394892480af?version=1.0&t=1542207514830&download=true"
+          },
+          {
+            "id": "4c87b9f3-3ce4-4023-9b1c-b2ad8e714ade",
+            "name": "Publicações da Seção 2 - Abril de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301291/S02042015.zip/0c583d40-a8d5-4f16-b76a-540691264acc?version=1.0&t=1542215574617&download=true"
+          },
+          {
+            "id": "26399562-edd8-48d7-99a7-ed9c1a6416b2",
+            "name": "Publicações da Seção 3 - Abril de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301291/S03042015.zip/f1951801-4022-40f7-a53f-71792a89b6ce?version=1.0&t=1542207517163&download=true"
+          },
+          {
+            "id": "be777f58-e690-4931-ae7d-f004d5acbf58",
+            "name": "Publicações da Seção 2 - Maio de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301295/S02052015.zip/38ed6b66-eff6-49eb-9c24-cb9d4808a140?version=1.0&t=1542215585400&download=true"
+          },
+          {
+            "id": "2ef526cb-02a9-4e9c-b86f-9ae805b3e1c1",
+            "name": "Publicações da Seção 3 - Maio de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301295/S03052015.zip/8511766c-fd9d-4963-acfb-41db4533defe?version=1.0&t=1542207520853&download=true"
+          },
+          {
+            "id": "9ea2e7d5-8936-4a96-9edd-56bacf1431bd",
+            "name": "Publicações da Seção 2 - Junho de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301299/S02062015.zip/574c619a-bebd-4802-88df-aa5d000100db?version=1.0&t=1542215588550&download=true"
+          },
+          {
+            "id": "db4c7dae-c2ff-4e53-a636-339f553614da",
+            "name": "Publicações da Seção 3 - Junho de 2015",
+            "format": "ZIP",
+            "url": "https://www.in.gov.br/documents/49035712/50301299/S03062015.zip/fde9f0a3-3dc2-446b-9d74-7cfdb0bd1ad0?version=1.0&t=1542207523600&download=true"
+          }
+        ]
       },
       {
         "id": "c4e37c6c-9c97-41f7-a34f-67b16e4e4a5f",
         "name": "diario-oficial-da-uniao-materias-publicadas-em-2016",
         "title": "Diário Oficial da União - matérias publicadas em 2016",
-        "organization": null,
-        "resources_count": 0,
-        "xml_or_archive_resources": []
+        "organization": "imprensa-nacional-in",
+        "resources_count": 24,
+        "xml_or_archive_resources": [
+          {
+            "id": "5a3b5f56-6b1b-48b7-a0e9-7c80d2af5944",
+            "name": "Publicações da Seção 1 - Janeiro de 2016",
+            "format": "ZIP",
+            "url": "http://www.imprensanacional.gov.br/documents/20181/31754836/S01012016.zip/ac12c837-8009-406a-8ddd-cc56344f2455"
+          }
+        ]
       }
     ],
     "Imprensa Nacional": []
@@ -134,126 +202,195 @@
       "id": "2dfd4ba9-887c-42f1-b5f4-1a9d176e08cb",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2002",
       "title": "Diário Oficial da União - matérias publicadas em 2002",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 23,
       "xml_or_archive_resources": []
     },
     {
       "id": "3aa76883-bb0f-4826-9be1-ccc02e583612",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2003",
       "title": "Diário Oficial da União - matérias publicadas em 2003",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "6f4dc304-ed6b-443b-bde0-61ec64fbf447",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2004",
       "title": "Diário Oficial da União - matérias publicadas em 2004",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "76c88566-8499-4a9b-87b5-be26bab86d6c",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2005",
       "title": "Diário Oficial da União - matérias publicadas em 2005",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "f2297f6e-fb2e-4dce-a1f2-f286605fb33b",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2006",
       "title": "Diário Oficial da União - matérias publicadas em 2006",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "8759ae01-e980-48b1-bbe9-04ad2e799efb",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2007",
       "title": "Diário Oficial da União - matérias publicadas em 2007",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "cc16469a-a812-4d31-a605-f3e952c2ad31",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2008",
       "title": "Diário Oficial da União - matérias publicadas em 2008",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "d2c79bdd-4329-4016-9d0c-cd4b925f6a42",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2009",
       "title": "Diário Oficial da União - matérias publicadas em 2009",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "f603a38e-b940-4500-aea0-1f094060e633",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2010",
       "title": "Diário Oficial da União - matérias publicadas em 2010",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "6b50eaf3-e7d8-4eac-a189-f9d53248a1eb",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2011",
       "title": "Diário Oficial da União - matérias publicadas em 2011",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "759f22ee-e5e7-48ab-a875-a805a4f0a8a6",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2012",
       "title": "Diário Oficial da União - matérias publicadas em 2012",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "2137b237-7a4b-43ea-a74d-7e4eb1b72f34",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2013",
       "title": "Diário Oficial da União - matérias publicadas em 2013",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
       "xml_or_archive_resources": []
     },
     {
       "id": "1701e6da-9949-433c-af0b-5e0fd2e04bb5",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2014",
       "title": "Diário Oficial da União - matérias publicadas em 2014",
-      "organization": null,
-      "resources_count": 0,
+      "organization": "imprensa-nacional-in",
+      "resources_count": 22,
       "xml_or_archive_resources": []
     },
     {
       "id": "59f7521e-94eb-4d9e-be82-433d0f3dca47",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2015",
       "title": "Diário Oficial da União - matérias publicadas em 2015",
-      "organization": null,
-      "resources_count": 0,
-      "xml_or_archive_resources": []
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
+      "xml_or_archive_resources": [
+        {
+          "id": "95d0b15d-8e7c-4122-aaf7-689636f1dec1",
+          "name": "Publicações da Seção 1 - Janeiro de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301279/S03012015.zip/79727fe2-fdfd-4838-9cdb-016d81881e8a?version=1.0&t=1542207509143&download=true"
+        },
+        {
+          "id": "a2cf02ca-2ae3-40cd-ae42-78d6ecae812e",
+          "name": "Publicações da Seção 1 - Fevereiro de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301283/S01022015.zip/25534794-b62a-4272-b2e0-778f8b814362?version=1.0&t=1542215546583&download=true"
+        },
+        {
+          "id": "3ed776aa-2a80-4748-b0b5-325550e41718",
+          "name": "Publicações da Seção 2 - Março de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301287/S02032015.zip/4b8b52f1-ddd2-43cd-bca2-8e7e6cdd1ea0?version=1.0&t=1542215552970&download=true"
+        },
+        {
+          "id": "fa92a622-102c-481d-8947-3e56e356d8f1",
+          "name": "Publicações da Seção 3 - Março de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301287/S03032015.zip/cd949527-6d78-466d-a702-9394892480af?version=1.0&t=1542207514830&download=true"
+        },
+        {
+          "id": "4c87b9f3-3ce4-4023-9b1c-b2ad8e714ade",
+          "name": "Publicações da Seção 2 - Abril de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301291/S02042015.zip/0c583d40-a8d5-4f16-b76a-540691264acc?version=1.0&t=1542215574617&download=true"
+        },
+        {
+          "id": "26399562-edd8-48d7-99a7-ed9c1a6416b2",
+          "name": "Publicações da Seção 3 - Abril de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301291/S03042015.zip/f1951801-4022-40f7-a53f-71792a89b6ce?version=1.0&t=1542207517163&download=true"
+        },
+        {
+          "id": "be777f58-e690-4931-ae7d-f004d5acbf58",
+          "name": "Publicações da Seção 2 - Maio de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301295/S02052015.zip/38ed6b66-eff6-49eb-9c24-cb9d4808a140?version=1.0&t=1542215585400&download=true"
+        },
+        {
+          "id": "2ef526cb-02a9-4e9c-b86f-9ae805b3e1c1",
+          "name": "Publicações da Seção 3 - Maio de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301295/S03052015.zip/8511766c-fd9d-4963-acfb-41db4533defe?version=1.0&t=1542207520853&download=true"
+        },
+        {
+          "id": "9ea2e7d5-8936-4a96-9edd-56bacf1431bd",
+          "name": "Publicações da Seção 2 - Junho de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301299/S02062015.zip/574c619a-bebd-4802-88df-aa5d000100db?version=1.0&t=1542215588550&download=true"
+        },
+        {
+          "id": "db4c7dae-c2ff-4e53-a636-339f553614da",
+          "name": "Publicações da Seção 3 - Junho de 2015",
+          "format": "ZIP",
+          "url": "https://www.in.gov.br/documents/49035712/50301299/S03062015.zip/fde9f0a3-3dc2-446b-9d74-7cfdb0bd1ad0?version=1.0&t=1542207523600&download=true"
+        }
+      ]
     },
     {
       "id": "c4e37c6c-9c97-41f7-a34f-67b16e4e4a5f",
       "name": "diario-oficial-da-uniao-materias-publicadas-em-2016",
       "title": "Diário Oficial da União - matérias publicadas em 2016",
-      "organization": null,
-      "resources_count": 0,
-      "xml_or_archive_resources": []
+      "organization": "imprensa-nacional-in",
+      "resources_count": 24,
+      "xml_or_archive_resources": [
+        {
+          "id": "5a3b5f56-6b1b-48b7-a0e9-7c80d2af5944",
+          "name": "Publicações da Seção 1 - Janeiro de 2016",
+          "format": "ZIP",
+          "url": "http://www.imprensanacional.gov.br/documents/20181/31754836/S01012016.zip/ac12c837-8009-406a-8ddd-cc56344f2455"
+        }
+      ]
     }
   ],
   "datasets_count": 15,
-  "xml_or_archive_resources_count": 0,
+  "xml_or_archive_resources_count": 11,
   "errors": [],
+  "detail_errors": [],
   "radar_modified": false,
   "downloads_performed": 0,
   "candidate_acts_created": 0
