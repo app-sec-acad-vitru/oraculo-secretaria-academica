@@ -41,7 +41,6 @@ SECTIONS = ("DO1", "DO1E")
 DAYS_BACK = max(0, int(os.getenv("DAYS_BACK", "6")))  # 7 datas, incluindo hoje
 
 LOGIN_URL = "https://inlabs.in.gov.br/logar.php"
-ACCESS_URL = "https://inlabs.in.gov.br/acessar.php"
 DOWNLOAD_BASE = "https://inlabs.in.gov.br/index.php?p="
 
 HEADERS = {
@@ -167,48 +166,59 @@ def parse_date_list():
 
 
 def login(session: requests.Session):
+    """Autentica no INLABS seguindo o cliente Python publicado pela Imprensa Nacional.
+
+    O fluxo oficial usa POST direto em logar.php e confirma a sessão pelo cookie
+    inlabs_session_cookie. Não depende de HTML específico ("Sair"/"Minha conta")
+    nem faz uma chamada prévia a acessar.php.
+    """
     if not EMAIL or not PASSWORD:
         raise RuntimeError("INLABS_EMAIL/INLABS_PASSWORD não configurados.")
 
     session.headers.update(HEADERS)
-    session.get(ACCESS_URL, timeout=60)
-
-    payload = {
-        "email": EMAIL,
-        "password": PASSWORD,
-        "Origem": "736372697074",
+    payload = {"email": EMAIL, "password": PASSWORD}
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     }
 
-    r = session.post(
-        LOGIN_URL,
-        data=payload,
-        headers={
-            "Referer": ACCESS_URL,
-            "Origin": "https://inlabs.in.gov.br",
-        },
-        allow_redirects=True,
-        timeout=60,
-    )
+    try:
+        response = session.post(
+            LOGIN_URL,
+            data=payload,
+            headers=headers,
+            allow_redirects=True,
+            timeout=60,
+        )
+    except requests.RequestException as exc:
+        raise RuntimeError(f"Falha de comunicação com o login INLABS: {exc}") from exc
 
-    n = norm(r.text or "")
-    if "este endereço de email não existe" in n or "senha incorreta" in n:
-        raise RuntimeError("Credenciais INLABS rejeitadas.")
-
-    if "sair" not in n or "minha conta" not in n:
+    cookie = session.cookies.get("inlabs_session_cookie")
+    if not cookie:
+        body_preview = clean_text(response.text or "")[:300]
         raise RuntimeError(
-            f"Login INLABS não confirmado. final_url={r.url} status={r.status_code}"
+            "Login INLABS sem cookie de sessão. "
+            f"HTTP {response.status_code}; URL final={response.url}; "
+            f"resposta={body_preview!r}"
         )
 
-    return r
+    return response
 
 
 def download_zip(session: requests.Session, date_obj, section: str):
     date_str = date_obj.strftime("%Y-%m-%d")
     url = f"{DOWNLOAD_BASE}{date_str}&dl={date_str}-{section}.zip"
 
+    cookie = session.cookies.get("inlabs_session_cookie")
+    if not cookie:
+        raise RuntimeError("Cookie de sessão INLABS ausente antes do download.")
+
     r = session.get(
         url,
-        headers={"Referer": "https://inlabs.in.gov.br/index.php?p="},
+        headers={
+            "Cookie": f"inlabs_session_cookie={cookie}",
+            "origem": "736372697074",
+        },
         allow_redirects=True,
         timeout=180,
     )
