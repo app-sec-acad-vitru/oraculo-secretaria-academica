@@ -167,12 +167,61 @@ def parse_date_list():
     return [now - timedelta(days=i) for i in range(DAYS_BACK + 1)]
 
 
+def login_failure_details(exc):
+    """Classifica falhas de acesso sem confundir indisponibilidade com senha inválida."""
+    status_code = getattr(getattr(exc, "response", None), "status_code", None)
+    message = str(exc)
+
+    if status_code == 404:
+        return {
+            "status": "endpoint_indisponivel",
+            "categoria": "endpoint_nao_encontrado",
+            "http_status": status_code,
+            "mensagem": message,
+        }
+    if status_code is not None and status_code >= 500:
+        return {
+            "status": "fonte_indisponivel",
+            "categoria": "erro_servidor",
+            "http_status": status_code,
+            "mensagem": message,
+        }
+    if status_code in (401, 403):
+        return {
+            "status": "credenciais_rejeitadas",
+            "categoria": "autenticacao_rejeitada",
+            "http_status": status_code,
+            "mensagem": message,
+        }
+    if isinstance(exc, requests.RequestException):
+        return {
+            "status": "erro_conexao",
+            "categoria": "falha_de_rede",
+            "http_status": status_code,
+            "mensagem": message,
+        }
+    if "Credenciais INLABS rejeitadas" in message or "senha incorreta" in norm(message):
+        return {
+            "status": "credenciais_rejeitadas",
+            "categoria": "autenticacao_rejeitada",
+            "http_status": status_code,
+            "mensagem": message,
+        }
+    return {
+        "status": "erro_login",
+        "categoria": "login_nao_confirmado",
+        "http_status": status_code,
+        "mensagem": message,
+    }
+
+
 def login(session: requests.Session):
     if not EMAIL or not PASSWORD:
         raise RuntimeError("INLABS_EMAIL/INLABS_PASSWORD não configurados.")
 
     session.headers.update(HEADERS)
-    session.get(ACCESS_URL, timeout=60)
+    access_response = session.get(ACCESS_URL, timeout=60)
+    access_response.raise_for_status()
 
     payload = {
         "email": EMAIL,
@@ -190,6 +239,7 @@ def login(session: requests.Session):
         allow_redirects=True,
         timeout=60,
     )
+    r.raise_for_status()
 
     n = norm(r.text or "")
     if "este endereço de email não existe" in n or "senha incorreta" in n:
@@ -782,11 +832,16 @@ def main():
     try:
         login(session)
     except Exception as exc:
+        diagnostic = login_failure_details(exc)
         payload = {
             "version": "V10.9",
             "executed_at": datetime.now(timezone.utc).isoformat(),
-            "status": "erro_login",
-            "erro": str(exc),
+            "status": diagnostic["status"],
+            "categoria_erro": diagnostic["categoria"],
+            "http_status": diagnostic["http_status"],
+            "erro": diagnostic["mensagem"],
+            "radar_atualizado": False,
+            "nota": "Coleta INLABS interrompida antes da leitura dos arquivos. O Radar existente foi preservado.",
         }
         (MONITORING / "atos_validacao_v10_9.json").write_text(
             json.dumps(payload, ensure_ascii=False, indent=2),
