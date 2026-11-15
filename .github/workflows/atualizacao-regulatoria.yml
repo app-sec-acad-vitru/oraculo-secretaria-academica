@@ -43,6 +43,7 @@ jobs:
         run: python scripts/monitor_regulatorio.py
 
       - name: Capturar e integrar atos de curso do DOU ao Radar
+        id: inlabs_collect
         env:
           INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
@@ -50,10 +51,15 @@ jobs:
         continue-on-error: true
         run: |
           if [ -z "$INLABS_EMAIL" ] || [ -z "$INLABS_PASSWORD" ]; then
-            echo "Credenciais INLABS ausentes; coleta de atos foi ignorada nesta execução."
-            exit 0
+            echo "status=credenciais_ausentes" >> "$GITHUB_OUTPUT"
+            echo "::error::Credenciais INLABS ausentes; coleta não executada."
+            exit 1
           fi
-          python scripts/monitor_atos_regulatorios.py
+          python scripts/monitor_atos_regulatorios.py || {
+            echo "status=falha_coleta" >> "$GITHUB_OUTPUT"
+            exit 1
+          }
+          echo "status=sucesso" >> "$GITHUB_OUTPUT"
 
       - name: Publicar alterações do monitoramento
         run: |
@@ -67,4 +73,15 @@ jobs:
           else
             git commit -m "chore: atualização regulatória diária"
             git push
+          fi
+
+      - name: Sinalizar falha do INLABS sem ocultar a publicação
+        if: always()
+        env:
+          INLABS_OUTCOME: ${{ steps.inlabs_collect.outcome }}
+          INLABS_STATUS: ${{ steps.inlabs_collect.outputs.status }}
+        run: |
+          if [ "$INLABS_OUTCOME" != "success" ]; then
+            echo "::error::Coleta INLABS não concluída. outcome=$INLABS_OUTCOME status=$INLABS_STATUS. O monitoramento geral foi publicado, mas a captura do DOU está degradada."
+            exit 1
           fi
