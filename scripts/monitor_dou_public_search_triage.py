@@ -38,11 +38,19 @@ def normalize(value:str)->str:
 
 def classify(item:dict)->dict:
  hierarchy=normalize(item.get("hierarchy",""));title=normalize(item.get("title",""))
- text=" ".join((title,normalize(item.get("abstract","")),hierarchy,normalize(item.get("full_text",""))))
+ # A hierarquia identifica a autoridade, mas não deve, isoladamente,
+ # transformar um ato genérico em candidato regulatório relevante.
+ substantive_text=" ".join((title,normalize(item.get("abstract","")),normalize(item.get("full_text",""))))
+ text=" ".join((substantive_text,hierarchy))
  authority=[x for x in AUTHORITIES if x in hierarchy or x in title]
- academic=[x for x in ACADEMIC if x in text];regulatory=[x for x in REGULATORY if x in text]
- if authority and (academic or regulatory):status,reason="candidato_relevante","Autoridade educacional identificada e assunto regulatório compatível."
- elif authority:status,reason="revisao_manual","Autoridade educacional identificada; assunto precisa de conferência."
+ academic=[x for x in ACADEMIC if x in text]
+ regulatory=[x for x in REGULATORY if x in text]
+ substantive_academic=[x for x in ACADEMIC if x != "educação superior" and x != "educacao superior" and x in substantive_text]
+ substantive_regulatory=[x for x in REGULATORY if x != "supervisão" and x != "supervisao" and x in substantive_text]
+ if authority and (substantive_academic or substantive_regulatory):
+  status,reason="candidato_relevante","Autoridade educacional identificada e assunto regulatório específico encontrado no conteúdo do ato."
+ elif authority:
+  status,reason="revisao_manual","Autoridade educacional identificada; título e conteúdo não apresentam assunto regulatório específico suficiente."
  elif academic and regulatory and any(x in text for x in ("mec","seres","cne","inep","educação superior","educacao superior")):
   status,reason="revisao_manual","Assunto acadêmico identificado, mas a autoridade emissora não foi confirmada."
  else:status,reason="fora_do_escopo","Não há evidência suficiente de vínculo com regulação da educação superior."
