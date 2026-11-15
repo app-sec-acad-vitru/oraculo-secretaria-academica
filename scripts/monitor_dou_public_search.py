@@ -62,7 +62,8 @@ def parse_results(html:bytes)->list[dict]:
 def search(term:str,start:datetime,end:datetime,section:str="do1",session:requests.Session|None=None)->list[dict]:
  params={"q":term,"exactDate":"personalizado","publishFrom":start.strftime("%d-%m-%Y"),
   "publishTo":end.strftime("%d-%m-%Y"),"sortType":"0","s":section}
- client=session or build_session()\n r=client.get(BASE_URL,params=params,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.8","Cache-Control":"no-cache"},timeout=TIMEOUT)
+ client=session or build_session()
+ r=client.get(BASE_URL,params=params,headers={"User-Agent":UA,"Accept":"text/html,application/xhtml+xml;q=0.9,*/*;q=0.8","Cache-Control":"no-cache"},timeout=TIMEOUT)
  r.raise_for_status()
  items=parse_results(r.content)
  for x in items:x["query_term"]=term
