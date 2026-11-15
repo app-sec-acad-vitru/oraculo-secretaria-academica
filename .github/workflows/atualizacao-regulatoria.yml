@@ -30,7 +30,7 @@ jobs:
         run: python -m pip install requests
 
       - name: Validar regras do parser
-        run: python -m unittest discover -s scripts -p 'test_monitor_atos_regulatorios.py'
+        run: python -m unittest discover -s scripts -p 'test_*.py'
 
       - name: Descobrir conjuntos do DOU no Portal de Dados Abertos (somente diagnóstico)
         id: dou_discovery
