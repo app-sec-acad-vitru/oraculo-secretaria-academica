@@ -32,6 +32,11 @@ jobs:
       - name: Validar regras do parser
         run: python -m unittest discover -s scripts -p 'test_monitor_atos_regulatorios.py'
 
+      - name: Descobrir conjuntos do DOU no Portal de Dados Abertos (somente diagnóstico)
+        id: dou_discovery
+        continue-on-error: true
+        run: python scripts/discover_dou_dados_abertos.py
+
       - name: Executar monitoramento regulatório de fontes oficiais
         run: python scripts/monitor_regulatorio.py
 
