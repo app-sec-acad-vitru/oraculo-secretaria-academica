@@ -27,6 +27,34 @@ class ParserV109Tests(unittest.TestCase):
         self.assertEqual(fields["curso"], "Administração")
         self.assertEqual(fields["modalidade"], "Semipresencial")
 
+
+    def test_classifica_http_404_como_endpoint_indisponivel(self):
+        class Response:
+            status_code = 404
+        class HttpError(Exception):
+            response = Response()
+        result = PARSER.login_failure_details(HttpError("HTTP 404"))
+        self.assertEqual(result["status"], "endpoint_indisponivel")
+        self.assertEqual(result["categoria"], "endpoint_nao_encontrado")
+        self.assertEqual(result["http_status"], 404)
+
+    def test_classifica_http_5xx_como_fonte_indisponivel(self):
+        class Response:
+            status_code = 502
+        class HttpError(Exception):
+            response = Response()
+        result = PARSER.login_failure_details(HttpError("HTTP 502"))
+        self.assertEqual(result["status"], "fonte_indisponivel")
+        self.assertEqual(result["categoria"], "erro_servidor")
+
+    def test_nao_confunde_http_401_com_indisponibilidade(self):
+        class Response:
+            status_code = 401
+        class HttpError(Exception):
+            response = Response()
+        result = PARSER.login_failure_details(HttpError("HTTP 401"))
+        self.assertEqual(result["status"], "credenciais_rejeitadas")
+
     def test_integracao_preserva_confirmados_e_mantem_pendentes(self):
         with tempfile.TemporaryDirectory() as folder:
             previous_path = PARSER.MONITORING
