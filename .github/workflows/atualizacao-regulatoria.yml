@@ -35,6 +35,8 @@ jobs:
       - name: Descobrir conjuntos do DOU no Portal de Dados Abertos (somente diagnóstico)
         id: dou_discovery
         continue-on-error: true
+        env:
+          DADOS_GOV_API_TOKEN: ${{ secrets.DADOS_GOV_API_TOKEN }}
         run: python scripts/discover_dou_dados_abertos.py
 
       - name: Executar monitoramento regulatório de fontes oficiais
