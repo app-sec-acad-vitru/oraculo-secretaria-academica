@@ -27,7 +27,7 @@ jobs:
           python-version: "3.x"
 
       - name: Instalar dependência do coletor DOU
-        run: python -m pip install requests
+        run: python -m pip install requests beautifulsoup4
 
       - name: Validar regras do parser
         run: python -m unittest discover -s scripts -p 'test_*.py'
@@ -61,6 +61,14 @@ jobs:
           }
           echo "status=sucesso" >> "$GITHUB_OUTPUT"
 
+      - name: Consultar buscador público oficial do DOU como fallback diagnóstico
+        id: dou_public_fallback
+        if: steps.inlabs_collect.outcome != 'success'
+        continue-on-error: true
+        env:
+          DOU_FALLBACK_DAYS_BACK: "6"
+        run: python scripts/monitor_dou_public_search.py
+
       - name: Publicar alterações do monitoramento
         run: |
           git config user.name "oraculo-bot"
@@ -80,8 +88,13 @@ jobs:
         env:
           INLABS_OUTCOME: ${{ steps.inlabs_collect.outcome }}
           INLABS_STATUS: ${{ steps.inlabs_collect.outputs.status }}
+          FALLBACK_OUTCOME: ${{ steps.dou_public_fallback.outcome }}
         run: |
           if [ "$INLABS_OUTCOME" != "success" ]; then
-            echo "::error::Coleta INLABS não concluída. outcome=$INLABS_OUTCOME status=$INLABS_STATUS. O monitoramento geral foi publicado, mas a captura do DOU está degradada."
+            if [ "$FALLBACK_OUTCOME" = "success" ]; then
+              echo "::warning::INLABS indisponível; buscador público oficial consultado como fallback diagnóstico. Resultados registrados, sem integração automática ao Radar."
+            else
+              echo "::error::INLABS e fallback público indisponíveis. Monitoramento geral publicado, mas a captura do DOU está degradada."
+            fi
             exit 1
           fi
