@@ -20,9 +20,23 @@ class PublicSearchFallbackTests(unittest.TestCase):
         self.assertTrue(fallback.is_education_authority(item))
 
     def test_extract_article_text_prefers_article_content(self):
-        html = b"<html><body><nav>Menu</nav><article><p>Art. 1 Esta Portaria determina a guarda do acervo acadêmico. Texto normativo completo para teste.</p></article></body></html>"
+        article_text = (
+            "Art. 1 Esta Portaria determina a guarda do acervo acadêmico. "
+            "As instituições de educação superior deverão manter os registros "
+            "acadêmicos organizados, íntegros e disponíveis para consulta. "
+            "O texto integral deve permitir a identificação das obrigações "
+            "institucionais, dos prazos aplicáveis e dos procedimentos de "
+            "preservação documental, sem confundir o conteúdo normativo com "
+            "menus, cabeçalhos ou elementos de navegação da página."
+        )
+        html = (
+            "<html><body><nav>Menu</nav><article><p>"
+            + article_text
+            + "</p></article></body></html>"
+        ).encode("utf-8")
         text = fallback.extract_article_text(html)
         self.assertIn("guarda do acervo acadêmico", text)
+        self.assertGreater(len(text), 250)
 
     def test_collect_does_not_modify_radar(self):
         with patch.object(fallback, "search", return_value=[
