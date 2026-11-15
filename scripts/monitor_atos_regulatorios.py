@@ -42,7 +42,6 @@ SECTIONS = ("DO1", "DO1E")
 DAYS_BACK = max(0, int(os.getenv("DAYS_BACK", "6")))  # 7 datas, incluindo hoje
 
 LOGIN_URL = "https://inlabs.in.gov.br/logar.php"
-ACCESS_URL = "https://inlabs.in.gov.br/acessar.php"
 DOWNLOAD_BASE = "https://inlabs.in.gov.br/index.php?p="
 
 HEADERS = {
@@ -216,42 +215,39 @@ def login_failure_details(exc):
 
 
 def login(session: requests.Session):
+    """Autentica pelo endpoint oficial documentado no script da Imprensa Nacional.
+
+    O endpoint /acessar.php não faz parte do fluxo oficial de automação e
+    retornava HTTP 404. O fluxo oficial é POST direto em /logar.php e validação
+    do cookie inlabs_session_cookie.
+    """
     if not EMAIL or not PASSWORD:
         raise RuntimeError("INLABS_EMAIL/INLABS_PASSWORD não configurados.")
 
     session.headers.update(HEADERS)
-    access_response = session.get(ACCESS_URL, timeout=60)
-    access_response.raise_for_status()
-
-    payload = {
-        "email": EMAIL,
-        "password": PASSWORD,
-        "Origem": "736372697074",
-    }
-
-    r = session.post(
+    response = session.post(
         LOGIN_URL,
-        data=payload,
+        data={"email": EMAIL, "password": PASSWORD},
         headers={
-            "Referer": ACCESS_URL,
-            "Origin": "https://inlabs.in.gov.br",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         },
         allow_redirects=True,
         timeout=60,
     )
-    r.raise_for_status()
+    response.raise_for_status()
 
-    n = norm(r.text or "")
-    if "este endereço de email não existe" in n or "senha incorreta" in n:
-        raise RuntimeError("Credenciais INLABS rejeitadas.")
-
-    if "sair" not in n or "minha conta" not in n:
+    cookie = session.cookies.get("inlabs_session_cookie")
+    if not cookie:
+        body = norm(response.text or "")
+        if "este endereço de email não existe" in body or "senha incorreta" in body:
+            raise RuntimeError("Credenciais INLABS rejeitadas.")
         raise RuntimeError(
-            f"Login INLABS não confirmado. final_url={r.url} status={r.status_code}"
+            "Login INLABS não confirmado: cookie de sessão não foi recebido "
+            f"(HTTP {response.status_code}; URL final: {response.url})."
         )
 
-    return r
-
+    return response
 
 def download_zip(session: requests.Session, date_obj, section: str):
     date_str = date_obj.strftime("%Y-%m-%d")
