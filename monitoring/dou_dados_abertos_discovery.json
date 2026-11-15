@@ -1,12 +1,12 @@
 {
-  "schema_version": 1,
-  "collected_at": "2026-11-15T15:30:51.903692+00:00",
-  "source": "Portal Brasileiro de Dados Abertos — API CKAN",
-  "api_base": "https://dados.gov.br/api/3/action/package_search",
-  "status": "fonte_indisponivel",
+  "schema_version": 2,
+  "collected_at": "2026-11-15T15:44:21.651434+00:00",
+  "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
+  "api_base": "https://dados.gov.br/dados/api/publico/conjuntos-dados",
+  "status": "autenticacao_rejeitada",
   "queries": {
     "Diário Oficial da União": [],
-    "DOU Imprensa Nacional": []
+    "Imprensa Nacional": []
   },
   "datasets": [],
   "datasets_count": 0,
@@ -14,11 +14,13 @@
   "errors": [
     {
       "query": "Diário Oficial da União",
-      "error": "HTTPError: HTTP Error 401: Unauthorized"
+      "http_status": 401,
+      "error": "A chave foi recusada ou não foi aceita."
     },
     {
-      "query": "DOU Imprensa Nacional",
-      "error": "HTTPError: HTTP Error 401: Unauthorized"
+      "query": "Imprensa Nacional",
+      "http_status": 401,
+      "error": "A chave foi recusada ou não foi aceita."
     }
   ],
   "radar_modified": false,
