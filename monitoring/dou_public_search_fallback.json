@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "collected_at": "2026-11-15T13:15:36.624638-03:00",
+  "source": "Buscador oficial do Diário Oficial da União — Imprensa Nacional",
+  "endpoint": "https://www.in.gov.br/consulta/-/buscar/dou",
+  "period": {
+    "from": "2026-11-09",
+    "to": "2026-11-15"
+  },
+  "status": "consulta_concluida",
+  "queries": [
+    {
+      "term": "autorização de curso",
+      "results": 20,
+      "status": "ok"
+    },
+    {
+      "term": "reconhecimento de curso",
+      "results": 20,
+      "status": "ok"
+    },
+    {
+      "term": "renovação de reconhecimento de curso",
+      "results": 20,
+      "status": "ok"
+    },
+    {
+      "term": "aditamento de curso",
+      "results": 20,
+      "status": "ok"
+    }
+  ],
+  "results_count": 38,
+  "results": [
+    {
+      "id": "744166327",
+      "title": "RETIFICAÇÃO",
+      "abstract": "nº 206, de 3 de novembro de 2026, página 65: Onde se lê: \" (...) torna público o cancelamento da(s) <span class='highlight' style='background:#FFA;'>autorização</span> ... (ões) SDL-ANP nº 112, de 6 de março de 2026, por requerimento do agente <span class='highlight' style='background:#FFA;'>autorizado</span> VALLOR TRADING IMPORTAÇÃO ... Leia-se: \" (...) torna público o cancelamento da(s) <span class='highlight' style='background:#FFA;'>autorização</span>(ões) SDL-ANP nº 112, de 6 de março de ... 2026, por requerimento do agente <span class='highlight' style='background:#FFA;'>autorizado</span> VALLOR TRADING IMPORTAÇÃO E EXPORTAÇÃO S/A, CNPJ nº 26.337.767.767/0001-02, para o exercício da atividade de agente de comércio exterior .\" Leia-se: \" (...) torna público o cancelamento da(s) autorização(ões) SDL-ANP nº 112, de 6 de março de 2026, por requerimento do agente autorizado VALLOR TRADING IMPORTAÇÃO E EXPORTAÇÃO S/A, CNPJ nº 26.337.767/0001-02 e 26.337.767/0005-28, para o exercício da atividade de agente de comércio exterior .\"",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Retificação",
+      "url": "https://www.in.gov.br/web/dou/-/retificacao-744166325",
+      "hierarchy": "Ministério de Minas e Energia/Agência Nacional do Petróleo, Gás Natural e Biocombustíveis/Superintendência de Distribuição e Logística",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744166246",
+      "title": "RESOLUÇÃO-RE nº 4.453, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "RESOLUÇÃO-RE nº 4.453, DE 12 DE NOVEMBRO DE 2026 O COORDENADOR DE <span class='highlight' style='background:#FFA;'>AUTORIZAÇÃO</span> DE FUNCIONAMENTO DE EMPRESAS ... Resolução da Diretoria Colegiada - RDC nº 585, de 10 de dezembro de 2021, resolve: Art. 1º Cancelar as <span class='highlight' style='background:#FFA;'>Autorizações</span> ... de Funcionamento (AFE) e as <span class='highlight' style='background:#FFA;'>Autorizações</span> Especiais (AE) constantes no anexo desta Resolução.",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-re-n-4.453-de-12-de-novembro-de-2026-744166244",
+      "hierarchy": "Ministério da Saúde/Agência Nacional de Vigilância Sanitária/4ª Diretoria/Gerência-Geral de Inspeção e Fiscalização Sanitária/Coordenação de Autorização de Funcionamento de Empresas",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744175153",
+      "title": "RESOLUÇÃO GECEX Nº 983, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "âmbito dos processos nº 19972.002419/2025-01 (restrito) e nº 19972.002420/2025-28 (confidencial), em <span class='highlight' style='background:#FFA;'>curso</span> ... apresentar leve redução em brancura, estabilidade à luz e resistência ao amarelecimento, além de exigir <span class='highlight' style='background:#FFA;'>aditivos</span> ... resinas e veículos específicos para flexografia, rotogravura ou impressão digital, acompanhados de <span class='highlight' style='background:#FFA;'>aditivos</span> ... A Abitim destaca que, no <span class='highlight' style='background:#FFA;'>curso</span> daquela investigação, não foi apresentada qualquer evidência de que o ... As diferenças entre processos de fabricação, revestimentos superficiais, <span class='highlight' style='background:#FFA;'>aditivos</span>, granulometria e rota",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-gecex-n-983-de-12-de-novembro-de-2026-744175151",
+      "hierarchy": "Presidência da República/Câmara de Comércio Exterior/Comitê-Executivo de Gestão",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744165981",
+      "title": "RESOLUÇÃO GECEX Nº 979, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "tanque de emergência e tanque de armazenamento de óleo recuperado; reatores com silos de reagentes e <span class='highlight' style='background:#FFA;'>aditivos</span> ... no eixo x 3.100mm, <span class='highlight' style='background:#FFA;'>curso</span> no eixo y 1.800mm, <span class='highlight' style='background:#FFA;'>curso</span> no eixo z 850mm, da ponta do eixo-árvore à superfície ... entrada e saída; sistema de lubrificação de mancais; sistema de injeção de água; sistema de injeção de <span class='highlight' style='background:#FFA;'>aditivos</span> ... dotada de dosadoras dedicadas para atender à máquina vibrocompressora, balanças para cimento, água e <span class='highlight' style='background:#FFA;'>aditivos</span> ... blowline\" com 14 bicos especiais aspersores de resina e 2 bicos aspersores de vapor; 5 bicos aspersores de <span class='highlight' style='background:#FFA;'>aditivos</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-gecex-n-979-de-12-de-novembro-de-2026-744165979",
+      "hierarchy": "Presidência da República/Câmara de Comércio Exterior/Comitê-Executivo de Gestão",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744165902",
+      "title": "RESOLUÇÃO CONTER Nº 27, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-27-de-11-de-novembro-de-2026-744165900",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744164069",
+      "title": "RESOLUÇÃO CONTER Nº 26, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-26-de-11-de-novembro-de-2026-744164067",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744162842",
+      "title": "RESOLUÇÃO CONTER Nº 23, DE 11 DE NOVEMBRO DE 2026.",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-23-de-11-de-novembro-de-2026.-744162840",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744160262",
+      "title": "RESOLUÇÃO CONTER Nº 20, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-20-de-11-de-novembro-de-2026-744160260",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744160341",
+      "title": "RESOLUÇÃO CONTER Nº 15, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-15-de-11-de-novembro-de-2026-744160339",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744163820",
+      "title": "Portaria SERES/MEC Nº 582, DE 12 DE novembro DE 2026",
+      "abstract": "referida IES ao longo de seu funcionamento, constando na listagem, pelo menos, o nome, o CPF, o RG, o <span class='highlight' style='background:#FFA;'>curso</span> ... Superior, em lista nominal editável (em formato xlsx), constando, pelo menos, o nome, o CPF, o RG, o <span class='highlight' style='background:#FFA;'>curso</span> ... responsável pela guarda dos documentos e registros acadêmicos dos estudantes comprovadamente regulares e dos <span class='highlight' style='background:#FFA;'>cursos</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-582-de-12-de-novembro-de-2026-744163818",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744165390",
+      "title": "Portaria Previc Nº 890, DE 9 DE novembro DE 2026",
+      "abstract": "convênio de adesão, contados a partir da data de publicação desta Portaria, sob pena de cancelamento da <span class='highlight' style='background:#FFA;'>autorização</span> celebrado entre o Sindicato Nacional dos Procuradores da Fazenda Nacional - Sinprofaz, CNPJ nº 64.711.260/0001-58, na condição de instituidor do Plano Instituído CentrusPrev+, CNPB nº 2019.0039-29, e a Fundação Banco Central de ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-previc-n-890-de-9-de-novembro-de-2026-744165388",
+      "hierarchy": "Ministério da Previdência Social/Superintendência Nacional de Previdência Complementar/Diretoria de Licenciamento",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744175232",
+      "title": "PORTARIA SOF/MPO Nº 509, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "art. 1º, inciso II, alínea \"b\", da Portaria SOF/MPO nº 62, de 3 de junho de 2025, e tendo em vista a <span class='highlight' style='background:#FFA;'>autorização</span>s de natureza de despesa no âmbito do mesmo subtítulo, constantes da Lei Orçamentária vigente, em favor de diversos órgãos do Poder Executivo Federal, no valor de R$ 72.908.890,00. O SUBSECRETÁRIO DE GESTÃO ORÇAMENTÁRIA, da Secretar...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-sof/mpo-n-509-de-12-de-novembro-de-2026-744175230",
+      "hierarchy": "Ministério do Planejamento e Orçamento/Secretaria de Orçamento Federal/Subsecretaria de Gestão Orçamentária",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744165821",
+      "title": "PORTARIA SISV-SP/MAPA Nº 214, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "nº 385, de 25 de agosto de 2021, e o que consta no Processo 21052.013807/2006-71, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Renovar</span> ... Art. 2º O credenciamento terá validade por 05 (cinco) anos, podendo ser <span class='highlight' style='background:#FFA;'>renovado</span> mediante requerimento uso de suas atribuições, que lhe confere o inciso XVI do artigo 267 do Reg...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-sisv-sp/mapa-n-214-de-12-de-novembro-de-2026-744165819",
+      "hierarchy": "Ministério da Agricultura e Pecuária/Secretaria Executiva/Subsecretaria de Governança das Superintendências/Superintendência de Agricultura e Pecuária do Estado de São Paulo/Divisão de Defesa Agropecuária/Serviço de Fiscalização de Insumos e Sanidade Vegetal",
+      "query_term": "renovação de reconhecimento de curso"
+    },
+    {
+      "id": "744167129",
+      "title": "PORTARIA SEFIC/MINC Nº 777, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "ÁREA: 1 Artes Cênicas (Artigo 18 , § 1º ) 2611541 - Estremecendo SP - <span class='highlight' style='background:#FFA;'>Curso</span> de Formação, Aprimoramento ... 31/12/2026 Resumo do Projeto: O projeto Ballet no Sertão _ Formação Artística em Dança realizará um <span class='highlight' style='background:#FFA;'>curso</span> ... Os produtos culturais serão o <span class='highlight' style='background:#FFA;'>curso</span> de formação em dança e uma mostra artística final, com apresentações ... A proposta reúne o Simpósio formativo com 26 palestras e <span class='highlight' style='background:#FFA;'>cursos</span> com certificação para os <span class='highlight' style='background:#FFA;'>cursos</span> e fones ... A publicação do livro histórico \"A História do Rock em Jundiaí\" (600 exemplares), a gravação dos <span class='highlight' style='background:#FFA;'>cursos</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-sefic/minc-n-777-de-12-de-novembro-de-2026-744167127",
+      "hierarchy": "Ministério da Cultura/Secretaria de Fomento e Incentivo à Cultura",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744163581",
+      "title": "PORTARIA Nº 3.961, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span>ial nº 2.212, de 04 de julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º Reconhecer a situação de emergência nas áreas descritas no Formulário de Informações do Desastre - FIDE, ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.961-de-12-de-novembro-de-2026-744163579",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "renovação de reconhecimento de curso"
+    },
+    {
+      "id": "744164784",
+      "title": "PORTARIA Nº 3.928, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span>ial nº 2.212, de 04 de julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º Reconhecer a situação de emergência nas áreas descritas no Formulário de Informações do Desastre - FIDE, ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.928-de-11-de-novembro-de-2026-744164782",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "renovação de reconhecimento de curso"
+    },
+    {
+      "id": "744166681",
+      "title": "PORTARIA Nº 3.921, DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "PORTARIA Nº 3.921, DE 10 DE NOVEMBRO DE 2026 <span class='highlight' style='background:#FFA;'>Autoriza</span> o empenho e a transferência de recursos ao município ... 12.608, de 10 de abril de 2012, e no Decreto n.º 11.219, de 5 de outubro de 2022, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Autorizar</span>PORTARIA Nº 3.921, DE 10 DE NOVEMBRO DE 2026 Autoriza o empenho e a t...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.921-de-10-de-novembro-de-2026-744166674",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744166724",
+      "title": "PORTARIA Nº 3.908, DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "PORTARIA Nº 3.908, DE 10 DE NOVEMBRO DE 2026 <span class='highlight' style='background:#FFA;'>Autoriza</span> o empenho e a transferência de recursos ao município ... 12.608, de 10 de abril de 2012, e no Decreto n.º 11.219, de 5 de outubro de 2022, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Autorizar</span>PORTARIA Nº 3.908, DE 10 DE NOVEMBRO DE 2026 Autoriza o empenho e a t...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.908-de-10-de-novembro-de-2026-744166722",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744175311",
+      "title": "PORTARIA MEMP Nº 471, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Os <span class='highlight' style='background:#FFA;'>cursos</span> e materiais didáticos fornecidos no âmbito da iniciativa serão gratuitos. 2.9.5. ... O objeto compreende <span class='highlight' style='background:#FFA;'>cursos</span>, capacitações e encontros regionais sobre políticas públicas e programas governamentais ... Poderão ser financiadas despesas relacionadas: I - à realização de <span class='highlight' style='background:#FFA;'>cursos</span>, oficinas, treinamentos e eventos ... de feiras de empreendedorismo, com espaços para divulgação e comercialização de produtos e oferta de <span class='highlight' style='background:#FFA;'>cursos</span> ... de feiras de empreendedorismo; II - espaços para divulgação e comercialização de produtos; e III - <span class='highlight' style='background:#FFA;'>cursos</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-memp-n-471-de-11-de-novembro-de-2026-744175309",
+      "hierarchy": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte/Gabinete do Ministro",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744165713",
+      "title": "PORTARIA DICAT/SE/MGI Nº 9.153, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "exercício Art. 4º A alteração da unidade de exercício de pessoa ocupante do cargo de PFT dependerá da <span class='highlight' style='background:#FFA;'>autorização</span> ... A <span class='highlight' style='background:#FFA;'>autorização</span> será formalizada por meio de: I - portaria publicada no Diário Oficial da União; ou II ... Art. 5º É dispensável a <span class='highlight' style='background:#FFA;'>autorização</span> formal da Diretoria de Carreiras Transversais nas seguintes hipóteses ... Até que seja concluído o processo formal de <span class='highlight' style='background:#FFA;'>autorização</span> da alteração da unidade de exercício, com a publicação ... em atividades relacionadas às atribuições do cargo efetivo, o órgão ou a entidade deverá solicitar a <span class='highlight' style='background:#FFA;'>autorização</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-dicat/se/mgi-n-9.153-de-12-de-novembro-de-2026-744165711",
+      "hierarchy": "Ministério da Gestão e da Inovação em Serviços Públicos/Secretaria Executiva/Diretoria de Carreiras Transversais",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744163990",
+      "title": "Despacho Decisório nº 3/DIGER CSP/CENSIPAM-CENSIPAM",
+      "abstract": "73 Interessados: Centro Gestor e Operacional do Sistema de Proteção da Amazônia (Censipam) Assunto: <span class='highlight' style='background:#FFA;'>Reconhecimento</span> ... CONJUR-MD/CGU/AGU (9074239), ratifico a conclusão técnica constante do presente processo administrativo, <span class='highlight' style='background:#FFA;'>reconhecendo</span>Despacho Decisório nº 3/DIGER CSP/CENSIPAM-CENSIPAM ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despacho-decisorio-n-3/diger-csp/censipam-censipam-744163988",
+      "hierarchy": "Ministério da Defesa/Secretaria-Geral/Centro Gestor e Operacional do Sistema de Proteção da Amazônia",
+      "query_term": "renovação de reconhecimento de curso"
+    },
+    {
+      "id": "744166081",
+      "title": "DESPACHOS De 12 de novembro de 2026",
+      "abstract": "Residência - RESOLUÇÃO NORMATIVA 30/2018 - <span class='highlight' style='background:#FFA;'>Renovação</span> de Residência (RN 02/2017) Processo: 08228.031121 ... Residência - RESOLUÇÃO NORMATIVA 30/2018 - <span class='highlight' style='background:#FFA;'>Renovação</span> de Residência (RN 03/2017) Processo: 08228.027299 ... Residência - RESOLUÇÃO NORMATIVA 30/2018 - <span class='highlight' style='background:#FFA;'>Renovação</span> de Residência (RN 04/2017) Processo: 08228.033504 ... Residência - RESOLUÇÃO NORMATIVA 30/2018 - <span class='highlight' style='background:#FFA;'>Renovação</span> de Residência (RN 05/2017) Processo: 08228.034885 ... Residência - RESOLUÇÃO NORMATIVA 30/2018 - <span class='highlight' style='background:#FFA;'>Renovação</span> de Residência (RN 06/2017) Processo: 08228.028929",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despachos-de-12-de-novembro-de-2026-744166079",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Secretaria Nacional de Justiça/Departamento de Migrações/Coordenação-Geral de Imigração Laboral",
+      "query_term": "renovação de reconhecimento de curso"
+    },
+    {
+      "id": "744167046",
+      "title": "DESPACHOS DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "do Decreto 9.199/2017, considerando a falta do documento integral do comprovante de residência e o <span class='highlight' style='background:#FFA;'>curso</span> ... não apresentou os comprovantes de residência de 2023 e 2024, e a declaração de prova presencial do <span class='highlight' style='background:#FFA;'>curso</span> ... 17 de novembro de 2020, considerando que o requerente não apresentou o certificado de conclusão do <span class='highlight' style='background:#FFA;'>curso</span> ... dos últimos 4 (quatro) anos anteriores ao pedido, a declaração de realização de prova presencial do <span class='highlight' style='background:#FFA;'>curso</span> ... necessários à instrução do pedido de naturalização, quais sejam, declaração de prova presencial do <span class='highlight' style='background:#FFA;'>curso</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despachos-de-12-de-novembro-de-2026-744167044",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Secretaria Nacional de Justiça/Departamento de Migrações/Coordenação-Geral de Política Migratória/Coordenação de Processos Migratórios",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744160420",
+      "title": "DECISÃO SUROD Nº 1.886, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da PR-280, do km 229+820 ao km 230+000, no município de Vitorino/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Federal ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.886-de-5-de-novembro-de-2026-744160418",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744162949",
+      "title": "DECISÃO SUROD Nº 1.883, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da PR-280, do km 229+645 ao km 229+812, no município de Vitorino/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Federal ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.883-de-5-de-novembro-de-2026-744162947",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744164148",
+      "title": "DECISÃO SUROD Nº 1.880, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da BR-163/PR, do km 172+455 ao km 172+665, no município de Lindoeste/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Fede...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.880-de-5-de-novembro-de-2026-744164146",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744164227",
+      "title": "DECISÃO SUROD Nº 1.868, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à regularização de plantio na faixa de domínio da PR-182, do km 490+750 ao km 491+000, no município de Realeza/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.868-de-5-de-novembro-de-2026-744164225",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744165262",
+      "title": "DECISÃO SUROD Nº 1.851, DE 3 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da BR-277/PR, do km 548+110 ao km 553+095, no município de Catanduvas/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Fed...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.851-de-3-de-novembro-de-2026-744165260",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744160499",
+      "title": "DECISÃO SUROD Nº 1.850, DE 3 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da BR-277/PR, do km 396+285 ao km 396+655, no município de Candói/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Federal...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.850-de-3-de-novembro-de-2026-744160497",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744163079",
+      "title": "DECISÃO SUROD Nº 1.849, DE 3 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da BR-277/PR, do km 665+668 ao km 665+904, no município de Medianeira/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Fed...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.849-de-3-de-novembro-de-2026-744163077",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744167018",
+      "title": "Ato nº 13.927, de 11 de novembro de 2026",
+      "abstract": "Ato nº 13.927, de 11 de novembro de 2026 Expedir <span class='highlight' style='background:#FFA;'>autorização</span> à ANTONIONE ROMERITO SILVA OLIVEIRA, CPF nº ***.955.994-**, para explorar Serviços de Telecomunicações de Interesse Restrito, por prazo indeterminado, sem caráter de exclusividade, e tendo como área de prestação de serviço todo o território nacional. Gilberto Studart Gurgel Neto Gerente",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Ato",
+      "url": "https://www.in.gov.br/web/dou/-/ato-n-13.927-de-11-de-novembro-de-2026-744167016",
+      "hierarchy": "Ministério das Comunicações/Agência Nacional de Telecomunicações/Superintendência de Fiscalização/Gerência Regional nos Estados do Ceará, Rio Grande do Norte e Piauí/Coordenação de Processo de Outorga e Recursos à Prestação",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744166886",
+      "title": "ATOS DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "ATOS DE 10 DE NOVEMBRO DE 2026 Expede <span class='highlight' style='background:#FFA;'>autorização</span>, para explorar Serviços de Telecomunicações de Interessede autorização, para explorar Serviços de Telecomunicações de Interesse Restrito, por prazo indeterminado, sem caráter de exclusividade, e tendo como área de prestação de serviço todo o território nacional entidades relacionadas a seguir....",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Ato",
+      "url": "https://www.in.gov.br/web/dou/-/atos-de-10-de-novembro-de-2026-744166884",
+      "hierarchy": "Ministério das Comunicações/Agência Nacional de Telecomunicações/Superintendência de Fiscalização/Gerência Regional nos Estados do Amazonas, Acre, Rondônia e Roraima",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744165736",
+      "title": "ATO DECLARATÓRIO EXECUTIVO ALF/SPO Nº 45, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "ATO DECLARATÓRIO EXECUTIVO ALF/SPO Nº 45, DE 12 DE NOVEMBRO DE 2026 <span class='highlight' style='background:#FFA;'>Autoriza</span> Inclusão no Registro de Ajudantes de Despachantes Aduaneiros. A AUDITORA-FISCAL DA RECEITA FEDERAL DO BRASIL, no uso das atribuições que lhe conferem o art. 321 do Regimento Interno da Secretaria Especial da Receita Federal do Brasil, aprovado pela Portaria ME nº 284...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Ato Declaratório",
+      "url": "https://www.in.gov.br/web/dou/-/ato-declaratorio-executivo-alf/spo-n-45-de-12-de-novembro-de-2026-744165734",
+      "hierarchy": "Ministério da Fazenda/Secretaria Especial da Receita Federal do Brasil/Secretaria-Adjunta/Superintendência Regional da Receita Federal do Brasil 8ª Região Fiscal/Alfândega da Receita Federal do Brasil em São Paulo",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744165497",
+      "title": "ALVARÁ Nº 4.702, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "interessada, de acordo com a decisão prolatada no Processo nº 2026/96736 - DPF/BRA/BA, resolve: CONCEDER <span class='highlight' style='background:#FFA;'>autorização</span> ... VIGILANTES LTDA, CNPJ nº 09.428.315/0001-09, sediada na Bahia, para adquirir: Em estabelecimento comercial <span class='highlight' style='background:#FFA;'>autorizado</span> ... 5775 (cinco mil e setecentos e setenta e cinco) Projéteis calibre .380 Em estabelecimento comercial <span class='highlight' style='background:#FFA;'>autorizado</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Alvará",
+      "url": "https://www.in.gov.br/web/dou/-/alvara-n-4.702-de-12-de-novembro-de-2026-744165495",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Polícia Federal/Diretoria de Polícia Administrativa/Coordenação-Geral de Controle de Serviços e Produtos",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744166566",
+      "title": "ALVARÁ Nº 4.699, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "acordo com a decisão prolatada no Processo nº 2026/91648 - DELESP/DREX/SR/PF/SP, resolve: CONCEDER <span class='highlight' style='background:#FFA;'>autorização</span> ... LTDA, CNPJ nº 49.642.054/0001-40, sediada em São Paulo, para adquirir: Em estabelecimento comercial <span class='highlight' style='background:#FFA;'>autorizado</span>ALVARÁ Nº 4.699, DE 12 DE NOVEMBRO DE 2026 O(A) COORDENADOR(A)-...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Alvará",
+      "url": "https://www.in.gov.br/web/dou/-/alvara-n-4.699-de-12-de-novembro-de-2026-744166564",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Polícia Federal/Diretoria de Polícia Administrativa/Coordenação-Geral de Controle de Serviços e Produtos",
+      "query_term": "autorização de curso"
+    },
+    {
+      "id": "744161082",
+      "title": "ACÓRDÃO Nº 683/2026-ANTAQ",
+      "abstract": "a Antaq e a Universidade Federal Fluminense (UFF), até 31 de maio de 2027, conforme minuta de Termo <span class='highlight' style='background:#FFA;'>Aditivo</span>cesso: 50300.002851/2023-85 2. Interessados: Agência Nacional de Transportes Aquaviários e Universidade Federal Fluminense 3. Relator: Frederico Dias 4. Unidade Técnica: Superintendência de ESG e Inovação - SESGI 5. Acórdão: VISTOS, rela...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Acórdão",
+      "url": "https://www.in.gov.br/web/dou/-/acordao-n-683/2026-antaq-744161080",
+      "hierarchy": "Ministério de Portos e Aeroportos/Agência Nacional de Transportes Aquaviários",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744163107",
+      "title": "ACÓRDÃO Nº 681/2026 - ANTAQ",
+      "abstract": "dos dois contratos e sem adicional de arrendamento, de modo que a retroação a 28/03/2018 prevista nos <span class='highlight' style='background:#FFA;'>aditivos</span>: Estação Hidroviária do Amazonas S.A. (EHA) e Empresa de Revitalização do Porto de Manaus S.A. (ERPM) 3. Relator: Alexandre Florambel 4. Unidade Técnica: Superintendência de Outorgas (SOG) 5. Acórdão: VISTOS, relatados e discutidos o...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Acórdão",
+      "url": "https://www.in.gov.br/web/dou/-/acordao-n-681/2026-antaq-744163105",
+      "hierarchy": "Ministério de Portos e Aeroportos/Agência Nacional de Transportes Aquaviários",
+      "query_term": "aditamento de curso"
+    },
+    {
+      "id": "744162469",
+      "title": "ACÓRDÃO Nº 314, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "TELECOM S.A. de 4 de fevereiro de 2026 (SEI nº 15148234) e de 29 de abril de 2026 (SEI nº 15570264), <span class='highlight' style='background:#FFA;'>reconhecendo</span>: AGÊNCIA NACIONAL DE TELECOMUNICAÇÕES Acordam os membros do Conselho Diretor da Anatel: a) conhecer como Pedido de Reconsideração a petição SEI nº 14384760, protocolizada pela ASSOCIAÇÃO BRASILEIRA DAS PRESTADORAS DE SERVIÇOS DE T...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Acórdão",
+      "url": "https://www.in.gov.br/web/dou/-/acordao-n-314-de-11-de-novembro-de-2026-744162467",
+      "hierarchy": "Ministério das Comunicações/Agência Nacional de Telecomunicações/Conselho Diretor",
+      "query_term": "reconhecimento de curso"
+    }
+  ],
+  "errors": [],
+  "radar_modified": false,
+  "candidate_acts_created": 0,
+  "note": "Fallback diagnóstico: resultados de busca não são atos confirmados. Nenhum XML/ZIP foi baixado e o Radar não foi alterado."
+}
