@@ -27,15 +27,23 @@ jobs:
           python-version: "3.x"
 
       - name: Instalar dependência do coletor DOU
-        run: python -m pip install requests
+        run: python -m pip install requests beautifulsoup4
 
       - name: Validar regras do parser
-        run: python -m unittest discover -s scripts -p 'test_monitor_atos_regulatorios.py'
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+
+      - name: Descobrir conjuntos do DOU no Portal de Dados Abertos (somente diagnóstico)
+        id: dou_discovery
+        continue-on-error: true
+        env:
+          DADOS_GOV_API_TOKEN: ${{ secrets.DADOS_GOV_API_TOKEN }}
+        run: python scripts/discover_dou_dados_abertos.py
 
       - name: Executar monitoramento regulatório de fontes oficiais
         run: python scripts/monitor_regulatorio.py
 
       - name: Capturar e integrar atos de curso do DOU ao Radar
+        id: inlabs_collect
         env:
           INLABS_EMAIL: ${{ secrets.INLABS_EMAIL }}
           INLABS_PASSWORD: ${{ secrets.INLABS_PASSWORD }}
@@ -43,10 +51,27 @@ jobs:
         continue-on-error: true
         run: |
           if [ -z "$INLABS_EMAIL" ] || [ -z "$INLABS_PASSWORD" ]; then
-            echo "Credenciais INLABS ausentes; coleta de atos foi ignorada nesta execução."
-            exit 0
+            echo "status=credenciais_ausentes" >> "$GITHUB_OUTPUT"
+            echo "::error::Credenciais INLABS ausentes; coleta não executada."
+            exit 1
           fi
-          python scripts/monitor_atos_regulatorios.py
+          python scripts/monitor_atos_regulatorios.py || {
+            echo "status=falha_coleta" >> "$GITHUB_OUTPUT"
+            exit 1
+          }
+          echo "status=sucesso" >> "$GITHUB_OUTPUT"
+
+      - name: Consultar buscador público oficial do DOU como fallback diagnóstico
+        id: dou_public_fallback
+        if: steps.inlabs_collect.outcome != 'success'
+        continue-on-error: true
+        env:
+          DOU_FALLBACK_DAYS_BACK: "6"
+        run: python scripts/monitor_dou_public_search.py
+
+      - name: Triar resultados do buscador público do DOU
+        if: steps.dou_public_fallback.outcome == 'success'
+        run: python scripts/monitor_dou_public_search_triage.py
 
       - name: Publicar alterações do monitoramento
         run: |
@@ -60,4 +85,20 @@ jobs:
           else
             git commit -m "chore: atualização regulatória diária"
             git push
+          fi
+
+      - name: Sinalizar falha do INLABS sem ocultar a publicação
+        if: always()
+        env:
+          INLABS_OUTCOME: ${{ steps.inlabs_collect.outcome }}
+          INLABS_STATUS: ${{ steps.inlabs_collect.outputs.status }}
+          FALLBACK_OUTCOME: ${{ steps.dou_public_fallback.outcome }}
+        run: |
+          if [ "$INLABS_OUTCOME" != "success" ]; then
+            if [ "$FALLBACK_OUTCOME" = "success" ]; then
+              echo "::warning::INLABS indisponível; buscador público oficial consultado como fallback diagnóstico. Resultados registrados, sem integração automática ao Radar."
+            else
+              echo "::error::INLABS e fallback público indisponíveis. Monitoramento geral publicado, mas a captura do DOU está degradada."
+            fi
+            exit 1
           fi
