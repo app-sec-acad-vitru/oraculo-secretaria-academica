@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Descoberta não invasiva do catálogo oficial de Dados Abertos.
 
-A API atual do dados.gov.br exige chave no cabeçalho Authorization.
+A API atual do dados.gov.br exige chave no cabeçalho chave-api-dados-abertos.
 Este script não altera o Radar, não baixa recursos e não cria candidatos.
 """
 from __future__ import annotations
@@ -39,7 +39,7 @@ def query_catalog(term: str, token: str) -> list:
         headers={
             "User-Agent": "OraculoSecretariaAcademica/1.0",
             "Accept": "application/json",
-            "Authorization": token,
+            "chave-api-dados-abertos": token,
         },
     )
     with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
@@ -88,7 +88,7 @@ def discover(token: str | None = None) -> dict:
             "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
             "api_base": API_BASE,
             "status": "autenticacao_necessaria",
-            "message": "A especificação OpenAPI oficial exige chave no cabeçalho Authorization.",
+            "message": "A API exige chave no cabeçalho chave-api-dados-abertos.",
             "queries": {},
             "datasets": [],
             "datasets_count": 0,
