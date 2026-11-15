@@ -1,87 +1,1049 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-15T13:48:26.948439-03:00",
+  "collected_at": "2026-11-15T13:58:04.311414-03:00",
   "source": "Buscador oficial do Diário Oficial da União — Imprensa Nacional",
   "endpoint": "https://www.in.gov.br/consulta/-/buscar/dou",
   "period": {
     "from": "2026-11-09",
     "to": "2026-11-15"
   },
-  "status": "fonte_indisponivel",
+  "status": "consulta_concluida",
   "queries": [
     {
       "term": "autorização de curso",
-      "status": "erro"
+      "results": 20,
+      "status": "ok"
     },
     {
       "term": "reconhecimento de curso",
-      "status": "erro"
+      "results": 20,
+      "status": "ok"
     },
     {
       "term": "renovação de reconhecimento de curso",
-      "status": "erro"
+      "results": 20,
+      "status": "ok"
     },
     {
       "term": "aditamento de curso",
-      "status": "erro"
+      "results": 20,
+      "status": "ok"
     },
     {
       "term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
-      "status": "erro"
+      "results": 20,
+      "status": "ok"
     },
     {
       "term": "\"Portaria SERES/MEC\"",
-      "status": "erro"
+      "results": 20,
+      "status": "ok"
     },
     {
       "term": "\"Conselho Nacional de Educação\" educação superior",
-      "status": "erro"
+      "results": 0,
+      "status": "ok"
     },
     {
       "term": "\"Instituto Nacional de Estudos e Pesquisas Educacionais\" educação superior",
-      "status": "erro"
+      "results": 0,
+      "status": "ok"
     }
   ],
-  "results_count": 0,
-  "results": [],
-  "education_authority_results": 0,
-  "full_text_attempts": 0,
-  "full_text_obtained": 0,
-  "errors": [
+  "results_count": 59,
+  "results": [
     {
-      "term": "autorização de curso",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=autoriza%C3%A7%C3%A3o+de+curso&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744166327",
+      "title": "RETIFICAÇÃO",
+      "abstract": "nº 206, de 3 de novembro de 2026, página 65: Onde se lê: \" (...) torna público o cancelamento da(s) <span class='highlight' style='background:#FFA;'>autorização</span> ... (ões) SDL-ANP nº 112, de 6 de março de 2026, por requerimento do agente <span class='highlight' style='background:#FFA;'>autorizado</span> VALLOR TRADING IMPORTAÇÃO ... Leia-se: \" (...) torna público o cancelamento da(s) <span class='highlight' style='background:#FFA;'>autorização</span>(ões) SDL-ANP nº 112, de 6 de março de ... 2026, por requerimento do agente <span class='highlight' style='background:#FFA;'>autorizado</span> VALLOR TRADING IMPORTAÇÃO E EXPORTAÇÃO S/A, CNPJ nº 26.337.767.767/0001-02, para o exercício da atividade de agente de comércio exterior .\" Leia-se: \" (...) torna público o cancelamento da(s) autorização(ões) SDL-ANP nº 112, de 6 de março de 2026, por requerimento do agente autorizado VALLOR TRADING IMPORTAÇÃO E EXPORTAÇÃO S/A, CNPJ nº 26.337.767/0001-02 e 26.337.767/0005-28, para o exercício da atividade de agente de comércio exterior .\"",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Retificação",
+      "url": "https://www.in.gov.br/web/dou/-/retificacao-744166325",
+      "hierarchy": "Ministério de Minas e Energia/Agência Nacional do Petróleo, Gás Natural e Biocombustíveis/Superintendência de Distribuição e Logística",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
     },
     {
-      "term": "reconhecimento de curso",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=reconhecimento+de+curso&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744166246",
+      "title": "RESOLUÇÃO-RE nº 4.453, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "RESOLUÇÃO-RE nº 4.453, DE 12 DE NOVEMBRO DE 2026 O COORDENADOR DE <span class='highlight' style='background:#FFA;'>AUTORIZAÇÃO</span> DE FUNCIONAMENTO DE EMPRESAS ... Resolução da Diretoria Colegiada - RDC nº 585, de 10 de dezembro de 2021, resolve: Art. 1º Cancelar as <span class='highlight' style='background:#FFA;'>Autorizações</span> ... de Funcionamento (AFE) e as <span class='highlight' style='background:#FFA;'>Autorizações</span> Especiais (AE) constantes no anexo desta Resolução.",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-re-n-4.453-de-12-de-novembro-de-2026-744166244",
+      "hierarchy": "Ministério da Saúde/Agência Nacional de Vigilância Sanitária/4ª Diretoria/Gerência-Geral de Inspeção e Fiscalização Sanitária/Coordenação de Autorização de Funcionamento de Empresas",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
     },
     {
-      "term": "renovação de reconhecimento de curso",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=renova%C3%A7%C3%A3o+de+reconhecimento+de+curso&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744175153",
+      "title": "RESOLUÇÃO GECEX Nº 983, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "âmbito dos processos nº 19972.002419/2025-01 (restrito) e nº 19972.002420/2025-28 (confidencial), em <span class='highlight' style='background:#FFA;'>curso</span> ... loco (VIL) nas instalações da empresa, o DECOM encaminhou o Ofício Nº 2.758/2026/MDIC, solicitando <span class='highlight' style='background:#FFA;'>autorização</span> ... A Abitim destaca que, no <span class='highlight' style='background:#FFA;'>curso</span> daquela investigação, não foi apresentada qualquer evidência de que o ... Em paralelo, o código 3206.11.10 da NCM foi incluído, no <span class='highlight' style='background:#FFA;'>curso</span> do período de análise do dano, na Lista ... Conduta celebrado, com posterior reabertura de inquérito, em virtude de descumprimento, em 2023, ainda em <span class='highlight' style='background:#FFA;'>curso</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-gecex-n-983-de-12-de-novembro-de-2026-744175151",
+      "hierarchy": "Presidência da República/Câmara de Comércio Exterior/Comitê-Executivo de Gestão",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
     },
     {
-      "term": "aditamento de curso",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=aditamento+de+curso&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744165981",
+      "title": "RESOLUÇÃO GECEX Nº 979, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "110 Motobomba triplex de alta pressão tipo \"Jet Grouting\", para injeção de nata de cimento no solo, <span class='highlight' style='background:#FFA;'>curso</span> ... distribuidor (\"tundish\") com capacidade nominal de 26t e tampa refratária, osciladores de molde com <span class='highlight' style='background:#FFA;'>curso</span> ... em X, Z, Y de 220, 770 e 80mm respectivamente para a torre superior, e de <span class='highlight' style='background:#FFA;'>cursos</span> em X, Z, Y de 24, 36 ... no eixo x 3.100mm, <span class='highlight' style='background:#FFA;'>curso</span> no eixo y 1.800mm, <span class='highlight' style='background:#FFA;'>curso</span> no eixo z 850mm, da ponta do eixo-árvore à superfície ... dispositivos de segurança com portas blindadas e dobradiças internas para proteção contra acesso não <span class='highlight' style='background:#FFA;'>autorizado</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-gecex-n-979-de-12-de-novembro-de-2026-744165979",
+      "hierarchy": "Presidência da República/Câmara de Comércio Exterior/Comitê-Executivo de Gestão",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
     },
     {
-      "term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=%22Secretaria+de+Regula%C3%A7%C3%A3o+e+Supervis%C3%A3o+da+Educa%C3%A7%C3%A3o+Superior%22&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744165902",
+      "title": "RESOLUÇÃO CONTER Nº 27, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span> ... para a transição eleitoral, sem criação de mandato eletivo ou de Plenário com composição distinta da <span class='highlight' style='background:#FFA;'>autorizada</span>da Ad Referendum da Plenária, nos termos do art. 12 e seu § 2º ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-27-de-11-de-novembro-de-2026-744165900",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
     },
     {
-      "term": "\"Portaria SERES/MEC\"",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=%22Portaria+SERES%2FMEC%22&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744164069",
+      "title": "RESOLUÇÃO CONTER Nº 26, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-26-de-11-de-novembro-de-2026-744164067",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
     },
     {
-      "term": "\"Conselho Nacional de Educação\" educação superior",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=%22Conselho+Nacional+de+Educa%C3%A7%C3%A3o%22+educa%C3%A7%C3%A3o+superior&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744162842",
+      "title": "RESOLUÇÃO CONTER Nº 23, DE 11 DE NOVEMBRO DE 2026.",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-23-de-11-de-novembro-de-2026.-744162840",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
     },
     {
-      "term": "\"Instituto Nacional de Estudos e Pesquisas Educacionais\" educação superior",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://www.in.gov.br/consulta/-/buscar/dou?q=%22Instituto+Nacional+de+Estudos+e+Pesquisas+Educacionais%22+educa%C3%A7%C3%A3o+superior&exactDate=personalizado&publishFrom=09-11-2026&publishTo=15-11-2026&sortType=0&s=do1"
+      "id": "744160262",
+      "title": "RESOLUÇÃO CONTER Nº 20, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-20-de-11-de-novembro-de-2026-744160260",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso",
+      "query_terms": [
+        "aditamento de curso"
+      ]
+    },
+    {
+      "id": "744160341",
+      "title": "RESOLUÇÃO CONTER Nº 15, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Serviços Públicos da Autarquia, Até A Posse do Novo Corpo de Conselheiros, Conforme Pleito Eleitoral Em <span class='highlight' style='background:#FFA;'>Curso</span>, Deflagrado Por Meio do Edital de Eleição Unificada e Simultânea do Sistema Conter/Crtrs, Publicado No D.O.U, Em 12 de Março de 2026 e Dá Outras Providências. O CONSELHO NACIONAL DE TÉCNICOS EM RADIOLOGIA, no exercício de suas atribui...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Resolução",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-conter-n-15-de-11-de-novembro-de-2026-744160339",
+      "hierarchy": "Entidades de Fiscalização do Exercício das Profissões Liberais/Conselho Nacional de Técnicos em Radiologia",
+      "query_term": "aditamento de curso",
+      "query_terms": [
+        "aditamento de curso"
+      ]
+    },
+    {
+      "id": "744151893",
+      "title": "Portaria SERES/MEC Nº 584, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 584, DE 12 DE NOVEMBRO DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, tendo",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-584-de-12-de-novembro-de-2026-744151891",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 13/11/2026 | Edição: 214 | Seção: 1 | Página: 111 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 584, DE 12 DE NOVEMBRO DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, a Lei nº 12.871, de 22 de outubro de 2013, a Portaria nº 650, de 5 de abril de 2023, o Processo SEI nº 23000.044651/2025-73 e considerando o disposto no Edital nº 5, de 30 de abril de 2024 e de acordo com o processo e-MEC nº 202610528, resolve: Art. 1º Fica autorizado o curso superior de graduação em Medicina (1737841), bacharelado, com 100 (cem) vagas totais anuais, a ser ofertado pela Pontifícia Universidade Católica do Rio de Janeiro - PUC-RIO (528), mantida pela FACULDADES CATOLICAS (367), na Pontifícia Universidade Católica - PUC, 225, Rua Marquês de São Vicente, Gávea, Rio de Janeiro/RJ. Parágrafo único. A autorização a que se refere esta Portaria é válida exclusivamente para oferta no endereço acima citado. Art. 2º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:55.527706-03:00"
+    },
+    {
+      "id": "744152510",
+      "title": "Portaria SERES/MEC Nº 583, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 583, DE 12 DE NOVEMBRO DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, tendo",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-583-de-12-de-novembro-de-2026-744152508",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 13/11/2026 | Edição: 214 | Seção: 1 | Página: 111 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 583, DE 12 DE NOVEMBRO DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, a Portaria SERES/MEC nº 531, de 22 de dezembro de 2023 e a Nota Informativa nº 22/2024/CGLNRS/GAB/SERES/SERES-MEC, e em cumprimento à decisão judicial proferida nos autos do processo nº 1021927-53.2022.4.01.3400, atestada pelos Pareceres de Força Executória nº 01330/2022/CORESPNG/PRU1R/PGU/AGU e 00187/2025/CORESPNS/PRU1R/PGU/AGU, constantes do Processo SEI nº 00732.001704/2022-59 e de acordo com o processo e-MEC nº 202207335, resolve: Art. 1º Fica autorizado o curso superior de graduação em Medicina (1604179), bacharelado, com 48 (quarenta e oito) vagas totais anuais, a ser ofertado pela Faculdade Uninassau Olinda - Nassau Olinda (4742), mantida pela SER EDUCACIONAL S.A. (1847), na Rua Eduardo de Moraes, s/n, Sede Shopping Patteo, Casa Caiada, Olinda/PE. Parágrafo único. A autorização a que se refere esta Portaria é válida exclusivamente para oferta no endereço acima citado. Art. 2º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:55.908552-03:00"
+    },
+    {
+      "id": "744163820",
+      "title": "Portaria SERES/MEC Nº 582, DE 12 DE novembro DE 2026",
+      "abstract": "referida IES ao longo de seu funcionamento, constando na listagem, pelo menos, o nome, o CPF, o RG, o <span class='highlight' style='background:#FFA;'>curso</span> ... Superior, em lista nominal editável (em formato xlsx), constando, pelo menos, o nome, o CPF, o RG, o <span class='highlight' style='background:#FFA;'>curso</span> ... responsável pela guarda dos documentos e registros acadêmicos dos estudantes comprovadamente regulares e dos <span class='highlight' style='background:#FFA;'>cursos</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-582-de-12-de-novembro-de-2026-744163818",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 13/11/2026 | Edição: 214 | Seção: 1 | Página: 111 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 582, DE 12 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, em observância ao disposto no Decreto nº 9.235, de 15 de dezembro de 2017, adotando os fundamentos expressos na Nota Técnica nº 58/2026/CSO/CGSO/DISUP/SERES/SERES, nos autos do Processo de Supervisão nº 23709.000002/2019-45, resolve: Art. 1º Ficam descredenciadas as instituições de educação superior FACULDADE ALBERT EINSTEIN - FALBE (cód. e-MEC nº 1966) e INSTITUTO SUPERIOR DE EDUCAÇÃO ALBERT EINSTEIN - ISALBE (cód. e-MEC nº 3203), mantidas pela União Brasiliense de Ensino Superior e Pesquisa EIRELI - EPP (código e-MEC nº 1291), inscrita no CNPJ sob o nº 04.260.186/0001-79, situada no endereço SGAS 905 Conjunto B/Parte, s/n Bloco 5, 1º e 2º Pavimentos, Plano Piloto/Brasília, nos termos da alínea \"d\" do inciso II do art. 73 do Decreto nº 9.235/2017. Art. 2º Fica impedida a mantenedora União Brasiliense de Ensino Superior e Pesquisa EIRELI - EPP (código e-MEC nº 1291), de protocolar novos processos de credenciamento pelo prazo de dois anos, nos termos do art. 74, parágrafo único, do Decreto nº 9.235, de 2017. Art. 3º Fica revogada a Portaria SERES nº 593, de 10 de dezembro de 2020, no Diário Oficial da União (DOU) de 11/12/2020. Art. 4º Fica obrigada a Mantenedora União Brasiliense de Ensino Superior e Pesquisa EIRELI - EPP (código e-MEC nº 1291), na pessoa de seu representante legal: I - a vedar o ingresso de novos estudantes a partir da publicação da presente portaria; II - a apresentar à Diretoria de Supervisão da Educação Superior (Disup/Seres) lista nominal editável (em formato xlsx) de todos os alunos, comprovadamente regulares, vinculados à referida IES ao longo de seu funcionamento, constando na listagem, pelo menos, o nome, o CPF, o RG, o curso e a situação acadêmica dos discentes; III - a proceder à entrega de registros e documentos acadêmicos aos estudantes, comprovadamente regulares, nos termos dos incisos I e II do art. 57 do Decreto nº 9.235/2017, preservando as atividades de secretaria acadêmica da IES pelo prazo de 6 (seis) meses, ou até que seja atendida a totalidade dos alunos comprovadamente regulares, no tocante ao recebimento de documentos acadêmicos; IV - a informar à Diretoria de Supervisão da Educação Superior (Disup/Seres) sobre a existência de alunos concluintes, corretamente declarados ao Censo da Educação Superior, em lista nominal editável (em formato xlsx), constando, pelo menos, o nome, o CPF, o RG, o curso e o ano de declaração ao Censo, bem como se houve entrega de seus respectivos diplomas devidamente registrados; V - a promover os meios necessários para a manutenção da guarda e gestão do acervo acadêmico, devendo manter atualizadas, junto ao MEC, as informações sobre localização do acervo acadêmico físico e digital e quanto à responsabilidade pela emissão de documentos acadêmicos; VI - a apresentar à Diretoria de Supervisão da Educação Superior (Disup/Seres) cópia do contrato de serviço externo de Repositório Arquivístico Digital Confiável - RDC-Arq do acervo acadêmico digital, nos termos do art. 7º, § 3º, da Portaria MEC 613, de 18 de agosto de 2022, ou declaração de que possui RDC-Arq próprio. Parágrafo único. Na hipótese de transferência da responsabilidade pela guarda e gestão do acervo acadêmico a outra IES devidamente credenciada, a mantenedora deverá encaminhar a esta Secretaria, no prazo de 15 (quinze) dias, o termo de transferência e aceite por parte da IES receptora, na pessoa de seu representante legal, que passará a ser integralmente responsável pela guarda dos documentos e registros acadêmicos dos estudantes comprovadamente regulares e dos cursos ofertados pela Faculdade Albert Einstein - FALBE (cód. e-MEC nº 1966) e o Instituto Superior de Educação Albert Einstein - ISALBE (cód. e-MEC nº 3203) nos termos do art. 58, § 2º, do Decreto nº 9.235/2017. Art. 5º Fica obrigada a mantenedora, na pessoa de seu representante legal, a publicar, no prazo de 15 (quinze) dias, em pelo menos 2 (dois) jornais de grande circulação de sua região, a decisão contida na presente Portaria, indicando o responsável pelo acervo e o local de atendimento aos alunos comprovadamente regulares, para a entrega de documentação acadêmica e demais orientações, bem como, no prazo de 5 (cinco) dias da última publicação, a apresentar à Disup/Seres os comprovantes das referidas publicações, sob pena de aplicação de medidas legais cabíveis, sem prejuízo daquelas de caráter cível e penal. Art. 6º A Diretoria de Supervisão da Educação Superior incumbir-se-á de: I - intimar a IES da possibilidade de apresentação de recurso contra a decisão de aplicação da penalidade de descredenciamento ao Conselho Nacional de Educação (CNE/MEC), no prazo de 30 (trinta) dias a contar da data da intimação, nos termos do art. 75 do Decreto nº 9.235/2017; II - informar os órgãos que representaram ao MEC sobre esta decisão; III - informar à Diretoria de Regulação da Educação Superior e à Diretoria de Política Regulatória sobre a decisão, para as providências pertinentes. Art. 7º Na ausência da interposição do recurso cabível, ficarão arquivados os autos do presente Processo de Supervisão nº 23709.000002/2019-45. Art. 8º Esta portaria entra em vigor na data da sua assinatura. MARTA ABRAMO Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:56.308647-03:00"
+    },
+    {
+      "id": "744143646",
+      "title": "Portaria SERES/MEC Nº 581, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 581, DE 12 DE NOVEMBRO DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, adotando",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-581-de-12-de-novembro-de-2026-744143644",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 13/11/2026 | Edição: 214 | Seção: 1 | Página: 111 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 581, DE 12 DE NOVEMBRO DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, adotando os fundamentos expressos na Nota Técnica nº 62/2026/CSO/CGSO/DISUP/SERES/SERES, nos autos do Processo de Supervisão nº 23709.000136/2016-13, resolve: Art. 1º Fica instaurado Procedimento Sancionador em face da Faculdade de Presidente Epitácio - FAPE (cód. e-MEC nº 1096), mantida pela UNIESP S.A. (cód. e-MEC nº 16134), inscrita no CNPJ sob o nº 19.347.410/0001-31. Art. 2º Fica aplicada a seguinte medida cautelar, nos termos do art. 63, I, do Decreto nº 9.235/2017, pelo prazo de 1 (um) ano, com possibilidade de prorrogação por igual período, caso seja necessário: I - impedimento de protocolização de pedido de autorização de curso de graduação em Engenharia Civil, de cursos superiores de tecnologia do Eixo de Infraestrutura ou similares do Catálogo Nacional de Cursos Superiores de Tecnologia, e de quaisquer cursos de graduação da área geral de \"Engenharia, Produção e Construção\" constantes da Classificação Cine Brasil. Art. 3º Ficam determinadas à UNIESP S.A. (cód. e-MEC nº 16134), na condição de mantenedora, a adoção das providências abaixo relacionadas e o encaminhamento a esta Secretaria dos documentos comprobatórios correspondentes, no prazo de 15 (quinze) dias: I - remanejar o acervo do registro e controle acadêmico dos estudantes listados no documento (SEI 7113770), para o curso de graduação em Engenharia Civil, código e-MEC nº 1174140, vinculado ao Centro Universitário de Presidente Prudente (cód. e-MEC nº 1711) - Unidade Sede, situado à Avenida Coronel José Soares Marcondes, número 6093 - Jardim Aeroporto - Presidente Prudente/SP (endereço código e-MEC: 658705), com vistas à constituição de processos administrativos de aproveitamento extraordinário de estudos, nos termos do §2º do art. 47 da Lei nº 9.394/1996 (LDB), como condição obrigatória à emissão e registro dos respectivos diplomas; II - comprovar a efetiva cessação da oferta irregular e do ingresso de novos estudantes, seja por vestibular, transferência interna ou externa, ou aproveitamento de estudos para obtenção de novo título no curso de graduação em Engenharia Civil da FAPE (cód. e-MEC nº 1096), o qual foi ofertado sem o devido ato autorizativo; III - comprovar a divulgação, em sítio eletrônico institucional, da cessação da oferta irregular do curso de graduação em Engenharia Civil pela FAPE, enquanto as medidas cautelares permanecerem vigentes. Art. 4º A Diretoria de Supervisão da Educação Superior incumbir-se-á de: I - notificar a Instituição de Ensino Superior (IES) e sua mantenedora sobre o teor da presente portaria, por meio de correio eletrônico e do Sistema de Comunicação da Caixa de Mensagens do e-MEC, para que apresentem defesa no prazo de 15 (quinze) dias, nos termos do parágrafo único do art. 71 do Decreto nº 9.235/2017, bem como eventual recurso contra as medidas cautelares impostas, no prazo de 30 (trinta) dias, nos termos do § 2º do art. 63 do Decreto nº 9.235/2017; e II - informar a Diretoria de Política Regulatória (DPR/Seres) para que adote as providências de atualização do Cadastro e do Sistema e-MEC. Art. 5º Esta portaria entra em vigor na data da sua assinatura. MARTA ABRAMO Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:56.701225-03:00"
+    },
+    {
+      "id": "744149038",
+      "title": "Portaria SERES/MEC Nº 580, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 580, DE 12 DE NOVEMBRO DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso das atribuições que lhe confere o Decreto nº 11.691, de 5 de setembro de 2023, adotando",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-580-de-12-de-novembro-de-2026-744149036",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 13/11/2026 | Edição: 214 | Seção: 1 | Página: 110 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 580, DE 12 DE NOVEMBRO DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 11.691, de 5 de setembro de 2023, adotando os fundamentos expressos na Nota Técnica nº 72/2026/CGSO-TÉCNICOS/DISUP/SERES/SERES, nos autos do Processo de Supervisão nº 23000.031447/2022-40, resolve: Art. 1º Fica instaurado processo administrativo sancionador em face da Faculdade Viva Vitória - FAVIVA (cód. e-MEC nº 1443), mantida pelo Instituto Viva Espírito Santo (cód. e-MEC nº 18352), inscrito no CNPJ sob o nº 33.989.110/0001-87, nos termos do art. 71 do Decreto nº 9.235, de 2017 e do art. 21 da Portaria nº 315, de 2018. Art. 2º Ficam aplicadas as seguintes medidas cautelares em face da Faculdade Viva Vitória - FAVIVA (cód. e-MEC nº 1443), pelo prazo de 1 (um) ano ou até que concluída a fase de procedimento sancionador: I - suspensão de ingresso de novos estudantes; II - suspensão da oferta de cursos de graduação ou de pós-graduação lato sensu; III - sobrestamento de processos regulatórios que a IES ou as demais mantidas da mesma mantenedora tenham protocolado; IV - impedimento de protocolização de novos processos regulatórios pela IES ou pelas demais mantidas da mesma mantenedora; V - suspensão da possibilidade de celebrar novos contratos de Financiamento Estudantil - Fies pela IES; VI - suspensão da possibilidade de participação em processo seletivo para a oferta de bolsas do Programa Universidade Para Todos - Prouni pela IES; e VII - suspensão ou restrição da possibilidade de participação em outros programas federais de acesso ao ensino pela IES. VIII - impedimento de transferência de mantença, nos termos do art. 38 do Decreto 9235/2018. Art. 3º Ficam impostas as seguintes determinações à mantenedora Instituto Viva Espírito Santo (cód. e-MEC 18352): I - apresentação de cópia do contrato de parceria e/ou do termo de cooperação técnico-científica firmado com a instituição registradora oficial; II - apresentação de cópias (frente e verso) de todos os diplomas devidamente registrados, juntamente com os comprovantes de entrega aos estudantes egressos demandantes; III - apresentação de comprovante da localização do acervo acadêmico; e IV - apresentação de comprovante de disponibilidade do imóvel em nome da atual mantenedora, bem como prova da atualização dessas informações no sistema e-MEC. Art. 4º A Diretoria de Supervisão da Educação Superior incumbir-se-á de: I - notificar a instituição de ensino superior (IES) sobre o teor desta portaria, pelo e-mail e pelo Sistema de Comunicação da Caixa de Mensagens do e-MEC, para a apresentação de defesa, no prazo de 15 (quinze) dias, nos termos do parágrafo único do art. 71 do Decreto nº 9.235/2017, e para apresentação de recurso contra as medidas cautelares impostas, no prazo de 30 (trinta) dias, nos termos do art. 63, § 2º, do Decreto nº 9.235/2017; e II - informar os órgãos que representaram junto ao Ministério de Educação (MEC) sobre a presente providência. III - informar à Diretoria de Política Regulatória (DPR/Seres) para que adote as providências de atualização do Cadastro e do Sistema e-MEC. Art. 5º Esta portaria entra em vigor na data da sua assinatura. MARTA ABRAMO Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:57.106903-03:00"
+    },
+    {
+      "id": "744165390",
+      "title": "Portaria Previc Nº 890, DE 9 DE novembro DE 2026",
+      "abstract": "convênio de adesão, contados a partir da data de publicação desta Portaria, sob pena de cancelamento da <span class='highlight' style='background:#FFA;'>autorização</span> celebrado entre o Sindicato Nacional dos Procuradores da Fazenda Nacional - Sinprofaz, CNPJ nº 64.711.260/0001-58, na condição de instituidor do Plano Instituído CentrusPrev+, CNPB nº 2019.0039-29, e a Fundação Banco Central de ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-previc-n-890-de-9-de-novembro-de-2026-744165388",
+      "hierarchy": "Ministério da Previdência Social/Superintendência Nacional de Previdência Complementar/Diretoria de Licenciamento",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744175232",
+      "title": "PORTARIA SOF/MPO Nº 509, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "art. 1º, inciso II, alínea \"b\", da Portaria SOF/MPO nº 62, de 3 de junho de 2025, e tendo em vista a <span class='highlight' style='background:#FFA;'>autorização</span>s de natureza de despesa no âmbito do mesmo subtítulo, constantes da Lei Orçamentária vigente, em favor de diversos órgãos do Poder Executivo Federal, no valor de R$ 72.908.890,00. O SUBSECRETÁRIO DE GESTÃO ORÇAMENTÁRIA, da Secretar...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-sof/mpo-n-509-de-12-de-novembro-de-2026-744175230",
+      "hierarchy": "Ministério do Planejamento e Orçamento/Secretaria de Orçamento Federal/Subsecretaria de Gestão Orçamentária",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744165821",
+      "title": "PORTARIA SISV-SP/MAPA Nº 214, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "nº 385, de 25 de agosto de 2021, e o que consta no Processo 21052.013807/2006-71, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Renovar</span> ... Art. 2º O credenciamento terá validade por 05 (cinco) anos, podendo ser <span class='highlight' style='background:#FFA;'>renovado</span> mediante requerimento uso de suas atribuições, que lhe confere o inciso XVI do artigo 267 do Reg...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-sisv-sp/mapa-n-214-de-12-de-novembro-de-2026-744165819",
+      "hierarchy": "Ministério da Agricultura e Pecuária/Secretaria Executiva/Subsecretaria de Governança das Superintendências/Superintendência de Agricultura e Pecuária do Estado de São Paulo/Divisão de Defesa Agropecuária/Serviço de Fiscalização de Insumos e Sanidade Vegetal",
+      "query_term": "renovação de reconhecimento de curso",
+      "query_terms": [
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744167129",
+      "title": "PORTARIA SEFIC/MINC Nº 777, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "ÁREA: 1 Artes Cênicas (Artigo 18 , § 1º ) 2611541 - Estremecendo SP - <span class='highlight' style='background:#FFA;'>Curso</span> de Formação, Aprimoramento ... por 8 músicas autorais instrumentais e canções inéditas e 2 interpretações de domínio público e com <span class='highlight' style='background:#FFA;'>autorização</span> ... A proposta reúne o Simpósio formativo com 26 palestras e <span class='highlight' style='background:#FFA;'>cursos</span> com certificação para os <span class='highlight' style='background:#FFA;'>cursos</span> e fones ... A publicação do livro histórico \"A História do Rock em Jundiaí\" (600 exemplares), a gravação dos <span class='highlight' style='background:#FFA;'>cursos</span> ... Um catálogo digital acessível ampliará a difusão dos projetos, mediante <span class='highlight' style='background:#FFA;'>autorização</span> dos participantes",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-sefic/minc-n-777-de-12-de-novembro-de-2026-744167127",
+      "hierarchy": "Ministério da Cultura/Secretaria de Fomento e Incentivo à Cultura",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744163581",
+      "title": "PORTARIA Nº 3.961, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span>ial nº 2.212, de 04 de julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º Reconhecer a situação de emergência nas áreas descritas no Formulário de Informações do Desastre - FIDE, ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.961-de-12-de-novembro-de-2026-744163579",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744164784",
+      "title": "PORTARIA Nº 3.928, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span>ial nº 2.212, de 04 de julho de 2023, publicada no Diário Oficial da União, Seção 1, de 05 de julho de 2023, resolve: Art. 1º Reconhecer a situação de emergência nas áreas descritas no Formulário de Informações do Desastre - FIDE, ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.928-de-11-de-novembro-de-2026-744164782",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744166681",
+      "title": "PORTARIA Nº 3.921, DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "PORTARIA Nº 3.921, DE 10 DE NOVEMBRO DE 2026 <span class='highlight' style='background:#FFA;'>Autoriza</span> o empenho e a transferência de recursos ao município ... 12.608, de 10 de abril de 2012, e no Decreto n.º 11.219, de 5 de outubro de 2022, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Autorizar</span>PORTARIA Nº 3.921, DE 10 DE NOVEMBRO DE 2026 Autoriza o empenho e a t...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.921-de-10-de-novembro-de-2026-744166674",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744166724",
+      "title": "PORTARIA Nº 3.908, DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "PORTARIA Nº 3.908, DE 10 DE NOVEMBRO DE 2026 <span class='highlight' style='background:#FFA;'>Autoriza</span> o empenho e a transferência de recursos ao município ... 12.608, de 10 de abril de 2012, e no Decreto n.º 11.219, de 5 de outubro de 2022, resolve: Art. 1º <span class='highlight' style='background:#FFA;'>Autorizar</span>PORTARIA Nº 3.908, DE 10 DE NOVEMBRO DE 2026 Autoriza o empenho e a t...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-n-3.908-de-10-de-novembro-de-2026-744166722",
+      "hierarchy": "Ministério da Integração e do Desenvolvimento Regional/Secretaria Nacional de Proteção e Defesa Civil",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744175311",
+      "title": "PORTARIA MEMP Nº 471, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "Os <span class='highlight' style='background:#FFA;'>cursos</span> e materiais didáticos fornecidos no âmbito da iniciativa serão gratuitos. 2.9.5. ... 2025, desde que a despesa seja necessária à execução do objeto e esteja vinculada a item expressamente <span class='highlight' style='background:#FFA;'>autorizado</span> ... Poderão ser financiadas despesas relacionadas: I - à realização de <span class='highlight' style='background:#FFA;'>cursos</span>, oficinas, treinamentos e eventos ... de feiras de empreendedorismo, com espaços para divulgação e comercialização de produtos e oferta de <span class='highlight' style='background:#FFA;'>cursos</span> ... de feiras de empreendedorismo; II - espaços para divulgação e comercialização de produtos; e III - <span class='highlight' style='background:#FFA;'>cursos</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-memp-n-471-de-11-de-novembro-de-2026-744175309",
+      "hierarchy": "Ministério do Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte/Gabinete do Ministro",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744165713",
+      "title": "PORTARIA DICAT/SE/MGI Nº 9.153, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "exercício Art. 4º A alteração da unidade de exercício de pessoa ocupante do cargo de PFT dependerá da <span class='highlight' style='background:#FFA;'>autorização</span> ... A <span class='highlight' style='background:#FFA;'>autorização</span> será formalizada por meio de: I - portaria publicada no Diário Oficial da União; ou II ... Art. 5º É dispensável a <span class='highlight' style='background:#FFA;'>autorização</span> formal da Diretoria de Carreiras Transversais nas seguintes hipóteses ... Até que seja concluído o processo formal de <span class='highlight' style='background:#FFA;'>autorização</span> da alteração da unidade de exercício, com a publicação ... em atividades relacionadas às atribuições do cargo efetivo, o órgão ou a entidade deverá solicitar a <span class='highlight' style='background:#FFA;'>autorização</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-dicat/se/mgi-n-9.153-de-12-de-novembro-de-2026-744165711",
+      "hierarchy": "Ministério da Gestão e da Inovação em Serviços Públicos/Secretaria Executiva/Diretoria de Carreiras Transversais",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744163990",
+      "title": "Despacho Decisório nº 3/DIGER CSP/CENSIPAM-CENSIPAM",
+      "abstract": "73 Interessados: Centro Gestor e Operacional do Sistema de Proteção da Amazônia (Censipam) Assunto: <span class='highlight' style='background:#FFA;'>Reconhecimento</span> ... CONJUR-MD/CGU/AGU (9074239), ratifico a conclusão técnica constante do presente processo administrativo, <span class='highlight' style='background:#FFA;'>reconhecendo</span>Despacho Decisório nº 3/DIGER CSP/CENSIPAM-CENSIPAM ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despacho-decisorio-n-3/diger-csp/censipam-censipam-744163988",
+      "hierarchy": "Ministério da Defesa/Secretaria-Geral/Centro Gestor e Operacional do Sistema de Proteção da Amazônia",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744166081",
+      "title": "DESPACHOS De 12 de novembro de 2026",
+      "abstract": "Coordenador-Geral de Imigração Laboral - Substituto, no uso de suas atribuições, deferiu os seguintes pedidos de <span class='highlight' style='background:#FFA;'>autorização</span> ... CONCOMITÂNCIA O Coordenador-Geral de Imigração Laboral - Substituto, no uso de suas atribuições, <span class='highlight' style='background:#FFA;'>autoriza</span> ... Processo: 08228.028201/2026-66, anteriormente <span class='highlight' style='background:#FFA;'>autorizado</span> através do Processo: 08228.009117/2026-43. ... Substituto, no uso de suas atribuições, resolve: TORNAR SEM EFEITO o ato que INDEFERIU o pedido de <span class='highlight' style='background:#FFA;'>autorização</span> ... Substituto, no uso de suas atribuições, resolve: TORNAR SEM EFEITO o ato que INDEFERIU o pedido de <span class='highlight' style='background:#FFA;'>autorização</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despachos-de-12-de-novembro-de-2026-744166079",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Secretaria Nacional de Justiça/Departamento de Migrações/Coordenação-Geral de Imigração Laboral",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744167046",
+      "title": "DESPACHOS DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "do Decreto 9.199/2017, considerando a falta do documento integral do comprovante de residência e o <span class='highlight' style='background:#FFA;'>curso</span> ... não apresentou os comprovantes de residência de 2023 e 2024, e a declaração de prova presencial do <span class='highlight' style='background:#FFA;'>curso</span> ... 17 de novembro de 2020, considerando que o requerente não apresentou o certificado de conclusão do <span class='highlight' style='background:#FFA;'>curso</span> ... dos últimos 4 (quatro) anos anteriores ao pedido, a declaração de realização de prova presencial do <span class='highlight' style='background:#FFA;'>curso</span> ... necessários à instrução do pedido de naturalização, quais sejam, declaração de prova presencial do <span class='highlight' style='background:#FFA;'>curso</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despachos-de-12-de-novembro-de-2026-744167044",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Secretaria Nacional de Justiça/Departamento de Migrações/Coordenação-Geral de Política Migratória/Coordenação de Processos Migratórios",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744160420",
+      "title": "DECISÃO SUROD Nº 1.886, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "o PIT não seja executado no prazo previsto no CPEU, ressalvada eventual prorrogação mediante termo <span class='highlight' style='background:#FFA;'>aditivo</span> à área de plantio na faixa de domínio da PR-280, do km 229+820 ao km 230+000, no município de Vitorino/PR, conforme informações de geolocalização constantes nos autos. § 1º O trecho referido no caput integra o Sistema Rodoviário Federal ...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.886-de-5-de-novembro-de-2026-744160418",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "aditamento de curso",
+      "query_terms": [
+        "aditamento de curso"
+      ]
+    },
+    {
+      "id": "744162949",
+      "title": "DECISÃO SUROD Nº 1.883, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "de dezembro de 2022, fundamentado no que consta do Processo nº 50505.131777/2026-50, decide: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span> ... S.A., inscrita no CNPJ nº 58.056.046/0001-02, signatária do Contrato de Concessão Nº 005/2024. § 2º O <span class='highlight' style='background:#FFA;'>reconhecimento</span> ... terceiro interessado e a concessionária, nos termos do art. 68 da Resolução ANTT nº 6.000, de 2022. § 4º O <span class='highlight' style='background:#FFA;'>reconhecimento</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.883-de-5-de-novembro-de-2026-744162947",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744164148",
+      "title": "DECISÃO SUROD Nº 1.880, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "de dezembro de 2022, fundamentado no que consta do Processo nº 50505.132399/2026-21, decide: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span> ... S.A., inscrita no CNPJ nº 58.056.046/0001-02, signatária do Contrato de Concessão Nº 005/2024. § 2º O <span class='highlight' style='background:#FFA;'>reconhecimento</span> ... terceiro interessado e a concessionária, nos termos do art. 68 da Resolução ANTT nº 6.000, de 2022. § 4º O <span class='highlight' style='background:#FFA;'>reconhecimento</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.880-de-5-de-novembro-de-2026-744164146",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744164227",
+      "title": "DECISÃO SUROD Nº 1.868, DE 5 DE NOVEMBRO DE 2026",
+      "abstract": "de dezembro de 2022, fundamentado no que consta do Processo nº 50505.126582/2026-98, decide: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span> ... S.A., inscrita no CNPJ nº 58.056.046/0001-02, signatária do Contrato de Concessão Nº 005/2024. § 2º O <span class='highlight' style='background:#FFA;'>reconhecimento</span> ... terceiro interessado e a concessionária, nos termos do art. 68 da Resolução ANTT nº 6.000, de 2022. § 4º O <span class='highlight' style='background:#FFA;'>reconhecimento</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.868-de-5-de-novembro-de-2026-744164225",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744165262",
+      "title": "DECISÃO SUROD Nº 1.851, DE 3 DE NOVEMBRO DE 2026",
+      "abstract": "50505.136267/2026-79, decide: Art. 1º Reconhecer, para fins de formalização administrativa, a ocorrência da <span class='highlight' style='background:#FFA;'>autorização</span> ... concessionária, nos termos do art. 68 da Resolução ANTT nº 6.000, de 2022. § 4º O reconhecimento da <span class='highlight' style='background:#FFA;'>autorização</span> ... operacionalidade, à segurança viária e à fluidez, nos termos da Resolução ANTT nº 6.000, de 2022. § 5º A <span class='highlight' style='background:#FFA;'>autorização</span> ... não exime o terceiro interessado da obtenção das licenças, <span class='highlight' style='background:#FFA;'>autorizações</span> e demais atos administrativos ... , nem do cumprimento das condicionantes e exigências estabelecidas pelos órgãos competentes. § 7º A <span class='highlight' style='background:#FFA;'>autorização</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.851-de-3-de-novembro-de-2026-744165260",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "autorização de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744160499",
+      "title": "DECISÃO SUROD Nº 1.850, DE 3 DE NOVEMBRO DE 2026",
+      "abstract": "de dezembro de 2022, fundamentado no que consta do Processo nº 50505.136124/2026-67, decide: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span> ... S.A., inscrita no CNPJ nº 58.056.046/0001-02, signatária do Contrato de Concessão Nº 005/2024. § 2º O <span class='highlight' style='background:#FFA;'>reconhecimento</span> ... terceiro interessado e a concessionária, nos termos do art. 68 da Resolução ANTT nº 6.000, de 2022. § 4º O <span class='highlight' style='background:#FFA;'>reconhecimento</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.850-de-3-de-novembro-de-2026-744160497",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744163079",
+      "title": "DECISÃO SUROD Nº 1.849, DE 3 DE NOVEMBRO DE 2026",
+      "abstract": "de dezembro de 2022, fundamentado no que consta do Processo nº 50505.136118/2026-18, decide: Art. 1º <span class='highlight' style='background:#FFA;'>Reconhecer</span> ... S.A., inscrita no CNPJ nº 58.056.046/0001-02, signatária do Contrato de Concessão Nº 005/2024. § 2º O <span class='highlight' style='background:#FFA;'>reconhecimento</span> ... terceiro interessado e a concessionária, nos termos do art. 68 da Resolução ANTT nº 6.000, de 2022. § 4º O <span class='highlight' style='background:#FFA;'>reconhecimento</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Decisão",
+      "url": "https://www.in.gov.br/web/dou/-/decisao-surod-n-1.849-de-3-de-novembro-de-2026-744163077",
+      "hierarchy": "Ministério dos Transportes/Agência Nacional de Transportes Terrestres/Superintendência de Infraestrutura Rodoviária",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744167018",
+      "title": "Ato nº 13.927, de 11 de novembro de 2026",
+      "abstract": "Ato nº 13.927, de 11 de novembro de 2026 Expedir <span class='highlight' style='background:#FFA;'>autorização</span> à ANTONIONE ROMERITO SILVA OLIVEIRA, CPF nº ***.955.994-**, para explorar Serviços de Telecomunicações de Interesse Restrito, por prazo indeterminado, sem caráter de exclusividade, e tendo como área de prestação de serviço todo o território nacional. Gilberto Studart Gurgel Neto Gerente",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Ato",
+      "url": "https://www.in.gov.br/web/dou/-/ato-n-13.927-de-11-de-novembro-de-2026-744167016",
+      "hierarchy": "Ministério das Comunicações/Agência Nacional de Telecomunicações/Superintendência de Fiscalização/Gerência Regional nos Estados do Ceará, Rio Grande do Norte e Piauí/Coordenação de Processo de Outorga e Recursos à Prestação",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744166886",
+      "title": "ATOS DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "ATOS DE 10 DE NOVEMBRO DE 2026 Expede <span class='highlight' style='background:#FFA;'>autorização</span>, para explorar Serviços de Telecomunicações de Interessede autorização, para explorar Serviços de Telecomunicações de Interesse Restrito, por prazo indeterminado, sem caráter de exclusividade, e tendo como área de prestação de serviço todo o território nacional entidades relacionadas a seguir....",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Ato",
+      "url": "https://www.in.gov.br/web/dou/-/atos-de-10-de-novembro-de-2026-744166884",
+      "hierarchy": "Ministério das Comunicações/Agência Nacional de Telecomunicações/Superintendência de Fiscalização/Gerência Regional nos Estados do Amazonas, Acre, Rondônia e Roraima",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744165736",
+      "title": "ATO DECLARATÓRIO EXECUTIVO ALF/SPO Nº 45, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "ATO DECLARATÓRIO EXECUTIVO ALF/SPO Nº 45, DE 12 DE NOVEMBRO DE 2026 <span class='highlight' style='background:#FFA;'>Autoriza</span> Inclusão no Registro de Ajudantes de Despachantes Aduaneiros. A AUDITORA-FISCAL DA RECEITA FEDERAL DO BRASIL, no uso das atribuições que lhe conferem o art. 321 do Regimento Interno da Secretaria Especial da Receita Federal do Brasil, aprovado pela Portaria ME nº 284...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Ato Declaratório",
+      "url": "https://www.in.gov.br/web/dou/-/ato-declaratorio-executivo-alf/spo-n-45-de-12-de-novembro-de-2026-744165734",
+      "hierarchy": "Ministério da Fazenda/Secretaria Especial da Receita Federal do Brasil/Secretaria-Adjunta/Superintendência Regional da Receita Federal do Brasil 8ª Região Fiscal/Alfândega da Receita Federal do Brasil em São Paulo",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744165497",
+      "title": "ALVARÁ Nº 4.702, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "interessada, de acordo com a decisão prolatada no Processo nº 2026/96736 - DPF/BRA/BA, resolve: CONCEDER <span class='highlight' style='background:#FFA;'>autorização</span> ... VIGILANTES LTDA, CNPJ nº 09.428.315/0001-09, sediada na Bahia, para adquirir: Em estabelecimento comercial <span class='highlight' style='background:#FFA;'>autorizado</span> ... 5775 (cinco mil e setecentos e setenta e cinco) Projéteis calibre .380 Em estabelecimento comercial <span class='highlight' style='background:#FFA;'>autorizado</span>",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Alvará",
+      "url": "https://www.in.gov.br/web/dou/-/alvara-n-4.702-de-12-de-novembro-de-2026-744165495",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Polícia Federal/Diretoria de Polícia Administrativa/Coordenação-Geral de Controle de Serviços e Produtos",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744166566",
+      "title": "ALVARÁ Nº 4.699, DE 12 DE NOVEMBRO DE 2026",
+      "abstract": "acordo com a decisão prolatada no Processo nº 2026/91648 - DELESP/DREX/SR/PF/SP, resolve: CONCEDER <span class='highlight' style='background:#FFA;'>autorização</span> ... LTDA, CNPJ nº 49.642.054/0001-40, sediada em São Paulo, para adquirir: Em estabelecimento comercial <span class='highlight' style='background:#FFA;'>autorizado</span>ALVARÁ Nº 4.699, DE 12 DE NOVEMBRO DE 2026 O(A) COORDENADOR(A)-...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Alvará",
+      "url": "https://www.in.gov.br/web/dou/-/alvara-n-4.699-de-12-de-novembro-de-2026-744166564",
+      "hierarchy": "Ministério da Justiça e Segurança Pública/Polícia Federal/Diretoria de Polícia Administrativa/Coordenação-Geral de Controle de Serviços e Produtos",
+      "query_term": "autorização de curso",
+      "query_terms": [
+        "autorização de curso"
+      ]
+    },
+    {
+      "id": "744161082",
+      "title": "ACÓRDÃO Nº 683/2026-ANTAQ",
+      "abstract": "a Antaq e a Universidade Federal Fluminense (UFF), até 31 de maio de 2027, conforme minuta de Termo <span class='highlight' style='background:#FFA;'>Aditivo</span>cesso: 50300.002851/2023-85 2. Interessados: Agência Nacional de Transportes Aquaviários e Universidade Federal Fluminense 3. Relator: Frederico Dias 4. Unidade Técnica: Superintendência de ESG e Inovação - SESGI 5. Acórdão: VISTOS, rela...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Acórdão",
+      "url": "https://www.in.gov.br/web/dou/-/acordao-n-683/2026-antaq-744161080",
+      "hierarchy": "Ministério de Portos e Aeroportos/Agência Nacional de Transportes Aquaviários",
+      "query_term": "aditamento de curso",
+      "query_terms": [
+        "aditamento de curso"
+      ]
+    },
+    {
+      "id": "744163107",
+      "title": "ACÓRDÃO Nº 681/2026 - ANTAQ",
+      "abstract": "unificação das avenças, alcança o valor positivo de R$ 7.916.287,01, na data-base de janeiro de 2024; 5.3. <span class='highlight' style='background:#FFA;'>reconhecer</span> ... de 2027 a 2031, registre a dragagem como investimento que substitui obrigação do Poder Concedente e <span class='highlight' style='background:#FFA;'>reconheça</span>ACÓRDÃO Nº 681/2026 - ANTAQ 1. Processo: 50300.015950/201...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Acórdão",
+      "url": "https://www.in.gov.br/web/dou/-/acordao-n-681/2026-antaq-744163105",
+      "hierarchy": "Ministério de Portos e Aeroportos/Agência Nacional de Transportes Aquaviários",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "aditamento de curso",
+        "reconhecimento de curso",
+        "renovação de reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "744162469",
+      "title": "ACÓRDÃO Nº 314, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "TELECOM S.A. de 4 de fevereiro de 2026 (SEI nº 15148234) e de 29 de abril de 2026 (SEI nº 15570264), <span class='highlight' style='background:#FFA;'>reconhecendo</span>: AGÊNCIA NACIONAL DE TELECOMUNICAÇÕES Acordam os membros do Conselho Diretor da Anatel: a) conhecer como Pedido de Reconsideração a petição SEI nº 14384760, protocolizada pela ASSOCIAÇÃO BRASILEIRA DAS PRESTADORAS DE SERVIÇOS DE T...",
+      "date": "13/11/2026",
+      "section": "DO1",
+      "act_type": "Acórdão",
+      "url": "https://www.in.gov.br/web/dou/-/acordao-n-314-de-11-de-novembro-de-2026-744162467",
+      "hierarchy": "Ministério das Comunicações/Agência Nacional de Telecomunicações/Conselho Diretor",
+      "query_term": "reconhecimento de curso",
+      "query_terms": [
+        "reconhecimento de curso"
+      ]
+    },
+    {
+      "id": "743877793",
+      "title": "PORTARIA MEC Nº 803, DE 11 DE NOVEMBRO DE 2026",
+      "abstract": ". § 1º A instituição só poderá ofertar cursos após ato autorizativo específico expedido pela <span class='highlight' style='background:#FFA;'>Secretaria</span> ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span> do Ministério da Educação. § 2º Na oferta dos cursos ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span> do Ministério da Educação. § 2º Na oferta dos cursos ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span> do Ministério da Educação. § 2º Na oferta dos cursos ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span> do Ministério da Educação. § 2º Na oferta dos cursos",
+      "date": "12/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-mec-n-803-de-11-de-novembro-de-2026-743877791",
+      "hierarchy": "Ministério da Educação/Gabinete do Ministro",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 12/11/2026 | Edição: 213 | Seção: 1 | Página: 51 Órgão: Ministério da Educação/Gabinete do Ministro PORTARIA MEC Nº 803, DE 11 DE NOVEMBRO DE 2026 O MINISTRO DE ESTADO DA EDUCAÇÃO, no uso das atribuições que lhe conferem o art. 2º da Lei nº 9.131, de 24 de novembro de 1995, o Decreto nº 9.235, de 15 de dezembro de 2017, o Decreto nº 9.057, de 25 de maio de 2017, o Decreto nº 12.456, de 19 de maio de 2025, e tendo em vista o disposto na Portaria MEC nº 381, de 20 de maio de 2025, na Portaria MEC nº 378, de 19 de maio de 2025, na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017, e no Parecer nº 00891/2026/CONJUR-MEC/CGU/AGU, de 5 de outubro de 2026, resolve: Art. 1º Fica homologado o Parecer CNE/CES nº 501/2025, da Câmara de Educação Superior, do Conselho Nacional de Educação, referente ao Processo e-MEC nº 202211427. Art. 2º Fica credenciada a Faculdade Tiradentes (cód. 25654), para a oferta de cursos superiores nos formatos a distância e semipresencial, a ser instalada na Avenida Tristão Gonçalves, nº 876, Centro, no município de Fortaleza, no estado do Ceará, mantida pela Organização de Ensino José Maria Bandeira S.S. Ltda. (cód. 17986), com sede no mesmo município e estado, CNPJ nº 09.594.986/0001-40. § 1º A instituição só poderá ofertar cursos após ato autorizativo específico expedido pela Secretaria de Regulação e Supervisão da Educação Superior do Ministério da Educação. § 2º Na oferta dos cursos autorizados, a Instituição deverá atentar para as exigências previstas no Decreto nº 12.456, de 19 de maio de 2025, na Portaria MEC nº 378, de 20 de maio de 2025, bem como nas demais normas vigentes. Art. 3º O credenciamento de que trata o art. 2º é válido pelo prazo de três anos, conforme previsto na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017. Art. 4º Esta Portaria entra em vigor na data de sua publicação. LEONARDO OSVALDO BARCHINI ROSA PORTARIA MEC Nº 804, DE 11 DE NOVEMBRO DE 2026 O MINISTRO DE ESTADO DA EDUCAÇÃO, no uso das atribuições que lhe conferem o art. 2º da Lei nº 9.131, de 24 de novembro de 1995, o Decreto nº 9.235, de 15 de dezembro de 2017, o Decreto nº 9.057, de 25 de maio de 2017, o Decreto nº 12.456, de 19 de maio de 2025, e tendo em vista o disposto na Portaria MEC nº 381, de 20 de maio de 2025, na Portaria MEC nº 378, de 19 de maio de 2025, na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017, e no Parecer nº 00886/2026/CONJUR-MEC/CGU/AGU, de 6 de outubro de 2026, resolve: Art. 1º Fica homologado o Parecer CNE/CES nº 500/2025, da Câmara de Educação Superior do Conselho Nacional de Educação, referente ao Processo e-MEC nº 202123340. Art. 2º Fica credenciada a Faculdade Gran (cód. 26522), para a oferta de cursos superiores nos formatos a distância e semipresencial, a ser instalada na Quadra SBS, Quadra 2, 11º e 12º andares, Edifício Carlton Tower, Asa Sul, em Brasília, no Distrito Federal, mantida pela Gran Tecnologia e Educação S/A (cód. 18279), com sede em Brasília, no Distrito Federal, CNPJ nº 18.260.822/0001-77. § 1º A instituição só poderá ofertar cursos após ato autorizativo específico expedido pela Secretaria de Regulação e Supervisão da Educação Superior do Ministério da Educação. § 2º Na oferta dos cursos autorizados, a Instituição deverá atentar para as exigências previstas no Decreto nº 12.456, de 19 de maio de 2025, na Portaria MEC nº 378, de 20 de maio de 2025, bem como nas demais normas vigentes. Art. 3º O credenciamento de que trata o art. 2º é válido pelo prazo de quatro anos, conforme previsto na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017. Art. 4º Esta Portaria entra em vigor na data de sua publicação. LEONARDO OSVALDO BARCHINI ROSA PORTARIA MEC Nº 805, DE 11 DE NOVEMBRO DE 2026 O MINISTRO DE ESTADO DA EDUCAÇÃO, no uso das atribuições que lhe conferem o art. 2º da Lei nº 9.131, de 24 de novembro de 1995, o Decreto nº 9.235, de 15 de dezembro de 2017, o Decreto nº 9.057, de 25 de maio de 2017, o Decreto nº 12.456, de 19 de maio de 2025, e tendo em vista o disposto na Portaria MEC nº 381, de 20 de maio de 2025, na Portaria MEC nº 378, de 19 de maio de 2025, na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017, e no Parecer nº 00893/2026/CONJUR-MEC/CGU/AGU, de 6 de outubro de 2026, resolve: Art. 1º Fica homologado o Parecer CNE/CES nº 6/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, referente ao Processo e-MEC nº 202205002. Art. 2º Fica credenciada a Faculdade Vanguarda (cód. 22263), para a oferta de cursos superiores nos formatos a distância e semipresencial, a ser instalada na Avenida Engenheiro Francisco José Longo, nº 520, bairro Jardim São Dimas, no município de São José dos Campos, no estado de São Paulo, mantida pela Faculdade Vanguarda Ltda. (cód. 16837), com sede no mesmo município e estado, CNPJ nº 27.392.219/0001-30. § 1º A instituição só poderá ofertar cursos após ato autorizativo específico expedido pela Secretaria de Regulação e Supervisão da Educação Superior do Ministério da Educação. § 2º Na oferta dos cursos autorizados, a Instituição deverá atentar para as exigências previstas no Decreto nº 12.456, de 19 de maio de 2025, na Portaria MEC nº 378, de 20 de maio de 2025, bem como nas demais normas vigentes. Art. 3º O credenciamento de que trata o art. 2º é válido pelo prazo de quatro anos, conforme previsto na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017. Art. 4º Esta Portaria entra em vigor na data de sua publicação. LEONARDO OSVALDO BARCHINI ROSA PORTARIA MEC Nº 806, DE 11 DE NOVEMBRO DE 2026 O MINISTRO DE ESTADO DA EDUCAÇÃO, no uso das atribuições que lhe conferem o art. 2º da Lei nº 9.131, de 24 de novembro de 1995, o Decreto nº 9.235, de 15 de dezembro de 2017, o Decreto nº 9.057, de 25 de maio de 2017, o Decreto nº 12.456, de 19 de maio de 2025, e tendo em vista o disposto na Portaria MEC nº 381, de 20 de maio de 2025, na Portaria MEC nº 378, de 19 de maio de 2025, na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017, e no Parecer nº 01017/2026/CONJUR-MEC/CGU/AGU, de 9 de novembro de 2026, resolve: Art. 1º Fica homologado parcialmente o Parecer CNE/CES nº 36/2026, da Câmara de Educação Superior, do Conselho Nacional de Educação, referente ao Processo e-MEC nº 201717328. Art. 2º Fica credenciada a Faculdade Pater (cód. 22840), para a oferta de cursos superiores no formato a distância e semipresencial, a ser instalada na Rua do Cinegrafista, nº 99, bairro Planalto, no município de Uberlândia, no estado de Minas Gerais, mantida pelo Instituto Pater de Educação e Cultura (cód. 15602), com sede no mesmo município e estado, CNPJ nº 21.289.889/0001-49. § 1º A instituição só poderá ofertar cursos após ato autorizativo específico expedido pela Secretaria de Regulação e Supervisão da Educação Superior do Ministério da Educação. § 2º Na oferta dos cursos autorizados, a Instituição deverá atentar para as exigências previstas no Decreto nº 12.456, de 19 de maio de 2025, na Portaria MEC nº 378, de 20 de maio de 2025, bem como nas demais normas vigentes. Art. 3º O credenciamento de que trata o art. 2º é válido pelo prazo de cinco anos, conforme previsto na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017. Art. 4º Esta Portaria entra em vigor na data de sua publicação. LEONARDO OSVALDO BARCHINI ROSA PORTARIA MEC Nº 807, DE 11 DE NOVEMBRO DE 2026 O MINISTRO DE ESTADO DA EDUCAÇÃO, no uso das atribuições que lhe conferem o art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e o Decreto nº 9.235, de 15 de dezembro de 2017, e considerando o Parecer Referencial nº 00007/2025/CONJUR-MEC/CGU/AGU, aprovado em 5 de março de 2025, resolve: Art. 1º Fica homologado o Parecer CNE/CP nº 2/2026, do Conselho Pleno do Conselho Nacional de Educação, referente ao Processo e-MEC nº 202215389. Art. 2º Fica indeferido o pedido de credenciamento da Faculdade de Direito de Bento Gonçalves - FDBG (cód. 27077), para oferta de cursos superiores, que seria instalada na Avenida Osvaldo Aranha - 301 - ímpar, nº 419, bairro Juventude da Enologia, no município de Bento Gonçalves, no estado do Rio Grande do Sul, mantida pela Tecbrasil Web Educacional Ltda. (cód. 18463), com sede no mesmo município e estado, CNPJ nº 13.504.939/0001-35. Art. 3º Esta Portaria entra em vigor na data de sua publicação. LEONARDO OSVALDO BARCHINI ROSA PORTARIA MEC Nº 808, DE 11 DE NOVEMBRO DE 2026 O MINISTRO DE ESTADO DA EDUCAÇÃO, no uso das atribuições que lhe conferem o art. 2º da Lei nº 9.131, de 24 de novembro de 1995, o Decreto nº 9.235, de 15 de dezembro de 2017, e tendo em vista o disposto na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017, e no Parecer Referencial nº 00003/2025/CONJUR-MEC/CGU/AGU, aprovado em 7 de fevereiro de 2025, resolve: Art. 1º Fica homologado o Parecer CNE/CES nº 92/2026, da Câmara de Educação Superior, do Conselho Nacional de Educação, referente ao Processo e-MEC nº 202204391. Art. 2º Fica credenciado o Centro Universitário Zacarias de Góes Vasconcelos - Unifazag (cód. 2568), por transformação da Faculdade Zacarias de Góes - Fazag, instalado na Rua A, s/nº, bairro Jardim Grimaldi, no município de Valença, estado da Bahia, mantido pela Sociedade Educacional Zacarias de Góes Vasconcelos Ltda. (cód. 1668), com sede no mesmo município e estado, CNPJ nº 04.032.307/0001-25. Art. 3º O credenciamento de que trata o art. 2º é válido pelo prazo de quatro anos, conforme previsto na Portaria Normativa MEC nº 1, de 3 de janeiro de 2017. Art. 4º Esta Portaria entra em vigor na data de sua publicação. LEONARDO OSVALDO BARCHINI ROSA Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:57.513150-03:00"
+    },
+    {
+      "id": "743864848",
+      "title": "DESPACHOS MEC DE 11 DE NOVEMBRO DE 2026",
+      "abstract": "de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span>, que indeferiu o pedido de autorização para funcionamento ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span>, que indeferiu o pedido de autorização para funcionamento ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span>, que indeferiu o pedido de autorização para funcionamento ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span>, que indeferiu o pedido de autorização para funcionamento ... de <span class='highlight' style='background:#FFA;'>Regulação</span> e <span class='highlight' style='background:#FFA;'>Supervisão</span> da <span class='highlight' style='background:#FFA;'>Educação Superior</span>, que determinou o descredenciamento da Faculdade de Rio",
+      "date": "12/11/2026",
+      "section": "DO1",
+      "act_type": "Despacho",
+      "url": "https://www.in.gov.br/web/dou/-/despachos-mec-de-11-de-novembro-de-2026-743864846",
+      "hierarchy": "Ministério da Educação/Gabinete do Ministro",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 12/11/2026 | Edição: 213 | Seção: 1 | Página: 50 Órgão: Ministério da Educação/Gabinete do Ministro DESPACHOS MEC DE 11 DE NOVEMBRO DE 2026 Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00857/2026/CONJUR-MEC/CGU/AGU, de 25 de setembro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 427/2025, da Câmara de Educação Superior, do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 160, de 13 de março de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que indeferiu o pedido de autorização para funcionamento do curso superior de tecnologia em Recursos Humanos, no formato a distância, que seria oferecido pela Faculdade de Empreendedorismo e Ciências Humanas, com sede na Avenida João Naves de Ávila, nº 5.050, bairro Pampulha, no município de Uberlândia, no estado de Minas Gerais, mantida pelo Unibras Centro de Capacitação Ltda., CNPJ nº 26.905.252/0001-53, conforme consta do Processo nº 00732.003650/2025-17 (e-MEC nº 202221886). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00842/2026/CONJUR-MEC/CGU/AGU, de 22 de setembro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 184/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 45, de 11 de fevereiro de 2026, da Secretaria de Regulação e Supervisão da Educação Superior, que indeferiu o pedido de autorização para funcionamento do curso superior de tecnologia em Gestão Hospitalar, que seria ofertado pela Faculdade CTA, com sede na Rua Antônio Marcondes, nº 285, bairro Vila Dom Pedro I, no município de São Paulo, no estado de São Paulo, mantida pelo Academy Centro de Treinamento em Anatomia e Atendimento Odontológico Ltda., CNPJ nº 36.368.359/0001-63, conforme consta do Processo nº 00732.004273/2026-14 (e-MEC nº 202416994). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00846/2026/CONJUR-MEC/CGU/AGU, de 23 de setembro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 392/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 256, de 26 de junho de 2026, da Secretaria de Regulação e Supervisão da Educação Superior, que autorizou o funcionamento do curso superior de Pedagogia, com noventa vagas anuais, pleiteado pela Faculdade Anhanguera de Divinópolis, com sede na Rua Santos Dumont, nº 1.001, bairro Do Carmo, no município de Divinópolis, no estado de Minas Gerais, mantida pela Editora e Distribuidora Educacional S.A, CNPJ nº 38.733.648/0001-40, conforme consta do Processo nº 00732.004274/2026-51 (e-MEC nº 202519341). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00887/2026/CONJUR-MEC/CGU/AGU, de 7 de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 248/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 167, de 13 de março de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que indeferiu o pedido de autorização para funcionamento do curso superior de Medicina, no formato presencial, que seria oferecido pela Faculdade Santa Rita de Cássia - Ifasc, com sede na Avenida Adelina Alves Vilela, nº 393, bairro Jardim Primavera, no município de Itumbiara, no estado de Goiás, mantida pela Dinâmica Organização Projetos e Consultoria Ltda. - ME, CNPJ nº 02.124.897/0001-90, conforme consta do Processo nº 00732.004746/2025-94 (e-MEC nº 202224046). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00871/2026/CONJUR-MEC/CGU/AGU, de 29 de setembro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 402/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 258, de 26 de junho de 2026, da Secretaria de Regulação e Supervisão da Educação Superior, que indeferiu o pedido de autorização para funcionamento do curso superior de Odontologia, no formato presencial, que seria oferecido pela Faculdade Filos, com sede na Avenida Tiradentes, Quadra 71, Lotes nºs 26/31, bairro Jardim Pérola da Barragem II, no município de Águas Lindas de Goiás, no estado de Goiás, mantida pelo Instituto de Educação e Cultura Águas Lindas S/C Ltda. - ME, CNPJ nº 05.261.831/0001-30, conforme consta do Processo nº 00732.004372/2026-98 (e-MEC nº 202415617). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00870/2026/CONJUR-MEC/CGU/AGU, de 1º de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 383/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 245, de 17 de junho de 2026, da Secretaria de Regulação e Supervisão da Educação Superior, que autorizou o funcionamento do curso superior de Terapia Ocupacional, bacharelado, no formato presencial, com sessenta vagas anuais, pleiteado pela Faculdade Unifael Porto Alegre, com sede na Avenida Assis Brasil, nº 2.611, bairro Passo da Areia, no município de Porto Alegre, no estado do Rio Grande do Sul, mantida pela Ser Educacional S.A, CNPJ nº 04.986.320/0001-13, conforme consta do Processo nº 00732.004369/2026-74 (e-MEC nº 202416518). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00901/2026/CONJUR-MEC/CGU/AGU, de 7 de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 418/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 195, de 29 de maio de 2026, da Secretaria de Regulação e Supervisão da Educação Superior, que indeferiu o pedido de autorização para funcionamento do curso superior de Nutrição, no formato presencial, que seria oferecido pela Faculdade CTA, com sede na Rua Antônio Marcondes, nº 285, bairro Vila Dom Pedro I, no município de São Paulo, no estado de São Paulo, mantida pelo Academy Centro de Treinamento em Anatomia e Atendimento Odontológico Ltda., CNPJ nº 36.368.359/0001-63, conforme consta do Processo nº 00732.004497/2026-18 (e-MEC nº 202417298). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00702/2026/CONJUR-MEC/CGU/AGU, de 30 de julho de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 143/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 433, de 29 de agosto de 2024, da Secretaria de Regulação e Supervisão da Educação Superior, que autorizou o funcionamento do curso superior de Medicina, com sessenta vagas anuais, pleiteado pelo Centro Universitário de Excelência Eniac, com sede na Rua Força Pública, nº 89, Centro, no município de Guarulhos, no estado de São Paulo, mantido pela Edvac Serviços Educacionais Ltda., CNPJ nº 04.167.858/0001-04, conforme consta do Processo nº 23000.040848/2024-52 (e-MEC nº 202204933). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00883/2026/CONJUR-MEC/CGU/AGU, de 6 de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 249/2026, da Câmara de Educação Superior, do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 947, de 18 de dezembro de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que deferiu parcialmente o pedido de aumento de oitenta e sete para cento e dez vagas anuais, no curso superior de Medicina, no formato presencial, pleiteado pela Universidade do Vale do Rio dos Sinos - Unisinos, com sede na Avenida Unisinos, nº 950, bairro Cristo Rei, no município de São Leopoldo, no estado do Rio Grande do Sul, mantida pela Associação Antônio Vieira - Asav, CNPJ nº 92.959.006/0001-09, conforme consta do Processo nº 23000.002694/2026-62. Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00921/2026/CONJUR-MEC/CGU/AGU, de 13 de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 180/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 978, de 23 de dezembro de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que determinou o descredenciamento da Faculdade de Teodoro Sampaio - FTS, com sede na Rua Pará, nº 506, bairro Estação, no município de Teodoro Sampaio, no estado de São Paulo, mantida pela Uniesp S.A, CNPJ nº 19.347.410/0001-31, conforme consta do Processo nº 23000.014181/2025-13. Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00900/2026/CONJUR-MEC/CGU/AGU, de 7 de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 187/2026, da Câmara de Educação Superior, do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 641, de 18 de setembro de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que determinou a desativação do curso superior de Direito, no formato presencial, ofertado pela Faculdade Lusófona do Rio de Janeiro - FL-RJ, com sede na Rua Visconde de Itaúna, nº 2.671, bairro Paraíso, no município de São Gonçalo, no estado do Rio de Janeiro, mantida pela Associação Educacional Souza Graff S/S Ltda., CNPJ nº 02.828.271/0001-65, conforme consta do Processo SEI nº 23000.036181/2024-93 (e-MEC nº 202020672). Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00919/2026/CONJUR-MEC/CGU/AGU, de 9 de outubro de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 175/2026, da Câmara de Educação Superior, do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 975, de 23 de dezembro de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que determinou o descredenciamento da Faculdade de Rio Claro - CBTA, com sede na Rodovia Washington Luiz, Km 171, bairro Chácara Lusa, no município de Rio Claro, no estado de São Paulo, mantida pela Uniesp S.A, CNPJ nº 19.347.410/0001-31, conforme consta do Processo nº 23000.026548/2024-61. Nos termos do art. 2º da Lei nº 9.131, de 24 de novembro de 1995, e conforme os fundamentos expostos no Parecer nº 00698/2026/CONJUR-MEC/CGU/AGU, de 30 de julho de 2026, da Consultoria Jurídica junto ao Ministério da Educação, homologo o Parecer CNE/CES nº 169/2026, da Câmara de Educação Superior do Conselho Nacional de Educação, que conheceu do recurso e, no mérito, negou-lhe provimento, para manter a decisão expressa na Portaria nº 973, de 23 de dezembro de 2025, da Secretaria de Regulação e Supervisão da Educação Superior, que determinou o descredenciamento da Faculdade de Belo Horizonte - FDR, com sede na Rua Ubá, nº 396, bairro Floresta, no município de Belo Horizonte, no estado de Minas Gerais, mantida pela Uniesp S.A, CNPJ nº 19.347.410/0001-31, conforme consta do Processo nº 23709.000159/2016-28. LEONARDO OSVALDO BARCHINI ROSA Ministro Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:57.902885-03:00"
+    },
+    {
+      "id": "743577253",
+      "title": "Portaria SERES/MEC Nº 578, DE 10 DE NOVEMBRO DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 578, DE 10 DE NOVEMBRO DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, tendo",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-578-de-10-de-novembro-de-2026-743577251",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 144 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 578, DE 10 DE NOVEMBRO DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017 e em cumprimento à decisão judicial proferida no processo judicial nº 1125297-43.2025.4.01.3400, em trâmite na 3ª Vara Federal Cível da SJDF, atestada pelo Parecer de Força Executória nº 30526/2026/PRU1R/PGU/AGU, que determinou a adequação da Portaria SERES/MEC nº 133, de 8 de abril de 2026, constante do processo 00732.000715/2026-45 e considerando o processo e-MEC nº 202217206; resolve Art. 1º O art. 3º da Portaria SERES/MEC nº 133, de 8 de abril de 2026, publicada no Diário Oficial da União em 9 de abril de 2026, Seção 1, páginas 45/46 passa a vigorar com a seguinte redação: \"Art. 3º Fica vedada a realização de novos processos seletivos para ingresso de alunos, bem como a efetivação de novas matrículas, a qualquer título, no curso de graduação em Medicina (código e-MEC 1614529), ressalvada a possibilidade de autorização administrativa para a oferta de vagas adicionais, observados os requisitos legais e regulatórios aplicáveis. Parágrafo único. A ressalva prevista no caput não constitui autorização automática para a oferta de novas vagas ou para a realização de novos processos seletivos e matrículas, ficando sua implementação condicionada à prévia e expressa autorização da autoridade administrativa competente, mediante o correspondente ato regulatório.\" Art. 2º Permanecem inalteradas as demais disposições da Portaria SERES/MEC nº 133, de 8 de abril de 2026, publicada no Diário Oficial da União em 9 de abril de 2026, Seção 1. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:58.296813-03:00"
+    },
+    {
+      "id": "743623015",
+      "title": "Portaria SERES/MEC Nº 577, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 577, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-577-de-10-de-novembro-de-2026-743623013",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 143 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 577, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202614384), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora Endereço da IES Incorporadora IES Incorporada (campus fora de sede) Endereço do campus fora de sede 202614384 Associação Educacional FACIC, código e-MEC nº 20066, CNPJ nº 02.240.975/0001-12 Centro Universitário Santa Cecília (cód. 652) Praça Barão do Rio Branco, nº 59, Centro, Pindamonhangaba/SP Faculdade de Ciências Humanas do Estado de São Paulo (cód. 4724) Rua dos Andradas, nº 1039, bairro Vila Brasil, Cruzeiro/SP Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:58.806938-03:00"
+    },
+    {
+      "id": "743580861",
+      "title": "Portaria SERES/MEC Nº 576, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 576, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-576-de-10-de-novembro-de-2026-743580859",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 143 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 576, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202614408), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202614408 ISLEC - Instituto Setelagoano de Educação e Ciência Ltda., código e-MEC nº 17158, CNPJ nº 03.376.053/0001-08 Faculdade de Ciências Humanas de Curvelo (cód. 728) Faculdade Promove de Curvelo (cód. 18462) Faculdade de Ciências Humanas de Curvelo - FACIC (cód. 728) Avenida Juscelino Kubitschek, nº 1441, bairro Passaginha, Curvelo/MG Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:59.206040-03:00"
+    },
+    {
+      "id": "743578845",
+      "title": "Portaria SERES/MEC Nº 575, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 575, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-575-de-10-de-novembro-de-2026-743578843",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 143 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 575, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202612060), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202612060 FACEB Educação Ltda., código e-MEC nº 1117, CNPJ nº 03.099.921/0001-41 Faculdade UNA de Pouso Alegre (cód. 19865) Faculdade de Educação Superior de Pouso Alegre (cód. 23172) Faculdade UNA de Pouso Alegre - Una PousoAlegre (cód. 19865) Rua João Basílio, nº 420, Centro, Pouso Alegre/MG Escola Superior de Pouso Alegre (cód. 23175) Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:57:59.618757-03:00"
+    },
+    {
+      "id": "743568120",
+      "title": "Portaria SERES/MEC Nº 574, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 574, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-574-de-10-de-novembro-de-2026-743568118",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 143 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 574, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202611433), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202611433 FACEB Educação Ltda., código e-MEC nº 1117, CNPJ nº 03.099.921/0001-41 Faculdade UNA de Itumbiara (cód. 23273) Faculdade de Agronomia UNA de Itumbiara (cód. 23278) Faculdade UNA de Itumbiara - Una Itumbiara (cód. 23273) Avenida Santos Dumont, nº 979, Centro, Itumbiara/GO Escola Superior UNA de Itumbiara (cód. 23252) Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:00.051045-03:00"
+    },
+    {
+      "id": "743563220",
+      "title": "Portaria SERES/MEC Nº 573, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 573, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-573-de-10-de-novembro-de-2026-743563216",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 142 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 573, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202614382), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202614382 União das Instituições de Ensino Superior Sapiens S.A., código e-MEC nº 18492, CNPJ nº 47.911.090/0001-36 Centro Universitário Unisapiens (cód. 19943) Faculdade de Educação Unisapiens (cód. 1515) Centro Universitário Unisapiens - SAPIENS (cód. 19943) Rua Paulo Freire, nº 4767 b, bairro Flodoaldo Pontes Pinto, Porto Velho/RO Faculdade Interamericana Unisapiens (cód. 1728) Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:00.441061-03:00"
+    },
+    {
+      "id": "743570611",
+      "title": "Portaria SERES/MEC Nº 572, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 572, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-572-de-10-de-novembro-de-2026-743570609",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 142 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 572, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202612062), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202612062 FACEB Educação Ltda., código e-MEC nº 1117, CNPJ nº 03.099.921/0001-41 Instituto Universitário UNA de Catalão (cód. 3319) Faculdade de Educação Superior de Catalão (cód. 23177) Instituto Universitário Una de Catalão - Catalana (cód. 3319) Avenida Presidente Médici, s/nº, bairro Santa Cruz, Catalão/GO Escola Superior de Catalão (cód. 23180) Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:00.876045-03:00"
+    },
+    {
+      "id": "743574035",
+      "title": "Portaria SERES/MEC Nº 571, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 571, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-571-de-10-de-novembro-de-2026-743574033",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 142 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 571, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202612059), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202612059 FACEB Educação Ltda., código e-MEC nº 1117, CNPJ nº 03.099.921/0001-41 Faculdade UNA de Divinópolis (cód. 19257) Faculdade de Educação Superior de Divinópolis (cód. 23163) Faculdade UNA de Divinópolis - Una Divinópolis (cód. 19257) Rua Coronel João Notini, nº 151, Centro, Divinópolis/MG Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:01.276969-03:00"
+    },
+    {
+      "id": "743568207",
+      "title": "Portaria SERES/MEC Nº 570, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 570, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-570-de-10-de-novembro-de-2026-743568202",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 142 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 570, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202611428), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202611428 FACEB Educação Ltda., código e-MEC nº 1117, CNPJ nº 03.099.921/0001-41 Instituto Universitário UNA de Conselheiro Lafaiete (cód. 23244) Faculdade de Agronomia UNA de Conselheiro Lafaiete (cód. 23275) Instituto Universitário UNA de Conselheiro Lafaiete - IUCONLAF (cód. 23244) Rua Melvin Jones, nº 90, bairro Campo Alegre, Conselheiro Lafaiete/MG Escola Superior UNA de Conselheiro Lafaiete (cód. 23245) Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:01.690311-03:00"
+    },
+    {
+      "id": "743623116",
+      "title": "Portaria SERES/MEC Nº 569, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 569, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-569-de-10-de-novembro-de-2026-743623114",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 141 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 569, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202611220), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declaram-se extintas as Instituições de Educação Superior incorporadas à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporadas Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202611220 FACEB Educação Ltda., código e-MEC nº 1117, CNPJ nº 03.099.921/0001-41 Faculdade Una de Sete Lagoas (cód. 18454) Faculdade de Educação Superior de Sete Lagoas (cód. 23176) Faculdade Una de Sete Lagoas - Unaset (cód. 18454) Avenida Secretário Divino Padrão, nº 1411, bairro Santo Antônio, Sete Lagoas/MG Centro de Ensino Superior de Sete Lagoas (cód. 23178) Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:02.105503-03:00"
+    },
+    {
+      "id": "743597051",
+      "title": "Portaria SERES/MEC Nº 568, DE 10 DE novembro DE 2026",
+      "abstract": "Portaria SERES/MEC Nº 568, DE 10 DE novembro DE 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025",
+      "date": "11/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-568-de-10-de-novembro-de-2026-743597049",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 11/11/2026 | Edição: 212 | Seção: 1 | Página: 141 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 568, DE 10 DE novembro DE 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da competência que lhe foi conferida pelo Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto nº 9.235, de 15 de dezembro de 2017, e a Portaria nº 23, de 21 de dezembro de 2017, republicada em 3 de setembro de 2018; considerando o disposto no Processo SEI nº 23000.055383/2026-04 (relacionado com o Processo e-MEC nº 202611215), resolve: Art. 1º Fica aprovada a unificação de mantidas, conforme planilha anexa, na forma de aditamento ao ato de credenciamento ou recredenciamento, nos termos do Art. 43 da Portaria Normativa nº 23, de 21 de dezembro de 2017. § 1º A Instituição de Educação Superior incorporadora assume responsabilidade integral pelos cursos em funcionamento e regularmente autorizados nas instituições unificadas neste ato, garantindo a manutenção da qualidade de todos os registros acadêmicos, sem prejuízo para os alunos regularmente matriculados, além de assumir a responsabilidade formal a respeito dos processos e documentos em trâmite no sistema e-MEC. § 2º Declara-se extinta a Instituição de Educação Superior incorporada à Instituição incorporadora. Art. 2º A Instituição de Educação Superior incorporadora deverá protocolar novo pedido de recredenciamento no próximo período de abertura do sistema e-MEC para o ato. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO Processo e-MEC Mantenedora, CNPJ IES Incorporadora IES Incorporada Denominação da IES após a unificação de mantidas Endereço da IES após a unificação de mantidas 202611215 Sociedade de Educação Superior e Cultura Brasil S.A., código e-MEC nº 902, CNPJ nº 84.684.182/0001-57 Instituto do Sul de Santa Catarina (cód. 25476) Escola Superior do Sul de Santa Catarina (cód. 25478) Instituto do Sul de Santa Catarina - ISUL (cód. 25476) Avenida Estevão Emilio de Souza, nº 980, bairro Ceará, Criciúma/SC Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:02.506420-03:00"
+    },
+    {
+      "id": "743278589",
+      "title": "PORTARIA SERES/MEC Nº 562, DE 9 de novembro de 2026",
+      "abstract": "PORTARIA SERES/MEC Nº 562, DE 9 de novembro de 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, e tendo",
+      "date": "10/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-562-de-9-de-novembro-de-2026-743278587",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 10/11/2026 | Edição: 211 | Seção: 1 | Página: 34 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior PORTARIA SERES/MEC Nº 562, DE 9 de novembro de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista os Decretos nº 9.235, de 15 de dezembro de 2017, e nº 12.456, de 19 de maio de 2025; as Portarias Normativas MEC nºs 20 e 23, de 21 de dezembro de 2017; a Portaria MEC nº 381, de 20 de maio de 2025; e conforme consta dos processos e-MEC listados na planilha anexa, resolve: Art. 1º Fica(m) reconhecido(s) o(s) curso(s) superior(es) de graduação, no formato a distância, constante(s) da tabela do anexo desta Portaria, ministrado(s) pela(s) Instituição(ões) de Educação Superior citada(s), nos termos do disposto no art. 10, do Decreto nº 9.235, de 2017. Art. 2º Os endereços utilizados para as atividades presenciais dos cursos de graduação, ofertados no formato a distância e neste ato reconhecidos, são, exclusivamente, aqueles constantes do Cadastro e-MEC, em conformidade com o art. 30 do Decreto nº 12.456, de 2025. Art. 3º Nos termos do art. 10 § 3º do Decreto nº 9.235, de 2017, e dos artigos 37 a 42 da Portaria MEC nº 23, de 2017, o presente ato autorizativo é válido até o final do ciclo avaliativo ao qual cada curso pertence. Art. 4º Esta Portaria entra em vigor na data de sua publicação MARTA ABRAMO ANEXO(Reconhecimento de Cursos EaD) Nº de Ordem Registro e-MEC nº Curso Nº de vagas totais anuais Mantida Mantenedora 1 202404645 DESPACHANTE DOCUMENTALISTA (Tecnológico) 1000 (uma mil) CENTRO UNIVERSITÁRIO CIDADE VERDE UNIAO MARINGAENSE DE ENSINO LTDA - EPP 2 202404638 ENGENHARIA DE COMPUTAÇÃO (Bacharelado) 500 (quinhentas) CENTRO UNIVERSITÁRIO CIDADE VERDE UNIAO MARINGAENSE DE ENSINO LTDA - EPP 3 202329054 ENGENHARIA DE SOFTWARE (Bacharelado) 500 (quinhentas) CENTRO UNIVERSITÁRIO CIDADE VERDE UNIAO MARINGAENSE DE ENSINO LTDA - EPP 4 202404643 MÍDIAS SOCIAIS DIGITAIS (Tecnológico) 1000 (uma mil) CENTRO UNIVERSITÁRIO CIDADE VERDE UNIAO MARINGAENSE DE ENSINO LTDA - EPP 5 202206321 ENGENHARIA ELÉTRICA (Bacharelado) 400 (quatrocentas) Centro Universitário de Excelência Eniac EDVAC SERVICOS EDUCACIONAIS LTDA 6 202005592 SERVIÇO SOCIAL (Bacharelado) 100 (cem) CENTRO UNIVERSITÁRIO FACAM SOMAR - SOCIEDADE MARANHENSE DE ENSINO SUPERIOR LTDA - ME 7 202406062 GESTÃO DE RECURSOS HUMANOS (Tecnológico) 450 (quatrocentas e cinquenta) Centro Universitário Mario Pontes Jucá FAPEC - FUNDACAO ALAGOANA DE PESQUISA, EDUCACAO E CULTURA 8 202404202 SOCIAL MEDIA (Tecnológico) 100 (cem) CENTRO UNIVERSITÁRIO UNA BRASIL EDUCACAO S/A 9 202301473 ENGENHARIA DE COMPUTAÇÃO (Bacharelado) 500 (quinhentas) CENTRO UNIVERSITÁRIO UNIBTA OYA EDUCACIONAL LTDA 10 202405614 ENERGIAS RENOVÁVEIS (Tecnológico) 5000 (cinco mil) UNIVERSIDADE CESUMAR VITRU EDUCACAO S.A. Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:03.008452-03:00"
+    },
+    {
+      "id": "743279084",
+      "title": "PORTARIA SERES/MEC Nº 557, DE 9 de novembro de 2026",
+      "abstract": "PORTARIA SERES/MEC Nº 557, DE 9 de novembro de 2026 A <span class='highlight' style='background:#FFA;'>SECRETÁRIA</span> DE <span class='highlight' style='background:#FFA;'>REGULAÇÃO</span> E <span class='highlight' style='background:#FFA;'>SUPERVISÃO</span> DA <span class='highlight' style='background:#FFA;'>EDUCAÇÃO</span> ... <span class='highlight' style='background:#FFA;'>SUPERIOR</span>, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, e tendo",
+      "date": "10/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-557-de-9-de-novembro-de-2026-743279082",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Secretaria de Regulação e Supervisão da Educação Superior\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\"",
+        "\"Secretaria de Regulação e Supervisão da Educação Superior\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 10/11/2026 | Edição: 211 | Seção: 1 | Página: 32 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior PORTARIA SERES/MEC Nº 557, DE 9 de novembro de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso da atribuição que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista o Decreto n° 9.235, de 15 de dezembro de 2017, e as Portarias Normativas MEC n° 20 e nº 23, de 21 de dezembro de 2017, republicadas em 3 de setembro de 2018, bem como a Instrução Normativa SERES nº 1, de 17 de setembro de 2018, e considerando o disposto nos processos e-MEC listados na planilha anexa, resolve: Art. 1º Ficam autorizados os cursos superiores de graduação constantes da tabela do Anexo desta Portaria, solicitados pelas Instituições de Educação Superior citadas, nos termos do disposto no art. 10 do Decreto nº 9.235, de 2017. Parágrafo único. As autorizações a que se refere esta Portaria são válidas exclusivamente para os cursos ministrados nos endereços citados na tabela constante do Anexo desta Portaria. Art. 2º As instituições citadas na tabela constante do Anexo desta Portaria deverão protocolar pedido de reconhecimento dos respectivos cursos, nos termos do disposto no art. 46 do Decreto nº 9.235, de 2017. Art. 3º Esta Portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO (Autorização de Cursos) Nº de Ordem Registro e-MEC nº Curso Nº de vagas totais anuais Mantida Mantenedora Endereço de funcionamento do curso 1 202522591 NUTRIÇÃO (Bacharelado) 100 (cem) AFYA FACULDADE DE CIÊNCIAS MÉDICAS DE BRAGANÇA ITPAC PORTO NACIONAL - INSTITUTO TOCANTINENSE PRESIDENTE ANTONIO CARLOS PORTO S.A. ROD RODOVIA BRAGANCA CAPANEMA AVENIDA MENDONCA FURTADO, S/N, QUADRA 216 LOTE 530, VILA NOVA, BRAGANÇA/PA 2 202609598 NUTRIÇÃO (Bacharelado) 100 (cem) AFYA FACULDADE DE CIÊNCIAS MÉDICAS DE SANTA INÊS IPTAN - INSTITUTO DE ENSINO SUPERIOR PRESIDENTE TANCREDO DE ALMEIDA NEVES S.A. CONTORNO DA BR 316, 346, VILA OLIMPICA, SANTA INÊS/MA 3 202609741 FARMÁCIA (Bacharelado) 120 (cento e vinte) CENTRO UNIVERSITÁRIO ADVENTISTA DE SÃO PAULO INSTITUTO ADVENTISTA DE ENSINO RUA PASTOR HUGO GEGEMBAUER, 265, PARQUE ORTOLÂNDIA, HORTOLÂNDIA/SP 4 202521103 ENFERMAGEM (Bacharelado) 100 (cem) CENTRO UNIVERSITÁRIO ARNALDO HORÁCIO FERREIRA SOCIEDADE EDUCACIONAL ARNALDO HORACIO FERREIRA S/C LTDA RUA PARÁ, 2.280, LOTE 08/B, MIMOSO DO OESTE, LUÍS EDUARDO MAGALHÃES/BA 5 202522614 PSICOLOGIA (Bacharelado) 80 (oitenta) FACULDADE ANHANGUERA DE CACHOEIRO DE ITAPEMIRIM EDITORA E DISTRIBUIDORA EDUCACIONAL S/A AVENIDA JONES DOS SANTOS NEVES, 256 258, MARIA ORTIZ, CACHOEIRO DE ITAPEMIRIM/ES 6 202522618 TERAPIA OCUPACIONAL (Bacharelado) 80 (oitenta) FACULDADE ANHANGUERA DE CACHOEIRO DE ITAPEMIRIM EDITORA E DISTRIBUIDORA EDUCACIONAL S/A AVENIDA JONES DOS SANTOS NEVES, 256 258, MARIA ORTIZ, CACHOEIRO DE ITAPEMIRIM/ES 7 202608516 BIOMEDICINA (Bacharelado) 80 (oitenta) FACULDADE ANHANGUERA DE INDAIATUBA ANHANGUERA EDUCACIONAL PARTICIPACOES S/A RUA CLÁUDIO DAL CANTON, 89, CIDADE NOVA II, INDAIATUBA/SP 8 202520620 FONOAUDIOLOGIA (Bacharelado) 80 (oitenta) FACULDADE ANHANGUERA DE ITAPETININGA ANHANGUERA EDUCACIONAL PARTICIPACOES S/A RUA DOUTOR COUTINHO, 733, BLOCO D, CENTRO, ITAPETININGA/SP 9 202520598 PSICOLOGIA (Bacharelado) 60 (sessenta) FACULDADE ANHANGUERA DE PALMAS EDITORA E DISTRIBUIDORA EDUCACIONAL S/A QUADRA 202 SUL AVENIDA NS 2, 2, 14, BLOCO A, PLANO DIRETOR SUL, PALMAS/TO 10 202608555 FARMÁCIA (Bacharelado) 120 (cento e vinte) FACULDADE ANHANGUERA DE SANTA BÁRBARA ANHANGUERA EDUCACIONAL PARTICIPACOES S/A RUA JUSCELINO KUBITSCHEK DE OLIVEIRA, 1450, 2º DISTRITO INDUSTRIAL, SANTA BÁRBARA D´OESTE/SP 11 202608556 NUTRIÇÃO (Bacharelado) 120 (cento e vinte) FACULDADE ANHANGUERA DE SANTA BÁRBARA ANHANGUERA EDUCACIONAL PARTICIPACOES S/A RUA JUSCELINO KUBITSCHEK DE OLIVEIRA, 1450, 2º DISTRITO INDUSTRIAL, SANTA BÁRBARA D´OESTE/SP 12 202608558 ESTÉTICA E COSMÉTICA (Tecnológico) 120 (cento e vinte) FACULDADE ANHANGÜERA DE SOROCABA ANHANGUERA EDUCACIONAL PARTICIPACOES S/A AVENIDA DOUTOR ARMANDO PANNUNZIO, 1478, CAMPUS - SOROCABA - ITANGUÁ, JARDIM VERA CRUZ, SOROCABA/SP 13 202608519 FONOAUDIOLOGIA (Bacharelado) 120 (cento e vinte) FACULDADE ANHANGUERA DE TABOÃO DA SERRA ANHANGUERA EDUCACIONAL PARTICIPACOES S/A RODOVIA REGIS BITTENCOURT, 199, CENTRO, TABOÃO DA SERRA/SP 14 202522283 ENFERMAGEM (Bacharelado) 100 (cem) FACULDADE DE CIÊNCIAS JURÍDICAS DE BOM JESUS DA LAPA EDITORA E DISTRIBUIDORA EDUCACIONAL S/A AV MANOEL NOVAIS, 1499, CONSOLAÇÃO, CONSOLAÇÃO, BOM JESUS DA LAPA/BA 15 202522267 ENFERMAGEM (Bacharelado) 100 (cem) FACULDADE DE CIÊNCIAS JURÍDICAS DE ERECHIM EDITORA E DISTRIBUIDORA EDUCACIONAL S/A RUA GAURAMA, 353, GUARAMA, CENTRO, ERECHIM/RS 16 202522544 PSICOLOGIA (Bacharelado) 80 (oitenta) FACULDADE DE CIÊNCIAS JURÍDICAS DE JACOBINA EDITORA E DISTRIBUIDORA EDUCACIONAL S/A RUA CORONEL JOÃO VIEIRA, 38, CENTRO, JACOBINA/BA 17 202522206 PSICOLOGIA (Bacharelado) 150 (cento e cinquenta) FACULDADE DO SUL DA BAHIA FUNDACAO FRANCISCO DE ASSIS AVENIDA GENERAL SALGADO VIANA, 364, FACULDADE DO SUL DA BAHIA - CAMPUS II, MIRANTE DO RIO, TEIXEIRA DE FREITAS/BA 18 202521784 PSICOLOGIA (Bacharelado) 80 (oitenta) FACULDADE INOVA MAIS DE SÃO PAULO INSTITUTO EDUCA MAIS (IE+) RUA CONDE DO PINHAL, 78, SEDE CONDE DO PINHAL, CENTRO, SÃO PAULO/SP 19 202523290 EDUCAÇÃO SOCIAL (Tecnológico) 240 (duzentas e quarenta) INSTITUTO MARIANO DE ESTUDOS E INOVAÇÃO IDNSF - INSTITUTO DE DESENVOLVIMENTO NOSSA SENHORA DE FATIMA AVENIDA DOUTOR JOSÉ MACHADO DE SOUZA, 220, CONDOMÍNIO GENTIL, JARDINS, ARACAJU/SE Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:03.420709-03:00"
+    },
+    {
+      "id": "743275752",
+      "title": "<span class='highlight' style='background:#FFA;'>Portaria</span> <span class='highlight' style='background:#FFA;'>SERES</span>/<span class='highlight' style='background:#FFA;'>MEC</span> Nº 567, DE 9 de NOVEMBRO de 2026",
+      "abstract": "<span class='highlight' style='background:#FFA;'>Portaria SERES</span>/<span class='highlight' style='background:#FFA;'>MEC</span> Nº 567, DE 9 de NOVEMBRO de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃOPortaria SERES/MEC Nº 567, DE 9 de NOVEMBRO de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezem...",
+      "date": "10/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-567-de-9-de-novembro-de-2026-743275750",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Portaria SERES/MEC\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 10/11/2026 | Edição: 211 | Seção: 1 | Página: 37 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior Portaria SERES/MEC Nº 567, DE 9 de NOVEMBRO de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista os Decretos nº 9.235, de 15 de dezembro de 2017, e nº 12.456, de 19 de maio de 2025; as Portarias Normativas MEC nºs 20 e 23, de 21 de dezembro de 2017; a Portaria MEC nº 381, de 20 de maio de 2025; conforme consta dos processos e-MEC listados na planilha anexa e do processo SEI nº 23000.021707/2025-11, resolve: Art. 1º Ficam autorizados os cursos superiores no formato semipresencial, relacionados no Anexo desta Portaria, com as vagas totais anuais nele estabelecidas, nos termos do art. 10, do Decreto nº 9.235, de 2017. Art. 2º Os endereços utilizados para as atividades presenciais dos cursos de graduação, ofertados no formato semipresencial, são, exclusivamente, aqueles constantes do Cadastro e-MEC, em conformidade com o art. 30 do Decreto nº 12.456, de 2025. Art. 3º As instituições deverão solicitar o reconhecimento dos cursos, neste ato autorizados, nos termos do art. 46 do Decreto nº 9.235, de 2017. Art. 4º Esta portaria entra em vigor na data de sua publicação. MARTA ABRAMO ANEXO I Nº de Ordem Nº do Processo Grau Curso Nº de Vagas Totais Anuais Mantida Mantenedora 1 202608587 Licenciatura Pedagogia 500 Faculdade de Direito, Ciências e Tecnologia Santa Maria Mada - FADICT FACULDADE DE DIREITO, CIÊNCIAS E TECNOLOGIAS SANTA MARIA MADALENA LTDA. ME 2 202600188 Licenciatura Pedagogia 500 Faculdade Gennari e Peartree UNIAO CULTURAL E EDUCACIONAL DE SAO PAULO - UNICESP 3 202517395 Bacharelado Nutrição 500 Faculdade Três Marias - FTM CENTRO EDUCACIONAL TRES MARIAS LTDA. 4 202517790 Bacharelado Farmácia 200 Faculdade Santo Antônio - FSA OLHAR EDUCACIONAL LTDA 5 202517921 Licenciatura Pedagogia 300 Faculdade SINPAIN - SINPAIN SINPAIN LTDA 6 202515185 Bacharelado Serviço Social 500 Faculdade de Alta Floresta - FAF UNIÃO DAS FACULDADES DE ALTA FLORESTA - UNIFLOR 7 202515235 Bacharelado Fisioterapia 500 Faculdade Evangélica de Valparaíso - FACEV FACULDADE EVANGÉLICA DE VALPARAÍSO LTDA 8 202515236 Bacharelado Farmácia 500 Faculdade Evangélica de Valparaíso - FACEV FACULDADE EVANGÉLICA DE VALPARAÍSO LTDA 9 202515276 Bacharelado Biomedicina 75 Faculdade Brasileira Cristã - FBC CENTRO DE ENSINO SUPERIOR FABRA 10 202515278 Bacharelado Farmácia 100 Faculdade Brasileira Cristã - FBC CENTRO DE ENSINO SUPERIOR FABRA 11 202515328 Tecnológico Gerontologia - Cuidado ao idoso 400 Faculdade de Teologia, Filosofia e Ciências Humanas Gamaliel - FATEFIG CECAM - CENTRO EDUCACIONAL E CULTURAL DA AMAZONIA - EPP 12 202515862 Bacharelado Engenharia de Produção 300 Faculdade EduCareMT - EDUCARE EDUCACAO SUPERIOR E POS GRADUAÇÃO DE MATO GROSSO LTDA - EDUCARE MT 13 202516212 Licenciatura Letras - Português 50 Universidade Estadual de Feira de Santana - UEFS UNIVERSIDADE ESTADUAL DE FEIRA DE SANTANA 14 202516213 Licenciatura Pedagogia 100 Universidade Estadual de Feira de Santana - UEFS UNIVERSIDADE ESTADUAL DE FEIRA DE SANTANA 15 202516235 Licenciatura Ciências Biológicas 150 Universidade do Estado de Mato Grosso Carlos Alberto Reyes Maldonado - UNEMAT FUNDACAO UNIVERSIDADE DO ESTADO DE MATO GROSSO 16 202516238 Licenciatura Computação e Informática 350 Universidade Estadual de Ponta Grossa - UEPG SECRETARIA DE ESTADO DA CIENCIA, TECNOLOGIA E ENSINO SUPERIOR - SETI 17 202516272 Licenciatura Geografia 1.000 Faculdade Campos Elíseos - FCE INSTITUTO DE ENSINO MEDIO E SUPERIOR FRANCOIS MARIE AROUET LTDA 18 202516292 Licenciatura Letras - Português 1.500 Faculdade de Alta Floresta - FAF UNIÃO DAS FACULDADES DE ALTA FLORESTA - UNIFLOR 19 202516293 Licenciatura Educação Física 1.000 Faculdade de Alta Floresta - FAF UNIÃO DAS FACULDADES DE ALTA FLORESTA - UNIFLOR 20 202516319 Licenciatura Pedagogia 400 Faculdade Bezerra de Araújo - FABA CENTRO DE FORMACAO PROFISSIONAL BEZERRA DE ARAUJO LTDA. 21 202516348 Bacharelado Psicopedagogia 2.000 Centro Universitário Sumaré ARS ENSINO SUPERIOR LTDA 22 202516479 Licenciatura Programa Especial de Formação Pedagógica para Docentes para as Disciplinas do Currículo do Ensino Fundamental, Médio e da Educação Profissional em Nível Médio 300 Faculdade Brasileira Cristã - FBC CENTRO DE ENSINO SUPERIOR FABRA 23 202516533 Licenciatura Pedagogia 200 Faculdade Ieducare INSTITUTO SUPERIOR DE EDUCAÇÃO ITAPIPOCA - ISEIT 24 202516746 Licenciatura Pedagogia 500 Faculdade Unità FACULDADE UNITÀ - UNITÀ 25 202516747 Licenciatura Pedagogia 450 Faculdade EduCareMT - EDUCARE EDUCACAO SUPERIOR E POS GRADUAÇÃO DE MATO GROSSO LTDA - EDUCARE MT 26 202517108 Tecnológico Estética e Cosmética 80 Faculdade do Centro Educacional Santa Isabel- Facesi VALDIR BONATTO EIRELI 27 202511976 Tecnológico Gestão Hospitalar 1.000 Centro Universitário Ceuni - FAMETRO IME INSTITUTO METROPOLITANO DE ENSINO LTDA 28 202508187 Bacharelado Serviço Social 1.000 Universidade Metropolitana de Santos - UNIMES CENTRO DE ESTUDOS UNIFICADOS BANDEIRANTE 29 202521983 Licenciatura Pedagogia 900 Faculdade Península PENINSULA EDUCACAO LTDA Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:03.869149-03:00"
+    },
+    {
+      "id": "743274122",
+      "title": "<span class='highlight' style='background:#FFA;'>PORTARIA</span> <span class='highlight' style='background:#FFA;'>SERES</span>/<span class='highlight' style='background:#FFA;'>MEC</span> Nº 563, DE 9 de novembro de 2026",
+      "abstract": "<span class='highlight' style='background:#FFA;'>PORTARIA SERES</span>/<span class='highlight' style='background:#FFA;'>MEC</span> Nº 563, DE 9 de novembro de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃOPORTARIA SERES/MEC Nº 563, DE 9 de novembro de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezem...",
+      "date": "10/11/2026",
+      "section": "DO1",
+      "act_type": "Portaria",
+      "url": "https://www.in.gov.br/web/dou/-/portaria-seres/mec-n-563-de-9-de-novembro-de-2026-743274120",
+      "hierarchy": "Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior",
+      "query_term": "\"Portaria SERES/MEC\"",
+      "query_terms": [
+        "\"Portaria SERES/MEC\""
+      ],
+      "full_text": "Brasão do Brasil Diário Oficial da União Publicado em: 10/11/2026 | Edição: 211 | Seção: 1 | Página: 35 Órgão: Ministério da Educação/Secretaria de Regulação e Supervisão da Educação Superior PORTARIA SERES/MEC Nº 563, DE 9 de novembro de 2026 A SECRETÁRIA DE REGULAÇÃO E SUPERVISÃO DA EDUCAÇÃO SUPERIOR, no uso das atribuições que lhe confere o Decreto nº 12.769, de 5 de dezembro de 2025, e tendo em vista os Decretos nº 9.235, de 15 de dezembro de 2017, e nº 12.456, de 19 de maio de 2025; as Portarias Normativas MEC nºs 20 e 23, de 21 de dezembro de 2017; a Portaria MEC nº 381, de 20 de maio de 2025; e conforme consta dos processos e-MEC listados na planilha anexa, resolve: Art. 1º Fica(m) reconhecido(s) o(s) curso(s) superior(es) de graduação, no formato a distância, constante(s) da tabela do anexo desta Portaria, ministrado(s) pela(s) Instituição(ões) de Educação Superior citada(s), nos termos do disposto no art. 10, do Decreto nº 9.235, de 2017. Art. 2º Os endereços utilizados para as atividades presenciais dos cursos de graduação, ofertados no formato a distância e neste ato reconhecidos, são, exclusivamente, aqueles constantes do Cadastro e-MEC, em conformidade com o art. 30 do Decreto nº 12.456, de 2025. Art. 3º Nos termos do art. 10 § 3º do Decreto nº 9.235, de 2017, e dos artigos 37 a 42 da Portaria MEC nº 23, de 2017, o presente ato autorizativo é válido até o final do ciclo avaliativo ao qual cada curso pertence. Art. 4º Esta Portaria entra em vigor na data de sua publicação MARTA ABRAMO ANEXO (Reconhecimento de Cursos EaD) Nº de Ordem Registro e-MEC nº Curso Nº de vagas totais anuais Mantida Mantenedora 1 202507257 CIÊNCIA DE DADOS (Tecnológico) 450 (quatrocentas e cinquenta) CENTRO UNIVERSITARIO AVANTIS SOCIEDADE AVANTIS DE ENSINO E ESCOLA DE AVIACAO CIVIL S.A. 2 202523533 FONOAUDIOLOGIA (Bacharelado) 2000 (duas mil) CENTRO UNIVERSITÁRIO BRAZ CUBAS SOCIEDADE EDUCACIONAL BRAZ CUBAS LTDA. 3 202519148 PEDAGOGIA (Licenciatura) 500 (quinhentas) Centro Universitário de Ciências e Empreendedorismo CENTRO DE ESTUDOS SUPERIORES DE SANTO ANTONIO DE JESUS S/C - EPP 4 202506767 FARMÁCIA (Bacharelado) 500 (quinhentas) CENTRO UNIVERSITÁRIO DE VALENÇA FUNDACAO EDUCACIONAL D ANDRE ARCOVERDE 5 202418337 FISIOTERAPIA (Bacharelado) 500 (quinhentas) CENTRO UNIVERSITÁRIO DE VALENÇA FUNDACAO EDUCACIONAL D ANDRE ARCOVERDE 6 202418666 BIOMEDICINA (Bacharelado) 100 (cem) CENTRO UNIVERSITÁRIO DO ESPÍRITO SANTO UNESC UNIAO DE EDUCACAO E CULTURA GILDASIO AMADO LTDA 7 202418668 FONOAUDIOLOGIA (Bacharelado) 100 (cem) CENTRO UNIVERSITÁRIO DO ESPÍRITO SANTO UNESC UNIAO DE EDUCACAO E CULTURA GILDASIO AMADO LTDA 8 202504579 FARMÁCIA (Bacharelado) 1000 (uma mil) CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA INSTITUTO DE ENSINO SUPERIOR SOCIAL E TECNOLOGICO LTDA 9 202417599 FARMÁCIA (Bacharelado) 800 (oitocentas) Centro Universitário Fanor Wyden YDUQS EDUCACIONAL LTDA. 10 202504602 FARMÁCIA (Bacharelado) 1080 (uma mil e oitenta) Centro Universitário Favip Wyden YDUQS EDUCACIONAL LTDA. 11 202504652 CIÊNCIAS BIOLÓGICAS (Bacharelado) 300 (trezentas) CENTRO UNIVERSITÁRIO GOYAZES CENTRO DE ESTUDOS OCTAVIO DIAS DE OLIVEIRA 12 202419037 TERAPIA OCUPACIONAL (Bacharelado) 300 (trezentas) CENTRO UNIVERSITÁRIO GOYAZES CENTRO DE ESTUDOS OCTAVIO DIAS DE OLIVEIRA Este conteúdo não substitui o publicado na versão certificada. Borda do rodapé Logo da Imprensa",
+      "full_text_status": "obtido",
+      "article_http_status": 200,
+      "full_text_fetched_at": "2026-11-15T13:58:04.311371-03:00"
     }
   ],
+  "education_authority_results": 22,
+  "full_text_attempts": 22,
+  "full_text_obtained": 22,
+  "errors": [],
   "radar_modified": false,
   "candidate_acts_created": 0,
-  "note": "Busca ampliada por assunto e autoridade emissora. Inteiros teores são apoio à análise e exigem conferência da publicação oficial. Nenhum ato foi confirmado e o Radar não foi alterado."
+  "http_retry": {
+    "total": 3,
+    "backoff_factor": 1.5,
+    "retryable_statuses": [
+      429,
+      500,
+      502,
+      503,
+      504
+    ]
+  },
+  "note": "Busca ampliada por assunto e autoridade emissora com retry HTTP. Inteiros teores são apoio à análise e exigem conferência da publicação oficial. Nenhum ato foi confirmado e o Radar não foi alterado."
 }
