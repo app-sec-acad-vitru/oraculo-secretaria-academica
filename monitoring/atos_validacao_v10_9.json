@@ -1,6 +1,6 @@
 {
   "version": "V10.9",
-  "executed_at": "2026-11-06T22:38:07.400408+00:00",
+  "executed_at": "2026-11-15T15:23:04.829437+00:00",
   "status": "erro_login",
-  "erro": "Login INLABS não confirmado. final_url=https://inlabs.in.gov.br/logar.php status=404"
+  "erro": "Login INLABS sem cookie de sessão. HTTP 404; URL final=https://inlabs.in.gov.br/logar.php; resposta='<!DOCTYPE html> <html lang=\"pt-BR\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Sistema em ManutenÃ§Ã£o (404)</title> <style> body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f9; margin: 0; padding: 0; d'"
 }
