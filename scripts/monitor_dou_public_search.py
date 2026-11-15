@@ -125,7 +125,8 @@ def collect()->dict:
   "education_authority_results":len(authority),"full_text_attempts":min(len(authority),DETAIL_LIMIT),
   "full_text_obtained":sum(x.get("full_text_status")=="obtido" for x in authority),
   "errors":errors,"radar_modified":False,"candidate_acts_created":0,
-  "http_retry":{"total":RETRY_TOTAL,"backoff_factor":RETRY_BACKOFF,"retryable_statuses":list(RETRY_STATUSES)},\n  "note":"Busca ampliada por assunto e autoridade emissora com retry HTTP. Inteiros teores são apoio à análise e exigem conferência da publicação oficial. Nenhum ato foi confirmado e o Radar não foi alterado."}
+  "http_retry":{"total":RETRY_TOTAL,"backoff_factor":RETRY_BACKOFF,"retryable_statuses":list(RETRY_STATUSES)},
+  "note":"Busca ampliada por assunto e autoridade emissora com retry HTTP. Inteiros teores são apoio à análise e exigem conferência da publicação oficial. Nenhum ato foi confirmado e o Radar não foi alterado."}
 
 def main()->int:
  report=collect();OUTPUT.parent.mkdir(parents=True,exist_ok=True)
