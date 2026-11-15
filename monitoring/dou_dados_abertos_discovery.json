@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "collected_at": "2026-11-15T15:56:10.389839+00:00",
+  "collected_at": "2026-11-15T16:02:51.786563+00:00",
   "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
   "api_base": "https://dados.gov.br/dados/api/publico/conjuntos-dados",
   "status": "catalogo_consultado",
