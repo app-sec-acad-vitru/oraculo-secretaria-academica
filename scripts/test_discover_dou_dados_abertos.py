@@ -13,36 +13,45 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(report["candidate_acts_created"], 0)
 
     def test_summarize_keeps_only_xml_or_archive_resources(self):
-        item = {
-            "id": "dataset-1", "nome": "dou-2025", "titulo": "Diário Oficial da União",
-            "recursos": [
-                {"id": "r1", "titulo": "edição XML", "formato": "XML", "link": "https://example.gov/a.xml"},
-                {"id": "r2", "titulo": "planilha", "formato": "CSV", "link": "https://example.gov/a.csv"},
-            ],
-        }
+        item = {"id": "dataset-1", "nome": "dou-2025", "titulo": "DOU", "recursos": [
+            {"id": "r1", "titulo": "edição XML", "formato": "XML", "link": "https://example.gov/a.xml"},
+            {"id": "r2", "titulo": "planilha", "formato": "CSV", "link": "https://example.gov/a.csv"},
+        ]}
         result = discovery.summarize_dataset(item)
         self.assertEqual(result["id"], "dataset-1")
         self.assertEqual(len(result["xml_or_archive_resources"]), 1)
         self.assertEqual(result["xml_or_archive_resources"][0]["id"], "r1")
 
+    @patch.object(discovery, "fetch_dataset_detail")
     @patch.object(discovery, "query_catalog")
-    def test_discover_deduplicates_datasets(self, query):
+    def test_discover_deduplicates_datasets(self, query, detail):
         dataset = {"id": "same", "nome": "dou", "titulo": "DOU", "recursos": []}
         query.return_value = [dataset]
+        detail.return_value = dataset
         report = discovery.discover(token="test-token")
         self.assertEqual(report["datasets_count"], 1)
         self.assertEqual(report["status"], "catalogo_consultado")
         self.assertFalse(report["radar_modified"])
         self.assertEqual(report["candidate_acts_created"], 0)
 
-    @patch.object(discovery, "query_catalog", side_effect=__import__("urllib.error").error.HTTPError(
-        "https://dados.gov.br", 401, "Unauthorized", {}, None
-    ))
-    def test_discover_reports_auth_rejected(self, query):
+    @patch.object(discovery, "fetch_dataset_detail")
+    @patch.object(discovery, "query_catalog", side_effect=__import__("urllib.error").error.HTTPError("https://dados.gov.br", 401, "Unauthorized", {}, None))
+    def test_discover_reports_auth_rejected(self, query, detail):
         report = discovery.discover(token="test-token")
         self.assertEqual(report["status"], "autenticacao_rejeitada")
         self.assertEqual(len(report["errors"]), 2)
         self.assertFalse(report["radar_modified"])
+
+    @patch.object(discovery, "fetch_dataset_detail")
+    @patch.object(discovery, "query_catalog")
+    def test_discover_reads_resources_from_dataset_detail(self, query, detail):
+        query.return_value = [{"id": "dou-2025", "nome": "dou-2025"}]
+        detail.return_value = {"id": "dou-2025", "nome": "dou-2025", "titulo": "DOU", "recursos": [
+            {"id": "xml-1", "titulo": "Arquivo XML", "formato": "XML", "link": "https://example.gov/dou.xml"}
+        ]}
+        report = discovery.discover(token="test-token")
+        self.assertEqual(report["xml_or_archive_resources_count"], 1)
+        self.assertEqual(report["datasets"][0]["xml_or_archive_resources"][0]["id"], "xml-1")
 
 
 if __name__ == "__main__":
