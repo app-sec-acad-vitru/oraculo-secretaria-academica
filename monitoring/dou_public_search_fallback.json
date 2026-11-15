@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "collected_at": "2026-11-15T13:15:36.624638-03:00",
+  "collected_at": "2026-11-15T13:28:24.805154-03:00",
   "source": "Buscador oficial do Diário Oficial da União — Imprensa Nacional",
   "endpoint": "https://www.in.gov.br/consulta/-/buscar/dou",
   "period": {
