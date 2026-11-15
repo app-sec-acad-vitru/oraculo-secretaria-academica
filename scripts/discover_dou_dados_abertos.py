@@ -1,99 +1,129 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Descoberta não invasiva de conjuntos do DOU no Portal Brasileiro de Dados Abertos.
+"""Descoberta não invasiva do catálogo oficial de Dados Abertos.
 
-Não baixa arquivos, não executa parser e não altera o Radar.
+A API atual do dados.gov.br exige chave no cabeçalho Authorization.
+Este script não altera o Radar, não baixa recursos e não cria candidatos.
 """
 from __future__ import annotations
 
 import json
 import os
 import sys
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-API_BASE = os.getenv("DADOS_GOV_API", "https://dados.gov.br/api/3/action/package_search")
-TERMS = ("Diário Oficial da União", "DOU Imprensa Nacional")
+API_BASE = os.getenv(
+    "DADOS_GOV_API",
+    "https://dados.gov.br/dados/api/publico/conjuntos-dados",
+)
+OPENAPI_URL = "https://dados.gov.br/v3/api-docs"
+TERMS = ("Diário Oficial da União", "Imprensa Nacional")
 TIMEOUT = int(os.getenv("DADOS_GOV_TIMEOUT", "30"))
+API_TOKEN = os.getenv("DADOS_GOV_API_TOKEN", "").strip()
 OUTPUT = Path(__file__).resolve().parents[1] / "monitoring" / "dou_dados_abertos_discovery.json"
 
 
-def query_catalog(term: str) -> dict:
-    url = API_BASE + "?" + urllib.parse.urlencode({"q": term, "rows": 50})
+def query_catalog(term: str, token: str) -> list:
+    params = urllib.parse.urlencode({
+        "nomeConjuntoDados": term,
+        "dadosAbertos": "true",
+        "isPrivado": "false",
+        "pagina": 1,
+    })
     request = urllib.request.Request(
-        url,
-        headers={"User-Agent": "OraculoSecretariaAcademica/1.0", "Accept": "application/json"},
+        API_BASE + "?" + params,
+        headers={
+            "User-Agent": "OraculoSecretariaAcademica/1.0",
+            "Accept": "application/json",
+            "Authorization": token,
+        },
     )
     with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
         if response.status != 200:
             raise RuntimeError(f"Catálogo respondeu HTTP {response.status}")
         payload = json.loads(response.read().decode("utf-8"))
-    if not isinstance(payload, dict) or payload.get("success") is not True:
-        raise RuntimeError("Resposta do catálogo não confirmou sucesso CKAN.")
-    result = payload.get("result") or {}
-    if not isinstance(result, dict):
-        raise RuntimeError("Formato inesperado no campo result do catálogo.")
-    return result
+    if not isinstance(payload, list):
+        raise RuntimeError("Formato inesperado: API atual deveria retornar uma lista JSON.")
+    return payload
 
 
 def summarize_dataset(dataset: dict) -> dict:
     resources = []
-    for resource in dataset.get("resources") or []:
+    raw_resources = dataset.get("recursos") or dataset.get("resources") or []
+    for resource in raw_resources:
         if not isinstance(resource, dict):
             continue
-        fmt = str(resource.get("format") or "").upper()
-        url = str(resource.get("url") or "")
-        name = str(resource.get("name") or resource.get("description") or "")
-        if fmt in {"XML", "ZIP", "GZ", "7Z"} or url.lower().endswith((".xml", ".zip", ".xml.gz")):
+        fmt = str(resource.get("formato") or resource.get("format") or "").upper()
+        url = str(resource.get("link") or resource.get("url") or "")
+        name = str(resource.get("titulo") or resource.get("name") or resource.get("descricao") or "")
+        if fmt in {"XML", "ZIP", "GZ", "7Z"} or url.lower().split("?")[0].endswith((".xml", ".zip", ".xml.gz")):
             resources.append({
                 "id": resource.get("id"),
                 "name": name,
                 "format": fmt,
                 "url": url,
-                "created": resource.get("created"),
-                "last_modified": resource.get("last_modified"),
-                "size": resource.get("size"),
             })
     return {
         "id": dataset.get("id"),
-        "name": dataset.get("name"),
-        "title": dataset.get("title"),
-        "organization": (dataset.get("organization") or {}).get("title"),
-        "metadata_modified": dataset.get("metadata_modified"),
-        "resources_count": len(dataset.get("resources") or []),
+        "name": dataset.get("nome") or dataset.get("name"),
+        "title": dataset.get("titulo") or dataset.get("title"),
+        "organization": dataset.get("organizacao") or dataset.get("organization"),
+        "resources_count": len(raw_resources),
         "xml_or_archive_resources": resources,
-        "dataset_url": "https://dados.gov.br/dados/conjuntos/" + str(dataset.get("name") or ""),
     }
 
 
-def discover() -> dict:
+def discover(token: str | None = None) -> dict:
+    token = (token if token is not None else API_TOKEN).strip()
     results = {}
     errors = []
-    for term in TERMS:
-        try:
-            catalog = query_catalog(term)
-            datasets = catalog.get("results") or []
-            results[term] = [summarize_dataset(item) for item in datasets if isinstance(item, dict)]
-        except Exception as exc:  # diagnóstico deve sobreviver à indisponibilidade de uma consulta
-            results[term] = []
-            errors.append({"query": term, "error": f"{type(exc).__name__}: {exc}"})
+    if not token:
+        return {
+            "schema_version": 2,
+            "collected_at": datetime.now(timezone.utc).isoformat(),
+            "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
+            "api_base": API_BASE,
+            "status": "autenticacao_necessaria",
+            "message": "A especificação OpenAPI oficial exige chave no cabeçalho Authorization.",
+            "queries": {},
+            "datasets": [],
+            "datasets_count": 0,
+            "xml_or_archive_resources_count": 0,
+            "errors": [],
+            "radar_modified": False,
+            "downloads_performed": 0,
+            "candidate_acts_created": 0,
+        }
 
     unique = {}
-    for matches in results.values():
-        for item in matches:
-            if item.get("id"):
-                unique[item["id"]] = item
+    for term in TERMS:
+        try:
+            matches = query_catalog(term, token)
+            results[term] = [summarize_dataset(item) for item in matches if isinstance(item, dict)]
+            for item in results[term]:
+                if item.get("id"):
+                    unique[item["id"]] = item
+        except urllib.error.HTTPError as exc:
+            detail = "A chave foi recusada ou não foi aceita." if exc.code in (401, 403) else str(exc)
+            errors.append({"query": term, "http_status": exc.code, "error": detail})
+            results[term] = []
+        except Exception as exc:
+            errors.append({"query": term, "error": f"{type(exc).__name__}: {exc}"})
+            results[term] = []
 
     resources = [r for ds in unique.values() for r in ds["xml_or_archive_resources"]]
     status = "catalogo_consultado" if unique and not errors else (
-        "catalogo_parcial" if unique else ("fonte_indisponivel" if errors else "nenhum_conjunto_localizado")
+        "catalogo_parcial" if unique else ("autenticacao_rejeitada" if any(e.get("http_status") in (401, 403) for e in errors)
+        else ("fonte_indisponivel" if errors else "nenhum_conjunto_localizado"))
     )
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "collected_at": datetime.now(timezone.utc).isoformat(),
-        "source": "Portal Brasileiro de Dados Abertos — API CKAN",
+        "source": "Portal Brasileiro de Dados Abertos — API REST oficial",
         "api_base": API_BASE,
         "status": status,
         "queries": results,
@@ -110,7 +140,7 @@ def discover() -> dict:
 def main() -> int:
     report = discover()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
     print(json.dumps({
         "status": report["status"],
         "datasets_count": report["datasets_count"],
@@ -119,7 +149,6 @@ def main() -> int:
         "output": str(OUTPUT),
         "radar_modified": False,
     }, ensure_ascii=False))
-    # Descoberta é diagnóstica: indisponibilidade do catálogo não deve interromper o monitor oficial.
     return 0
 
 
