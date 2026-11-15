@@ -28,6 +28,70 @@ class ParserV109Tests(unittest.TestCase):
         self.assertEqual(fields["modalidade"], "Semipresencial")
 
 
+    def test_login_usa_endpoint_oficial_sem_preflight_acessar(self):
+        class Cookies:
+            def get(self, name):
+                return "sessao-teste" if name == "inlabs_session_cookie" else None
+
+        class Response:
+            status_code = 200
+            url = "https://inlabs.in.gov.br/"
+            text = "Minha conta"
+            def raise_for_status(self):
+                return None
+
+        class FakeSession:
+            def __init__(self):
+                self.headers = {}
+                self.cookies = Cookies()
+                self.calls = []
+            def post(self, url, **kwargs):
+                self.calls.append(("POST", url, kwargs))
+                return Response()
+            def get(self, url, **kwargs):
+                self.calls.append(("GET", url, kwargs))
+                raise AssertionError("O fluxo oficial não deve chamar /acessar.php")
+
+        previous_email, previous_password = PARSER.EMAIL, PARSER.PASSWORD
+        PARSER.EMAIL, PARSER.PASSWORD = "teste@example.org", "senha-ficticia"
+        session = FakeSession()
+        try:
+            result = PARSER.login(session)
+            self.assertEqual(result.status_code, 200)
+            self.assertEqual(len(session.calls), 1)
+            self.assertEqual(session.calls[0][0], "POST")
+            self.assertEqual(session.calls[0][1], "https://inlabs.in.gov.br/logar.php")
+            self.assertEqual(session.calls[0][2]["data"], {
+                "email": "teste@example.org", "password": "senha-ficticia"
+            })
+        finally:
+            PARSER.EMAIL, PARSER.PASSWORD = previous_email, previous_password
+
+    def test_login_sem_cookie_falha_com_diagnostico_claro(self):
+        class Cookies:
+            def get(self, name):
+                return None
+        class Response:
+            status_code = 200
+            url = "https://inlabs.in.gov.br/"
+            text = "Página de manutenção"
+            def raise_for_status(self):
+                return None
+        class FakeSession:
+            def __init__(self):
+                self.headers = {}
+                self.cookies = Cookies()
+            def post(self, url, **kwargs):
+                return Response()
+
+        previous_email, previous_password = PARSER.EMAIL, PARSER.PASSWORD
+        PARSER.EMAIL, PARSER.PASSWORD = "teste@example.org", "senha-ficticia"
+        try:
+            with self.assertRaisesRegex(RuntimeError, "cookie de sessão"):
+                PARSER.login(FakeSession())
+        finally:
+            PARSER.EMAIL, PARSER.PASSWORD = previous_email, previous_password
+
     def test_classifica_http_404_como_endpoint_indisponivel(self):
         class Response:
             status_code = 404
