@@ -1,32 +1,32 @@
 {
-  "checked_at": "2026-11-15T18:28:13.395105+00:00",
+  "checked_at": "2026-11-16T17:13:22.848730+00:00",
   "summary": {
     "sources_registered": 52,
-    "sources_verified": 49,
-    "changes_detected": 19,
-    "access_errors": 3,
-    "recovered": 1
+    "sources_verified": 48,
+    "changes_detected": 24,
+    "access_errors": 4,
+    "recovered": 0
   },
   "sources": {
     "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm": {
       "name": "Planalto",
       "url": "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm",
-      "checked_at": "2026-11-15T18:26:17.433762+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:11:05.164840+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm",
-      "checked_at": "2026-11-15T18:26:20.069354+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:11:07.830925+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/diploma-digital": {
       "name": "MEC / Diploma Digital",
       "url": "https://www.gov.br/mec/pt-br/diploma-digital",
-      "checked_at": "2026-11-15T18:26:21.044517+00:00",
-      "hash": "b98bbd254c502c8bffee5776b44e3cef082e7357dba4d47600660fcae4163dd8",
+      "checked_at": "2026-11-16T17:11:08.807077+00:00",
+      "hash": "304335393aeba3ec55ff28acca655f06245b4b1b5ddc1736d89e0a72368f15ec",
       "status": 200
     },
     "https://www.gov.br/participamaisbrasil/ufsc-plano-de-desenvolvimento-institucional-2025-2029": {
@@ -39,84 +39,84 @@
     "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital": {
       "name": "Governo Federal",
       "url": "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital",
-      "checked_at": "2026-11-15T18:26:39.841451+00:00",
-      "hash": "dcad2cf1d1d529c02fb41ca93df88506f2699f99f13a06f554cd57b4fea06f7c",
+      "checked_at": "2026-11-16T17:11:37.020055+00:00",
+      "hash": "a1e321b97372123b26671a8624c6d81d5bb3bf709aeeed0c5e85d65750020781",
       "status": 200
     },
     "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52": {
       "name": "Imprensa Nacional / DOU",
       "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52",
-      "checked_at": "2026-11-15T18:26:40.820550+00:00",
+      "checked_at": "2026-11-16T17:11:38.002131+00:00",
       "hash": "4d28a44c99764041866003cc3e1a873337d161151bafcdb25c6759e4c6e12171",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
-      "checked_at": "2026-11-15T18:26:43.305691+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:11:40.358712+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm",
-      "checked_at": "2026-11-15T18:26:45.536650+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:11:42.850001+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm": {
       "name": "Planalto",
       "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
-      "checked_at": "2026-11-15T18:26:47.895942+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:11:45.484241+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view": {
       "name": "CNE/MEC",
       "url": "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view",
-      "checked_at": "2026-11-15T18:26:54.978368+00:00",
-      "hash": "59e6c9e3624a7e6a7748d59583b288587623a2c97308f70b5dc48d8e896ff276",
+      "checked_at": "2026-11-16T17:11:51.326180+00:00",
+      "hash": "b6d893795814786f94c72a8feb66e0b41e942101ada7bd6145868d68d4a57f90",
       "status": 200
     },
     "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=09%2F04%2F2018&jornal=515&pagina=43": {
       "name": "Imprensa Nacional / DOU — Resolução CNE/CES nº 1/2018",
       "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=09%2F04%2F2018&jornal=515&pagina=43",
-      "checked_at": "2026-11-15T18:26:55.412415+00:00",
+      "checked_at": "2026-11-16T17:11:53.365724+00:00",
       "hash": "9c501f7fc1ab565ba230c30d56a6c2f5eb9c42385761532ed5d4962119539f8f",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas": {
       "name": "MEC / CNE",
       "url": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas",
-      "checked_at": "2026-11-15T18:27:00.037153+00:00",
-      "hash": "ca12b852162d48c2399b4506ad7bb51d30f986e9300e13cc757364b1fcd0477b",
+      "checked_at": "2026-11-16T17:11:58.363372+00:00",
+      "hash": "c053d9789b026821d2baf9b8f0e68bdef7451cf274926e0a717e324e3d52fae8",
       "status": 200
     },
     "https://www.ufabc.edu.br/images/servicos/parecer-cne-379-2004.pdf": {
       "name": "UFABC — cópia do Parecer CNE/CES nº 379/2004",
       "url": "https://www.ufabc.edu.br/images/servicos/parecer-cne-379-2004.pdf",
-      "checked_at": "2026-11-15T18:27:00.715660+00:00",
+      "checked_at": "2026-11-16T17:11:59.152058+00:00",
       "hash": "fe653f505463d0f8ab90be277e8e0ba15a4a5005f30606586125a5665bbd388c",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/diploma-digital/dados": {
       "name": "MEC — Diploma Digital",
       "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados",
-      "checked_at": "2026-11-15T18:27:01.553765+00:00",
-      "hash": "ef8fa74bc0ddeb1771d2a4a0250372f4edfab1bf31e05a3c0242a4893540b03b",
+      "checked_at": "2026-11-16T17:12:00.124829+00:00",
+      "hash": "8c1d064c1cdeda27ec7100ff9cac858c89dd7056e8a58d7dfc8858ec30ee8fb2",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024": {
       "name": "MEC / CNE",
       "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024",
-      "checked_at": "2026-11-15T18:27:02.524037+00:00",
-      "hash": "63053789c99396b11397a67e87435b5257602e63fc95d5485ba6db4441200672",
+      "checked_at": "2026-11-16T17:12:01.097739+00:00",
+      "hash": "d1e7e529b3bb87d0a2d7c8930791837f676ed86dfeb488d4e61448fc9eaa0aaa",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf": {
       "name": "MEC / CNE",
       "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pcp005_25.pdf",
-      "checked_at": "2026-11-15T18:27:03.643713+00:00",
+      "checked_at": "2026-11-16T17:12:02.223016+00:00",
       "hash": "191519f1482894f1af03741a638cd14c98aa13bd47278d1dd610d53be1cab512",
       "status": 200
     },
@@ -130,56 +130,56 @@
     "https://www.gov.br/mec/pt-br/cne/2025/marco/pces220_25.pdf": {
       "name": "MEC / CNE",
       "url": "https://www.gov.br/mec/pt-br/cne/2025/marco/pces220_25.pdf",
-      "checked_at": "2026-11-15T18:27:06.449958+00:00",
+      "checked_at": "2026-11-16T17:12:05.492440+00:00",
       "hash": "feb3367f9b9639a8d6e61d8aa822facaafc2bc64e83416969bf321d2f142316f",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica": {
       "name": "MEC / CNE",
       "url": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica",
-      "checked_at": "2026-11-15T18:27:07.559808+00:00",
-      "hash": "b6b07acd3c3e739cd9f91db4358c0024aed9177c9a86cb9342e870225ff5d34d",
+      "checked_at": "2026-11-16T17:12:11.664202+00:00",
+      "hash": "1319629a772f9587ce1c57b329d500ba6f6a1789fe0197521cc993913f05e4e6",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm",
-      "checked_at": "2026-11-15T18:27:09.913584+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:12:13.882987+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma": {
       "name": "Inep",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma",
-      "checked_at": "2026-11-15T18:27:11.893370+00:00",
-      "hash": "d5aedbad017e67a9ebc220a9d2efa499ba46b8476e02491b46dc8c7a59b26975",
+      "checked_at": "2026-11-16T17:12:14.859703+00:00",
+      "hash": "b470ff3d123cb649b1a5563152cc9579a3467bdd91194cb6d8a0537eb84ffa1a",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade": {
       "name": "Inep",
       "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade",
-      "checked_at": "2026-11-15T18:27:14.005624+00:00",
+      "checked_at": "2026-11-16T17:12:16.104875+00:00",
       "hash": "79d386037f5876c6451cb5f40da0c707179e6f7f1878e5f711ced3d42ed7198e",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2026": {
       "name": "INEP",
       "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2026",
-      "checked_at": "2026-11-15T18:27:16.017330+00:00",
+      "checked_at": "2026-11-16T17:12:17.079333+00:00",
       "hash": "c9bf8667bab0a43afd80f95f160904efd5a5f469442cd012b13923c4ea641f5b",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm",
-      "checked_at": "2026-11-15T18:27:18.371671+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:12:19.440917+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf": {
       "name": "MEC",
       "url": "https://www.gov.br/mec/pt-br/politica-regulacao-supervisao-educacao-superior/PORTARIAMECN381.pdf",
-      "checked_at": "2026-11-15T18:27:20.319241+00:00",
+      "checked_at": "2026-11-16T17:12:21.387457+00:00",
       "hash": "e9a4a47a72819f84444799dfd89c04b487dc14e0a7e6a1e410c824b9471b4d45",
       "status": 200
     },
@@ -193,56 +193,56 @@
     "https://mecnormas.mec.gov.br/pesquisa/detalhar/5186": {
       "name": "MEC Normas — Portaria MEC nº 506/2025 / Nova Política de EaD",
       "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/5186",
-      "checked_at": "2026-11-15T18:27:22.144273+00:00",
+      "checked_at": "2026-11-16T17:12:32.120694+00:00",
       "hash": "6368311302f28c87012fff230b303575eedaf6e452bc800a1ad3721a92551263",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm",
-      "checked_at": "2026-11-15T18:27:24.501235+00:00",
-      "hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "checked_at": "2026-11-16T17:12:34.478380+00:00",
+      "hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/avaliacao-da-educacao-profissional-e-tecnologica/legislacao": {
       "name": "INEP — Legislação da Avaliação da EPT",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/avaliacao-da-educacao-profissional-e-tecnologica/legislacao",
-      "checked_at": "2026-11-15T18:27:26.319286+00:00",
-      "hash": "dee59e386dea5a540ad74f2cda8f087458770c8bfe6193888b24915dab761cf0",
+      "checked_at": "2026-11-16T17:12:35.593856+00:00",
+      "hash": "736520853d7b860e179a4351c47bc26f54fc839a8a1512d81f1bc61bd35d80cf",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/estrutura-organizacional/orgaos-especificos-singulares/secretaria-de-educacao-profissional/catalogos-nacionais-de-cursos/CNCT_catalogogerado2022_2023.pdf": {
       "name": "MEC — Catálogo Nacional de Cursos Técnicos (CNCT) — 4ª edição",
       "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/institucional/estrutura-organizacional/orgaos-especificos-singulares/secretaria-de-educacao-profissional/catalogos-nacionais-de-cursos/CNCT_catalogogerado2022_2023.pdf",
-      "checked_at": "2026-11-15T18:27:31.776847+00:00",
+      "checked_at": "2026-11-16T17:12:41.106540+00:00",
       "hash": "000d2930839921ca23e012bef19d32d45a289fe905f609048e94ad7ee07a0438",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/media/seb-1/pdf/MANUAL_SISTEC.pdf": {
       "name": "MEC — Manual do SISTEC",
       "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/MANUAL_SISTEC.pdf",
-      "checked_at": "2026-11-15T18:27:51.778978+00:00",
+      "checked_at": "2026-11-16T17:13:01.161313+00:00",
       "hash": "e7b2f89b6438ea7e58c4881fe839ff77937dabeae6104cf08bba60b98d64d55c",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/media/seb-1/pdf/rceb006_12_ED.pdf": {
       "name": "MEC/CNE — Resolução CNE/CEB nº 6/2012",
       "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/rceb006_12_ED.pdf",
-      "checked_at": "2026-11-15T18:27:52.349808+00:00",
+      "checked_at": "2026-11-16T17:13:01.773624+00:00",
       "hash": "1bfa6887777d8ab10ac8f1f5f351c5936c6242879e19b71ecd05af892a2816c7",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_ept_de_nivel_medio.pdf": {
       "name": "MEC",
       "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_ept_de_nivel_medio.pdf",
-      "checked_at": "2026-11-15T18:27:52.910257+00:00",
+      "checked_at": "2026-11-16T17:13:02.673618+00:00",
       "hash": "29b9b13b3c71474820ba8960d8e0d07b45bd047ac7205ace2d50cc54f7b3061d",
       "status": 200
     },
     "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_formacao_inicial_e_continuada.pdf": {
       "name": "MEC",
       "url": "https://www.gov.br/mec/pt-br/media/seb-1/pdf/ept/cursos_formacao_inicial_e_continuada.pdf",
-      "checked_at": "2026-11-15T18:27:53.334849+00:00",
+      "checked_at": "2026-11-16T17:13:03.156805+00:00",
       "hash": "a44dcd14902e9a1080da3d9696d5da81f943fb6d2d120df597a586b72111ce8a",
       "status": 200
     },
@@ -256,135 +256,135 @@
     "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf": {
       "name": "DOU / MEC",
       "url": "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf",
-      "checked_at": "2026-11-15T18:27:56.674372+00:00",
+      "checked_at": "2026-11-16T17:13:06.544158+00:00",
       "hash": "78d1231e85708165394a69d6369554c39969b398032ce55f5ecdf51322d4322e",
       "status": 200
     },
     "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab": {
       "name": "MEC/CAPES",
       "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab",
-      "checked_at": "2026-11-15T18:27:57.775775+00:00",
-      "hash": "73ad94c7ff2f928e73a04eb7ceb752579d2e48c3a2a5a6c0242081729c5ffac6",
+      "checked_at": "2026-11-16T17:13:07.580574+00:00",
+      "hash": "aef05ab32265449c27a91e07b401d7cd7bae60803327ff93d836c6d394fabb81",
       "status": 200
     },
     "https://mecnormas.mec.gov.br/pesquisa/detalhar/7460": {
       "name": "MEC / referência normativa",
       "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/7460",
-      "checked_at": "2026-11-15T18:27:58.436070+00:00",
+      "checked_at": "2026-11-16T17:13:08.244852+00:00",
       "hash": "6368311302f28c87012fff230b303575eedaf6e452bc800a1ad3721a92551263",
       "status": 200
     },
     "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10": {
       "name": "MEC Normas / INEP",
       "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10",
-      "checked_at": "2026-11-15T18:27:59.097865+00:00",
+      "checked_at": "2026-11-16T17:13:08.907817+00:00",
       "hash": "6368311302f28c87012fff230b303575eedaf6e452bc800a1ad3721a92551263",
       "status": 200
     },
     "https://www.abmes.org.br/legislacoes/detalhe/5654/portaria-inep-n-503-2026": {
       "name": "ABMES / referência da publicação no DOU",
       "url": "https://www.abmes.org.br/legislacoes/detalhe/5654/portaria-inep-n-503-2026",
-      "checked_at": "2026-11-15T18:27:59.478105+00:00",
+      "checked_at": "2026-11-16T17:13:09.362977+00:00",
       "hash": "cc4b1a9e9b101952c7d3a03cb3accf8e76c7db8ae5f948650fb46097fa70edca",
       "status": 200
     },
     "https://www.abmes.org.br/legislacoes/detalhe/5656/portaria-inep-n-147-2026": {
       "name": "ABMES / referência da publicação no DOU",
       "url": "https://www.abmes.org.br/legislacoes/detalhe/5656/portaria-inep-n-147-2026",
-      "checked_at": "2026-11-15T18:27:59.744924+00:00",
+      "checked_at": "2026-11-16T17:13:09.668462+00:00",
       "hash": "dac4f78588eb2fc7039b2cf83bcdce486c45e712f065f4ca58d1f785872c72e3",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/comunicados": {
       "name": "Inep",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/comunicados",
-      "checked_at": "2026-11-15T18:28:01.670984+00:00",
+      "checked_at": "2026-11-16T17:13:11.341130+00:00",
       "hash": "c97af7327e136606d93566fe089973524d3f531a43536afbd2109e9326d55b4f",
       "status": 200
     },
     "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743": {
       "name": "Diário Oficial da União",
       "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743",
-      "checked_at": "2026-11-15T18:28:02.857051+00:00",
-      "hash": "8a7fae1521c9b5e3880b5e435e9dfe741d7a9f0b1ee6c3e3cad3acb8f2ef1446",
+      "checked_at": "2026-11-16T17:13:12.699288+00:00",
+      "hash": "cb6f2484c638303e24ddc1e9a87304ba32fc29995fe445a4d928a6d18218a287",
       "status": 200
     },
     "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558": {
       "name": "Diário Oficial da União / CNE",
       "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558",
-      "checked_at": "2026-11-15T18:28:03.919458+00:00",
-      "hash": "4734e41dc222c8074956602b0975b3ad8f82da235a14ae1e4d51252f5ffb13a1",
+      "checked_at": "2026-11-16T17:13:13.769607+00:00",
+      "hash": "8f0f4f002373a1db994282566464e477ca3af32f0afe1fccaa20151b9442a453",
       "status": 200
     },
     "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299": {
       "name": "Diário Oficial da União",
       "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299",
-      "checked_at": "2026-11-15T18:28:05.006530+00:00",
-      "hash": "9491bcd7e67ba69d7f539ab6e9238cf0358ef883cd78ad52e134754e33a8377a",
+      "checked_at": "2026-11-16T17:13:14.881856+00:00",
+      "hash": "f42a8835a6b2bfb35b32eacbe3c52c3e8f38788bf507d35ff0d5dde90cee1edf",
       "status": 200
     },
     "https://ufgd.edu.br/secao/srd/legislacoes": {
       "name": "UFGD — legislação de Registro de Diplomas",
       "url": "https://ufgd.edu.br/secao/srd/legislacoes",
-      "checked_at": "2026-11-15T18:28:06.787801+00:00",
+      "checked_at": "2026-11-16T17:13:16.652455+00:00",
       "hash": "1de9800ae6e7b0672401ac8e6f5ba9f2438bd6fa9af885d4e92d618db7e9d3f4",
       "status": 200
     },
     "https://www.gov.br/pt-br/servicos/solicitar-a-insercao-ou-a-correcao-de-dados-de-ato-regulatorio-de-ies-ou-curso": {
       "name": "Gov.br — MEC / e-MEC",
       "url": "https://www.gov.br/pt-br/servicos/solicitar-a-insercao-ou-a-correcao-de-dados-de-ato-regulatorio-de-ies-ou-curso",
-      "checked_at": "2026-11-15T18:28:07.487412+00:00",
+      "checked_at": "2026-11-16T17:13:18.123763+00:00",
       "hash": "46bdf4b8570334da1213c26bb52e76426dd3aade022f20bc839f362e906c7147",
       "status": 200
     },
     "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-presencial": {
       "name": "Gov.br — MEC",
       "url": "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-presencial",
-      "checked_at": "2026-11-15T18:28:08.048697+00:00",
+      "checked_at": "2026-11-16T17:13:18.824605+00:00",
       "hash": "42d9fca000a3853b3b6a618664707066b342600205e1a5db3f6e294881856ec4",
       "status": 200
     },
     "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-ead": {
       "name": "Gov.br — MEC",
       "url": "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-ead",
-      "checked_at": "2026-11-15T18:28:08.883447+00:00",
-      "hash": "c27e295de24794a01f8f037930fa635ee32b4e0eb901f78d1de268151ca1e54e",
+      "checked_at": "2026-11-16T17:13:19.391044+00:00",
+      "hash": "947e937d7036f4d063762173772b4bf59f1a7581f4085d03d0222271bddee2d9",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/indicadores-de-qualidade-da-educacao-superior": {
       "name": "INEP",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/indicadores-de-qualidade-da-educacao-superior",
-      "checked_at": "2026-11-15T18:28:10.838249+00:00",
-      "hash": "9b539f721d04a1583628759ccf2b1a2e5108cb99f66b2d39148a7cafbf0adf59",
+      "checked_at": "2026-11-16T17:13:20.228095+00:00",
+      "hash": "63c6629562675c4aa64443224484a88eb4b13e9975d142f1ee08346b97bc2d77",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2025": {
       "name": "INEP",
       "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2025",
-      "checked_at": "2026-11-15T18:28:12.685873+00:00",
+      "checked_at": "2026-11-16T17:13:21.878183+00:00",
       "hash": "a85a2554ff5587600adcf01269b9615c2f75691b133c36d718c3ec5ff5479d07",
       "status": 200
     },
     "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-bacharelado-e-superiores-de-tecnologia": {
       "name": "INEP",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-bacharelado-e-superiores-de-tecnologia",
-      "checked_at": "2026-11-15T18:28:13.394841+00:00",
-      "hash": "0a09a0e6b906758e02f16e268782df7b78487a44fa0dbf2e3db8ac134c192ebe",
+      "checked_at": "2026-11-16T17:13:22.848437+00:00",
+      "hash": "e60e8c00472c6ec454580fd1764fe1886761047d5fd4b4052865c0dd9e4d05eb",
       "status": 200
     }
   },
   "classification_counts": {
     "ato_normativo_candidato": 9,
     "orientacao_pagina": 4,
-    "pagina_oficial": 6,
+    "pagina_oficial": 11,
     "alteracao_normativa_confirmada": 0
   },
   "changes": [
     {
       "name": "Planalto",
       "url": "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm",
-      "previous_hash": "251df60cb7535bf0f9e19330653efbd67e72413756bc524890ae0dda8715a414",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "pagina_oficial",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -393,8 +393,8 @@
     {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm",
-      "previous_hash": "251df60cb7535bf0f9e19330653efbd67e72413756bc524890ae0dda8715a414",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -403,8 +403,8 @@
     {
       "name": "MEC / Diploma Digital",
       "url": "https://www.gov.br/mec/pt-br/diploma-digital",
-      "previous_hash": "b9e21a6cec67b001e48a7b65dc8d533aa90e8e6da573eee54eaa728bfda50b31",
-      "current_hash": "b98bbd254c502c8bffee5776b44e3cef082e7357dba4d47600660fcae4163dd8",
+      "previous_hash": "b98bbd254c502c8bffee5776b44e3cef082e7357dba4d47600660fcae4163dd8",
+      "current_hash": "304335393aeba3ec55ff28acca655f06245b4b1b5ddc1736d89e0a72368f15ec",
       "change_type": "pagina_oficial",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -413,8 +413,8 @@
     {
       "name": "Governo Federal",
       "url": "https://www.gov.br/pt-br/noticias/educacao-e-pesquisa/2022/05/governo-federal-define-prazos-para-conversao-de-acervo-academico-para-o-meio-digital",
-      "previous_hash": "a1e321b97372123b26671a8624c6d81d5bb3bf709aeeed0c5e85d65750020781",
-      "current_hash": "dcad2cf1d1d529c02fb41ca93df88506f2699f99f13a06f554cd57b4fea06f7c",
+      "previous_hash": "dcad2cf1d1d529c02fb41ca93df88506f2699f99f13a06f554cd57b4fea06f7c",
+      "current_hash": "a1e321b97372123b26671a8624c6d81d5bb3bf709aeeed0c5e85d65750020781",
       "change_type": "orientacao_pagina",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -423,8 +423,8 @@
     {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
-      "previous_hash": "251df60cb7535bf0f9e19330653efbd67e72413756bc524890ae0dda8715a414",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -433,8 +433,8 @@
     {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm",
-      "previous_hash": "251df60cb7535bf0f9e19330653efbd67e72413756bc524890ae0dda8715a414",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -443,18 +443,58 @@
     {
       "name": "Planalto",
       "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
-      "previous_hash": "251df60cb7535bf0f9e19330653efbd67e72413756bc524890ae0dda8715a414",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
       "label": "ATO NORMATIVO — VALIDAÇÃO PENDENTE"
     },
     {
+      "name": "CNE/MEC",
+      "url": "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view",
+      "previous_hash": "59e6c9e3624a7e6a7748d59583b288587623a2c97308f70b5dc48d8e896ff276",
+      "current_hash": "b6d893795814786f94c72a8feb66e0b41e942101ada7bd6145868d68d4a57f90",
+      "change_type": "pagina_oficial",
+      "verification_status": "sem_confirmacao_normativa",
+      "confirmed_normative_change": false,
+      "label": "PÁGINA OFICIAL ATUALIZADA"
+    },
+    {
       "name": "MEC / CNE",
       "url": "https://www.gov.br/mec/pt-br/cne/normas-classificadas-por-assunto/cobranca-de-taxas",
-      "previous_hash": "177ba9b96ae3d8054e92be08f028193ad47c34b2fb9670a6b0a921835b6fa6cf",
-      "current_hash": "ca12b852162d48c2399b4506ad7bb51d30f986e9300e13cc757364b1fcd0477b",
+      "previous_hash": "ca12b852162d48c2399b4506ad7bb51d30f986e9300e13cc757364b1fcd0477b",
+      "current_hash": "c053d9789b026821d2baf9b8f0e68bdef7451cf274926e0a717e324e3d52fae8",
+      "change_type": "orientacao_pagina",
+      "verification_status": "sem_confirmacao_normativa",
+      "confirmed_normative_change": false,
+      "label": "ORIENTAÇÃO/PÁGINA OFICIAL ATUALIZADA"
+    },
+    {
+      "name": "MEC — Diploma Digital",
+      "url": "https://www.gov.br/mec/pt-br/diploma-digital/dados",
+      "previous_hash": "ef8fa74bc0ddeb1771d2a4a0250372f4edfab1bf31e05a3c0242a4893540b03b",
+      "current_hash": "8c1d064c1cdeda27ec7100ff9cac858c89dd7056e8a58d7dfc8858ec30ee8fb2",
+      "change_type": "pagina_oficial",
+      "verification_status": "sem_confirmacao_normativa",
+      "confirmed_normative_change": false,
+      "label": "PÁGINA OFICIAL ATUALIZADA"
+    },
+    {
+      "name": "MEC / CNE",
+      "url": "https://www.gov.br/mec/pt-br/cne/resolucoes-cp-2024",
+      "previous_hash": "63053789c99396b11397a67e87435b5257602e63fc95d5485ba6db4441200672",
+      "current_hash": "d1e7e529b3bb87d0a2d7c8930791837f676ed86dfeb488d4e61448fc9eaa0aaa",
+      "change_type": "pagina_oficial",
+      "verification_status": "sem_confirmacao_normativa",
+      "confirmed_normative_change": false,
+      "label": "PÁGINA OFICIAL ATUALIZADA"
+    },
+    {
+      "name": "MEC / CNE",
+      "url": "https://www.gov.br/mec/pt-br/cne/formacao-superior-para-a-docencia-na-educacao-basica",
+      "previous_hash": "b6b07acd3c3e739cd9f91db4358c0024aed9177c9a86cb9342e870225ff5d34d",
+      "current_hash": "1319629a772f9587ce1c57b329d500ba6f6a1789fe0197521cc993913f05e4e6",
       "change_type": "orientacao_pagina",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -463,8 +503,8 @@
     {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm",
-      "previous_hash": "e2a9547bff89f7adc06ceee7c42ab8f145d5aede4a8b4b9e93d3ebe17b6c02c4",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "pagina_oficial",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -473,28 +513,18 @@
     {
       "name": "Inep",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-da-educacao-superior/orientacoes/cronograma",
-      "previous_hash": "b470ff3d123cb649b1a5563152cc9579a3467bdd91194cb6d8a0537eb84ffa1a",
-      "current_hash": "d5aedbad017e67a9ebc220a9d2efa499ba46b8476e02491b46dc8c7a59b26975",
+      "previous_hash": "d5aedbad017e67a9ebc220a9d2efa499ba46b8476e02491b46dc8c7a59b26975",
+      "current_hash": "b470ff3d123cb649b1a5563152cc9579a3467bdd91194cb6d8a0537eb84ffa1a",
       "change_type": "pagina_oficial",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
       "label": "PÁGINA OFICIAL ATUALIZADA"
     },
     {
-      "name": "Inep",
-      "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-de-desempenho-dos-estudantes-enade",
-      "previous_hash": "aa2544f46aad9c0230da22007381fca4979eea95cde955ff2c5059d13eea8810",
-      "current_hash": "79d386037f5876c6451cb5f40da0c707179e6f7f1878e5f711ced3d42ed7198e",
-      "change_type": "orientacao_pagina",
-      "verification_status": "sem_confirmacao_normativa",
-      "confirmed_normative_change": false,
-      "label": "ORIENTAÇÃO/PÁGINA OFICIAL ATUALIZADA"
-    },
-    {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm",
-      "previous_hash": "e2a9547bff89f7adc06ceee7c42ab8f145d5aede4a8b4b9e93d3ebe17b6c02c4",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -503,18 +533,28 @@
     {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm",
-      "previous_hash": "e2a9547bff89f7adc06ceee7c42ab8f145d5aede4a8b4b9e93d3ebe17b6c02c4",
-      "current_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "previous_hash": "58a845607fcafddeee7414fddd3a8127c7e8dd7778bfece4aa90b35a00878e4f",
+      "current_hash": "91d7c713492f7cdf98f322058e109289a23e77aca2e33e71fb54cf4950156aed",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
       "label": "ATO NORMATIVO — VALIDAÇÃO PENDENTE"
     },
     {
+      "name": "INEP — Legislação da Avaliação da EPT",
+      "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/avaliacao-da-educacao-profissional-e-tecnologica/legislacao",
+      "previous_hash": "dee59e386dea5a540ad74f2cda8f087458770c8bfe6193888b24915dab761cf0",
+      "current_hash": "736520853d7b860e179a4351c47bc26f54fc839a8a1512d81f1bc61bd35d80cf",
+      "change_type": "pagina_oficial",
+      "verification_status": "sem_confirmacao_normativa",
+      "confirmed_normative_change": false,
+      "label": "PÁGINA OFICIAL ATUALIZADA"
+    },
+    {
       "name": "MEC/CAPES",
       "url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/articulacao-e-inovacao-em-educacao-aberta/sistema-universidade-aberta-do-brasil/normativos-uab",
-      "previous_hash": "aef05ab32265449c27a91e07b401d7cd7bae60803327ff93d836c6d394fabb81",
-      "current_hash": "73ad94c7ff2f928e73a04eb7ceb752579d2e48c3a2a5a6c0242081729c5ffac6",
+      "previous_hash": "73ad94c7ff2f928e73a04eb7ceb752579d2e48c3a2a5a6c0242081729c5ffac6",
+      "current_hash": "aef05ab32265449c27a91e07b401d7cd7bae60803327ff93d836c6d394fabb81",
       "change_type": "orientacao_pagina",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -523,8 +563,8 @@
     {
       "name": "Diário Oficial da União",
       "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743",
-      "previous_hash": "bcf319689c5819231a33a5bc27f0b82301891e5ce63b958408c56144efb5827a",
-      "current_hash": "8a7fae1521c9b5e3880b5e435e9dfe741d7a9f0b1ee6c3e3cad3acb8f2ef1446",
+      "previous_hash": "8a7fae1521c9b5e3880b5e435e9dfe741d7a9f0b1ee6c3e3cad3acb8f2ef1446",
+      "current_hash": "cb6f2484c638303e24ddc1e9a87304ba32fc29995fe445a4d928a6d18218a287",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -533,8 +573,8 @@
     {
       "name": "Diário Oficial da União / CNE",
       "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558",
-      "previous_hash": "961c2a222b0ee82e17eda7ef4afb62d060276ee0ed7188a18cc8b071f21b99f1",
-      "current_hash": "4734e41dc222c8074956602b0975b3ad8f82da235a14ae1e4d51252f5ffb13a1",
+      "previous_hash": "4734e41dc222c8074956602b0975b3ad8f82da235a14ae1e4d51252f5ffb13a1",
+      "current_hash": "8f0f4f002373a1db994282566464e477ca3af32f0afe1fccaa20151b9442a453",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -543,18 +583,28 @@
     {
       "name": "Diário Oficial da União",
       "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299",
-      "previous_hash": "f9835133d16f860a54c691bb065bc57f41fee40728b984dc043f1c2388fddd0b",
-      "current_hash": "9491bcd7e67ba69d7f539ab6e9238cf0358ef883cd78ad52e134754e33a8377a",
+      "previous_hash": "9491bcd7e67ba69d7f539ab6e9238cf0358ef883cd78ad52e134754e33a8377a",
+      "current_hash": "f42a8835a6b2bfb35b32eacbe3c52c3e8f38788bf507d35ff0d5dde90cee1edf",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
       "label": "ATO NORMATIVO — VALIDAÇÃO PENDENTE"
     },
     {
+      "name": "Gov.br — MEC",
+      "url": "https://www.gov.br/pt-br/servicos/solicitar-reconhecimento-de-curso-de-graduacao-ead",
+      "previous_hash": "c27e295de24794a01f8f037930fa635ee32b4e0eb901f78d1de268151ca1e54e",
+      "current_hash": "947e937d7036f4d063762173772b4bf59f1a7581f4085d03d0222271bddee2d9",
+      "change_type": "pagina_oficial",
+      "verification_status": "sem_confirmacao_normativa",
+      "confirmed_normative_change": false,
+      "label": "PÁGINA OFICIAL ATUALIZADA"
+    },
+    {
       "name": "INEP",
-      "url": "https://www.gov.br/inep/pt-br/centrais-de-conteudo/legislacao/indicadores-de-qualidade-da-educacao-superior/2025",
-      "previous_hash": "9065f77b54c1836e39ccaf2cdd761b64405a7ce33a15c6e2437368f01b3b8d42",
-      "current_hash": "a85a2554ff5587600adcf01269b9615c2f75691b133c36d718c3ec5ff5479d07",
+      "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/indicadores-de-qualidade-da-educacao-superior",
+      "previous_hash": "9b539f721d04a1583628759ccf2b1a2e5108cb99f66b2d39148a7cafbf0adf59",
+      "current_hash": "63c6629562675c4aa64443224484a88eb4b13e9975d142f1ee08346b97bc2d77",
       "change_type": "pagina_oficial",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -563,8 +613,8 @@
     {
       "name": "INEP",
       "url": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade-bacharelado-e-superiores-de-tecnologia",
-      "previous_hash": "e60e8c00472c6ec454580fd1764fe1886761047d5fd4b4052865c0dd9e4d05eb",
-      "current_hash": "0a09a0e6b906758e02f16e268782df7b78487a44fa0dbf2e3db8ac134c192ebe",
+      "previous_hash": "0a09a0e6b906758e02f16e268782df7b78487a44fa0dbf2e3db8ac134c192ebe",
+      "current_hash": "e60e8c00472c6ec454580fd1764fe1886761047d5fd4b4052865c0dd9e4d05eb",
       "change_type": "pagina_oficial",
       "verification_status": "sem_confirmacao_normativa",
       "confirmed_normative_change": false,
@@ -585,16 +635,17 @@
       "attempts": 2
     },
     {
+      "name": "MEC",
+      "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/educacao-a-distancia/quais-os-formatos-de-oferta",
+      "error": "HTTP 429 - Too Many Requests",
+      "attempts": 2
+    },
+    {
       "name": "Presidência da República",
       "url": "https://legislacao.presidencia.gov.br/atos/?ano=2025&ato=81cMzaq5UNZpWT9a3&numero=12603&tipo=DEC",
       "error": "ConnectionResetError: [Errno 104] Connection reset by peer",
       "attempts": 2
     }
   ],
-  "recovered": [
-    {
-      "name": "CNE/MEC",
-      "url": "https://www.gov.br/mec/pt-br/cne/pdf/normas-classificadas-por-assunto/extensao-na-educacao-superior-brasileira/rces007_18.pdf/view"
-    }
-  ]
+  "recovered": []
 }
