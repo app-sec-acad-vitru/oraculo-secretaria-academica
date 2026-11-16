@@ -30,9 +30,24 @@
 .faq-empty{background:#f8fafc;border:1px dashed var(--line);border-radius:12px;padding:25px;text-align:center;color:var(--muted);font-size:13px}
 @media(max-width:650px){.faq-head{flex-direction:column}.faq-question .faq-meta{display:none}.faq-toolbar input{min-width:100%}}
 
+
+/* Aviso temporário de manutenção — integração INLABS */
+.maintenance-banner{width:100%;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:12px 18px;background:#fff1d6;border-bottom:2px solid #e3a323;color:#704600;text-align:center;font-size:13px;line-height:1.45}
+.maintenance-banner strong{display:inline-flex;align-items:center;gap:7px;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.maintenance-banner .maintenance-detail{font-weight:500}
+.maintenance-banner .maintenance-tag{display:inline-block;padding:3px 9px;border-radius:99px;background:#8c3b16;color:#fff;font-size:10px;font-weight:900;letter-spacing:.06em}
+@media(max-width:600px){.maintenance-banner{padding:11px 13px;font-size:12px;gap:7px}.maintenance-banner strong{font-size:12px}}
+
 </style>
 </head>
 <body>
+
+<div class="maintenance-banner" role="status" aria-live="polite">
+  <strong><span aria-hidden="true">⚠</span> Oráculo da Secretaria Acadêmica</strong>
+  <span class="maintenance-tag">EM MANUTENÇÃO</span>
+  <span class="maintenance-detail">Estamos ajustando a integração com o INLABS. Devido a inconsistências na disponibilização dos arquivos, as atualizações regulatórias mais recentes podem não estar carregadas ou estar incompletas. Consulte o DOU oficial até a normalização.</span>
+</div>
+
 <header class="header">
  <div class="hero"><h1>Encontre a regra. Entenda o impacto. Aja com segurança.</h1><p>Consulte legislação, orientação oficial, documentos, processos e dúvidas operacionais da Secretaria Acadêmica.</p><div class="search"><input id="q" placeholder="Ex.: histórico escolar, diploma digital, formação pedagógica, segunda licenciatura..." autocomplete="off"><button id="searchBtn">Pesquisar</button></div><div class="quick"><button data-q="Emissão de documentos">Emissão de documentos</button><button data-q="Diploma Digital">Diploma Digital</button><button data-q="Formação pedagógica">Formação pedagógica</button><button data-q="Segunda licenciatura">Segunda licenciatura</button><button data-q="Histórico escolar">Histórico escolar</button><button data-q="Acervo acadêmico">Acervo acadêmico</button></div></div>
 </header>
