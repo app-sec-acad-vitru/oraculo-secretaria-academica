@@ -1,24 +1,24 @@
 {
-  "checked_at": "2026-11-21T18:47:26.203346+00:00",
+  "checked_at": "2026-11-22T19:07:26.659905+00:00",
   "summary": {
     "sources_registered": 52,
     "sources_verified": 21,
     "changes_detected": 2,
     "access_errors": 31,
-    "recovered": 1
+    "recovered": 0
   },
   "sources": {
     "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm": {
       "name": "Planalto",
       "url": "https://planalto.gov.br/ccivil_03/leis/l9394compilado.htm",
-      "checked_at": "2026-11-21T18:38:37.321838+00:00",
+      "checked_at": "2026-11-22T18:58:35.612106+00:00",
       "hash": "a1e1d3b4e8b7351a408aee19f8d21a313997e8c0caa51355916130a9ccb4e206",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/decreto/d9235.htm",
-      "checked_at": "2026-11-21T18:38:38.842403+00:00",
+      "checked_at": "2026-11-22T18:58:37.592607+00:00",
       "hash": "58bd30938021846c404d8ab733181e48490a325062c8916975f7d32e0f0c53ca",
       "status": 200
     },
@@ -46,28 +46,28 @@
     "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52": {
       "name": "Imprensa Nacional / DOU",
       "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?data=19%2F08%2F2022&jornal=515&pagina=52",
-      "checked_at": "2026-11-21T18:39:32.033617+00:00",
+      "checked_at": "2026-11-22T18:59:30.737532+00:00",
       "hash": "4d28a44c99764041866003cc3e1a873337d161151bafcdb25c6759e4c6e12171",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709compilado.htm",
-      "checked_at": "2026-11-21T18:39:33.161606+00:00",
+      "checked_at": "2026-11-22T18:59:31.958909+00:00",
       "hash": "bc338f5d662d355be99c86e0a7059ba27ce5a508bd5962d0b967d5a154aab22b",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.861.htm",
-      "checked_at": "2026-11-21T18:39:34.124336+00:00",
+      "checked_at": "2026-11-22T18:59:32.639256+00:00",
       "hash": "2733960e5a7e2ad0212ff836f451669e7a37fcd50be38179e481cf7789ea82ef",
       "status": 200
     },
     "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm": {
       "name": "Planalto",
       "url": "https://planalto.gov.br/ccivil_03/_ato2007-2010/2008/lei/l11788.htm",
-      "checked_at": "2026-11-21T18:39:35.212981+00:00",
+      "checked_at": "2026-11-22T18:59:33.462362+00:00",
       "hash": "fd17360d764ff630d77a0a3f8f879cf64bfa58f17f70cddab74dc36a43aee7e2",
       "status": 200
     },
@@ -81,7 +81,7 @@
     "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=09%2F04%2F2018&jornal=515&pagina=43": {
       "name": "Imprensa Nacional / DOU — Resolução CNE/CES nº 1/2018",
       "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=09%2F04%2F2018&jornal=515&pagina=43",
-      "checked_at": "2026-11-21T18:39:53.880731+00:00",
+      "checked_at": "2026-11-22T18:59:52.375710+00:00",
       "hash": "9c501f7fc1ab565ba230c30d56a6c2f5eb9c42385761532ed5d4962119539f8f",
       "status": 200
     },
@@ -95,7 +95,7 @@
     "https://www.ufabc.edu.br/images/servicos/parecer-cne-379-2004.pdf": {
       "name": "UFABC — cópia do Parecer CNE/CES nº 379/2004",
       "url": "https://www.ufabc.edu.br/images/servicos/parecer-cne-379-2004.pdf",
-      "checked_at": "2026-11-21T18:40:12.161477+00:00",
+      "checked_at": "2026-11-22T19:00:10.402894+00:00",
       "hash": "fe653f505463d0f8ab90be277e8e0ba15a4a5005f30606586125a5665bbd388c",
       "status": 200
     },
@@ -144,7 +144,7 @@
     "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/leis/l9870.htm",
-      "checked_at": "2026-11-21T18:41:41.614064+00:00",
+      "checked_at": "2026-11-22T19:01:39.939756+00:00",
       "hash": "6ca83f3479cda69fe79d3c85cb88a45c8bff99f6d322f0489f6143fa8a02420f",
       "status": 200
     },
@@ -172,7 +172,7 @@
     "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12456.htm",
-      "checked_at": "2026-11-21T18:42:34.846235+00:00",
+      "checked_at": "2026-11-22T19:02:33.002555+00:00",
       "hash": "78b55ad5a3e4f8af234a3f4ff418b63a4bdb9db2d6dd2643ad8454c5cbc56de4",
       "status": 200
     },
@@ -193,14 +193,14 @@
     "https://mecnormas.mec.gov.br/pesquisa/detalhar/5186": {
       "name": "MEC Normas — Portaria MEC nº 506/2025 / Nova Política de EaD",
       "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/5186",
-      "checked_at": "2026-11-21T18:43:10.620263+00:00",
+      "checked_at": "2026-11-22T19:03:09.452834+00:00",
       "hash": "6368311302f28c87012fff230b303575eedaf6e452bc800a1ad3721a92551263",
       "status": 200
     },
     "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm": {
       "name": "Planalto",
       "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12603.htm",
-      "checked_at": "2026-11-21T18:43:11.636112+00:00",
+      "checked_at": "2026-11-22T19:03:11.117748+00:00",
       "hash": "a6f465261d4c28eb1426d6321e8239bba9bff8f285a68f4bcbf18215aa9cdc2a",
       "status": 200
     },
@@ -256,7 +256,7 @@
     "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf": {
       "name": "DOU / MEC",
       "url": "https://cfbm.gov.br/wp-content/uploads/2025/05/PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-PORTARIA-MEC-No-378-DE-19-DE-MAIO-DE-2025-DOU-Imprensa-Nacional.pdf",
-      "checked_at": "2026-11-21T18:44:58.735028+00:00",
+      "checked_at": "2026-11-22T19:04:58.488663+00:00",
       "hash": "78d1231e85708165394a69d6369554c39969b398032ce55f5ecdf51322d4322e",
       "status": 200
     },
@@ -270,28 +270,28 @@
     "https://mecnormas.mec.gov.br/pesquisa/detalhar/7460": {
       "name": "MEC / referência normativa",
       "url": "https://mecnormas.mec.gov.br/pesquisa/detalhar/7460",
-      "checked_at": "2026-11-21T18:45:17.743522+00:00",
+      "checked_at": "2026-11-22T19:05:17.477866+00:00",
       "hash": "6368311302f28c87012fff230b303575eedaf6e452bc800a1ad3721a92551263",
       "status": 200
     },
     "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10": {
       "name": "MEC Normas / INEP",
       "url": "https://mecnormas.mec.gov.br/pesquisa/?currentPage=1&exata=false&ordenacao=2&pageSize=10",
-      "checked_at": "2026-11-21T18:45:18.542850+00:00",
+      "checked_at": "2026-11-22T19:05:18.925168+00:00",
       "hash": "6368311302f28c87012fff230b303575eedaf6e452bc800a1ad3721a92551263",
       "status": 200
     },
     "https://www.abmes.org.br/legislacoes/detalhe/5654/portaria-inep-n-503-2026": {
       "name": "ABMES / referência da publicação no DOU",
       "url": "https://www.abmes.org.br/legislacoes/detalhe/5654/portaria-inep-n-503-2026",
-      "checked_at": "2026-11-21T18:45:19.567910+00:00",
+      "checked_at": "2026-11-22T19:05:19.527613+00:00",
       "hash": "6792910e8476190740644e576b2e9f6323ee4c5a33b2b7fa7095dca434fe7ea6",
       "status": 200
     },
     "https://www.abmes.org.br/legislacoes/detalhe/5656/portaria-inep-n-147-2026": {
       "name": "ABMES / referência da publicação no DOU",
       "url": "https://www.abmes.org.br/legislacoes/detalhe/5656/portaria-inep-n-147-2026",
-      "checked_at": "2026-11-21T18:45:20.393308+00:00",
+      "checked_at": "2026-11-22T19:05:19.966695+00:00",
       "hash": "32ca5067a7c262fdf8b356701307479b6b7ce8241be00ccfa04dec9b8bb228a3",
       "status": 200
     },
@@ -305,28 +305,28 @@
     "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743": {
       "name": "Diário Oficial da União",
       "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743",
-      "checked_at": "2026-11-21T18:45:38.762661+00:00",
-      "hash": "cb6f2484c638303e24ddc1e9a87304ba32fc29995fe445a4d928a6d18218a287",
+      "checked_at": "2026-11-22T19:05:38.716724+00:00",
+      "hash": "24525296924dbfae9cea075224663eee9e7b0fa84d7445b1d0e2e5cc0de0cb41",
       "status": 200
     },
     "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558": {
       "name": "Diário Oficial da União / CNE",
       "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558",
-      "checked_at": "2026-11-21T18:45:39.571200+00:00",
-      "hash": "458c2434ff08ad543bc0eabd0d54c592d61c27e74b9e316261bae6d7a1a70478",
+      "checked_at": "2026-11-22T19:05:40.070176+00:00",
+      "hash": "db8cbfcf522f89a2806f22934b595df09f287da4f64d8450b11d144fb3eba645",
       "status": 200
     },
     "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299": {
       "name": "Diário Oficial da União",
       "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299",
-      "checked_at": "2026-11-21T18:45:40.653289+00:00",
+      "checked_at": "2026-11-22T19:05:41.238079+00:00",
       "hash": "0b8c361b5a92eba22912139722a99f7d640e65eb426c7c044ab3ae4ef5442c2a",
       "status": 200
     },
     "https://ufgd.edu.br/secao/srd/legislacoes": {
       "name": "UFGD — legislação de Registro de Diplomas",
       "url": "https://ufgd.edu.br/secao/srd/legislacoes",
-      "checked_at": "2026-11-21T18:45:42.497332+00:00",
+      "checked_at": "2026-11-22T19:05:42.885764+00:00",
       "hash": "1de9800ae6e7b0672401ac8e6f5ba9f2438bd6fa9af885d4e92d618db7e9d3f4",
       "status": 200
     },
@@ -381,20 +381,20 @@
   },
   "changes": [
     {
-      "name": "Diário Oficial da União / CNE",
-      "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558",
-      "previous_hash": "b4baa1e388477d62f7baea04722c7c14187ffcbc3a51dc74b7f4f590aa9a5635",
-      "current_hash": "458c2434ff08ad543bc0eabd0d54c592d61c27e74b9e316261bae6d7a1a70478",
+      "name": "Diário Oficial da União",
+      "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-795-de-25-de-novembro-de-2025-671017743",
+      "previous_hash": "cb6f2484c638303e24ddc1e9a87304ba32fc29995fe445a4d928a6d18218a287",
+      "current_hash": "24525296924dbfae9cea075224663eee9e7b0fa84d7445b1d0e2e5cc0de0cb41",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
       "label": "ATO NORMATIVO — VALIDAÇÃO PENDENTE"
     },
     {
-      "name": "Diário Oficial da União",
-      "url": "https://www.in.gov.br/en/web/dou/-/portaria-mec-n-70-de-24-de-janeiro-de-2025-609234299",
-      "previous_hash": "f42a8835a6b2bfb35b32eacbe3c52c3e8f38788bf507d35ff0d5dde90cee1edf",
-      "current_hash": "0b8c361b5a92eba22912139722a99f7d640e65eb426c7c044ab3ae4ef5442c2a",
+      "name": "Diário Oficial da União / CNE",
+      "url": "https://www.in.gov.br/web/dou/-/resolucao-cne/cp-n-4-de-29-de-maio-de-2024-563084558",
+      "previous_hash": "458c2434ff08ad543bc0eabd0d54c592d61c27e74b9e316261bae6d7a1a70478",
+      "current_hash": "db8cbfcf522f89a2806f22934b595df09f287da4f64d8450b11d144fb3eba645",
       "change_type": "ato_normativo_candidato",
       "verification_status": "validacao_pendente",
       "confirmed_normative_change": false,
@@ -589,10 +589,5 @@
       "attempts": 2
     }
   ],
-  "recovered": [
-    {
-      "name": "Imprensa Nacional / DOU — Resolução CNE/CES nº 1/2018",
-      "url": "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=09%2F04%2F2018&jornal=515&pagina=43"
-    }
-  ]
+  "recovered": []
 }
