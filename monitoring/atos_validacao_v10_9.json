@@ -1,6 +1,6 @@
 {
   "version": "V10.9",
-  "executed_at": "2026-11-26T21:02:54.441051+00:00",
+  "executed_at": "2026-11-27T20:47:07.597282+00:00",
   "status": "erro_login",
-  "erro": "HTTPSConnectionPool(host='inlabs.in.gov.br', port=443): Max retries exceeded with url: /acessar.php (Caused by ConnectTimeoutError(<HTTPSConnection(host='inlabs.in.gov.br', port=443) at 0x7da522aa1be0>, 'Connection to inlabs.in.gov.br timed out. (connect timeout=60)'))"
+  "erro": "Login INLABS não confirmado. final_url=https://inlabs.in.gov.br/logar.php status=404"
 }
